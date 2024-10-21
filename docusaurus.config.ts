@@ -68,17 +68,38 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: '文档 - ' + pkg.version,
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "position": "right",
+          "label": "使用文档"
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/gogf/gf',
-          label: 'GitHub',
-          position: 'right',
+          "to": "/faq",
+          "position": "right",
+          "label": "常见问题"
         },
+        {
+          "to": "/changelog",
+          "position": "right",
+          "label": "版本记录"
+        },
+        {
+          "to": "/donate",
+          "position": "right",
+          "label": "支持我们"
+        },
+        {
+          "href": "https://github.com/gogf/gf/issues",
+          "label": "问题反馈",
+          "position": "right"
+        },
+        {
+          "href": "https://github.com/gogf/gf",
+          "label": "GitHub",
+          "position": "right"
+        }
+
+        // {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
     // toc目录层级显示设置
