@@ -1,7 +1,6 @@
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
-import pkg from './package.json';
 
 const config: Config = {
   title: 'GoFrame',
@@ -56,6 +55,28 @@ const config: Config = {
         language: 'zh',
       },
     ],
+    // 版本记录
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'changelog',
+        path: 'changelog',
+        routeBasePath: 'changelog',
+        sidebarPath: './sidebars.ts',
+        // ... other options
+      },
+    ],
+    // 常见问题
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'faq',
+        path: 'faq',
+        routeBasePath: 'faq',
+        sidebarPath: './sidebars.ts',
+        // ... other options
+      },
+    ],
   ],
   themeConfig: {
     // Replace with your project's social card
@@ -74,12 +95,16 @@ const config: Config = {
           "label": "使用文档"
         },
         {
-          "to": "/faq",
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "docsPluginId": "faq",
           "position": "right",
           "label": "常见问题"
         },
         {
-          "to": "/changelog",
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "docsPluginId": "changelog",
           "position": "right",
           "label": "版本记录"
         },

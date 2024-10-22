@@ -38,3 +38,15 @@ npm run build
 https://prismjs.com/#supported-languages
 
 https://docusaurus.io/zh-CN/docs/markdown-features/code-blocks
+
+## 建设
+
+### 第一版：
+
+1. 搞几个我截图上面的栏目 **(done)**
+2. 把仓库独立出来使用 md 维护 **(done)**
+3. 首页也独立出来 **(done)**
+4. 改进下搜索，感觉使用 docusaurus.官方推荐的搜索组件比较好
+   后面再优化自定义样式
+
+单独的页面在[src\pages](src\pages\index.md)目录下维护
