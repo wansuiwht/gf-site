@@ -9,13 +9,15 @@ We currently accept donation by `Wechat`/ `Alipay`/ `Gitee`, please note your `g
 
 我们当前接受来自于 **微信**、 **支付宝** 或者 **[码云](https://gitee.com/johng/gf)** 的捐赠，请在捐赠时备注自己的 `github` 或者 `gitee` 账号名称。
 
-![](/markdown/86235ed8204d919a6b9a23076d1573c8.png)![](/markdown/57a1eddb266015ba7642952015f84c4f.png)
+![](../../static/markdown/86235ed8204d919a6b9a23076d1573c8.png)
 
-Here are the records where all donations went to: [捐赠款项使用](https://goframe.org/pages/viewpage.action?pageId=96886663)
+
+![](../../static/markdown/57a1eddb266015ba7642952015f84c4f.png)
+
+
 
 * * *
 
-捐赠款项使用记录请参考： [捐赠款项使用](https://goframe.org/pages/viewpage.action?pageId=96886663)
 
 Latest updated at/最后更新日志：2024-09-26 19:53:00
 
