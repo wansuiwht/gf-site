@@ -1,6 +1,6 @@
 ---
 title: '来杯咖啡'
-sidebar_position: 0
+sidebar_position: 1
 ---
 
 We currently accept donation by `Wechat`/ `Alipay`/ `Gitee`, please note your `github`/ `gitee` account in your payment bill.
@@ -9,10 +9,10 @@ We currently accept donation by `Wechat`/ `Alipay`/ `Gitee`, please note your `g
 
 我们当前接受来自于 **微信**、 **支付宝** 或者 **[码云](https://gitee.com/johng/gf)** 的捐赠，请在捐赠时备注自己的 `github` 或者 `gitee` 账号名称。
 
-![](../../static/markdown/86235ed8204d919a6b9a23076d1573c8.png)
 
+![](../static/markdown/86235ed8204d919a6b9a23076d1573c8.png)
 
-![](../../static/markdown/57a1eddb266015ba7642952015f84c4f.png)
+![](../static/markdown/57a1eddb266015ba7642952015f84c4f.png)
 
 
 

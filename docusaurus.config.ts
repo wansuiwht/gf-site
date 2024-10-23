@@ -55,13 +55,13 @@ const config: Config = {
         language: 'zh',
       },
     ],
-    // 版本记录
+    // 快速开始
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'changelog',
-        path: 'changelog',
-        routeBasePath: 'changelog',
+        id: 'comeon',
+        path: 'comeon',
+        routeBasePath: 'comeon',
         sidebarPath: './sidebars.ts',
         // ... other options
       },
@@ -73,6 +73,39 @@ const config: Config = {
         id: 'faq',
         path: 'faq',
         routeBasePath: 'faq',
+        sidebarPath: './sidebars.ts',
+        // ... other options
+      },
+    ],
+    // 版本发布
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'changelog',
+        path: 'changelog',
+        routeBasePath: 'changelog',
+        sidebarPath: './sidebars.ts',
+        // ... other options
+      },
+    ],
+    // 技术交流
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'communication',
+        path: 'communication',
+        routeBasePath: 'communication',
+        sidebarPath: './sidebars.ts',
+        // ... other options
+      },
+    ],
+    // 支持我们
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'supportus',
+        path: 'supportus',
+        routeBasePath: 'supportus',
         sidebarPath: './sidebars.ts',
         // ... other options
       },
@@ -91,25 +124,41 @@ const config: Config = {
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "position": "right",
+          "docsPluginId": "comeon",
+          "position": "left",
+          "label": "快速开始"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "position": "left",
           "label": "使用文档"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "faq",
-          "position": "right",
+          "position": "left",
           "label": "常见问题"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "changelog",
-          "position": "right",
-          "label": "版本记录"
+          "position": "left",
+          "label": "版本发布"
         },
         {
-          "to": "/donate",
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "docsPluginId": "communication",
+          "position": "right",
+          "label": "技术交流"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "docsPluginId": "supportus",
           "position": "right",
           "label": "支持我们"
         },
