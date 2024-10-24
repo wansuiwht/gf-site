@@ -122,7 +122,7 @@ const config: Config = {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "right",
-          "label": "使用文档"
+          "label": "开发手册"
         },
         {
           "type": "docSidebar",
@@ -146,16 +146,10 @@ const config: Config = {
           "label": "支持我们"
         },
         {
-          "href": "https://github.com/gogf/gf/issues",
-          "label": "问题反馈",
-          "position": "right"
-        },
-        {
-          "href": "https://github.com/gogf/gf",
-          "label": "GitHub",
-          "position": "right"
+          href: 'https://github.com/gogf/gf',
+          position: 'right',
+          className: 'header-github-link',
         }
-
         // {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
@@ -164,21 +158,21 @@ const config: Config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
     },
-    // footer: {
-    //   style: 'dark',
-    //   links: [
-    //     // {
-    //     //   title: 'Docs',
-    //     //   items: [
-    //     //     {
-    //     //       label: 'Doc',
-    //     //       to: '/docs',
-    //     //     },
-    //     //   ],
-    //     // },
-    //   ],
-    //   // copyright: `Copyright ©${new Date().getFullYear()}`,
-    // },
+    footer: {
+      // style: 'dark',
+      // links: [
+      //   {
+      //     title: 'Docs',
+      //     items: [
+      //       {
+      //         label: 'Doc',
+      //         to: '/docs',
+      //       },
+      //     ],
+      //   },
+      // ],
+      copyright: `Copyright ©${new Date().getFullYear()} GoFrame OpenSource Team`,
+    },
     prism: {
       theme: prismThemes.oneDark,
       darkTheme: prismThemes.dracula,
