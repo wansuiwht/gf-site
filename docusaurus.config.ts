@@ -55,13 +55,14 @@ const config: Config = {
         language: 'zh',
       },
     ],
+    
     // 快速开始
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'comeon',
-        path: 'comeon',
-        routeBasePath: 'comeon',
+        id: 'quick',
+        path: 'quick',
+        routeBasePath: 'quick',
         sidebarPath: './sidebars.ts',
         // ... other options
       },
@@ -84,17 +85,6 @@ const config: Config = {
         id: 'changelog',
         path: 'changelog',
         routeBasePath: 'changelog',
-        sidebarPath: './sidebars.ts',
-        // ... other options
-      },
-    ],
-    // 技术交流
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'communication',
-        path: 'communication',
-        routeBasePath: 'communication',
         sidebarPath: './sidebars.ts',
         // ... other options
       },
@@ -124,36 +114,29 @@ const config: Config = {
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "docsPluginId": "comeon",
-          "position": "left",
+          "docsPluginId": "quick",
+          "position": "right",
           "label": "快速开始"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "position": "left",
+          "position": "right",
           "label": "使用文档"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "faq",
-          "position": "left",
+          "position": "right",
           "label": "常见问题"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "changelog",
-          "position": "left",
-          "label": "版本发布"
-        },
-        {
-          "type": "docSidebar",
-          "sidebarId": "tutorialSidebar",
-          "docsPluginId": "communication",
           "position": "right",
-          "label": "技术交流"
+          "label": "发布记录"
         },
         {
           "type": "docSidebar",
