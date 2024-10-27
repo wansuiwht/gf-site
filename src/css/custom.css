@@ -99,9 +99,7 @@ body .button--secondary {
 @import "./output.css";
 
 
-.githubButtonText_fonQ, .githubIcon_ACNJ {
-  vertical-align: middle;
-}
+
 code {
   color: #ec2d5d;;
 }

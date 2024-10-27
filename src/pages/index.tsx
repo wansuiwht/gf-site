@@ -1,13 +1,9 @@
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
 
 function HomepageHeader() {
     return (
-        <header className="">
+        <header>
             <div className="container logo-container">
                 <div>
                     <img src={require('../../static/markdown/0ec2082abc02139e3fc1ce9090862d33.png').default}
@@ -67,6 +63,27 @@ function HomepageHeader() {
                         活跃的社区特点将会极大降低您的指导成本，支持团队快速接入、语言转型与能力提升。
                     </p>
                 </div>
+                <div className="grid grid-cols-1 gap-3 md:grid-cols-2 mt-6">
+                    <div className="flex justify-center md:justify-end">
+                        <Link className="button button--primary button--md"
+                            to="/quick" style={{width: '200px'}}>
+                              快速开始 →
+                        </Link>
+                    </div>
+
+                    <div className="flex md:justify-start justify-center">
+                        <Link className="button button--secondary button--md hover:bg-gray-200"
+                            to="https://github.com/gogf/gf" style={{
+                                width: '200px',
+                                paddingLeft: '50px',
+                                backgroundImage: `url(/img/github.svg)`,
+                                backgroundRepeat: 'no-repeat',
+                                backgroundPosition: '45px center',
+                            }}>
+                            GitHub →
+                        </Link>
+                    </div>
+                </div>
             </div>
         </header>
     );
@@ -75,12 +92,12 @@ function HomepageHeader() {
 function Features() {
     return (
         <section>
-            <div className="container mt-5">
+            <div className="container mt-20">
                 <h1 className="text-center largest font-bold">
                     框架特点
                 </h1>
                 <div className="text-center mb-10">
-                    强大的开发框架助您的项目快速成型、易于维护、事半功倍。
+                强大的开发框架助您的项目快速成型、易于维护、事半功倍。
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div>
@@ -205,7 +222,60 @@ function Features() {
                     </div>
                 </div>
             </div>
-            1111
+            <div className="container mt-5 text-center">
+                <Link
+                    className="button button--secondary button--md hover:bg-gray-200"
+                    to="/docs" style={{width: '200px'}}>
+                    了解更多 →
+                </Link>
+            </div>
+        </section>
+    );
+}
+
+function Users() {
+    return (
+        <section>
+            <div className="container mt-20">
+                <h1 className="text-center largest font-bold">
+                    用户列表
+                </h1>
+                <div className="text-center mb-10">
+                    在这里列举了部分知名用户，如果您的企业或者产品正在使用<code>GoFrame</code>，欢迎联系我们。
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.tencent.com/" target="_blank">腾讯科技</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.zte.com.cn/china/" target="_blank">中兴科技</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.antfin.com/" target="_blank">蚂蚁金服</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.vivo.com/" target="_blank">VIVO</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.ximalaya.com/" target="_blank">喜马拉雅</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://igg.com/" target="_blank">IGG</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.37.com/" target="_blank">三七互娱</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.zybang.com/" target="_blank">作业帮</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.medlinker.com/" target="_blank">医联科技</a>
+                    </div>
+                    <div className="card p-5 box-border text-center">
+                        <a href="https://www.leyoujia.com/" target="_blank">乐有家</a>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }
@@ -215,6 +285,8 @@ export default function Home(): JSX.Element {
         <Layout>
             <HomepageHeader/>
             <Features/>
+            <Users/>
+            <div className="mt-20"></div>
         </Layout>
     );
 }

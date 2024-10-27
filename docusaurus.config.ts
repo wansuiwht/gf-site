@@ -80,9 +80,9 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'changelog',
-        path: 'changelog',
-        routeBasePath: 'changelog',
+        id: 'releaselog',
+        path: 'releaselog',
+        routeBasePath: 'releaselog',
         sidebarPath: './sidebars.ts',
         // ... other options
       },
@@ -94,6 +94,16 @@ const config: Config = {
         id: 'supportus',
         path: 'supportus',
         routeBasePath: 'supportus',
+        sidebarPath: './sidebars.ts',
+      },
+    ],
+    // 聊天群组
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: "gethelp",
+        path: "gethelp",
+        routeBasePath: "gethelp",
         sidebarPath: './sidebars.ts',
       },
     ],
@@ -119,6 +129,10 @@ const config: Config = {
           label: '开发手册',
           items: [
             {
+              label: '框架设计',
+              to: '/docs/框架设计'
+            },
+            {
               label: '开发工具',
               to: '/docs/开发工具'
             },
@@ -127,13 +141,17 @@ const config: Config = {
               to: '/docs/核心组件'
             },
             {
+              label: '微服务开发',
+              to: '/docs/微服务开发'
+            },
+            {
               label: 'WEB服务开发',
               to: '/docs/WEB服务开发'
             },
             {
-              label: '微服务开发',
-              to: '/docs/微服务开发'
-            }
+              label: '服务可观测性',
+              to: '/docs/服务可观测性'
+            },
           ]
         },
         {
@@ -146,7 +164,7 @@ const config: Config = {
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "docsPluginId": "changelog",
+          "docsPluginId": "releaselog",
           "position": "left",
           "label": "发布记录"
         },
@@ -156,6 +174,13 @@ const config: Config = {
           "docsPluginId": "supportus",
           "position": "left",
           "label": "支持我们"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "docsPluginId": "gethelp",
+          "position": "left",
+          "label": "获得帮助"
         },
         {
           type: "docsVersionDropdown",
