@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
+// https://docusaurus.io/docs/3.2.1/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
 // https://docusaurus.io/docs/3.2.1/api/docusaurus-config
 const config: Config = {
   title: 'GoFrame官网 - 类似PHP-Laravel, Java-SpringBoot的Go企业级开发框架',
@@ -93,6 +94,7 @@ const config: Config = {
         path: "help",
         routeBasePath: "help",
         sidebarPath: './sidebars.ts',
+
       },
     ],
     // 支持我们

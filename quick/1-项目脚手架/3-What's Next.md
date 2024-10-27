@@ -1,5 +1,6 @@
 ---
-title: "快速开始-What's Next"
+slug: /scaffold-next
+title: "What's Next"
 sidebar_position: 3
 ---
 
