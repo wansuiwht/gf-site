@@ -28,12 +28,10 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           lastVersion: "current",
+          // https://docusaurus.io/docs/versioning
           versions: {
               current: {
                   label:  LATEST_VERSION_LABEL,
-              },
-              "2.7.x": {
-                  label: "v2.7.x",
               },
           },
         },
@@ -80,9 +78,9 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'releaselog',
-        path: 'releaselog',
-        routeBasePath: 'releaselog',
+        id: 'release',
+        path: 'release',
+        routeBasePath: 'release',
         sidebarPath: './sidebars.ts',
         // ... other options
       },
@@ -91,9 +89,9 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: "gethelp",
-        path: "gethelp",
-        routeBasePath: "gethelp",
+        id: "help",
+        path: "help",
+        routeBasePath: "help",
         sidebarPath: './sidebars.ts',
       },
     ],
@@ -174,7 +172,7 @@ const config: Config = {
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "docsPluginId": "releaselog",
+          "docsPluginId": "release",
           "position": "left",
           "label": "发布记录"
         },
@@ -182,7 +180,7 @@ const config: Config = {
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "docsPluginId": "gethelp",
+          "docsPluginId": "help",
           "position": "left",
           "label": "获得帮助"
         },
