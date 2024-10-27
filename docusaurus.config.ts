@@ -87,6 +87,16 @@ const config: Config = {
         // ... other options
       },
     ],
+    // 获得帮助
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: "gethelp",
+        path: "gethelp",
+        routeBasePath: "gethelp",
+        sidebarPath: './sidebars.ts',
+      },
+    ],
     // 支持我们
     [
       '@docusaurus/plugin-content-docs',
@@ -97,13 +107,13 @@ const config: Config = {
         sidebarPath: './sidebars.ts',
       },
     ],
-    // 获得帮助
+    // 加入我们
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: "gethelp",
-        path: "gethelp",
-        routeBasePath: "gethelp",
+        id: 'joinus',
+        path: 'joinus',
+        routeBasePath: 'joinus',
         sidebarPath: './sidebars.ts',
       },
     ],
@@ -168,6 +178,14 @@ const config: Config = {
           "position": "left",
           "label": "发布记录"
         },
+
+        {
+          "type": "docSidebar",
+          "sidebarId": "tutorialSidebar",
+          "docsPluginId": "gethelp",
+          "position": "left",
+          "label": "获得帮助"
+        },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
@@ -178,9 +196,9 @@ const config: Config = {
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "docsPluginId": "gethelp",
+          "docsPluginId": "joinus",
           "position": "left",
-          "label": "获得帮助"
+          "label": "加入我们"
         },
         {
           type: "docsVersionDropdown",
