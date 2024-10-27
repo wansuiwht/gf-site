@@ -1,29 +1,21 @@
+const LATEST_VERSION_LABEL = "Latest";
+
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
+// https://docusaurus.io/docs/3.2.1/api/docusaurus-config
 const config: Config = {
-  title: 'GoFrame',
-  tagline: 'GoFrame',
+  title: 'GoFrame官网 - 类似PHP-Laravel, Java-SpringBoot的Go企业级开发框架',
+  tagline: 'GoFrame is a modular, powerful, high-performance and enterprise-class application development framework of Golang.',
   favicon: '/img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://goframe.org/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
+  trailingSlash: false,
+  organizationName: 'gogf',
+  projectName: 'gf',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
@@ -35,9 +27,15 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/hailaz/gfdoc-md/blob/main/',
+          lastVersion: "current",
+          versions: {
+              current: {
+                  label:  LATEST_VERSION_LABEL,
+              },
+              "2.7.x": {
+                  label: "v2.7.x",
+              },
+          },
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -97,12 +95,10 @@ const config: Config = {
         path: 'supportus',
         routeBasePath: 'supportus',
         sidebarPath: './sidebars.ts',
-        // ... other options
       },
     ],
   ],
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'GoFrame',
@@ -115,42 +111,62 @@ const config: Config = {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "quick",
-          "position": "right",
+          "position": "left",
           "label": "快速开始"
         },
         {
-          "type": "docSidebar",
-          "sidebarId": "tutorialSidebar",
-          "position": "right",
-          "label": "开发手册"
+          position: 'left',
+          label: '开发手册',
+          items: [
+            {
+              label: '开发工具',
+              to: '/docs/开发工具'
+            },
+            {
+              label: '组件手册',
+              to: '/docs/核心组件'
+            },
+            {
+              label: 'WEB服务开发',
+              to: '/docs/WEB服务开发'
+            },
+            {
+              label: '微服务开发',
+              to: '/docs/微服务开发'
+            }
+          ]
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "faq",
-          "position": "right",
+          "position": "left",
           "label": "常见问题"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "changelog",
-          "position": "right",
+          "position": "left",
           "label": "发布记录"
         },
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "docsPluginId": "supportus",
-          "position": "right",
+          "position": "left",
           "label": "支持我们"
+        },
+        {
+          type: "docsVersionDropdown",
+          position: "right",
+          dropdownActiveClassDisabled: true,
         },
         {
           href: 'https://github.com/gogf/gf',
           position: 'right',
           className: 'header-github-link',
         }
-        // {to: '/blog', label: 'Blog', position: 'left'},
       ],
     },
     // toc目录层级显示设置
@@ -159,18 +175,6 @@ const config: Config = {
       maxHeadingLevel: 4,
     },
     footer: {
-      // style: 'dark',
-      // links: [
-      //   {
-      //     title: 'Docs',
-      //     items: [
-      //       {
-      //         label: 'Doc',
-      //         to: '/docs',
-      //       },
-      //     ],
-      //   },
-      // ],
       copyright: `Copyright ©${new Date().getFullYear()} GoFrame OpenSource Team`,
     },
     prism: {
