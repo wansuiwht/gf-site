@@ -257,10 +257,10 @@ function Users() {
                         <a href="https://www.vivo.com/" target="_blank">VIVO</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.ximalaya.com/" target="_blank">喜马拉雅</a>
+                        <a href="https://igg.com/" target="_blank">IGG</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://igg.com/" target="_blank">IGG</a>
+                        <a href="https://www.ximalaya.com/" target="_blank">喜马拉雅</a>
                     </div>
                     <div className="card p-5 box-border text-center">
                         <a href="https://www.37.com/" target="_blank">三七互娱</a>

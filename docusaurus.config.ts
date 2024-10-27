@@ -97,7 +97,7 @@ const config: Config = {
         sidebarPath: './sidebars.ts',
       },
     ],
-    // 聊天群组
+    // 获得帮助
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -186,6 +186,11 @@ const config: Config = {
           type: "docsVersionDropdown",
           position: "right",
           dropdownActiveClassDisabled: true,
+        },
+        {
+          "href": 'https://github.com/gogf/gf/issues',
+          "position": "right",
+          "label": "问题反馈"
         },
         {
           href: 'https://github.com/gogf/gf',
