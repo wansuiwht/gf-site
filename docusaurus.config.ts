@@ -12,7 +12,7 @@ const config: Config = {
     'GoFrame is a modular, powerful, high-performance and enterprise-class application development framework of Golang.',
   favicon: '/img/favicon.ico',
   url: 'https://goframe.org/',
-  baseUrl: '/gf-site/',
+  baseUrl: '/',
   trailingSlash: false,
   organizationName: 'gogf',
   projectName: 'gf',
@@ -130,22 +130,27 @@ const config: Config = {
     ],
   ],
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: 'GoFrame',
+      title: '',
       logo: {
         alt: 'GoFrame Logo',
-        src: '/img/favicon.ico',
+        src: '/img/logo2.png',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'quick',
-          position: 'left',
+          position: 'right',
           label: '快速开始',
         },
         {
-          position: 'left',
+          position: 'right',
           label: '开发手册',
           items: [
             {
@@ -178,14 +183,14 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'faq',
-          position: 'left',
+          position: 'right',
           label: '常见问题',
         },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'release',
-          position: 'left',
+          position: 'right',
           label: '发布记录',
         },
 
@@ -193,21 +198,21 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'help',
-          position: 'left',
+          position: 'right',
           label: '获得帮助',
         },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'supportus',
-          position: 'left',
+          position: 'right',
           label: '支持我们',
         },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'joinus',
-          position: 'left',
+          position: 'right',
           label: '加入我们',
         },
         {
