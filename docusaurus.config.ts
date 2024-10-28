@@ -235,10 +235,13 @@ const config: Config = {
     footer: {
       copyright: `Copyright ©${new Date().getFullYear()} GoFrame OpenSource Team`,
     },
+    // 代码块配置
     prism: {
       theme: prismThemes.okaidia,
       darkTheme: prismThemes.dracula,
       defaultLanguage: 'go',
+      additionalLanguages: ['bash', 'javascript'], // 添加语言
+      // 默认支持的语言 https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/generate-prism-languages/index.ts#L9-L23
     },
   } satisfies Preset.ThemeConfig,
 };
