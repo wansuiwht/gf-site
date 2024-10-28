@@ -46,10 +46,7 @@ const config: Config = {
         // Will be passed to @docusaurus/plugin-content-blog (false to disable)
         blog: {},
         // Will be passed to @docusaurus/plugin-content-pages (false to disable)
-        pages: {
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
-        },
+        pages: {},
         // Will be passed to @docusaurus/theme-classic.
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -239,7 +236,7 @@ const config: Config = {
       copyright: `Copyright ©${new Date().getFullYear()} GoFrame OpenSource Team`,
     },
     prism: {
-      theme: prismThemes.oneDark,
+      theme: prismThemes.okaidia,
       darkTheme: prismThemes.dracula,
       defaultLanguage: 'go',
     },
