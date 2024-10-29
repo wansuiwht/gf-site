@@ -1,13 +1,15 @@
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import ContributorsSVG from '@site/static/img/contributors.svg';
 import Layout from '@theme/Layout';
 
 function HomepageHeader() {
+    const githubImage = useBaseUrl('/img/github.svg');
     return (
         <header>
             <div className="container logo-container">
                 <div>
-                    <img src={require('../../static/markdown/0ec2082abc02139e3fc1ce9090862d33.png').default}
+                    <img src={require('/markdown/0ec2082abc02139e3fc1ce9090862d33.png').default}
                         className='logo' />
                     <div className="logo-badges">
                         <a href="https://pkg.go.dev/github.com/gogf/gf/v2" target="_blank">
@@ -77,7 +79,7 @@ function HomepageHeader() {
                             to="https://github.com/gogf/gf" style={{
                                 width: '200px',
                                 paddingLeft: '50px',
-                                backgroundImage: `url(/img/github.svg)`,
+                                backgroundImage: `url(${githubImage})`,
                                 backgroundRepeat: 'no-repeat',
                                 backgroundPosition: '45px center',
                             }}>
@@ -289,7 +291,7 @@ function Contributors() {
                     贡献者列表
                 </h1>
                 <div className="text-center mb-10">
-                💖感谢所有参与<code>GoFrame</code>开源建设的贡献者💖
+                    💖感谢所有参与<code>GoFrame</code>开源建设的贡献者💖
                 </div>
                 <div className="contributors text-center">
                     <ContributorsSVG title="GoFrame Contributors" />
