@@ -7,12 +7,12 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // https://docusaurus.io/docs/3.2.1/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
 // https://docusaurus.io/docs/3.2.1/api/docusaurus-config
 const config: Config = {
-  title: 'GoFrame官网 - 类似PHP-Laravel, Java-SpringBoot的Go企业级开发框架',
+  title: 'GoFrame官网 - 类似PHP-Laravel和Java-SpringBoot的Go企业级开发框架',
   tagline:
     'GoFrame is a modular, powerful, high-performance and enterprise-class application development framework of Golang.',
   favicon: '/img/favicon.ico',
   url: 'https://goframe.org/',
-  baseUrl: '/',
+  baseUrl: '/gf-site/',
   trailingSlash: false,
   organizationName: 'gogf',
   projectName: 'gf',
@@ -73,7 +73,11 @@ const config: Config = {
         path: 'quick',
         routeBasePath: 'quick',
         sidebarPath: require.resolve('./sidebars.ts'),
-        // ... other options
+        // 编辑当前页面的配置
+        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
+        // 显示更新时间和作者
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
       },
     ],
     // 版本发布
@@ -84,17 +88,26 @@ const config: Config = {
         path: 'release',
         routeBasePath: 'release',
         sidebarPath: require.resolve('./sidebars.ts'),
-        // ... other options
+        // 编辑当前页面的配置
+        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
+        // 显示更新时间和作者
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
       },
     ],
-    // 获得帮助
+    // 技术交流
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'help',
-        path: 'help',
-        routeBasePath: 'help',
+        id: 'communication',
+        path: 'communication',
+        routeBasePath: 'communication',
         sidebarPath: require.resolve('./sidebars.ts'),
+        // 编辑当前页面的配置
+        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
+        // 显示更新时间和作者
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
       },
     ],
     // 支持我们
@@ -105,22 +118,17 @@ const config: Config = {
         path: 'supportus',
         routeBasePath: 'supportus',
         sidebarPath: require.resolve('./sidebars.ts'),
-      },
-    ],
-    // 加入我们
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'joinus',
-        path: 'joinus',
-        routeBasePath: 'joinus',
-        sidebarPath: require.resolve('./sidebars.ts'),
+        // 编辑当前页面的配置
+        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
+        // 显示更新时间和作者
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
       },
     ],
   ],
   themeConfig: {
     colorMode: {
-      defaultMode: "light",
+      defaultMode: 'light',
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
@@ -179,9 +187,9 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          docsPluginId: 'help',
+          docsPluginId: 'communication',
           position: 'right',
-          label: '获得帮助',
+          label: '技术交流',
         },
         {
           type: 'docSidebar',
@@ -189,13 +197,6 @@ const config: Config = {
           docsPluginId: 'supportus',
           position: 'right',
           label: '支持我们',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          docsPluginId: 'joinus',
-          position: 'right',
-          label: '加入我们',
         },
         {
           type: 'docsVersionDropdown',

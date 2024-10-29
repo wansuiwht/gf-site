@@ -1,4 +1,5 @@
 import Link from '@docusaurus/Link';
+import ContributorsSVG from '@site/static/img/contributors.svg';
 import Layout from '@theme/Layout';
 
 function HomepageHeader() {
@@ -7,45 +8,45 @@ function HomepageHeader() {
             <div className="container logo-container">
                 <div>
                     <img src={require('../../static/markdown/0ec2082abc02139e3fc1ce9090862d33.png').default}
-                         className='logo'/>
+                        className='logo' />
                     <div className="logo-badges">
                         <a href="https://pkg.go.dev/github.com/gogf/gf/v2" target="_blank">
-                            <img src="https://godoc.org/github.com/gogf/gf?status.svg" alt="Go Doc"/>
+                            <img src="https://godoc.org/github.com/gogf/gf?status.svg" alt="Go Doc" />
                         </a>
                         <a href="https://travis-ci.com/github/gogf/gf" target="_blank">
-                            <img src="https://api.travis-ci.com/gogf/gf.svg?branch=master" alt="Build Status"/>
+                            <img src="https://api.travis-ci.com/gogf/gf.svg?branch=master" alt="Build Status" />
                         </a>
                         <a href="https://goreportcard.com/report/github.com/gogf/gf" target="_blank">
-                            <img src="https://goreportcard.com/badge/github.com/gogf/gf" alt="Go Report"/>
+                            <img src="https://goreportcard.com/badge/github.com/gogf/gf" alt="Go Report" />
                         </a>
                         <a href="https://codecov.io/gh/gogf/gf/branch/master" target="_blank">
-                            <img src="https://codecov.io/gh/gogf/gf/branch/master/graph/badge.svg" alt="Code Coverage"/>
+                            <img src="https://codecov.io/gh/gogf/gf/branch/master/graph/badge.svg" alt="Code Coverage" />
                         </a>
                         <a href="https://github.com/gogf/gf" target="_blank">
-                            <img src="https://img.shields.io/badge/production-ready-blue.svg" alt="Production Ready"/>
+                            <img src="https://img.shields.io/badge/production-ready-blue.svg" alt="Production Ready" />
                         </a>
                         <a href="https://github.com/gogf/gf" target="_blank">
-                            <img src="https://img.shields.io/github/license/gogf/gf.svg?style=flat" alt="License"/>
+                            <img src="https://img.shields.io/github/license/gogf/gf.svg?style=flat" alt="License" />
                         </a>
-                        <br/>
+                        <br />
                         <a href="https://github.com/gogf/gf/releases" target="_blank">
-                            <img src="https://img.shields.io/github/v/release/gogf/gf" alt="Release"/>
+                            <img src="https://img.shields.io/github/v/release/gogf/gf" alt="Release" />
                         </a>
                         <a href="https://github.com/gogf/gf/pulls" target="_blank">
-                            <img src="https://img.shields.io/github/issues-pr/gogf/gf" alt="GitHub pull requests"/>
+                            <img src="https://img.shields.io/github/issues-pr/gogf/gf" alt="GitHub pull requests" />
                         </a>
                         <a href="https://github.com/gogf/gf/pulls?q=is%3Apr+is%3Aclosed" target="_blank">
                             <img src="https://img.shields.io/github/issues-pr-closed/gogf/gf"
-                                 alt="GitHub closed pull requests"/>
+                                alt="GitHub closed pull requests" />
                         </a>
                         <a href="https://github.com/gogf/gf/issues" target="_blank">
-                            <img src="https://img.shields.io/github/issues/gogf/gf" alt="GitHub issues"/>
+                            <img src="https://img.shields.io/github/issues/gogf/gf" alt="GitHub issues" />
                         </a>
                         <a href="https://github.com/gogf/gf/issues?q=is%3Aissue+is%3Aclosed" target="_blank">
-                            <img src="https://img.shields.io/github/issues-closed/gogf/gf" alt="GitHub closed issues"/>
+                            <img src="https://img.shields.io/github/issues-closed/gogf/gf" alt="GitHub closed issues" />
                         </a>
-                        <img src="https://img.shields.io/github/stars/gogf/gf?style=flat" alt="Stars"/>
-                        <img src="https://img.shields.io/github/forks/gogf/gf?style=flat" alt="Forks"/>
+                        <img src="https://img.shields.io/github/stars/gogf/gf?style=flat" alt="Stars" />
+                        <img src="https://img.shields.io/github/forks/gogf/gf?style=flat" alt="Forks" />
                     </div>
                 </div>
 
@@ -66,8 +67,8 @@ function HomepageHeader() {
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2 mt-6">
                     <div className="flex justify-center md:justify-end">
                         <Link className="button button--primary button--md"
-                            to="/quick" style={{width: '200px'}}>
-                              快速开始 →
+                            to="/quick" style={{ width: '200px' }}>
+                            快速开始 →
                         </Link>
                     </div>
 
@@ -97,7 +98,7 @@ function Features() {
                     框架特点
                 </h1>
                 <div className="text-center mb-10">
-                强大的开发框架助您的项目快速成型、易于维护、事半功倍。
+                    强大的开发框架助您的项目快速成型、易于维护、事半功倍。
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div>
@@ -225,7 +226,7 @@ function Features() {
             <div className="container mt-5 text-center">
                 <Link
                     className="button button--secondary button--md hover:bg-gray-200"
-                    to="/docs" style={{width: '200px'}}>
+                    to="/docs" style={{ width: '200px' }}>
                     了解更多 →
                 </Link>
             </div>
@@ -280,12 +281,31 @@ function Users() {
     );
 }
 
+function Contributors() {
+    return (
+        <section>
+            <div className="container mt-20">
+                <h1 className="text-center largest font-bold">
+                    贡献者列表
+                </h1>
+                <div className="text-center mb-10">
+                    感谢所有参与<code>GoFrame</code>开发的贡献者!!!
+                </div>
+                <div className="contributors text-center">
+                    <ContributorsSVG title="GoFrame Contributors" />
+                </div>
+            </div>
+        </section>
+    );
+}
+
 export default function Home(): JSX.Element {
     return (
         <Layout>
-            <HomepageHeader/>
-            <Features/>
-            <Users/>
+            <HomepageHeader />
+            <Features />
+            <Users />
+            <Contributors />
             <div className="mt-20"></div>
         </Layout>
     );
