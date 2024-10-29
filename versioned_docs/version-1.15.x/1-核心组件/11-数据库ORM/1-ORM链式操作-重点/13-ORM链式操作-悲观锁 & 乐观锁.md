@@ -12,32 +12,32 @@ hide_title: true
 
 相关方法：
 
-```  go
+```go
 func (m *Model) LockUpdate() *Model
 func (m *Model) LockShared() *Model
 ```
 
 `gdb` 模块的链式操作提供了两个方法帮助您在 `SQL` 语句中实现“悲观锁”。可以在查询中使用 `LockShared` 方法从而在运行语句时带一把”共享锁“。共享锁可以避免被选择的行被修改直到事务提交：
 
-```  go
+```go
 db.Table("users").Where("votes>?", 100).LockShared().All();
 ```
 
 上面这个查询等价于下面这条 SQL 语句：
 
-```  sql
+```sql
 SELECT * FROM `users` WHERE `votes` > 100 LOCK IN SHARE MODE
 ```
 
 此外你还可以使用 `LockUpdate` 方法。该方法用于创建 `FOR UPDATE` 锁，避免选择行被其它共享锁修改或删除：
 
-```  go
+```go
 db.Table("users").Where("votes>?", 100).LockUpdate().All();
 ```
 
 上面这个查询等价于下面这条 SQL 语句：
 
-```  sql
+```sql
 SELECT * FROM `users` WHERE `votes` > 100 FOR UPDATE
 ```
 

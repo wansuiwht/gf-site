@@ -10,7 +10,7 @@ hide_title: true
 
 **使用方式：**
 
-```
+```go
 import "github.com/gogf/gf/v2/util/gmeta"
 ```
 
@@ -20,7 +20,7 @@ import "github.com/gogf/gf/v2/util/gmeta"
 
 **方法列表：**
 
-```
+```go
 func Data(object interface{}) map[string]interface{}
 func Get(object interface{}, key string) *gvar.Var
 ```
@@ -31,7 +31,7 @@ func Get(object interface{}, key string) *gvar.Var
 
 `Data` 方法用于获取指定 `struct` 对象的元数据标签，构成 `map` 返回。
 
-```
+```go
 package main
 
 import (
@@ -63,7 +63,7 @@ func main() {
 
 `Get` 方法用于获取指定 `struct` 对象中指定名称的元数据标签信息。
 
-```
+```go
 package main
 
 import (
@@ -85,7 +85,6 @@ func main() {
 
 执行后，终端输出：
 
-```
-user
+```user
 mysql
 ```

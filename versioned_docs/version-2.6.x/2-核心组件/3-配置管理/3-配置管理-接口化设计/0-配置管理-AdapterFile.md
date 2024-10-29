@@ -29,7 +29,7 @@ database:
 
 `main.go`
 
-```
+```go
 package main
 
 import (
@@ -74,7 +74,7 @@ database:
 
 `main.go`
 
-```
+```go
 package main
 
 import (

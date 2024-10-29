@@ -30,7 +30,7 @@ hide_title: true
 
 
 
-```
+```go
 db.Model(table).Data(g.Map{
    	"id":          1,
    	"passport":    "p1",
@@ -47,7 +47,7 @@ db.Model(table).Data(g.Map{
 
 用于写入数据时如果写入的数据中存在主键或者唯一索引时，忽略错误继续执行写入。该方法定义如下：
 
-```
+```go
 func (m *Model) InsertIgnore(data ...interface{}) (result sql.Result, err error)
 ```
 
@@ -55,7 +55,7 @@ func (m *Model) InsertIgnore(data ...interface{}) (result sql.Result, err error)
 
 用于写入数据时并直接返回自增字段的 `ID`。该方法定义如下：
 
-```
+```go
 func (m *Model) InsertAndGetId(data ...interface{}) (lastInsertId int64, err error)
 ```
 
@@ -63,7 +63,7 @@ func (m *Model) InsertAndGetId(data ...interface{}) (lastInsertId int64, err err
 
 `OnDuplicate/OnDuplicateEx` 方法需要结合 `Save` 方法一起使用，用于指定 `Save` 方法的更新/不更新字段，参数为字符串、字符串数组、 `Map`。例如：
 
-```
+```go
 OnDuplicate("nickname, age")
 OnDuplicate("nickname", "age")
 OnDuplicate(g.Map{
@@ -98,7 +98,7 @@ g.Model("user").Data(g.Map{"uid": 10001, "name": "john"}).Save()
 
 也可以不使用 `Data` 方法，而给写入/保存方法直接传递数据参数：
 
-```
+```go
 g.Model("user").Insert(g.Map{"name": "john"})
 g.Model("user").Replace(g.Map{"uid": 10000, "name": "john"})
 g.Model("user").Save(g.Map{"uid": 10001, "name": "john"})

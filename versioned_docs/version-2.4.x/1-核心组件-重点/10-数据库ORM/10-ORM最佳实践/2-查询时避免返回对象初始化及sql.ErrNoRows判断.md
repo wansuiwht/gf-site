@@ -10,7 +10,7 @@ hide_title: true
 
 一个反面例子：
 
-```
+```go
 func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask, err error) {
 	out = new(model.TaskDetail)
 	err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(out)
@@ -28,7 +28,7 @@ func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask
 
 建议改进如下：
 
-```
+```go
 func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask, err error) {
 	err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(&out)
 	if err != nil {

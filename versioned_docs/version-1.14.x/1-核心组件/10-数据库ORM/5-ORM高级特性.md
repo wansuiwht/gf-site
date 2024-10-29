@@ -20,7 +20,7 @@ hide_title: true
 
 在对数据进行写入/更新时，如果给定的参数为 `map/struct` 时，给定参数的键名/属性名称将会自动按照忽略大小写及特殊字符的方式与数据表的字段进行自动识别映射。例如：
 
-``` html
+```html
 Map键名     字段名称     是否匹配
 nickname   nickname      match
 NICKNAME   nickname      match
@@ -69,7 +69,7 @@ nick name  nickname      match
 
 首先，数据表定义如下：
 
-```  sql
+```sql
 # 商品表
 CREATE TABLE `goods` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -83,7 +83,7 @@ CREATE TABLE `goods` (
 
 其次，数据表中的数据如下：
 
-``` html
+```html
 id   title     price
 1    IPhoneX   5999.99
 
@@ -91,7 +91,7 @@ id   title     price
 
 最后，示例代码如下：
 
-```  go
+```go
 if r, err := db.Table("goods").FindOne(1); err == nil {
     fmt.Printf("goods    id: %d\n",   r["id"].Int())
     fmt.Printf("goods title: %s\n",   r["title"].String())
@@ -104,7 +104,7 @@ if r, err := db.Table("goods").FindOne(1); err == nil {
 
 执行后，输出结果为：
 
-```  shell
+```shell
 goods    id: 1
 goods title: IPhoneX
 goods proce: 5999.99
@@ -115,7 +115,7 @@ goods proce: 5999.99
 
 `gdb` 模块针对于 `struct` 继承提供了良好的支持，包括参数传递、结果处理。例如：
 
-```  go
+```go
 type Base struct {
     Uid        int         `orm:"uid"`
     CreateAt   *gtime.Time `orm:"create_at"`

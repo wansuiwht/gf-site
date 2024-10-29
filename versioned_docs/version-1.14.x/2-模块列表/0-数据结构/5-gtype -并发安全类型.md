@@ -16,7 +16,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gtype"
 
 ```
@@ -29,7 +29,7 @@ import "github.com/gogf/gf/container/gtype"
 
 `gtype` 并发安全基本类型的使用非常简单，往往就类似以下几个方法(以 `gtype.Int` 类型举例)：
 
-```  go
+```go
 func NewInt(value ...int) *Int
 func (v *Int) Add(delta int) (new int)
 func (v *Int) Cas(old, new int) bool
@@ -42,7 +42,7 @@ func (v *Int) Val() int
 
 #### 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -68,7 +68,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 0
 10
 9
@@ -79,7 +79,7 @@ func main() {
 
 `gtype` 模块下的所有容器类型均实现了标准库 `json` 数据格式的序列化/反序列化接口。 1\. `Marshal` “\`go package main
 
-```` undefined
+````undefined
 import (
     "encoding/json"
     "fmt"
@@ -113,7 +113,7 @@ func main() {
 
 
 
-   ```  go
+   ```go
    package main
 
 
@@ -144,7 +144,7 @@ func main() {
 
 
 
-   ``` undefined
+   ```undefined
    {1 john [100,99,98]}
 
    ```
@@ -154,7 +154,7 @@ func main() {
 
 基准测试结果如下:
 
-```  shell
+```shell
 john@john-B85M:~/Workspace/Go/GOPATH/src/github.com/gogf/gf/container/gtype$ go test -bench=".*"  -benchmem
 goos: linux
 goarch: amd64

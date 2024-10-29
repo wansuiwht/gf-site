@@ -20,7 +20,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gmap"
 
 ```
@@ -33,7 +33,7 @@ import "github.com/gogf/gf/container/gmap"
 
 `gmap` 支持并发安全选项开关，在默认情况下是 `非并发安全` 的，开发者可以选择开启 `gmap` 的并发安全特性(传递初始化开关参数 `safe` 参数值为 `true`, 必须在初始化时设定，不能运行时动态设定)。如：
 
-```  go
+```go
 m := gmap.New(true)
 
 ```
@@ -44,7 +44,7 @@ m := gmap.New(true)
 
 ### 基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -123,7 +123,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 10
 12
 true
@@ -143,7 +143,7 @@ true
 
 我们来看一下三种不同类型 `map` 的有序性遍历示例。
 
-```  go
+```go
 package main
 
 import (
@@ -179,7 +179,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 HashMap   Keys: [4 6 8 7 9 2 3 1 5]
 HashMap Values: [6 8 4 3 1 5 7 9 2]
 ListMap   Keys: [2 3 1 5 4 6 8 7 9]
@@ -191,7 +191,7 @@ TreeMap Values: [1 2 3 4 5 6 7 8 9]
 
 ### `FilterEmpty/FilterNil` 空值过滤
 
-```  go
+```go
 package main
 
 import (
@@ -227,7 +227,7 @@ func main() {
 
 ### `Flip` 键值对反转
 
-```  go
+```go
 package main
 
 import (
@@ -253,7 +253,7 @@ func main() {
 
 ### `Keys/Values` 键名/数值列表
 
-```  go
+```go
 package main
 
 import (
@@ -282,7 +282,7 @@ func main() {
 
 ### `Pop/Pops` 随机出栈
 
-```  go
+```go
 package main
 
 import (
@@ -321,7 +321,7 @@ func main() {
 
 方法具体描述请查看接口文档或源码注释。
 
-```  go
+```go
 package main
 
 import (
@@ -345,7 +345,7 @@ func main() {
 
 ### `Merge` 字典表合并
 
-```  go
+```go
 package main
 
 import (
@@ -372,7 +372,7 @@ func main() {
 
 1\. `Marshal`
 
-```
+```go
 package main
 
 import (
@@ -402,7 +402,7 @@ func main() {
 
 2. `Unmarshal`
 
-```  go
+```go
 package main
 
 import (
@@ -422,7 +422,7 @@ func main() {
 
 执行后，输出结果：
 
-``` undefined
+```undefined
 map[name:john score:100]
 
 ```
@@ -433,7 +433,7 @@ map[name:john score:100]
 
 [https://github.com/gogf/gf/blob/master/container/gmap/gmap\_z\_bench\_safe\_test.go](https://github.com/gogf/gf/blob/master/container/gmap/gmap_z_bench_safe_test.go)
 
-```  shell
+```shell
 goos: linux
 goarch: amd64
 Benchmark_IntIntMap_Set-4               10000000               202 ns/op              15 B/op          0 allocs/op
@@ -457,7 +457,7 @@ Benchmark_StrStrMap_Get-4               20000000              91.9 ns/op        
 
 [https://github.com/gogf/gf/blob/master/container/gmap/gmap\_z\_bench\_unsafe\_test.go](https://github.com/gogf/gf/blob/master/container/gmap/gmap_z_bench_unsafe_test.go)
 
-```  shell
+```shell
 goos: linux
 goarch: amd64
 Benchmark_Unsafe_IntIntMap_Set-4        10000000               318 ns/op              62 B/op          0 allocs/op
@@ -481,7 +481,7 @@ Benchmark_Unsafe_StrStrMap_Get-4         5000000               229 ns/op        
 
 [https://github.com/gogf/gf/blob/master/container/gmap/gmap\_z\_bench\_maps\_test.go](https://github.com/gogf/gf/blob/master/container/gmap/gmap_z_bench_maps_test.go)
 
-```  shell
+```shell
 goos: linux
 goarch: amd64
 Benchmark_HashMap_Set-4                  5000000               349 ns/op              40 B/op          2 allocs/op
@@ -499,7 +499,7 @@ go语言从 `1.9` 版本开始引入了并发安全的 `sync.Map`，但 `gmap` �
 
 我们来看看基准测试对比结果： [https://github.com/gogf/gf/blob/master/container/gmap/gmap\_z\_bench\_syncmap\_test.go](https://github.com/gogf/gf/blob/master/container/gmap/gmap_z_bench_syncmap_test.go)
 
-```  shell
+```shell
 goos: linux
 goarch: amd64
 Benchmark_GMapSet-4                     10000000               209 ns/op              15 B/op          0 allocs/op

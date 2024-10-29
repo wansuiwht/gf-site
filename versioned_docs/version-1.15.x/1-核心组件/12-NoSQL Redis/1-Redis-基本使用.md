@@ -12,7 +12,7 @@ hide_title: true
 
 ### 基本使用
 
-```
+```go
 package main
 
 import (
@@ -29,7 +29,7 @@ func main() {
 
 ### `HSET/HGETALL` 操作
 
-```
+```go
 package main
 
 import (
@@ -67,7 +67,7 @@ func main() {
 
 我们可以通过 `map` 参数执行 `HMSET` 操作。
 
-```
+```go
 package main
 
 import (
@@ -102,7 +102,7 @@ func main() {
 
 我们可以通过 `struct` 参数执行 `HMSET` 操作。
 
-```
+```go
 package main
 
 import (
@@ -148,7 +148,7 @@ func main() {
 
 ### 基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -169,7 +169,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 v
 
 ```
@@ -178,7 +178,7 @@ v
 
 `Send` 可以执行批量指令，并通过 `Receive` 方法一一获取返回结果。
 
-```  go
+```go
 package main
 
 import (
@@ -204,7 +204,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 bar
 
 ```
@@ -213,7 +213,7 @@ bar
 
 我们可以通过 `Redis` 的 `SUBSCRIBE/PUBLISH` 命令实现订阅/发布模式。
 
-```  go
+```go
 package main
 
 import (
@@ -244,7 +244,7 @@ func main() {
 
 另外打开一个终端通过 `redis-cli` 命令进入Redis Server，发布一条消息：
 
-```  shell
+```shell
 $ redis-cli
 127.0.0.1:6379> publish channel test
 (integer) 1
@@ -254,7 +254,7 @@ $ redis-cli
 
 随后程序终端立即打印出从Redis Server获取的数据：
 
-``` html
+```html
 [message channel test]
 
 ```
@@ -265,7 +265,7 @@ $ redis-cli
 
 ### `map` 存取
 
-```  go
+```go
 package main
 
 import (
@@ -299,7 +299,7 @@ func main() {
 
 ### `struct` 存取
 
-```  go
+```go
 package main
 
 import (

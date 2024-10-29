@@ -18,7 +18,7 @@ Go语言中的 `goroutine` 虽然相对于系统线程来说比较轻量级（�
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/v2/os/grpool"
 
 ```
@@ -29,7 +29,7 @@ import "github.com/gogf/gf/v2/os/grpool"
 
 **接口文档**：
 
-```
+```go
 func Add(f func()) error
 func Jobs() int
 func Size() int
@@ -54,7 +54,7 @@ type Pool
 
 ### 使用默认的 `goroutine` 池，限制 `100` 个 `goroutine` 执行 `1000` 个任务
 
-```
+```go
 package main
 
 import (
@@ -95,7 +95,7 @@ func main() {
 
 ### 异步传参：来个新手容易出错的例子
 
-```
+```go
 package main
 
 import (
@@ -125,8 +125,7 @@ func main() {
 
 我们这段代码的目的是要顺序地打印出0-9，然而运行后却输出：
 
-```
-10
+```10
 10
 10
 10
@@ -144,7 +143,7 @@ func main() {
 
 **1)、使用go关键字**
 
-```  go
+```go
 package main
 
 import (
@@ -168,8 +167,7 @@ func main() {
 
 执行后，输出结果为：
 
-```
-0
+```0
 9
 3
 4
@@ -185,7 +183,7 @@ func main() {
 
 **2)、使用临时变量**
 
-```
+```go
 package main
 
 import (
@@ -216,8 +214,7 @@ func main() {
 
 执行后，输出结果为：
 
-```
-9
+```9
 0
 1
 2
@@ -235,7 +232,7 @@ func main() {
 
 `AddWithRecover` 将新作业推送到具有指定恢复功能的池中。当 `userFunc` 执行过程中出现 `panic` 时，会调用可选的 `Recovery Func`。如果没有传入 `Recovery Func` 或赋空，则忽略 `userFunc` 引发的 `panic`。该作业将异步执行。
 
-```
+```go
 package main
 
 import (
@@ -272,7 +269,7 @@ func main() {
 
 **1)、grpool**
 
-```
+```go
 package main
 
 import (
@@ -307,7 +304,7 @@ func main() {
 
 **2)、goroutine**
 
-```
+```go
 package main
 
 import (
@@ -336,7 +333,7 @@ func main() {
 
 测试结果为两个程序各运行3次取平均值。
 
-```  shell
+```shell
 grpool:
     goroutine count: 847313
      memory   spent: ~2.1 G

@@ -12,7 +12,7 @@ hide_title: true
 
 常用方法：
 
-```  go
+```go
 type Client
     func NewClient() *Client
     func (c *Client) Get(url string, data ...interface{}) (*ClientResponse, error)
@@ -88,7 +88,7 @@ type Client
 
 `ghttp.ClientResponse` 为HTTP对应请求的返回结果对象，该对象继承于 `http.Response`，可以使用 `http.Response` 的所有方法。在此基础之上增加了以下几个方法：
 
-```  go
+```go
 func (r *ClientResponse) GetCookie(key string) string
 func (r *ClientResponse) GetCookieMap() map[string]string
 func (r *ClientResponse) Raw() string

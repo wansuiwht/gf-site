@@ -10,7 +10,7 @@ HTTP客户端发起请求时可以设置代理服务器地址 `proxyURL`，该�
 
 方法列表：
 
-```  go
+```go
 func (c *Client) SetProxy(proxyURL string)
 func (c *Client) Proxy(proxyURL string) *Client
 
@@ -22,7 +22,7 @@ func (c *Client) Proxy(proxyURL string) *Client
 
 使用 `SetProxy` 配置方法。
 
-```  go
+```go
 client := g.Client()
 client.SetProxy("http://127.0.0.1:1081")
 client.SetTimeout(5 * time.Second)
@@ -38,7 +38,7 @@ response.RawDump()
 
 使用 `Proxy` 链式方法。
 
-```  go
+```go
 client := g.Client()
 response, err := client.Proxy("http://127.0.0.1:1081").Get("https://api.ip.sb/ip")
 if err != nil {

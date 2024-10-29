@@ -6,7 +6,7 @@ hide_title: true
 
 ## 示例1，提交 `Json` 请求
 
-```
+```go
 g.Client().ContentJson().PostContent(ctx, "http://order.svc/v1/order", g.Map{
     "uid"         : 1,
     "sku_id"      : 10000,
@@ -23,7 +23,7 @@ g.Client().ContentJson().PostContent(ctx, "http://order.svc/v1/order", g.Map{
 
 ## 示例2，提交 `Xml` 请求
 
-```
+```go
 g.Client().ContentXml().PostContent(ctx, "http://order.svc/v1/order", g.Map{
     "uid"         : 1,
     "sku_id"      : 10000,
@@ -42,7 +42,7 @@ g.Client().ContentXml().PostContent(ctx, "http://order.svc/v1/order", g.Map{
 
 我们可以通过 `ContentType` 方法自定义客户端请求的 `ContentType`。例如：
 
-```
+```go
 contentType := "application/x-www-form-urlencoded"
 g.Client().ContentType(contentType).PostContent(ctx, "http://file.svc/v1/file", g.Map{
     "name"  : "MyFile",

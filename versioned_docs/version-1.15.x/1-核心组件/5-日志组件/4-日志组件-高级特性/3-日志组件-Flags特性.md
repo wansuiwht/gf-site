@@ -6,7 +6,7 @@ hide_title: true
 
 `flags` 用于控制日志组件的额外特性开关，这些属性使用常量进行组合控制，包括：
 
-```  go
+```go
 F_ASYNC      = 1 << iota // 开启日志异步输出
 F_FILE_LONG              // 打印调用行号信息，完整绝对路径，例如：/a/b/c/d.go:23
 F_FILE_SHORT             // 打印调用行号信息，仅打印文件名，例如：d.go:23，覆盖 F_FILE_LONG.
@@ -19,7 +19,7 @@ F_TIME_STD = F_TIME_DATE | F_TIME_MILLI // (默认)打印当前日期+时间+毫
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -40,7 +40,7 @@ func main() {
 
 执行后，终端输出结果为：
 
-``` html
+```html
 09:25:49 glog_flags.go:10: time and short line number
 09:25:49.310 /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf/geg/os/glog/glog_flags.go:12: time with millisecond and long line number
 2019-05-23 09:25:49.310 /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf/geg/os/glog/glog_flags.go:14: standard time format and long line number

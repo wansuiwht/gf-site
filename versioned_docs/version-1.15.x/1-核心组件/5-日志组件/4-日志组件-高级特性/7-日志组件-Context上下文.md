@@ -10,7 +10,7 @@ hide_title: true
 
 我们推荐使用配置文件来对上下文中的键名进行配置，例如：
 
-```  toml
+```toml
 # 日志组件配置
 [logger]
     Path    = "/var/log/my-app"
@@ -26,7 +26,7 @@ hide_title: true
 
 在输出日志的时候，需要通过 `Ctx` 链式操作方法指定输出的 `context.Context` 接口对象，例如：
 
-```  go
+```go
 ctx := context.WithValue(context.Background(), "Trace-Id", "123456789")
 g.Log().Ctx(ctx).Error("runtime error")
 

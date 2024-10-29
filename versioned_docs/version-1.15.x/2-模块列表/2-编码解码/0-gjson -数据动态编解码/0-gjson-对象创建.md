@@ -12,7 +12,7 @@ hide_title: true
 
 #### 通过 `JSON` 数据创建
 
-```  go
+```go
 jsonContent := `{"name":"john", "score":"100"}`
 j := gjson.New(jsonContent)
 fmt.Println(j.Get("name"))
@@ -25,7 +25,7 @@ fmt.Println(j.Get("score"))
 
 #### 通过 `XML` 数据创建
 
-```  go
+```go
 jsonContent := `<?xml version="1.0" encoding="UTF-8"?><doc><name>john</name><score>100</score></doc>`
 j := gjson.New(jsonContent)
 // Note that there's root node in the XML content.
@@ -39,7 +39,7 @@ fmt.Println(j.Get("doc.score"))
 
 #### 通过 `Strcut` 对象创建
 
-```  go
+```go
 type Me struct {
     Name  string `json:"name"`
     Score int    `json:"score"`
@@ -59,7 +59,7 @@ fmt.Println(j.Get("score"))
 
 #### 自定义 `Struct` 转换标签
 
-```  go
+```go
 type Me struct {
     Name  string `tag:"name"`
     Score int    `tag:"score"`
@@ -95,7 +95,7 @@ fmt.Println(j.Get("Title"))
 
 
 
-```  go
+```go
     jsonFilePath := gdebug.TestDataPath("json", "data1.json")
     j, _ := gjson.Load(jsonFilePath)
     fmt.Println(j.Get("name"))
@@ -108,7 +108,7 @@ fmt.Println(j.Get("Title"))
 
 
 
-```  go
+```go
     jsonFilePath := gdebug.TestDataPath("json", "data1.xml")
     j, _ := gjson.Load(jsonFilePath)
     fmt.Println(j.Get("doc.name"))
@@ -118,7 +118,7 @@ fmt.Println(j.Get("Title"))
 
 #### 通过 `LoadContent` 创建
 
-```  go
+```go
 jsonContent := `{"name":"john", "score":"100"}`
 j, _ := gjson.LoadContent(jsonContent)
 fmt.Println(j.Get("name"))

@@ -6,7 +6,7 @@ hide_title: true
 
 ## 执行Shell命令
 
-```  go
+```go
 package main
 
 import (
@@ -24,7 +24,7 @@ func main () {
 
 执行后，可以看到程序等待了3秒之后，输出结果为：
 
-``` html
+```html
 result: hello gf!
 
 <nil>
@@ -35,7 +35,7 @@ result: hello gf!
 
 由 `gproc.Manager` 对象创建的进程都默认带子进程标识，在子进程程序中可以通过 `gproc.IsChild()` 方法来判断自身是否为子进程。
 
-```  go
+```go
 package main
 
 import (
@@ -67,7 +67,7 @@ func main () {
 
 执行后，终端打印结果如下：
 
-```  shell
+```shell
 2018-05-18 14:35:41.360 28285: Hi, I am child, waiting 3 seconds to die
 2018-05-18 14:35:42.361 28285: 1
 2018-05-18 14:35:43.361 28285: 2
@@ -85,7 +85,7 @@ func main () {
 
 
 
-```  shell
+```shell
     $ ps aux | grep gedit
     john  28536  3.6  0.6 946208 56412 ?  Sl  14:39  0:00 gedit /home/john/Documents/text
 ```
@@ -95,7 +95,7 @@ func main () {
 
 
 
-```  go
+```go
 package main
 
 
@@ -122,7 +122,7 @@ func main () {
 
 
 
-```  shell
+```shell
 28536 was killed
 
 ```

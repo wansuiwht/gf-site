@@ -27,7 +27,7 @@ hide_title: true
 
 **代码示例**
 
-```
+```go
 t1, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 10:00:00")
 t2, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 11:00:00")
 db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
@@ -36,7 +36,7 @@ db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
 
 这里由于通过 `time.Parse` 创建的 `time.Time` 时间对象是 `UTC` 时区，那么提交到数据库执行时将会被底层的 `driver` 修改为 `+8` 时区。
 
-```
+```go
 t1, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 10:00:00", time.Local)
 t2, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 11:00:00", time.Local)
 db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
@@ -58,7 +58,7 @@ db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
 
 **代码示例**
 
-```
+```go
 t1, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 10:00:00")
 t2, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 11:00:00")
 db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
@@ -67,7 +67,7 @@ db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
 
 这里由于通过 `time.Parse` 创建的 `time.Time` 时间对象是 `UTC` 时区，那么提交到数据库执行时将不会被底层的 `driver` 修改。
 
-```
+```go
 t1, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 10:00:00", time.Local)
 t2, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 11:00:00", time.Local)
 db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
@@ -82,7 +82,7 @@ db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()
 
 也就是说，当你使用 `time.Time` 对象作为时间参数时，无论如何你都会需要注意时区自动转换的问题。因此，为了避免这样的心智负担，防止大家踩坑，在保留对 `time.Time` 参数支持的同时， `ORM` 增加了对 `gtime.Time` 类型参数的支持，该类型不会涉及到时区转换困惑的问题。例如：
 
-```
+```go
 t1 := gtime.New("2020-10-27 10:00:00")
 t2 := gtime.New("2020-10-27 11:00:00")
 db.Model("user").Where("create_time>? and create_time<?", t1, t2).One()

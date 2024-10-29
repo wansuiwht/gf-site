@@ -10,7 +10,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/os/gmutex"
 ```
 
@@ -53,7 +53,7 @@ Benchmark_GMutex_TryRLock-4            100000000           16.8 ns/op
 
 ### 示例1，基本使用
 
-```
+```go
 package main
 
 import (
@@ -89,7 +89,7 @@ func main() {
 
 执行后，终端输出：
 
-```
+```html
 2019-07-13 16:19:55.417 Lock: 0
 2019-07-13 16:19:56.421 Lock: 1
 2019-07-13 16:19:57.424 RLock: 0
@@ -116,7 +116,7 @@ func main() {
 
 ### 示例2， `*Func` 使用
 
-```
+```go
 package main
 
 import (
@@ -143,7 +143,7 @@ func main() {
 
 执行后，终端输出：
 
-```
+```html
 2019-07-13 16:28:10.381 lock func1
 2019-07-13 16:28:11.385 lock func2
 ```

@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/debug/gdebug"
 
 ```
@@ -17,7 +17,7 @@ import "github.com/gogf/gf/debug/gdebug"
 
 [https://godoc.org/github.com/gogf/gf/debug/gdebug](https://godoc.org/github.com/gogf/gf/debug/gdebug)
 
-```  go
+```go
 func Caller(skip ...int) (function string, path string, line int)
 func CallerDirectory() string
 func CallerFileLine() string

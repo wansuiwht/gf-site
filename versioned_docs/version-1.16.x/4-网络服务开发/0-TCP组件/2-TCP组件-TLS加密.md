@@ -10,7 +10,7 @@ hide_title: true
 
 [https://github.com/gogf/gf/tree/master/.example/net/gtcp/tls](https://github.com/gogf/gf/tree/master/.example/net/gtcp/tls)
 
-```  go
+```go
 package main
 
 import (
@@ -68,14 +68,14 @@ func main() {
 
 执行后，可以看到客户端执行时报错：
 
-``` html
+```html
 panic: x509: certificate has expired or is not yet valid
 
 ```
 
 那是因为我们的证书是手动创建的，并且已经过期了，为了演示方便，我们在客户端代码中去掉客户端对证书的校验。
 
-```  go
+```go
 package main
 
 import (
@@ -138,7 +138,7 @@ func main() {
 
 执行后，终端输出结果为：
 
-``` html
+```html
 0
 1
 2

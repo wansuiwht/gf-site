@@ -6,7 +6,7 @@ hide_title: true
 
 `Struct` 校验常使用以下链式操作方式：
 
-```
+```go
 g.Validator().Data(object).Run(ctx)
 ```
 
@@ -27,7 +27,7 @@ g.Validator().Data(object).Run(ctx)
 
 ## `gvalid tag` 使用示例
 
-```
+```go
 package main
 
 import (
@@ -85,7 +85,7 @@ func main() {
 
 ## 使用 `map` 指定校验规则
 
-```
+```go
 package main
 
 import (
@@ -138,7 +138,7 @@ func main() {
 
 支持递归的结构体校验（嵌套校验），即如果属性也是结构体（也支持嵌套结构体（ `embedded`）），那么将会自动将该属性执行递归校验。使用示例：
 
-```
+```go
 package main
 
 import (
@@ -173,7 +173,7 @@ func main() {
 
 或者属性为嵌套结构体（ `embedded`）的场景：
 
-```
+```go
 package main
 
 import (

@@ -10,7 +10,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/encoding/ghash"
 ```
 
@@ -63,7 +63,7 @@ Benchmark_AP64-12      	28123783	        42.48 ns/op
 
 测试结果与测试内容有关联性和随机性，我这里通过 `uint64` 数值的范围遍历来进行简单的重复性测试，本身不够严谨，因此仅供趣味性参考。
 
-```
+```go
 package main
 
 import (

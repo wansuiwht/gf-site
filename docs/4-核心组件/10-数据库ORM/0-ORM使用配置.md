@@ -14,13 +14,13 @@ hide_title: true
 
 简化配置通过配置项 `link` 指定，格式如下：
 
-```
+```html
 type:username:password@protocol(address)[/dbname][?param1=value1&...&paramN=valueN]
 ```
 
 即：
 
-```
+```html
 类型:账号:密码@协议(地址)/数据库名称?特性配置
 ```
 
@@ -32,7 +32,7 @@ type:username:password@protocol(address)[/dbname][?param1=value1&...&paramN=valu
 
 示例：
 
-```
+```yaml
 database:
   default:
     link:  "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
@@ -60,7 +60,7 @@ database:
 
 完整的 `config.yaml` 数据库配置项的数据格式形如下：
 
-```
+```yaml
 database:
   分组名称:
     host:                  "地址"
@@ -95,7 +95,7 @@ database:
 
 完整的数据库配置项示例( `YAML`)：
 
-```
+```yaml
 database:
   default:
     host:          "127.0.0.1"
@@ -124,7 +124,7 @@ database:
 
 `gdb` 的配置支持集群模式，数据库配置中每一项分组配置均可以是多个节点，支持负载均衡权重策略，例如：
 
-```
+```yaml
 database:
   default:
   - link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
@@ -147,7 +147,7 @@ database:
 
 `gdb` 支持日志输出，内部使用的是 `glog.Logger` 对象实现日志管理，并且可以通过配置文件对日志对象进行配置。默认情况下 `gdb` 关闭了 `DEBUG` 日志输出，如果需要打开 `DEBUG` 信息需要将数据库的 `debug` 参数设置为 `true`。以下是为一个配置文件示例：
 
-```
+```yaml
 database:
   logger:
     path:    "/var/log/gf-app/sql"
@@ -234,7 +234,7 @@ func SetConfig(c Config)
 
 默认分组表示，如果获取数据库对象时不指定配置分组名称，那么 `gdb` 默认读取的配置分组。例如： `gdb.NewByGroup()` 可获取一个默认分组的数据库对象。简单的做法，我们可以通过 `gdb` 包的 `SetConfig` 配置管理方法进行自定义的数据库全局配置，例如：
 
-```
+```go
 gdb.SetConfig(gdb.Config {
     "default" : gdb.ConfigGroup {
         gdb.ConfigNode {
@@ -281,7 +281,7 @@ gdb.SetConfig(gdb.Config {
 
 在某些场景下，数据库的账号密码无法明文配置到配置文件中，需要进行一定的加密。在连接数据库的时候，再对配置文件中加密的字段进行解密处理。这种需求可以通过自定义 `Driver` 来实现（关于 `Driver` 的详细介绍请参考章节： [ORM接口开发](/docs/核心组件/数据库ORM/ORM接口开发)）。以 `mysql` 为例，我们可以自己编写一个 `Driver`，包裹框架社区组件中的 `mysql driver`，并且覆盖它的 `Open` 方法即可。代码示例：
 
-```
+```go
 import (
 	"database/sql"
 

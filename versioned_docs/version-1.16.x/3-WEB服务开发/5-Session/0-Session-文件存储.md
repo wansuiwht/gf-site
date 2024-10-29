@@ -23,7 +23,7 @@ hide_title: true
 
 [https://github.com/gogf/gf/blob/master/.example/os/gsession/storage-file/file.go](https://github.com/gogf/gf/blob/master/.example/os/gsession/storage-file/file.go)
 
-```  go
+```go
 package main
 
 import (

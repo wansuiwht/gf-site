@@ -8,7 +8,7 @@ hide_title: true
 
 ## 示例1，简单示例
 
-```  go
+```go
 package main
 
 import (
@@ -34,7 +34,7 @@ func main() {
 
 
 
-``` undefined
+```undefined
 $ curl "http://127.0.0.1:8199/?name=john&pass=123"
 name: john, pass: 123
 
@@ -45,7 +45,7 @@ name: john, pass: 123
 
 
 
-``` undefined
+```undefined
 $ curl -d "name=john&pass=123" "http://127.0.0.1:8199/"
 name: john, pass: 123
 
@@ -56,7 +56,7 @@ name: john, pass: 123
 
 
 
-``` undefined
+```undefined
 $ curl -d '{"name":"john","pass":"123"}' "http://127.0.0.1:8199/"
 name: john, pass: 123
 
@@ -67,7 +67,7 @@ name: john, pass: 123
 
 
 
-``` undefined
+```undefined
 $ curl -d '<?xml version="1.0" encoding="UTF-8"?><doc><name>john</name><pass>123</pass></doc>' "http://127.0.0.1:8199/"
 name: john, pass: 123
 
@@ -80,7 +80,7 @@ name: john, pass: 123
 
 ## 示例2，对象转换及校验
 
-```  go
+```go
 package main
 
 import (
@@ -137,7 +137,7 @@ func main() {
 
 
 
-``` undefined
+```undefined
 $ curl -d '{"username":"johngcn","password1":"123456","password2":"123456"}' "http://127.0.0.1:8199/register"
 {"code":0,"error":"","data":{"Name":"johngcn","Pass":"123456","Pass2":"123456"}}
 
@@ -155,7 +155,7 @@ $ curl -d '{"username":"johngcn","password1":"123456","password2":"123"}' "http:
 
 
 
-``` undefined
+```undefined
 $ curl -d '<?xml version="1.0" encoding="UTF-8"?><doc><username>johngcn</username><password1>123456</password1><password2>123456</password2></doc>' "http://127.0.0.1:8199/register"
 {"code":0,"error":"","data":{"Name":"johngcn","Pass":"123456","Pass2":"123456"}}
 

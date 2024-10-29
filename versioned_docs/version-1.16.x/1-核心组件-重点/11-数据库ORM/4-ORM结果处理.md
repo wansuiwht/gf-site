@@ -8,7 +8,7 @@ hide_title: true
 
 查询结果的数据结构如下：
 
-```  go
+```go
 type Value  = *gvar.Var              // 返回数据表记录值
 type Record   map[string]Value       // 返回数据表记录键值对
 type Result   []Record               // 返回数据表记录列表
@@ -27,7 +27,7 @@ type Result   []Record               // 返回数据表记录列表
 
 首先，我们的用户表结构是这样的（简单设计的示例表）：
 
-```  sql
+```sql
 CREATE TABLE `user` (
   `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL DEFAULT '' COMMENT '昵称',
@@ -39,7 +39,7 @@ CREATE TABLE `user` (
 
 其次，我们的表数据如下：
 
-``` html
+```html
 uid  name   site
 1    john   https://goframe.org
 
@@ -47,7 +47,7 @@ uid  name   site
 
 最后，我们的示例程序如下：
 
-```  go
+```go
 package main
 
 import (
@@ -75,7 +75,7 @@ func main() {
 
 执行后，输出结果为：
 
-```  json
+```json
 {"Uid":1,"Name":"john"}
 
 ```
@@ -94,7 +94,7 @@ func main() {
 
 以下是几个匹配的示例：
 
-``` html
+```html
 记录键名    struct属性     是否匹配
 name       Name           match
 Email      Email          match
@@ -120,7 +120,7 @@ Nick-Name  Nick_Name      match
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -149,7 +149,7 @@ func main() {
 
 执行后，输出结果为：
 
-```  json
+```json
 [{"Uid":1,"Name":"john","Site":"https://goframe.org"}]
 
 ```

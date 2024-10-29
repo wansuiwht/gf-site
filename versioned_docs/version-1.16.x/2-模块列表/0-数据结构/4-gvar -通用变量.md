@@ -16,7 +16,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gvar"
 ```
 
@@ -26,7 +26,7 @@ import "github.com/gogf/gf/container/gvar"
 
 ### 基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -55,7 +55,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 123
 123
 123
@@ -74,7 +74,7 @@ func main() {
 
 
 
-```  go
+```go
     package main
 
     import (
@@ -105,7 +105,7 @@ func main() {
 
 
 
-``` undefined
+```undefined
     {"Id":1,"Name":"john","Scores":[100,99,98]}
 ```
 
@@ -114,7 +114,7 @@ func main() {
 
 
 
-```  go
+```go
     package main
 
     import (
@@ -142,6 +142,6 @@ func main() {
 
 
 
-``` undefined
+```undefined
     {1 john [100,99,98]}
 ```

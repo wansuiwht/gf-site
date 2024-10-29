@@ -10,7 +10,7 @@ hide_title: true
 
 ### 基本使用
 
-```
+```go
 package main
 
 import (
@@ -30,7 +30,7 @@ func main() {
 
 ### `HSET/HGETALL` 操作
 
-```
+```go
 package main
 
 import (
@@ -70,7 +70,7 @@ func main() {
 
 我们可以通过 `map` 参数执行 `HMSET` 操作。
 
-```
+```go
 package main
 
 import (
@@ -111,7 +111,7 @@ func main() {
 
         ` 参数执行 `HMSET` 操作。
 
-```
+```go
 package main
 
 import (
@@ -157,7 +157,7 @@ func main() {
 
 ### `map` 存取
 
-```
+```go
 package main
 
 import (
@@ -192,7 +192,7 @@ func main() {
 
 ### `struct` 存取
 
-```
+```go
 package main
 
 import (

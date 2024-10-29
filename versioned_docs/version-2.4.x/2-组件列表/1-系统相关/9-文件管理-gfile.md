@@ -10,7 +10,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/os/gfile"
 ```
 
@@ -35,7 +35,7 @@ import "github.com/gogf/gf/v2/os/gfile"
 
 
 
-```
+```go
 func GetContents(path string) string
 ```
 
@@ -49,7 +49,7 @@ func GetContents(path string) string
 
 
 
-```
+```go
 func ExampleGetContents() {
   	// init
   	var (
@@ -84,7 +84,7 @@ func ExampleGetContents() {
 
 
 
-```
+```go
 func GetContentsWithCache(path string, duration ...time.Duration) string
 ```
 
@@ -98,7 +98,7 @@ func GetContentsWithCache(path string, duration ...time.Duration) string
 
 
 
-```
+```go
 func ExampleGetContentsWithCache() {
   	// init
   	var (
@@ -142,7 +142,7 @@ func ExampleGetContentsWithCache() {
 
 
 
-```
+```go
 func GetBytesWithCache(path string, duration ...time.Duration) []byte
 ```
 
@@ -156,7 +156,7 @@ func GetBytesWithCache(path string, duration ...time.Duration) []byte
 
 
 
-```
+```go
 func ExampleGetBytesWithCache() {
   	// init
   	var (
@@ -200,7 +200,7 @@ func ExampleGetBytesWithCache() {
 
 
 
-```
+```go
 func GetBytes(path string) []byte
 ```
 
@@ -214,7 +214,7 @@ func GetBytes(path string) []byte
 
 
 
-```
+```go
 func ExampleGetBytes() {
   	// init
   	var (
@@ -249,7 +249,7 @@ func ExampleGetBytes() {
 
 
 
-```
+```go
 func GetBytesTilChar(reader io.ReaderAt, char byte, start int64) ([]byte, int64)
 ```
 
@@ -263,7 +263,7 @@ func GetBytesTilChar(reader io.ReaderAt, char byte, start int64) ([]byte, int64)
 
 
 
-```
+```go
 func ExampleGetBytesTilChar() {
   	// init
   	var (
@@ -303,7 +303,7 @@ func ExampleGetBytesTilChar() {
 
 
 
-```
+```go
 func GetBytesByTwoOffsets(reader io.ReaderAt, start int64, end int64) []byte
 ```
 
@@ -317,7 +317,7 @@ func GetBytesByTwoOffsets(reader io.ReaderAt, start int64, end int64) []byte
 
 
 
-```
+```go
 func ExampleGetBytesByTwoOffsets() {
   	// init
   	var (
@@ -355,7 +355,7 @@ func ExampleGetBytesByTwoOffsets() {
 
 
 
-```
+```go
 func putContents(path string, data []byte, flag int, perm os.FileMode) error
 ```
 
@@ -369,7 +369,7 @@ func putContents(path string, data []byte, flag int, perm os.FileMode) error
 
 
 
-```
+```go
 func ExamplePutContents() {
   	// init
   	var (
@@ -404,7 +404,7 @@ func ExamplePutContents() {
 
 
 
-```
+```go
 func PutBytes(path string, content []byte) error
 ```
 
@@ -418,7 +418,7 @@ func PutBytes(path string, content []byte) error
 
 
 
-```
+```go
 func ExamplePutBytes() {
   	// init
   	var (
@@ -452,7 +452,7 @@ func ExamplePutBytes() {
 
 
 
-```
+```go
 func PutContentsAppend(path string, content string) error
 ```
 
@@ -466,7 +466,7 @@ func PutContentsAppend(path string, content string) error
 
 
 
-```
+```go
 func ExamplePutContentsAppend() {
   	// init
   	var (
@@ -508,7 +508,7 @@ func ExamplePutContentsAppend() {
 
 
 
-```
+```go
 func PutBytesAppend(path string, content []byte) error
 ```
 
@@ -522,7 +522,7 @@ func PutBytesAppend(path string, content []byte) error
 
 
 
-```
+```go
 func ExamplePutBytesAppend() {
   	// init
   	var (
@@ -563,7 +563,7 @@ func ExamplePutBytesAppend() {
 
 
 
-```
+```go
 func GetNextCharOffset(reader io.ReaderAt, char byte, start int64) int64
 ```
 
@@ -577,7 +577,7 @@ func GetNextCharOffset(reader io.ReaderAt, char byte, start int64) int64
 
 
 
-```
+```go
 func ExampleGetNextCharOffset() {
   	// init
   	var (
@@ -615,7 +615,7 @@ func ExampleGetNextCharOffset() {
 
 
 
-```
+```go
 func GetNextCharOffsetByPath(path string, char byte, start int64) int64
 ```
 
@@ -629,7 +629,7 @@ func GetNextCharOffsetByPath(path string, char byte, start int64) int64
 
 
 
-```
+```go
 func ExampleGetNextCharOffsetByPath() {
   	// init
   	var (
@@ -664,7 +664,7 @@ func ExampleGetNextCharOffsetByPath() {
 
 
 
-```
+```go
 func GetBytesTilCharByPath(path string, char byte, start int64) ([]byte, int64)
 ```
 
@@ -678,7 +678,7 @@ func GetBytesTilCharByPath(path string, char byte, start int64) ([]byte, int64)
 
 
 
-```
+```go
 func ExampleGetBytesTilCharByPath() {
   	// init
   	var (
@@ -712,7 +712,7 @@ func ExampleGetBytesTilCharByPath() {
 
 
 
-```
+```go
 func GetBytesByTwoOffsetsByPath(path string, start int64, end int64) []byte
 ```
 
@@ -726,7 +726,7 @@ func GetBytesByTwoOffsetsByPath(path string, start int64, end int64) []byte
 
 
 
-```
+```go
 func ExampleGetBytesByTwoOffsetsByPath() {
   	// init
   	var (
@@ -760,7 +760,7 @@ func ExampleGetBytesByTwoOffsetsByPath() {
 
 
 
-```
+```go
 func ReadLines(file string, callback func(text string) error) error
 ```
 
@@ -774,7 +774,7 @@ func ReadLines(file string, callback func(text string) error) error
 
 
 
-```
+```go
 func ExampleReadLines() {
   	// init
   	var (
@@ -813,7 +813,7 @@ func ExampleReadLines() {
 
 
 
-```
+```go
 func ReadLinesBytes(file string, callback func(bytes []byte) error) error
 ```
 
@@ -827,7 +827,7 @@ func ReadLinesBytes(file string, callback func(bytes []byte) error) error
 
 
 
-```
+```go
 func ExampleReadLinesBytes() {
   	// init
   	var (
@@ -867,7 +867,7 @@ func ExampleReadLinesBytes() {
 
 
 
-```
+```go
 func Truncate(path string, size int) error
 ```
 
@@ -881,7 +881,7 @@ func Truncate(path string, size int) error
 
 
 
-```
+```go
 func ExampleTruncate(){
   	// init
   	var (
@@ -921,7 +921,7 @@ func ExampleTruncate(){
 
 
 
-```
+```go
 func ReplaceFile(search, replace, path string) error
 ```
 
@@ -935,7 +935,7 @@ func ReplaceFile(search, replace, path string) error
 
 
 
-```
+```go
 func ExampleReplaceFile() {
   	// init
   	var (
@@ -975,7 +975,7 @@ func ExampleReplaceFile() {
 
 
 
-```
+```go
 func ReplaceFileFunc(f func(path, content string) string, path string) error
 ```
 
@@ -989,7 +989,7 @@ func ReplaceFileFunc(f func(path, content string) string, path string) error
 
 
 
-```
+```go
 func ExampleReplaceFileFunc() {
   	// init
   	var (
@@ -1033,7 +1033,7 @@ func ExampleReplaceFileFunc() {
 
 
 
-```
+```go
 func ReplaceDir(search, replace, path, pattern string, recursive ...bool) error
 ```
 
@@ -1047,7 +1047,7 @@ func ReplaceDir(search, replace, path, pattern string, recursive ...bool) error
 
 
 
-```
+```go
 func ExampleReplaceDir() {
   	// init
   	var (
@@ -1088,7 +1088,7 @@ func ExampleReplaceDir() {
 
 
 
-```
+```go
 func ReplaceDirFunc(f func(path, content string) string, path, pattern string, recursive ...bool) error
 ```
 
@@ -1102,7 +1102,7 @@ func ReplaceDirFunc(f func(path, content string) string, path, pattern string, r
 
 
 
-```
+```go
 func ExampleReplaceDirFunc() {
   	// init
   	var (
@@ -1149,7 +1149,7 @@ func ExampleReplaceDirFunc() {
 
 
 
-```
+```go
 func MTime(path string) time.Time
 ```
 
@@ -1163,7 +1163,7 @@ func MTime(path string) time.Time
 
 
 
-```
+```go
 func ExampleMTime() {
   	t := gfile.MTime(gfile.TempDir())
   	fmt.Println(t)
@@ -1187,7 +1187,7 @@ func ExampleMTime() {
 
 
 
-```
+```go
 func MTimestamp(path string) int64
 ```
 
@@ -1201,7 +1201,7 @@ func MTimestamp(path string) int64
 
 
 
-```
+```go
 func ExampleMTimestamp() {
   	t := gfile.MTimestamp(gfile.TempDir())
   	fmt.Println(t)
@@ -1225,7 +1225,7 @@ func ExampleMTimestamp() {
 
 
 
-```
+```go
 func MTimestampMilli(path string) int64
 ```
 
@@ -1239,7 +1239,7 @@ func MTimestampMilli(path string) int64
 
 
 
-```
+```go
 func ExampleMTimestampMilli() {
   	t := gfile.MTimestampMilli(gfile.TempDir())
   	fmt.Println(t)
@@ -1265,7 +1265,7 @@ func ExampleMTimestampMilli() {
 
 
 
-```
+```go
 func Size(path string) int64
 ```
 
@@ -1279,7 +1279,7 @@ func Size(path string) int64
 
 
 
-```
+```go
 func ExampleSize() {
   	// init
   	var (
@@ -1311,7 +1311,7 @@ func ExampleSize() {
 
 
 
-```
+```go
 func SizeFormat(path string) string
 ```
 
@@ -1325,7 +1325,7 @@ func SizeFormat(path string) string
 
 
 
-```
+```go
 func ExampleSizeFormat() {
   	// init
   	var (
@@ -1357,7 +1357,7 @@ func ExampleSizeFormat() {
 
 
 
-```
+```go
 func ReadableSize(path string) string
 ```
 
@@ -1371,7 +1371,7 @@ func ReadableSize(path string) string
 
 
 
-```
+```go
 func ExampleReadableSize() {
   	// init
   	var (
@@ -1403,7 +1403,7 @@ func ExampleReadableSize() {
 
 
 
-```
+```go
 func StrToSize(sizeStr string) int64
 ```
 
@@ -1417,7 +1417,7 @@ func StrToSize(sizeStr string) int64
 
 
 
-```
+```go
 func ExampleStrToSize() {
   	size := gfile.StrToSize("100MB")
   	fmt.Println(size)
@@ -1441,7 +1441,7 @@ func ExampleStrToSize() {
 
 
 
-```
+```go
 func FormatSize(raw int64) string
 ```
 
@@ -1455,7 +1455,7 @@ func FormatSize(raw int64) string
 
 
 
-```
+```go
 func ExampleFormatSize() {
   	sizeStr := gfile.FormatSize(104857600)
   	fmt.Println(sizeStr)
@@ -1487,7 +1487,7 @@ func ExampleFormatSize() {
 
 
 
-```
+```go
 func SortFiles(files []string) []string
 ```
 
@@ -1501,7 +1501,7 @@ func SortFiles(files []string) []string
 
 
 
-```
+```go
 func ExampleSortFiles() {
   	files := []string{
   		"/aaa/bbb/ccc.txt",
@@ -1538,7 +1538,7 @@ func ExampleSortFiles() {
 
 
 
-```
+```go
 func Search(name string, prioritySearchPaths ...string) (realPath string, err error)
 ```
 
@@ -1552,7 +1552,7 @@ func Search(name string, prioritySearchPaths ...string) (realPath string, err er
 
 
 
-```
+```go
 func ExampleSearch() {
   	// init
   	var (
@@ -1589,7 +1589,7 @@ func ExampleSearch() {
 
 
 
-```
+```go
 func ScanDir(path string, pattern string, recursive ...bool) ([]string, error)
 ```
 
@@ -1603,7 +1603,7 @@ func ScanDir(path string, pattern string, recursive ...bool) ([]string, error)
 
 
 
-```
+```go
 func ExampleScanDir() {
   	// init
   	var (
@@ -1646,7 +1646,7 @@ func ExampleScanDir() {
 
 
 
-```
+```go
 func ScanDirFile(path string, pattern string, recursive ...bool) ([]string, error)
 ```
 
@@ -1660,7 +1660,7 @@ func ScanDirFile(path string, pattern string, recursive ...bool) ([]string, erro
 
 
 
-```
+```go
 func ExampleScanDirFile() {
   	// init
   	var (
@@ -1702,7 +1702,7 @@ func ExampleScanDirFile() {
 
 
 
-```
+```go
 func ScanDirFunc(path string, pattern string, recursive bool, handler func(path string) string) ([]string, error)
 ```
 
@@ -1716,7 +1716,7 @@ func ScanDirFunc(path string, pattern string, recursive bool, handler func(path 
 
 
 
-```
+```go
 func ExampleScanDirFunc() {
   	// init
   	var (
@@ -1763,7 +1763,7 @@ func ExampleScanDirFunc() {
 
 
 
-```
+```go
 func ScanDirFileFunc(path string, pattern string, recursive bool, handler func(path string) string) ([]string, error)
 ```
 
@@ -1777,7 +1777,7 @@ func ScanDirFileFunc(path string, pattern string, recursive bool, handler func(p
 
 
 
-```
+```go
 func ExampleScanDirFileFunc() {
   	// init
   	var (
@@ -1831,7 +1831,7 @@ func ExampleScanDirFileFunc() {
 
 
 
-```
+```go
 func Pwd() string
 ```
 
@@ -1845,7 +1845,7 @@ func Pwd() string
 
 
 
-```
+```go
 func ExamplePwd() {
   	// Get absolute path of current working directory.
   	fmt.Println(gfile.Pwd())
@@ -1869,7 +1869,7 @@ func ExamplePwd() {
 
 
 
-```
+```go
 func Home(names ...string) (string, error)
 ```
 
@@ -1883,7 +1883,7 @@ func Home(names ...string) (string, error)
 
 
 
-```
+```go
 func ExampleHome() {
   	// user's home directory
   	homePath, _ := gfile.Home()
@@ -1909,7 +1909,7 @@ func ExampleHome() {
 
 
 
-```
+```go
 func TempDir(names ...string) string
 ```
 
@@ -1923,7 +1923,7 @@ func TempDir(names ...string) string
 
 
 
-```
+```go
 func ExampleTempDir() {
   	// init
   	var (
@@ -1955,7 +1955,7 @@ func ExampleTempDir() {
 
 
 
-```
+```go
 func SelfPath() string
 ```
 
@@ -1969,7 +1969,7 @@ func SelfPath() string
 
 
 
-```
+```go
 func ExampleSelfPath() {
 
   	// Get absolute file path of current running process
@@ -1996,7 +1996,7 @@ func ExampleSelfPath() {
 
 
 
-```
+```go
 func IsDir(path string) bool
 ```
 
@@ -2010,7 +2010,7 @@ func IsDir(path string) bool
 
 
 
-```
+```go
 func ExampleIsDir() {
   	// init
   	var (
@@ -2041,7 +2041,7 @@ func ExampleIsDir() {
 
 
 
-```
+```go
 func IsFile(path string) bool
 ```
 
@@ -2055,7 +2055,7 @@ func IsFile(path string) bool
 
 
 
-```
+```go
 func ExampleIsFile() {
   	// init
   	var (
@@ -2089,7 +2089,7 @@ func ExampleIsFile() {
 
 
 
-```
+```go
 func IsReadable(path string) bool
 ```
 
@@ -2103,7 +2103,7 @@ func IsReadable(path string) bool
 
 
 
-```
+```go
 func ExampleIsReadable() {
   	// init
   	var (
@@ -2133,7 +2133,7 @@ func ExampleIsReadable() {
 
 
 
-```
+```go
 func IsWritable(path string) bool
 ```
 
@@ -2147,7 +2147,7 @@ func IsWritable(path string) bool
 
 
 
-```
+```go
 func ExampleIsWritable() {
   	// init
   	var (
@@ -2177,7 +2177,7 @@ func ExampleIsWritable() {
 
 
 
-```
+```go
 func Chmod(path string, mode os.FileMode) error
 ```
 
@@ -2191,7 +2191,7 @@ func Chmod(path string, mode os.FileMode) error
 
 
 
-```
+```go
 func ExampleChmod() {
   	// init
   	var (
@@ -2236,7 +2236,7 @@ func ExampleChmod() {
 
 
 
-```
+```go
 func Mkdir(path string) error
 ```
 
@@ -2250,7 +2250,7 @@ func Mkdir(path string) error
 
 
 
-```
+```go
 func ExampleMkdir() {
   	// init
   	var (
@@ -2283,7 +2283,7 @@ func ExampleMkdir() {
 
 
 
-```
+```go
 func Create(path string) (*os.File, error)
 ```
 
@@ -2297,7 +2297,7 @@ func Create(path string) (*os.File, error)
 
 
 
-```
+```go
 func ExampleCreate() {
   	// init
   	var (
@@ -2349,7 +2349,7 @@ func ExampleCreate() {
 
 
 
-```
+```go
 func Open(path string) (*os.File, error)
 ```
 
@@ -2363,7 +2363,7 @@ func Open(path string) (*os.File, error)
 
 
 
-```
+```go
 func ExampleOpen() {
   	// init
   	var (
@@ -2398,7 +2398,7 @@ func ExampleOpen() {
 
 
 
-```
+```go
 func OpenFile(path string, flag int, perm os.FileMode) (*os.File, error)
 ```
 
@@ -2412,7 +2412,7 @@ func OpenFile(path string, flag int, perm os.FileMode) (*os.File, error)
 
 
 
-```
+```go
 func ExampleOpenFile() {
   	// init
   	var (
@@ -2455,7 +2455,7 @@ func ExampleOpenFile() {
 
 
 
-```
+```go
 func OpenWithFlag(path string, flag int) (*os.File, error)
 ```
 
@@ -2469,7 +2469,7 @@ func OpenWithFlag(path string, flag int) (*os.File, error)
 
 
 
-```
+```go
 func ExampleOpenWithFlag() {
   	// init
   	var (
@@ -2513,7 +2513,7 @@ func ExampleOpenWithFlag() {
 
 
 
-```
+```go
 func OpenWithFlagPerm(path string, flag int, perm os.FileMode) (*os.File, error)
 ```
 
@@ -2527,7 +2527,7 @@ func OpenWithFlagPerm(path string, flag int, perm os.FileMode) (*os.File, error)
 
 
 
-```
+```go
 func ExampleOpenWithFlagPerm() {
   	// init
   	var (
@@ -2571,7 +2571,7 @@ func ExampleOpenWithFlagPerm() {
 
 
 
-```
+```go
 func Stat(path string) (os.FileInfo, error)
 ```
 
@@ -2585,7 +2585,7 @@ func Stat(path string) (os.FileInfo, error)
 
 
 
-```
+```go
 func ExampleStat() {
   	// init
   	var (
@@ -2624,7 +2624,7 @@ func ExampleStat() {
 
 
 
-```
+```go
 func Copy(src string, dst string) error
 ```
 
@@ -2638,7 +2638,7 @@ func Copy(src string, dst string) error
 
 
 
-```
+```go
 func ExampleCopy() {
   	// init
   	var (
@@ -2693,7 +2693,7 @@ func ExampleCopy() {
 
 
 
-```
+```go
 func CopyFile(src, dst string) (err error)
 ```
 
@@ -2707,7 +2707,7 @@ func CopyFile(src, dst string) (err error)
 
 
 
-```
+```go
 func ExampleCopyFile() {
   	// init
   	var (
@@ -2748,7 +2748,7 @@ func ExampleCopyFile() {
 
 
 
-```
+```go
 func CopyDir(src string, dst string) error
 ```
 
@@ -2762,7 +2762,7 @@ func CopyDir(src string, dst string) error
 
 
 
-```
+```go
 func ExampleCopyDir() {
   	// init
   	var (
@@ -2809,7 +2809,7 @@ func ExampleCopyDir() {
 
 
 
-```
+```go
 func Move(src string, dst string) error
 ```
 
@@ -2823,7 +2823,7 @@ func Move(src string, dst string) error
 
 
 
-```
+```go
 func ExampleMove() {
   	// init
   	var (
@@ -2863,7 +2863,7 @@ func ExampleMove() {
 
 
 
-```
+```go
 func Rename(src string, dst string) error
 ```
 
@@ -2877,7 +2877,7 @@ func Rename(src string, dst string) error
 
 
 
-```
+```go
 func ExampleRename() {
   	// init
   	var (
@@ -2916,7 +2916,7 @@ func ExampleRename() {
 
 
 
-```
+```go
 func Remove(path string) error
 ```
 
@@ -2930,7 +2930,7 @@ func Remove(path string) error
 
 
 
-```
+```go
 func ExampleRemove() {
   	// init
   	var (
@@ -2967,7 +2967,7 @@ func ExampleRemove() {
 
 
 
-```
+```go
 func IsEmpty(path string) bool
 ```
 
@@ -2981,7 +2981,7 @@ func IsEmpty(path string) bool
 
 
 
-```
+```go
 func ExampleIsEmpty() {
   	// init
   	var (
@@ -3018,7 +3018,7 @@ func ExampleIsEmpty() {
 
 
 
-```
+```go
 func DirNames(path string) ([]string, error)
 ```
 
@@ -3032,7 +3032,7 @@ func DirNames(path string) ([]string, error)
 
 
 
-```
+```go
 func ExampleDirNames() {
   	// init
   	var (
@@ -3063,7 +3063,7 @@ func ExampleDirNames() {
 
 
 
-```
+```go
 func Glob(pattern string, onlyNames ...bool) ([]string, error)
 ```
 
@@ -3077,7 +3077,7 @@ func Glob(pattern string, onlyNames ...bool) ([]string, error)
 
 
 
-```
+```go
 func ExampleGlob() {
   	// init
   	var (
@@ -3114,7 +3114,7 @@ func ExampleGlob() {
 
 
 
-```
+```go
 func Exists(path string) bool
 ```
 
@@ -3128,7 +3128,7 @@ func Exists(path string) bool
 
 
 
-```
+```go
 func ExampleExists() {
   	// init
   	var (
@@ -3156,7 +3156,7 @@ func ExampleExists() {
 
 
 
-```
+```go
 func Chdir(dir string) error
 ```
 
@@ -3170,7 +3170,7 @@ func Chdir(dir string) error
 
 
 
-```
+```go
 func ExampleChdir() {
   	// init
   	var (
@@ -3207,7 +3207,7 @@ func ExampleChdir() {
 
 
 
-```
+```go
 func Join(paths ...string) string
 ```
 
@@ -3221,7 +3221,7 @@ func Join(paths ...string) string
 
 
 
-```
+```go
 func ExampleJoin() {
   	// init
   	var (
@@ -3254,7 +3254,7 @@ func ExampleJoin() {
 
 
 
-```
+```go
 func Abs(path string) string
 ```
 
@@ -3268,7 +3268,7 @@ func Abs(path string) string
 
 
 
-```
+```go
 func ExampleAbs() {
   	// init
   	var (
@@ -3300,7 +3300,7 @@ func ExampleAbs() {
 
 
 
-```
+```go
 func RealPath(path string) string
 ```
 
@@ -3314,7 +3314,7 @@ func RealPath(path string) string
 
 
 
-```
+```go
 func ExampleRealPath() {
   	// init
   	var (
@@ -3347,7 +3347,7 @@ func ExampleRealPath() {
 
 
 
-```
+```go
 func SelfName() string
 ```
 
@@ -3361,7 +3361,7 @@ func SelfName() string
 
 
 
-```
+```go
 func ExampleSelfName() {
 
   	// Get file name of current running process
@@ -3387,7 +3387,7 @@ func ExampleSelfName() {
 
 
 
-```
+```go
 func Basename(path string) string
 ```
 
@@ -3401,7 +3401,7 @@ func Basename(path string) string
 
 
 
-```
+```go
 func ExampleBasename() {
   	// init
   	var (
@@ -3431,7 +3431,7 @@ func ExampleBasename() {
 
 
 
-```
+```go
 func Name(path string) string
 ```
 
@@ -3445,7 +3445,7 @@ func Name(path string) string
 
 
 
-```
+```go
 func ExampleName() {
   	// init
   	var (
@@ -3475,7 +3475,7 @@ func ExampleName() {
 
 
 
-```
+```go
 func Dir(path string) string
 ```
 
@@ -3489,7 +3489,7 @@ func Dir(path string) string
 
 
 
-```
+```go
 func ExampleDir() {
   	// init
   	var (
@@ -3519,7 +3519,7 @@ func ExampleDir() {
 
 
 
-```
+```go
 func Ext(path string) string
 ```
 
@@ -3533,7 +3533,7 @@ func Ext(path string) string
 
 
 
-```
+```go
 func ExampleExt() {
   	// init
   	var (
@@ -3563,7 +3563,7 @@ func ExampleExt() {
 
 
 
-```
+```go
 func ExtName(path string) string
 ```
 
@@ -3577,7 +3577,7 @@ func ExtName(path string) string
 
 
 
-```
+```go
 func ExampleExtName() {
   	// init
   	var (
@@ -3610,7 +3610,7 @@ func ExampleExtName() {
 
 
 
-```
+```go
 func MainPkgPath() string
 ```
 
@@ -3624,7 +3624,7 @@ func MainPkgPath() string
 
 
 
-```
+```go
 func Test() {
   	fmt.Println("main pkg path on main :", gfile.MainPkgPath())
   	char := make(chan int, 1)

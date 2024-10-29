@@ -12,7 +12,7 @@ hide_title: true
 
 `CORS` 是 `W3` 互联网标准组织对HTTP跨域请求的标准，在 `ghttp` 模块中，我们可以通过 `CORSOptions` 对象来管理对应的跨域请求选项。定义如下：
 
-```  go
+```go
 // See https://www.w3.org/TR/cors/ .
 // 服务端允许跨域请求选项
 type CORSOptions struct {
@@ -39,7 +39,7 @@ type CORSOptions struct {
 
 大多数时候，我们需要限制请求来源为我们受信任的域名列表，我们可以使用 `AllowDomain` 配置，使用方式：
 
-```  go
+```go
 // 允许跨域请求中间件
 func Middleware(r *ghttp.Request) {
 	corsOptions := r.Response.DefaultCORSOptions()
@@ -58,7 +58,7 @@ func Middleware(r *ghttp.Request) {
 
 我们来看一个简单的接口示例：
 
-```  go
+```go
 package main
 
 import (
@@ -83,7 +83,7 @@ func main() {
 
 接口地址是 [http://localhost/api.v1/order](http://localhost/api.v1/order) ，当然这个接口是不允许跨域的。我们打开一个不同的域名，例如：百度首页(正好用了 `jQuery`，方便调试)，然后按 `F12` 打开开发者面板，在 `console` 下执行以下 `AJAX` 请求：
 
-``` javascript
+```javascript
 $.get("http://localhost:8199/api.v1/order", function(result){
     console.log(result)
 });
@@ -96,7 +96,7 @@ $.get("http://localhost:8199/api.v1/order", function(result){
 
 返回了不允许跨域请求的提示错误，接着我们修改一下服务端接口的测试代码，如下：
 
-```  go
+```go
 package main
 
 import (
@@ -137,7 +137,7 @@ func main() {
 
 在大多数场景中，我们是需要自定义授权跨域的 `Origin`，那么我们可以将以上的例子改进如下，在该示例中，我们仅允许 `goframe.org` 及 `baidu.com` 跨域请求访问。
 
-```  go
+```go
 package main
 
 import (
@@ -174,7 +174,7 @@ func main() {
 
 在以下示例中，仅允许来自 `goframe.org` 域名的跨域请求，而来自其他域名的请求将会失败并返回 `403`：
 
-```  go
+```go
 package main
 
 import (

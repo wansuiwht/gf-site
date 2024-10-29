@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/encoding/gbinary"
 
 ```
@@ -19,7 +19,7 @@ import "github.com/gogf/gf/encoding/gbinary"
 
 用于二进制数据结构转换处理的接口文档如下：
 
-```  go
+```go
 func Encode(vs ...interface{}) ([]byte, error)
 func EncodeInt(i int) []byte
 func EncodeInt8(i int8) []byte
@@ -56,7 +56,7 @@ func DecodeToString(b []byte) string
 
 支持按位处理的接口文档如下：
 
-```  go
+```go
 func EncodeBits(bits []Bit, i int, l int) []Bit
 func EncodeBitsWithUint(bits []Bit, ui uint, l int) []Bit
 func EncodeBitsToBytes(bits []Bit) []byte
@@ -68,7 +68,7 @@ func DecodeBytesToBits(bs []byte) []Bit
 
 其中的Bit类型表示一个二进制数字(0或1)，其定义如下：
 
-```  go
+```go
 type Bit int8
 
 ```
@@ -79,7 +79,7 @@ type Bit int8
 
 [github.com/gogf/gf/blob/master/.example/encoding/gbinary/binary.go](https://github.com/gogf/gf/blob/master/.example/encoding/gbinary/binary.go)
 
-```  go
+```go
 package main
 
 import (
@@ -146,7 +146,7 @@ func main() {
 
 以上程序执行结果为：
 
-``` html
+```html
 [18 44 1 41 92 143 194 245 40 240 63]
 18 300 1.01
 1
@@ -199,7 +199,7 @@ I'm string!
 
 
 
-```  go
+```go
 package main
 
 
@@ -246,7 +246,7 @@ func main() {
 
 
 
-```  shell
+```shell
 buffer length: 25
 alived sensor: 100
 
@@ -262,7 +262,7 @@ alived sensor: 100
 
 
 
-```  shell
+```shell
 [键名哈希64(64bit,8byte) 键名长度(8bit,1byte) 键值长度(24bit,3byte) 数据文件偏移量(40bit,5byte)](变长)
 
 ```
@@ -275,7 +275,7 @@ alived sensor: 100
 
 
 
-```  go
+```go
 package main
 
 
@@ -322,7 +322,7 @@ func main() {
 
 
 
-```  shell
+```shell
 meta length: 17
 hash  : 521369841259754125
 klen  : 12

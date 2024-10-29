@@ -75,7 +75,7 @@ redis:
 	pass:    "password" # 在此配置密码, 没有可去掉
 ```
 
-```
+```go
 package main
 
 import (
@@ -103,8 +103,7 @@ func main() {
 
 执行后，输出结果为：
 
-```
-value
+```value
 ```
 
 ## 配置方法（高级）
@@ -113,7 +112,7 @@ value
 
 `gredis` 提供了全局的分组配置功能，相关配置管理方法如下：
 
-```
+```go
 func SetConfig(config Config, name ...string)
 func SetConfigByMap(m map[string]interface{}, name ...string) error
 func GetConfig(name ...string) (config Config, ok bool)
@@ -123,7 +122,7 @@ func ClearConfig()
 
 使用示例：
 
-```
+```go
 package main
 
 import (

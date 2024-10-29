@@ -10,7 +10,7 @@ hide_title: true
 
 我们的表设计如下：
 
-```
+```sql
 CREATE TABLE `sell_spec` (
     `id`            int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
     `product`       varchar(45) NOT NULL COMMENT '产品名称',
@@ -57,7 +57,7 @@ type SellSpecItem struct {
 
 数据写入：
 
-```
+```go
 _, err = dao.SellSpec.Ctx(ctx).Data(v1.SellSpecItem{
 	SellSpec: entity.SellSpec{
 		Product:  "redis",
@@ -73,7 +73,7 @@ _, err = dao.SellSpec.Ctx(ctx).Data(v1.SellSpecItem{
 
 数据查询， `ORM` 组件将会自动地将数据表中的记录转换为 `go struct` 对应的数组类型属性：
 
-```
+```go
 var items []v1.SellSpecItem
 err = dao.SellSpec.Ctx(ctx).Scan(&items)
 ```

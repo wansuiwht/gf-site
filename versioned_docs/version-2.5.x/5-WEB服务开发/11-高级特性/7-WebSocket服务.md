@@ -117,7 +117,7 @@ hide_title: true
 
 ## WebSocket服务端
 
-```
+```go
 package main
 
 import (
@@ -169,7 +169,7 @@ func main() {
 
 如果需要支持 `HTTPS` 的 `WebSocket` 服务，只需要依赖的 `WebServer` 支持 `HTTPS` 即可，访问的 `WebSocket` 地址需要使用 `wss://` 协议访问。以上客户端 `HTML5` 页面中的 `WebSocket` 访问地址需要修改为： `wss://127.0.0.1:8199/wss`。服务端示例代码：
 
-```
+```go
 package main
 
 import (

@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/encoding/gbinary"
 ```
 
@@ -18,7 +18,7 @@ import "github.com/gogf/gf/v2/encoding/gbinary"
 
 用于二进制数据结构转换处理的接口文档如下：
 
-```
+```go
 func Encode(vs ...interface{}) ([]byte, error)
 func EncodeInt(i int) []byte
 func EncodeInt8(i int8) []byte
@@ -54,7 +54,7 @@ func DecodeToString(b []byte) string
 
 支持按位处理的接口文档如下：
 
-```
+```go
 func EncodeBits(bits []Bit, i int, l int) []Bit
 func EncodeBitsWithUint(bits []Bit, ui uint, l int) []Bit
 func EncodeBitsToBytes(bits []Bit) []byte
@@ -75,7 +75,7 @@ type Bit int8
 
 [github.com/gogf/gf/v2/blob/master/.example/encoding/gbinary/binary.go](https://github.com/gogf/gf/v2/blob/master/.example/encoding/gbinary/binary.go)
 
-```
+```go
 package main
 
 import (
@@ -198,7 +198,7 @@ I'm string!
 
 
 
-```
+```go
 package main
 
 
@@ -295,7 +295,7 @@ alived sensor: 100
 
 
 
-```
+```go
 package main
 
 

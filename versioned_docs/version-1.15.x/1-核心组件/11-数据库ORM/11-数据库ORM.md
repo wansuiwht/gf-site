@@ -18,7 +18,7 @@ hide_title: true
 
 为便于数据表记录的操作， `ORM` 定义了5种基本的数据类型：
 
-```  go
+```go
 type Map         map[string]interface{} // 数据记录
 type List        []Map                  // 数据记录列表
 
@@ -124,7 +124,7 @@ HasTable(name string) (bool, error)
 
 获取 `ORM` 对象示例：
 
-```  go
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 
@@ -156,7 +156,7 @@ db, err := gdb.Instance("user-center")
 
 在使用时需要引入第三方包 ( [go-sqlite3](https://github.com/mattn/go-sqlite3) )：
 
-```  go
+```go
 _ "github.com/mattn/go-sqlite3"
 
 ```
@@ -169,7 +169,7 @@ _ "github.com/mattn/go-sqlite3"
 
 在使用时需要引入第三方包 ( [pq](https://github.com/lib/pq) )：
 
-```  go
+```go
 _ "github.com/lib/pq"
 
 ```
@@ -183,7 +183,7 @@ _ "github.com/lib/pq"
 
 使用时需导入第三方包 ( [go-mssqldb](https://github.com/denisenkom/go-mssqldb) )：
 
-```  go
+```go
 _ "github.com/denisenkom/go-mssqldb"
 
 ```
@@ -198,7 +198,7 @@ _ "github.com/denisenkom/go-mssqldb"
 
 使用时需导入第三方包 ( [go-oci8](https://github.com/mattn/go-oci8) )：
 
-```  go
+```go
 _ "github.com/mattn/go-oci8"
 
 ```

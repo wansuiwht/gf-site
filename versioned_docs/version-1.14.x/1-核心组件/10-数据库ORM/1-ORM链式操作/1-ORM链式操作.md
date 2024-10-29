@@ -8,7 +8,7 @@ hide_title: true
 
 接口文档： [https://godoc.org/github.com/gogf/gf/database/gdb#Model](https://godoc.org/github.com/gogf/gf/database/gdb#Model)
 
-```  go
+```go
 func (m *Model) Insert(data ...interface{}) (result sql.Result, err error)
 func (m *Model) Replace(data ...interface{}) (result sql.Result, err error)
 func (m *Model) Save(data ...interface{}) (result sql.Result, err error)

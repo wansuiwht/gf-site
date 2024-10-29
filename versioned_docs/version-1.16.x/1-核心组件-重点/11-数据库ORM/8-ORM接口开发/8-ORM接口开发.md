@@ -31,7 +31,7 @@ hide_title: true
 
 开发者自定义的驱动需要实现以下接口：
 
-```  go
+```go
 // Driver is the interface for integrating sql drivers into package gdb.
 type Driver interface {
 	// New creates and returns a database object for specified database server.

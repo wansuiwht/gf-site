@@ -24,7 +24,7 @@ type Writer interface {
 
 在该示例中，我们实现了一个自定义的 `Writer` 对象 `MyWriter`，在该对象实现的 `Writer` 接口中我们对日志内容进行判断，如果出现了 `PANI` 或者 `FATA` 错误，那么表示是非常严重的错误，该接口将会第一时间通过 `HTTP` 接口告知 `Monitor` 监控服务。随后再将日志内容通过 `glog` 模块按照配置写入到文件和标准输出。
 
-```
+```go
 package main
 
 import (
@@ -79,7 +79,7 @@ Stack:
 
 示例代码：
 
-```
+```go
 package main
 
 import (

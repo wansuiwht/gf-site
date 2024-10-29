@@ -12,7 +12,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gpool"
 
 ```
@@ -31,7 +31,7 @@ import "github.com/gogf/gf/container/gpool"
 
 ## 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -64,7 +64,7 @@ func main () {
 
 我们可以给定动态创建及销毁方法。
 
-```  go
+```go
 package main
 
 import (
@@ -102,7 +102,7 @@ func main() {
 
 执行后，终端输出结果：
 
-``` html
+```html
 HTTP/1.1 302 Found
 Connection: Keep-Alive
 Content-Length: 17931

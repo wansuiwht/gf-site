@@ -17,7 +17,7 @@ hide_title: true
 
 
 
-   ```
+   ```go
    g.DB().SetSchema("user-schema")
    g.DB().SetSchema("order-schema")
    ```
@@ -32,7 +32,7 @@ hide_title: true
 
 
 
-   ```
+   ```go
    g.DB().Schema("user-schema").Model("user").All()
    g.DB().Schema("order-schema").Model("order").All()
    ```
@@ -47,7 +47,7 @@ hide_title: true
 
 
 
-   ```
+   ```go
    g.Model("user").Schema("user-schema").All()
    g.Model("order").Schema("order-schema").All()
    ```
@@ -72,7 +72,7 @@ hide_title: true
 
 
 
-   ```
+   ```go
    // SELECT * FROM `order`.`order` o LEFT JOIN `user`.`user` u ON (o.uid=u.id) WHERE u.id=1 LIMIT 1
    g.Model("order.order o").LeftJoin("user.user u", "o.uid=u.id").Where("u.id", 1).One()
    ```

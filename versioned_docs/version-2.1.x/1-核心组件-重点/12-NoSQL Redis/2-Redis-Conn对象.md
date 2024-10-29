@@ -10,7 +10,7 @@ hide_title: true
 
 ## 基本使用
 
-```
+```go
 package main
 
 import (
@@ -34,15 +34,14 @@ func main() {
 
 执行后，输出结果为：
 
-```
-v
+```v
 ```
 
 ## 订阅/发布
 
 我们可以通过 `Redis` 的 `SUBSCRIBE/PUBLISH` 命令实现订阅/发布模式。
 
-```
+```go
 package main
 
 import (
@@ -76,7 +75,7 @@ func main() {
 
 另外打开一个终端通过 `redis-cli` 命令进入 `Redis Server`，发布一条消息：
 
-```
+```bash
 $ redis-cli
 127.0.0.1:6379> publish channel test
 (integer) 1

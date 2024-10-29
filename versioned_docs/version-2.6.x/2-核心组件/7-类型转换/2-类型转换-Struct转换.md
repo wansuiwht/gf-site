@@ -65,7 +65,7 @@ nick name  Nick_Name      match
 
 当给定的 `pointer` 参数类型为 `**struct` 时， `Struct` 方法内部将会自动创建该 `struct` 对象，并修改传递变量指向的指针地址。
 
-```
+```go
 package main
 
 import (
@@ -103,7 +103,7 @@ func main() {
 
 递归转换是指当 `struct` 对象包含子对象时，并且子对象是 `embedded` 方式定义时，可以将 `params` 参数数据（第一个参数）同时递归地映射到其子对象上，常用于带有继承对象的 `struct` 上。
 
-```
+```go
 package main
 
 import (
@@ -155,7 +155,7 @@ func main() {
 
 ## 示例1，基本使用
 
-```
+```go
 package main
 
 import (
@@ -232,7 +232,7 @@ func main() {
 
 属性支持 `struct` 对象或者 `struct` 对象指针（目标为指针且未 `nil` 时，转换时会自动初始化）转换。
 
-```
+```go
 package main
 
 import (

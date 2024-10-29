@@ -10,14 +10,14 @@ hide_title: true
 
 **安装模块**：
 
-```  go
+```go
 go get -u github.com/gogf/gflock
 
 ```
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gflock"
 
 ```
@@ -28,7 +28,7 @@ import "github.com/gogf/gflock"
 
 方法比较实用也很简单，我们这里来展示一个 `Lock/Unlock` 的示例。
 
-```  go
+```go
 package main
 
 import (
@@ -53,7 +53,7 @@ func main() {
 
 进程1（ `25694`）：
 
-```  shell
+```shell
 2018-05-18 13:51:31.191 locked by pid: 25694
 2018-05-18 13:51:34.191 unlocked by pid: 25694
 
@@ -61,7 +61,7 @@ func main() {
 
 进程2（ `25737`）：
 
-```  shell
+```shell
 2018-05-18 13:51:34.191 locked by pid: 25737
 2018-05-18 13:51:37.191 unlocked by pid: 25737
 

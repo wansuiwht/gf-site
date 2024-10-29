@@ -22,7 +22,7 @@ func Scan(params interface{}, pointer interface{}, mapping ...map[string]string)
 
 ## 自动识别转换 `Struct`
 
-```
+```go
 package main
 
 import (
@@ -58,7 +58,7 @@ func main() {
 
 ## 自动识别转换 `Struct` 数组
 
-```
+```go
 package main
 
 import (
@@ -106,7 +106,7 @@ func main() {
 
 ## 自动识别转换Map
 
-```
+```go
 package main
 
 import (
@@ -140,7 +140,7 @@ func main() {
 
 ## 自动识别转换 `Map` 数组
 
-```
+```go
 package main
 
 import (

@@ -19,7 +19,7 @@ hide_title: true
 
 main.go
 
-```
+```go
 package main
 
 import (
@@ -104,7 +104,7 @@ server:
 
 我们这里只定义了一个 `Hello` 的接口。可以看到，我们通过一个接口来展示 `SwaggerUI` 的 `HTML` 页面，并且将 `OpenAPI` 的接口文件路径定义为 `/api.json`，没有启用 `Server` 自带的UI页面。执行后，终端输出：
 
-```
+```html
 2022-05-18 20:41:09.160 [INFO] openapi specification is serving at address: http://127.0.0.1:8199/api.json
 2022-05-18 20:41:09.161 [INFO] pid[57888]: http server started listening on [:8199]
 

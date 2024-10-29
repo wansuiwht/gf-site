@@ -15,7 +15,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/test/gtest"
 ```
 
@@ -23,7 +23,7 @@ import "github.com/gogf/gf/v2/test/gtest"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/test/gtest](https://pkg.go.dev/github.com/gogf/gf/v2/test/gtest)
 
-```
+```go
 func C(t *testing.T, f func(t *T))
 func Assert(value, expect interface{})
 func AssertEQ(value, expect interface{})
@@ -51,7 +51,7 @@ func Fatal(message ...interface{})
 
 例如 `gstr` 模块其中一个单元测试用例：
 
-```
+```go
 package gstr_test
 
 import (
@@ -70,7 +70,7 @@ func Test_Trim(t *testing.T) {
 
 也可以这样使用：
 
-```
+```go
 package gstr_test
 
 import (

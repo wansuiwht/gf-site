@@ -14,7 +14,7 @@ hide_title: true
 
 其它驱动详细请至 [https://github.com/gogf/gf/tree/master/contrib/drivers](https://github.com/gogf/gf/tree/master/contrib/drivers) 查看。
 
-```
+```go
 package driver
 
 import (
@@ -144,7 +144,7 @@ func (d *MyDriver) ConvertDataForRecord(ctx context.Context, data interface{}) (
 
 由于这里我们使用了一个新的驱动名称 `MyDriver`，因此在 `gdb` 配置中的 `type` 数据库类型时，需要填写该驱动名称。以下是一个使用配置的示例：
 
-```
+```yaml
 database:
   default:
   - link: "MyDriver:root:12345678@tcp(127.0.0.1:3306)/user"

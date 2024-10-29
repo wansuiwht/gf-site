@@ -8,7 +8,7 @@ hide_title: true
 
 使用方式：
 
-```
+```go
 import "github.com/gogf/gf/v2/util/grand"
 ```
 
@@ -18,7 +18,7 @@ import "github.com/gogf/gf/v2/util/grand"
 
 常用方法：
 
-```
+```go
 func N(min, max int) int
 func B(n int) []byte
 func S(n int, symbols ...bool) string

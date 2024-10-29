@@ -14,13 +14,13 @@ hide_title: true
 
 安装：
 
-```
+```bash
 go get -u github.com/gogf/gf/contrib/nosql/redis/v2
 ```
 
 引用：
 
-```
+```go
 import (
 	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
 

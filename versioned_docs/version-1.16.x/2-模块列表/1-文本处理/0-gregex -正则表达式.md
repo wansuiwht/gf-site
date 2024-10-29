@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/text/gregex"
 
 ```
@@ -19,7 +19,7 @@ import "github.com/gogf/gf/text/gregex"
 
 **简单示例：**
 
-```  go
+```go
 package main
 
 import (
@@ -36,7 +36,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 John says "GF" is the one he loves!
 
 ```

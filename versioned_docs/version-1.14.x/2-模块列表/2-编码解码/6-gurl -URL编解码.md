@@ -8,7 +8,7 @@ URL编码解析。
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/encoding/gurl"
 
 ```

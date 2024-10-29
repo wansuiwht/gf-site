@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/encoding/gurl"
 
 ```
@@ -19,7 +19,7 @@ import "github.com/gogf/gf/encoding/gurl"
 
 ## `URL` 参数构建
 
-```
+```go
 package main
 
 import (
@@ -49,7 +49,7 @@ limit=20&name=gopher&page=7
 
 ## `URL` 参数编码与解码
 
-```
+```go
 package main
 
 import (
@@ -95,7 +95,7 @@ limit=20&name=gopher&page=7
 | 64 | query |
 | 128 | fragment |
 
-```
+```go
 package main
 
 import (

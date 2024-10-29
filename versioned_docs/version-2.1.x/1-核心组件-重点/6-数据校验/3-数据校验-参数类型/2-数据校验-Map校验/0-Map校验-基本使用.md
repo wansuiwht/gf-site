@@ -6,7 +6,7 @@ hide_title: true
 
 ## 默认错误提示
 
-```
+```go
 package main
 
 import (
@@ -51,7 +51,7 @@ func main() {
 
 ## 自定义错误提示
 
-```
+```go
 package main
 
 import (

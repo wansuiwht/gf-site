@@ -23,7 +23,7 @@ func Structs(params interface{}, pointer interface{}, mapping ...map[string]stri
 
 我们来看一个简单示例即可理解。
 
-```
+```go
 package main
 
 import (

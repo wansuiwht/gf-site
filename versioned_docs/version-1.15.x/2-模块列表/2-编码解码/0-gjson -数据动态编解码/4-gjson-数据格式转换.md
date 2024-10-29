@@ -10,7 +10,7 @@ hide_title: true
 
 我们就来一个例子说明即可。
 
-```  go
+```go
 data :=
     `{
     "users" : {

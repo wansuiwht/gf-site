@@ -44,7 +44,7 @@ hide_title: true
 
 ### 安装
 
-```
+```bash
 $ ./gf_darwin_amd64 install
 I found some installable paths for you(from $PATH):
   Id | Writable | Installed | Path

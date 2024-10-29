@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/net/gtcp"
 ```
 
@@ -32,7 +32,7 @@ type Server
 
 我们通过实现一个简单的 `echo服务器` 来演示 `TCPServer` 的使用：
 
-```
+```go
 package main
 
 import (

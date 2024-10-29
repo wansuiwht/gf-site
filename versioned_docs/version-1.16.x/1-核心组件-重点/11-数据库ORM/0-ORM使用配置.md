@@ -44,7 +44,7 @@ hide_title: true
 
 完整的数据库配置项示例( `TOML`)：
 
-```  toml
+```toml
 [database]
     [[database.default]]
         host         = "127.0.0.1"
@@ -70,7 +70,7 @@ hide_title: true
 
 为兼容不同的数据库类型， `gdb` 将数据库的各个字段拆分出来单独配置，这样对于各种数据库的对接来说兼容性会很好。但是对于开发者来说看起来配置比较多。针对于项目中使用的已确定的数据库类型的配置，我们可以使用 `link` 属性进行配置。如：
 
-```  toml
+```toml
 [database]
     [[database.default]]
         type = "mysql"
@@ -83,7 +83,7 @@ hide_title: true
 
 也可以简化为：
 
-```  toml
+```toml
 [database]
     [[database.default]]
         link = "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
@@ -94,7 +94,7 @@ hide_title: true
 
 注意以上每一项分组配置均可以是多个节点，支持负载均衡权重策略。如果不使用多节点负载均衡特性，仅使用配置分组特性，也可以简化为如下格式：
 
-```  toml
+```toml
 [database]
     [database.default]
         link = "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
@@ -105,7 +105,7 @@ hide_title: true
 
 如果仅仅是单数据库节点，不使用配置分组特性，那么也可以简化为如下格式：
 
-```  toml
+```toml
 [database]
     link = "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
 ```
@@ -128,7 +128,7 @@ hide_title: true
 
 `gdb` 支持日志输出，内部使用的是 `glog.Logger` 对象实现日志管理，并且可以通过配置文件对日志对象进行配置。默认情况下 `gdb` 关闭了 `DEBUG` 日志输出，如果需要打开 `DEBUG` 信息需要将数据库的 `debug` 参数设置为 `true`。以下是为一个配置文件示例：
 
-```  toml
+```toml
 [database]
     [database.logger]
         path   = "/var/log/gf-app/sql"
@@ -152,7 +152,7 @@ hide_title: true
 
 `gdb` 数据库管理模块的内部配置管理数据结构如下：
 
-```  go
+```go
 type Config      map[string]ConfigGroup // 数据库配置对象
 type ConfigGroup []ConfigNode           // 数据库分组配置
 // 数据库配置项(一个分组配置对应多个配置项)
@@ -194,7 +194,7 @@ type ConfigNode  struct {
 
 接口文档： [https://godoc.org/github.com/gogf/gf/database/gdb](https://godoc.org/github.com/gogf/gf/database/gdb)
 
-```  go
+```go
 // 添加一个数据库节点到指定的分组中
 func AddConfigNode(group string, node ConfigNode)
 // 添加一个配置分组到数据库配置管理中(同名覆盖)
@@ -217,7 +217,7 @@ func SetConfig(c Config)
 
 简单的做法，我们可以通过 `gdb` 包的 `SetConfig` 配置管理方法进行自定义的数据库全局配置，例如：
 
-```  go
+```go
 gdb.SetConfig(gdb.Config {
     "default" : gdb.ConfigGroup {
         gdb.ConfigNode {

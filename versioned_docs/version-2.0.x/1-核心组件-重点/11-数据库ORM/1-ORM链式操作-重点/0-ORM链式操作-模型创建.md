@@ -12,7 +12,7 @@ hide_title: true
 
 使用示例：
 
-```
+```go
 g.Model("user")
 // 或者
 g.DB().Model("user")
@@ -20,14 +20,14 @@ g.DB().Model("user")
 
 此外，在某些场景下，我们也可以通过 `DB` 方法切换当前模型的数据库对象，例如：
 
-```
+```go
 m := g.Model("user")
 m  = m.DB(g.DB("order"))
 ```
 
 其效果与以下操作是一样的：
 
-```
+```go
 m := g.DB("user").Model("user")
 ```
 
@@ -35,13 +35,13 @@ m := g.DB("user").Model("user")
 
 `Raw` 方法用于创建一个基于原始 `SQL` 语句的 `Model` 对象。也可以使用 `g` 对象管理模块中的 `ModelRaw` 方法通过给定的 `SQL` 语句在默认的数据库配置上创建 `Model` 对象。
 
-```
+```go
 s := "SELECT * FROM `user`"
 m := g.ModelRaw(s).WhereLT("age", 18).Limit(10).OrderAsc("id").All()
 // SELECT * FROM `user` WHERE `age`<18 ORDER BY `id` ASC LIMIT 10
 ```
 
-```
+```go
 s := "SELECT * FROM `user` WHERE `status` IN(?)"
 m := g.ModelRaw(s, g.Slice{1,2,3}).WhereLT("age", 18).Limit(10).OrderAsc("id").All()
 // SELECT * FROM `user` WHERE `status` IN(1,2,3) AND `age`<18 ORDER BY `id` ASC LIMIT 10
@@ -55,7 +55,7 @@ m := g.ModelRaw(s, g.Slice{1,2,3}).WhereLT("age", 18).Limit(10).OrderAsc("id").A
 
 在默认情况下， `gdb` 是 `非链式安全` 的，也就是说链式操作的每一个方法都将对当前操作的 `Model` 属性进行修改，因此该 `Model` 对象 **不可以重复使用**。例如，当存在多个分开查询的条件时，我们可以这么来使用 `Model` 对象：
 
-```
+```go
 user := g.Model("user")
 user.Where("status", g.Slice{1,2,3})
 if vip {
@@ -112,7 +112,7 @@ n, err := m.Count()
 user := g.Model("user").Safe()
 ```
 
-```
+```go
 m := user.Where("status", g.Slice{1,2,3})
 if vip {
     // 查询条件通过赋值叠加

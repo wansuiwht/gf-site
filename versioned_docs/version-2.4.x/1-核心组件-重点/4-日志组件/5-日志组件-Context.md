@@ -27,7 +27,7 @@ logger:
 
 使用上述配置，然后在输出日志的时候，通过 `Ctx` 链式操作方法指定输出的 `context.Context` 接口对象，例如：
 
-```
+```go
 ctx := context.WithValue(context.Background(), "RequestId", "123456789")
 g.Log().Error(ctx,"runtime error")
 

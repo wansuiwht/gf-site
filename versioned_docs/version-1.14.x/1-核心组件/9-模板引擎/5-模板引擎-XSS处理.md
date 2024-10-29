@@ -17,7 +17,7 @@ hide_title: true
 
 
 
-   ```  toml
+   ```toml
    [viewer]
        delimiters  =  ["${", "}"]
        autoencode  =  true
@@ -29,7 +29,7 @@ hide_title: true
 
 
 
-   ```  go
+   ```go
    package main
 
 
@@ -53,7 +53,7 @@ hide_title: true
 
 
 
-   ``` undefined
+   ```undefined
    姓名: &lt;script&gt;alert(&#39;john&#39;);&lt;/script&gt;
 
    ```

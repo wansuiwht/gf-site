@@ -13,7 +13,7 @@ hide_title: true
 
 
 
-   ```  go
+   ```go
     g.DB().SetSchema("user-schema")
     g.DB().SetSchema("order-schema")
    ```
@@ -24,7 +24,7 @@ hide_title: true
 
 
 
-   ```  go
+   ```go
     db.Schema("user-schema").Table("user").All()
     db.Schema("order-schema").Table("order").All()
    ```
@@ -35,7 +35,7 @@ hide_title: true
 
 
 
-   ```  go
+   ```go
     db.Table("user").Schema("user-schema").All()
     db.Table("order").Schema("order-schema").All()
    ```
@@ -53,7 +53,7 @@ hide_title: true
 
 
 
-   ```  go
+   ```go
     // SELECT * FROM `order`.`order` o LEFT JOIN `user`.`user` u ON (o.uid=u.id) WHERE u.id=1 LIMIT 1
     db.Table("order.order o").LeftJoin("user.user u", "o.uid=u.id").Where("u.id", 1).One()
    ```

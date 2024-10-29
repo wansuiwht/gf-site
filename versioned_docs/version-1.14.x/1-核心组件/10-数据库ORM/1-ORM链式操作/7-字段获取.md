@@ -18,7 +18,7 @@ hide_title: true
 
 
 
-```  go
+```go
     // uid,nickname,passport,password
     db.Table("user").FieldsStr()
 ```
@@ -29,7 +29,7 @@ hide_title: true
 
 
 
-```  go
+```go
     // gf_uid,gf_nickname,gf_passport,gf_password
     db.Table("user").FieldsStr("gf_")
 ```
@@ -44,7 +44,7 @@ hide_title: true
 
 
 
-```  go
+```go
     // uid,nickname
     db.Table("user").FieldsExStr("passport, password")
 ```
@@ -55,7 +55,7 @@ hide_title: true
 
 
 
-```  go
+```go
     // gf_uid,gf_nickname
     db.Table("user").FieldsExStr("passport, password", "gf_")
 ```

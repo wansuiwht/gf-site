@@ -14,7 +14,7 @@ hide_title: true
 
 1、配置文件
 
-```  toml
+```toml
 [viewer]
     delimiters  =  ["${", "}"]
     autoencode  =  true
@@ -23,7 +23,7 @@ hide_title: true
 
 2、示例代码
 
-```
+```go
 package main
 
 import (
@@ -42,7 +42,7 @@ func main() {
 
 3、执行输出
 
-``` undefined
+```undefined
 姓名: &lt;script&gt;alert(&#39;john&#39;);&lt;/script&gt;
 
 ```

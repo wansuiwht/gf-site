@@ -17,7 +17,7 @@ hide_title: true
 
 ## `Exit` 返回方法
 
-```
+```go
 package main
 
 import (
@@ -40,14 +40,13 @@ func main() {
 
 执行后，我们访问 [http://127.0.0.1:8199/?type=1](http://127.0.0.1:8199/?type=1) ，可以看到页面输出了：
 
-```
-john
+```john
 smith
 ```
 
 我们将以上代码稍微调整一下：
 
-```
+```go
 package main
 
 import (
@@ -71,8 +70,7 @@ func main() {
 
 执行后，我们再次访问 [http://127.0.0.1:8199/?type=1](http://127.0.0.1:8199/?type=1) ，可以看到页面输出了：
 
-```
-john
+```john
 ```
 
 此外， `Response` 对象中提供了很多 `Write*Exit` 的方法，表示输出内容后立即调用 `Exit` 方法退出当前服务方法。

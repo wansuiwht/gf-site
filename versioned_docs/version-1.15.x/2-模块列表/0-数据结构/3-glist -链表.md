@@ -12,7 +12,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/glist"
 
 ```
@@ -23,7 +23,7 @@ import "github.com/gogf/gf/container/glist"
 
 ### 基础使用
 
-```  go
+```go
 package main
 
 import (
@@ -52,7 +52,7 @@ func main() {
 
 执行后，输出结果：
 
-``` undefined
+```undefined
 [-1,0,"a",1,2]
 -1
 2
@@ -64,7 +64,7 @@ func main() {
 
 该示例中我们将通过读锁和写锁遍历一个并发安全的链表，分别通过 `RLockFunc` 和 `LockFunc` 实现。
 
-```  go
+```go
 package main
 
 import (
@@ -132,7 +132,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` undefined
+```undefined
 12345678910
 10987654321
 12345678910
@@ -143,7 +143,7 @@ func main() {
 
 ### `Pop*` 元素项出栈
 
-```  go
+```go
 package main
 
 import (
@@ -171,7 +171,7 @@ func main() {
 
 ### `Join` 元素项串连
 
-```  go
+```go
 package main
 
 import (
@@ -196,7 +196,7 @@ func main() {
 
 `glist` 容器实现了标准库 `json` 数据格式的序列化/反序列化接口。 1\. `Marshal` “\`go package main
 
-```` undefined
+````undefined
 import (
     "encoding/json"
     "fmt"
@@ -231,7 +231,7 @@ func main() {
 
 
 
-   ```  go
+   ```go
    package main
 
 
@@ -262,7 +262,7 @@ func main() {
 
 
 
-   ``` undefined
+   ```undefined
    {1 john [100,99,98]}
 
    ```
@@ -272,7 +272,7 @@ func main() {
 
 [https://github.com/gogf/gf/blob/master/container/glist/glist\_z\_bench\_test.go](https://github.com/gogf/gf/blob/master/container/glist/glist_z_bench_test.go)
 
-``` undefined
+```undefined
 goos: linux
 goarch: amd64
 pkg: github.com/gogf/gf/container/glist

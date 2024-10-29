@@ -18,7 +18,7 @@ hide_title: true
 
 
 
-```
+```go
 if r, err := g.Client().Get(ctx, "https://goframe.org"); err != nil {
        panic(err)
 }
@@ -36,7 +36,7 @@ fmt.Println(r.ReadAllString())
 
 
 
-```
+```go
 if r, err := g.Client().Get(ctx, "https://goframe.org/cover.png"); err != nil {
        panic(err)
 }
@@ -60,7 +60,7 @@ gfile.PutBytes("/Users/john/Temp/cover.png", r.ReadAll())
 
 
 
-```
+```go
 if r, err := g.Client().Post(ctx, "http://127.0.0.1:8199/form", "name=john&age=18"); err != nil {
        panic(err)
 }
@@ -84,7 +84,7 @@ fmt.Println(r.ReadAllString())
 
 
 
-```
+```go
 if r, err := g.Client().Post(
        ctx,
        "http://127.0.0.1:8199/form",
@@ -115,7 +115,7 @@ fmt.Println(r.ReadAllString())
 
 
 
-```
+```go
 if r, err := g.Client().Post(
        ctx,
        "http://user.svc/v1/user/create",
@@ -143,7 +143,7 @@ fmt.Println(r.ReadAllString())
 
 
 
-```
+```go
 if r, err := g.Client().Delete(ctx, "http://user.svc/v1/user/delete/1", "10000"); err != nil {
        panic(err)
 }
@@ -166,7 +166,7 @@ fmt.Println(r.ReadAllString())
 
 
 
-```
+```go
     // 返回content为[]bytes类型
     content := g.Client().GetBytes(ctx, "https://goframe.org")
 ```
@@ -183,7 +183,7 @@ fmt.Println(r.ReadAllString())
 
 
 
-```
+```go
     // 返回content为string类型
     content := g.Client().GetContent(ctx, "https://goframe.org")
 ```
@@ -256,7 +256,7 @@ g.Client().GetVar(ctx, url).Scan(&users)
 
 正常 `New` 方法的使用方式
 
-```
+```go
 func ExampleNew() {
 	var (
 		ctx    = gctx.New()
@@ -279,7 +279,7 @@ func ExampleNew() {
 
 同时注意在调用 `Get` 方法拿到 `Response` 对象后, 需要调用 `ReadAllString()` 获取 `Body`, 否则程序会阻塞.
 
-```
+```go
 func ExampleNew_MultiConn_Recommend() {
 	var (
 		ctx    = gctx.New()

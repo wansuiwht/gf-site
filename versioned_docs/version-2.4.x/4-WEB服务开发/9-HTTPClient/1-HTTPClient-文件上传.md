@@ -12,7 +12,7 @@ hide_title: true
 
 在服务端通过 `Request` 对象获取上传文件：
 
-```
+```go
 package main
 
 import (
@@ -96,7 +96,7 @@ func main() {
 
 ### 单文件上传
 
-```
+```go
 package main
 
 import (
@@ -127,7 +127,7 @@ func main() {
 
 ### 多文件上传
 
-```
+```go
 package main
 
 import (
@@ -165,7 +165,7 @@ func main() {
 
 很简单，修改 `FileName` 属性即可。
 
-```
+```go
 s := g.Server()
 s.BindHandler("/upload", func(r *ghttp.Request) {
     file := r.GetUploadFile("TestFile")

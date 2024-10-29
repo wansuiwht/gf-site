@@ -25,14 +25,14 @@ err  := db.Model("user").Where("id", 1).Struct(user)
 
 或者
 
-```
+```go
 user := &User{}
 err  := db.Model("user").Where("id", 1).Struct(user)
 ```
 
 前两种方式都是预先初始化对象（提前分配内存），推荐的方式：
 
-```
+```go
 user := (*User)(nil)
 err  := db.Model("user").Where("id", 1).Struct(&user)
 ```
@@ -43,7 +43,7 @@ err  := db.Model("user").Where("id", 1).Struct(&user)
 
 将多条查询结果集转换为一个 `[]struct/[]*struct` 数组，查询结果应当是多条记录组成的结果集，并且 `pointer` 应当为数组的指针地址，使用方式例如：
 
-```
+```go
 users := ([]User)(nil)
 // 或者 var users []User
 err := db.Model("user").Structs(&users)
@@ -51,7 +51,7 @@ err := db.Model("user").Structs(&users)
 
 或者
 
-```
+```go
 users := ([]*User)(nil)
 // 或者 var user []*User
 err := db.Model("user").Structs(&users)

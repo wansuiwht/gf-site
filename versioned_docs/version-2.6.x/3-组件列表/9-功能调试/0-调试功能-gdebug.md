@@ -10,7 +10,7 @@ hide_title: true
 
 **使用方式：**
 
-```
+```go
 import "github.com/gogf/gf/v2/debug/gdebug"
 ```
 
@@ -20,7 +20,7 @@ import "github.com/gogf/gf/v2/debug/gdebug"
 
 **方法列表：**
 
-```
+```go
 func BinVersion() string
 func BinVersionMd5() string
 func Caller(skip ...int) (function string, path string, line int)

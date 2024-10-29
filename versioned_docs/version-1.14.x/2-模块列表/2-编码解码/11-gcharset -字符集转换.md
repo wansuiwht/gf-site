@@ -16,7 +16,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/encoding/gcharset"
 
 ```
@@ -27,7 +27,7 @@ import "github.com/gogf/gf/encoding/gcharset"
 
 **使用示例**：
 
-```  go
+```go
 package main
 
 import (
@@ -50,7 +50,7 @@ func main() {
 
 执行后，终端输出结果为：
 
-``` html
+```html
 花间一壶酒，独酌无相亲。
 
 ```

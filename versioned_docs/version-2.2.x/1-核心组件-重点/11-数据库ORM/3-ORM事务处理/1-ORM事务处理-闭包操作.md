@@ -6,7 +6,7 @@ hide_title: true
 
 可以看到，通过常规的事务方法来管理事务有很多重复性的操作，并且存在遗忘提交/回滚操作来关闭事务的风险，因此为方便安全执行事务操作， `ORM` 组件同样提供了事务的闭包操作，通过 `Transaction` 方法实现，该方法定义如下：
 
-```
+```go
 func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx *TX) error) (err error)
 ```
 
@@ -16,7 +16,7 @@ func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx *TX
 
 使用示例：
 
-```
+```go
 g.DB().Transaction(context.TODO(), func(ctx context.Context, tx *gdb.TX) error {
 	// user
 	result, err := tx.Ctx(ctx).Insert("user", g.Map{

@@ -10,7 +10,7 @@ hide_title: true
 
 ### 示例1，简单使用
 
-```  go
+```go
 j := gjson.New(nil)
 j.Set("name", "John")
 j.Set("score", 99.5)
@@ -29,7 +29,7 @@ fmt.Println(j.MustToJsonString())
 
 ### 示例2，创建数组
 
-```  go
+```go
 j := gjson.New(nil)
 for i := 0; i < 5; i++ {
     j.Set(fmt.Sprintf(`%d.id`, i), i)
@@ -44,7 +44,7 @@ fmt.Println(j.MustToJsonString())
 
 ## 动态修改
 
-```  go
+```go
 data :=
     `{
     "users" : {

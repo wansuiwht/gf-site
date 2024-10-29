@@ -14,7 +14,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gset"
 
 ```
@@ -25,7 +25,7 @@ import "github.com/gogf/gf/container/gset"
 
 #### 基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -83,7 +83,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 3
 true
 [1 2 3]
@@ -99,7 +99,7 @@ map[1:{} 2:{} 4:{}]
 
 我们可以使用以下方法实现交差并补集，并返回一个新的结果集合，
 
-```  go
+```go
 func (set *Set) Intersect(others ...*Set) (newSet *Set)
 func (set *Set) Diff(others ...*Set) (newSet *Set)
 func (set *Set) Union(others ...*Set) (newSet *Set)
@@ -114,7 +114,7 @@ func (set *Set) Complement(full *Set) (newSet *Set)
 
 通过集合方法我们可以发现，交差并集方法支持多个集合参数进行计算。以下为简化示例，只使用一个参数集合。
 
-```  go
+```go
 package main
 
 import (
@@ -142,7 +142,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 [1 2 3]
 [4 5 6 7]
 [1 2 3 4 5 6]
@@ -152,7 +152,7 @@ func main() {
 
 #### `Contains/ContainsI` 包含判断
 
-```  go
+```go
 package main
 
 import (
@@ -177,7 +177,7 @@ func main() {
 
 #### `Pop/Pops` 集合项出栈
 
-```  go
+```go
 package main
 
 import (
@@ -202,7 +202,7 @@ func main() {
 
 #### `Join` 集合项串连
 
-```  go
+```go
 package main
 
 import (
@@ -223,7 +223,7 @@ func main() {
 
 #### `IsSubsetOf` 子集判断
 
-```  go
+```go
 package main
 
 import (
@@ -256,7 +256,7 @@ func main() {
 
 方法具体描述请查看接口文档或源码注释。
 
-```  go
+```go
 package main
 
 import (
@@ -280,7 +280,7 @@ func main() {
 
 #### `Walk` 遍历修改
 
-```  go
+```go
 package main
 
 import (
@@ -312,7 +312,7 @@ func main() {
 
 `gset` 模块下的所有容器类型均实现了标准库 `json` 数据格式的序列化/反序列化接口。 1\. `Marshal` “\`go package main
 
-```` undefined
+````undefined
 import (
 	"encoding/json"
 	"fmt"
@@ -346,7 +346,7 @@ func main() {
 
 
 
-   ```  go
+   ```go
    package main
 
 
@@ -377,7 +377,7 @@ func main() {
 
 
 
-   ``` undefined
+   ```undefined
    {1 john [100,99,98]}
 
    ```
@@ -387,7 +387,7 @@ func main() {
 
 [https://github.com/gogf/gf/blob/master/container/gset/gset\_z\_bench\_test.go](https://github.com/gogf/gf/blob/master/container/gset/gset_z_bench_test.go)
 
-``` html
+```html
 goos: linux
 goarch: amd64
 Benchmark_IntSet_Add-4                  10000000               277 ns/op               8 B/op          0 allocs/op

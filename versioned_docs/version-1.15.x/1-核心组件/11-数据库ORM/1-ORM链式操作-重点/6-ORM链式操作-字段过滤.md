@@ -18,7 +18,7 @@ hide_title: true
 
 
 
-```  go
+```go
     // SELECT `uid`,`nickname` FROM `user` ORDER BY `uid` asc
     db.Table("user").Fields("uid, nickname").Order("uid asc").All()
 ```
@@ -29,7 +29,7 @@ hide_title: true
 
 
 
-```  go
+```go
     m := g.Map{
         "uid"      : 10000,
         "nickname" : "John Guo",
@@ -50,7 +50,7 @@ hide_title: true
 
 
 
-```  go
+```go
     // SELECT `uid`,`nickname` FROM `user`
     db.Table("user").FieldsEx("passport, password").All()
 ```
@@ -61,7 +61,7 @@ hide_title: true
 
 
 
-```  go
+```go
     m := g.Map{
         "uid"      : 10000,
         "nickname" : "John Guo",
@@ -79,7 +79,7 @@ hide_title: true
 
 ~~使用示例，假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`：~~
 
-```  go
+```go
 r, err := db.Table("user").Filter().Data(g.Map{
     "id"          : 1,
     "uid"         : 1,
@@ -103,7 +103,7 @@ r, err := db.Table("user").Filter().Data(g.Map{
 
 当 `map`/ `struct` 中存在空值如 `nil`, `""`, `0` 时，默认情况下， `gdb` 将会将其当做正常的输入参数，因此这些参数也会被更新到数据表。如以下操作（以 `map` 为例， `struct` 同理）：
 
-```  go
+```go
 // UPDATE `user` SET `name`='john',update_time=null WHERE `id`=1
 db.Table("user").Data(g.Map{
     "name"        : "john",
@@ -113,7 +113,7 @@ db.Table("user").Data(g.Map{
 
 针对空值情况，我们可以通过 `OmitEmpty` 方法来过滤掉这些空值。例如，以上示例可以修改为：
 
-```  go
+```go
 // UPDATE `user` SET `name`='john' WHERE `id`=1
 db.Table("user").OmitEmpty().Data(g.Map{
     "name"        : "john",
@@ -123,7 +123,7 @@ db.Table("user").OmitEmpty().Data(g.Map{
 
 对于 `struct` 数据参数，我们也可以进行空值过滤。操作示例：
 
-```  go
+```go
 type User struct {
     Id         int    `orm:"id"`
     Passport   string `orm:"passport"`
@@ -154,7 +154,7 @@ db.Table("user").OmitEmpty().Data(user).Insert()
 
 使用示例：
 
-```  go
+```go
 // SELECT * FROM `user` WHERE `passport`='john' LIMIT 1
 r, err := db.Table("user").Where(g.Map{
     "nickname" : "",
@@ -162,7 +162,7 @@ r, err := db.Table("user").Where(g.Map{
 }).OmitEmpty().One()
 ```
 
-```  go
+```go
 type User struct {
     Id         int    `orm:"id"`
     Passport   string `orm:"passport"`

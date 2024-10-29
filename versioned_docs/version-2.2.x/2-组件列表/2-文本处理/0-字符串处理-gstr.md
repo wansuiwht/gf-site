@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/text/gstr"
 ```
 
@@ -48,7 +48,7 @@ IsNumeric(s string) bool
 
 
 
-```
+```go
 func ExampleIsNumeric() {
   	fmt.Println(gstr.IsNumeric("88"))
   	fmt.Println(gstr.IsNumeric("3.1415926"))
@@ -91,7 +91,7 @@ LenRune(str string) int
 
 
 
-```
+```go
 func ExampleLenRune() {
   	var (
   		str    = `GoFrame框架`
@@ -135,7 +135,7 @@ Repeat(input string, multiplier int) string
 
 
 
-```
+```go
 func ExampleRepeat() {
   	var (
   		input      = `goframe `
@@ -180,7 +180,7 @@ ToLower(s string) string
 
 
 
-```
+```go
 func ExampleToLower() {
   	var (
   		s      = `GOFRAME`
@@ -222,7 +222,7 @@ ToUpper(s string) string
 
 
 
-```
+```go
 func ExampleToUpper() {
   	var (
   		s      = `goframe`
@@ -264,7 +264,7 @@ UcFirst(s string) string
 
 
 
-```
+```go
 func ExampleUcFirst() {
   	var (
   		s      = `hello`
@@ -306,7 +306,7 @@ LcFirst(s string) string
 
 
 
-```
+```go
 func ExampleLcFirst() {
   	var (
   		str    = `Goframe`
@@ -348,7 +348,7 @@ UcWords(str string) string
 
 
 
-```
+```go
 func ExampleUcWords() {
   	var (
   		str    = `hello world`
@@ -390,7 +390,7 @@ IsLetterLower(b byte) bool
 
 
 
-```
+```go
 func ExampleIsLetterLower() {
   	fmt.Println(gstr.IsLetterLower('a'))
   	fmt.Println(gstr.IsLetterLower('A'))
@@ -430,7 +430,7 @@ IsLetterUpper(b byte) bool
 
 
 
-```
+```go
 func ExampleIsLetterUpper() {
   	fmt.Println(gstr.IsLetterUpper('A'))
   	fmt.Println(gstr.IsLetterUpper('a'))
@@ -472,7 +472,7 @@ Compare(a, b string) int
 
 
 
-```
+```go
 func ExampleCompare() {
   	fmt.Println(gstr.Compare("c", "c"))
   	fmt.Println(gstr.Compare("a", "b"))
@@ -514,7 +514,7 @@ Equal(a, b string) bool
 
 
 
-```
+```go
 func ExampleEqual() {
   	fmt.Println(gstr.Equal(`A`, `a`))
   	fmt.Println(gstr.Equal(`A`, `A`))
@@ -558,7 +558,7 @@ Split(str, delimiter string) []string
 
 
 
-```
+```go
 func ExampleSplit() {
   	var (
   		str       = `a|b|c|d`
@@ -601,7 +601,7 @@ SplitAndTrim(str, delimiter string, characterMask ...string) []string
 
 
 
-```
+```go
 func ExampleSplitAndTrim() {
   	var (
   		str       = `a|b|||||c|d`
@@ -644,7 +644,7 @@ Join(array []string, sep string) string
 
 
 
-```
+```go
 func ExampleJoin() {
   	var (
   		array  = []string{"goframe", "is", "very", "easy", "to", "use"}
@@ -687,7 +687,7 @@ JoinAny(array interface{}, sep string) string
 
 
 
-```
+```go
 func ExampleJoinAny() {
   	var (
   		sep    = `,`
@@ -730,7 +730,7 @@ Explode(delimiter, str string) []string
 
 
 
-```
+```go
 func ExampleExplode() {
   	var (
   		str       = `Hello World`
@@ -773,7 +773,7 @@ Implode(glue string, pieces []string) string
 
 
 
-```
+```go
 func ExampleImplode() {
   	var (
   		pieces = []string{"goframe", "is", "very", "easy", "to", "use"}
@@ -816,7 +816,7 @@ ChunkSplit(body string, chunkLen int, end string) string
 
 
 
-```
+```go
 func ExampleChunkSplit() {
   	var (
   		body     = `1234567890`
@@ -860,7 +860,7 @@ Fields(str string) []string
 
 
 
-```
+```go
 func ExampleFields() {
   	var (
   		str    = `Hello World`
@@ -904,7 +904,7 @@ AddSlashes(str string) string
 
 
 
-```
+```go
 func ExampleAddSlashes() {
   	var (
   		str    = `'aa'"bb"cc\r\n\d\t`
@@ -947,7 +947,7 @@ StripSlashes(str string) string
 
 
 
-```
+```go
 func ExampleStripSlashes() {
   	var (
   		str    = `C:\\windows\\GoFrame\\test`
@@ -989,7 +989,7 @@ QuoteMeta(str string, chars ...string) string
 
 
 
-```
+```go
 func ExampleQuoteMeta() {
   	{
   		var (
@@ -1044,7 +1044,7 @@ Count(s, substr string) int
 
 
 
-```
+```go
 func ExampleCount() {
   	var (
   		str     = `goframe is very, very easy to use`
@@ -1091,7 +1091,7 @@ CountI(s, substr string) int
 
 
 
-```
+```go
 func ExampleCountI() {
   	var (
   		str     = `goframe is very, very easy to use`
@@ -1138,7 +1138,7 @@ CountWords(str string) map[string]int
 
 
 
-```
+```go
 func ExampleCountWords() {
   	var (
   		str    = `goframe is very, very easy to use!`
@@ -1180,7 +1180,7 @@ CountChars(str string, noSpace ...bool) map[string]int
 
 
 
-```
+```go
 func ExampleCountChars() {
   	var (
   		str    = `goframe`
@@ -1224,7 +1224,7 @@ SearchArray(a []string, s string) int
 
 
 
-```
+```go
 func ExampleSearchArray() {
   	var (
   		array  = []string{"goframe", "is", "very", "nice"}
@@ -1267,7 +1267,7 @@ InArray(a []string, s string) bool
 
 
 
-```
+```go
 func ExampleInArray() {
   	var (
   		a      = []string{"goframe", "is", "very", "easy", "to", "use"}
@@ -1310,7 +1310,7 @@ PrefixArray(array []string, prefix string)
 
 
 
-```
+```go
 func ExamplePrefixArray() {
   	var (
   		strArray = []string{"tom", "lily", "john"}
@@ -1356,7 +1356,7 @@ CaseCamel(s string) string
 
 
 
-```
+```go
 func ExampleCaseCamel() {
   	var (
   		str    = `hello world`
@@ -1398,7 +1398,7 @@ CaseCamelLower(s string) string
 
 
 
-```
+```go
 func ExampleCaseCamelLower() {
   	var (
   		str    = `hello world`
@@ -1440,7 +1440,7 @@ CaseSnake(s string) string
 
 
 
-```
+```go
 func ExampleCaseSnake() {
   	var (
   		str    = `hello world`
@@ -1482,7 +1482,7 @@ CaseSnakeScreaming(s string) string
 
 
 
-```
+```go
 func ExampleCaseSnakeScreaming() {
   	var (
   		str    = `hello world`
@@ -1524,7 +1524,7 @@ CaseSnakeFirstUpper(word string, underscore ...string) string
 
 
 
-```
+```go
 func ExampleCaseSnakeFirstUpper() {
   	var (
   		str    = `RGBCodeMd5`
@@ -1566,7 +1566,7 @@ CaseKebab(s string) string
 
 
 
-```
+```go
 func ExampleCaseKebab() {
   	var (
   		str    = `hello world`
@@ -1608,7 +1608,7 @@ CaseKebabScreaming(s string) string
 
 
 
-```
+```go
 func ExampleCaseKebabScreaming() {
   	var (
   		str    = `hello world`
@@ -1650,7 +1650,7 @@ CaseDelimited(s string, del byte) string
 
 
 
-```
+```go
 func ExampleCaseDelimited() {
   	var (
   		str    = `hello world`
@@ -1693,7 +1693,7 @@ CaseDelimitedScreaming(s string, del uint8, screaming bool) string
 
 
 
-```
+```go
 func ExampleCaseDelimitedScreaming() {
   	{
   		var (
@@ -1749,7 +1749,7 @@ Contains(str, substr string) bool
 
 
 
-```
+```go
 func ExampleContains() {
   	{
   		var (
@@ -1803,7 +1803,7 @@ ContainsI(str, substr string) bool
 
 
 
-```
+```go
 func ExampleContainsI() {
   	var (
   		str     = `Hello World`
@@ -1849,7 +1849,7 @@ ContainsAny(s, chars string) bool
 
 
 
-```
+```go
 func ExampleContainsAny() {
   	{
   		var (
@@ -1905,7 +1905,7 @@ Chr(ascii int) string
 
 
 
-```
+```go
 func ExampleChr() {
   	var (
   		ascii  = 65 // A
@@ -1947,7 +1947,7 @@ Ord(char string) int
 
 
 
-```
+```go
 func ExampleOrd() {
   	var (
   		str    = `goframe`
@@ -1990,7 +1990,7 @@ OctStr(str string) string
 
 
 
-```
+```go
 func ExampleOctStr() {
   	var (
   		str    = `\346\200\241`
@@ -2032,7 +2032,7 @@ Reverse(str string) string
 
 
 
-```
+```go
 func ExampleReverse() {
   	var (
   		str    = `123456`
@@ -2077,7 +2077,7 @@ NumberFormat(number float64, decimals int, decPoint, thousandsSep string) string
 
 
 
-```
+```go
 func ExampleNumberFormat() {
   	var (
   		number       float64 = 123456
@@ -2122,7 +2122,7 @@ Shuffle(str string) string
 
 
 
-```
+```go
 func ExampleShuffle() {
   	var (
   		str    = `123456`
@@ -2164,7 +2164,7 @@ HideStr(str string, percent int, hide string) string
 
 
 
-```
+```go
 func ExampleHideStr() {
   	var (
   		str     = `13800138000`
@@ -2208,7 +2208,7 @@ Nl2Br(str string, isXhtml ...bool) string
 
 
 
-```
+```go
 func ExampleNl2Br() {
   	var (
   		str = `goframe
@@ -2256,7 +2256,7 @@ WordWrap(str string, width int, br string) string
 
 
 
-```
+```go
 func ExampleWordWrap() {
   	{
   		var (
@@ -2320,7 +2320,7 @@ IsSubDomain(subDomain string, mainDomain string) bool
 
 
 
-```
+```go
 func ExampleIsSubDomain() {
   	var (
   		subDomain  = `s.goframe.org`
@@ -2367,7 +2367,7 @@ Parse(s string) (result map[string]interface{}, err error)
 
 
 
-```
+```go
 func ExampleParse() {
   	{
   		var (
@@ -2450,7 +2450,7 @@ Pos(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePos() {
   	var (
   		haystack = `Hello World`
@@ -2493,7 +2493,7 @@ PosRune(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePosRune() {
   	var (
   		haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
@@ -2539,7 +2539,7 @@ PosI(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePosI() {
   	var (
   		haystack = `goframe is very, very easy to use`
@@ -2585,7 +2585,7 @@ PosIRune(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePosIRune() {
   	{
   		var (
@@ -2641,7 +2641,7 @@ PosR(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePosR() {
   	var (
   		haystack = `goframe is very, very easy to use`
@@ -2687,7 +2687,7 @@ PosRRune(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePosRRune() {
   	var (
   		haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
@@ -2733,7 +2733,7 @@ PosRI(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePosRI() {
   	var (
   		haystack = `goframe is very, very easy to use`
@@ -2779,7 +2779,7 @@ PosRIRune(haystack, needle string, startOffset ...int) int
 
 
 
-```
+```go
 func ExamplePosRIRune() {
   	var (
   		haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
@@ -2827,7 +2827,7 @@ Replace(origin, search, replace string, count ...int) string
 
 
 
-```
+```go
 func ExampleReplace() {
   	var (
   		origin  = `golang is very nice!`
@@ -2871,7 +2871,7 @@ ReplaceI(origin, search, replace string, count ...int) string
 
 
 
-```
+```go
 func ExampleReplaceI() {
   	var (
   		origin  = `golang is very nice!`
@@ -2915,7 +2915,7 @@ ReplaceByArray(origin string, array []string) string
 
 
 
-```
+```go
 func ExampleReplaceByArray() {
   	{
   		var (
@@ -2969,7 +2969,7 @@ ReplaceIByArray(origin string, array []string) string
 
 
 
-```
+```go
 func ExampleReplaceIByArray() {
   	var (
   		origin = `golang is very Good`
@@ -3013,7 +3013,7 @@ ReplaceByMap(origin string, replaces map[string]string) string
 
 
 
-```
+```go
 func ExampleReplaceByMap() {
   	{
   		var (
@@ -3072,7 +3072,7 @@ ReplaceIByMap(origin string, replaces map[string]string) string
 
 
 
-```
+```go
 func ExampleReplaceIByMap() {
   	var (
   		origin   = `golang is very nice`
@@ -3119,7 +3119,7 @@ Str(haystack string, needle string) string
 
 
 
-```
+```go
 func ExampleStr() {
   	var (
   		haystack = `xxx.jpg`
@@ -3162,7 +3162,7 @@ StrEx(haystack string, needle string) string
 
 
 
-```
+```go
 func ExampleStrEx() {
   	var (
   		haystack = `https://goframe.org/index.html?a=1&b=2`
@@ -3205,7 +3205,7 @@ StrTill(haystack string, needle string) string
 
 
 
-```
+```go
 func ExampleStrTill() {
   	var (
   		haystack = `https://goframe.org/index.html?test=123456`
@@ -3248,7 +3248,7 @@ StrTillEx(haystack string, needle string) string
 
 
 
-```
+```go
 func ExampleStrTillEx() {
   	var (
   		haystack = `https://goframe.org/index.html?test=123456`
@@ -3291,7 +3291,7 @@ SubStr(str string, start int, length ...int) (substr string)
 
 
 
-```
+```go
 func ExampleSubStr() {
   	var (
   		str    = `1234567890`
@@ -3335,7 +3335,7 @@ SubStrRune(str string, start int, length ...int) (substr string)
 
 
 
-```
+```go
 func ExampleSubStrRune() {
   	var (
   		str    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架。`
@@ -3379,7 +3379,7 @@ StrLimit(str string, length int, suffix ...string) string
 
 
 
-```
+```go
 func ExampleStrLimit() {
   	var (
   		str    = `123456789`
@@ -3423,7 +3423,7 @@ StrLimitRune(str string, length int, suffix ...string) string
 
 
 
-```
+```go
 func ExampleStrLimitRune() {
   	var (
   		str    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架。`
@@ -3467,7 +3467,7 @@ SubStrFrom(str string, need string) (substr string)
 
 
 
-```
+```go
 func ExampleSubStrFrom() {
   	var (
   		str  = "我爱GoFrameGood"
@@ -3510,7 +3510,7 @@ SubStrFromEx(str string, need string) (substr string)
 
 
 
-```
+```go
 func ExampleSubStrFromEx() {
   	var (
   		str  = "我爱GoFrameGood"
@@ -3553,7 +3553,7 @@ SubStrFromR(str string, need string) (substr string)
 
 
 
-```
+```go
 func ExampleSubStrFromR() {
   	var (
   		str  = "我爱GoFrameGood"
@@ -3596,7 +3596,7 @@ SubStrFromREx(str string, need string) (substr string)
 
 
 
-```
+```go
 func ExampleSubStrFromREx() {
   	var (
   		str  = "我爱GoFrameGood"
@@ -3641,7 +3641,7 @@ Trim(str string, characterMask ...string) string
 
 
 
-```
+```go
 func ExampleTrim() {
   	var (
   		str           = `*Hello World*`
@@ -3684,7 +3684,7 @@ TrimStr(str string, cut string, count ...int) string
 
 
 
-```
+```go
 func ExampleTrimStr() {
   	var (
   		str    = `Hello World`
@@ -3728,7 +3728,7 @@ TrimLeft(str string, characterMask ...string) string
 
 
 
-```
+```go
 func ExampleTrimLeft() {
   	var (
   		str           = `*Hello World*`
@@ -3771,7 +3771,7 @@ TrimLeftStr(str string, cut string, count ...int) string
 
 
 
-```
+```go
 func ExampleTrimLeftStr() {
   	var (
   		str    = `**Hello World**`
@@ -3815,7 +3815,7 @@ TrimRight(str string, characterMask ...string) string
 
 
 
-```
+```go
 func ExampleTrimRight() {
   	var (
   		str           = `**Hello World**`
@@ -3858,7 +3858,7 @@ TrimRightStr(str string, cut string, count ...int) string
 
 
 
-```
+```go
 func ExampleTrimRightStr() {
   	var (
   		str    = `Hello World!`
@@ -3902,7 +3902,7 @@ TrimAll(str string, characterMask ...string) string
 
 
 
-```
+```go
 func ExampleTrimAll() {
   	var (
   		str           = `*Hello World*`
@@ -3945,7 +3945,7 @@ HasPrefix(s, prefix string) bool
 
 
 
-```
+```go
 func ExampleHasPrefix() {
   	var (
   		s      = `Hello World`
@@ -3988,7 +3988,7 @@ HasSuffix(s, suffix string) bool
 
 
 
-```
+```go
 func ExampleHasSuffix() {
   	var (
   		s      = `my best love is goframe`
@@ -4033,7 +4033,7 @@ CompareVersion(a, b string) int
 
 
 
-```
+```go
 func ExampleCompareVersion() {
   	fmt.Println(gstr.CompareVersion("v2.11.9", "v2.10.8"))
   	fmt.Println(gstr.CompareVersion("1.10.8", "1.19.7"))
@@ -4075,7 +4075,7 @@ CompareVersionGo(a, b string) int
 
 
 
-```
+```go
 func ExampleCompareVersionGo() {
   	fmt.Println(gstr.CompareVersionGo("v2.11.9", "v2.10.8"))
   	fmt.Println(gstr.CompareVersionGo("v4.20.1", "v4.20.1+incompatible"))
@@ -4122,7 +4122,7 @@ Levenshtein(str1, str2 string, costIns, costRep, costDel int) int
 
 
 
-```
+```go
 func ExampleLevenshtein() {
   	var (
   		str1    = "Hello World"
@@ -4168,7 +4168,7 @@ SimilarText(first, second string, percent *float64) int
 
 
 
-```
+```go
 func ExampleSimilarText() {
   	var (
   		first   = `AaBbCcDd`
@@ -4212,7 +4212,7 @@ Soundex(str string) string
 
 
 
-```
+```go
 func ExampleSoundex() {
   	var (
   		str1    = `Hello`

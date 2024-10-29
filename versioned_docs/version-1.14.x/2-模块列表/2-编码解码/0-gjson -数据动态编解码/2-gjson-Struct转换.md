@@ -8,7 +8,7 @@ hide_title: true
 
 `Struct` 方法用于将整个 `Json` 包含的数据内容转换为指定的数据格式或者对象。
 
-```  go
+```go
 data :=
     `
 {
@@ -38,7 +38,7 @@ if j, err := gjson.DecodeToJson(data); err != nil {
 
 `Get*` 方法用于获得指定层级的节点数据，并将该数据转换为指定的结构体对象。
 
-```  go
+```go
 data :=
     `{
     "users" : {

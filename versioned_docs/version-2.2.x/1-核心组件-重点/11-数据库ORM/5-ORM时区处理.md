@@ -20,14 +20,14 @@ hide_title: true
 
 **配置文件**
 
-```
+```yaml
 database:
   link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test?loc=Local"
 ```
 
 **代码示例**
 
-```
+```go
 t1, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 10:00:00")
 t2, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 11:00:00")
 db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
@@ -36,7 +36,7 @@ db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
 
 这里由于通过 `time.Parse` 创建的 `time.Time` 时间对象是 `UTC` 时区，那么提交到数据库执行时将会被底层的 `driver` 修改为 `+8` 时区。
 
-```
+```go
 t1, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 10:00:00", time.Local)
 t2, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 11:00:00", time.Local)
 db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
@@ -51,14 +51,14 @@ db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
 
 **配置文件**
 
-```
+```yaml
 database:
   link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
 ```
 
 **代码示例**
 
-```
+```go
 t1, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 10:00:00")
 t2, _ := time.Parse("2006-01-02 15:04:05", "2020-10-27 11:00:00")
 db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
@@ -67,7 +67,7 @@ db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
 
 这里由于通过 `time.Parse` 创建的 `time.Time` 时间对象是 `UTC` 时区，那么提交到数据库执行时将不会被底层的 `driver` 修改。
 
-```
+```go
 t1, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 10:00:00", time.Local)
 t2, _ := time.ParseInLocation("2006-01-02 15:04:05", "2020-10-27 11:00:00", time.Local)
 db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
@@ -82,7 +82,7 @@ db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
 
 建议在配置中统一加上 `locl` 配置，例如（MySQL）： `loc=Local&parseTime=true`。以下是一个可供参考的配置：
 
-```
+```yaml
 database:
   logger:
     level:  "all"

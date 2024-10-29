@@ -14,7 +14,7 @@ hide_title: true
 
 ### 1\. 开启事务操作
 
-```  go
+```go
 if tx, err := db.Begin(); err == nil {
     fmt.Println("开启事务操作")
 }
@@ -25,7 +25,7 @@ if tx, err := db.Begin(); err == nil {
 
 ### 2\. 事务回滚操作
 
-```  go
+```go
 if tx, err := db.Begin(); err == nil {
     r, err := tx.Save("user", gdb.Map{
         "uid"  :  1,
@@ -39,7 +39,7 @@ if tx, err := db.Begin(); err == nil {
 
 ### 3\. 事务提交操作
 
-```  go
+```go
 if tx, err := db.Begin(); err == nil {
     r, err := tx.Save("user", gdb.Map{
         "uid"  :  1,
@@ -55,7 +55,7 @@ if tx, err := db.Begin(); err == nil {
 
 事务操作对象仍然可以通过 `tx.Table` 或者 `tx.From` 方法返回一个链式操作的对象，该对象与 `db.Table` 或者 `db.From` 方法返回值相同，只不过数据库操作在事务上执行，可提交或回滚。
 
-```  go
+```go
 if tx, err := db.Begin(); err == nil {
     r, err := tx.Table("user").Data(gdb.Map{"uid":1, "name": "john_1"}).Save()
     tx.Commit()
@@ -70,7 +70,7 @@ if tx, err := db.Begin(); err == nil {
 
 为方便事务操作， `gdb` 提供了事务的闭包操作，通过 `Transaction` 方法实现，该方法定义如下：
 
-```  go
+```go
 func (db DB) Transaction(f func(tx *TX) error) (err error)
 
 ```
@@ -81,7 +81,7 @@ func (db DB) Transaction(f func(tx *TX) error) (err error)
 
 使用示例：
 
-```  go
+```go
 db.Transaction(func(tx *gdb.TX) error {
     // user
     result, err := tx.Insert("user", g.Map{

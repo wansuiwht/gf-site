@@ -20,7 +20,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gtree"
 
 ```
@@ -33,7 +33,7 @@ import "github.com/gogf/gf/container/gtree"
 
 在 `gutil` 模块中提供了常用的一些基本类型比较方法，可以直接在程序中直接使用，后续也有示例。
 
-```  go
+```go
 func ComparatorByte(a, b interface{}) int
 func ComparatorFloat32(a, b interface{}) int
 func ComparatorFloat64(a, b interface{}) int
@@ -55,7 +55,7 @@ func ComparatorUint8(a, b interface{}) int
 
 ## 基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -123,7 +123,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 10
 12
 true
@@ -141,7 +141,7 @@ true
 
 ## 前序/后续遍历
 
-```  go
+```go
 package main
 
 import (
@@ -175,7 +175,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 AVLTree
 │           ┌── 9
 │       ┌── 8

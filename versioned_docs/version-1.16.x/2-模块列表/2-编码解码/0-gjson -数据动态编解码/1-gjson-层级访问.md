@@ -10,7 +10,7 @@ hide_title: true
 
 ### 示例1，基本使用
 
-```  go
+```go
 data :=
     `{
     "users" : {
@@ -35,7 +35,7 @@ if j, err := gjson.DecodeToJson(data); err != nil {
 
 ### 示例2，自定义层级分隔符号
 
-```  go
+```go
 data :=
     `{
     "users" : {
@@ -61,7 +61,7 @@ if j, err := gjson.DecodeToJson(data); err != nil {
 
 ### 示例3，处理键名本身带有层级符号” `.`“的情况
 
-```  go
+```go
 data :=
     `{
         "users" : {
@@ -88,7 +88,7 @@ if j, err := gjson.DecodeToJson(data); err != nil {
 
 例如：
 
-```  go
+```go
 jsonContent := `{"map":{"key":"value"}, "slice":[59,90]}`
 j, _ := gjson.LoadJson(jsonContent)
 m := j.GetMap("map")

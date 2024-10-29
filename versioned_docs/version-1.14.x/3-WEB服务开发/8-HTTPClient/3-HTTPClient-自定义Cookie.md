@@ -8,7 +8,7 @@ HTTP客户端发起请求时可以自定义发送给服务端的 `Cookie` 内容
 
 方法列表：
 
-```  go
+```go
 func (c *Client) SetCookie(key, value string) *Client
 func (c *Client) SetCookieMap(m map[string]string) *Client
 
@@ -18,7 +18,7 @@ func (c *Client) SetCookieMap(m map[string]string) *Client
 
 ### 服务端
 
-```  go
+```go
 package main
 
 import (
@@ -46,7 +46,7 @@ func main() {
 
 
 
-```  go
+```go
 package main
 
 
@@ -79,7 +79,7 @@ func main() {
 
 
 
-```  go
+```go
 package main
 
 
@@ -111,7 +111,7 @@ func main() {
 
 
 
-```  shell
+```shell
 map[name:john score:100]
 
 ```

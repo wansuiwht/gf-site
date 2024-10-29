@@ -6,7 +6,7 @@ hide_title: true
 
 我们可以通过 `RedirectTo/RedirectBack` 来实现页面之间的跳转，该功能通过 `Location Header` 实现。相关方法：
 
-```
+```go
 func (r *Response) RedirectBack(code ...int)
 func (r *Response) RedirectTo(location string, code ...int)
 ```
@@ -15,7 +15,7 @@ func (r *Response) RedirectTo(location string, code ...int)
 
 `ReditectTo` 用以引导客户端跳转到指定的地址，地址可以是一个本地服务的相对路径，也可以是一个完整的 `HTTP` 地址。使用示例：
 
-```
+```go
 package main
 
 import (
@@ -42,7 +42,7 @@ func main() {
 
 `RedirectBack` 用以引导客户端跳转到上一页面地址，上一页面地址是通过 `Referer Header` 获取的，一般来说浏览器客户端都会传递这一Header。使用示例：
 
-```
+```go
 package main
 
 import (

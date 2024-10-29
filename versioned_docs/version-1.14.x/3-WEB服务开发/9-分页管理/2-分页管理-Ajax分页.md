@@ -8,7 +8,7 @@ hide_title: true
 
 完整示例如下：
 
-```  go
+```go
 package main
 
 import (
@@ -61,7 +61,7 @@ func main() {
 
 在该示例中，我们定义了一个 `DoAjax(url)` 方法用来执行分页操作，为演示需要它逻辑很简单，会加载指定分页页面的内容并覆盖掉当前页面的分页内容。
 
-``` javascript
+```javascript
 function DoAjax(url) {
      $.get(url, function(data,status) {
          $("body").html(data);

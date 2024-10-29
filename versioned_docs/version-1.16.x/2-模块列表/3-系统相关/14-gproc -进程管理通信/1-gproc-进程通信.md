@@ -12,7 +12,7 @@ hide_title: true
 
 `gproc` 的进程通信API非常简便，只需通过以下两个方法实现：
 
-```  go
+```go
 func Send(pid int, data []byte) error
 func Receive() *Msg
 
@@ -22,7 +22,7 @@ func Receive() *Msg
 
 我们来看一个进程间通信的基本使用示例：
 
-```
+```go
 package main
 
 import (
@@ -55,7 +55,7 @@ func main() {
 
 该示例中，我们的主进程启动时创建了一个子进程，该子进程每隔1秒钟向主进程发送当前的时间，主进程收取到子进程发送的参数后输出到终端上。执行后，终端输出的内容如下：
 
-```  shell
+```shell
 29978: I am child? false
 29984: I am child? true
 receive from 29984, data: 2018-05-18 15:01:00

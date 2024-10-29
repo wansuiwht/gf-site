@@ -8,7 +8,7 @@ hide_title: true
 
 经过前面的章节介绍，如果给定一个未初始化的数组（值为 `nil`），在 `ORM` 根据给定条件未查询到数据时，并不会自动初始化该数组。因此该未初始化的数组结果如果通过 `JSON` 进行编码后，会被转换为 `null` 值。
 
-```
+```go
 package main
 
 import (
@@ -53,7 +53,7 @@ func main() {
 
 针对这种场景，可以给 `ORM` 的 `Scan` 方法一个初始化的空数组即可。当 `ORM` 查询不到数据时，该数组属性仍然是一个空数组，而不是 `nil`，返回 `JSON` 编码后也不会是 `null` 值。
 
-```
+```go
 package main
 
 import (

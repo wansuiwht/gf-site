@@ -38,7 +38,7 @@ func (m *Model) Hook(hook HookHandler) *Model
 
 查询 `birth_day` 字段时，同时计算出当前用户的年龄：
 
-```
+```go
 m := g.DB().Model("user").Hook(gdb.HookHandler{
 	Select: func(ctx context.Context, in *gdb.HookSelectInput) (result gdb.Result, err error) {
 		result, err = in.Next(ctx)

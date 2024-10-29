@@ -8,14 +8,14 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/net/gtcp"
 
 ```
 
 **接口文档**： [https://godoc.org/github.com/gogf/gf/net/gtcp](https://godoc.org/github.com/gogf/gf/net/gtcp)
 
-```  go
+```go
 type Server
     func GetServer(name ...interface{}) *Server
     func NewServer(address string, handler func(*Conn), name ...string) *Server
@@ -34,7 +34,7 @@ type Server
 
 我们通过实现一个简单的 `echo服务器` 来演示 `TCPServer` 的使用：
 
-```  go
+```go
 package main
 
 import (
@@ -65,7 +65,7 @@ func main() {
 
 执行之后我们使用 `telnet` 工具来进行测试：
 
-```  shell
+```shell
 john@home:~$ telnet 127.0.0.1 8999
 Trying 127.0.0.1...
 Connected to 127.0.0.1.

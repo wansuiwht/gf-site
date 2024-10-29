@@ -13,7 +13,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/os/gcmd"
 
 ```
@@ -22,7 +22,7 @@ import "github.com/gogf/gf/os/gcmd"
 
 [https://godoc.org/github.com/gogf/gf/os/gcmd](https://godoc.org/github.com/gogf/gf/os/gcmd)
 
-```  go
+```go
 func GetArg(index int, def ...string) string
 func GetArgAll() []string
 func GetArgVar(index int, def ...string) *gvar.Var
@@ -69,7 +69,7 @@ type Parser
 
 我们来看一个示例。比如在 `gf` 命令行工具的 `build` 交叉编译命令中，有这么一段解析代码： [https://github.com/gogf/gf-cli/blob/master/commands/build/build.go](https://github.com/gogf/gf-cli/blob/master/commands/build/build.go)
 
-```  go
+```go
 parser, err := gcmd.Parse(g.MapStrBool{
     "n,name":    true,
     "v,version": true,
@@ -88,7 +88,7 @@ parser, err := gcmd.Parse(g.MapStrBool{
 
 之前提到过，选项的位置在命令行中是任意的，也就是说，以下命令行选项输入其实意义是一样的：
 
-``` html
+```html
 gf build main.go -a amd64 -o linux -n app
 gf -a amd64 -o linux build main.go -n app
 gf -n app build -o linux -a amd64 main.go
@@ -102,7 +102,7 @@ gf -n app build -o linux -a amd64 main.go
 
 此外，使用 `Parse` 方法创建自定义解析的情况下，命令行的选项与数据之间可以通过空格，也可以通过 `=` 符号进行连接，如：
 
-``` undefined
+```undefined
 gf build main.go -a=amd64 -o=linux -n=app
 
 ```
@@ -111,7 +111,7 @@ gf build main.go -a=amd64 -o=linux -n=app
 
 由于 `gcmd` 模块提供了一些包方法用以获取默认的命令行解析规则。在默认规则下，选项名称与数据之间应当使用 `=` 连接（不支持空格），没有 `=` 符号的选项表示无数据选项。例如，
 
-``` undefined
+```undefined
 gf build main.go -a=amd64 -o=linux -n=app -f
 
 ```
@@ -120,7 +120,7 @@ gf build main.go -a=amd64 -o=linux -n=app -f
 
 假如默认规则下，不使用 `=` 符号来连接选项参数，例如：
 
-``` undefined
+```undefined
 gf build main.go -a amd64 -o linux -n app -f
 
 ```
@@ -131,7 +131,7 @@ gf build main.go -a amd64 -o linux -n app -f
 
 对于命令行的可执行程序来讲，需要根据执行参选定位到对应的入口函数进行处理， `gcmd` 模块提供了以下方法来实现：
 
-```  go
+```go
 func AutoRun() error
 func BindHandle(cmd string, f func()) error
 func BindHandleMap(m map[string]func()) error
@@ -151,7 +151,7 @@ func (p *Parser) RunHandle(cmd string) error
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -177,7 +177,7 @@ func main() {
 
 编译成二进制文件后进行执行测试：
 
-```  shell
+```shell
 $ go build main.go
 $ ./main test
 This is test.

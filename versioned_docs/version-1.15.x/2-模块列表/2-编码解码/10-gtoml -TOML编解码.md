@@ -8,7 +8,7 @@ TOML数据格式编码解析。
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/encoding/gtoml"
 
 ```

@@ -60,7 +60,7 @@ func (l *Logger) SetHandlers(handlers ...Handler)
 
 在本示例中，我们采用了前置中间件的设计，通过自定义 `Handler` 将日志内容输出格式修改为了 `JSON` 格式。
 
-```
+```go
 package main
 
 import (
@@ -120,7 +120,7 @@ func main() {
 
 > `Graylog` 是与 `ELK` 可以相提并论的一款集中式日志管理方案，支持数据收集、检索、可视化 `Dashboard`。在本示例中使用到了一个简单的第三方 `graylog` 客户端组件。
 
-```
+```go
 package main
 
 import (
@@ -173,7 +173,7 @@ func GetDefaultHandler() Handler
 
 使用示例，我们将项目所有的日志输出均采用 `JSON` 格式输出，以保证日志内容结构化并且每次日志输出都是单行，方便日志采集期采集日志：
 
-```
+```go
 package main
 
 import (
@@ -236,7 +236,7 @@ func main() {
 
 该 `Handler` 可以将日志内容转换为 `Json` 格式打印。使用示例：
 
-```
+```go
 package main
 
 import (

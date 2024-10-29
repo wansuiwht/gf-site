@@ -54,7 +54,7 @@ type Counter struct {
 
 `Counter` 使用示例，字段自增：
 
-```
+```go
 updateData := g.Map{
 	"views": &gdb.Counter{
         Field: "views",
@@ -67,7 +67,7 @@ result, err := db.Update("article", updateData, "id", 1)
 
 `Counter` 也可以实现非自身字段的自增，例如：
 
-```
+```go
 updateData := g.Map{
 	"views": &gdb.Counter{
         Field: "clicks",

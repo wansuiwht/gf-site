@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/net/gtcp"
 
 ```
@@ -17,7 +17,7 @@ import "github.com/gogf/gf/net/gtcp"
 
 [https://godoc.org/github.com/gogf/gf/net/gtcp](https://godoc.org/github.com/gogf/gf/net/gtcp)
 
-```  go
+```go
 type PoolConn
     func NewPoolConn(addr string, timeout ...int) (*PoolConn, error)
     func (c *PoolConn) Close() error
@@ -41,7 +41,7 @@ type PoolConn
 
 ## 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -93,7 +93,7 @@ func main() {
 
 执行后，结果如下：
 
-``` html
+```html
 > 2018-07-11 23:29:54 127.0.0.1:55876 127.0.0.1:8999
 > 2018-07-11 23:29:55 127.0.0.1:55876 127.0.0.1:8999
 > 2018-07-11 23:29:56 127.0.0.1:55876 127.0.0.1:8999
@@ -109,7 +109,7 @@ func main() {
 
 这个例子是为了展示当服务端关闭连接后，该连接对象还是否有效的处理。
 
-```  go
+```go
 package main
 
 import (
@@ -160,7 +160,7 @@ func main() {
 
 执行后，输出结果如下：
 
-``` html
+```html
 > 2018-07-20 12:56:15 127.0.0.1:59368 127.0.0.1:8999
 EOF
 > 2018-07-20 12:56:17 127.0.0.1:59376 127.0.0.1:8999

@@ -8,7 +8,7 @@ hide_title: true
 
 方法列表：
 
-```
+```go
 func (r *Request) GetCtx() context.Context
 func (r *Request) SetCtx(ctx context.Context)
 func (r *Request) GetCtxVar(key interface{}, def ...interface{}) *gvar.Var
@@ -24,7 +24,7 @@ func (r *Request) SetCtxVar(key interface{}, value interface{})
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -57,7 +57,7 @@ func main() {
 
 执行后，访问 [http://127.0.0.1:8199/](http://127.0.0.1:8199/) ，页面输出内容为：
 
-``` undefined
+```undefined
 HBm876TFCde435Tgf
 
 ```

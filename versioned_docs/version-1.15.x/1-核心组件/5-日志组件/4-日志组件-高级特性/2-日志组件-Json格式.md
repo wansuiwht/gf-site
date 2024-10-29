@@ -8,7 +8,7 @@ hide_title: true
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -29,7 +29,7 @@ func main() {
 
 执行后，终端输出结果：
 
-``` html
+```html
 2019-06-02 15:28:52.653 [DEBU] {"name":"john","uid":100}
 2019-06-02 15:28:52.653 [DEBU] {"uid":100,"name":"john"}
 

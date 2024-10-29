@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/os/genv"
 
 ```
@@ -19,7 +19,7 @@ import "github.com/gogf/gf/os/genv"
 
 ## `SetMap` 批量设置
 
-```
+```go
 func SetMap(m map[string]string) error
 ```
 
@@ -35,7 +35,7 @@ genv.SetMap(g.MapStrStr{
 
 ## `GetWithCmd` 特性
 
-```
+```go
 func GetWithCmd(key string, def ...interface{}) *gvar.Var
 ```
 

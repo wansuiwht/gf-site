@@ -10,7 +10,7 @@ hide_title: true
 
 先上H5客户端的代码
 
-``` html
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,7 +117,7 @@ hide_title: true
 
 ## WebSocket服务端
 
-```  go
+```go
 package main
 
 import (
@@ -161,7 +161,7 @@ func main() {
 
 如果需要支持HTTPS的WebSocket服务，只需要依赖的WebServer支持HTTPS即可，访问的WebSocket地址需要使用 `wss://` 协议访问。以上客户端HTML5页面中的WebSocket访问地址需要修改为： `wss://127.0.0.1:8199/wss`。服务端示例代码：
 
-```  go
+```go
 package main
 
 import (

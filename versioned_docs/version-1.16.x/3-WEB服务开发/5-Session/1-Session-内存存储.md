@@ -12,7 +12,7 @@ hide_title: true
 
 [https://github.com/gogf/gf/blob/master/.example/os/gsession/storage-memory/memory.go](https://github.com/gogf/gf/blob/master/.example/os/gsession/storage-memory/memory.go)
 
-```  go
+```go
 package main
 
 import (

@@ -10,7 +10,7 @@ hide_title: true
 
 常用转换方法：
 
-```  go
+```go
 func Map(value interface{}, tags ...string) map[string]interface{}
 func MapDeep(value interface{}, tags ...string) map[string]interface{}
 
@@ -22,7 +22,7 @@ func MapDeep(value interface{}, tags ...string) map[string]interface{}
 
 ## 示例1，基本示例
 
-```  go
+```go
 package main
 
 import (
@@ -56,7 +56,7 @@ func main() {
 
 执行后，终端输出：
 
-```  json
+```json
 {
     "name": "john",
     "uid": 1
@@ -75,7 +75,7 @@ func main() {
 
 ## 示例2，属性标签
 
-```  go
+```go
 package main
 
 import (
@@ -104,7 +104,7 @@ func main() {
 
 执行后，终端输出：
 
-```  json
+```json
 {
     "Uid": 100,
     "password1": "123",
@@ -115,7 +115,7 @@ func main() {
 
 ## 示例3，自定义标签
 
-```  go
+```go
 package main
 
 import (
@@ -139,7 +139,7 @@ func main() {
 
 执行后，输出结果为：
 
-```  json
+```json
 {
 	"nick-name": "john",
 	"uid": 1
@@ -153,7 +153,7 @@ func main() {
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -185,7 +185,7 @@ func main() {
 
 执行后，终端输出结果为：
 
-```  json
+```json
 {
     "base": {
         "date": "2019",

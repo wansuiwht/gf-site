@@ -38,7 +38,7 @@ db.Model("user").Where(g.Map{
 
 使用 `struct` 参数类型，注意查询条件的顺序和 `struct` 的属性定义顺序有关。
 
-```  go
+```go
 type User struct {
     Id     []int  `orm:"uid"`
     Gender int    `orm:"gender"`
@@ -61,7 +61,7 @@ db.Model("user").Where("uid", nil).All()
 
 `ORM` 同时也提供了常用条件方法 `WhereIn/WhereNotIn/WhereOrIn/WhereOrNotIn` 方法，用于常用的 `In` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereIn(column string, in interface{}) *Model
 func (m *Model) WhereNotIn(column string, in interface{}) *Model
 func (m *Model) WhereOrIn(column string, in interface{}) *Model
@@ -86,7 +86,7 @@ db.Model("user").Where("gender", 1).WhereOrNotIn("type", g.Slice{1,2,3}).All()
 
 ## `like         ` 查询
 
-```  go
+```go
 // SELECT * FROM `user` WHERE name like '%john%'
 db.Model("user").Where("name like ?", "%john%").All()
 // SELECT * FROM `user` WHERE birthday like '1990-%'
@@ -96,7 +96,7 @@ db.Model("user").Where("birthday like ?", "1990-%").All()
 
 从 `goframe v1.16` 版本开始， `goframe` 的 `ORM` 同时也提供了常用条件方法 `WhereLike/WhereNotLike/WhereOrLike/WhereOrNotLike` 方法，用于常用的 `Like` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereLike(column string, like interface{}) *Model
 func (m *Model) WhereNotLike(column string, like interface{}) *Model
 func (m *Model) WhereOrLike(column string, like interface{}) *Model
@@ -139,7 +139,7 @@ db.Model("user").Fields("SUM(score)").Where("uid", 1).Value()
 
 从 `goframe v1.16` 版本开始， `goframe` 的 `ORM` 同时也提供了常用统计方法 `Min/Max/Avg/Sum` 方法，用于常用的字段统计查询。方法定义如下：
 
-```
+```go
 func (m *Model) Min(column string) (float64, error)
 func (m *Model) Max(column string) (float64, error)
 func (m *Model) Avg(column string) (float64, error)
@@ -164,7 +164,7 @@ db.Model("user").Where("uid", 1).Sum("score")
 
 ## `count` 查询
 
-```  go
+```go
 // SELECT COUNT(1) FROM `user` WHERE `birthday`='1990-10-01'
 db.Model("user").Where("birthday", "1990-10-01").Count()
 // SELECT COUNT(uid) FROM `user` WHERE `birthday`='1990-10-01'
@@ -174,19 +174,19 @@ db.Model("user").Fields("uid").Where("birthday", "1990-10-01").Count()
 
 从 `goframe v1.16` 版本开始， `goframe` 的 `ORM` 同时也提供了一个按照字段进行 `Count` 的常用方法 `CountColumn`。方法定义如下：
 
-```
+```go
 func (m *Model) CountColumn(column string) (int, error)
 ```
 
 使用示例：
 
-```
+```go
 db.Model("user").Where("birthday", "1990-10-01").CountColumn("uid")
 ```
 
 ## `distinct` 查询
 
-```  go
+```go
 // SELECT DISTINCT uid,name FROM `user`
 db.Model("user").Fields("DISTINCT uid,name").All()
 // SELECT COUNT(DISTINCT uid,name) FROM `user`
@@ -196,7 +196,7 @@ db.Model("user").Fields("DISTINCT uid,name").Count()
 
 从 `goframe v1.16` 版本开始， `goframe` 的 `ORM` 同时也提供了一个字段唯一性过滤标记方法 `Distinct`。方法定义如下：
 
-```
+```go
 func (m *Model) Distinct() *Model
 ```
 
@@ -212,7 +212,7 @@ db.Model("user").Distinct().CountColumn("uid,name")
 
 ## `between` 查询
 
-```  go
+```go
 // SELECT * FROM `user ` WHERE age between 18 and 20
 db.Model("user").Where("age between ? and ?", 18, 20).All()
 
@@ -220,7 +220,7 @@ db.Model("user").Where("age between ? and ?", 18, 20).All()
 
 从 `goframe v1.16` 版本开始， `goframe` 的 `ORM` 同时也提供了常用条件方法 `WhereBetween/WhereNotBetween/WhereOrBetween/WhereOrNotBetween` 方法，用于常用的 `Between` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereBetween(column string, min, max interface{}) *Model
 func (m *Model) WhereNotBetween(column string, min, max interface{}) *Model
 func (m *Model) WhereOrBetween(column string, min, max interface{}) *Model
@@ -247,7 +247,7 @@ db.Model("user").Where("gender", 0).WhereOrNotBetween("age", 16, 20).All()
 
 `ORM` 提供了常用条件方法 `WhereNull/WhereNotNull/WhereOrNull/WhereOrNotNull` 方法，用于常用的 `Null` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereNull(columns ...string) *Model
 func (m *Model) WhereNotNull(columns ...string) *Model
 func (m *Model) WhereOrNull(columns ...string) *Model

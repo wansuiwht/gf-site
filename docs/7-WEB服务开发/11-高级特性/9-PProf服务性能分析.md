@@ -14,7 +14,7 @@ hide_title: true
 
 我们来看一个简单的例子：
 
-```
+```go
 package main
 
 import (
@@ -39,7 +39,7 @@ func main() {
 
 这个例子使用了 `s.EnablePProf()` 启用了性能分析，默认会自动注册以下几个路由规则：
 
-``` html
+```html
 /debug/pprof/*action
 /debug/pprof/cmdline
 /debug/pprof/profile
@@ -53,13 +53,13 @@ func main() {
 
 也可以使用 `StartPProfServer` 方法，快速开启一个独立的 `PProf Server`，常用于一些没有 `HTTP Server` 的常驻的进程中（例如定时任务、 `GRPC` 服务中），可以快速开启一个 `PProf Server` 用于程序性能分析。该方法的定义如下：
 
-```
+```go
 func StartPProfServer(port int, pattern ...string)
 ```
 
 一般的场景是使用异步 `goroutine` 运行该 `PProd Server`，即往往是这么来使用：
 
-```
+```go
 package main
 
 import (
@@ -75,7 +75,7 @@ func main() {
 
 以上示例可以改进为：
 
-```
+```go
 package main
 
 import (
@@ -126,13 +126,13 @@ func main() {
 
 如果想要进行详细的性能分析，基本上离不开 `go tool pprof` 命令行工具的支持，在开启性能分析支持后，我们可以使用以下命令执行性能采集分析：
 
-```
+```bash
 go tool pprof -http :8080 "http://127.0.0.1:8199/debug/pprof/profile"
 ```
 
 也可以将pprof文件导出后再通过go tool pprof命令打开：
 
-```
+```bash
 curl http://127.0.0.1:8199/debug/pprof/profile > pprof.profile
 go tool pprof -http :8080 pprof.profile
 ```
@@ -143,7 +143,7 @@ go tool pprof -http :8080 pprof.profile
 
 本示例中的命令行性能分析结果如下：
 
-```
+```bash
 $ go tool pprof -http :8080 "http://127.0.0.1:8199/debug/pprof/profile"
 Serving web UI on http://localhost:8080
 ```
@@ -162,7 +162,7 @@ Serving web UI on http://localhost:8080
 
 与 `CPU` 性能分析类似，内存使用分析同样使用到 `go tool pprof` 命令：
 
-```
+```bash
 $ go tool pprof -http :8080 "http://127.0.0.1:8199/debug/pprof/heap"
 Serving web UI on http://localhost:8080
 ```
@@ -179,7 +179,7 @@ Serving web UI on http://localhost:8080
 
 与上面的分析类似， `goroutine` 使用分析同样使用到 `go tool pprof` 命令：
 
-```
+```bash
 $ go tool pprof -http :8080 "http://127.0.0.1:8199/debug/pprof/goroutine"
 Serving web UI on http://localhost:8080
 ```

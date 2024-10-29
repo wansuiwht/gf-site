@@ -66,7 +66,7 @@ func CtxId(ctx context.Context) string
 
 ### 1、HTTP Response Header TraceID
 
-```
+```go
 package main
 
 import (
@@ -136,7 +136,7 @@ Trace-Id: 908d2027560af616e218e912d2ac3972
 
 ### 2、客户端注入 `TraceID`
 
-```
+```go
 package main
 
 import (
@@ -168,7 +168,7 @@ func main() {
 
 执行后，终端输出：
 
-```
+```html
 2022-06-06 21:17:17.447 [INFO] pid[56070]: http server started listening on [:8199]
 
   ADDRESS | METHOD | ROUTE |                             HANDLER                             |    MIDDLEWARE
@@ -185,7 +185,7 @@ func main() {
 
 ### 3、客户端自定义 `TraceID`
 
-```
+```go
 package main
 
 import (
@@ -248,7 +248,7 @@ func main() {
 
 我来给你写个例子吧：
 
-```
+```go
 package main
 
 import (
@@ -299,7 +299,7 @@ func main() {
 
 随后查看终端输出：
 
-```
+```html
 2022-06-07 14:51:21.957 [INFO] openapi specification is disabled
 2022-06-07 14:51:21.958 [INTE] ghttp_server.go:78 78198: graceful reload feature is disabled
 

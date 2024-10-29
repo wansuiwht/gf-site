@@ -6,7 +6,7 @@ hide_title: true
 
 `ghttp` 客户端支持对HTTP请求的输入与输出原始信息获取与打印，方便调试，相关方法如下：
 
-```  go
+```go
 func (r *ClientResponse) Raw() string
 func (r *ClientResponse) RawDump()
 func (r *ClientResponse) RawRequest() string
@@ -18,7 +18,7 @@ func (r *ClientResponse) RawResponse() string
 
 ## 使用示例
 
-```  go
+```go
 package main
 
 import (
@@ -37,7 +37,7 @@ func main() {
 
 执行后，终端输出为：
 
-``` undefined
+```undefined
 +---------------------------------------------+
 |                   REQUEST                   |
 +---------------------------------------------+

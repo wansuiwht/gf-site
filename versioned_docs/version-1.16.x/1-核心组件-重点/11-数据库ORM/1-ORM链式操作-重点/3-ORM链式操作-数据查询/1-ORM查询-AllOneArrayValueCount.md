@@ -8,7 +8,7 @@ hide_title: true
 
 这四个方法是数据查询比较常用的方法，方法列表：
 
-```
+```go
 func (m *Model) All(where ...interface{} (Result, error)
 func (m *Model) One(where ...interface{}) (Record, error)
 func (m *Model) Array(fieldsAndWhere ...interface{}) ([]Value, error)
@@ -50,7 +50,7 @@ Model("user").Where("status", g.Slice{1,2,3}).Count()
 
 方法列表：
 
-```
+```go
 func (m *Model) FindAll(where ...interface{}) (Result, error)
 func (m *Model) FindOne(where ...interface{}) (Record, error)
 func (m *Model) FindArray(fieldsAndWhere ...interface{}) (Value, error)

@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/net/gtcp"
 ```
 
@@ -62,7 +62,7 @@ TCP通信读取操作由 `Recv` 方法实现，同时也提供了错误重试的
 
 ### 示例1，简单使用
 
-```
+```go
 package main
 
 import (
@@ -112,7 +112,7 @@ func main() {
 
 
 
-```  shell
+```shell
     2018-07-11 22:11:08.650 0
     2018-07-11 22:11:09.651 1
     2018-07-11 22:11:10.651 2
@@ -133,7 +133,7 @@ func main() {
 
 我们将之前的回显服务改进一下：
 
-```
+```go
 package main
 
 import (
@@ -195,7 +195,7 @@ func main() {
 
 我们在这个示例中使用gtcp包来实现一个简单的HTTP客户端，读取并打印出百度首页的 `header` 和 `content` 内容。
 
-```
+```go
 package main
 
 import (

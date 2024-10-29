@@ -47,7 +47,7 @@ func (m *Model) Cache(option CacheOption) *Model
 
 默认情况下 `ORM` 的 `*gcache.Cache` 缓存对象提供的是单进程内存缓存，虽然性能非常高效，但是只能在单进程内使用。如果服务如果采用多节点部署，多节点之间的缓存可能会产生数据不一致的情况，因此大多数场景下我们都是通过 `Redis` 服务器来实现对数据库查询数据的缓存。 `*gcache.Cache` 对象采用了适配器设计模式，可以轻松实现从单进程内存缓存切换为分布式的 `Redis` 缓存。使用示例：
 
-```
+```go
 redisCache := gcache.NewAdapterRedis(g.Redis())
 g.DB().GetCache().SetAdapter(redisCache)
 ```
@@ -68,7 +68,7 @@ func (c *Core) ClearCacheAll(ctx context.Context) (err error)
 
 方法介绍如注释。可以看到这两个方法是挂载 `Core` 对象上的，而底层的 `Core` 对象已经通过 `DB` 接口暴露，因此我们这么来获取 `Core` 对象：
 
-```
+```go
 g.DB().GetCore()
 ```
 
@@ -76,7 +76,7 @@ g.DB().GetCore()
 
 ### 数据表结构
 
-```
+```sql
 CREATE TABLE `user` (
   `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL DEFAULT '' COMMENT '昵称',
@@ -87,7 +87,7 @@ CREATE TABLE `user` (
 
 ### 示例代码
 
-```
+```go
 package main
 
 import (
@@ -145,7 +145,7 @@ func main() {
 
 执行后输出结果为（测试表数据结构仅供示例参考）：
 
-```
+```html
 2022-02-08 17:36:19.817 [DEBU] {c0424c75f1c5d116d0df0f7197379412} {"name":"john","site":"https://goframe.org","uid":1}
 2022-02-08 17:36:19.817 [DEBU] {c0424c75f1c5d116d0df0f7197379412} {"name":"john","site":"https://goframe.org","uid":1}
 2022-02-08 17:36:19.817 [DEBU] {c0424c75f1c5d116d0df0f7197379412} [  0 ms] [default] [rows:1  ] UPDATE `user` SET `name`='smith' WHERE `uid`=1

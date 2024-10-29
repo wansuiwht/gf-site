@@ -23,7 +23,7 @@ hide_title: true
 
 ## 基础语法
 
-```  toml
+```toml
 title = "TOML 例子"
 
 [owner]
@@ -73,7 +73,7 @@ hosts = [
 
 使用 `#` 表示注释：
 
-```  toml
+```toml
 # I am a comment. Hear me roar. Roar.
 key = "value" # Yeah, you can do this.
 
@@ -91,7 +91,7 @@ key = "value" # Yeah, you can do this.
 
 由三个双引号包裹，除了分隔符开始的换行外，字符串内的换行将被保留：
 
-```  toml
+```toml
 str1 = """
 Roses are red
 Violets are blue"""
@@ -102,7 +102,7 @@ Violets are blue"""
 
 由单引号包裹，其内不允许转义，因此可以方便的表示基本字符串中需要转义的内容：
 
-```  toml
+```toml
 winpath = 'C:\Users\nodejs\templates'
 
 ```
@@ -111,7 +111,7 @@ winpath = 'C:\Users\nodejs\templates'
 
 与多行-基本字符串相似：
 
-```  toml
+```toml
 str1 = '''
 Roses are red
 Violets are blue'''
@@ -120,7 +120,7 @@ Violets are blue'''
 
 ## 数值与BOOL值
 
-```  toml
+```toml
 int1  = +99
 flt3  = -0.01
 bool1 = true
@@ -129,7 +129,7 @@ bool1 = true
 
 ## 日期时间
 
-```  toml
+```toml
 date = 1979-05-27T07:32:00Z
 
 ```
@@ -140,7 +140,7 @@ date = 1979-05-27T07:32:00Z
 
 注意，同一个数组下不允许混用数据类型。
 
-```  toml
+```toml
 array1 = [ 1, 2, 3 ]
 array2 = [ "red", "yellow", "green" ]
 array3 = [ [ 1, 2 ], [3, 4, 5] ]
@@ -153,14 +153,14 @@ array5 = [ 1, 2.0 ] # 注意：这是不行的。
 
 表格（也叫哈希表或字典）是键值对的集合。它们在方括号内，自成一行。注意和数组相区分，数组只有值。
 
-```  toml
+```toml
 [table]
 
 ```
 
 在此之下，直到下一个　`table` 或　`EOF` 之前，是这个表格的键值对。键在左，值在右，等号在中间。键以非空字符开始，以等号前的非空字符为结尾。键值对是无序的。
 
-```  toml
+```toml
 [table]
 key = "value"
 
@@ -170,7 +170,7 @@ key = "value"
 
 嵌套表格的表格名称中使用 `.` 符号。你可以任意命名你的表格，只是不要用点，点是保留的。
 
-```  toml
+```toml
 [dog.tater]
 type = "pug"
 
@@ -178,14 +178,14 @@ type = "pug"
 
 以上等价于如下的 `JSON` 结构：
 
-```  json
+```json
 { "dog": { "tater": { "type": "pug" } } }
 
 ```
 
 如果你不想的话，你不用声明所有的父表。TOML　知道该如何处理。
 
-```  toml
+```toml
 # [x] 你
 # [x.y] 不需要
 # [x.y.z] 这些
@@ -197,7 +197,7 @@ type = "pug"
 
 只要父表没有被直接定义，而且没有定义一个特定的键，你可以继续写入：
 
-```  toml
+```toml
 [a.b]
 c = 1
 
@@ -208,7 +208,7 @@ d = 2
 
 然而你不能多次定义键和表格。这么做是不合法的。
 
-```  toml
+```toml
 # 别这么干！
 
 [a]
@@ -230,7 +230,7 @@ c = 2
 
 最后要介绍的类型是表格数组。表格数组可以通过包裹在双方括号内的表格名来表达。使用相同的双方括号名称的表格是同一个数组的元素。表格按照书写的顺序插入。双方括号表格如果没有键值对，会被当成空表。
 
-```  toml
+```toml
 [[products]]
 name = "Hammer"
 sku = 738594937
@@ -246,7 +246,7 @@ color = "gray"
 
 等价于以下的　`JSON` 结构：
 
-```  json
+```json
 {
   "products": [
     { "name": "Hammer", "sku": 738594937 },
@@ -259,7 +259,7 @@ color = "gray"
 
 表格数组同样可以嵌套。只需在子表格上使用相同的双方括号语法。每一个双方括号子表格回从属于最近定义的上层表格元素。
 
-```  toml
+```toml
 [[fruit]]
   name = "apple"
 
@@ -283,7 +283,7 @@ color = "gray"
 
 等价于如下的　`JSON` 结构：
 
-```  json
+```json
 {
   "fruit": [
     {
@@ -310,7 +310,7 @@ color = "gray"
 
 尝试定义一个普通的表格，使用已经定义的数组的名称，将抛出一个解析错误：
 
-```  toml
+```toml
 # 不合法的　TOML
 
 [[fruit]]

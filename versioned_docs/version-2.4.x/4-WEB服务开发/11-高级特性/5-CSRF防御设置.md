@@ -18,7 +18,7 @@ hide_title: true
 
 ### 引入插件包
 
-```
+```go
 import "github.com/gogf/csrf"
 ```
 
@@ -26,7 +26,7 @@ import "github.com/gogf/csrf"
 
 `csrf` 插件支持自定义 `csrf.Config` 配置， `Config` 中的 `Cookie.Name` 是中间件设置到请求返回 `Cookie` **中** `token` 的名称， `ExpireTime` 是 `token` 超时时间， `TokenLength` 是 `token` 长度， `TokenRequestKey` 是后续请求需求带上的参数名。
 
-```
+```go
 s := g.Server()
 s.Group("/api.v2", func(group *ghttp.RouterGroup) {
 	group.Middleware(csrf.NewWithCfg(csrf.Config{
@@ -51,7 +51,7 @@ s.Group("/api.v2", func(group *ghttp.RouterGroup) {
 
 ### 使用默认配置
 
-```
+```go
 package main
 
 import (
@@ -79,7 +79,7 @@ func main() {
 
 ### 使用自定义配置
 
-```
+```go
 package main
 
 import (

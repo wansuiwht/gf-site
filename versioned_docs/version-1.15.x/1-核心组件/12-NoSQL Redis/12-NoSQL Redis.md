@@ -10,7 +10,7 @@ Redis客户端由 `gredis` 模块实现，底层采用了链接池设计。
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/database/gredis"
 
 ```

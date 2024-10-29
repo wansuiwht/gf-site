@@ -61,7 +61,7 @@ func (c *Core) ClearTableFieldsAll(ctx context.Context) (err error)
 
 方法介绍如注释。可以看到这两个方法是挂载 `Core` 对象上的，而底层的 `Core` 对象已经通过 `DB` 接口暴露，因此我们这么来获取 `Core` 对象：
 
-```
+```go
 g.DB().GetCore()
 ```
 

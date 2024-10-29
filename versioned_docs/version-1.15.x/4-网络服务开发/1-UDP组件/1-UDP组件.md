@@ -8,14 +8,14 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/net/gudp"
 
 ```
 
 **接口文档**： [https://godoc.org/github.com/gogf/gf/net/gudp](https://godoc.org/github.com/gogf/gf/net/gudp)
 
-```  go
+```go
 type Server
     func GetServer(name ...interface{}) *Server
     func NewServer(address string, handler func(*Conn), names ...string) *Server
@@ -30,7 +30,7 @@ type Server
 
 来一个简单的示例：
 
-```  go
+```go
 package main
 
 import (
@@ -55,6 +55,6 @@ func main() {
 
 在 `Linux` 下可以使用以下命令向服务端发送 `UDP` 数据进行测试，随后查看服务端端是否有输出：
 
-``` undefined
+```undefined
 echo "hello" > /dev/udp/127.0.0.1/8999
 ```

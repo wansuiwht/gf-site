@@ -26,7 +26,7 @@ func (r *Redis) GetAdapter() Adapter
 
 我们来看一个例子，在该例子中，我们实现一个自定义的 `Redis Adapter`，并且覆盖它的 `Do` 底层方法。为简化示例，我们这里在自实现的 `Do` 方法中打印一条日志即可，后续逻辑仍然走社区 `Redis Adapter` 的实现。
 
-```
+```go
 package main
 
 import (

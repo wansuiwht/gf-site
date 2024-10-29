@@ -12,14 +12,14 @@ hide_title: true
 
 使用示例：
 
-```
+```go
 g.Model("user")
 g.DB().Model("user")
 ```
 
 此外，在某些场景下，我们也可以通过 `DB` 方法切换当前模型的数据库对象，例如：
 
-```  go
+```go
 m := g.Model("user")
 m  = m.DB(g.DB("user-center"))
 
@@ -27,7 +27,7 @@ m  = m.DB(g.DB("user-center"))
 
 其效果与以下操作是一样的：
 
-```  go
+```go
 m := g.DB("user-center").Model("user")
 
 ```
@@ -36,7 +36,7 @@ m := g.DB("user-center").Model("user")
 
 `Raw` 方法用于创建一个基于原始 `SQL` 语句的 `Model` 对象。
 
-```
+```go
 s := "SELECT * FROM `user` WHERE `status` IN(?)"
 m := g.DB().Raw(s, g.Slice{1,2,3}).WhereLT("age", 18).Limit(10).OrderAsc("id").All()
 // SELECT * FROM `user` WHERE `status` IN(1,2,3) AND `age`=18 ORDER BY `id` ASC LIMIT 10
@@ -50,7 +50,7 @@ m := g.DB().Raw(s, g.Slice{1,2,3}).WhereLT("age", 18).Limit(10).OrderAsc("id").A
 
 在默认情况下， `gdb` 是 `非链式安全` 的，也就是说链式操作的每一个方法都将对当前操作的 `Model` 属性进行修改，因此该 `Model` 对象 **不可以重复使用**。例如，当存在多个分开查询的条件时，我们可以这么来使用 `Model` 对象：
 
-```  go
+```go
 user := g.DB().Model("user")
 user.Where("status IN(?)", g.Slice{1,2,3})
 if vip {
@@ -77,13 +77,13 @@ n, err := user.Count()
 
 此外，我们也可以手动调动 `Clone` 方法克隆当前模型，创建一个新的模型来实现链式安全，由于是新的模型对象，因此并不担心会修改已有的模型对象的问题。例如：
 
-```  go
+```go
 // 定义一个用户模型单例
 user := g.DB().Model("user")
 
 ```
 
-```  go
+```go
 // 克隆一个新的用户模型
 m := user.Clone()
 m.Where("status IN(?)", g.Slice{1,2,3})
@@ -105,13 +105,13 @@ n, err := m.Count()
 
 当然，我们可以通过 `Safe` 方法设置当前模型为 `链式安全` 的对象，后续的每一个链式操作都将返回一个新的 `Model` 对象，该 `Model` 对象可重复使用。但需要特别注意的是，模型属性的修改，或者操作条件的叠加，需要通过变量赋值的方式（ `m = m.xxx`）覆盖原有的模型对象来实现。例如：
 
-```  go
+```go
 // 定义一个用户模型单例
 user := g.DB().Model("user").Safe()
 
 ```
 
-```  go
+```go
 m := user.Where("status IN(?)", g.Slice{1,2,3})
 if vip {
     // 查询条件通过赋值叠加

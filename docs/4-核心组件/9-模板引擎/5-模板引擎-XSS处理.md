@@ -22,7 +22,7 @@ hide_title: true
 
 2、示例代码
 
-```
+```go
 package main
 
 import (

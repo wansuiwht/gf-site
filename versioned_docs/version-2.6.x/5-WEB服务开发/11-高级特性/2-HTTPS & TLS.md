@@ -18,7 +18,7 @@ hide_title: true
 
 
 
-```  shell
+```shell
 openssl genrsa -out server.key 2048
 ```
 
@@ -28,7 +28,7 @@ openssl genrsa -out server.key 2048
 
 
 
-```  shell
+```shell
 openssl ecparam -genkey -name secp384r1 -out server.key
 ```
 
@@ -38,7 +38,7 @@ openssl ecparam -genkey -name secp384r1 -out server.key
 
 
 
-```  shell
+```shell
 openssl req -new -x509 -key server.key -out server.crt -days 365
 ```
 
@@ -48,13 +48,13 @@ openssl req -new -x509 -key server.key -out server.crt -days 365
 
 
 
-```  shell
+```shell
 openssl rsa -in server.key -out server.key.public
 ```
 
     `openssl` 支持的算法以及命令参数比较多，如果想要深入了解请使用 `man openssl` 命令进行查看。本次示例中，本地环境( `Ubuntu`)使用命令生成相关秘钥、公钥、证书文件的流程如下：
 
-```
+```bash
 $ openssl genrsa -out server.key 2048
 Generating RSA private key, 2048 bit long modulus
 .........................+++
@@ -96,7 +96,7 @@ drwxr-xr-x 90 john john 4096 Apr 23 20:55 ../
 
 根据以上生成的秘钥和证书文件，我们来演示如果使用 `ghttp.Server` 实现一个HTTPS服务。示例代码如下：
 
-```
+```go
 package main
 
 import (
@@ -130,7 +130,7 @@ func main() {
 
 我们经常会遇到需要通过HTTP和HTTPS来提供同一个服务的情况，即除了端口和访问协议不一样，其他都是相同的。如果按照传统的使用多 `WebServer` 的方式来运行的话会比较繁琐，为轻松地解决开发者的烦恼， `ghttp` 提供了非常方便的特性：支持 “同一个” `WebServer` 同时支持 `HTTPS` 及 `HTTP` 访问协议。我们先来看一个例子：
 
-```
+```go
 package main
 
 import (
@@ -153,7 +153,7 @@ func main() {
 
 在本示例中，我们使用了两个方法来开启HTTPS特性：
 
-```
+```go
 func (s *Server) EnableHTTPS(certFile, keyFile string) error
 func (s *Server) SetHTTPSPort(port ...int) error
 ```
@@ -237,7 +237,7 @@ IMPORTANT NOTES:
 
 ### 使用证书
 
-```
+```go
 package main
 
 import (

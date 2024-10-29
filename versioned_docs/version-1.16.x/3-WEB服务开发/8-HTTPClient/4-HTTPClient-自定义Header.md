@@ -8,7 +8,7 @@ HTTP客户端发起请求时可以自定义发送给服务端的 `Header` 内容
 
 方法列表：
 
-```  go
+```go
 func (c *Client) SetHeader(key, value string) *Client
 func (c *Client) SetHeaderMap(m map[string]string) *Client
 func (c *Client) SetHeaderRaw(headers string) *Client
@@ -19,7 +19,7 @@ func (c *Client) SetHeaderRaw(headers string) *Client
 
 ### 服务端
 
-```  go
+```go
 package main
 
 import (
@@ -51,7 +51,7 @@ func main() {
 
 
 
-```  go
+```go
 package main
 
 
@@ -84,7 +84,7 @@ func main() {
 
 
 
-```  go
+```go
 package main
 
 
@@ -118,7 +118,7 @@ func main() {
 
 
 
-```  shell
+```shell
 Span-Id:0.0.1,Trace-Id:NBC56410N97LJ016FQA
 
 ```

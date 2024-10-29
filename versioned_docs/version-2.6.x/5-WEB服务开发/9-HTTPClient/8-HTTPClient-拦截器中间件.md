@@ -8,13 +8,13 @@ hide_title: true
 
 `HTTPClient` 支持强大的拦截器/中间件特性，该特性使得对于客户端的全局请求拦截及注入成为了可能，例如修改/注入提交参数、修改/注入返回参数、基于客户端的参数校验等等。中间件的注入通过以下方法实现：
 
-```
+```go
 func (c *Client) Use(handlers ...HandlerFunc) *Client
 ```
 
 在中间件中通过 `Next` 方法执行下一步流程， `Next` 方法定义如下：
 
-```
+```go
 func (c *Client) Next(req *http.Request) (*Response, error)
 ```
 
@@ -26,7 +26,7 @@ func (c *Client) Next(req *http.Request) (*Response, error)
 
 处理逻辑位于 `Next` 方法之前，格式形如：
 
-```
+```go
 c := g.Client()
 c.Use(func(c *gclient.Client, r *http.Request) (resp *gclient.Response, err error) {
 	// 自定义处理逻辑
@@ -39,7 +39,7 @@ c.Use(func(c *gclient.Client, r *http.Request) (resp *gclient.Response, err erro
 
 处理逻辑位于 `Next` 方法之后，格式形如：
 
-```
+```go
 c := g.Client()
 c.Use(func(c *gclient.Client, r *http.Request) (resp *gclient.Response, err error) {
 	resp, err = c.Next(r)
@@ -58,7 +58,7 @@ c.Use(func(c *gclient.Client, r *http.Request) (resp *gclient.Response, err erro
 
 往往服务端也需要通过中间件进行签名校验，我这里偷了一个懒，直接返回了客户端提交的数据。体谅一下文档维护作者😸。
 
-```
+```go
 package main
 
 import (
@@ -82,7 +82,7 @@ func main() {
 
 客户端的逻辑是实现基本的客户端参数提交、拦截器注入、签名相关参数注入以及签名参数生成。
 
-```
+```go
 package main
 
 import (
@@ -155,7 +155,7 @@ func main() {
 
 先运行服务端：
 
-```
+```bash
 $ go run server.go
 
   SERVER  | DOMAIN  | ADDRESS | METHOD | ROUTE |      HANDLER      | MIDDLEWARE
@@ -168,7 +168,7 @@ $ go run server.go
 
 再运行客户端：
 
-```
+```bash
 $ go run client.go
 {"appid":"123","name":"goframe","nonce":"12vd8tx23l6cbfz9k59xehk1002pixfo","signature":"578a90b67bdc63d551d6a18635307ba2","site":"https://goframe.org","timestamp":1621301076}
 $

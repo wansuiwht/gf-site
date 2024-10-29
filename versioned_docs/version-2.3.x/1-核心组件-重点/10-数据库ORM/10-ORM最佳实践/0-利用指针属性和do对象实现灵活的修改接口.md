@@ -12,7 +12,7 @@ hide_title: true
 
 以下是我们使用的用户表数据结构：
 
-```
+```sql
 CREATE TABLE `user`(
     `id`        int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
     `passport`  varchar(32) NOT NULL COMMENT '账号',
@@ -75,7 +75,7 @@ type UpdateReq struct {
 
 为了简化实例，我们这里直接在控制器中将指针参数传递给 `do` 对象。我们知道当调用端没有传递该参数时，该参数为 `nil`，那么传递给 `do` 对象的字段时，仍然是 `nil`，这个时候执行数据库更新操作时， `do` 对象中的 `nil` 字段将会被自动过滤掉。
 
-```
+```go
 func (c *Controller) Update(ctx context.Context, req *v1.UpdateReq) (res *v1.UpdateRes, err error) {
 	_, err = dao.User.Ctx(ctx).Data(do.User{
 		Password: req.Password,

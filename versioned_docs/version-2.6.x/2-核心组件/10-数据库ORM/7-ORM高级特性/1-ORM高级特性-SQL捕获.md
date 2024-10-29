@@ -20,7 +20,7 @@ func CatchSQL(ctx context.Context, f func(ctx context.Context) error) (sqlArray 
 
 `user.sql`
 
-```
+```sql
 CREATE TABLE `user` (
     `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
     `passport`    varchar(45) NULL,
@@ -33,7 +33,7 @@ CREATE TABLE `user` (
 
 `main.go`
 
-```
+```go
 package main
 
 import (
@@ -100,7 +100,7 @@ func ToSQL(ctx context.Context, f func(ctx context.Context) error) (sql string, 
 
 `user.sql`
 
-```
+```sql
 CREATE TABLE `user` (
     `id`          int(10) unsigned NOT NULL AUTO_INCREMENT,
     `passport`    varchar(45) NULL,
@@ -113,7 +113,7 @@ CREATE TABLE `user` (
 
 `main.go`
 
-```
+```go
 package main
 
 import (

@@ -12,7 +12,7 @@ hide_title: true
 
 ## 客户端
 
-```
+```go
 package main
 
 import (
@@ -59,7 +59,7 @@ func StartRequests() {
 
 ## 服务端
 
-```
+```go
 package main
 
 import (

@@ -10,7 +10,7 @@ hide_title: true
 
 `ghttp.Server` 支持用户对于某一事件进行自定义监听处理，按照 `pattern` 方式进行绑定注册( `pattern` 格式与路由注册一致)。 **支持多个方法对同一事件进行监听**， `ghttp.Server` 将会按照 `路由优先级` 及 `回调注册顺序` 进行回调方法调用。同一事件时先注册的HOOK回调函数优先级越高。 相关方法如下：
 
-```  go
+```go
 func (s *Server) BindHookHandler(pattern string, hook string, handler HandlerFunc) error
 func (s *Server) BindHookHandlerByMap(pattern string, hookmap map[string]HandlerFunc) error
 
@@ -18,7 +18,7 @@ func (s *Server) BindHookHandlerByMap(pattern string, hookmap map[string]Handler
 
 当然域名对象也支持事件回调注册：
 
-```  go
+```go
 func (d *Domain) BindHookHandler(pattern string, hook string, handler HandlerFunc) error
 func (d *Domain) BindHookHandlerByMap(pattern string, hookmap map[string]HandlerFunc) error
 
@@ -101,7 +101,7 @@ func (d *Domain) BindHookHandlerByMap(pattern string, hookmap map[string]Handler
 
 ### 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -133,7 +133,7 @@ func main() {
 
 ### 示例2，相同事件注册
 
-```  go
+```go
 package main
 
 import (
@@ -171,7 +171,7 @@ func main() {
 
 执行后，终端输出的路由表信息如下：
 
-``` undefined
+```undefined
   SERVER  | ADDRESS | DOMAIN  | METHOD | P | ROUTE |        HANDLER        |    MIDDLEWARE
 |---------|---------|---------|--------|---|-------|-----------------------|-------------------|
   default |  :8199  | default | ALL    | 1 | /     | main.main.func1       |
@@ -185,7 +185,7 @@ func main() {
 
 手动访问 [http://127.0.0.1:8199/](http://127.0.0.1:8199/) 后，页面输出内容为：
 
-``` undefined
+```undefined
 set name
 set site
 GoFrame
@@ -195,7 +195,7 @@ https://goframe.org
 
 ### 示例3，改变业务逻辑
 
-```  go
+```go
 package main
 
 import (
@@ -243,7 +243,7 @@ func main() {
 
 ### 示例4，回调执行优先级
 
-```  go
+```go
 package main
 
 import (
@@ -282,7 +282,7 @@ func main() {
 
 执行后我们访问 [http://127.0.0.1:8199/priority/show](http://127.0.0.1:8199/priority/show) ，随后我们看到页面输出以下信息：
 
-``` html
+```html
 /priority/show
 /priority/:name
 /priority/*any
@@ -296,7 +296,7 @@ priority service
 
 `HOOK` 和中间件都能实现跨域请求处理，我们这里使用HOOK来实现简单的跨域处理。 首先我们来看一个简单的接口示例：
 
-```  go
+```go
 package main
 
 import (
@@ -321,7 +321,7 @@ func main() {
 
 接口地址是 [http://localhost:8199/api.v1/order](http://localhost:8199/api.v1/order) ，当然这个接口是不允许跨域的。我们打开一个不同的域名，例如：百度首页(正好用了 `jQuery`，方便调试)，然后按 `F12` 打开开发者面板，在 `console` 下执行以下 `AJAX` 请求：
 
-``` javascript
+```javascript
 $.get("http://localhost:8199/api.v1/order", function(result){
     console.log(result)
 });
@@ -334,7 +334,7 @@ $.get("http://localhost:8199/api.v1/order", function(result){
 
 返回了不允许跨域的错误，接着我们修改一下测试代码，如下：
 
-```  go
+```go
 package main
 
 import (

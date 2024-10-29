@@ -18,7 +18,7 @@ hide_title: true
 
 **使用方式：**
 
-```
+```go
 import "github.com/gogf/gf/os/gtimer"
 ```
 
@@ -66,7 +66,7 @@ ok      command-line-arguments    6.602s
 
 ### 基本示例
 
-```
+```go
 package main
 
 import (
@@ -89,7 +89,7 @@ func main() {
 
 执行后，输出结果为:
 
-```
+```html
 2021-05-27 13:28:19 1.004516s
 2021-05-27 13:28:20 997.262ms
 2021-05-27 13:28:21 999.972ms
@@ -104,7 +104,7 @@ func main() {
 
 ### 单例任务
 
-```
+```go
 package main
 
 import (
@@ -126,7 +126,7 @@ func main() {
 
 执行后，输出结果为:
 
-```
+```html
 2019-01-23 17:04:18.892 doing
 2019-01-23 17:04:24.890 doing
 2019-01-23 17:04:29.892 doing
@@ -138,7 +138,7 @@ func main() {
 
 延迟任务是指在指定时间后生效的定时任务。我们可以通过 `DelayAdd*` 相关方法实现延迟任务的创建。
 
-```
+```go
 package main
 
 import (
@@ -176,7 +176,7 @@ Running: 2021-05-27 13:26:11
 
 这两个方法来源于 `Javascript` 常用定时方法。其中 `SetTimeout` 用于创建只执行一次的定时任务，不过可以通过递归调用 `SetTimeout` 来实现无限间隔执行。 `SetIterval` 用于创建间隔执行不退出的定时任务。
 
-```
+```go
 package main
 
 import (
@@ -217,7 +217,7 @@ SetInterval: 2021-05-27 13:20:58
 
 我们可以在定时任务中通过 `Exit` 方法强制退出定时任务的继续执行，该定时任务将会被从定时器中移除。
 
-```
+```go
 package main
 
 import (

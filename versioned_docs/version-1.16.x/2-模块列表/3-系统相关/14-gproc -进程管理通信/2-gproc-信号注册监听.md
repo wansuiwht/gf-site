@@ -36,7 +36,7 @@ func Listen()
 
 ## 示例1，使用标准库信号监听
 
-```
+```go
 package main
 
 import (
@@ -95,7 +95,7 @@ func main() {
 
 我们通过 `go run` 命令来执行一下，随后通过 `Ctrl+C` 快捷键退出（ `Mac` 用户通过 `Command+C`）。
 
-```
+```bash
 $ go run signal_handler.go
 Process start, pid: 21928
 ^CMainProcess is shutting down due to signal: interrupt
@@ -106,7 +106,7 @@ MQ is shutting down due to signal: interrupt
 
 ## 示例2，使用 `gproc` 信号监听
 
-```
+```go
 package main
 
 import (
@@ -138,7 +138,7 @@ func main() {
 
 我们通过 `go run` 命令来执行一下，随后通过 `Ctrl+C` 快捷键退出（ `Mac` 用户通过 `Command+C`）。
 
-```
+```bash
 $ go run signal_handler_gproc.go
 Process start, pid: 22876
 ^CMQ is shutting down due to signal: interrupt

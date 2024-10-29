@@ -54,7 +54,7 @@ go env GOARCH
 
 ## 使用示例
 
-```
+```bash
 $ ./gf_darwin_amd64 install
 I found some installable paths for you(from $PATH):
   Id | Writable | Installed | Path

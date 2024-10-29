@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/os/gproc"
 
 ```
@@ -33,7 +33,7 @@ import "github.com/gogf/gf/os/gproc"
 
 ### 执行Shell命令
 
-```  go
+```go
 package main
 
 import (
@@ -51,7 +51,7 @@ func main () {
 
 执行后，可以看到程序等待了3秒之后，输出结果为：
 
-``` html
+```html
 result: hello gf!
 
 <nil>
@@ -62,7 +62,7 @@ result: hello gf!
 
 由 `gproc.Manager` 对象创建的进程都默认带子进程标识，在子进程程序中可以通过 `gproc.IsChild()` 方法来判断自身是否为子进程。
 
-```  go
+```go
 package main
 
 import (
@@ -94,7 +94,7 @@ func main () {
 
 执行后，终端打印结果如下：
 
-```  shell
+```shell
 2018-05-18 14:35:41.360 28285: Hi, I am child, waiting 3 seconds to die
 2018-05-18 14:35:42.361 28285: 1
 2018-05-18 14:35:43.361 28285: 2
@@ -112,7 +112,7 @@ func main () {
 
 
 
-```  shell
+```shell
     $ ps aux | grep gedit
     john  28536  3.6  0.6 946208 56412 ?  Sl  14:39  0:00 gedit /home/john/Documents/text
 ```
@@ -122,7 +122,7 @@ func main () {
 
 
 
-```  go
+```go
 package main
 
 
@@ -149,7 +149,7 @@ func main () {
 
 
 
-```  shell
+```shell
 28536 was killed
 
 ```
@@ -165,7 +165,7 @@ func main () {
 
 `gproc` 的进程通信API非常简便，只需通过以下两个方法实现：
 
-```  go
+```go
 func Send(pid int, data []byte) error
 func Receive() *Msg
 
@@ -175,7 +175,7 @@ func Receive() *Msg
 
 我们来看一个进程间通信的基本使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -209,7 +209,7 @@ func main () {
 
 该示例中，我们的主进程启动时创建了一个子进程，该子进程每隔1秒钟向主进程发送当前的时间，主进程收取到子进程发送的参数后输出到终端上。执行后，终端输出的内容如下：
 
-```  shell
+```shell
 29978: I am child? false
 29984: I am child? true
 receive from 29984, data: 2018-05-18 15:01:00

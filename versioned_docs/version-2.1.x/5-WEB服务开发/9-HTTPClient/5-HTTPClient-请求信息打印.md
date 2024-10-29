@@ -8,7 +8,7 @@ hide_title: true
 
 `http` 客户端支持对HTTP请求的输入与输出原始信息获取与打印，方便调试，相关方法如下：
 
-```
+```go
 func (r *Response) Raw() string
 func (r *Response) RawDump()
 func (r *Response) RawRequest() string
@@ -19,7 +19,7 @@ func (r *Response) RawResponse() string
 
 ## 使用示例
 
-```
+```go
 package main
 
 import (

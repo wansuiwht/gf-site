@@ -27,7 +27,7 @@ hide_title: true
 
 在执行 `Insert/InsertIgnore/BatchInsert/BatchInsertIgnore` 方法时自动写入该时间，随后保持不变。
 
-```  go
+```go
 // INSERT INTO `user`(`name`,`created_at`,`updated_at`) VALUES('john', `2020-06-06 21:00:00`, `2020-06-06 21:00:00`)
 r, err := db.Table("user").Data(g.Map{"name": "john"}).Insert()
 // INSERT IGNORE INTO `user`(`uid`,`name`,`created_at`,`updated_at`) VALUES(10000,'john', `2020-06-06 21:00:00`, `2020-06-06 21:00:00`)
@@ -59,14 +59,14 @@ r, err := db.Table("user").Data(g.Map{"id": 1, "name": "john guo"}).Save()
 
 软删除会稍微比较复杂一些，当软删除存在时，所有的查询语句都将会自动加上 `deleted_at` 的条件。
 
-```  go
+```go
 // UPDATE `user` SET `deleted_at`='2020-06-06 21:00:00' WHERE uid=10
 r, err := db.Table("user").Where("uid", 10).Delete()
 ```
 
 查询的时候会发生一些变化，例如：
 
-```  go
+```go
 // SELECT * FROM `user` WHERE uid>1 AND `deleted_at` IS NULL
 r, err := db.Table("user").Where("uid>?", 1).All()
 ```
@@ -77,7 +77,7 @@ r, err := db.Table("user").Where("uid>?", 1).All()
 
 如果关联查询的几个表都启用了软删除特性时，会发生以下这种情况，即条件语句中会增加所有相关表的软删除时间判断。
 
-```  go
+```go
 // SELECT * FROM `user` AS `u` LEFT JOIN `user_detail` AS `ud` ON (ud.uid=u.uid) WHERE u.uid=10 AND `u`.`deleted_at` IS NULL AND `ud`.`deleteat` IS NULL LIMIT 1
 r, err := db.Table("user", "u").LeftJoin("user_detail", "ud", "ud.uid=u.uid").Where("u.uid", 10).One()
 ```
@@ -86,7 +86,7 @@ r, err := db.Table("user", "u").LeftJoin("user_detail", "ud", "ud.uid=u.uid").Wh
 
 `Unscoped` 用于在链式操作中忽略自动时间更新特性，例如上面的示例，加上 `Unscoped` 方法后：
 
-```  go
+```go
 // SELECT * FROM `user` WHERE uid>1
 r, err := db.Table("user").Unscoped().Where("uid>?", 1).All()
 

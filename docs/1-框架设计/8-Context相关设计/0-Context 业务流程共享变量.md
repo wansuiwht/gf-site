@@ -140,7 +140,7 @@ func (s *replyService) Create(ctx context.Context, r *define.ReplyServiceCreateR
 
 通过 `service` 中封装的以下方法，将 `context.Context` 上下文变量传递进去即可。 `context.Context` 上下文变量在 `GoFrame` 框架的 `HTTP` 请求中可以通过 `r.Context()` 方法获取，在 `GRPC` 请求中，编译生成的 `pb` 文件中执行方法的第一个参数即固定是 `context.Context`。
 
-```
+```go
 service.Context.Get(ctx)
 ```
 

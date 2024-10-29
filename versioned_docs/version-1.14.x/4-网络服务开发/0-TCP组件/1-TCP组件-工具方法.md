@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/net/gtcp"
 
 ```
@@ -17,7 +17,7 @@ import "github.com/gogf/gf/net/gtcp"
 
 [https://godoc.org/github.com/gogf/gf/net/gtcp](https://godoc.org/github.com/gogf/gf/net/gtcp)
 
-```  go
+```go
 func LoadKeyCrt(crtFile, keyFile string) (*tls.Config, error)
 func NewNetConn(addr string, timeout ...int) (net.Conn, error)
 func NewNetConnKeyCrt(addr, crtFile, keyFile string) (net.Conn, error)
@@ -39,7 +39,7 @@ func SendWithTimeout(addr string, data []byte, timeout time.Duration, retry ...R
 
 以下为一个简单的示例，我们使用工具方法来访问指定的Web站点：
 
-```  go
+```go
 package main
 
 import (
@@ -59,7 +59,7 @@ func main() {
 
 在这个示例中，我们通过TCP访问百度首页，模拟HTTP请求头信息，并获得返回结果。 执行后，输出结果如下：
 
-``` html
+```html
 HTTP/1.1 302 Found
 Connection: Keep-Alive
 Content-Length: 17931

@@ -21,7 +21,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/util/guid"
 ```
 
@@ -33,7 +33,7 @@ import "github.com/gogf/gf/v2/util/guid"
 
 `guid` 通过 `S` 方法生成 `32` 字节的唯一数，该方法定义如下：
 
-```
+```go
 func S(data ...[]byte) string
 ```
 
@@ -81,7 +81,7 @@ PASS
 
 ### 示例1，基本使用
 
-```
+```go
 package main
 
 import (
@@ -104,7 +104,7 @@ TraceId: oa9sdw03dk0c35q9bdwcnz42p00trwfr
 
 我们的 `SessionId` 生成需要具有比较好的唯一性，且需要防止轻易的碰撞，因此可以使用以下方式：
 
-```
+```go
 func CreateSessionId(r *ghttp.Request) string {
     var (
         address = request.RemoteAddr

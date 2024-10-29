@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/os/gfsnotify"
 ```
 
@@ -22,7 +22,7 @@ import "github.com/gogf/gf/v2/os/gfsnotify"
 
 ## 添加监听
 
-```
+```go
 package main
 
 import (
@@ -77,7 +77,7 @@ func main() {
 
 使用示例1：
 
-```
+```go
 package main
 
 import (
@@ -119,7 +119,7 @@ func main() {
 
 使用示例2：
 
-```
+```go
 package main
 
 import (

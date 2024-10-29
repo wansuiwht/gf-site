@@ -6,7 +6,7 @@ hide_title: true
 
 ## 示例1，提交 `Json` 请求
 
-```
+```go
 g.Client().ContentJson().PostContent(ctx, "http://order.svc/v1/order", g.Map{
     "uid"         : 1,
     "sku_id"      : 10000,
@@ -23,7 +23,7 @@ g.Client().ContentJson().PostContent(ctx, "http://order.svc/v1/order", g.Map{
 
 ## 示例2，提交 `Xml` 请求
 
-```
+```go
 g.Client().ContentXml().PostContent(ctx, "http://order.svc/v1/order", g.Map{
     "uid"         : 1,
     "sku_id"      : 10000,
@@ -44,7 +44,7 @@ g.Client().ContentXml().PostContent(ctx, "http://order.svc/v1/order", g.Map{
 
 示例1：
 
-```
+```go
 g.Client().ContentType("application/json").PostContent(
   ctx,
   "http://order.svc/v1/order",
@@ -54,7 +54,7 @@ g.Client().ContentType("application/json").PostContent(
 
 或
 
-```
+```go
 g.Client().ContentType("application/json; charset=utf-8").PostContent(
   ctx,
   "http://order.svc/v1/order",
@@ -70,7 +70,7 @@ g.Client().ContentType("application/json; charset=utf-8").PostContent(
 
 示例2：
 
-```
+```go
 g.Client().ContentType("application/x-www-form-urlencoded; charset=utf-8").GetContent(
   ctx,
   "http://order.svc/v1/order",

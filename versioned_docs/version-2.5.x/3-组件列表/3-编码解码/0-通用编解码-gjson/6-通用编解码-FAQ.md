@@ -8,7 +8,7 @@ hide_title: true
 
 ### 问题描述
 
-```
+```go
 package main
 
 import (
@@ -31,7 +31,7 @@ func main() {
 
 ### 解决方案
 
-```
+```go
 package main
 
 import (

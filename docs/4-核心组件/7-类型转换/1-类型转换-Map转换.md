@@ -10,7 +10,7 @@ hide_title: true
 
 常用转换方法：
 
-```
+```go
 func Map(value interface{}, tags ...string) map[string]interface{}
 func MapDeep(value interface{}, tags ...string) map[string]interface{}
 ```
@@ -21,7 +21,7 @@ func MapDeep(value interface{}, tags ...string) map[string]interface{}
 
 ## 基本示例
 
-```
+```go
 package main
 
 import (
@@ -74,7 +74,7 @@ func main() {
 
 我们可以通过 `c/gconv/json` 标签来自定义转换后的 `map` 键名，当多个标签存在时，按照 `gconv/c/json` 的标签顺序进行优先级识别。
 
-```
+```go
 package main
 
 import (
@@ -115,7 +115,7 @@ func main() {
 
 此外，我们也可以给 `struct` 的属性自定义自己的标签名称，并在 `map` 转换时通过第二个参数指定标签优先级。
 
-```
+```go
 package main
 
 import (
@@ -149,7 +149,7 @@ func main() {
 
 当参数为 `map`/ `struct`/ `*struct` 类型时，如果键值/属性为一个对象（或者对象指针）时，并且不是 `embedded` 结构体且没有任何的别名标签绑定， `Map` 方法将会将对象转换为结果的一个键值。我们可以使用 `MapDeep` 方法递归转换参数的子对象，即把属性也转换为 `map` 类型。我们来看个例子。
 
-```
+```go
 package main
 
 import (

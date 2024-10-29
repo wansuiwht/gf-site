@@ -10,7 +10,7 @@ hide_title: true
 
 绝大部分情况下推荐使用 `g.Redis` 单例方式来操作redis。因此同样推荐使用配置文件来管理Redis配置，在 `config.toml` 中的配置示例如下：
 
-```  toml
+```toml
 # Redis数据库配置
 [redis]
     default = "127.0.0.1:6379,0"
@@ -39,7 +39,7 @@ hide_title: true
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -58,7 +58,7 @@ func main() {
 
 其中的 `default` 和 `cache` 分别表示配置分组名称，我们在程序中可以通过该名称获取对应配置的 `redis` 单例对象。不传递分组名称时，默认使用 `redis.default` 配置分组项)来获取对应配置的 `redis` 客户端单例对象。 执行后，输出结果为：
 
-``` html
+```html
 v
 
 ```
@@ -69,7 +69,7 @@ v
 
 `gredis` 提供了全局的分组配置功能，相关配置管理方法如下：
 
-```  go
+```go
 func SetConfig(config Config, name ...string)
 func GetConfig(name ...string) (config Config, ok bool)
 func RemoveConfig(name ...string)
@@ -79,14 +79,14 @@ func ClearConfig()
 
 其中 `name` 参数为分组名称，即为通过分组来对配置对象进行管理，我们可以为不同的配置对象设置不同的分组名称，随后我们可以通过 `Instance` 单例方法获取 `redis` 客户端操作对象单例。
 
-```  go
+```go
 func Instance(name ...string) *Redis
 
 ```
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (

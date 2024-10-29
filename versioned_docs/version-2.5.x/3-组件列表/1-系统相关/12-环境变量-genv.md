@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/os/genv"
 ```
 
@@ -18,7 +18,7 @@ import "github.com/gogf/gf/v2/os/genv"
 
 ## `SetMap`
 
-```
+```go
 func SetMap(m map[string]string) error
 ```
 
@@ -34,7 +34,7 @@ genv.SetMap(g.MapStrStr{
 
 ## `GetWithCmd`
 
-```
+```go
 func GetWithCmd(key string, def ...interface{}) *gvar.Var
 ```
 
@@ -47,7 +47,7 @@ func GetWithCmd(key string, def ...interface{}) *gvar.Var
 
 ## `All`
 
-```
+```go
 func All() []string
 ```
 
@@ -55,7 +55,7 @@ func All() []string
 
 ## `Map`
 
-```
+```go
 func Map() map[string]string
 ```
 
@@ -63,7 +63,7 @@ func Map() map[string]string
 
 ## `Get`
 
-```
+```go
 func Get(key string, def ...interface{}) *gvar.Var
 ```
 
@@ -71,7 +71,7 @@ func Get(key string, def ...interface{}) *gvar.Var
 
 ## `Set`
 
-```
+```go
 func Set(key, value string) error
 ```
 
@@ -79,7 +79,7 @@ func Set(key, value string) error
 
 ## `SetMap`
 
-```
+```go
 func SetMap(m map[string]string) error
 ```
 
@@ -87,7 +87,7 @@ func SetMap(m map[string]string) error
 
 ## `Contains`
 
-```
+```go
 func Contains(key string) bool
 ```
 
@@ -95,7 +95,7 @@ func Contains(key string) bool
 
 ## `Remove`
 
-```
+```go
 func Remove(key ...string) error
 ```
 
@@ -103,7 +103,7 @@ func Remove(key ...string) error
 
 ## `Build`
 
-```
+```go
 func Build(m map[string]string) []string
 ```
 

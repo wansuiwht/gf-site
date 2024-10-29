@@ -12,7 +12,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/garray"
 
 ```
@@ -34,7 +34,7 @@ import "github.com/gogf/gf/container/garray"
 
 ### 普通数组
 
-```  go
+```go
 package main
 
 import (
@@ -98,7 +98,7 @@ func main () {
 
 执行后，输出结果为：
 
-``` html
+```html
 10
 [0 1 2 3 4 5 6 7 8 9]
 6 true
@@ -116,7 +116,7 @@ func main () {
 
 排序数组的方法与普通数组类似，但是带有自动排序功能及唯一性过滤功能。
 
-```  go
+```go
 package main
 
 import (
@@ -161,7 +161,7 @@ func main () {
 
 执行后，输出结果：
 
-``` html
+```html
 [3 2 1]
 [3 3 2 1]
 3 0
@@ -172,7 +172,7 @@ func main () {
 
 ### `Iterate*` 数组遍历
 
-```  go
+```go
 package main
 
 import (
@@ -210,7 +210,7 @@ func main() {
 
 ### `Pop*` 数组项出栈
 
-```  go
+```go
 package main
 
 import (
@@ -239,7 +239,7 @@ func main() {
 
 ### `Rand/PopRand` 数组项随机获取/出栈
 
-```  go
+```go
 package main
 
 import (
@@ -264,7 +264,7 @@ func main() {
 
 ### `Contains/ContainsI` 包含判断
 
-```  go
+```go
 package main
 
 import (
@@ -289,7 +289,7 @@ func main() {
 
 ### `FilterEmpty/FilterNil` 空值过滤
 
-```  go
+```go
 package main
 
 import (
@@ -313,7 +313,7 @@ func main() {
 
 ### `Reverse` 数组翻转
 
-```  go
+```go
 package main
 
 import (
@@ -336,7 +336,7 @@ func main() {
 
 ### `Shuffle` 随机排序
 
-```  go
+```go
 package main
 
 import (
@@ -356,7 +356,7 @@ func main() {
 
 ### `Walk` 遍历修改
 
-```  go
+```go
 package main
 
 import (
@@ -384,7 +384,7 @@ func main() {
 
 ### `Join` 数组项串连
 
-```  go
+```go
 package main
 
 import (
@@ -405,7 +405,7 @@ func main() {
 
 ### `Chunk` 数组拆分
 
-```  go
+```go
 package main
 
 import (
@@ -430,7 +430,7 @@ func main() {
 
 ### `Merge` 数组合并
 
-```  go
+```go
 package main
 
 import (
@@ -466,7 +466,7 @@ func main() {
 
 1. `Marshal`
 
-``` undefined
+```undefined
 package mainimport (
     "encoding/json"
     "fmt"
@@ -498,7 +498,7 @@ func main() {
 
 1. `Unmarshal`
 
-```  go
+```go
 package main
 
 import (
@@ -523,7 +523,7 @@ func main() {
 
 执行后，输出结果：
 
-``` undefined
+```undefined
 {1 john [100,99,98]}
 
 ```

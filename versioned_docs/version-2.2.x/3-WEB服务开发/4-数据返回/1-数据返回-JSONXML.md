@@ -6,7 +6,7 @@ hide_title: true
 
 相关方法：
 
-```
+```go
 func (r *Response) WriteJson(content interface{}) error
 func (r *Response) WriteJsonExit(content interface{}) error
 func (r *Response) WriteJsonP(content interface{}) error
@@ -24,7 +24,7 @@ func (r *Response) WriteXmlExit(content interface{}, rootTag ...string) error
 
 ## `JSON`
 
-```
+```go
 package main
 
 import (
@@ -49,7 +49,7 @@ func main() {
 
 执行后，我们通过 `curl` 工具测试下：
 
-```
+```bash
 $ curl -i http://127.0.0.1:8199/json
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -64,7 +64,7 @@ Content-Length: 22
 
 需要注意使用 `JSONP` 协议时必须通过 `Query` 方式提供 `callback` 参数。
 
-```
+```go
 package main
 
 import (
@@ -89,7 +89,7 @@ func main() {
 
 执行后，我们通过 `curl` 工具测试下：
 
-```
+```bash
 $ curl -i "http://127.0.0.1:8199/jsonp?callback=MyCallback"
 HTTP/1.1 200 OK
 Server: GF HTTP Server
@@ -102,7 +102,7 @@ MyCallback({"id":1,"name":"john"})
 
 ## `XML`
 
-```
+```go
 package main
 
 import (
@@ -128,7 +128,7 @@ func main() {
 
 执行后，我们通过 `curl` 工具测试下：
 
-```
+```bash
 $ curl -i http://127.0.0.1:8199/xml
 HTTP/1.1 200 OK
 Content-Type: application/xml

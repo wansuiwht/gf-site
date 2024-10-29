@@ -34,7 +34,7 @@ db.Union(
 
 也可以通过 `dao` 链式操作实现：
 
-```
+```go
 dao.User.Union(
     dao.User.Where(dao.User.Columns.Id, 1),
     dao.User.Where(dao.User.Columns.Id, 2),
@@ -47,7 +47,7 @@ dao.User.Union(
 
 使用 `UnionAll` 操作符，多个 `SELECT` 语句不会删除重复的数据。
 
-```
+```go
 db.UnionAll(
     db.Model("user").Where("id", 1),
     db.Model("user").Where("id", 2),
@@ -58,7 +58,7 @@ db.UnionAll(
 
 也可以通过 `dao` 链式操作实现：
 
-```
+```go
 dao.User.UnionAll(
     dao.User.Where(dao.User.Columns.Id, 1),
     dao.User.Where(dao.User.Columns.Id, 2),

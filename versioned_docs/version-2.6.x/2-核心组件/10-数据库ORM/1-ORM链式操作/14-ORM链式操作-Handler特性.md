@@ -8,7 +8,7 @@ hide_title: true
 
 ## 示例1，查询
 
-```
+```go
 func AmountGreaterThan1000(m *gdb.Model) *gdb.Model {
 	return m.WhereGT("amount", 1000)
 }
@@ -46,7 +46,7 @@ m.Handler(AmountGreaterThan1000, OrderStatus([]string{"paid", "shipped"})).Scan(
 
 ## 示例2，分页
 
-```
+```go
 func Paginate(r *ghttp.Request) func(m *gdb.Model) *gdb.Model {
 	return func(m *gdb.Model) *gdb.Model {
 		type Pagination struct {

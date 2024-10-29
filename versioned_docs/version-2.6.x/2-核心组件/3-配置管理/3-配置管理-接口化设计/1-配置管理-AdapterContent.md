@@ -12,7 +12,7 @@ hide_title: true
 
 大部分场景下，我们可以通过框架已经封装好的g.Cfg单例对象来便捷使用基于文件的配置管理实现。例如：
 
-```
+```go
 package main
 
 import (

@@ -18,7 +18,7 @@ hide_title: true
 
 
 
-```  shell
+```shell
 openssl genrsa -out server.key 2048
 ```
 
@@ -28,7 +28,7 @@ openssl genrsa -out server.key 2048
 
 
 
-```  shell
+```shell
 openssl ecparam -genkey -name secp384r1 -out server.key
 ```
 
@@ -38,7 +38,7 @@ openssl ecparam -genkey -name secp384r1 -out server.key
 
 
 
-```  shell
+```shell
 openssl req -new -x509 -key server.key -out server.crt -days 365
 ```
 
@@ -48,13 +48,13 @@ openssl req -new -x509 -key server.key -out server.crt -days 365
 
 
 
-```  shell
+```shell
 openssl rsa -in server.key -out server.key.public
 ```
 
     `openssl` 支持的算法以及命令参数比较多，如果想要深入了解请使用 `man openssl` 命令进行查看。本次示例中，本地环境(Ubuntu)使用命令生成相关秘钥、公钥、证书文件的流程如下：
 
-```  shell
+```shell
 $ openssl genrsa -out server.key 2048
 Generating RSA private key, 2048 bit long modulus
 .........................+++
@@ -97,7 +97,7 @@ drwxr-xr-x 90 john john 4096 Apr 23 20:55 ../
 
 根据以上生成的秘钥和证书文件，我们来演示如果使用 `ghttp.Server` 实现一个HTTPS服务。示例代码如下：
 
-```  go
+```go
 package main
 
 import (
@@ -132,7 +132,7 @@ func main() {
 
 我们经常会遇到需要通过HTTP和HTTPS来提供同一个服务的情况，即除了端口和访问协议不一样，其他都是相同的。如果按照传统的使用多WebServer的方式来运行的话会比较繁琐，为轻松地解决开发者的烦恼， `ghttp` 提供了非常方便的特性：支持 “同一个”WebServer同时支持HTTPS及HTTP访问协议。我们先来看一个例子：
 
-```  go
+```go
 package main
 
 import (
@@ -156,7 +156,7 @@ func main() {
 
 在本示例中，我们使用了两个方法来开启HTTPS特性：
 
-```  go
+```go
 func (s *Server) EnableHTTPS(certFile, keyFile string) error
 func (s *Server) SetHTTPSPort(port ...int) error
 
@@ -188,7 +188,7 @@ func (s *Server) SetHTTPSPort(port ...int) error
 
 申请 `Let’s Encrypt` 免费证书需要使用到 `certbot` 工具：
 
-```  shell
+```shell
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot
@@ -201,14 +201,14 @@ sudo apt-get install certbot
 
 使用以下命令：
 
-```  shell
+```shell
 certbot certonly --standalone -d 申请域名 --staple-ocsp -m 邮箱地址 --agree-tos
 
 ```
 
 例如：
 
-```  shell
+```shell
 root@ip-172-31-41-204:~# certbot certonly --standalone -d goframe.org --staple-ocsp -m john@goframe.org --agree-tos
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator standalone, Installer None
@@ -237,7 +237,7 @@ IMPORTANT NOTES:
 
 默认情况下，证书会被安装到 `/etc/letsencrypt/`，证书和私钥文件分别为：
 
-```  shell
+```shell
 /etc/letsencrypt/live/goframe.org/fullchain.pem
 /etc/letsencrypt/live/goframe.org/privkey.pem
 
@@ -245,7 +245,7 @@ IMPORTANT NOTES:
 
 ### 使用证书
 
-```  go
+```go
 package main
 
 import (
@@ -267,14 +267,14 @@ func main() {
 
 证书默认有效期为 `3个月`，到期后需要手动续期，使用以下命令：
 
-```  shell
+```shell
 certbot renew
 
 ```
 
 示例1，我们可以使用 `crontab` 定时任务来实现自动续期：
 
-```  shell
+```shell
 # 每天尝试续期一次，成功后重启`gf`框架运行的WebServer
 0 3 * * * certbot renew --quiet --renew-hook "kill -SIGUSR1 $(pidof 进程名称)"
 

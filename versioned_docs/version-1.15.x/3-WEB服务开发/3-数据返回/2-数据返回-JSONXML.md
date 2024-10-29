@@ -15,7 +15,7 @@ hide_title: true
 
 ## `JSON`
 
-```  go
+```go
 package main
 
 import (
@@ -41,7 +41,7 @@ func main() {
 
 执行后，我们通过 `curl` 工具测试下：
 
-``` undefined
+```undefined
 $ curl -i http://127.0.0.1:8199/json
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -57,7 +57,7 @@ Content-Length: 22
 
 需要注意使用 `JSONP` 协议时必须通过 `Query` 方式提供 `callback` 参数。
 
-```  go
+```go
 package main
 
 import (
@@ -83,7 +83,7 @@ func main() {
 
 执行后，我们通过 `curl` 工具测试下：
 
-``` undefined
+```undefined
 $ curl -i "http://127.0.0.1:8199/jsonp?callback=MyCallback"
 HTTP/1.1 200 OK
 Server: GF HTTP Server
@@ -97,7 +97,7 @@ MyCallback({"id":1,"name":"john"})
 
 ## `XML`
 
-```  go
+```go
 package main
 
 import (
@@ -124,7 +124,7 @@ func main() {
 
 执行后，我们通过 `curl` 工具测试下：
 
-``` undefined
+```undefined
 $ curl -i http://127.0.0.1:8199/xml
 HTTP/1.1 200 OK
 Content-Type: application/xml

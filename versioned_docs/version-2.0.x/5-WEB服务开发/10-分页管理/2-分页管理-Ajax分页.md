@@ -8,7 +8,7 @@ hide_title: true
 
 完整示例如下：
 
-```
+```go
 package main
 
 import (

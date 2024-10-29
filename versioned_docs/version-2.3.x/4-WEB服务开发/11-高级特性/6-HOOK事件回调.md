@@ -10,14 +10,14 @@ hide_title: true
 
 `ghttp.Server` 支持用户对于某一事件进行自定义监听处理，按照 `pattern` 方式进行绑定注册( `pattern` 格式与路由注册一致)。 **支持多个方法对同一事件进行监听**， `ghttp.Server` 将会按照 `路由优先级` 及 `回调注册顺序` 进行回调方法调用。同一事件时先注册的HOOK回调函数优先级越高。 相关方法如下：
 
-```
+```go
 func (s *Server) BindHookHandler(pattern string, hook string, handler HandlerFunc) error
 func (s *Server) BindHookHandlerByMap(pattern string, hookmap map[string]HandlerFunc) error
 ```
 
 当然域名对象也支持事件回调注册：
 
-```
+```go
 func (d *Domain) BindHookHandler(pattern string, hook string, handler HandlerFunc) error
 func (d *Domain) BindHookHandlerByMap(pattern string, hookmap map[string]HandlerFunc) error
 ```
@@ -99,7 +99,7 @@ func (d *Domain) BindHookHandlerByMap(pattern string, hookmap map[string]Handler
 
 ### 示例1，基本使用
 
-```
+```go
 package main
 
 import (
@@ -131,7 +131,7 @@ func main() {
 
 ### 示例2，相同事件注册
 
-```
+```go
 package main
 
 import (
@@ -190,7 +190,7 @@ https://goframe.org
 
 ### 示例3，改变业务逻辑
 
-```
+```go
 package main
 
 import (
@@ -237,7 +237,7 @@ func main() {
 
 ### 示例4，回调执行优先级
 
-```
+```go
 package main
 
 import (
@@ -288,7 +288,7 @@ priority service
 
 `HOOK` 和中间件都能实现跨域请求处理，我们这里使用HOOK来实现简单的跨域处理。 首先我们来看一个简单的接口示例：
 
-```
+```go
 package main
 
 import (
@@ -324,7 +324,7 @@ $.get("http://localhost:8199/api.v1/order", function(result){
 
 返回了不允许跨域的错误，接着我们修改一下测试代码，如下：
 
-```
+```go
 package main
 
 import (

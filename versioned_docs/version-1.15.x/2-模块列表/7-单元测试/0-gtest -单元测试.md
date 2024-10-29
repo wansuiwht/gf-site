@@ -15,7 +15,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/test/gtest"
 
 ```
@@ -24,7 +24,7 @@ import "github.com/gogf/gf/test/gtest"
 
 [https://godoc.org/github.com/gogf/gf/test/gtest](https://godoc.org/github.com/gogf/gf/test/gtest)
 
-```  go
+```go
 func C(t *testing.T, f func(t *T))
 func Assert(value, expect interface{})
 func AssertEQ(value, expect interface{})
@@ -53,7 +53,7 @@ func Fatal(message ...interface{})
 
 例如 `gstr` 模块其中一个单元测试用例：
 
-```  go
+```go
 package gstr_test
 
 import (
@@ -73,7 +73,7 @@ func Test_Trim(t *testing.T) {
 
 也可以这样使用：
 
-```  go
+```go
 package gstr_test
 
 import (
@@ -93,7 +93,7 @@ func Test_Trim(t *testing.T) {
 
 一个单元测试用例可以包含多个 `C`，一个 `C` 也可以执行多个断言。 断言成功时直接PASS，但是如果断言失败，会输出如下类似的错误信息，并终止当前单元测试用例的继续执行（不会终止后续的其他单元测试用例）。
 
-``` html
+```html
 === RUN   Test_Trim
 [ASSERT] EXPECT 123456#; == 123456
 1. /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf/text/gstr/gstr_z_unit_trim_test.go:20

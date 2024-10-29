@@ -18,7 +18,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/encoding/gcharset"
 ```
 
@@ -28,7 +28,7 @@ import "github.com/gogf/gf/v2/encoding/gcharset"
 
 **使用示例**：
 
-```
+```go
 package main
 
 import (

@@ -50,7 +50,7 @@ CREATE TABLE `user_scores` (
 
 那么 `Golang` 的模型可定义如下：
 
-```  go
+```go
 // 用户表
 type EntityUser struct {
     Uid  int    `orm:"uid"`
@@ -83,7 +83,7 @@ type Entity struct {
 
 写入数据时涉及到简单的数据库事务即可。
 
-```  go
+```go
 err := db.Transaction(func(tx *gdb.TX) error {
     r, err := tx.Table("user").Save(EntityUser{
         Name: "john",
@@ -117,7 +117,7 @@ err := db.Transaction(func(tx *gdb.TX) error {
 
 查询单条模型数据比较简单，直接使用 `Scan` 方法即可，该方法会自动识别绑定查询结果到单个对象属性还是数组对象属性中。例如：
 
-```  go
+```go
 // 定义用户列表
 var user Entity
 // 查询用户基础数据
@@ -141,7 +141,7 @@ err := db.Table("user_scores").Scan(&user.UserScores, "uid", user.User.Uid)
 
 查询多条数据记录并绑定数据到数据模型数组中，需要使用到 `ScanList` 方法，该方法会需要用户指定结果字段与模型属性的关系，随后底层会遍历数组并自动执行数据绑定。例如：
 
-```  go
+```go
 // 定义用户列表
 var users []Entity
 // 查询用户基础数据
@@ -166,7 +166,7 @@ err := db.Table("user_scores").
 
 方法定义：
 
-```  go
+```go
 // ScanList converts <r> to struct slice which contains other complex struct attributes.
 // Note that the parameter <listPointer> should be type of *[]struct/*[]*struct.
 // Usage example:

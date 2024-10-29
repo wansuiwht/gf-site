@@ -82,7 +82,7 @@ type Entity struct {
 
 写入数据时涉及到简单的数据库事务即可。
 
-```
+```go
 err := db.Transaction(func(tx *gdb.TX) error {
     r, err := tx.Table("user").Save(EntityUser{
         Name: "john",

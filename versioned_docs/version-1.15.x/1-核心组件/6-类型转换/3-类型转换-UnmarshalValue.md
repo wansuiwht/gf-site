@@ -10,7 +10,7 @@ hide_title: true
 
 ## 接口定义
 
-```  go
+```go
 // apiUnmarshalValue is the interface for custom defined types customizing value assignment.
 // Note that only pointer can implement interface apiUnmarshalValue.
 type apiUnmarshalValue interface {
@@ -25,13 +25,13 @@ type apiUnmarshalValue interface {
 
 正确的接口实现定义示例（使用指针接受）：
 
-```
+```go
 func (c *Receiver) UnmarshalValue(interface{}) error
 ```
 
 **错误的** 接口实现定义示例（使用了值传递）：
 
-```
+```go
 func (c Receiver) UnmarshalValue(interface{}) error
 ```
 
@@ -41,7 +41,7 @@ func (c Receiver) UnmarshalValue(interface{}) error
 
 数据表结构：
 
-```
+```sql
 CREATE TABLE `user` (
    id bigint unsigned NOT NULL AUTO_INCREMENT,
    passport varchar(45),
@@ -54,7 +54,7 @@ CREATE TABLE `user` (
 
 示例代码：
 
-```
+```go
 package main
 
 import (
@@ -200,7 +200,7 @@ func main() {
 
 一个TCP通信的数据包解包示例。
 
-```
+```go
 package main
 
 import (

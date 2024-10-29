@@ -8,7 +8,7 @@ hide_title: true
 
 ### `Do` 示例
 
-```
+```go
 package main
 
 import (
@@ -32,13 +32,12 @@ func main() {
 
 执行后，输出结果为：
 
-```
-v
+```v
 ```
 
 ### `Receive` 示例
 
-```
+```go
 package main
 
 import (
@@ -72,7 +71,7 @@ func main() {
 
 另外打开一个终端通过 `redis-cli` 命令进入 `Redis Server`，发布一条消息：
 
-```
+```bash
 $ redis-cli
 127.0.0.1:6379> publish channel test
 (integer) 1
@@ -89,7 +88,7 @@ $ redis-cli
 
 `HashSet` 是我们比较常用的 `Redis` 数据结构，我们可以非常方便地将 `Redis` 中的 `HashSet` 获取并转换为 `Golang Map`。
 
-```
+```go
 package main
 
 import (

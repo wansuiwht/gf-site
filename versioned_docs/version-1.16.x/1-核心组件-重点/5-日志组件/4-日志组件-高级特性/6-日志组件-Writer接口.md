@@ -8,7 +8,7 @@ hide_title: true
 
 `glog` 模块实现了标准输出以及文件输出的日志内容打印。当然，开发者也可以通过自定义 `io.Writer` 接口实现自定义的日志内容输出。 `io.Writer` 是标准库提供的内容输出接口，其定义如下：
 
-```  go
+```go
 type Writer interface {
 	Write(p []byte) (n int, err error)
 }
@@ -23,7 +23,7 @@ type Writer interface {
 
 在该示例中，我们实现了一个自定义的 `Writer` 对象 `MyWriter`，在该对象实现的 `Writer` 接口中我们对日志内容进行判断，如果出现了 `PANI` 或者 `FATA` 错误，那么表示是非常严重的错误，该接口将会第一时间通过 `HTTP` 接口告知 `Monitor` 监控服务。随后再将日志内容通过 `glog` 模块按照配置写入到文件和标准输出。
 
-```  go
+```go
 package main
 
 import (
@@ -57,7 +57,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 SERIOUS ISSUE OCCURRED!! I'd better tell monitor in first time!
 2019-05-23 20:14:49.374 [FATA] FATAL ERROR
 Stack:
@@ -73,7 +73,7 @@ Stack:
 
 示例代码：
 
-```  go
+```go
 package main
 
 import (

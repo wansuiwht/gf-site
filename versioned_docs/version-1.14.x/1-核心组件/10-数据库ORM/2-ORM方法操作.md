@@ -10,7 +10,7 @@ hide_title: true
 
 接口文档： [https://godoc.org/github.com/gogf/gf/database/gdb](https://godoc.org/github.com/gogf/gf/database/gdb)
 
-```  go
+```go
 // SQL操作方法，返回原生的标准库sql对象
 Query(query string, args ...interface{}) (*sql.Rows, error)
 Exec(query string, args ...interface{}) (sql.Result, error)
@@ -66,7 +66,7 @@ SetConnMaxLifetime(n int)
 
 ### 1\. ORM对象
 
-```  go
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.Database()
 // 或者(别名方式, 推荐)
@@ -92,7 +92,7 @@ db, err := gdb.Instance("user-center")
 
 ### 2\. 数据写入
 
-```  go
+```go
 r, err := db.Insert("user", gdb.Map {
     "name": "john",
 })
@@ -101,7 +101,7 @@ r, err := db.Insert("user", gdb.Map {
 
 ### 3\. 数据查询(列表)
 
-```  go
+```go
 list, err := db.GetAll("select * from user limit 2")
 list, err := db.GetAll("select * from user where age > ? and name like ?", g.Slice{18, "%john%"})
 list, err := db.GetAll("select * from user where status=?", g.Slice{1})
@@ -110,7 +110,7 @@ list, err := db.GetAll("select * from user where status=?", g.Slice{1})
 
 ### 4\. 数据查询(单条)
 
-```  go
+```go
 one, err := db.GetOne("select * from user limit 2")
 one, err := db.GetOne("select * from user where uid=1000")
 one, err := db.GetOne("select * from user where uid=?", 1000)
@@ -120,7 +120,7 @@ one, err := db.GetOne("select * from user where uid=?", g.Slice{1000})
 
 ### 5\. 数据保存
 
-```  go
+```go
 r, err := db.Save("user", gdb.Map {
     "uid"  :  1,
     "name" : "john",
@@ -130,7 +130,7 @@ r, err := db.Save("user", gdb.Map {
 
 ### 6\. 批量操作
 
-```  go
+```go
 // BatchInsert/BatchReplace/BatchSave 同理
 _, err := db.BatchInsert("user", gdb.List {
     {"name": "john_1"},
@@ -143,7 +143,7 @@ _, err := db.BatchInsert("user", gdb.List {
 
 ### 7\. 数据更新/删除
 
-```  go
+```go
 // db.Update/db.Delete 同理
 // UPDATE `user` SET `name`='john' WHERE `uid`=10000
 r, err := db.Update("user", gdb.Map {"name": "john"}, "uid=?", 10000)

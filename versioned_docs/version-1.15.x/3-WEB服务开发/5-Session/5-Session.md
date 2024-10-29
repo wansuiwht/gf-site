@@ -18,7 +18,7 @@ hide_title: true
 
 `ghttp.Server` 中的 `SessionId` 使用的是客户端的 `RemoteAddr + Header` 请求信息通过 `guid` 模块来生成的，保证随机及唯一性： [https://github.com/gogf/gf/blob/master/net/ghttp/ghttp\_request.go](https://github.com/gogf/gf/blob/master/net/ghttp/ghttp_request.go)
 
-```  go
+```go
 // Custom session id creating function.
 err := request.Session.SetIdFunc(func(ttl time.Duration) string {
     var (

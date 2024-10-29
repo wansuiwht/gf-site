@@ -45,7 +45,7 @@ hide_title: true
 
 在 `OpenAPI` 规范里面，所有名称以 `x-` 开头的标签是开发者可自定义的扩展标签。扩展标签可以在任意的接口、属性中以 `Golang struct tag` 的形式定义，在接口文档生成时，将会作为独立的字段返回。例如：
 
-```
+```go
 package main
 
 import (

@@ -10,7 +10,7 @@ hide_title: true
 
 ## 客户端
 
-```
+```go
 package main
 
 import (
@@ -100,7 +100,7 @@ func StartRequests() {
 
 ## 服务端
 
-```
+```go
 package main
 
 import (
@@ -225,7 +225,7 @@ func (c *cTrace) userCacheKey(id int) string {
 
 
 
-```
+```go
 g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 ```
 

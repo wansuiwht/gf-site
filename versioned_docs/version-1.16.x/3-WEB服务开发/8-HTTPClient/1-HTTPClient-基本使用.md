@@ -13,7 +13,7 @@ hide_title: true
 
 
 
-```  go
+```go
 if r, err := g.Client().Get("https://goframe.org"); err != nil {
        panic(err)
 } else {
@@ -28,7 +28,7 @@ if r, err := g.Client().Get("https://goframe.org"); err != nil {
 
 
 
-```  go
+```go
 if r, err := g.Client().Get("https://goframe.org/cover.png"); err != nil {
        panic(err)
 } else {
@@ -46,7 +46,7 @@ if r, err := g.Client().Get("https://goframe.org/cover.png"); err != nil {
 
 
 
-```  go
+```go
 if r, err := g.Client().Post("http://127.0.0.1:8199/form", "name=john&age=18"); err != nil {
        panic(err)
 } else {
@@ -64,7 +64,7 @@ if r, err := g.Client().Post("http://127.0.0.1:8199/form", "name=john&age=18"); 
 
 
 
-```  go
+```go
 if r, err := g.Client().Post(
        "http://127.0.0.1:8199/form",
        g.Map{
@@ -88,7 +88,7 @@ if r, err := g.Client().Post(
 
 
 
-```  go
+```go
 if r, err := g.Client().Post(
        "http://user.svc/v1/user/create",
        `{"passport":"john","password":"123456","password-confirm":"123456"}`,
@@ -109,7 +109,7 @@ if r, err := g.Client().Post(
 
 
 
-```  go
+```go
 if r, err := g.Client().Delete("http://user.svc/v1/user/delete/1", "10000"); err != nil {
        panic(err)
 } else {
@@ -130,7 +130,7 @@ if r, err := g.Client().Delete("http://user.svc/v1/user/delete/1", "10000"); err
 
 
 
-```  go
+```go
     // 返回content为[]bytes类型
     content := g.Client().GetBytes("https://goframe.org")
 ```
@@ -141,7 +141,7 @@ if r, err := g.Client().Delete("http://user.svc/v1/user/delete/1", "10000"); err
 
 
 
-```  go
+```go
     // 返回content为string类型
     content := g.Client().GetContent("https://goframe.org")
 ```
@@ -152,7 +152,7 @@ if r, err := g.Client().Delete("http://user.svc/v1/user/delete/1", "10000"); err
 
 
 
-```  go
+```go
     // 返回content为[]bytes类型
     content := g.Client().PostBytes(
         "http://user.svc/v1/user/create",
@@ -166,7 +166,7 @@ if r, err := g.Client().Delete("http://user.svc/v1/user/delete/1", "10000"); err
 
 
 
-```  go
+```go
     // 返回content为string类型
     content := g.Client().PostContent(
         "http://user.svc/v1/user/create",
@@ -181,7 +181,7 @@ if r, err := g.Client().Delete("http://user.svc/v1/user/delete/1", "10000"); err
 
 使用示例：
 
-```  go
+```go
 type User struct {
     Id   int
     Name string
@@ -189,7 +189,7 @@ type User struct {
 
 ```
 
-```  go
+```go
 // Struct
 var user *User
 // 也可以
@@ -198,7 +198,7 @@ g.Client().GetVar(url).Scan(&user)
 
 ```
 
-```  go
+```go
 // Struct数组
 var users []*User
 // 也可以

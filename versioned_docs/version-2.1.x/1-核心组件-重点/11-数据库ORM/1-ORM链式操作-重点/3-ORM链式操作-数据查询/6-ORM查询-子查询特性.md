@@ -22,7 +22,7 @@ db.Model("orders").Where("amount > ?", db.Model("orders").Fields("AVG(amount)"))
 
 我们可以在 `Having` 条件中使用子查询语句，示例：
 
-```
+```go
 subQuery := db.Model("users").Fields("AVG(age)").WhereLike("name", "name%")
 db.Model("users").Fields("AVG(age) as avgage").Group("name").Having("AVG(age) > ?", subQuery).Scan(&results)
 // SELECT AVG(age) as avgage FROM `users` GROUP BY `name` HAVING AVG(age) > (SELECT AVG(age) FROM `users` WHERE name LIKE "name%")
@@ -32,7 +32,7 @@ db.Model("users").Fields("AVG(age) as avgage").Group("name").Having("AVG(age) > 
 
 我们可以在使用 `Model` 方法创建模型时使用子查询语句，示例：
 
-```
+```go
 db.Model("? as u", db.Model("users").Fields("name", "age")).Where("age", 18).Scan(&users)
 // SELECT * FROM (SELECT `name`,`age` FROM `users`) as u WHERE `age` = 18
 

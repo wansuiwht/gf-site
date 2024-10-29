@@ -10,7 +10,7 @@ hide_title: true
 
 一个反面例子：
 
-```
+```go
 func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask, err error) {
 	out = new(model.TaskDetail)
 	err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(out)
@@ -28,7 +28,7 @@ func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask
 
 建议改进如下：
 
-```
+```go
 func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask, err error) {
 	err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(&out)
 	if err != nil {
@@ -53,7 +53,7 @@ func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask
 
 我们的表设计如下：
 
-```
+```sql
 CREATE TABLE `sell_spec` (
     `id`            int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
     `product`       varchar(45) NOT NULL COMMENT '产品名称',
@@ -99,7 +99,7 @@ type SellSpecItem struct {
 
 数据写入：
 
-```
+```go
 _, err = dao.SellSpec.Ctx(ctx).Data(v1.SellSpecItem{
 	SellSpec: entity.SellSpec{
 		Product:  "redis",
@@ -115,7 +115,7 @@ _, err = dao.SellSpec.Ctx(ctx).Data(v1.SellSpecItem{
 
 数据查询
 
-```
+```go
 var items []v1.SellSpecItem
 err = dao.SellSpec.Ctx(ctx).Scan(&items)
 ```

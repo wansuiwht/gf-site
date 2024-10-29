@@ -14,7 +14,7 @@ hide_title: true
 
 使用示例：
 
-```  go
+```go
 // WHERE `uid`=1
 Where("uid=1")
 Where("uid", 1)
@@ -38,7 +38,7 @@ Where("uid IN(?)", g.Slice{1,2,3})
 
 使用 `struct` 参数的示例，其中 `orm` 的 `tag` 用于指定 `struct` 属性与表字段的映射关系：
 
-```  go
+```go
 type Condition struct{
     Sex int `orm:"sex"`
     Age int `orm:"age"`
@@ -52,7 +52,7 @@ Where(Condition{1, 18})
 
 `WherePri` 方法的功能同 `Where`，但提供了对表主键的智能识别，常用于根据主键的便捷数据查询。假如 `user` 表的主键为 `uid`，我们来看一下 `Where` 与 `WherePri` 的区别：
 
-```  go
+```go
 // WHERE `uid`=1
 Table("user").Where("uid", 1)
 Table("user").WherePri(1)
@@ -76,7 +76,7 @@ Table("user").WherePri(g.Slice{1,2,3})
 
 此外，也可以看得到这四个方法定义中也支持条件参数的直接输入，参数类型与 `Where` 方法一致。但需要注意，其中 `Array` 和 `Value` 方法的参数中至少应该输入字段参数。例如：
 
-```  go
+```go
 // SELECT `name` FROM `user` WHERE `score`>60
 Table("user").Array("name", "score>?", 60)
 
@@ -108,14 +108,14 @@ err  := db.Table("user").Where("id", 1).Struct(user)
 
 或者
 
-```
+```go
 user := &User{}
 err  := db.Table("user").Where("id", 1).Struct(user)
 ```
 
 前两种方式都是预先初始化对象（提前分配内存），推荐的方式：
 
-```
+```go
 user := (*User)(nil)
 err  := db.Table("user").Where("id", 1).Struct(&user)
 ```
@@ -124,7 +124,7 @@ err  := db.Table("user").Where("id", 1).Struct(&user)
 
 2、 `Structs`: 将多条查询结果集转换为一个 `[]struct/[]*struct` 数组，查询结果应当是多条记录组成的结果集，并且 `pointer` 应当为数组的指针地址，使用方式例如：
 
-```
+```go
 users := ([]User)(nil)
 // 或者 var users []User
 err := db.Table("user").Structs(&users)
@@ -132,7 +132,7 @@ err := db.Table("user").Structs(&users)
 
 或者
 
-```
+```go
 users := ([]*User)(nil)
 // 或者 var user []*User
 err := db.Table("user").Structs(&users)
@@ -154,7 +154,7 @@ err := db.Table("user").Structs(&users)
 
 使用示例：
 
-```  go
+```go
 // 查询符合条件的单条记录(第一条)
 // SELECT u.*,ud.site FROM user u LEFT JOIN user_detail ud ON u.uid=ud.uid WHERE u.uid=1 LIMIT 1
 r, err := db.Table("user u").LeftJoin("user_detail ud", "u.uid=ud.uid").Fields("u.*,ud.site").Where("u.uid", 1).One()
@@ -177,7 +177,7 @@ r, err := db.Table("user u,user_detail ud").Where("u.uid=ud.uid").Fields("u.*,ud
 
 `Group` 方法用于查询分组， `Order` 方法用于查询排序。使用示例：
 
-```  go
+```go
 // SELECT COUNT(*) total,age FROM `user` GROUP BY age
 r, err := db.Table("user").Fields("COUNT(*) total,age").Group("age").All()
 
@@ -211,7 +211,7 @@ db.Model("article").Fields("id,title").OrderRandom().All()
 
 `Having` 方法用于查询结果的条件过滤。使用示例：
 
-```  go
+```go
 // SELECT COUNT(*) total,age FROM `user` GROUP BY age HAVING total>100
 r, err := db.Table("user").Fields("COUNT(*) total,age").Group("age").Having("total>100").All()
 
@@ -222,7 +222,7 @@ r, err := db.Table("student").Order("class").Having("score>?", 60).All()
 
 ## 自定义数据表别名
 
-```  go
+```go
 // SELECT * FROM `user` AS u LEFT JOIN `user_detail` as ud ON(ud.id=u.id) WHERE u.id=1 LIMIT 1
 r, err := db.Table("user", "u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1).One()
 r, err := db.Table("user").As("u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1).One()
@@ -234,7 +234,7 @@ r, err := db.Table("user").As("u").LeftJoin("user_detail", "ud", "ud.id=u.id").W
 
 `Where + string`，条件参数使用字符串和预处理。
 
-```  go
+```go
 // 查询多条记录并使用Limit分页
 // SELECT * FROM user WHERE uid>1 LIMIT 0,10
 r, err := db.Table("user").Where("uid > ?", 1).Limit(0, 10).All()
@@ -259,7 +259,7 @@ r, err := db.Table("user").Where("uid=?", 1).Or("name=?", "john").One()
 
 `Where + slice`，预处理参数可直接通过 `slice` 参数给定。
 
-```  go
+```go
 // SELECT * FROM user WHERE age>18 AND name like '%john%'
 r, err := db.Table("user").Where("age>? AND name like ?", g.Slice{18, "%john%"}).All()
 // SELECT * FROM user WHERE status=1
@@ -269,7 +269,7 @@ r, err := db.Table("user").Where("status=?", g.Slice{1}).All()
 
 `Where + map`，条件参数使用任意 `map` 类型传递。
 
-```  go
+```go
 // SELECT * FROM user WHERE uid=1 AND name='john' LIMIT 1
 r, err := db.Table("user").Where(g.Map{"uid" : 1, "name" : "john"}).One()
 // SELECT * FROM user WHERE uid=1 AND age>18 LIMIT 1
@@ -279,7 +279,7 @@ r, err := db.Table("user").Where(g.Map{"uid" : 1, "age>" : 18}).One()
 
 `Where + struct/*struct`， `struct` 标签支持 `orm/json`，映射属性到字段名称关系。
 
-```  go
+```go
 type User struct {
     Id       int    `json:"uid"`
     UserName string `orm:"name"`
@@ -293,7 +293,7 @@ r, err := db.Table("user").Where(&User{ Id : 1}).One()
 
 以上的查询条件相对比较简单，我们来看一个比较复杂的查询示例。
 
-```
+```go
 condition := g.Map{
     "title like ?"         : "%九寨%",
     "online"               : 1,
@@ -309,7 +309,7 @@ r, err := db.Table("article").Where(condition).All()
 
 使用字符串、 `slice` 参数类型。当使用 `slice` 参数类型时，预处理占位符只需要一个 `?` 即可。
 
-```  go
+```go
 // SELECT * FROM user WHERE uid IN(100,10000,90000)
 r, err := db.Table("user").Where("uid IN(?,?,?)", 100, 10000, 90000).All()
 r, err := db.Table("user").Where("uid", g.Slice{100, 10000, 90000}).All()
@@ -323,7 +323,7 @@ r, err := db.Table("user").Where("age", g.Slice{18, 50}).Count()
 
 使用任意 `map` 参数类型。
 
-```  go
+```go
 // SELECT * FROM user WHERE gender=1 AND uid IN(100,10000,90000)
 r, err := db.Table("user").Where(g.Map{
     "gender" : 1,
@@ -334,7 +334,7 @@ r, err := db.Table("user").Where(g.Map{
 
 使用 `struct` 参数类型，注意查询条件的顺序和 `struct` 的属性定义顺序有关。
 
-```  go
+```go
 type User struct {
     Id     []int  `orm:"uid"`
     Gender int    `orm:"gender"`
@@ -357,7 +357,7 @@ r, err := db.Table("user").Where("uid", nil).All()
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 同时也提供了常用条件方法 `WhereIn/WhereNotIn/WhereOrIn/WhereOrNotIn` 方法，用于常用的 `In` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereIn(column string, in interface{}) *Model
 func (m *Model) WhereNotIn(column string, in interface{}) *Model
 func (m *Model) WhereOrIn(column string, in interface{}) *Model
@@ -380,7 +380,7 @@ db.Model("user").Where("gender", 1).WhereOrNotIn("type", g.Slice{1,2,3}).All()
 
 ### 3\. `           like         ` 查询
 
-```  go
+```go
 // SELECT * FROM `user` WHERE name like '%john%'
 r, err := db.Table("user").Where("name like ?", "%john%").All()
 // SELECT * FROM `user` WHERE birthday like '1990-%'
@@ -390,7 +390,7 @@ r, err := db.Table("user").Where("birthday like ?", "1990-%").All()
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 同时也提供了常用条件方法 `WhereLike/WhereNotLike/WhereOrLike/WhereOrNotLike` 方法，用于常用的 `Like` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereLike(column string, like interface{}) *Model
 func (m *Model) WhereNotLike(column string, like interface{}) *Model
 func (m *Model) WhereOrLike(column string, like interface{}) *Model
@@ -428,7 +428,7 @@ db.Table("user").Fields("SUM(score)").Where("uid", 1).Value()
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 同时也提供了常用统计方法 `Min/Max/Avg/Sum` 方法，用于常用的字段统计查询。方法定义如下：
 
-```
+```go
 func (m *Model) Min(column string) (float64, error)
 func (m *Model) Max(column string) (float64, error)
 func (m *Model) Avg(column string) (float64, error)
@@ -450,7 +450,7 @@ db.Table("user").Where("uid", 1).Sum("score")
 
 ### 5\. `count` 查询
 
-```  go
+```go
 // SELECT COUNT(1) FROM `user` WHERE `birthday`='1990-10-01'
 db.Table("user").Where("birthday", "1990-10-01").Count()
 // SELECT COUNT(uid) FROM `user` WHERE `birthday`='1990-10-01'
@@ -460,19 +460,19 @@ db.Table("user").Fields("uid").Where("birthday", "1990-10-01").Count()
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 同时也提供了一个按照字段进行 `Count` 的常用方法 `CountColumn`。方法定义如下：
 
-```
+```go
 func (m *Model) CountColumn(column string) (int, error)
 ```
 
 使用示例：
 
-```
+```go
 db.Table("user").Where("birthday", "1990-10-01").CountColumn("uid")
 ```
 
 ### 6\. `distinct` 查询
 
-```  go
+```go
 // SELECT DISTINCT uid,name FROM `user`
 db.Table("user").Fields("DISTINCT uid,name").All()
 // SELECT COUNT(DISTINCT uid,name) FROM `user`
@@ -482,7 +482,7 @@ db.Table("user").Fields("DISTINCT uid,name").Count()
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 同时也提供了一个字段唯一性过滤标记方法 `Distinct`。方法定义如下：
 
-```
+```go
 func (m *Model) Distinct() *Model
 ```
 
@@ -497,7 +497,7 @@ db.Table("user").Distinct().CountColumn("uid,name")
 
 ### 7\. `between` 查询
 
-```  go
+```go
 // SELECT * FROM `user ` WHERE age between 18 and 20
 db.Table("user").Where("age between ? and ?", 18, 20).All()
 
@@ -505,7 +505,7 @@ db.Table("user").Where("age between ? and ?", 18, 20).All()
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 同时也提供了常用条件方法 `WhereBetween/WhereNotBetween/WhereOrBetween/WhereOrNotBetween` 方法，用于常用的 `Between` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereBetween(column string, min, max interface{}) *Model
 func (m *Model) WhereNotBetween(column string, min, max interface{}) *Model
 func (m *Model) WhereOrBetween(column string, min, max interface{}) *Model
@@ -530,7 +530,7 @@ db.Model("user").Where("gender", 0).WhereOrNotBetween("age", 16, 20).All()
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 提供了常用条件方法 `WhereNull/WhereNotNull/WhereOrNull/WhereOrNotNull` 方法，用于常用的 `Null` 查询条件过滤。方法定义如下：
 
-```
+```go
 func (m *Model) WhereNull(columns ...string) *Model
 func (m *Model) WhereNotNull(columns ...string) *Model
 func (m *Model) WhereOrNull(columns ...string) *Model

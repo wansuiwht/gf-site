@@ -53,7 +53,7 @@ message DeleteRes {}
 
 ## GRPC Server
 
-```
+```go
 package main
 
 import (
@@ -154,7 +154,7 @@ func (s *Controller) userCacheKey(id int32) string {
 
 3、我们仍然通过缓存适配器的方式注入Redis缓存：
 
-```
+```go
 g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 ```
 
@@ -162,7 +162,7 @@ g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 
 ## GRPC Client
 
-```
+```go
 package main
 
 import (

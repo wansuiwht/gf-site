@@ -12,7 +12,7 @@ hide_title: true
 
 使用示例：
 
-```  go
+```go
 // UPDATE `user` SET `name`='john guo' WHERE name='john'
 r, err := db.Table("user").Data(g.Map{"name" : "john guo"}).Where("name", "john").Update()
 r, err := db.Table("user").Data("name='john guo'").Where("name", "john").Update()
@@ -28,7 +28,7 @@ r, err := db.Table("user").Data(g.Map{"status" : 1}).Where(1).Update()
 
 也可以直接给 `Update` 方法传递 `data` 及 `where` 参数：
 
-```  go
+```go
 // UPDATE `user` SET `name`='john guo' WHERE name='john'
 r, err := db.Table("user").Update(g.Map{"name" : "john guo"}, "name", "john")
 r, err := db.Table("user").Update("name='john guo'", "name", "john")
@@ -55,7 +55,7 @@ type Counter struct {
 
 `Counter` 使用示例，字段自增：
 
-```
+```go
 updateData := g.Map{
 	"views": &gdb.Counter{
         Field: "views",
@@ -68,7 +68,7 @@ result, err := db.Update("article", updateData, "id", 1)
 
 `Counter` 也可以实现非自身字段的自增，例如：
 
-```
+```go
 updateData := g.Map{
 	"views": &gdb.Counter{
         Field: "clicks",
@@ -129,7 +129,7 @@ db.Model("user").Data(g.Map{
 
 使用示例
 
-```  go
+```go
 // DELETE FROM `user` WHERE uid=10
 r, err := db.Table("user").Where("uid", 10).Delete()
 // DELETE FROM `user` ORDER BY `login_time` asc LIMIT 10
@@ -139,7 +139,7 @@ r, err := db.Table("user").Order("login_time asc").Limit(10).Delete()
 
 也可以直接给 `Delete` 方法传递 `where` 参数：
 
-```  go
+```go
 // DELETE FROM `user` WHERE `uid`=10
 r, err := db.Table("user").Delete("uid", 10)
 // DELETE FROM `user` WHERE `score`<60

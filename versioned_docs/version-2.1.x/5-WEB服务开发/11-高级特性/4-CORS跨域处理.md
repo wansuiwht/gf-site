@@ -8,7 +8,7 @@ hide_title: true
 
 相关方法： [https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response](https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response)
 
-```
+```go
 func (r *Response) CORS(options CORSOptions)
 func (r *Response) CORSAllowedOrigin(options CORSOptions) bool
 func (r *Response) CORSDefault()
@@ -63,7 +63,7 @@ func Middleware(r *ghttp.Request) {
 
 我们来看一个简单的接口示例：
 
-```
+```go
 package main
 
 import (
@@ -99,7 +99,7 @@ $.get("http://localhost:8199/api.v1/order", function(result){
 
 返回了不允许跨域请求的提示错误，接着我们修改一下服务端接口的测试代码，如下：
 
-```
+```go
 package main
 
 import (
@@ -139,7 +139,7 @@ func main() {
 
 在大多数场景中，我们是需要自定义授权跨域的 `Origin`，那么我们可以将以上的例子改进如下，在该示例中，我们仅允许 `goframe.org` 及 `baidu.com` 跨域请求访问。
 
-```
+```go
 package main
 
 import (
@@ -175,7 +175,7 @@ func main() {
 
 在以下示例中，仅允许来自 `goframe.org` 域名的跨域请求，而来自其他域名的请求将会失败并返回 `403`：
 
-```
+```go
 package main
 
 import (

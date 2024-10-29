@@ -39,7 +39,7 @@ type Cookie
 
 ## 使用示例
 
-```
+```go
 package main
 
 import (

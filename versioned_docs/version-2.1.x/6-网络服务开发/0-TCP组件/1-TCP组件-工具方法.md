@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/net/gtcp"
 ```
 
@@ -16,7 +16,7 @@ import "github.com/gogf/gf/v2/net/gtcp"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp)
 
-```
+```go
 func LoadKeyCrt(crtFile, keyFile string) (*tls.Config, error)
 func NewNetConn(addr string, timeout ...int) (net.Conn, error)
 func NewNetConnKeyCrt(addr, crtFile, keyFile string) (net.Conn, error)
@@ -37,7 +37,7 @@ func SendWithTimeout(addr string, data []byte, timeout time.Duration, retry ...R
 
 以下为一个简单的示例，我们使用工具方法来访问指定的Web站点：
 
-```
+```go
 package main
 
 import (

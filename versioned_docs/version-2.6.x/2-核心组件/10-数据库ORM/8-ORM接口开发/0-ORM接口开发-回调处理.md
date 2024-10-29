@@ -14,7 +14,7 @@ hide_title: true
 
 我们来看一个自定义回调处理的示例，现需要将所有执行的 `SQL` 语句记录到 `monitor` 表中，以方便于进行 `SQL` 审计。因此通过自定义 `Driver` 然后覆盖 `ORM` 的底层接口方法来实现是最简单的。为简化示例编写，以下代码实现了一个自定义的 `MySQL` 驱动，该驱动继承于 `drivers` 下 `mysql` 模块内已经实现的 `Driver`。
 
-```
+```go
 package driver
 
 import (
@@ -80,7 +80,7 @@ func (d *MyDriver) DoCommit(ctx context.Context, in gdb.DoCommitInput) (out gdb.
 
 由于这里我们使用了一个新的驱动名称 `MyDriver`，因此在 `gdb` 配置中的 `type` 数据库类型时，需要填写该驱动名称。以下是一个使用配置的示例：
 
-```
+```yaml
 database:
   default:
   - link: "MyDriver:root:12345678@tcp(127.0.0.1:3306)/user"

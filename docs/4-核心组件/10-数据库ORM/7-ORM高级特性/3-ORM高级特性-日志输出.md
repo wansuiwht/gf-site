@@ -8,7 +8,7 @@ hide_title: true
 
 日志输出往往是打印一些调试或者 `SQL` 语句，日志对象可以通过 `SetLogger/GetLogger` 方法来设置，也可以通过配置文件来做配置，日志的配置请查看 `ORM` 的 [ORM使用配置](/docs/核心组件/数据库ORM/ORM使用配置) 章节。以下是一个开启了日志输出的配置示例：
 
-```
+```yaml
 database:
   logger:
   - path:   "/var/log/gf-app/sql"
@@ -23,7 +23,7 @@ database:
 
 `ORM` 组件输出的日志相当详尽，我们来看一个示例：
 
-```
+```html
 2021-05-22 21:12:10.776 [DEBU] {38d45cbf2743db16f1062074f7473e5c} [  4 ms] [default] [rows:0  ] [txid:1] BEGIN
 2021-05-22 21:12:10.776 [DEBU] {38d45cbf2743db16f1062074f7473e5c} [  0 ms] [default] [rows:0  ] [txid:1] SAVEPOINT `transaction0`
 2021-05-22 21:12:10.789 [DEBU] {38d45cbf2743db16f1062074f7473e5c} [ 13 ms] [default] [rows:8  ] [txid:1] SHOW FULL COLUMNS FROM `user`

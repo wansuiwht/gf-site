@@ -36,7 +36,7 @@ func RegisterConverter(fn interface{}) (err error)
 
 常见的自定义数据结构是结构体之间的类型转换。我们来看两个例子。
 
-```
+```go
 package main
 
 import (
@@ -114,7 +114,7 @@ dstWrap: &{{1}}
 
 除了使用 `gconv.Scan` 方法外，我们也可以使 `gconv.ConvertWithRefer` 方法实现类型转换，两者的效果都是一样的：
 
-```
+```go
 package main
 
 import (
@@ -169,7 +169,7 @@ func main() {
 
 我们也可以使用 `Converter`特性实现 **别名类型** 的转换。别名类型不限于结构体，也可以是 `int, string` 等基础类型的别名。我们来看两个例子。
 
-```
+```go
 package main
 
 import (
@@ -251,7 +251,7 @@ dstWrap: &{{2024-01-22}}
 
 同样的，除了使用 `gconv.Scan` 方法外，我们也可以使用 `gconv.ConvertWithRefer` 方法实现类型转换，两者的效果都是一样的：
 
-```
+```go
 package main
 
 import (

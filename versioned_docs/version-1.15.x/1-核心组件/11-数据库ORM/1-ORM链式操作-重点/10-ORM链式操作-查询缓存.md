@@ -10,7 +10,7 @@ hide_title: true
 
 相关方法：
 
-```  go
+```go
 // 查询缓存/清除缓存操作，需要注意的是，事务查询不支持缓存。
 // 当duration < 0时表示清除缓存， duration=0时表示不过期, duration > 0时表示过期时间，duration过期时间单位：秒；
 // name表示自定义的缓存名称，便于业务层精准定位缓存项(如果业务层需要手动清理时，必须指定缓存名称)，
@@ -26,7 +26,7 @@ func (m *Model) Cache(duration time.Duration, name ... string) *Model
 
 默认情况下 `ORM` 的 `*gcache.Cache` 缓存对象提供的是单进程内存缓存，虽然性能非常高效，但是只能在单进程内使用。如果服务如果采用多节点部署，多节点之间的缓存可能会产生数据不一致的情况，因此大多数场景下我们都是通过 `Redis` 服务器来实现对数据库查询数据的缓存。 `*gcache.Cache` 对象采用了适配器设计模式，可以轻松实现从单进程内存缓存切换为分布式的 `Redis` 缓存。
 
-```
+```go
 adapter := adapter.NewRedis(g.Redis())
 g.DB().GetCache().SetAdapter(adapter)
 ```
@@ -42,7 +42,7 @@ g.DB().GetCache().SetAdapter(adapter)
 
 ### 数据表结构
 
-```  sql
+```sql
 CREATE TABLE `user` (
   `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL DEFAULT '' COMMENT '昵称',
@@ -53,7 +53,7 @@ CREATE TABLE `user` (
 
 ### 示例代码
 
-```  go
+```go
 package main
 
 import (
@@ -87,7 +87,7 @@ func main() {
 
 执行后输出结果为（测试表数据结构仅供示例参考）：
 
-```  shell
+```shell
 2019-12-28 12:19:57.228 [DEBU] [1 ms] SELECT * FROM `user` WHERE uid=1 LIMIT 1
 2019-12-28 12:19:57.228 {"name":"john","site":"https://goframe.org","uid":1}
 2019-12-28 12:19:57.228 {"name":"john","site":"https://goframe.org","uid":1}

@@ -6,7 +6,7 @@ hide_title: true
 
 从之前的介绍我们知道 `gdb` 支持基于应用层的主从配置以及读写分离，并且所有的特性仅需要通过简单的配置即可实现， `gdb` 内部将会对SQL请求自动地进行主从切换。以下是一个简单的主从配置，包含一主一从：
 
-```
+```yaml
 database:
   default:
   - type: "mysql"
@@ -29,7 +29,7 @@ database:
 
 
 
-   ```  go
+   ```go
     db.Model("order").Data(g.Map{
         "uid"   : 1000,
         "price" : 99.99,
@@ -43,7 +43,7 @@ database:
 
 
 
-   ```  go
+   ```go
     db.Model("order").Master().Where("uid", 1000).All()
    ```
 

@@ -29,7 +29,7 @@ hide_title: true
 
 从 `goframe v1.9.0` 版本开始， `goframe` 的 `ORM` 提供了一个常用写入方法 `InsertIgnore`，用于写入数据时如果写入的数据中存在主键或者唯一索引时，忽略错误继续执行写入。该方法定义如下：
 
-```
+```go
 func (m *Model) InsertIgnore(data ...interface{}) (result sql.Result, err error)
 ```
 
@@ -37,7 +37,7 @@ func (m *Model) InsertIgnore(data ...interface{}) (result sql.Result, err error)
 
 从 `goframe v1.15.7` 版本开始， `goframe` 的 `ORM` 同时也提供了一个常用写入方法 `InsertAndGetId`，用于写入数据时并直接返回自增字段的 `ID`。该方法定义如下：
 
-```
+```go
 func (m *Model) InsertAndGetId(data ...interface{}) (lastInsertId int64, err error)
 ```
 
@@ -47,7 +47,7 @@ func (m *Model) InsertAndGetId(data ...interface{}) (lastInsertId int64, err err
 
 数据写入/保存方法往往需要结合 `Data` 方法使用：
 
-```  go
+```go
 // INSERT INTO `user`(`name`) VALUES('john')
 r, err := db.Table("user").Data(g.Map{"name": "john"}).Insert()
 // INSERT IGNORE INTO `user`(`uid`,`name`) VALUES(10000,'john')
@@ -61,7 +61,7 @@ r, err := db.Table("user").Data(g.Map{"uid": 10001, "name": "john"}).Save()
 
 也可以不使用 `Data` 方法，而给写入/保存方法直接传递数据参数：
 
-```  go
+```go
 r, err := db.Table("user").Insert(g.Map{"name": "john"})
 r, err := db.Table("user").Replace(g.Map{"uid": 10000, "name": "john"})
 r, err := db.Table("user").Save(g.Map{"uid": 10001, "name": "john"})
@@ -70,7 +70,7 @@ r, err := db.Table("user").Save(g.Map{"uid": 10001, "name": "john"})
 
 数据参数也常用 `struct` 类型，例如当表字段为 `uid/name/site` 时：
 
-```  go
+```go
 type User struct {
     Uid  int    `orm:"uid"`
     Name string `orm:"name"`
@@ -88,7 +88,7 @@ r, err := g.DB().Table("user").Data(user).Insert()
 
 ### 示例2，数据批量写入
 
-```  go
+```go
 // INSERT INTO `user`(`name`) VALUES('john_1'),('john_2'),('john_3')
 r, err := db.Table("user").Data(g.List{
     {"name": "john_1"},
@@ -100,7 +100,7 @@ r, err := db.Table("user").Data(g.List{
 
 可以通过 `Batch` 方法指定批量操作中分批写入条数数量（默认是 `10`），以下示例将会被拆分为两条写入请求：
 
-```  go
+```go
 // INSERT INTO `user`(`name`) VALUES('john_1'),('john_2')
 // INSERT INTO `user`(`name`) VALUES('john_3')
 r, err := db.Table("user").Data(g.List{
@@ -115,7 +115,7 @@ r, err := db.Table("user").Data(g.List{
 
 批量保存操作与单条保存操作原理是一样的，当写入的数据中存在主键或者唯一索引时将会更新原有记录值，否则新写入一条记录。
 
-```  go
+```go
 // INSERT INTO `user`(`uid`,`name`) VALUES(10000,'john_1'),(10001,'john_2'),(10002,'john_3')
 // ON DUPLICATE KEY UPDATE `uid`=VALUES(`uid`),`name`=VALUES(`name`)
 r, err := db.Table("user").Data(g.List{

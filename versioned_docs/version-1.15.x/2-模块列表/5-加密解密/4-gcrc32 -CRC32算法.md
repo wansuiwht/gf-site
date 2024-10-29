@@ -8,7 +8,7 @@ CRC32算法。
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/crypto/gcrc32"
 
 ```

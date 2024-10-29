@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/net/gtcp"
 
 ```
@@ -17,7 +17,7 @@ import "github.com/gogf/gf/net/gtcp"
 
 [https://godoc.org/github.com/gogf/gf/net/gtcp](https://godoc.org/github.com/gogf/gf/net/gtcp)
 
-```  go
+```go
 type Conn
     func NewConn(addr string, timeout ...int) (*Conn, error)
     func NewConnByNetConn(conn net.Conn) *Conn
@@ -64,7 +64,7 @@ TCP通信读取操作由 `Recv` 方法实现，同时也提供了错误重试的
 
 ### 示例1，简单使用
 
-```  go
+```go
 package main
 
 import (
@@ -115,7 +115,7 @@ func main() {
 
 
 
-```  shell
+```shell
     2018-07-11 22:11:08.650 0
     2018-07-11 22:11:09.651 1
     2018-07-11 22:11:10.651 2
@@ -136,7 +136,7 @@ func main() {
 
 我们将之前的回显服务改进一下：
 
-```  go
+```go
 package main
 
 import (
@@ -188,7 +188,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 > 2018-07-19 23:25:43 127.0.0.1:34306 127.0.0.1:8999
 > 2018-07-19 23:25:44 127.0.0.1:34308 127.0.0.1:8999
 > 2018-07-19 23:25:45 127.0.0.1:34312 127.0.0.1:8999
@@ -200,7 +200,7 @@ func main() {
 
 我们在这个示例中使用gtcp包来实现一个简单的HTTP客户端，读取并打印出百度首页的 `header` 和 `content` 内容。
 
-```  go
+```go
 package main
 
 import (
@@ -259,7 +259,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 HTTP/1.1 200 OK
 Accept-Ranges: bytes
 Cache-Control: no-cache

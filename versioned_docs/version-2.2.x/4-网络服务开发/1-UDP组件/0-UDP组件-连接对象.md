@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/net/gudp"
 ```
 
@@ -47,7 +47,7 @@ type Conn
 
 ## 使用示例
 
-```
+```go
 package main
 
 import (

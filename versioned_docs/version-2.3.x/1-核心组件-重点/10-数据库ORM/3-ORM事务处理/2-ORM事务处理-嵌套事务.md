@@ -10,7 +10,7 @@ hide_title: true
 
 一个简单的示例 `SQL`，包含两个字段 `id` 和 `name`：
 
-```
+```sql
 CREATE TABLE `user` (
   `id` int(10) unsigned NOT NULL COMMENT '用户ID',
   `name` varchar(45) NOT NULL COMMENT '用户名称',
@@ -20,7 +20,7 @@ CREATE TABLE `user` (
 
 ## 二、常规操作
 
-```
+```go
 db := g.DB()
 
 tx, err := db.Begin()
@@ -48,7 +48,7 @@ if err = tx.Commit(); err != nil {
 
 `goframe` 的 `ORM` 拥有相当完善的日志记录机制，如果您打开 `SQL` 日志，那么将会看到以下日志信息，展示了整个数据库请求的详细执行流程：
 
-```
+```html
 2021-05-22 21:12:10.776 [DEBU] [  4 ms] [default] [txid:1] BEGIN
 2021-05-22 21:12:10.776 [DEBU] [  0 ms] [default] [txid:1] SAVEPOINT `transaction0`
 2021-05-22 21:12:10.789 [DEBU] [ 13 ms] [default] [txid:1] SHOW FULL COLUMNS FROM `user`
@@ -78,7 +78,7 @@ mysql> select * from `user`;
 
 我们也可以通过闭包操作来实现嵌套事务，同样也是通过 `Transaction` 方法实现。
 
-```
+```go
 db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 	// Nested transaction 1.
 	if err := tx.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
@@ -102,7 +102,7 @@ db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 
 嵌套事务的闭包嵌套中也可以不使用其中的 `tx` 对象，而是直接使用 `db` 对象或者 `dao` 包，这种方式更常见一些。特别是在方法层级调用时，使得对于开发者来说并不用关心 `tx` 对象的传递，也并不用关心当前事务是否需要嵌套执行，一切都由组件自动维护，极大减少开发者的心智负担。但是务必记得将 `ctx` 上下文变量层层传递下去哦。例如：
 
-```
+```go
 db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 	// Nested transaction 1.
 	if err := db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
@@ -126,7 +126,7 @@ db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 
 如果您打开 `SQL` 日志，那么执行后将会看到以下日志信息，展示了整个数据库请求的详细执行流程：
 
-```
+```html
 2021-05-22 21:18:46.672 [DEBU] [  2 ms] [default] [txid:1] BEGIN
 2021-05-22 21:18:46.672 [DEBU] [  0 ms] [default] [txid:1] SAVEPOINT `transaction0`
 2021-05-22 21:18:46.673 [DEBU] [  0 ms] [default] [txid:1] SHOW FULL COLUMNS FROM `user`
@@ -140,7 +140,7 @@ db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 
 假如 `ctx` 上下文变量没有层层传递下去，那么嵌套事务将会失败，我们来看一个错误的例子：
 
-```
+```go
 db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 	// Nested transaction 1.
 	if err := db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
@@ -164,7 +164,7 @@ db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 
 打开 `SQL` 执行日志，执行后，您将会看到以下日志内容：
 
-```
+```html
 2021-05-22 21:29:38.841 [DEBU] [  3 ms] [default] [txid:1] BEGIN
 2021-05-22 21:29:38.842 [DEBU] [  1 ms] [default] [txid:1] SAVEPOINT `transaction0`
 2021-05-22 21:29:38.843 [DEBU] [  1 ms] [default] [txid:1] SHOW FULL COLUMNS FROM `user`
@@ -182,7 +182,7 @@ db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 
 开发者也可以灵活使用 `Transaction Save Point` 特性，并实现自定义的 `SavePoint` 命名以及指定 `Point` 回滚操作。
 
-```
+```go
 tx, err := db.Begin()
 if err != nil {
 	panic(err)
@@ -214,7 +214,7 @@ if err = tx.Commit(); err != nil {
 
 如果您打开 `SQL` 日志，那么将会看到以下日志信息，展示了整个数据库请求的详细执行流程：
 
-```
+```html
 2021-05-22 21:38:51.992 [DEBU] [  3 ms] [default] [txid:1] BEGIN
 2021-05-22 21:38:52.002 [DEBU] [  9 ms] [default] [txid:1] SHOW FULL COLUMNS FROM `user`
 2021-05-22 21:38:52.002 [DEBU] [  0 ms] [default] [txid:1] INSERT INTO `user`(`id`,`name`) VALUES(1,'john')
@@ -281,7 +281,7 @@ func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
 
 可以看到，内部的 `user` 表和 `user_detail` 表使用了嵌套事务来统一执行事务操作。注意在闭包内部需要通过 `Ctx` 方法将上下文变量传递给下一层级。假如在闭包中存在对其他 `service` 对象的调用，那么也需要将 `ctx` 变量传递过去，例如：
 
-```
+```go
 func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
 	// ....
 	dao.User.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) (err error) {

@@ -6,7 +6,7 @@ hide_title: true
 
 `ORM` 组件提供了一些常用的条件查询方法，并且条件方法支持多种数据类型输入。
 
-```
+```go
 func (m *Model) Where(where interface{}, args...interface{}) *Model
 func (m *Model) WherePri(where interface{}, args ...interface{}) *Model
 func (m *Model) WhereBetween(column string, min, max interface{}) *Model
@@ -156,7 +156,7 @@ db.Model("user").Where(&User{ Id : 1}).One()
 
 以上的查询条件相对比较简单，我们来看一个比较复杂的查询示例。
 
-```
+```go
 condition := g.Map{
     "title like ?"         : "%九寨%",
     "online"               : 1,

@@ -8,7 +8,7 @@ hide_title: true
 
 使用方式：
 
-```  go
+```go
 import "github.com/gogf/gf/util/grand"
 
 ```
@@ -19,7 +19,7 @@ import "github.com/gogf/gf/util/grand"
 
 常用方法：
 
-```  go
+```go
 func N(min, max int) int
 func B(n int) []byte
 func S(n int, symbols ...bool) string
@@ -36,7 +36,7 @@ func Symbols(n int) string
 
 ### 字符列表
 
-``` undefined
+```undefined
 字符类型  字符列表
 数字字符  0123456789
 英文字符  abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ

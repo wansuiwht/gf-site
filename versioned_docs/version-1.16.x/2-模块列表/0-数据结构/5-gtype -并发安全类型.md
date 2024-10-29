@@ -16,7 +16,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gtype"
 
 ```
@@ -29,7 +29,7 @@ import "github.com/gogf/gf/container/gtype"
 
 `gtype` 并发安全基本类型的使用非常简单，往往就类似以下几个方法(以 `gtype.Int` 类型举例)：
 
-```  go
+```go
 func NewInt(value ...int) *Int
 func (v *Int) Add(delta int) (new int)
 func (v *Int) Cas(old, new int) bool
@@ -42,7 +42,7 @@ func (v *Int) Val() int
 
 #### 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -68,7 +68,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 0
 10
 9
@@ -81,7 +81,7 @@ func main() {
 
 1、 `Marshal`
 
-```
+```go
 package main
 
 import (
@@ -114,7 +114,7 @@ func main() {
 
 2、 `Unmarshal`
 
-```
+```go
 package main
 
 import (

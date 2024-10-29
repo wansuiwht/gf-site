@@ -10,7 +10,7 @@ hide_title: true
 
 客户端和服务端使用 `Unix Socket` 通信，使用 `Transport` 来实现。以下代码为真实项目代码摘选，无法独立运行，仅做参考。
 
-```
+```go
 func (*Guardian) ConvertContainerPathToHostPath(
 	ctx context.Context, namespace, podName, containerName, containerPath string,
 ) (string, error) {
@@ -50,7 +50,7 @@ func (*Guardian) ConvertContainerPathToHostPath(
 
 ## 设置客户端连接池大小参数
 
-```
+```go
 func ExampleNew_MultiConn_Recommend() {
 	var (
 		ctx    = gctx.New()

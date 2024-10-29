@@ -86,7 +86,7 @@ type User struct {
 - 同时创建 `5` 条用户详情数据， `address` 数据为 `address_1` 到 `address_5`。
 - 每个用户创建 `5` 条学分信息，学分为 `1-5`。
 
-```
+```go
 g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
 	for i := 1; i <= 5; i++ {
 		// User.
@@ -227,7 +227,7 @@ g.Model(tableUser).WithAll().Where("id", 3).Scan(&user)
 
 以上语句您将会查询到用户ID为 `3` 的用户信息、用户详情以及用户学分信息，以上语句将会在数据库中自动执行以下 `SQL` 语句：
 
-```
+```html
 2021-05-02 22:29:52.634 [DEBU] [  2 ms] [default] SHOW FULL COLUMNS FROM `user`
 2021-05-02 22:29:52.635 [DEBU] [  1 ms] [default] SELECT * FROM `user` WHERE `id`=3 LIMIT 1
 2021-05-02 22:29:52.636 [DEBU] [  1 ms] [default] SHOW FULL COLUMNS FROM `user_detail`
@@ -280,7 +280,7 @@ g.Model(tableUser).WithAll().Where("id", 3).Scan(&user)
 
 我们来一个通过 `With` 特性查询列表的示例：
 
-```
+```go
 var users []*User
 // With(UserDetail{}) 只查询User结构体中的UserDetail对应的表
 g.Model(users).With(UserDetail{}).Where("id>?", 3).Scan(&users)
@@ -394,14 +394,14 @@ with:uid
 
 在我们本示例中，使用的是 `WithAll` 方法，因此自动启用了 `User` 表中的所有属性的模型关联查询，只要属性结构体关联了数据表，并且 `orm` 标签中带有 `with` 语句，那么都将会自动查询数据并根据模型结构的关联关系进行数据绑定。假如我们只启用某部分关联查询，并不启用全部属性模型的关联查询，那么可以使用 `With` 方法来指定。并且 `With` 方法可以指定启用多个关联模型的自动查询，在本示例中的 `WithAll` 就相当于：
 
-```
+```go
 var user *User
 g.Model(tableUser).With(UserDetail{}, UserScore{}).Where("id", 3).Scan(&user)
 ```
 
 也可以这样：
 
-```
+```go
 var user *User
 g.Model(tableUser).With(User{}.UserDetail, User{}.UserScore).Where("id", 3).Scan(&user)
 ```
@@ -410,14 +410,14 @@ g.Model(tableUser).With(User{}.UserDetail, User{}.UserScore).Where("id", 3).Scan
 
 假如我们只需要查询用户详情，并不需要查询用户学分，那么我们可以使用 `With` 方法来启用指定对象对应数据表的关联查询，例如：
 
-```
+```go
 var user *User
 g.Model(tableUser).With(UserDetail{}).Where("id", 3).Scan(&user)
 ```
 
 也可以这样：
 
-```
+```go
 var user *User
 g.Model(tableUser).With(User{}.UserDetail).Where("id", 3).Scan(&user)
 ```
@@ -440,14 +440,14 @@ g.Model(tableUser).With(User{}.UserDetail).Where("id", 3).Scan(&user)
 
 我们也可以只关联查询用户学分信息，例如：
 
-```
+```go
 var user *User
 g.Model(tableUser).With(UserScore{}).Where("id", 3).Scan(&user)
 ```
 
 也可以这样：
 
-```
+```go
 var user *User
 g.Model(tableUser).With(User{}.UserScore).Where("id", 3).Scan(&user)
 ```
@@ -493,7 +493,7 @@ g.Model(tableUser).With(User{}.UserScore).Where("id", 3).Scan(&user)
 
 假如，我们不需要关联查询，那么更简单，例如：
 
-```
+```go
 var user *User
 g.Model(tableUser).Where("id", 3).Scan(&user)
 ```

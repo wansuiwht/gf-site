@@ -178,7 +178,7 @@ require github.com/gogf/gf v1.6.13 // indirect
 
 我们将之前的 `hello.go` 修改如下：
 
-```
+```go
 package main
 
 import (

@@ -12,7 +12,7 @@ hide_title: true
 
 一个简单的数据库配置如下：
 
-```
+```yaml
 database:
   default:
     type:  "mysql"
@@ -24,7 +24,7 @@ database:
 
 以上数据库配置示例中包含两个数据库分组 `default` 和 `user`，在代码中可以通过 `g.DB()` 和 `g.DB("user")` 获取对应的数据库连接对象。也可以将 `type` 数据库类型写到 `link` 配置项中，以上简化为：
 
-```
+```yaml
 database:
   default:
     link:  "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
@@ -50,7 +50,7 @@ database:
 
 完整的 `config.yaml` 数据库配置项的数据格式形如下：
 
-```
+```yaml
 database:
   分组名称:
     host:                  "地址"
@@ -78,7 +78,7 @@ database:
 
 完整的数据库配置项示例( `YAML`)：
 
-```
+```yaml
 database:
   default:
     host:          "127.0.0.1"
@@ -105,7 +105,7 @@ database:
 
 `gdb` 的配置支持集群模式，数据库配置中每一项分组配置均可以是多个节点，支持负载均衡权重策略，例如：
 
-```
+```yaml
 database:
   default:
   - link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
@@ -128,7 +128,7 @@ database:
 
 `gdb` 支持日志输出，内部使用的是 `glog.Logger` 对象实现日志管理，并且可以通过配置文件对日志对象进行配置。默认情况下 `gdb` 关闭了 `DEBUG` 日志输出，如果需要打开 `DEBUG` 信息需要将数据库的 `debug` 参数设置为 `true`。以下是为一个配置文件示例：
 
-```
+```yaml
 database:
   logger:
     path:    "/var/log/gf-app/sql"
@@ -213,7 +213,7 @@ func SetConfig(c Config)
 
 默认分组表示，如果获取数据库对象时不指定配置分组名称，那么 `gdb` 默认读取的配置分组。例如： `gdb.NewByGroup()` 可获取一个默认分组的数据库对象。简单的做法，我们可以通过 `gdb` 包的 `SetConfig` 配置管理方法进行自定义的数据库全局配置，例如：
 
-```
+```go
 gdb.SetConfig(gdb.Config {
     "default" : gdb.ConfigGroup {
         gdb.ConfigNode {

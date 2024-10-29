@@ -10,19 +10,19 @@ hide_title: true
 
 接口文档： [https://godoc.org/github.com/gogf/gf/util/gvalid](https://godoc.org/github.com/gogf/gf/util/gvalid)
 
-```
+```go
 func CheckStruct(ctx context.Context, object interface{}, rules interface{}, msgs ...CustomMsg) Error
 ```
 
 校验方法也可以使用校验对象的链式操作方法来替代，包方法 `CheckStruct` 等同于以下链式操作方式：
 
-```
+```go
 g.Validator().Ctx(ctx).Rules(rules).Messages(customErrorMessages).CheckStruct(object)
 ```
 
 ## 使用 `map` 指定规则及提示信息
 
-```
+```go
 package main
 
 import (
@@ -74,7 +74,7 @@ func main() {
 
 使用 `gvalid tag` 设置的规则，其校验结果是顺序性的。
 
-```
+```go
 package main
 
 import (
@@ -122,7 +122,7 @@ func main() {
 
 可以看到，我们可以对在 `struct` 定义时使用了 `gvalid` 的标签属性( `gvalid tag`)来绑定校验的规则及错误提示信息，规则如下：
 
-``` html
+```html
 [属性别名@]校验规则[#错误提示]
 
 ```
@@ -174,7 +174,7 @@ func main() {
 
 使用示例：
 
-```
+```go
 package main
 
 import (

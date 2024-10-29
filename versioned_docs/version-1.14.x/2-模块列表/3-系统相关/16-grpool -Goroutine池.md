@@ -16,7 +16,7 @@ Go语言中的 `goroutine` 虽然相对于系统线程来说比较轻量级（�
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/os/grpool"
 
 ```
@@ -29,7 +29,7 @@ import "github.com/gogf/gf/os/grpool"
 
 [https://godoc.org/github.com/gogf/gf/os/grpool](https://godoc.org/github.com/gogf/gf/os/grpool)
 
-```  go
+```go
 func Add(f func()) error
 func Jobs() int
 func Size() int
@@ -54,7 +54,7 @@ type Pool
 
 [https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool1.go](https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool1.go)
 
-```  go
+```go
 package main
 
 import (
@@ -92,7 +92,7 @@ func main() {
 
 [https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool2.go](https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool2.go)
 
-```  go
+```go
 package main
 
 import (
@@ -117,7 +117,7 @@ func main() {
 
 我们这段代码的目的是要顺序地打印出0-9，然而运行后却输出：
 
-``` undefined
+```undefined
 10
 10
 10
@@ -139,7 +139,7 @@ func main() {
 
 [https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool3.go](https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool3.go)
 
-```  go
+```go
 package main
 
 import (
@@ -163,7 +163,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` undefined
+```undefined
 9
 0
 1
@@ -183,7 +183,7 @@ func main() {
 
 [https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool4.go](https://github.com/gogf/gf/blob/master/.example/os/grpool/grpool4.go)
 
-```  go
+```go
 package main
 
 import (
@@ -209,7 +209,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` undefined
+```undefined
 9
 0
 1
@@ -229,7 +229,7 @@ func main() {
 
 **1)、grpool**
 
-```  go
+```go
 package main
 
 import (
@@ -259,7 +259,7 @@ func main() {
 
 **2)、goroutine**
 
-```  go
+```go
 package main
 
 import (
@@ -289,7 +289,7 @@ func main() {
 
 测试结果为两个程序各运行3次取平均值。
 
-```  shell
+```shell
 grpool:
     goroutine count: 847313
      memory   spent: ~2.1 G

@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/net/gudp"
 ```
 
@@ -28,7 +28,7 @@ type Server
 
 来一个简单的示例：
 
-```
+```go
 package main
 
 import (

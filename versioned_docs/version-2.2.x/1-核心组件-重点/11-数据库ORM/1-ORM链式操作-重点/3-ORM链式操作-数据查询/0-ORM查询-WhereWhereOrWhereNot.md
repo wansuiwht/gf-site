@@ -6,7 +6,7 @@ hide_title: true
 
 `ORM` 组件提供了一些常用的条件查询方法，并且条件方法支持多种数据类型输入。
 
-```
+```go
 func (m *Model) Where(where interface{}, args...interface{}) *Model
 func (m *Model) Wheref(format string, args ...interface{}) *Model
 func (m *Model) WherePri(where interface{}, args ...interface{}) *Model
@@ -154,7 +154,7 @@ g.Model("user").Where(&User{ Id : 1}).One()
 
 以上的查询条件相对比较简单，我们来看一个比较复杂的查询示例。
 
-```
+```go
 condition := g.Map{
     "title like ?"         : "%九寨%",
     "online"               : 1,
@@ -220,7 +220,7 @@ all, err := m.Where("id", 1).Where("address", "USA").Where(
 
 `SQL1`：
 
-```
+```go
 m := g.Model("auth")
 m.Where("status", g.Slice{"permitted", "inherited"}).Where("uid", 1).All()
 // SELECT * FROM `auth` WHERE (`status` IN('permitted','inherited')) AND (`uid`=1)
@@ -228,7 +228,7 @@ m.Where("status", g.Slice{"permitted", "inherited"}).Where("uid", 1).All()
 
 `SQL2`：
 
-```
+```go
 m := g.Model("auth")
 m.Where("status", g.Slice{}).Where("uid", 1).All()
 // SELECT * FROM `auth` WHERE (0=1) AND (`uid`=1)
@@ -238,7 +238,7 @@ m.Where("status", g.Slice{}).Where("uid", 1).All()
 
 在开发者没有显示声明可以过滤空数组条件时， `ORM` 不会自动过滤空数组条件，以避免程序逻辑绕过 `SQL` 限制条件，引发不可预知的业务问题。如果开发者确定 `SQL` 限制条件是可以过滤的，那么可以显示调用 `OmitEmpty/OmitEmptyWhere` 方法来执行空条件过滤，如下：
 
-```
+```go
 m := g.Model("auth")
 m.Where("status", g.Slice{}).Where("uid", 1).OmitEmpty().All()
 // SELECT * FROM `auth` WHERE `uid`=1

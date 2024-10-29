@@ -8,7 +8,7 @@ hide_title: true
 
 为简化示例编写，我们这里实现了一个自定义的 `MySQL` 驱动，该驱动继承于 `gdb` 模块中已经实现的 `DriverMysql`，并按照需要修改覆盖相应的接口方法。由于所有的 `SQL` 语句执行必定会通过 `DoQuery` 或者 `DoExec` 接口，因此我们在自定义的驱动中实现并覆盖这两个接口方法即可。
 
-```  go
+```go
 package driver
 
 import (
@@ -88,7 +88,7 @@ func (d *MyDriver) DoExec(link gdb.Link, sql string, args ...interface{}) (resul
 
 由于这里我们使用了一个新的驱动名称 `MyDriver`，因此在 `gdb` 配置中的 `type` 数据库类型时，需要填写该驱动名称。以下是一个使用配置的示例：
 
-```  toml
+```toml
 [database]
 	type = "MyDriver"
 	link = "root:12345678@tcp(127.0.0.1:3306)/test"

@@ -8,7 +8,7 @@ hide_title: true
 
 `gconv` 模块执行 `struct` 转换的方法仅有两个，定义如下：
 
-```  go
+```go
 func Struct(params interface{}, pointer interface{}, mapping ...map[string]string) error
 func StructDeep(params interface{}, pointer interface{}, mapping ...map[string]string) error
 
@@ -36,7 +36,7 @@ func StructDeep(params interface{}, pointer interface{}, mapping ...map[string]s
 
 以下是几个 `map` 键名与 `struct` 属性名称的示例：
 
-``` html
+```html
 map键名    struct属性     是否匹配
 name       Name           match
 Email      Email          match
@@ -56,7 +56,7 @@ nick name  Nick_Name      match
 
 当给定的 `pointer` 参数类型为 `**struct` 时， `Struct` 方法内部将会自动创建该 `struct` 对象，并修改传递变量指向的指针地址。
 
-```  go
+```go
 package main
 
 import (
@@ -84,7 +84,7 @@ func main() {
 
 执行后，输出结果为：
 
-```  json
+```json
 {
 	"Name": "john",
 	"Uid": 1
@@ -96,7 +96,7 @@ func main() {
 
 递归转换是指当 `struct` 对象包含子对象时，可以将 `params` 参数数据（第一个参数）同时递归地映射到其子对象上，常用于带有继承对象的 `struct` 上。可以使用 `StructDeep` 方法实现递归转换。
 
-```  go
+```go
 package main
 
 import (
@@ -136,7 +136,7 @@ func main() {
 
 执行后，终端输出结果为：
 
-```  json
+```json
 {
 	"Base": {
 		"id": 1,
@@ -152,7 +152,7 @@ func main() {
 
 ## 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -207,7 +207,7 @@ func main() {
 
 执行后，输出结果为：
 
-```  json
+```json
 {
 	"Uid": 1,
 	"Name": "john",
@@ -231,7 +231,7 @@ func main() {
 
 属性支持 `struct` 对象或者 `struct` 对象指针（目标为指针且未 `nil` 时，转换时会自动初始化）转换。
 
-```  go
+```go
 package main
 
 import (
@@ -277,7 +277,7 @@ func main() {
 
 执行后，输出结果为：
 
-```  json
+```json
 {
 	"Scores": {
 		"Name": "john",

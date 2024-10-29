@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/encoding/ghash"
 
 ```
@@ -19,7 +19,7 @@ import "github.com/gogf/gf/encoding/ghash"
 
 **基准测试：**
 
-``` html
+```html
 goos: linux
 goarch: amd64
 pkg: github.com/gogf/gf/encoding/ghash

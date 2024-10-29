@@ -61,7 +61,7 @@ EXAMPLE
 
 执行 `gf gen enums` 命令生成枚举分析文件 `internal/boot/boot_enums.go`，生成文件之后，需要在项目入口文件匿名引入：
 
-```
+```go
 import (
     _ "项目模块名/internal/boot"
 )

@@ -8,7 +8,7 @@ AES算法。
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/crypto/gaes"
 ```
 

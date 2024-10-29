@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/os/gcron"
 
 ```
@@ -46,7 +46,7 @@ Seconds Minutes Hours Day Month Week
 
 每个字段的含义如下：
 
-``` undefined
+```undefined
 Field name    | Allowed values  | Allowed special characters
 ----------    | --------------  | --------------------------
 Seconds       | 0-59            | * / , -
@@ -86,7 +86,7 @@ Week          | 0-6 or SUN-SAT  | * / , - ?
 
 您可以使用几个预定义的时间来代替cron表达式。
 
-``` undefined
+```undefined
 Entry                  | Description                                | Equivalent To
 -----                  | -----------                                | -------------
 @yearly (or @annually) | Run once a year, midnight, Jan. 1st        | 0 0 0 1 1 *
@@ -101,7 +101,7 @@ Entry                  | Description                                | Equivalent
 
 您还可以定义任务以固定的时间间隔执行，从添加时开始运行。这可以通过格式化 `cron` 规范来支持，如下所示：
 
-``` undefined
+```undefined
 @every <duration>
 
 ```
@@ -128,7 +128,7 @@ Entry                  | Description                                | Equivalent
 
 ### 示例1, 基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -160,7 +160,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 [
 	{
 		"Spec": "0 30 * * * *",
@@ -204,7 +204,7 @@ func main() {
 
 单例定时任务，即同时只能有一个该任务正在运行。当第二个相同的定时任务触发执行时，如果发现已有该任务正在执行，第二个任务将会退出不执行，定时器将会继续等待下一次定时任务的触发检测，以此类推。可以使用 `AddSingleton` 添加单例定时任务。
 
-```  go
+```go
 package main
 
 import (
@@ -225,7 +225,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 2019-01-16 22:49:27.699 doing
 2019-01-16 22:49:30.696 doing
 2019-01-16 22:49:33.699 doing
@@ -237,7 +237,7 @@ func main() {
 
 `gcron` 支持日志记录功能，并可设置日志输出的文件以及级别。默认情况下仅会输出 `LEVEL_WARN | LEVEL_ERRO | LEVEL_CRIT` 错误级别的日志（包括定时任务运行异常日志），运行日志以 `LEVEL_DEBUG` 的级别进行记录，因此默认不会记录。 相关方法：
 
-```  go
+```go
 func SetLogPath(path string)
 func SetLogLevel(level int)
 func GetLogPath() string
@@ -247,7 +247,7 @@ func GetLogLevel() int
 
 使用示例：
 
-```  go
+```go
 package main
 
 import (
@@ -268,7 +268,7 @@ func main() {
 
 执行后，终端输出结果为：
 
-``` html
+```html
 2019-04-08 23:29:10.119 [DEBU] [gcron] gcron-1(* * * * * ?) main.main.func1 start
 2019-04-08 23:29:10.119 test
 2019-04-08 23:29:10.120 [DEBU] [gcron] gcron-1(* * * * * ?) main.main.func1 end

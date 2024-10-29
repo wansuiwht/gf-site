@@ -8,7 +8,7 @@ hide_title: true
 
 ### 接口定义
 
-```  go
+```go
 // apiUnmarshalValue is the interface for custom defined types customizing value assignment.
 // Note that only pointer can implement interface apiUnmarshalValue.
 type apiUnmarshalValue interface {
@@ -21,7 +21,7 @@ type apiUnmarshalValue interface {
 
 ### 使用示例
 
-```  go
+```go
 package main
 
 import (
@@ -93,7 +93,7 @@ func main() {
 
 执行后，终端输出：
 
-``` html
+```html
 &{9 2286445522 [49 50 51]}
 &{9 2286445522 [49 50 51]}
 

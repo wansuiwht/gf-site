@@ -22,7 +22,7 @@ hide_title: true
 
 
 
-```
+```go
     // SELECT `uid`,`nickname` FROM `user` ORDER BY `uid` asc
     g.Model("user").Fields("uid, nickname").Order("uid asc").All()
 ```
@@ -37,7 +37,7 @@ hide_title: true
 
 
 
-```
+```go
 m := g.Map{
         "uid"      : 10000,
         "nickname" : "John Guo",
@@ -62,7 +62,7 @@ m := g.Map{
 
 
 
-```
+```go
     // SELECT `uid`,`nickname` FROM `user`
     g.Model("user").FieldsEx("passport, password").All()
 ```
@@ -77,7 +77,7 @@ m := g.Map{
 
 
 
-```
+```go
     m := g.Map{
         "uid"      : 10000,
         "nickname" : "John Guo",
@@ -95,7 +95,7 @@ m := g.Map{
 
 相关方法：
 
-```
+```go
 func (m *Model) OmitEmpty() *Model
 func (m *Model) OmitEmptyWhere() *Model
 func (m *Model) OmitEmptyData() *Model
@@ -188,7 +188,7 @@ r, err := g.Model("user").OmitEmpty().Where(user).One()
 
 相关方法：
 
-```
+```go
 func (m *Model) OmitNil() *Model
 func (m *Model) OmitNilWhere() *Model
 func (m *Model) OmitNilData() *Model
@@ -202,7 +202,7 @@ func (m *Model) OmitNilData() *Model
 
 ~~使用示例，假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`：~~
 
-```
+```go
 r, err := g.Model("user").Filter().Data(g.Map{
     "id"          : 1,
     "uid"         : 1,

@@ -14,7 +14,7 @@ hide_title: true
 
 我们可以通过 `Redis` 的 `Conn` 实现订阅/发布模式。
 
-```
+```go
 package main
 
 import (
@@ -51,7 +51,7 @@ func main() {
 
 另外打开一个终端通过 `redis-cli` 命令进入 `Redis Server`，发布一条消息：
 
-```
+```bash
 $ redis-cli
 127.0.0.1:6379> publish channel test
 (integer) 1
@@ -60,6 +60,5 @@ $ redis-cli
 
 随后程序终端立即打印出从 `Redis Server` 获取的数据：
 
-```
-test
+```test
 ```

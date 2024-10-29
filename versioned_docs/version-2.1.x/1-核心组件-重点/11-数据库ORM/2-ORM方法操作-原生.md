@@ -67,7 +67,7 @@ db, err := gdb.Instance("user-center")
 
 ### 2\. 数据写入
 
-```
+```go
 r, err := db.Insert(ctx, "user", gdb.Map {
     "name": "john",
 })
@@ -75,7 +75,7 @@ r, err := db.Insert(ctx, "user", gdb.Map {
 
 ### 3\. 数据查询(列表)
 
-```
+```go
 list, err := db.GetAll(ctx, "select * from user limit 2")
 list, err := db.GetAll(ctx, "select * from user where age > ? and name like ?", g.Slice{18, "%john%"})
 list, err := db.GetAll(ctx, "select * from user where status=?", g.Slice{1})
@@ -83,7 +83,7 @@ list, err := db.GetAll(ctx, "select * from user where status=?", g.Slice{1})
 
 ### 4\. 数据查询(单条)
 
-```
+```go
 one, err := db.GetOne(ctx, "select * from user limit 2")
 one, err := db.GetOne(ctx, "select * from user where uid=1000")
 one, err := db.GetOne(ctx, "select * from user where uid=?", 1000)
@@ -92,7 +92,7 @@ one, err := db.GetOne(ctx, "select * from user where uid=?", g.Slice{1000})
 
 ### 5\. 数据保存
 
-```
+```go
 r, err := db.Save(ctx, "user", gdb.Map {
     "uid"  :  1,
     "name" : "john",
@@ -103,7 +103,7 @@ r, err := db.Save(ctx, "user", gdb.Map {
 
 其中 `batch` 参数用于指定批量操作中分批写入条数数量（默认是 `10`）。
 
-```
+```go
 _, err := db.Insert(ctx, "user", gdb.List {
     {"name": "john_1"},
     {"name": "john_2"},

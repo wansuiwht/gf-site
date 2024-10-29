@@ -22,7 +22,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/container/gtree"
 ```
 
@@ -34,7 +34,7 @@ import "github.com/gogf/gf/v2/container/gtree"
 
 在 `gutil` 模块中提供了常用的一些基本类型比较方法，可以直接在程序中直接使用，后续也有示例。
 
-```
+```go
 func ComparatorByte(a, b interface{}) int
 func ComparatorFloat32(a, b interface{}) int
 func ComparatorFloat64(a, b interface{}) int

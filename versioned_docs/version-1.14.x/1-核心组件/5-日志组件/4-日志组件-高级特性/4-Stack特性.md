@@ -8,7 +8,7 @@ hide_title: true
 
 ### 示例1，通过错误方法触发
 
-```  go
+```go
 package main
 
 import "github.com/gogf/gf/os/glog"
@@ -25,7 +25,7 @@ func main() {
 
 打印出的结果如下：
 
-``` html
+```html
 2019-07-12 22:19:23.421 [ERRO] This is error!
 Stack:
 1. main.Test
@@ -37,7 +37,7 @@ Stack:
 
 ### 示例2，通过 `Stack` 方法打印
 
-```  go
+```go
 package main
 
 import (
@@ -59,7 +59,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 2019-07-12 22:20:28.070 Stack:
 1. main.main
    /home/john/Workspace/Go/GOPATH/src/github.com/gogf/gf/geg/os/glog/glog_stack.go:11
@@ -80,7 +80,7 @@ func main() {
 
 `glog` 日志模块支持对标准错误以及 `gerror` 错误的堆栈打印支持。
 
-```  go
+```go
 package main
 
 import (
@@ -112,7 +112,7 @@ func main() {
 
 执行后，终端输出：
 
-``` html
+```html
 2019-07-12 22:23:11.467 [ERRO] connection closed with normal error
 Stack:
 1. main.TestGError

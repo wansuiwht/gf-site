@@ -8,7 +8,7 @@ hide_title: true
 
 我们可以通过 `Ctx` 方法传递自定义的上下文变量给 `ORM` 对象， `Ctx` 方法其实是一个链式操作方法，该上下文传递进去后仅对当前 `DB` 接口对象有效，方法定义如下：
 
-```
+```go
 func Ctx(ctx context.Context) DB
 ```
 
@@ -16,7 +16,7 @@ func Ctx(ctx context.Context) DB
 
 我们来看一个通过上下文变量控制请求超时时间的示例。
 
-```
+```go
 ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 defer cancel()
 _, err := db.Ctx(ctx).Query("SELECT SLEEP(10)")
@@ -55,7 +55,7 @@ context deadline exceeded, SELECT SLEEP(10)
 
 2、 `Golang` 代码示例
 
-```
+```go
 package main
 
 import (
@@ -74,7 +74,7 @@ func main() {
 
 为简化示例，我们这里手动构造了一个 `ctx` 变量，并存放了一个 `Trace-Id` 的键值对，键值为 `123456789`。执行后，终端输出为：
 
-```
+```html
 2020-12-28 23:43:03.055 [DEBU] {Trace-Id: 123456789} [  3 ms] [default] SELECT 1
 ```
 
@@ -82,7 +82,7 @@ func main() {
 
 模型对象也支持上下文变量的传递，同样也是通过 `Ctx` 方法。我们来看一个简单的示例，我们将示例2的例子通过模型操作调整一下。
 
-```
+```go
 package main
 
 import (
@@ -101,7 +101,7 @@ func main() {
 
 执行后，终端输出为：
 
-```
+```html
 2020-12-28 23:46:56.349 [DEBU] {Trace-Id: 123456789} [  5 ms] [default] SHOW FULL COLUMNS FROM `user`
 2020-12-28 23:46:56.354 [DEBU] {Trace-Id: 123456789} [  5 ms] [default] SELECT * FROM `user`
 ```

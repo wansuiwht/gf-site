@@ -10,7 +10,7 @@ hide_title: true
 
 ## 一、开启事务操作
 
-```
+```go
 db := g.DB()
 
 if tx, err := db.Begin(ctx); err == nil {
@@ -22,7 +22,7 @@ if tx, err := db.Begin(ctx); err == nil {
 
 ## 二、事务回滚操作
 
-```
+```go
 if tx, err := db.Begin(ctx); err == nil {
     r, err := tx.Save("user", g.Map{
         "id"   :  1,
@@ -37,7 +37,7 @@ if tx, err := db.Begin(ctx); err == nil {
 
 ## 三、事务提交操作
 
-```
+```go
 if tx, err := db.Begin(ctx); err == nil {
     r, err := tx.Save("user", g.Map{
         "id"   :  1,
@@ -54,7 +54,7 @@ if tx, err := db.Begin(ctx); err == nil {
 
 事务操作对象仍然可以通过 `tx.Model` 方法返回一个链式操作的对象，该对象与 `db.Model` 方法返回值相同，只不过数据库操作在事务上执行，可提交或回滚。
 
-```
+```go
 if tx, err := db.Begin(); err == nil {
     r, err := tx.Model("user").Data(g.Map{"id":1, "name": "john_1"}).Save()
     if err == nil {

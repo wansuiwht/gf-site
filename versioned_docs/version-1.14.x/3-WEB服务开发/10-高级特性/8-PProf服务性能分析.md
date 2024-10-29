@@ -10,7 +10,7 @@ hide_title: true
 
 我们来看一个简单的例子：
 
-```  go
+```go
 package main
 
 import (
@@ -30,7 +30,7 @@ func main() {
 
 这个例子使用了 `s.EnablePProf()` 启用了性能分析，默认会自动注册以下几个路由规则：
 
-```  html
+```html
 /debug/pprof/*action
 /debug/pprof/cmdline
 /debug/pprof/profile
@@ -61,7 +61,7 @@ func main() {
 
 如果想要进行详细的性能分析，基本上离不开 `go tool pprof` 命令行工具的支持，在开启性能分析支持后，我们可以使用以下命令执行性能采集分析：
 
-```  undefined
+```undefined
 go tool pprof "http://127.0.0.1:8199/debug/pprof/profile"
 ```
 
@@ -69,7 +69,7 @@ go tool pprof "http://127.0.0.1:8199/debug/pprof/profile"
 
 本示例中的命令行性能分析结果如下：
 
-```  html
+```html
 $ go tool pprof "http://127.0.0.1:8199/debug/pprof/profile"
 Fetching profile over HTTP from http://127.0.0.1:8199/debug/pprof/profile
 Saved profile in /home/john/pprof/pprof.___go_build_pprof_go.samples.cpu.001.pb.gz

@@ -12,7 +12,7 @@ hide_title: true
 
 [https://github.com/gogf/gf/blob/master/.example/net/ghttp/client/upload/server.go](https://github.com/gogf/gf/blob/master/.example/net/ghttp/client/upload/server.go)
 
-```  go
+```go
 package main
 
 import (
@@ -99,7 +99,7 @@ func main() {
 
 [https://github.com/gogf/gf/blob/master/.example/net/ghttp/client/upload/client.go](https://github.com/gogf/gf/blob/master/.example/net/ghttp/client/upload/client.go)
 
-```  go
+```go
 package main
 
 import (
@@ -130,7 +130,7 @@ func main() {
 
 [https://github.com/gogf/gf/blob/master/.example/net/ghttp/client/upload-batch/client.go](https://github.com/gogf/gf/blob/master/.example/net/ghttp/client/upload-batch/client.go)
 
-```  go
+```go
 package main
 
 import (
@@ -164,7 +164,7 @@ func main() {
 
 很简单，修改 `FileName` 属性即可。
 
-```  go
+```go
 s := g.Server()
 s.BindHandler("/upload", func(r *ghttp.Request) {
     file := r.GetUploadFile("TestFile")

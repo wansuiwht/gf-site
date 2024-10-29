@@ -12,7 +12,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gqueue"
 
 ```
@@ -25,7 +25,7 @@ import "github.com/gogf/gf/container/gqueue"
 
 ### 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -63,7 +63,7 @@ func main() {
 
 在该示例中，第3秒时关闭队列，这时程序立即退出，因此结果中只会打印2秒的数据。 执行后，输出结果为：
 
-``` html
+```html
 Push: 2018-09-07 14:03:00
  Pop: 2018-09-07 14:03:00
 Push: 2018-09-07 14:03:01
@@ -75,7 +75,7 @@ Push: 2018-09-07 14:03:01
 
 使用队列对象公开的 `Queue.C` 属性，结合 `select` IO复用语法实现对队列的读取。
 
-```  go
+```go
 package main
 
 import (
@@ -110,7 +110,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` undefined
+```undefined
 2019-01-23 20:42:01
 2019-01-23 20:42:02
 2019-01-23 20:42:03
@@ -131,7 +131,7 @@ func main() {
 
 `gqueue` 与标准库 `channel` 的性能基准测试，其中每一次基准测试的 `b.N` 值均为 `20000000`，以保证动态队列存取一致防止 `deadlock`:
 
-``` html
+```html
 goos: linux
 goarch: amd64
 pkg: github.com/gogf/gf/container/gqueue

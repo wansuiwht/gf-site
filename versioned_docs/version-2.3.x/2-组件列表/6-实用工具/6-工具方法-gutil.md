@@ -10,7 +10,7 @@ hide_title: true
 
 使用方式：
 
-```
+```go
 import "github.com/gogf/gf/v2/util/gutil"
 ```
 
@@ -231,7 +231,7 @@ DumpTo(writer io.Writer, value interface{}, option DumpOption)
 ```
 
 - 示例：
-```
+```go
 package main
 
 import (

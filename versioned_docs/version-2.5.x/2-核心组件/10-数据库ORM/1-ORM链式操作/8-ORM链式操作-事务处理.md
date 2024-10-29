@@ -12,7 +12,7 @@ hide_title: true
 
 为方便事务操作， `gdb` 提供了事务的闭包操作，通过 `Transaction` 方法实现，该方法定义如下：
 
-```
+```go
 func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx TX) error) (err error)
 ```
 
@@ -20,7 +20,7 @@ func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx TX)
 
 如果闭包内部操作产生 `panic` 中断，该事务也将进行回滚。
 
-```
+```go
 func Register() error {
 	return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
 		var (
@@ -51,7 +51,7 @@ func Register() error {
 
 我们也可以在链式操作中通过 `TX` 方法切换绑定的事务对象。多次链式操作可以绑定同一个事务对象，在该事务对象中执行对应的链式操作。
 
-```
+```go
 func Register() error {
 	var (
 		uid int64

@@ -30,7 +30,7 @@ hide_title: true
 
 
 
-   ```  go
+   ```go
     db.Table("order").Data(g.Map{
         "uid"   : 1000,
         "price" : 99.99,
@@ -44,7 +44,7 @@ hide_title: true
 
 
 
-   ```  go
+   ```go
     db.Table("order").Master().Where("uid", 1000).All()
    ```
 

@@ -6,7 +6,7 @@ hide_title: true
 
 ## `Set/Get` 操作
 
-```
+```go
 package main
 
 import (
@@ -34,13 +34,12 @@ func main() {
 
 执行后，终端输出：
 
-```
-value
+```value
 ```
 
 ## `SetEx` 操作
 
-```
+```go
 package main
 
 import (
@@ -79,8 +78,7 @@ func main() {
 
 执行后，终端输出：
 
-```
-false
+```false
 value
 true
 <nil>
@@ -88,7 +86,7 @@ true
 
 ## `HSet/HGetAll` 操作
 
-```
+```go
 package main
 
 import (
@@ -148,7 +146,7 @@ map[id:1 name:john score:100]
 
 ## `HMSet/HMGet` 操作
 
-```
+```go
 package main
 
 import (

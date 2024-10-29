@@ -15,7 +15,7 @@ hide_title: true
 
 ## `Exit` 返回方法
 
-```  go
+```go
 package main
 
 import (
@@ -39,7 +39,7 @@ func main() {
 
 执行后，我们访问 [http://127.0.0.1:8199/?type=1](http://127.0.0.1:8199/?type=1) ，可以看到页面输出了：
 
-``` undefined
+```undefined
 john
 smith
 
@@ -47,7 +47,7 @@ smith
 
 我们将以上代码稍微调整一下：
 
-```  go
+```go
 package main
 
 import (
@@ -72,7 +72,7 @@ func main() {
 
 执行后，我们再次访问 [http://127.0.0.1:8199/?type=1](http://127.0.0.1:8199/?type=1) ，可以看到页面输出了：
 
-``` undefined
+```undefined
 john
 
 ```

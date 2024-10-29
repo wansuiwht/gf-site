@@ -12,7 +12,7 @@ hide_title: true
 
 #### `Mac`&`Linux` 快捷下载命令
 
-```
+```bash
 wget -O gf https://github.com/gogf/gf/releases/latest/download/gf_$(go env GOOS)_$(go env GOARCH) && chmod +x gf && ./gf install -y && rm ./gf
 ```
 
@@ -20,7 +20,7 @@ wget -O gf https://github.com/gogf/gf/releases/latest/download/gf_$(go env GOOS)
 
 确定自己当前项目的 `goframe` 依赖版本，查看自己的系统信息：
 
-```
+```bash
 go env GOOS
 go env GOARCH
 ```
@@ -29,7 +29,7 @@ go env GOARCH
 
 ### 通过 `go install` 安装
 
-```
+```bash
 go install github.com/gogf/gf/cmd/gf/v2@latest # 最新版本
 go install github.com/gogf/gf/cmd/gf/v2@v2.5.5 # 指定版本(版本需要 >= v2.5.5)
 ```
@@ -62,7 +62,7 @@ go install github.com/gogf/gf/cmd/gf/v2@v2.5.5 # 指定版本(版本需要 >= v2
 
 ## 使用示例
 
-```
+```bash
 $ ./gf_darwin_amd64 install
 I found some installable paths for you(from $PATH):
   Id | Writable | Installed | Path

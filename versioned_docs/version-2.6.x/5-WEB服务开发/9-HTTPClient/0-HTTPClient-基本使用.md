@@ -10,7 +10,7 @@ hide_title: true
 
 ### 发送 `GET` 请求，打印出返回值
 
-```
+```go
 if r, err := g.Client().Get(ctx, "https://goframe.org"); err != nil {
     panic(err)
 }
@@ -20,7 +20,7 @@ fmt.Println(r.ReadAllString())
 
 ### 发送 `GET` 请求，下载远程文件
 
-```
+```go
 if r, err := g.Client().Get(ctx, "https://goframe.org/cover.png"); err != nil {
     panic(err)
 }
@@ -32,7 +32,7 @@ gfile.PutBytes("/Users/john/Temp/cover.png", r.ReadAll())
 
 ### 发送 `POST` 请求，打印出返回值
 
-```
+```go
 if r, err := g.Client().Post(ctx, "http://127.0.0.1:8199/form", "name=john&age=18"); err != nil {
     panic(err)
 }
@@ -44,7 +44,7 @@ fmt.Println(r.ReadAllString())
 
 ### 发送 `POST` 请求，参数为 `map` 类型，打印出返回值
 
-```
+```go
 if r, err := g.Client().Post(
     ctx,
     "http://127.0.0.1:8199/form",
@@ -63,7 +63,7 @@ fmt.Println(r.ReadAllString())
 
 ### 发送 `POST` 请求，参数为 `JSON` 数据，打印出返回值
 
-```
+```go
 if r, err := g.Client().Post(
     ctx,
     "http://user.svc/v1/user/create",
@@ -79,7 +79,7 @@ fmt.Println(r.ReadAllString())
 
 ### 发送 `DELETE` 请求，打印出返回值
 
-```
+```go
 if r, err := g.Client().Delete(ctx, "http://user.svc/v1/user/delete/1", "10000"); err != nil {
     panic(err)
 }
@@ -93,12 +93,12 @@ fmt.Println(r.ReadAllString())
 
 ### 发送 `GET` 请求，打印出返回值
 
-```
+```go
  // 返回content为[]bytes类型
  content := g.Client().GetBytes(ctx, "https://goframe.org")
 ```
 
-```
+```go
  // 返回content为string类型
  content := g.Client().GetContent(ctx, "https://goframe.org")
 ```

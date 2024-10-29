@@ -14,7 +14,7 @@ hide_title: true
 
 使用 `orm` 时,配置文件中：
 
-```
+```toml
 dryRun = "(可选)ORM空跑(只读不写)"
 ```
 

@@ -8,7 +8,7 @@ hide_title: true
 
 我们可以通过 `Ctx` 方法传递自定义的上下文变量给 `ORM` 对象， `Ctx` 方法其实是一个链式操作方法，该上下文传递进去后仅对当前 `DB` 接口对象有效，方法定义如下：
 
-```
+```go
 func Ctx(ctx context.Context) DB
 ```
 
@@ -16,7 +16,7 @@ func Ctx(ctx context.Context) DB
 
 我们来看一个通过上下文变量控制请求超时时间的示例。
 
-```
+```go
 ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 defer cancel()
 _, err := db.Ctx(ctx).Query("SELECT SLEEP(10)")
@@ -25,7 +25,7 @@ fmt.Println(err)
 
 该示例中执行会 `sleep 10` 秒中，因此必定会引发请求的超时。执行后，输出结果为：
 
-```
+```html
 context deadline exceeded, SELECT SLEEP(10)
 ```
 
@@ -37,7 +37,7 @@ context deadline exceeded, SELECT SLEEP(10)
 
 模型对象也支持上下文变量的传递，同样也是通过 `Ctx` 方法。我们来看一个简单的示例，我们将示例2的例子通过模型操作调整一下。
 
-```
+```go
 package main
 
 import (
@@ -55,7 +55,7 @@ func main() {
 
 执行后，终端输出为：
 
-```
+```html
 2020-12-28 23:46:56.349 [DEBU] {38d45cbf2743db16f1062074f7473e5c} [  5 ms] [default] [rows:0  ] SHOW FULL COLUMNS FROM `user`
 2020-12-28 23:46:56.354 [DEBU] {38d45cbf2743db16f1062074f7473e5c} [  5 ms] [default] [rows:100] SELECT * FROM `user`
 ```

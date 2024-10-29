@@ -10,7 +10,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/encoding/gparser"
 
 ```
@@ -34,7 +34,7 @@ import "github.com/gogf/gf/encoding/gparser"
 
 **示例1，读取JSON**
 
-```  go
+```go
 data :=
     `{
         "users" : {
@@ -58,7 +58,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 **示例2，读取XML**
 
-```  go
+```go
 data :=
     `<?xml version="1.0" encoding="UTF-8"?>
      <note>
@@ -82,7 +82,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 当键名和层级在访问时存在pattern同名的情况，当然这并不是什么问题，以下是一个示例。
 
-```  go
+```go
 data :=
     `{
         "users" : {
@@ -103,7 +103,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 再来看一个例子：
 
-```  go
+```go
 data :=
     `{
         "users" : {
@@ -126,7 +126,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 执行后，输出结果为：
 
-``` undefined
+```undefined
 100
 2
 
@@ -136,7 +136,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 ### 运行时动态修改数据
 
-```  go
+```go
 data :=
     `{
         "users" : {
@@ -156,7 +156,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 修改 `count` 为 `2`，并在 `users` 节点下新增增加 `list` 节点，节点类型为数组。 执行后输出结果为：
 
-```  json
+```json
 {"users":{"count":2,"list":["John","小明"]}}
 
 ```
@@ -167,7 +167,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 我们再来看一个删除变量的例子：
 
-```  go
+```go
 data :=
     `<?xml version="1.0" encoding="UTF-8"?>
      <article>
@@ -188,7 +188,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 以上程序输出结果为：
 
-```  json
+```json
 {"article":{"count":"10","list":[{"content":"gf content2","title":"gf article2"},{"content":"gf content3","title":"gf article3"}]}}
 
 ```
@@ -199,7 +199,7 @@ if p, e := gparser.LoadContent([]byte(data), true); e != nil {
 
 我们来动态生成一个 `XML`，先来一个简单一点的。
 
-```  go
+```go
 p := gparser.New(nil)
 p.Set("name",   "john")
 p.Set("age",    18)
@@ -215,7 +215,7 @@ fmt.Println(string(c))
 
 执行后，输出结果为：
 
-``` xml
+```xml
 <simple-xml>
     <age>18</age>
     <name>john</name>
@@ -234,7 +234,7 @@ fmt.Println(string(c))
 
 **示例1， `struct` 转换为 `gparser.Parser` 对象，并转换输出为 `JSON` 格式**
 
-```  go
+```go
 type Order struct {
     Id    int      `json:"id"`
     Price float32  `json:"price"`
@@ -251,7 +251,7 @@ fmt.Println(string(c))
 
 执行后，输出结果为：
 
-``` undefined
+```undefined
 Order 1 Price: 666
 {"orders":{"list":{"0":{"id":1,"price":100},"1":{"id":2,"price":666},"2":{"id":3,"price":999.99}}}}
 
@@ -263,7 +263,7 @@ Order 1 Price: 666
 
 **示例2，变量转换为 `struct` 对象**
 
-```  go
+```go
 type Info struct {
     Name string
     Url  string
@@ -281,7 +281,7 @@ fmt.Println("Url :", o.Url)
 
 执行后，输出为：
 
-``` html
+```html
 Name: gf
 Url : https://gitee.com/johng
 
@@ -293,7 +293,7 @@ Url : https://gitee.com/johng
 
 由于只是演示数据格式的转换，咱们来个数据结构简单点的：
 
-```  go
+```go
 p := gparser.New(map[string]string{
     "name" : "gf",
     "site" : "https://gitee.com/johng",
@@ -321,7 +321,7 @@ fmt.Println(string(c))
 
 执行后，输出结果为：
 
-```  shell
+```shell
 JSON:
 {"name":"gf","site":"https://gitee.com/johng"}
 ======================

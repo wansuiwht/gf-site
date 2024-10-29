@@ -26,7 +26,7 @@ type Result   []Record               // 返回数据表记录列表
 
 首先，我们的用户表结构是这样的（简单设计的示例表）：
 
-```
+```sql
 CREATE TABLE `user` (
   `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL DEFAULT '' COMMENT '昵称',
@@ -44,7 +44,7 @@ uid  name   site
 
 最后，我们的示例程序如下：
 
-```
+```go
 package main
 
 import (
@@ -117,7 +117,7 @@ Nick-Name  Nick_Name      match
 
 使用示例：
 
-```
+```go
 package main
 
 import (

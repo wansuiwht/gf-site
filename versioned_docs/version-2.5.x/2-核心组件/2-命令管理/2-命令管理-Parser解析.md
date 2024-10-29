@@ -14,7 +14,7 @@ hide_title: true
 
 更多 `Parser` 方法请参考接口文档： [https://pkg.go.dev/github.com/gogf/gf/v2/os/gcmd#Parser](https://pkg.go.dev/github.com/gogf/gf/v2/os/gcmd#Parser)
 
-```
+```go
 func Parse(supportedOptions map[string]bool, option ...ParserOption) (*Parser, error)
 func ParseWithArgs(args []string, supportedOptions map[string]bool, option ...ParserOption) (*Parser, error)
 func ParserFromCtx(ctx context.Context) *Parser
@@ -36,7 +36,7 @@ type ParserOption struct {
 
 解析示例：
 
-```
+```go
 parser, err := gcmd.Parse(g.MapStrBool{
 	"n,name":    true,
 	"v,version": true,
@@ -52,7 +52,7 @@ parser, err := gcmd.Parse(g.MapStrBool{
 
 ## 使用示例
 
-```
+```go
 func ExampleParse() {
 	os.Args = []string{"gf", "build", "main.go", "-o=gf.exe", "-y"}
 	p, err := gcmd.Parse(g.MapStrBool{

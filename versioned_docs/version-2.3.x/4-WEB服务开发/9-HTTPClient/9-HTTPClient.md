@@ -25,7 +25,7 @@ hide_title: true
 
 `GoFrame` 框架的客户端支持便捷的链式操作，常用方法如下：
 
-```
+```go
 func (c *Client) Timeout(t time.Duration) *Client
 func (c *Client) Cookie(m map[string]string) *Client
 func (c *Client) Header(m map[string]string) *Client
@@ -57,7 +57,7 @@ func (c *Client) Use(handlers ...HandlerFunc) *Client
 
 `gclient.Response` 为HTTP对应请求的返回结果对象，该对象继承于 `http.Response`，可以使用 `http.Response` 的所有方法。在此基础之上增加了以下几个方法：
 
-```
+```go
 func (r *Response) GetCookie(key string) string
 func (r *Response) GetCookieMap() map[string]string
 func (r *Response) Raw() string

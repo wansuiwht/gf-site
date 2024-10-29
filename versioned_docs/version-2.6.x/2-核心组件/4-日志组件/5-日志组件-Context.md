@@ -26,7 +26,7 @@ logger:
 
 使用上述配置，然后在输出日志的时候，通过 `Ctx` 链式操作方法指定输出的 `context.Context` 接口对象，例如：
 
-```
+```go
 package main
 
 import (
@@ -45,7 +45,7 @@ func main() {
 
 执行后，终端输出：
 
-```
+```html
 2024-01-17 21:12:12.182 [ERRO] {123456789, 10000} runtime error
 Stack:
 1.  main.main

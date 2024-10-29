@@ -10,7 +10,7 @@ hide_title: true
 
 **错误示例**：
 
-```
+```bash
 curl localhost:8000/Execute -d '{
 	"Component": "mysql",
 	"ResourceId": "cdb-gy6hm0ee",
@@ -25,7 +25,7 @@ curl localhost:8000/Execute -d '{
 
 提交请求的时候需要注明 `ContentType`，例如这里应当标明是 `JSON` 请求。
 
-```
+```bash
 curl -X POST -H "Content-Type: application/json" localhost:8000/Execute -d '{
 	"Component": "mysql",
 	"ResourceId": "cdb-gy6hm0ee",

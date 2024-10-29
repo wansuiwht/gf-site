@@ -32,7 +32,7 @@ id   title     price
 
 最后，示例代码如下：
 
-```
+```go
 if r, err := g.Model("goods").FindOne(1); err == nil {
     fmt.Printf("goods    id: %d\n",   r["id"].Int())
     fmt.Printf("goods title: %s\n",   r["title"].String())

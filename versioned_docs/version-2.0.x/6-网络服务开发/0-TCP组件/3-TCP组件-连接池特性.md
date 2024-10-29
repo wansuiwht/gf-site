@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/net/gtcp"
 ```
 
@@ -39,7 +39,7 @@ type PoolConn
 
 ## 示例1，基本使用
 
-```
+```go
 package main
 
 import (
@@ -105,7 +105,7 @@ func main() {
 
 这个例子是为了展示当服务端关闭连接后，该连接对象还是否有效的处理。
 
-```
+```go
 package main
 
 import (

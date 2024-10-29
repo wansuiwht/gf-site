@@ -8,7 +8,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/net/gudp"
 
 ```
@@ -17,7 +17,7 @@ import "github.com/gogf/gf/net/gudp"
 
 [https://godoc.org/github.com/gogf/gf/net/gudp](https://godoc.org/github.com/gogf/gf/net/gudp)
 
-```  go
+```go
 func Checksum(buffer []byte) uint32
 func NewNetConn(raddr string, laddr ...string) (*net.UDPConn, error)
 func Send(addr string, data []byte, retry ...Retry) error

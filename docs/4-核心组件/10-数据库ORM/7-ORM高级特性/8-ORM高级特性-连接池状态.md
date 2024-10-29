@@ -6,7 +6,7 @@ hide_title: true
 
 我们可以通过 `DB.Stats` 方法获取 `orm` 对象的连接池状态。我们来看个示例：
 
-```
+```go
 package main
 
 import (

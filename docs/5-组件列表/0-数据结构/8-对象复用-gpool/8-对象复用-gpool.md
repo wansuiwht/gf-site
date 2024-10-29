@@ -14,7 +14,7 @@ hide_title: true
 
 **使用方式**：
 
-```
+```go
 import "github.com/gogf/gf/v2/container/gpool"
 ```
 

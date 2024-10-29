@@ -14,7 +14,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/container/gring"
 
 ```
@@ -33,7 +33,7 @@ import "github.com/gogf/gf/container/gring"
 
 以下示例为非并发安全场景。
 
-```  go
+```go
 package main
 
 import (
@@ -95,7 +95,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 Player 3 died!
 Player 6 died!
 Player 9 died!

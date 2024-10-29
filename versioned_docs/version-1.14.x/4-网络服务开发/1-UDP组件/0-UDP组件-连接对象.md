@@ -8,14 +8,14 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/net/gudp"
 
 ```
 
 **接口文档**： [https://godoc.org/github.com/gogf/gf/net/gudp](https://godoc.org/github.com/gogf/gf/net/gudp)
 
-```  go
+```go
 type Conn
     func NewConn(raddr string, laddr ...string) (*Conn, error)
     func NewConnByNetConn(udp *net.UDPConn) *Conn
@@ -49,7 +49,7 @@ type Conn
 
 ## 使用示例
 
-```  go
+```go
 package main
 
 import (
@@ -101,7 +101,7 @@ func main() {
 
 执行后，输出结果如下：
 
-``` html
+```html
 > 2018-07-21 23:13:31 127.0.0.1:33271 127.0.0.1:8999
 > 2018-07-21 23:13:32 127.0.0.1:45826 127.0.0.1:8999
 > 2018-07-21 23:13:33 127.0.0.1:58027 127.0.0.1:8999

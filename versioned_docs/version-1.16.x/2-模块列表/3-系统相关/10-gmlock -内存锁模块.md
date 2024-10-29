@@ -10,7 +10,7 @@ hide_title: true
 
 **使用方式**：
 
-```  go
+```go
 import "github.com/gogf/gf/os/gmlock"
 
 ```
@@ -21,7 +21,7 @@ import "github.com/gogf/gf/os/gmlock"
 
 [https://godoc.org/github.com/gogf/gf/os/gmlock](https://godoc.org/github.com/gogf/gf/os/gmlock)
 
-```  go
+```go
 func Lock(key string)
 func LockFunc(key string, f func())
 func RLock(key string)
@@ -52,7 +52,7 @@ type Locker
 
 ### 示例1，基本使用
 
-```  go
+```go
 package main
 
 import (
@@ -84,7 +84,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 2018-10-15 23:57:28.295 9
 2018-10-15 23:57:29.296 0
 2018-10-15 23:57:30.296 1
@@ -102,7 +102,7 @@ func main() {
 
 `TryLock` 方法是有返回值的，它表示用来尝试获取锁，如果获取成功，则返回 `true`；如果获取失败（即互斥锁已被其他 `goroutine` 获取），则返回 `false`。
 
-```  go
+```go
 package main
 
 import (
@@ -137,7 +137,7 @@ func main() {
 
 执行后，输出结果为：
 
-``` html
+```html
 2018-10-16 00:01:59.172 9
 2018-10-16 00:01:59.172 false
 2018-10-16 00:01:59.172 false
