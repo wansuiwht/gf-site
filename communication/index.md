@@ -1,6 +1,6 @@
 ---
-title: '获得帮助'
-sidebar_position: 1
+title: '交流群'
+sidebar_position: 0
 ---
 
 ## 加入QQ群

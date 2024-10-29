@@ -65,9 +65,10 @@ https://docusaurus.io/zh-CN/docs/markdown-features/code-blocks
     - 【WEB开发】等等
   - 【版本发布】
   - 【技术交流】
+    - 【交流群】
     - 【框架设计】
     - 【常用资料】
     - 【使用案例】
   - 【支持我们】
-    - 【捐赠】
+    - 【来杯咖啡】
     - 【加入我们】
