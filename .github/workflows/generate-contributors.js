@@ -7,7 +7,7 @@ const githubUrl = `https://api.github.com/repos/gogf/gf/contributors`
 // 生成 svg 的位置
 const svgPath = "../../static/img/contributors.svg"
 // 单个头像的质量, 1 - 100
-const quality = 2
+const quality = 1
 
 // 单个头像的宽高
 const width = 62, height = 62
