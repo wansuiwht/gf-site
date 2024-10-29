@@ -8,7 +8,7 @@ hide_title: true
 
 ## 使用方式
 
-```
+```bash
 $ gf up -h
 USAGE
     gf up [OPTION]
@@ -38,7 +38,7 @@ EXAMPLE
 
 ## 使用示例
 
-```
+```bash
 $ gf up -a
 start upgrading version...
 upgrading "github.com/gogf/gf/contrib/drivers/mysql/v2" from "v2.2.4" to "latest"

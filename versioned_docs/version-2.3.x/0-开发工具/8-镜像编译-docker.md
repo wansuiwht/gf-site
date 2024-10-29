@@ -6,7 +6,7 @@ hide_title: true
 
 ## 使用方式
 
-```
+```bash
 $ gf docker -h
 USAGE
     gf docker [MAIN] [OPTION]
@@ -45,7 +45,7 @@ DESCRIPTION
 
 ## 使用示例
 
-```
+```bash
 $ gf docker main.go -p -tn loads/gf-demos:test
 2020-12-31 00:47:28.207 start building...
 2020-12-31 00:47:28.207 go build -o ./bin/linux_amd64/main main.go

@@ -6,7 +6,7 @@ hide_title: true
 
 使用方式：
 
-```
+```bash
 $ gf get -h
 USAGE
     gf get PACKAGE
@@ -25,7 +25,7 @@ EXAMPLES
 
 使用示例：
 
-```
+```bash
 $ gf get github.com/gogf/gf
 go: github.com/gogf/gf master => v1.15.0
 go: downloading github.com/gogf/gf v1.15.0

@@ -228,7 +228,7 @@ function Features() {
             <div className="container mt-5 text-center">
                 <Link
                     className="button button--secondary button--md hover:bg-gray-200"
-                    to="/docs" style={{ width: '200px' }}>
+                    to="/docs/design" style={{ width: '200px' }}>
                     了解更多 →
                 </Link>
             </div>
@@ -251,10 +251,10 @@ function Users() {
                         <a href="https://www.tencent.com/" target="_blank">腾讯科技</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.zte.com.cn/china/" target="_blank">中兴科技</a>
+                        <a href="https://www.antfin.com/" target="_blank">蚂蚁金服</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.antfin.com/" target="_blank">蚂蚁金服</a>
+                        <a href="https://www.zte.com.cn/china/" target="_blank">中兴科技</a>
                     </div>
                     <div className="card p-5 box-border text-center">
                         <a href="https://www.vivo.com/" target="_blank">VIVO</a>
@@ -269,10 +269,10 @@ function Users() {
                         <a href="https://www.37.com/" target="_blank">三七互娱</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.zybang.com/" target="_blank">作业帮</a>
+                        <a href="https://www.medlinker.com/" target="_blank">医联科技</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.medlinker.com/" target="_blank">医联科技</a>
+                        <a href="https://www.zybang.com/" target="_blank">作业帮</a>
                     </div>
                     <div className="card p-5 box-border text-center">
                         <a href="https://www.leyoujia.com/" target="_blank">乐有家</a>

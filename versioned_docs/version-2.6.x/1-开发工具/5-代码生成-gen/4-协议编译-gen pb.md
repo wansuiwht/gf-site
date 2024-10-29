@@ -12,7 +12,7 @@ hide_title: true
 
 ## 命令使用
 
-```
+```bash
 $ gf gen pb -h
 USAGE
     gf gen pb [OPTION]

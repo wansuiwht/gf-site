@@ -20,7 +20,7 @@ hide_title: true
 
 ## 如何设置？
 
-```
+```go
 func main() {
 	s := g.Server()
 	s.BindHandler("/", func(r *ghttp.Request) {

@@ -10,7 +10,7 @@ hide_title: true
 
 进入项目根目录执行 `gf gen dao` 即可。以下为命令行帮助信息。
 
-```
+```bash
 $ gf gen dao -h USAGE
     gf gen dao [OPTION]
 

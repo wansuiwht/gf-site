@@ -6,7 +6,7 @@ hide_title: true
 
 使用方式：
 
-```
+```bash
 $ gf build -h
 USAGE
     gf build FILE [OPTION]
@@ -99,7 +99,7 @@ PLATFORMS
 
 使用示例：
 
-```
+```bash
 $ gf build
 2020-12-31 00:35:25.562 start building...
 2020-12-31 00:35:25.562 go build -o ./bin/darwin_amd64/gf main.go

@@ -12,7 +12,7 @@ hide_title: true
 
 ## 使用帮助
 
-```
+```bash
 $ gf run -h
 USAGE
     gf run FILE [OPTION]
@@ -65,7 +65,7 @@ gfcli:
 
 一般 `gf run main.go` 即可
 
-```
+```bash
 $ gf run main.go --swagger
 2020-12-31 00:40:16.948 build: main.go
 2020-12-31 00:40:16.994 producing swagger files...

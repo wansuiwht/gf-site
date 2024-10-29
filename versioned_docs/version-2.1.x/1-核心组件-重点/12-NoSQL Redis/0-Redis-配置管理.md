@@ -61,7 +61,7 @@ redis:
 
 使用示例：
 
-```
+```go
 func main() {
 	var (
 		ctx = context.Background()

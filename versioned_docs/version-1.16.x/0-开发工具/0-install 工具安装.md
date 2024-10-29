@@ -16,7 +16,7 @@ hide_title: true
 
 使用示例：
 
-```
+```bash
 $ gf install
 I found some installable paths for you:
   Id | Writable | Installed | Path

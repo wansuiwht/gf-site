@@ -218,7 +218,7 @@ func main() {
 
 ## WebSocket client 客户端
 
-```
+```go
 func main() {
 	client := ghttp.NewWebSocketClient()
 	client.HandshakeTimeout = time.Second    // 设置超时时间

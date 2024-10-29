@@ -31,7 +31,7 @@ hide_title: true
 
 ## 命令使用
 
-```
+```bash
 $ gf gen enums -h
 USAGE
     gf gen enums [OPTION]

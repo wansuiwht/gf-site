@@ -50,7 +50,7 @@ Fields(in FieldsInput) ([]Field, error)
 
 
 
-```
+```go
 func main() {
   	type User struct {
   		Id   int
@@ -148,7 +148,7 @@ TagMapName(pointer interface{}, priority []string) (map[string]string, error)
 
 
 
-```
+```go
 func main() {
   	type User struct {
   		Id   int

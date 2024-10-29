@@ -17,7 +17,7 @@ hide_title: true
 
 进入项目根目录执行 `gf gen model` 即可。以下为命令行帮助信息。
 
-```
+```bash
 $ gf gen model -h
 USAGE
     gf gen model [OPTION]

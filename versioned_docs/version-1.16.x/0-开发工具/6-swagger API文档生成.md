@@ -6,7 +6,7 @@ hide_title: true
 
 使用方式：
 
-```
+```bash
 $ gf swagger -h
 USAGE
     gf swagger [OPTION]
@@ -41,7 +41,7 @@ DESCRIPTION
 
 使用示例：
 
-```
+```bash
 $ gf swagger --pack
 2020-12-31 00:42:10.345 producing swagger files...
 2020-12-31 00:42:10.452 done!

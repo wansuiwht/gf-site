@@ -14,7 +14,7 @@ hide_title: true
 
 ## 使用方式
 
-```
+```bash
 $ gf gen -h
 USAGE
     gf gen COMMAND [OPTION]

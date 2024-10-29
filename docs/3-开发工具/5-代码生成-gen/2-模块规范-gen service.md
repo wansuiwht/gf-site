@@ -52,7 +52,7 @@ hide_title: true
 
 如果是手动执行命令行，直接在项目根目录下执行 `gf gen service` 即可。
 
-```
+```bash
 $ gf gen service -h
 USAGE
     gf gen service [OPTION]

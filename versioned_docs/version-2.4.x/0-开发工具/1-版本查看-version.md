@@ -13,7 +13,7 @@ hide_title: true
 
 ## 使用示例
 
-```
+```bash
 $ gf version
 GoFrame CLI Tool v2.0.0, https://goframe.org
 GoFrame Version: v2.0.0-beta.0.20211214160159-19c9f0a48845 in current go.mod

@@ -6,7 +6,7 @@ hide_title: true
 
 使用方式：
 
-```
+```bash
 $ gf init -h
 USAGE
     gf init NAME
@@ -28,7 +28,7 @@ EXAMPLES
 
 1、在当前目录下初始化项目
 
-```
+```bash
 $ gf init .
 initializing...
 initialization done!
@@ -37,7 +37,7 @@ you can now run 'gf run main.go' to start your journey, enjoy!
 
 2、在当前目录下创建一个名称为 `myapp` 的项目
 
-```
+```bash
 $ gf init myapp
 initializing...
 initialization done!

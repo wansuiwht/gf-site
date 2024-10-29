@@ -12,7 +12,7 @@ hide_title: true
 
 使用示例：
 
-```
+```bash
 $ gf update
 checking...
 downloading...

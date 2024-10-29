@@ -12,7 +12,7 @@ hide_title: true
 
 ## 命令使用
 
-```
+```bash
 $ gf gen pbentity -h
 USAGE
     gf gen pbentity [OPTION]

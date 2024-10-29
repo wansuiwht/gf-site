@@ -8,7 +8,7 @@ hide_title: true
 
 ## 使用方式
 
-```
+```bash
 $ gf init -h
 USAGE
     gf init ARGUMENT [OPTION]
@@ -38,7 +38,7 @@ EXAMPLE
 
 ### 在当前目录下初始化项目
 
-```
+```bash
 $ gf init .
 initializing...
 initialization done!
@@ -47,7 +47,7 @@ you can now run 'gf run main.go' to start your journey, enjoy!
 
 ### 创建一个指定名称的项目
 
-```
+```bash
 $ gf init myapp
 initializing...
 initialization done!
@@ -58,7 +58,7 @@ you can now run 'cd myapp && gf run main.go' to start your journey, enjoy!
 
 默认情况下创建的是 `SingleRepo` 项目，若有需要也可以创建一个 `MonoRepo`（大仓）项目，通过使用 `-m` 选项即可。
 
-```
+```bash
 $ gf init mymono -m
 initializing...
 initialization done!
@@ -70,7 +70,7 @@ initialization done!
 
 若需要在 `MonoRepo`（大仓）下的创建一个小仓，通过使用 `-a` 选项即可。
 
-```
+```bash
 $ gf init app/user -a
 initializing...
 initialization done!

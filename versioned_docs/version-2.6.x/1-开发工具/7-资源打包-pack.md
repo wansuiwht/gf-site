@@ -6,7 +6,7 @@ hide_title: true
 
 ## 使用方式
 
-```
+```bash
 $ gf pack -h
 USAGE
     gf pack SRC DST
@@ -35,7 +35,7 @@ EXAMPLE
 
 ## 使用示例
 
-```
+```bash
 $ gf pack public,template packed/data.go
 done!
 $ ll packed

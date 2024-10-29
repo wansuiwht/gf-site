@@ -94,7 +94,7 @@ D:\Program Files\Go\bin\pkg\mod\github.com\gogf\gf@v1.16.6\net\ghttp\internal\cl
 
 ### 3、 `gcron` 与 `http` 如何同时使用?
 
-```
+```go
 func main() {
 
 	//定时任务1
