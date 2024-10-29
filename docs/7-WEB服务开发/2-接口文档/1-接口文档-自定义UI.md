@@ -95,7 +95,7 @@ func main() {
 
 config.yaml
 
-```
+```yaml
 server:
   address:     ":8199"
   openapiPath: "/api.json"

@@ -14,7 +14,7 @@ hide_title: true
 
 `config.yaml`
 
-```
+```yaml
 server:
   address:     ":8888"
   openapiPath: "/api.json"
@@ -59,7 +59,7 @@ map[debug:true link:mysql:root:12345678@tcp(127.0.0.1:3306)/test]
 
 `config.yaml`
 
-```
+```yaml
 server:
   address:     ":8888"
   openapiPath: "/api.json"
