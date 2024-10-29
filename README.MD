@@ -72,3 +72,29 @@ https://docusaurus.io/zh-CN/docs/markdown-features/code-blocks
   - 【支持我们】
     - 【来杯咖啡】
     - 【加入我们】
+
+
+```bash
+# 多语言文档路径
+https://docusaurus.io/docs/i18n/introduction#translation-files-location
+https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#i18n
+
+mkdir -p i18n/en/docusaurus-plugin-content-docs/current
+cp -r docs/** i18n/en/docusaurus-plugin-content-docs/current
+
+mkdir -p i18n/en/docusaurus-plugin-content-docs-quick/current
+cp -r quick/** i18n/en/docusaurus-plugin-content-docs-quick/current
+
+
+npm run start -- --locale en
+
+```
+
+
+
+
+
+
+
+
+

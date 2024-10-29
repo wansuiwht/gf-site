@@ -1,4 +1,4 @@
-const LATEST_VERSION_LABEL = 'Latest';
+const LATEST_VERSION_LABEL = '2.8.0-beta';
 
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
@@ -18,11 +18,21 @@ const config: Config = {
   projectName: 'gf',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  // 多语言配置
   i18n: {
     defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    locales: ['zh-Hans', 'en'],
+    path: 'i18n',
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
+    },
   },
-
   presets: [
     [
       'classic',
@@ -202,6 +212,10 @@ const config: Config = {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownActiveClassDisabled: true,
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: 'https://github.com/gogf/gf/issues',
