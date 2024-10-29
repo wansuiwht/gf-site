@@ -8,7 +8,7 @@ hide_title: true
 
 查询结果的数据结构如下：
 
-```
+```go
 type Value  = *gvar.Var              // 返回数据表记录值
 type Record   map[string]Value       // 返回数据表记录键值对
 type Result   []Record               // 返回数据表记录列表

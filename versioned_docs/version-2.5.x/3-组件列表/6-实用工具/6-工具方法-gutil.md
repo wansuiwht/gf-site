@@ -48,7 +48,7 @@ Dump(values ...interface{})
 
 
 
-```
+```go
 type User struct {
   	Name string
   	Age int
@@ -144,7 +144,7 @@ DumpWithType(values ...interface{})
 
 
 
-```
+```go
 type User struct {
   	Name string
   	Age int

@@ -10,7 +10,7 @@ hide_title: true
 
 相关 `Hook` 函数：
 
-```
+```go
 type (
 	HookFuncSelect func(ctx context.Context, in *HookSelectInput) (result Result, err error)
 	HookFuncInsert func(ctx context.Context, in *HookInsertInput) (result sql.Result, err error)

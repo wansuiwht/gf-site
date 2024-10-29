@@ -127,7 +127,7 @@ db.Table("user").OmitEmpty().Data(g.Map{
 
 对于 `struct` 数据参数，我们也可以进行空值过滤。操作示例：
 
-```
+```go
 type User struct {
     Id         int    `orm:"id"`
     Passport   string `orm:"passport"`
@@ -166,7 +166,7 @@ r, err := db.Table("user").Where(g.Map{
 }).OmitEmpty().One()
 ```
 
-```
+```go
 type User struct {
     Id         int    `orm:"id"`
     Passport   string `orm:"passport"`

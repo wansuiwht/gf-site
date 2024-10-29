@@ -8,7 +8,7 @@ hide_title: true
 
 接口文档： [https://godoc.org/github.com/gogf/gf/net/ghttp#Cookie](https://godoc.org/github.com/gogf/gf/net/ghttp#Cookie)
 
-```
+```go
 type Cookie
     func GetCookie(r *Request) *Cookie
     func (c *Cookie) Contains(key string) bool

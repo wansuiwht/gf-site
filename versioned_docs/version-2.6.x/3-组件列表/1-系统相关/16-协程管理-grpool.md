@@ -32,7 +32,7 @@ hide_title: true
 
 添加到池对象的任务队列中等待执行的任务，是一个 `Func` 的方法，一个 `Job` 同时只能被一个 `Worker` 获取并执行。 `Func` 的定义如下：
 
-```
+```go
 type Func func(ctx context.Context)
 ```
 

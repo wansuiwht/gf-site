@@ -163,7 +163,7 @@ database:
 6. 支持 `Master-Slave` 读写分离，可通过 `ConfigNode.Role` 属性进行配置；
 7. 支持客户端的负载均衡管理，可通过 `ConfigNode.Weight` 属性进行配置，值越大，优先级越高；
 
-```
+```go
 type Config      map[string]ConfigGroup // 数据库配置对象
 type ConfigGroup []ConfigNode           // 数据库分组配置
 // 数据库配置项(一个分组配置对应多个配置项)

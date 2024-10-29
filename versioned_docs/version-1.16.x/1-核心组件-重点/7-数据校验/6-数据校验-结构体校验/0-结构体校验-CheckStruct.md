@@ -227,7 +227,7 @@ func main() {
 
 例如以下结构体属性都将被看做独立的结构体属性执行校验：
 
-```
+```go
 type MyStruct struct {
 	Base `p:"base"`
 }

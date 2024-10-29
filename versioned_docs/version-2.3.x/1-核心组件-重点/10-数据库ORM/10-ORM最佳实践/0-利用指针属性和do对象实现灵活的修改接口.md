@@ -29,7 +29,7 @@ CREATE TABLE `user`(
 
 其中的用户状态，我们使用了单独的类型定义，用以实现枚举值：
 
-```
+```go
 type Status string
 
 const (
@@ -40,7 +40,7 @@ const (
 
 通过 `gf gen dao` 命令，我们自动生成的 `do` 对象如下：
 
-```
+```go
 type User struct {
 	g.Meta    `table:"uer" orm:"do:true"`
 	Id        interface{}
@@ -58,7 +58,7 @@ type User struct {
 
 我们来实现一个用户信息修改的 `API` 接口，这是一个运维管理接口，可以通过用户账号名称来修改用户信息。该 `API` 的定义如下：
 
-```
+```go
 type UpdateReq struct {
 	g.Meta   `path:"/user/{Id}" method:"post" summary:"修改用户信息"`
 	Passport string  `v:"required" dc:"用户账号"`

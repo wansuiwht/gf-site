@@ -12,7 +12,7 @@ hide_title: true
 
 常用方法：
 
-```
+```go
 type Client
     // 创建客户端
     func NewClient() *Client

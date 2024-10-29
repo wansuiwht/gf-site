@@ -6,7 +6,7 @@ hide_title: true
 
 `GoFrame ORM` 组件针对于 `struct` 内嵌结构提供了良好的支持，包括参数传递、结果处理。例如：
 
-```
+```go
 type Base struct {
     Uid        int         `orm:"uid"`
     CreateAt   *gtime.Time `orm:"create_at"`

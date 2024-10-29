@@ -14,7 +14,7 @@ import "github.com/gogf/gf/v2/net/gtcp"
 
 **接口文档**： [https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp)
 
-```
+```go
 type Server
     func GetServer(name ...interface{}) *Server
     func NewServer(address string, handler func(*Conn), name ...string) *Server

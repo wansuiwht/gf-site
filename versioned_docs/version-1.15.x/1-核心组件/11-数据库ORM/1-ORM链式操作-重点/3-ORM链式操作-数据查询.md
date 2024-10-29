@@ -94,7 +94,7 @@ Table("user").Value("name", "uid", g.Slice{1,2,3})
 
 1、 `Struct`: 将查询结果转换为一个 `struct` 对象，查询结果应当是特定的一条记录，并且 `pointer` 参数应当为 `struct` 对象的指针地址（ `*struct` 或者 `**struct`），使用方式例如：
 
-```
+```go
 type User struct {
     Id         int
     Passport   string

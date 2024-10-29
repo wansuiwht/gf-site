@@ -110,7 +110,7 @@ g.Model("user").Save(g.Map{"uid": 10001, "name": "john"})
           uid/name/site
         ` 时：
 
-```
+```go
 type User struct {
     Uid  int    `orm:"uid"`
     Name string `orm:"name"`

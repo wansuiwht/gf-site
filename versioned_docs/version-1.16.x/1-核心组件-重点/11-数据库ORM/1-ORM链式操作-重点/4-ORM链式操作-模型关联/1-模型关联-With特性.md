@@ -294,7 +294,7 @@ db.Model(users).With(UserDetail{}).Where("id>?", 3).Scan(&users)
 
 我们可以看到在上面的结构体数据结构中都使用 `embed` 方式嵌入了一个 `gmeta.Meta` 结构体，例如：
 
-```
+```go
 type UserDetail struct {
 	gmeta.Meta `orm:"table:user_detail"`
 	Uid        int    `json:"uid"`
@@ -310,7 +310,7 @@ type UserDetail struct {
 
 在如下结构体中：
 
-```
+```go
 type User struct {
 	gmeta.Meta `orm:"table:user"`
 	Id         int          `json:"id"`
@@ -505,7 +505,7 @@ db.Model(tableUser).Where("id", 3).Scan(&user)
 
 我们来一个示例更好说明。假如我们有一个实体对象数据结构 `Content`，一个常见的 `CMS` 系统的内容模型，与数据表字段一一对应：
 
-```
+```go
 type Content struct {
 	Id             uint        `orm:"id,primary"       json:"id"`               // 自增ID
 	Key            string      `orm:"key"              json:"key"`              // 唯一键名，用于程序硬编码，一般不常用
@@ -531,7 +531,7 @@ type Content struct {
 
 内容的列表页又不需要展示这么详细的内容，特别是其中的 `Content` 字段非常大，我们列表页只需要查询几个字段而已。那么我们可以单独定义一个用于列表的返回数据结构，而不是直接使用数据表实体对象数据结构。例如：
 
-```
+```go
 type ContentListItem struct {
 	Id         uint        `json:"id"`          // 自增ID
 	CategoryId uint        `json:"category_id"` // 栏目ID

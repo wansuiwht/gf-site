@@ -129,7 +129,7 @@ content := g.Client().PostContent(
 
 使用示例：
 
-```
+```go
 type User struct {
     Id   int
     Name string

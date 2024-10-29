@@ -8,7 +8,7 @@ hide_title: true
 
 例如:
 
-```
+```go
 type User struct {
     Uid      int    `orm:"user_id"`
     Name     string `orm:"user_name"`

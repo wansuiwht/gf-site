@@ -14,7 +14,7 @@ import "github.com/gogf/gf/v2/net/gudp"
 
 **接口文档**： [https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp)
 
-```
+```go
 type Conn
     func NewConn(raddr string, laddr ...string) (*Conn, error)
     func NewConnByNetConn(udp *net.UDPConn) *Conn

@@ -10,7 +10,7 @@ hide_title: true
 
 常用方法：
 
-```
+```go
 type Cookie
     func GetCookie(r *Request) *Cookie
     func (c *Cookie) Contains(key string) bool
@@ -64,7 +64,7 @@ func main() {
 
 对于控制器对象而言，从基类控制器中继承了很多会话相关的对象指针，可以看做alias，可以直接使用，他们都是指向的同一个对象：
 
-```
+```go
 type Controller struct {
 	Request  *ghttp.Request  // 请求数据对象
 	Response *ghttp.Response // 返回数据对象(r.Response)

@@ -8,7 +8,7 @@ hide_title: true
 
 `Struct` 的属性会有 `默认值`，在某些情况下会引起 `required` 规则的失效。例如：
 
-```
+```go
 type User struct {
 	Name string `v:"required"`
 	Age  uint   `v:"required"`

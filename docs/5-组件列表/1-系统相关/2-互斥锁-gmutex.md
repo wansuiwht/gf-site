@@ -18,7 +18,7 @@ import "github.com/gogf/gf/v2/os/gmutex"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/os/gmutex](https://pkg.go.dev/github.com/gogf/gf/v2/os/gmutex)
 
-```
+```go
 type Mutex
 	func (m *Mutex) LockFunc(f func())
 	func (m *Mutex) TryLockFunc(f func()) (result bool)

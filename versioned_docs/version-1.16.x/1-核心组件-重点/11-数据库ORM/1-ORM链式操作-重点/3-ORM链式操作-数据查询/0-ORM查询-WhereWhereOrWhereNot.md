@@ -80,7 +80,7 @@ Where("uid IN(?)", g.Slice{1,2,3})
 
 使用 `struct` 参数的示例，其中 `orm` 的 `tag` 用于指定 `struct` 属性与表字段的映射关系：
 
-```
+```go
 type Condition struct{
     Sex int `orm:"sex"`
     Age int `orm:"age"`
@@ -142,7 +142,7 @@ db.Model("user").Where(g.Map{"uid" : 1, "age>" : 18}).One()
 
 `Where + struct/*struct`， `struct` 标签支持 `orm/json`，映射属性到字段名称关系。
 
-```
+```go
 type User struct {
     Id       int    `json:"uid"`
     UserName string `orm:"name"`

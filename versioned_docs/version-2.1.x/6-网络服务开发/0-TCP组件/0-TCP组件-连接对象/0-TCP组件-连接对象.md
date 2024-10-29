@@ -16,7 +16,7 @@ import "github.com/gogf/gf/v2/net/gtcp"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp)
 
-```
+```go
 type Conn
     func NewConn(addr string, timeout ...int) (*Conn, error)
     func NewConnByNetConn(conn net.Conn) *Conn

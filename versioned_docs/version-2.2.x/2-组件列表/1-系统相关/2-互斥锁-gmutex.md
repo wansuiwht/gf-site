@@ -20,7 +20,7 @@ import "github.com/gogf/gf/v2/os/gmutex"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/os/gmutex](https://pkg.go.dev/github.com/gogf/gf/v2/os/gmutex)
 
-```
+```go
 type Mutex
     func New() *Mutex
     func (m *Mutex) IsLocked() bool

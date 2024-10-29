@@ -14,7 +14,7 @@ import "github.com/gogf/gf/v2/net/gudp"
 
 **接口文档**： [https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp)
 
-```
+```go
 type Server
     func GetServer(name ...interface{}) *Server
     func NewServer(address string, handler func(*Conn), names ...string) *Server

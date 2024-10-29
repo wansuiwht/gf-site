@@ -16,7 +16,7 @@ import "github.com/gogf/gf/v2/net/gtcp"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gtcp)
 
-```
+```go
 type PoolConn
     func NewPoolConn(addr string, timeout ...int) (*PoolConn, error)
     func (c *PoolConn) Close() error

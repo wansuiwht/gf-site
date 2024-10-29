@@ -65,7 +65,7 @@ func DecodeBytesToBits(bs []byte) []Bit
 
 其中的Bit类型表示一个二进制数字(0或1)，其定义如下：
 
-```
+```go
 type Bit int8
 ```
 

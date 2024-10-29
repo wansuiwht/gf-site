@@ -10,7 +10,7 @@ hide_title: true
 
 `glog` 模块实现了标准输出以及文件输出的日志内容打印。当然，开发者也可以通过自定义 `io.Writer` 接口实现自定义的日志内容输出。 `io.Writer` 是标准库提供的内容输出接口，其定义如下：
 
-```
+```go
 type Writer interface {
 	Write(p []byte) (n int, err error)
 }

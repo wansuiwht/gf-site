@@ -23,7 +23,7 @@ hide_title: true
 
 可以通过结构体嵌套的方式实现，通过使用 `*struct{}` 类型不占用空间以及 `omitempty` 字段为空不输出字段的特性
 
-```
+```go
 type User struct {
     Pwd string `json:"pwd"`
     Age int    `json:"age"`

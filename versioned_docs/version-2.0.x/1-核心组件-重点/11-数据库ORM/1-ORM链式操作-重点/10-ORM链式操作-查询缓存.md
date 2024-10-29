@@ -10,7 +10,7 @@ hide_title: true
 
 相关方法：
 
-```
+```go
 type CacheOption struct {
 	// Duration is the TTL for the cache.
 	// If the parameter `Duration` < 0, which means it clear the cache with given `Name`.
