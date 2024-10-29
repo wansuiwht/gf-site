@@ -5,7 +5,7 @@ const sharp = require('sharp');
 const githubUrl = `https://api.github.com/repos/gogf/gf/contributors`
 
 // 生成 svg 的位置
-const svgPath = "../../static/contributors.svg"
+const svgPath = "../../static/img/contributors.svg"
 // 单个头像的质量, 1 - 100
 const quality = 10
 
