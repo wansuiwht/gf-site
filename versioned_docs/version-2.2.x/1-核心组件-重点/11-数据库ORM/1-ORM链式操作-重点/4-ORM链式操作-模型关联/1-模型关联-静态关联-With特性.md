@@ -57,24 +57,24 @@ CREATE TABLE `user_scores` (
 ```go
 // 用户详情
 type UserDetail struct {
-	gmeta.Meta `orm:"table:user_detail"`
-	Uid        int    `json:"uid"`
-	Address    string `json:"address"`
+    gmeta.Meta `orm:"table:user_detail"`
+    Uid        int    `json:"uid"`
+    Address    string `json:"address"`
 }
 // 用户学分
 type UserScores struct {
-	gmeta.Meta `orm:"table:user_scores"`
-	Id         int `json:"id"`
-	Uid        int `json:"uid"`
-	Score      int `json:"score"`
+    gmeta.Meta `orm:"table:user_scores"`
+    Id         int `json:"id"`
+    Uid        int `json:"uid"`
+    Score      int `json:"score"`
 }
 // 用户信息
 type User struct {
-	gmeta.Meta `orm:"table:user"`
-	Id         int           `json:"id"`
-	Name       string        `json:"name"`
-	UserDetail *UserDetail   `orm:"with:uid=id"`
-	UserScores []*UserScores `orm:"with:uid=id"`
+    gmeta.Meta `orm:"table:user"`
+    Id         int           `json:"id"`
+    Name       string        `json:"name"`
+    UserDetail *UserDetail   `orm:"with:uid=id"`
+    UserScores []*UserScores `orm:"with:uid=id"`
 }
 ```
 
@@ -88,37 +88,37 @@ type User struct {
 
 ```go
 g.DB().Transaction(func(tx *gdb.TX) error {
-	for i := 1; i <= 5; i++ {
-		// User.
-		user := User{
-			Name: fmt.Sprintf(`name_%d`, i),
-		}
-		lastInsertId, err := g.Model(user).Data(user).OmitEmpty().InsertAndGetId()
-		if err != nil {
-			return err
-		}
-		// Detail.
-		userDetail := UserDetail{
-			Uid:     int(lastInsertId),
-			Address: fmt.Sprintf(`address_%d`, lastInsertId),
-		}
-		_, err = g.Model(userDetail).Data(userDetail).OmitEmpty().Insert()
-		if err != nil {
-			return err
-		}
-		// Scores.
-		for j := 1; j <= 5; j++ {
-			userScore := UserScores{
-				Uid:   int(lastInsertId),
-				Score: j,
-			}
-			_, err = g.Model(userScore).Data(userScore).OmitEmpty().Insert()
-			if err != nil {
-				return err
-			}
-		}
-	}
-	return nil
+    for i := 1; i <= 5; i++ {
+        // User.
+        user := User{
+            Name: fmt.Sprintf(`name_%d`, i),
+        }
+        lastInsertId, err := g.Model(user).Data(user).OmitEmpty().InsertAndGetId()
+        if err != nil {
+            return err
+        }
+        // Detail.
+        userDetail := UserDetail{
+            Uid:     int(lastInsertId),
+            Address: fmt.Sprintf(`address_%d`, lastInsertId),
+        }
+        _, err = g.Model(userDetail).Data(userDetail).OmitEmpty().Insert()
+        if err != nil {
+            return err
+        }
+        // Scores.
+        for j := 1; j <= 5; j++ {
+            userScore := UserScores{
+                Uid:   int(lastInsertId),
+                Score: j,
+            }
+            _, err = g.Model(userScore).Data(userScore).OmitEmpty().Insert()
+            if err != nil {
+                return err
+            }
+        }
+    }
+    return nil
 })
 ```
 
@@ -292,11 +292,11 @@ g.Model(users).With(UserDetail{}).Where("id>?", 3).Scan(&users)
 
 ```go
 type User struct {
-	gmeta.Meta `orm:"table:user"`
-	Id         int           `json:"id"`
-	Name       string        `json:"name"`
-	UserDetail *UserDetail   `orm:"with:uid=id, where:uid > 3"`
-	UserScores []*UserScores `orm:"with:uid=id, where:score>1 and score<5, order:score desc"`
+    gmeta.Meta `orm:"table:user"`
+    Id         int           `json:"id"`
+    Name       string        `json:"name"`
+    UserDetail *UserDetail   `orm:"with:uid=id, where:uid > 3"`
+    UserScores []*UserScores `orm:"with:uid=id, where:score>1 and score<5, order:score desc"`
 }
 ```
 
@@ -312,9 +312,9 @@ type User struct {
 
 ```go
 type UserDetail struct {
-	gmeta.Meta `orm:"table:user_detail"`
-	Uid        int    `json:"uid"`
-	Address    string `json:"address"`
+    gmeta.Meta `orm:"table:user_detail"`
+    Uid        int    `json:"uid"`
+    Address    string `json:"address"`
 }
 ```
 
@@ -328,11 +328,11 @@ type UserDetail struct {
 
 ```go
 type User struct {
-	gmeta.Meta `orm:"table:user"`
-	Id         int          `json:"id"`
-	Name       string       `json:"name"`
-	UserDetail *UserDetail  `orm:"with:uid=id"`
-	UserScores []*UserScore `orm:"with:uid=id"`
+    gmeta.Meta `orm:"table:user"`
+    Id         int          `json:"id"`
+    Name       string       `json:"name"`
+    UserDetail *UserDetail  `orm:"with:uid=id"`
+    UserScores []*UserScore `orm:"with:uid=id"`
 }
 ```
 
@@ -496,25 +496,25 @@ g.Model(tableUser).Where("id", 3).Scan(&user)
 
 ```go
 type Content struct {
-	Id             uint        `orm:"id,primary"       json:"id"`               // 自增ID
-	Key            string      `orm:"key"              json:"key"`              // 唯一键名，用于程序硬编码，一般不常用
-	Type           string      `orm:"type"             json:"type"`             // 内容模型: topic, ask, article等，具体由程序定义
-	CategoryId     uint        `orm:"category_id"      json:"category_id"`      // 栏目ID
-	UserId         uint        `orm:"user_id"          json:"user_id"`          // 用户ID
-	Title          string      `orm:"title"            json:"title"`            // 标题
-	Content        string      `orm:"content"          json:"content"`          // 内容
-	Sort           uint        `orm:"sort"             json:"sort"`             // 排序，数值越低越靠前，默认为添加时的时间戳，可用于置顶
-	Brief          string      `orm:"brief"            json:"brief"`            // 摘要
-	Thumb          string      `orm:"thumb"            json:"thumb"`            // 缩略图
-	Tags           string      `orm:"tags"             json:"tags"`             // 标签名称列表，以JSON存储
-	Referer        string      `orm:"referer"          json:"referer"`          // 内容来源，例如github/gitee
-	Status         uint        `orm:"status"           json:"status"`           // 状态 0: 正常, 1: 禁用
-	ReplyCount     uint        `orm:"reply_count"      json:"reply_count"`      // 回复数量
-	ViewCount      uint        `orm:"view_count"       json:"view_count"`       // 浏览数量
-	ZanCount       uint        `orm:"zan_count"        json:"zan_count"`        // 赞
-	CaiCount       uint        `orm:"cai_count"        json:"cai_count"`        // 踩
-	CreatedAt      *gtime.Time `orm:"created_at"       json:"created_at"`       // 创建时间
-	UpdatedAt      *gtime.Time `orm:"updated_at"       json:"updated_at"`       // 修改时间
+    Id             uint        `orm:"id,primary"       json:"id"`               // 自增ID
+    Key            string      `orm:"key"              json:"key"`              // 唯一键名，用于程序硬编码，一般不常用
+    Type           string      `orm:"type"             json:"type"`             // 内容模型: topic, ask, article等，具体由程序定义
+    CategoryId     uint        `orm:"category_id"      json:"category_id"`      // 栏目ID
+    UserId         uint        `orm:"user_id"          json:"user_id"`          // 用户ID
+    Title          string      `orm:"title"            json:"title"`            // 标题
+    Content        string      `orm:"content"          json:"content"`          // 内容
+    Sort           uint        `orm:"sort"             json:"sort"`             // 排序，数值越低越靠前，默认为添加时的时间戳，可用于置顶
+    Brief          string      `orm:"brief"            json:"brief"`            // 摘要
+    Thumb          string      `orm:"thumb"            json:"thumb"`            // 缩略图
+    Tags           string      `orm:"tags"             json:"tags"`             // 标签名称列表，以JSON存储
+    Referer        string      `orm:"referer"          json:"referer"`          // 内容来源，例如github/gitee
+    Status         uint        `orm:"status"           json:"status"`           // 状态 0: 正常, 1: 禁用
+    ReplyCount     uint        `orm:"reply_count"      json:"reply_count"`      // 回复数量
+    ViewCount      uint        `orm:"view_count"       json:"view_count"`       // 浏览数量
+    ZanCount       uint        `orm:"zan_count"        json:"zan_count"`        // 赞
+    CaiCount       uint        `orm:"cai_count"        json:"cai_count"`        // 踩
+    CreatedAt      *gtime.Time `orm:"created_at"       json:"created_at"`       // 创建时间
+    UpdatedAt      *gtime.Time `orm:"updated_at"       json:"updated_at"`       // 修改时间
 }
 ```
 
@@ -522,12 +522,12 @@ type Content struct {
 
 ```go
 type ContentListItem struct {
-	Id         uint        `json:"id"`          // 自增ID
-	CategoryId uint        `json:"category_id"` // 栏目ID
-	UserId     uint        `json:"user_id"`     // 用户ID
-	Title      string      `json:"title"`       // 标题
-	CreatedAt  *gtime.Time `json:"created_at"`  // 创建时间
-	UpdatedAt  *gtime.Time `json:"updated_at"`  // 修改时间
+    Id         uint        `json:"id"`          // 自增ID
+    CategoryId uint        `json:"category_id"` // 栏目ID
+    UserId     uint        `json:"user_id"`     // 用户ID
+    Title      string      `json:"title"`       // 标题
+    CreatedAt  *gtime.Time `json:"created_at"`  // 创建时间
+    UpdatedAt  *gtime.Time `json:"updated_at"`  // 修改时间
 }
 ```
 
@@ -542,43 +542,43 @@ type ContentListItem struct {
 ```go
 // 用户详情
 type UserDetail struct {
-	gmeta.Meta `orm:"table:user_detail"`
-	Uid        int    `json:"uid"`
-	Address    string `json:"address"`
+    gmeta.Meta `orm:"table:user_detail"`
+    Uid        int    `json:"uid"`
+    Address    string `json:"address"`
 }
 
 // 用户学分 - 必修课
 type UserScoresRequired struct {
-	gmeta.Meta `orm:"table:user_scores"`
-	Id         int `json:"id"`
-	Uid        int `json:"uid"`
-	Score      int `json:"score"`
+    gmeta.Meta `orm:"table:user_scores"`
+    Id         int `json:"id"`
+    Uid        int `json:"uid"`
+    Score      int `json:"score"`
 }
 
 // 用户学分 - 选修课
 type UserScoresOptional struct {
-	gmeta.Meta `orm:"table:user_scores"`
-	Id         int `json:"id"`
-	Uid        int `json:"uid"`
-	Score      int `json:"score"`
+    gmeta.Meta `orm:"table:user_scores"`
+    Id         int `json:"id"`
+    Uid        int `json:"uid"`
+    Score      int `json:"score"`
 }
 
 // 用户学分
 type UserScores struct {
-	gmeta.Meta `orm:"table:user_scores"`
-	Id         int                  `json:"id"`
-	Uid        int                  `json:"uid"`
-	Required   []UserScoresRequired `orm:"with:id, where:type=1"`
-	Optional   []UserScoresOptional `orm:"with:id, where:type=2"`
+    gmeta.Meta `orm:"table:user_scores"`
+    Id         int                  `json:"id"`
+    Uid        int                  `json:"uid"`
+    Required   []UserScoresRequired `orm:"with:id, where:type=1"`
+    Optional   []UserScoresOptional `orm:"with:id, where:type=2"`
 }
 
 // 用户信息
 type User struct {
-	gmeta.Meta `orm:"table:user"`
-	Id         int           `json:"id"`
-	Name       string        `json:"name"`
-	UserDetail *UserDetail   `orm:"with:uid=id"`
-	UserScores []*UserScores `orm:"with:uid=id"`
+    gmeta.Meta `orm:"table:user"`
+    Id         int           `json:"id"`
+    Name       string        `json:"name"`
+    UserDetail *UserDetail   `orm:"with:uid=id"`
+    UserScores []*UserScores `orm:"with:uid=id"`
 }
 ```
 
@@ -590,24 +590,24 @@ type User struct {
 
 ```go
 type UserDetail struct {
-	gmeta.Meta `orm:"table:user_detail"`
-	Uid        int    `json:"uid"`
-	Address    string `json:"address"`
+    gmeta.Meta `orm:"table:user_detail"`
+    Uid        int    `json:"uid"`
+    Address    string `json:"address"`
 }
 
 type UserScores struct {
-	gmeta.Meta `orm:"table:user_scores"`
-	Id         int `json:"id"`
-	Uid        int `json:"uid"`
-	Score      int `json:"score"`
+    gmeta.Meta `orm:"table:user_scores"`
+    Id         int `json:"id"`
+    Uid        int `json:"uid"`
+    Score      int `json:"score"`
 }
 
 type User struct {
-	gmeta.Meta  `orm:"table:user"`
-	*UserDetail `orm:"with:uid=id"`
-	Id          int           `json:"id"`
-	Name        string        `json:"name"`
-	UserScores  []*UserScores `orm:"with:uid=id"`
+    gmeta.Meta  `orm:"table:user"`
+    *UserDetail `orm:"with:uid=id"`
+    Id          int           `json:"id"`
+    Name        string        `json:"name"`
+    UserScores  []*UserScores `orm:"with:uid=id"`
 }
 ```
 
@@ -615,25 +615,25 @@ type User struct {
 
 ```go
 type UserDetail struct {
-	Uid     int    `json:"uid"`
-	Address string `json:"address"`
+    Uid     int    `json:"uid"`
+    Address string `json:"address"`
 }
 
 type UserDetailEmbedded struct {
-	UserDetail
+    UserDetail
 }
 
 type UserScores struct {
-	Id    int `json:"id"`
-	Uid   int `json:"uid"`
-	Score int `json:"score"`
+    Id    int `json:"id"`
+    Uid   int `json:"uid"`
+    Score int `json:"score"`
 }
 
 type User struct {
-	*UserDetailEmbedded `orm:"with:uid=id"`
-	Id                  int           `json:"id"`
-	Name                string        `json:"name"`
-	UserScores          []*UserScores `orm:"with:uid=id"`
+    *UserDetailEmbedded `orm:"with:uid=id"`
+    Id                  int           `json:"id"`
+    Name                string        `json:"name"`
+    UserScores          []*UserScores `orm:"with:uid=id"`
 }
 ```
 
@@ -641,28 +641,28 @@ type User struct {
 
 ```go
 type UserDetail struct {
-	gmeta.Meta `orm:"table:user_detail"`
-	Uid        int    `json:"uid"`
-	Address    string `json:"address"`
+    gmeta.Meta `orm:"table:user_detail"`
+    Uid        int    `json:"uid"`
+    Address    string `json:"address"`
 }
 
 type UserScores struct {
-	gmeta.Meta `orm:"table:user_scores"`
-	Id         int `json:"id"`
-	Uid        int `json:"uid"`
-	Score      int `json:"score"`
+    gmeta.Meta `orm:"table:user_scores"`
+    Id         int `json:"id"`
+    Uid        int `json:"uid"`
+    Score      int `json:"score"`
 }
 
 type UserEmbedded struct {
-	Id   int    `json:"id"`
-	Name string `json:"name"`
+    Id   int    `json:"id"`
+    Name string `json:"name"`
 }
 
 type User struct {
-	gmeta.Meta `orm:"table:user"`
-	UserEmbedded
-	*UserDetail `orm:"with:uid=id"`
-	UserScores  []*UserScores `orm:"with:uid=id"`
+    gmeta.Meta `orm:"table:user"`
+    UserEmbedded
+    *UserDetail `orm:"with:uid=id"`
+    UserScores  []*UserScores `orm:"with:uid=id"`
 }
 ```
 
@@ -672,21 +672,21 @@ type User struct {
 
 ```go
 type UserDetail struct {
-	Uid     int    `json:"uid"`
-	Address string `json:"address"`
+    Uid     int    `json:"uid"`
+    Address string `json:"address"`
 }
 
 type UserScores struct {
-	Id    int `json:"id"`
-	Uid   int `json:"uid"`
-	Score int `json:"score"`
+    Id    int `json:"id"`
+    Uid   int `json:"uid"`
+    Score int `json:"score"`
 }
 
 type User struct {
-	*UserDetail `orm:"with:uid=id"`
-	Id          int           `json:"id"`
-	Name        string        `json:"name"`
-	UserScores  []*UserScores `orm:"with:uid=id"`
+    *UserDetail `orm:"with:uid=id"`
+    Id          int           `json:"id"`
+    Name        string        `json:"name"`
+    UserScores  []*UserScores `orm:"with:uid=id"`
 }
 ```
 

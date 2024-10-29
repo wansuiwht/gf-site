@@ -14,11 +14,11 @@ package main
 import "github.com/gogf/gf/os/glog"
 
 func Test() {
-	glog.Error("This is error!")
+    glog.Error("This is error!")
 }
 
 func main() {
-	Test()
+    Test()
 }
 
 ```
@@ -41,18 +41,18 @@ Stack:
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/os/glog"
+    "github.com/gogf/gf/os/glog"
 )
 
 func main() {
 
-	glog.PrintStack()
-	glog.New().PrintStack()
+    glog.PrintStack()
+    glog.New().PrintStack()
 
-	fmt.Println(glog.GetStack())
-	fmt.Println(glog.New().GetStack())
+    fmt.Println(glog.GetStack())
+    fmt.Println(glog.New().GetStack())
 }
 
 ```
@@ -84,28 +84,28 @@ func main() {
 package main
 
 import (
-	"errors"
-	"github.com/gogf/gf/errors/gerror"
-	"github.com/gogf/gf/os/glog"
+    "errors"
+    "github.com/gogf/gf/errors/gerror"
+    "github.com/gogf/gf/os/glog"
 )
 
 func MakeError() error {
-	return errors.New("connection closed with normal error")
+    return errors.New("connection closed with normal error")
 }
 
 func MakeGError() error {
-	return gerror.New("connection closed with gerror")
+    return gerror.New("connection closed with gerror")
 }
 
 func TestGError() {
-	err1 := MakeError()
-	err2 := MakeGError()
-	glog.Error(err1)
-	glog.Error(err2)
+    err1 := MakeError()
+    err2 := MakeGError()
+    glog.Error(err1)
+    glog.Error(err2)
 }
 
 func main() {
-	TestGError()
+    TestGError()
 }
 
 ```

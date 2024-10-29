@@ -20,14 +20,14 @@ import "github.com/gogf/gf/v2/os/gmutex"
 
 ```go
 type Mutex
-	func (m *Mutex) LockFunc(f func())
-	func (m *Mutex) TryLockFunc(f func()) (result bool)
+    func (m *Mutex) LockFunc(f func())
+    func (m *Mutex) TryLockFunc(f func()) (result bool)
 type RWMutex
-	func New() *RWMutex
-	func (m *RWMutex) LockFunc(f func())
-	func (m *RWMutex) RLockFunc(f func())
-	func (m *RWMutex) TryLockFunc(f func()) (result bool)
-	func (m *RWMutex) TryRLockFunc(f func()) (result bool)
+    func New() *RWMutex
+    func (m *RWMutex) LockFunc(f func())
+    func (m *RWMutex) RLockFunc(f func())
+    func (m *RWMutex) TryLockFunc(f func()) (result bool)
+    func (m *RWMutex) TryRLockFunc(f func()) (result bool)
 ```
 
 1. 该互斥锁模块最大的特点是支持 `Try*` 方法以及 `*Func` 方法。
@@ -57,33 +57,33 @@ Benchmark_GMutex_TryRLock-4            100000000           16.8 ns/op
 package main
 
 import (
-	"time"
+    "time"
 
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/glog"
-	"github.com/gogf/gf/v2/os/gmutex"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/os/gmutex"
 )
 
 func main() {
-	ctx := gctx.New()
-	mu := gmutex.New()
-	for i := 0; i < 10; i++ {
-		go func(n int) {
-			mu.Lock()
-			defer mu.Unlock()
-			glog.Print(ctx, "Lock:", n)
-			time.Sleep(time.Second)
-		}(i)
-	}
-	for i := 0; i < 10; i++ {
-		go func(n int) {
-			mu.RLock()
-			defer mu.RUnlock()
-			glog.Print(ctx, "RLock:", n)
-			time.Sleep(time.Second)
-		}(i)
-	}
-	time.Sleep(15 * time.Second)
+    ctx := gctx.New()
+    mu := gmutex.New()
+    for i := 0; i < 10; i++ {
+        go func(n int) {
+            mu.Lock()
+            defer mu.Unlock()
+            glog.Print(ctx, "Lock:", n)
+            time.Sleep(time.Second)
+        }(i)
+    }
+    for i := 0; i < 10; i++ {
+        go func(n int) {
+            mu.RLock()
+            defer mu.RUnlock()
+            glog.Print(ctx, "RLock:", n)
+            time.Sleep(time.Second)
+        }(i)
+    }
+    time.Sleep(15 * time.Second)
 }
 ```
 

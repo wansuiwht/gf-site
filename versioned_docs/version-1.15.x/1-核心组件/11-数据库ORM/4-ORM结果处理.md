@@ -51,24 +51,24 @@ uid  name   site
 package main
 
 import (
-	"database/sql"
-	"github.com/gogf/gf/frame/g"
+    "database/sql"
+    "github.com/gogf/gf/frame/g"
 )
 
 type User struct {
-	Uid  int
-	Name string
+    Uid  int
+    Name string
 }
 
 func main() {
-	var user *User
-	err := g.DB().Table("user").Where("uid", 1).Scan(&user)
-	if err != nil {
-		g.Log().Header(false).Fatal(err)
-	}
-	if user != nil {
-		g.Log().Header(false).Println(user)
-	}
+    var user *User
+    err := g.DB().Table("user").Where("uid", 1).Scan(&user)
+    if err != nil {
+        g.Log().Header(false).Fatal(err)
+    }
+    if user != nil {
+        g.Log().Header(false).Println(user)
+    }
 }
 
 ```
@@ -124,25 +124,25 @@ Nick-Name  Nick_Name      match
 package main
 
 import (
-	"database/sql"
-	"github.com/gogf/gf/frame/g"
+    "database/sql"
+    "github.com/gogf/gf/frame/g"
 )
 
 type User struct {
-	Uid  int
-	Name string
-	Site string
+    Uid  int
+    Name string
+    Site string
 }
 
 func main() {
-	var user []*User
-	err := g.DB().Table("user").Where("uid", 1).Scan(&user)
-	if err != nil && err != sql.ErrNoRows {
-		g.Log().Header(false).Fatal(err)
-	}
-	if user != nil {
-		g.Log().Header(false).Println(user)
-	}
+    var user []*User
+    err := g.DB().Table("user").Where("uid", 1).Scan(&user)
+    if err != nil && err != sql.ErrNoRows {
+        g.Log().Header(false).Fatal(err)
+    }
+    if user != nil {
+        g.Log().Header(false).Println(user)
+    }
 }
 
 ```
@@ -164,7 +164,7 @@ func main() {
 // All/FindAll
 r, err := g.Table("order").Where("status", 1).All()
 if err != nil {
-	return err
+    return err
 }
 if len(r) == 0 {
     // 结果为空
@@ -177,7 +177,7 @@ if len(r) == 0 {
 // All/FindAll
 r, err := g.Table("order").Where("status", 1).All()
 if err != nil {
-	return err
+    return err
 }
 if r.IsEmpty() {
     // 结果为空
@@ -218,7 +218,7 @@ if r.IsEmpty() {
 // Value/FindValue
 r, err := g.Table("order").Where("status", 1).Value()
 if err != nil {
-	return err
+    return err
 }
 if r.IsEmpty() {
     // 结果为空

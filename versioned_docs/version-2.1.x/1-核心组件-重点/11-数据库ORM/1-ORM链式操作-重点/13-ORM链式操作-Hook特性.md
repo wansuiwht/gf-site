@@ -12,18 +12,18 @@ hide_title: true
 
 ```go
 type (
-	HookFuncSelect func(ctx context.Context, in *HookSelectInput) (result Result, err error)
-	HookFuncInsert func(ctx context.Context, in *HookInsertInput) (result sql.Result, err error)
-	HookFuncUpdate func(ctx context.Context, in *HookUpdateInput) (result sql.Result, err error)
-	HookFuncDelete func(ctx context.Context, in *HookDeleteInput) (result sql.Result, err error)
+    HookFuncSelect func(ctx context.Context, in *HookSelectInput) (result Result, err error)
+    HookFuncInsert func(ctx context.Context, in *HookInsertInput) (result sql.Result, err error)
+    HookFuncUpdate func(ctx context.Context, in *HookUpdateInput) (result sql.Result, err error)
+    HookFuncDelete func(ctx context.Context, in *HookDeleteInput) (result sql.Result, err error)
 )
 
 // HookHandler manages all supported hook functions for Model.
 type HookHandler struct {
-	Select HookFuncSelect
-	Insert HookFuncInsert
-	Update HookFuncUpdate
-	Delete HookFuncDelete
+    Select HookFuncSelect
+    Insert HookFuncInsert
+    Update HookFuncUpdate
+    Delete HookFuncDelete
 }
 ```
 
@@ -40,20 +40,20 @@ func (m *Model) Hook(hook HookHandler) *Model
 
 ```go
 m := g.DB().Model("user").Hook(gdb.HookHandler{
-	Select: func(ctx context.Context, in *gdb.HookSelectInput) (result gdb.Result, err error) {
-		result, err = in.Next(ctx)
-		if err != nil {
-			return
-		}
-		for i, record := range result {
-			if !record["birth_day"].IsEmpty() {
-				age := gtime.Now().Sub(record["birth_day"].GTime()).Hours() / 24 / 365
-				record["age"] = gvar.New(age)
-			}
-			result[i] = record
-		}
-		return
-	},
+    Select: func(ctx context.Context, in *gdb.HookSelectInput) (result gdb.Result, err error) {
+        result, err = in.Next(ctx)
+        if err != nil {
+            return
+        }
+        for i, record := range result {
+            if !record["birth_day"].IsEmpty() {
+                age := gtime.Now().Sub(record["birth_day"].GTime()).Hours() / 24 / 365
+                record["age"] = gvar.New(age)
+            }
+            result[i] = record
+        }
+        return
+    },
 })
 all, err := m.Where("status", "online").OrderAsc(`id`).All()
 ```

@@ -176,34 +176,34 @@ func main () {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array := garray.NewStrArrayFrom(g.SliceStr{"a", "b", "c"})
-	// Iterator is alias of IteratorAsc, which iterates the array readonly in ascending order
-	//  with given callback function <f>.
-	// If <f> returns true, then it continues iterating; or false to stop.
-	array.Iterator(func(k int, v string) bool {
-		fmt.Println(k, v)
-		return true
-	})
-	// IteratorDesc iterates the array readonly in descending order with given callback function <f>.
-	// If <f> returns true, then it continues iterating; or false to stop.
-	array.IteratorDesc(func(k int, v string) bool {
-		fmt.Println(k, v)
-		return true
-	})
+    array := garray.NewStrArrayFrom(g.SliceStr{"a", "b", "c"})
+    // Iterator is alias of IteratorAsc, which iterates the array readonly in ascending order
+    //  with given callback function <f>.
+    // If <f> returns true, then it continues iterating; or false to stop.
+    array.Iterator(func(k int, v string) bool {
+        fmt.Println(k, v)
+        return true
+    })
+    // IteratorDesc iterates the array readonly in descending order with given callback function <f>.
+    // If <f> returns true, then it continues iterating; or false to stop.
+    array.IteratorDesc(func(k int, v string) bool {
+        fmt.Println(k, v)
+        return true
+    })
 
-	// Output:
-	// 0 a
-	// 1 b
-	// 2 c
-	// 2 c
-	// 1 b
-	// 0 a
+    // Output:
+    // 0 a
+    // 1 b
+    // 2 c
+    // 2 c
+    // 1 b
+    // 0 a
 }
 
 ```
@@ -214,25 +214,25 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
 )
 
 func main() {
-	array := garray.NewFrom([]interface{}{1, 2, 3, 4, 5, 6, 7, 8, 9})
+    array := garray.NewFrom([]interface{}{1, 2, 3, 4, 5, 6, 7, 8, 9})
 
-	// Any Pop* functions pick, delete and return the item from array.
+    // Any Pop* functions pick, delete and return the item from array.
 
-	fmt.Println(array.PopLeft())
-	fmt.Println(array.PopLefts(2))
-	fmt.Println(array.PopRight())
-	fmt.Println(array.PopRights(2))
+    fmt.Println(array.PopLeft())
+    fmt.Println(array.PopLefts(2))
+    fmt.Println(array.PopRight())
+    fmt.Println(array.PopRights(2))
 
-	// Output:
-	// 1 true
-	// [2 3]
-	// 9 true
-	// [7 8]
+    // Output:
+    // 1 true
+    // [2 3]
+    // 9 true
+    // [7 8]
 }
 
 ```
@@ -243,21 +243,21 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
+    array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
 
-	// Randomly retrieve and return 2 items from the array.
-	// It does not delete the items from array.
-	fmt.Println(array.Rands(2))
+    // Randomly retrieve and return 2 items from the array.
+    // It does not delete the items from array.
+    fmt.Println(array.Rands(2))
 
-	// Randomly pick and return one item from the array.
-	// It deletes the picked up item from array.
-	fmt.Println(array.PopRand())
+    // Randomly pick and return one item from the array.
+    // It deletes the picked up item from array.
+    fmt.Println(array.PopRand())
 }
 
 ```
@@ -268,21 +268,21 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
 )
 
 func main() {
-	var array garray.StrArray
-	array.Append("a")
-	fmt.Println(array.Contains("a"))
-	fmt.Println(array.Contains("A"))
-	fmt.Println(array.ContainsI("A"))
+    var array garray.StrArray
+    array.Append("a")
+    fmt.Println(array.Contains("a"))
+    fmt.Println(array.Contains("A"))
+    fmt.Println(array.ContainsI("A"))
 
-	// Output:
-	// true
-	// false
-	// true
+    // Output:
+    // true
+    // false
+    // true
 }
 
 ```
@@ -293,20 +293,20 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array1 := garray.NewFrom(g.Slice{0, 1, 2, nil, "", g.Slice{}, "john"})
-	array2 := garray.NewFrom(g.Slice{0, 1, 2, nil, "", g.Slice{}, "john"})
-	fmt.Printf("%#v\n", array1.FilterNil().Slice())
-	fmt.Printf("%#v\n", array2.FilterEmpty().Slice())
+    array1 := garray.NewFrom(g.Slice{0, 1, 2, nil, "", g.Slice{}, "john"})
+    array2 := garray.NewFrom(g.Slice{0, 1, 2, nil, "", g.Slice{}, "john"})
+    fmt.Printf("%#v\n", array1.FilterNil().Slice())
+    fmt.Printf("%#v\n", array2.FilterEmpty().Slice())
 
-	// Output:
-	// []interface {}{0, 1, 2, "", []interface {}{}, "john"}
-	// []interface {}{1, 2, "john"}
+    // Output:
+    // []interface {}{0, 1, 2, "", []interface {}{}, "john"}
+    // []interface {}{1, 2, "john"}
 }
 
 ```
@@ -317,19 +317,19 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
+    array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
 
-	// Reverse makes array with elements in reverse order.
-	fmt.Println(array.Reverse().Slice())
+    // Reverse makes array with elements in reverse order.
+    fmt.Println(array.Reverse().Slice())
 
-	// Output:
-	// [9 8 7 6 5 4 3 2 1]
+    // Output:
+    // [9 8 7 6 5 4 3 2 1]
 }
 
 ```
@@ -340,16 +340,16 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
+    array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
 
-	// Shuffle randomly shuffles the array.
-	fmt.Println(array.Shuffle().Slice())
+    // Shuffle randomly shuffles the array.
+    fmt.Println(array.Shuffle().Slice())
 }
 
 ```
@@ -360,24 +360,24 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	var array garray.StrArray
-	tables := g.SliceStr{"user", "user_detail"}
-	prefix := "gf_"
-	array.Append(tables...)
-	// Add prefix for given table names.
-	array.Walk(func(value string) string {
-		return prefix + value
-	})
-	fmt.Println(array.Slice())
+    var array garray.StrArray
+    tables := g.SliceStr{"user", "user_detail"}
+    prefix := "gf_"
+    array.Append(tables...)
+    // Add prefix for given table names.
+    array.Walk(func(value string) string {
+        return prefix + value
+    })
+    fmt.Println(array.Slice())
 
-	// Output:
-	// [gf_user gf_user_detail]
+    // Output:
+    // [gf_user gf_user_detail]
 }
 
 ```
@@ -388,17 +388,17 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array := garray.NewFrom(g.Slice{"a", "b", "c", "d"})
-	fmt.Println(array.Join(","))
+    array := garray.NewFrom(g.Slice{"a", "b", "c", "d"})
+    fmt.Println(array.Join(","))
 
-	// Output:
-	// a,b,c,d
+    // Output:
+    // a,b,c,d
 }
 
 ```
@@ -409,21 +409,21 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
+    array := garray.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7, 8, 9})
 
-	// Chunk splits an array into multiple arrays,
-	// the size of each array is determined by <size>.
-	// The last chunk may contain less than size elements.
-	fmt.Println(array.Chunk(2))
+    // Chunk splits an array into multiple arrays,
+    // the size of each array is determined by <size>.
+    // The last chunk may contain less than size elements.
+    fmt.Println(array.Chunk(2))
 
-	// Output:
-	// [[1 2] [3 4] [5 6] [7 8] [9]]
+    // Output:
+    // [[1 2] [3 4] [5 6] [7 8] [9]]
 }
 
 ```
@@ -434,28 +434,28 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/garray"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/garray"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	array1 := garray.NewFrom(g.Slice{1, 2})
-	array2 := garray.NewFrom(g.Slice{3, 4})
-	slice1 := g.Slice{5, 6}
-	slice2 := []int{7, 8}
-	slice3 := []string{"9", "0"}
-	fmt.Println(array1.Slice())
-	array1.Merge(array1)
-	array1.Merge(array2)
-	array1.Merge(slice1)
-	array1.Merge(slice2)
-	array1.Merge(slice3)
-	fmt.Println(array1.Slice())
+    array1 := garray.NewFrom(g.Slice{1, 2})
+    array2 := garray.NewFrom(g.Slice{3, 4})
+    slice1 := g.Slice{5, 6}
+    slice2 := []int{7, 8}
+    slice3 := []string{"9", "0"}
+    fmt.Println(array1.Slice())
+    array1.Merge(array1)
+    array1.Merge(array2)
+    array1.Merge(slice1)
+    array1.Merge(slice2)
+    array1.Merge(slice3)
+    fmt.Println(array1.Slice())
 
-	// Output:
-	// [1 2]
-	// [1 2 1 2 3 4 5 6 7 8 9 0]
+    // Output:
+    // [1 2]
+    // [1 2 1 2 3 4 5 6 7 8 9 0]
 }
 
 ```

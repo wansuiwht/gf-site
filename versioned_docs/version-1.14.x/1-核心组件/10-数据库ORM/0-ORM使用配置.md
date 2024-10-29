@@ -36,8 +36,8 @@ hide_title: true
         MaxOpen      = "(可选)连接池最大打开的连接数"
         MaxLifetime  = "(可选，单位秒)连接对象可重复使用的时间长度"
         CreatedAt    = "(可选)自动创建时间字段名称"
-	    UpdatedAt    = "(可选)自动更新时间字段名称"
-	    DeletedAt    = "(可选)软删除时间字段名称"
+        UpdatedAt    = "(可选)自动更新时间字段名称"
+        DeletedAt    = "(可选)软删除时间字段名称"
 
 ```
 

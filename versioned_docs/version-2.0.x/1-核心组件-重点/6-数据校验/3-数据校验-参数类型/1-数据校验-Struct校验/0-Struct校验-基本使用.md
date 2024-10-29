@@ -31,31 +31,31 @@ g.Validator().Data(object).Run(ctx)
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 type User struct {
-	Uid   int    `v:"uid      @integer|min:1#|请输入用户ID"`
-	Name  string `v:"name     @required|length:6,30#请输入用户名称|用户名称长度非法"`
-	Pass1 string `v:"password1@required|password3"`
-	Pass2 string `v:"password2@required|password3|same:Pass1#|密码格式不合法|两次密码不一致，请重新输入"`
+    Uid   int    `v:"uid      @integer|min:1#|请输入用户ID"`
+    Name  string `v:"name     @required|length:6,30#请输入用户名称|用户名称长度非法"`
+    Pass1 string `v:"password1@required|password3"`
+    Pass2 string `v:"password2@required|password3|same:Pass1#|密码格式不合法|两次密码不一致，请重新输入"`
 }
 
 func main() {
-	var (
-		ctx  = gctx.New()
-		user = &User{
-			Name:  "john",
-			Pass1: "Abc123!@#",
-			Pass2: "123",
-		}
-	)
+    var (
+        ctx  = gctx.New()
+        user = &User{
+            Name:  "john",
+            Pass1: "Abc123!@#",
+            Pass2: "123",
+        }
+    )
 
-	err := g.Validator().Data(user).Run(ctx)
-	if err != nil {
-		g.Dump(err.Items())
-	}
+    err := g.Validator().Data(user).Run(ctx)
+    if err != nil {
+        g.Dump(err.Items())
+    }
 }
 ```
 
@@ -89,35 +89,35 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	type User struct {
-		Age  int
-		Name string
-	}
-	var (
-		ctx   = gctx.New()
-		user  = User{Name: "john"}
-		rules = map[string]string{
-			"Name": "required|length:6,16",
-			"Age":  "between:18,30",
-		}
-		messages = map[string]interface{}{
-			"Name": map[string]string{
-				"required": "名称不能为空",
-				"length":   "名称长度为{min}到{max}个字符",
-			},
-			"Age": "年龄为18到30周岁",
-		}
-	)
+    type User struct {
+        Age  int
+        Name string
+    }
+    var (
+        ctx   = gctx.New()
+        user  = User{Name: "john"}
+        rules = map[string]string{
+            "Name": "required|length:6,16",
+            "Age":  "between:18,30",
+        }
+        messages = map[string]interface{}{
+            "Name": map[string]string{
+                "required": "名称不能为空",
+                "length":   "名称长度为{min}到{max}个字符",
+            },
+            "Age": "年龄为18到30周岁",
+        }
+    )
 
-	err := g.Validator().Rules(rules).Messages(messages).Data(user).Run(ctx)
-	if err != nil {
-		g.Dump(err.Maps())
-	}
+    err := g.Validator().Rules(rules).Messages(messages).Data(user).Run(ctx)
+    if err != nil {
+        g.Dump(err.Maps())
+    }
 }
 ```
 
@@ -125,12 +125,12 @@ func main() {
 
 ```
 {
-	"Age": {
-		"between": "年龄为18到30周岁"
-	},
-	"Name": {
-		"length": "名称长度为6到16个字符"
-	}
+    "Age": {
+        "between": "年龄为18到30周岁"
+    },
+    "Name": {
+        "length": "名称长度为6到16个字符"
+    }
 }
 ```
 
@@ -142,32 +142,32 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	type Pass struct {
-		Pass1 string `valid:"password1@required|same:password2#请输入您的密码|您两次输入的密码不一致"`
-		Pass2 string `valid:"password2@required|same:password1#请再次输入您的密码|您两次输入的密码不一致"`
-	}
-	type User struct {
-		Pass
-		Id   int
-		Name string `valid:"name@required#请输入您的姓名"`
-	}
-	var (
-		ctx  = gctx.New()
-		user = &User{
-			Name: "john",
-			Pass: Pass{
-				Pass1: "1",
-				Pass2: "2",
-			},
-		}
-	)
-	err := g.Validator().Data(user).Run(ctx)
-	g.Dump(err.Maps())
+    type Pass struct {
+        Pass1 string `valid:"password1@required|same:password2#请输入您的密码|您两次输入的密码不一致"`
+        Pass2 string `valid:"password2@required|same:password1#请再次输入您的密码|您两次输入的密码不一致"`
+    }
+    type User struct {
+        Pass
+        Id   int
+        Name string `valid:"name@required#请输入您的姓名"`
+    }
+    var (
+        ctx  = gctx.New()
+        user = &User{
+            Name: "john",
+            Pass: Pass{
+                Pass1: "1",
+                Pass2: "2",
+            },
+        }
+    )
+    err := g.Validator().Data(user).Run(ctx)
+    g.Dump(err.Maps())
 }
 ```
 
@@ -177,32 +177,32 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	type Pass struct {
-		Pass1 string `valid:"password1@required|same:password2#请输入您的密码|您两次输入的密码不一致"`
-		Pass2 string `valid:"password2@required|same:password1#请再次输入您的密码|您两次输入的密码不一致"`
-	}
-	type User struct {
-		Id   int
-		Name string `valid:"name@required#请输入您的姓名"`
-		Pass Pass
-	}
-	var (
-		ctx  = gctx.New()
-		user = &User{
-			Name: "john",
-			Pass: Pass{
-				Pass1: "1",
-				Pass2: "2",
-			},
-		}
-	)
-	err := g.Validator().Data(user).Run(ctx)
-	g.Dump(err.Maps())
+    type Pass struct {
+        Pass1 string `valid:"password1@required|same:password2#请输入您的密码|您两次输入的密码不一致"`
+        Pass2 string `valid:"password2@required|same:password1#请再次输入您的密码|您两次输入的密码不一致"`
+    }
+    type User struct {
+        Id   int
+        Name string `valid:"name@required#请输入您的姓名"`
+        Pass Pass
+    }
+    var (
+        ctx  = gctx.New()
+        user = &User{
+            Name: "john",
+            Pass: Pass{
+                Pass1: "1",
+                Pass2: "2",
+            },
+        }
+    )
+    err := g.Validator().Data(user).Run(ctx)
+    g.Dump(err.Maps())
 }
 ```
 

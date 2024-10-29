@@ -16,19 +16,19 @@ hide_title: true
 package main
 
 import (
-	"context"
+    "context"
 
-	"github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/frame/g"
 )
 
 func main() {
-	ctx := context.TODO()
-	g.Log().Debug(ctx, g.Map{"uid": 100, "name": "john"})
-	type User struct {
-		Uid  int    `json:"uid"`
-		Name string `json:"name"`
-	}
-	g.Log().Debug(ctx, User{100, "john"})
+    ctx := context.TODO()
+    g.Log().Debug(ctx, g.Map{"uid": 100, "name": "john"})
+    type User struct {
+        Uid  int    `json:"uid"`
+        Name string `json:"name"`
+    }
+    g.Log().Debug(ctx, User{100, "john"})
 }
 ```
 
@@ -47,19 +47,19 @@ func main() {
 package main
 
 import (
-	"context"
+    "context"
 
-	"github.com/gogf/gf/v2/encoding/gjson"
-	"github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/encoding/gjson"
+    "github.com/gogf/gf/v2/frame/g"
 )
 
 func main() {
-	ctx := context.TODO()
-	type User struct {
-		Uid  int    `json:"uid"`
-		Name string `json:"name"`
-	}
-	g.Log().Debugf(ctx, `user json: %s`, gjson.MustEncode(User{100, "john"}))
+    ctx := context.TODO()
+    type User struct {
+        Uid  int    `json:"uid"`
+        Name string `json:"name"`
+    }
+    g.Log().Debugf(ctx, `user json: %s`, gjson.MustEncode(User{100, "john"}))
 }
 ```
 

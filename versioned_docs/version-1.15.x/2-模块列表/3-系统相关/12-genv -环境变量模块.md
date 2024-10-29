@@ -27,9 +27,9 @@ func SetMap(m map[string]string) error
 
 ```
 genv.SetMap(g.MapStrStr{
-	"APPID":     "order",
-	"THREAD":    "16",
-	"ENDPOINTS": "127.0.0.1:6379",
+    "APPID":     "order",
+    "THREAD":    "16",
+    "ENDPOINTS": "127.0.0.1:6379",
 })
 ```
 

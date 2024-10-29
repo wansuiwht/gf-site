@@ -17,15 +17,15 @@ hide_title: true
 //
 // Example:
 //
-//	var model Model
-//	var result Result
-//	var count int
-//	where := []interface{}{"name = ?", "John"}
-//	result, count, err := model.AllAndCount(true)
-//	if err != nil {
-//	    // Handle error.
-//	}
-//	fmt.Println(result, count)
+//    var model Model
+//    var result Result
+//    var count int
+//    where := []interface{}{"name = ?", "John"}
+//    result, count, err := model.AllAndCount(true)
+//    if err != nil {
+//        // Handle error.
+//    }
+//    fmt.Println(result, count)
 func (m *Model) AllAndCount(useFieldForCount bool) (result Result, totalCount int, err error)
 ```
 

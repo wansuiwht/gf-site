@@ -18,9 +18,9 @@ ARGUMENT
 
 OPTION
     -m, --mono    初始化大仓模式 mono-repo
-	-a, --monoApp 初始化大仓下的一个小仓 mono-repo-app
-	-u, --update  初始化后使用最新的框架版本
-	-g, --module  自定义 module
+    -a, --monoApp 初始化大仓下的一个小仓 mono-repo-app
+    -u, --update  初始化后使用最新的框架版本
+    -g, --module  自定义 module
     -h, --help    更多帮助
 
 EXAMPLE

@@ -26,24 +26,24 @@ func Scan(params interface{}, pointer interface{}, mapping ...map[string]string)
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 func main() {
-	type User struct {
-		Uid  int
-		Name string
-	}
-	params := g.Map{
-		"uid":  1,
-		"name": "john",
-	}
-	var user *User
-	if err := gconv.Scan(params, &user); err != nil {
-		panic(err)
-	}
-	g.Dump(user)
+    type User struct {
+        Uid  int
+        Name string
+    }
+    params := g.Map{
+        "uid":  1,
+        "name": "john",
+    }
+    var user *User
+    if err := gconv.Scan(params, &user); err != nil {
+        panic(err)
+    }
+    g.Dump(user)
 }
 ```
 
@@ -62,30 +62,30 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 func main() {
-	type User struct {
-		Uid  int
-		Name string
-	}
-	params := g.Slice{
-		g.Map{
-			"uid":  1,
-			"name": "john",
-		},
-		g.Map{
-			"uid":  2,
-			"name": "smith",
-		},
-	}
-	var users []*User
-	if err := gconv.Scan(params, &users); err != nil {
-		panic(err)
-	}
-	g.Dump(users)
+    type User struct {
+        Uid  int
+        Name string
+    }
+    params := g.Slice{
+        g.Map{
+            "uid":  1,
+            "name": "john",
+        },
+        g.Map{
+            "uid":  2,
+            "name": "smith",
+        },
+    }
+    var users []*User
+    if err := gconv.Scan(params, &users); err != nil {
+        panic(err)
+    }
+    g.Dump(users)
 }
 ```
 
@@ -110,22 +110,22 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 func main() {
-	var (
-		user   map[string]string
-		params = g.Map{
-			"uid":  1,
-			"name": "john",
-		}
-	)
-	if err := gconv.Scan(params, &user); err != nil {
-		panic(err)
-	}
-	g.Dump(user)
+    var (
+        user   map[string]string
+        params = g.Map{
+            "uid":  1,
+            "name": "john",
+        }
+    )
+    if err := gconv.Scan(params, &user); err != nil {
+        panic(err)
+    }
+    g.Dump(user)
 }
 ```
 
@@ -144,28 +144,28 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 func main() {
-	var (
-		users  []map[string]string
-		params = g.Slice{
-			g.Map{
-				"uid":  1,
-				"name": "john",
-			},
-			g.Map{
-				"uid":  2,
-				"name": "smith",
-			},
-		}
-	)
-	if err := gconv.Scan(params, &users); err != nil {
-		panic(err)
-	}
-	g.Dump(users)
+    var (
+        users  []map[string]string
+        params = g.Slice{
+            g.Map{
+                "uid":  1,
+                "name": "john",
+            },
+            g.Map{
+                "uid":  2,
+                "name": "smith",
+            },
+        }
+    )
+    if err := gconv.Scan(params, &users); err != nil {
+        panic(err)
+    }
+    g.Dump(users)
 }
 ```
 

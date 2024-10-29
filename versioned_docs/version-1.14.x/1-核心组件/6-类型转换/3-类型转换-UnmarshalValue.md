@@ -12,7 +12,7 @@ hide_title: true
 // apiUnmarshalValue is the interface for custom defined types customizing value assignment.
 // Note that only pointer can implement interface apiUnmarshalValue.
 type apiUnmarshalValue interface {
-	UnmarshalValue(interface{}) error
+    UnmarshalValue(interface{}) error
 }
 
 ```
@@ -25,68 +25,68 @@ type apiUnmarshalValue interface {
 package main
 
 import (
-	"errors"
-	"fmt"
-	"github.com/gogf/gf/crypto/gcrc32"
-	"github.com/gogf/gf/encoding/gbinary"
-	"github.com/gogf/gf/util/gconv"
+    "errors"
+    "fmt"
+    "github.com/gogf/gf/crypto/gcrc32"
+    "github.com/gogf/gf/encoding/gbinary"
+    "github.com/gogf/gf/util/gconv"
 )
 
 type Pkg struct {
-	Length uint16 // Total length.
-	Crc32  uint32 // CRC32.
-	Data   []byte
+    Length uint16 // Total length.
+    Crc32  uint32 // CRC32.
+    Data   []byte
 }
 
 // NewPkg creates and returns a package with given data.
 func NewPkg(data []byte) *Pkg {
-	return &Pkg{
-		Length: uint16(len(data) + 6),
-		Crc32:  gcrc32.Encrypt(data),
-		Data:   data,
-	}
+    return &Pkg{
+        Length: uint16(len(data) + 6),
+        Crc32:  gcrc32.Encrypt(data),
+        Data:   data,
+    }
 }
 
 // Marshal encodes the protocol struct to bytes.
 func (p *Pkg) Marshal() []byte {
-	b := make([]byte, 6+len(p.Data))
-	copy(b, gbinary.EncodeUint16(p.Length))
-	copy(b[2:], gbinary.EncodeUint32(p.Crc32))
-	copy(b[6:], p.Data)
-	return b
+    b := make([]byte, 6+len(p.Data))
+    copy(b, gbinary.EncodeUint16(p.Length))
+    copy(b[2:], gbinary.EncodeUint32(p.Crc32))
+    copy(b[6:], p.Data)
+    return b
 }
 
 // UnmarshalValue decodes bytes to protocol struct.
 func (p *Pkg) UnmarshalValue(v interface{}) error {
-	b := gconv.Bytes(v)
-	if len(b) < 6 {
-		return errors.New("invalid package length")
-	}
-	p.Length = gbinary.DecodeToUint16(b[:2])
-	if len(b) < int(p.Length) {
-		return errors.New("invalid data length")
-	}
-	p.Crc32 = gbinary.DecodeToUint32(b[2:6])
-	p.Data = b[6:]
-	if gcrc32.Encrypt(p.Data) != p.Crc32 {
-		return errors.New("crc32 validation failed")
-	}
-	return nil
+    b := gconv.Bytes(v)
+    if len(b) < 6 {
+        return errors.New("invalid package length")
+    }
+    p.Length = gbinary.DecodeToUint16(b[:2])
+    if len(b) < int(p.Length) {
+        return errors.New("invalid data length")
+    }
+    p.Crc32 = gbinary.DecodeToUint32(b[2:6])
+    p.Data = b[6:]
+    if gcrc32.Encrypt(p.Data) != p.Crc32 {
+        return errors.New("crc32 validation failed")
+    }
+    return nil
 }
 
 func main() {
-	var p1, p2 *Pkg
+    var p1, p2 *Pkg
 
-	// Create a demo pkg as p1.
-	p1 = NewPkg([]byte("123"))
-	fmt.Println(p1)
+    // Create a demo pkg as p1.
+    p1 = NewPkg([]byte("123"))
+    fmt.Println(p1)
 
-	// Convert bytes from p1 to p2 using gconv.Struct.
-	err := gconv.Struct(p1.Marshal(), &p2)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(p2)
+    // Convert bytes from p1 to p2 using gconv.Struct.
+    err := gconv.Struct(p1.Marshal(), &p2)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(p2)
 }
 
 ```

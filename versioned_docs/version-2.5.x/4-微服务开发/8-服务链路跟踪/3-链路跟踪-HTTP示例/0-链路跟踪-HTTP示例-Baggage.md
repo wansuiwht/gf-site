@@ -16,37 +16,37 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/contrib/trace/otlphttp/v2"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/gtrace"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/contrib/trace/otlphttp/v2"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/gtrace"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 const (
- 	serviceName = "otlp-http-client"
-	endpoint    = "tracing-analysis-dc-hz.aliyuncs.com"
-	path        = "adapt_******_******/api/otlp/traces"
+     serviceName = "otlp-http-client"
+    endpoint    = "tracing-analysis-dc-hz.aliyuncs.com"
+    path        = "adapt_******_******/api/otlp/traces"
 )
 
 func main() {
-	var ctx = gctx.New()
+    var ctx = gctx.New()
     shutdown, err := otlphttp.Init(serviceName, endpoint, path)
    if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	defer shutdown()
+        g.Log().Fatal(ctx, err)
+    }
+    defer shutdown()
 
     StartRequests()
 }
 
 func StartRequests() {
-	ctx, span := gtrace.NewSpan(gctx.New(), "StartRequests")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(gctx.New(), "StartRequests")
+    defer span.End()
 
-	ctx = gtrace.SetBaggageValue(ctx, "name", "john")
+    ctx = gtrace.SetBaggageValue(ctx, "name", "john")
 
-	content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/hello")
-	g.Log().Print(ctx, content)
+    content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/hello")
+    g.Log().Print(ctx, content)
 }
 ```
 
@@ -63,41 +63,41 @@ func StartRequests() {
 package main
 
 import (
-	"github.com/gogf/gf/contrib/trace/otlphttp/v2"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/net/gtrace"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/contrib/trace/otlphttp/v2"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/net/gtrace"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 const (
- 	serviceName = "otlp-http-server"
-	endpoint    = "tracing-analysis-dc-hz.aliyuncs.com"
-	path        = "adapt_******_******/api/otlp/traces" )
+     serviceName = "otlp-http-server"
+    endpoint    = "tracing-analysis-dc-hz.aliyuncs.com"
+    path        = "adapt_******_******/api/otlp/traces" )
 
 func main() {
-	var ctx = gctx.New()
+    var ctx = gctx.New()
     shutdown, err := otlphttp.Init(serviceName, endpoint, path)
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	defer shutdown()
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    defer shutdown()
 
     s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.GET("/hello", HelloHandler)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.GET("/hello", HelloHandler)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 func HelloHandler(r *ghttp.Request) {
-	ctx, span := gtrace.NewSpan(r.Context(), "HelloHandler")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(r.Context(), "HelloHandler")
+    defer span.End()
 
-	value := gtrace.GetBaggageVar(ctx, "name").String()
+    value := gtrace.GetBaggageVar(ctx, "name").String()
 
-	r.Response.Write("hello:", value)
+    r.Response.Write("hello:", value)
 }
 ```
 

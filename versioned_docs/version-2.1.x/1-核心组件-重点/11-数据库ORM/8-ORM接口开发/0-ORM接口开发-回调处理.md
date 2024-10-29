@@ -18,14 +18,14 @@ hide_title: true
 package driver
 
 import (
-	"context"
-	"database/sql"
-	"github.com/gogf/gf/contrib/drivers/mysql/v2"
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/os/gtime"
-	"github.com/gogf/gf/v2/text/gstr"
-	"github.com/gogf/gf/v2/util/gconv"
-	"strconv"
+    "context"
+    "database/sql"
+    "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    "github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/v2/os/gtime"
+    "github.com/gogf/gf/v2/text/gstr"
+    "github.com/gogf/gf/v2/util/gconv"
+    "strconv"
 )
 
 // MyDriver is a custom database driver, which is used for testing only.
@@ -35,83 +35,83 @@ import (
 // and then gdb.DriverMysql.DoQuery/gdb.DriverMysql.DoExec.
 // You can call it sql "HOOK" or "HiJack" as your will.
 type MyDriver struct {
-	*mysql.DriverMysql
+    *mysql.DriverMysql
 }
 
 var (
-	// customDriverName is my driver name, which is used for registering.
-	customDriverName = "MyDriver"
+    // customDriverName is my driver name, which is used for registering.
+    customDriverName = "MyDriver"
 )
 
 func init() {
-	// It here registers my custom driver in package initialization function "init".
-	// You can later use this type in the database configuration.
-	if err := gdb.Register(customDriverName, &MyDriver{}); err != nil {
-		panic(err)
-	}
+    // It here registers my custom driver in package initialization function "init".
+    // You can later use this type in the database configuration.
+    if err := gdb.Register(customDriverName, &MyDriver{}); err != nil {
+        panic(err)
+    }
 }
 
 // New creates and returns a database object for mysql.
 // It implements the interface of gdb.Driver for extra database driver installation.
 func (d *MyDriver) New(core *gdb.Core, node *gdb.ConfigNode) (gdb.DB, error) {
-	return &MyDriver{
-		&mysql.DriverMysql{
-			Core: core,
-		},
-	}, nil
+    return &MyDriver{
+        &mysql.DriverMysql{
+            Core: core,
+        },
+    }, nil
 }
 
 // DoQuery commits the sql string and its arguments to underlying driver
 // through given link object and returns the execution result.
 func (d *MyDriver) DoQuery(ctx context.Context, link gdb.Link, sql string, args ...interface{}) (rows gdb.Result, err error) {
-	tsMilli := gtime.TimestampMilli()
-	rows, err = d.DriverMysql.DoQuery(ctx, link, sql, args...)
-	_, _ = link.ExecContext(ctx,
-		"INSERT INTO `monitor`(`sql`,`cost`,`time`,`error`) VALUES(?,?,?,?)",
-		gdb.FormatSqlWithArgs(sql, args),
-		gtime.TimestampMilli()-tsMilli,
-		gtime.Now(),
-		err,
-	)
-	return
+    tsMilli := gtime.TimestampMilli()
+    rows, err = d.DriverMysql.DoQuery(ctx, link, sql, args...)
+    _, _ = link.ExecContext(ctx,
+        "INSERT INTO `monitor`(`sql`,`cost`,`time`,`error`) VALUES(?,?,?,?)",
+        gdb.FormatSqlWithArgs(sql, args),
+        gtime.TimestampMilli()-tsMilli,
+        gtime.Now(),
+        err,
+    )
+    return
 }
 
 // DoExec commits the query string and its arguments to underlying driver
 // through given link object and returns the execution result.
 func (d *MyDriver) DoExec(ctx context.Context, link gdb.Link, sql string, args ...interface{}) (result sql.Result, err error) {
-	tsMilli := gtime.TimestampMilli()
-	result, err = d.DriverMysql.DoExec(ctx, link, sql, args...)
-	_, _ = link.ExecContext(ctx,
-		"INSERT INTO `monitor`(`sql`,`cost`,`time`,`error`) VALUES(?,?,?,?)",
-		gdb.FormatSqlWithArgs(sql, args),
-		gtime.TimestampMilli()-tsMilli,
-		gtime.Now(),
-		err,
-	)
-	return
+    tsMilli := gtime.TimestampMilli()
+    result, err = d.DriverMysql.DoExec(ctx, link, sql, args...)
+    _, _ = link.ExecContext(ctx,
+        "INSERT INTO `monitor`(`sql`,`cost`,`time`,`error`) VALUES(?,?,?,?)",
+        gdb.FormatSqlWithArgs(sql, args),
+        gtime.TimestampMilli()-tsMilli,
+        gtime.Now(),
+        err,
+    )
+    return
 }
 
 // DoFilter is a hook function, which filters the sql and its arguments before it's committed to underlying driver.
 // The parameter `link` specifies the current database connection operation object. You can modify the sql
 // string `sql` and its arguments `args` as you wish before they're committed to driver.
 func (d *MyDriver) DoFilter(ctx context.Context, link gdb.Link, sql string, args []interface{}) (newSql string, newArgs []interface{}, err error) {
-	//Filter sql Step1
-	sql_new := gstr.Replace(sql, "\n", "")
+    //Filter sql Step1
+    sql_new := gstr.Replace(sql, "\n", "")
 
-	//Filter sql Step2
-	sql_new = gstr.Replace(sql_new, "\t", "")
-	//... Filter what you want ...
+    //Filter sql Step2
+    sql_new = gstr.Replace(sql_new, "\t", "")
+    //... Filter what you want ...
 
-	//Filter args Step1
-	for _, v := range args {
-		switch v.(type) {
-		case gdb.Map:
-			//Do it what you wan
-		case string:
-			//Do it what you wan
-		}
-	}
-	return sql_new, args, nil
+    //Filter args Step1
+    for _, v := range args {
+        switch v.(type) {
+        case gdb.Map:
+            //Do it what you wan
+        case string:
+            //Do it what you wan
+        }
+    }
+    return sql_new, args, nil
 }
 
 // ConvertDataForRecord is a very important function, which does converting for any data that
@@ -120,20 +120,20 @@ func (d *MyDriver) DoFilter(ctx context.Context, link gdb.Link, sql string, args
 // The parameter `value` should be type of *map/map/*struct/struct.
 // It supports embedded struct definition for struct.
 func (d *MyDriver) ConvertDataForRecord(ctx context.Context, data interface{}) (map[string]interface{}, error) {
-	//this hook is convert data to map[string]interface{}
-	result := make(map[string]interface{}, 0)
+    //this hook is convert data to map[string]interface{}
+    result := make(map[string]interface{}, 0)
 
-	//like this
-	switch data.(type) {
-	case gdb.Map:
-		result = gconv.Map(data)
-	case gdb.List:
-		for k, v := range data.(gdb.List) {
-			result[strconv.Itoa(k)] = gconv.Map(v)
-		}
-		//case other type,do it what you want
-	}
-	return result, nil
+    //like this
+    switch data.(type) {
+    case gdb.Map:
+        result = gconv.Map(data)
+    case gdb.List:
+        for k, v := range data.(gdb.List) {
+            result[strconv.Itoa(k)] = gconv.Map(v)
+        }
+        //case other type,do it what you want
+    }
+    return result, nil
 }
 
 ```

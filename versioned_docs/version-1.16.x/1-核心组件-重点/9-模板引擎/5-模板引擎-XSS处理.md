@@ -27,16 +27,16 @@ hide_title: true
 package main
 
 import (
-	"context"
-	"fmt"
-	"github.com/gogf/gf/frame/g"
+    "context"
+    "fmt"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	result, _ := g.View().ParseContent(context.TODO(), "姓名: ${.name}", g.Map{
-		"name": "<script>alert('john');</script>",
-	})
-	fmt.Println(result)
+    result, _ := g.View().ParseContent(context.TODO(), "姓名: ${.name}", g.Map{
+        "name": "<script>alert('john');</script>",
+    })
+    fmt.Println(result)
 }
 ```
 

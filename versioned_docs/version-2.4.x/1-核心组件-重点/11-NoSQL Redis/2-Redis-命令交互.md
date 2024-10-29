@@ -12,17 +12,17 @@ hide_title: true
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "fmt"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var (
-		ctx = gctx.New()
-	)
-	v, _ := g.Redis().Do(ctx, "SET", "k", "v")
-	fmt.Println(v.String())
+    var (
+        ctx = gctx.New()
+    )
+    v, _ := g.Redis().Do(ctx, "SET", "k", "v")
+    fmt.Println(v.String())
 }
 ```
 
@@ -36,32 +36,32 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/v2/container/gvar"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "fmt"
+    "github.com/gogf/gf/v2/container/gvar"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var (
-		ctx = gctx.New()
-		err    error
-		result *gvar.Var
-		key    = "user"
-		data   = g.Map{
-			"id":   10000,
-			"name": "john",
-		}
-	)
-	_, err = g.Redis().Do(ctx, "SET", key, data)
-	if err != nil {
-		panic(err)
-	}
-	result, err = g.Redis().Do(ctx,"GET", key)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(result.Map())
+    var (
+        ctx = gctx.New()
+        err    error
+        result *gvar.Var
+        key    = "user"
+        data   = g.Map{
+            "id":   10000,
+            "name": "john",
+        }
+    )
+    _, err = g.Redis().Do(ctx, "SET", key, data)
+    if err != nil {
+        panic(err)
+    }
+    result, err = g.Redis().Do(ctx,"GET", key)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(result.Map())
 }
 ```
 
@@ -71,42 +71,42 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/v2/container/gvar"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "fmt"
+    "github.com/gogf/gf/v2/container/gvar"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	type User struct {
-		Id   int
-		Name string
-	}
+    type User struct {
+        Id   int
+        Name string
+    }
 
-	var (
-		ctx = gctx.New()
-		err    error
-		result *gvar.Var
-		key    = "user"
-		user   = g.Map{
-			"id":   10000,
-			"name": "john",
-		}
-	)
+    var (
+        ctx = gctx.New()
+        err    error
+        result *gvar.Var
+        key    = "user"
+        user   = g.Map{
+            "id":   10000,
+            "name": "john",
+        }
+    )
 
-	_, err = g.Redis().Do(ctx, "SET", key, user)
-	if err != nil {
-		panic(err)
-	}
-	result, err = g.Redis().Do(ctx, "GET", key)
-	if err != nil {
-		panic(err)
-	}
+    _, err = g.Redis().Do(ctx, "SET", key, user)
+    if err != nil {
+        panic(err)
+    }
+    result, err = g.Redis().Do(ctx, "GET", key)
+    if err != nil {
+        panic(err)
+    }
 
-	var user2 *User
-	if err = result.Struct(&user2); err != nil {
-		panic(err)
-	}
-	fmt.Println(user2.Id, user2.Name)
+    var user2 *User
+    if err = result.Struct(&user2); err != nil {
+        panic(err)
+    }
+    fmt.Println(user2.Id, user2.Name)
 }
 ```

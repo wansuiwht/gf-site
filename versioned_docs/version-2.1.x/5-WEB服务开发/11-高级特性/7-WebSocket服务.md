@@ -120,35 +120,35 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/gfile"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/gfile"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/ws", func(r *ghttp.Request) {
- 		var ctx = r.Context()
-		ws, err := r.WebSocket()
-		if err != nil {
-			glog.Error(ctx,err)
-			r.Exit()
-		}
-		for {
-			msgType, msg, err := ws.ReadMessage()
-			if err != nil {
-				return
-			}
-			if err = ws.WriteMessage(msgType, msg); err != nil {
-				return
-			}
-		}
-	})
-	s.SetServerRoot(gfile.MainPkgPath())
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.BindHandler("/ws", func(r *ghttp.Request) {
+         var ctx = r.Context()
+        ws, err := r.WebSocket()
+        if err != nil {
+            glog.Error(ctx,err)
+            r.Exit()
+        }
+        for {
+            msgType, msg, err := ws.ReadMessage()
+            if err != nil {
+                return
+            }
+            if err = ws.WriteMessage(msgType, msg); err != nil {
+                return
+            }
+        }
+    })
+    s.SetServerRoot(gfile.MainPkgPath())
+    s.SetPort(8199)
+    s.Run()
 }
 
 ```
@@ -166,37 +166,37 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/gfile"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/gfile"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 var ctx = gctx.New()
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/wss", func(r *ghttp.Request) {
-		ws, err := r.WebSocket()
-		if err != nil {
-			glog.Error(ctx,err)
-			r.Exit()
-		}
-		for {
-			msgType, msg, err := ws.ReadMessage()
-			if err != nil {
-				return
-			}
-			if err = ws.WriteMessage(msgType, msg); err != nil {
-				return
-			}
-		}
-	})
-	s.SetServerRoot(gfile.MainPkgPath())
-	s.EnableHTTPS("../../https/server.crt", "../../https/server.key")
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.BindHandler("/wss", func(r *ghttp.Request) {
+        ws, err := r.WebSocket()
+        if err != nil {
+            glog.Error(ctx,err)
+            r.Exit()
+        }
+        for {
+            msgType, msg, err := ws.ReadMessage()
+            if err != nil {
+                return
+            }
+            if err = ws.WriteMessage(msgType, msg); err != nil {
+                return
+            }
+        }
+    })
+    s.SetServerRoot(gfile.MainPkgPath())
+    s.EnableHTTPS("../../https/server.crt", "../../https/server.key")
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -220,27 +220,27 @@ func main() {
 
 ```go
 func main() {
-	client := ghttp.NewWebSocketClient()
-	client.HandshakeTimeout = time.Second    // 设置超时时间
-	client.Proxy = http.ProxyFromEnvironment // 设置代理
-	client.TLSClientConfig = &tls.Config{}   // 设置 tls 配置
+    client := ghttp.NewWebSocketClient()
+    client.HandshakeTimeout = time.Second    // 设置超时时间
+    client.Proxy = http.ProxyFromEnvironment // 设置代理
+    client.TLSClientConfig = &tls.Config{}   // 设置 tls 配置
 
-	conn, _, err := client.Dial("ws://127.0.0.1:9501", nil)
-	if err != nil {
-		panic(err)
-	}
-	defer conn.Close()
+    conn, _, err := client.Dial("ws://127.0.0.1:9501", nil)
+    if err != nil {
+        panic(err)
+    }
+    defer conn.Close()
 
-	err = conn.WriteMessage(websocket.TextMessage, []byte("hello word"))
-	if err != nil {
-		panic(err)
-	}
+    err = conn.WriteMessage(websocket.TextMessage, []byte("hello word"))
+    if err != nil {
+        panic(err)
+    }
 
-	mt, data, err := conn.ReadMessage()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(mt, data)
+    mt, data, err := conn.ReadMessage()
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(mt, data)
 }
 
 ```

@@ -27,30 +27,30 @@ func Structs(params interface{}, pointer interface{}, mapping ...map[string]stri
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gconv"
 )
 
 func main() {
-	type User struct {
-		Uid  int
-		Name string
-	}
-	params := g.Slice{
-		g.Map{
-			"uid":  1,
-			"name": "john",
-		},
-		g.Map{
-			"uid":  2,
-			"name": "smith",
-		},
-	}
-	var users []*User
-	if err := gconv.Structs(params, &users); err != nil {
-		panic(err)
-	}
-	g.Dump(users)
+    type User struct {
+        Uid  int
+        Name string
+    }
+    params := g.Slice{
+        g.Map{
+            "uid":  1,
+            "name": "john",
+        },
+        g.Map{
+            "uid":  2,
+            "name": "smith",
+        },
+    }
+    var users []*User
+    if err := gconv.Structs(params, &users); err != nil {
+        panic(err)
+    }
+    g.Dump(users)
 }
 ```
 

@@ -22,22 +22,22 @@ type Handler func(ctx context.Context, in *HandlerInput)
 ```go
 // HandlerInput is the input parameter struct for logging Handler.
 type HandlerInput struct {
-	Logger      *Logger       // Current Logger object.
-	Buffer      *bytes.Buffer // Buffer for logging content outputs.
-	Time        time.Time     // Logging time, which is the time that logging triggers.
-	TimeFormat  string        // Formatted time string, like "2016-01-09 12:00:00".
-	Color       int           // Using color, like COLOR_RED, COLOR_BLUE, etc. Eg: 34
-	Level       int           // Using level, like LEVEL_INFO, LEVEL_ERRO, etc. Eg: 256
-	LevelFormat string        // Formatted level string, like "DEBU", "ERRO", etc. Eg: ERRO
-	CallerFunc  string        // The source function name that calls logging, only available if F_CALLER_FN set.
-	CallerPath  string        // The source file path and its line number that calls logging, only available if F_FILE_SHORT or F_FILE_LONG set.
-	CtxStr      string        // The retrieved context value string from context, only available if Config.CtxKeys configured.
-	TraceId     string        // Trace id, only available if OpenTelemetry is enabled.
-	Prefix      string        // Custom prefix string for logging content.
-	Content     string        // Content is the main logging content without error stack string produced by logger.
-	Values      []any         // The passed un-formatted values array to logger.
-	Stack       string        // Stack string produced by logger, only available if Config.StStatus configured.
-	IsAsync     bool          // IsAsync marks it is in asynchronous logging.
+    Logger      *Logger       // Current Logger object.
+    Buffer      *bytes.Buffer // Buffer for logging content outputs.
+    Time        time.Time     // Logging time, which is the time that logging triggers.
+    TimeFormat  string        // Formatted time string, like "2016-01-09 12:00:00".
+    Color       int           // Using color, like COLOR_RED, COLOR_BLUE, etc. Eg: 34
+    Level       int           // Using level, like LEVEL_INFO, LEVEL_ERRO, etc. Eg: 256
+    LevelFormat string        // Formatted level string, like "DEBU", "ERRO", etc. Eg: ERRO
+    CallerFunc  string        // The source function name that calls logging, only available if F_CALLER_FN set.
+    CallerPath  string        // The source file path and its line number that calls logging, only available if F_FILE_SHORT or F_FILE_LONG set.
+    CtxStr      string        // The retrieved context value string from context, only available if Config.CtxKeys configured.
+    TraceId     string        // Trace id, only available if OpenTelemetry is enabled.
+    Prefix      string        // Custom prefix string for logging content.
+    Content     string        // Content is the main logging content without error stack string produced by logger.
+    Values      []any         // The passed un-formatted values array to logger.
+    Stack       string        // Stack string produced by logger, only available if Config.StStatus configured.
+    IsAsync     bool          // IsAsync marks it is in asynchronous logging.
 }
 ```
 
@@ -65,45 +65,45 @@ func (l *Logger) SetHandlers(handlers ...Handler)
 package main
 
 import (
-	"context"
-	"encoding/json"
-	"os"
+    "context"
+    "encoding/json"
+    "os"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/glog"
-	"github.com/gogf/gf/v2/text/gstr"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/text/gstr"
 )
 
 // JsonOutputsForLogger is for JSON marshaling in sequence.
 type JsonOutputsForLogger struct {
-	Time    string `json:"time"`
-	Level   string `json:"level"`
-	Content string `json:"content"`
+    Time    string `json:"time"`
+    Level   string `json:"level"`
+    Content string `json:"content"`
 }
 
 // LoggingJsonHandler is a example handler for logging JSON format content.
 var LoggingJsonHandler glog.Handler = func(ctx context.Context, in *glog.HandlerInput) {
-	jsonForLogger := JsonOutputsForLogger{
-		Time:    in.TimeFormat,
-		Level:   gstr.Trim(in.LevelFormat, "[]"),
-		Content: gstr.Trim(in.Content), // 2.7以上版本用in.ValuesContent()
+    jsonForLogger := JsonOutputsForLogger{
+        Time:    in.TimeFormat,
+        Level:   gstr.Trim(in.LevelFormat, "[]"),
+        Content: gstr.Trim(in.Content), // 2.7以上版本用in.ValuesContent()
     }
-	jsonBytes, err := json.Marshal(jsonForLogger)
-	if err != nil {
-		_, _ = os.Stderr.WriteString(err.Error())
-		return
-	}
-	in.Buffer.Write(jsonBytes)
-	in.Buffer.WriteString("\n")
-	in.Next(ctx)
+    jsonBytes, err := json.Marshal(jsonForLogger)
+    if err != nil {
+        _, _ = os.Stderr.WriteString(err.Error())
+        return
+    }
+    in.Buffer.Write(jsonBytes)
+    in.Buffer.WriteString("\n")
+    in.Next(ctx)
 }
 
 func main() {
-	g.Log().SetHandlers(LoggingJsonHandler)
-	ctx := context.TODO()
-	g.Log().Debug(ctx, "Debugging...")
-	g.Log().Warning(ctx, "It is warning info")
-	g.Log().Error(ctx, "Error occurs, please have a check")
+    g.Log().SetHandlers(LoggingJsonHandler)
+    ctx := context.TODO()
+    g.Log().Debug(ctx, "Debugging...")
+    g.Log().Warning(ctx, "It is warning info")
+    g.Log().Error(ctx, "Error occurs, please have a check")
 }
 ```
 
@@ -125,34 +125,34 @@ func main() {
 package main
 
 import (
-	"context"
+    "context"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/glog"
-	gelf "github.com/robertkowalski/graylog-golang"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/glog"
+    gelf "github.com/robertkowalski/graylog-golang"
 )
 
 var grayLogClient = gelf.New(gelf.Config{
-	GraylogPort:     80,
-	GraylogHostname: "graylog-host.com",
-	Connection:      "wan",
-	MaxChunkSizeWan: 42,
-	MaxChunkSizeLan: 1337,
+    GraylogPort:     80,
+    GraylogHostname: "graylog-host.com",
+    Connection:      "wan",
+    MaxChunkSizeWan: 42,
+    MaxChunkSizeLan: 1337,
 })
 
 // LoggingGrayLogHandler is an example handler for logging content to remote GrayLog service.
 var LoggingGrayLogHandler glog.Handler = func(ctx context.Context, in *glog.HandlerInput) {
-	in.Next(ctx)
-	grayLogClient.Log(in.Buffer.String())
+    in.Next(ctx)
+    grayLogClient.Log(in.Buffer.String())
 }
 
 func main() {
-	g.Log().SetHandlers(LoggingGrayLogHandler)
-	ctx := context.TODO()
-	g.Log().Debug(ctx, "Debugging...")
-	g.Log().Warning(ctx, "It is warning info")
-	g.Log().Error(ctx, "Error occurs, please have a check")
-	glog.Print(ctx, "test log")
+    g.Log().SetHandlers(LoggingGrayLogHandler)
+    ctx := context.TODO()
+    g.Log().Debug(ctx, "Debugging...")
+    g.Log().Warning(ctx, "It is warning info")
+    g.Log().Error(ctx, "Error occurs, please have a check")
+    glog.Print(ctx, "test log")
 }
 ```
 
@@ -178,46 +178,46 @@ func GetDefaultHandler() Handler
 package main
 
 import (
-	"context"
-	"encoding/json"
-	"os"
+    "context"
+    "encoding/json"
+    "os"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/glog"
-	"github.com/gogf/gf/v2/text/gstr"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/text/gstr"
 )
 
 // JsonOutputsForLogger is for JSON marshaling in sequence.
 type JsonOutputsForLogger struct {
-	Time    string `json:"time"`
-	Level   string `json:"level"`
-	Content string `json:"content"`
+    Time    string `json:"time"`
+    Level   string `json:"level"`
+    Content string `json:"content"`
 }
 
 // LoggingJsonHandler is a example handler for logging JSON format content.
 var LoggingJsonHandler glog.Handler = func(ctx context.Context, in *glog.HandlerInput) {
-	jsonForLogger := JsonOutputsForLogger{
-		Time:    in.TimeFormat,
-		Level:   gstr.Trim(in.LevelFormat, "[]"),
-		Content: gstr.Trim(in.Content), // 2.7以上版本用in.ValuesContent()
+    jsonForLogger := JsonOutputsForLogger{
+        Time:    in.TimeFormat,
+        Level:   gstr.Trim(in.LevelFormat, "[]"),
+        Content: gstr.Trim(in.Content), // 2.7以上版本用in.ValuesContent()
     }
-	jsonBytes, err := json.Marshal(jsonForLogger)
-	if err != nil {
-		_, _ = os.Stderr.WriteString(err.Error())
-		return
-	}
-	in.Buffer.Write(jsonBytes)
-	in.Buffer.WriteString("\n")
-	in.Next(ctx)
+    jsonBytes, err := json.Marshal(jsonForLogger)
+    if err != nil {
+        _, _ = os.Stderr.WriteString(err.Error())
+        return
+    }
+    in.Buffer.Write(jsonBytes)
+    in.Buffer.WriteString("\n")
+    in.Next(ctx)
 }
 
 func main() {
-	ctx := context.TODO()
-	glog.SetDefaultHandler(LoggingJsonHandler)
+    ctx := context.TODO()
+    glog.SetDefaultHandler(LoggingJsonHandler)
 
-	g.Log().Debug(ctx, "Debugging...")
-	glog.Warning(ctx, "It is warning info")
-	glog.Error(ctx, "Error occurs, please have a check")
+    g.Log().Debug(ctx, "Debugging...")
+    glog.Warning(ctx, "It is warning info")
+    glog.Error(ctx, "Error occurs, please have a check")
 }
 ```
 
@@ -241,19 +241,19 @@ func main() {
 package main
 
 import (
-	"context"
+    "context"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 func main() {
-	ctx := context.TODO()
-	glog.SetDefaultHandler(glog.HandlerJson)
+    ctx := context.TODO()
+    glog.SetDefaultHandler(glog.HandlerJson)
 
-	g.Log().Debug(ctx, "Debugging...")
-	glog.Warning(ctx, "It is warning info")
-	glog.Error(ctx, "Error occurs, please have a check")
+    g.Log().Debug(ctx, "Debugging...")
+    glog.Warning(ctx, "It is warning info")
+    glog.Error(ctx, "Error occurs, please have a check")
 }
 ```
 
@@ -273,19 +273,19 @@ func main() {
 package main
 
 import (
-	"context"
-	"net"
+    "context"
+    "net"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 func main() {
-	ctx := context.TODO()
-	glog.SetDefaultHandler(glog.HandlerStructure)
+    ctx := context.TODO()
+    glog.SetDefaultHandler(glog.HandlerStructure)
 
-	g.Log().Info(ctx, "caution", "name", "admin")
-	glog.Error(ctx, "oops", net.ErrClosed, "status", 500)
+    g.Log().Info(ctx, "caution", "name", "admin")
+    glog.Error(ctx, "oops", net.ErrClosed, "status", 500)
 }
 
 ```

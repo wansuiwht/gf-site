@@ -23,15 +23,15 @@ hide_title: true
 package main
 
 import (
-	"context"
-	"fmt"
+    "context"
+    "fmt"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 const (
-	swaggerUIPageContent = `
+    swaggerUIPageContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,12 +45,12 @@ const (
 <div id="swagger-ui"></div>
 <script src="https://unpkg.com/swagger-ui-dist@latest/swagger-ui-bundle.js" crossorigin></script>
 <script>
-	window.onload = () => {
-		window.ui = SwaggerUIBundle({
-			url:    '/api.json',
-			dom_id: '#swagger-ui',
-		});
-	};
+    window.onload = () => {
+        window.ui = SwaggerUIBundle({
+            url:    '/api.json',
+            dom_id: '#swagger-ui',
+        });
+    };
 </script>
 </body>
 </html>
@@ -58,36 +58,36 @@ const (
 )
 
 type HelloReq struct {
-	g.Meta `path:"/hello" method:"get"`
-	Name   string `v:"required" dc:"Your name"`
+    g.Meta `path:"/hello" method:"get"`
+    Name   string `v:"required" dc:"Your name"`
 }
 type HelloRes struct {
-	Reply string `dc:"Reply content"`
+    Reply string `dc:"Reply content"`
 }
 
 type Hello struct{}
 
 func (Hello) Say(ctx context.Context, req *HelloReq) (res *HelloRes, err error) {
-	g.Log().Debugf(ctx, `receive say: %+v`, req)
-	res = &HelloRes{
-		Reply: fmt.Sprintf(`Hi %s`, req.Name),
-	}
-	return
+    g.Log().Debugf(ctx, `receive say: %+v`, req)
+    res = &HelloRes{
+        Reply: fmt.Sprintf(`Hi %s`, req.Name),
+    }
+    return
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.GET("/swagger", func(r *ghttp.Request) {
-			r.Response.Write(swaggerUIPageContent)
-		})
-		group.Bind(
-			new(Hello),
-		)
-	})
-	s.SetOpenApiPath("/api.json")
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.GET("/swagger", func(r *ghttp.Request) {
+            r.Response.Write(swaggerUIPageContent)
+        })
+        group.Bind(
+            new(Hello),
+        )
+    })
+    s.SetOpenApiPath("/api.json")
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 

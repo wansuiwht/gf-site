@@ -91,29 +91,29 @@ func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx *TX
 
 ```go
 db.Transaction(context.TODO(), func(ctx context.Context, tx *gdb.TX) error {
-	// user
-	result, err := tx.Ctx(ctx).Insert("user", g.Map{
-		"passport": "john",
-		"password": "12345678",
-		"nickname": "JohnGuo",
-	})
-	if err != nil {
-		return err
-	}
-	// user_detail
-	id, err := result.LastInsertId()
-	if err != nil {
-		return err
-	}
-	_, err = tx.Ctx(ctx).Insert("user_detail", g.Map{
-		"uid":       id,
-		"site":      "https://johng.cn",
-		"true_name": "GuoQiang",
-	})
-	if err != nil {
-		return err
-	}
-	return nil
+    // user
+    result, err := tx.Ctx(ctx).Insert("user", g.Map{
+        "passport": "john",
+        "password": "12345678",
+        "nickname": "JohnGuo",
+    })
+    if err != nil {
+        return err
+    }
+    // user_detail
+    id, err := result.LastInsertId()
+    if err != nil {
+        return err
+    }
+    _, err = tx.Ctx(ctx).Insert("user_detail", g.Map{
+        "uid":       id,
+        "site":      "https://johng.cn",
+        "true_name": "GuoQiang",
+    })
+    if err != nil {
+        return err
+    }
+    return nil
 })
 ```
 
@@ -172,18 +172,18 @@ CREATE TABLE `user` (
 ```go
 tx, err := db.Begin()
 if err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.Begin(); err != nil {
-	panic(err)
+    panic(err)
 }
 _, err = tx.Model(table).Data(g.Map{"id": 1, "name": "john"}).Insert()
 if err = tx.Rollback(); err != nil {
-	panic(err)
+    panic(err)
 }
 _, err = tx.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert()
 if err = tx.Commit(); err != nil {
-	panic(err)
+    panic(err)
 }
 ```
 
@@ -227,23 +227,23 @@ mysql> select * from `user`;
 
 ```go
 db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-	// Nested transaction 1.
-	if err := tx.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		_, err := tx.Model(table).Ctx(ctx).Data(g.Map{"id": 1, "name": "john"}).Insert()
-		return err
-	}); err != nil {
-		return err
-	}
-	// Nested transaction 2, panic.
-	if err := tx.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		_, err := tx.Model(table).Ctx(ctx).Data(g.Map{"id": 2, "name": "smith"}).Insert()
-		// Create a panic that can make this transaction rollback automatically.
-		panic("error")
-		return err
-	}); err != nil {
-		return err
-	}
-	return nil
+    // Nested transaction 1.
+    if err := tx.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        _, err := tx.Model(table).Ctx(ctx).Data(g.Map{"id": 1, "name": "john"}).Insert()
+        return err
+    }); err != nil {
+        return err
+    }
+    // Nested transaction 2, panic.
+    if err := tx.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        _, err := tx.Model(table).Ctx(ctx).Data(g.Map{"id": 2, "name": "smith"}).Insert()
+        // Create a panic that can make this transaction rollback automatically.
+        panic("error")
+        return err
+    }); err != nil {
+        return err
+    }
+    return nil
 })
 ```
 
@@ -251,23 +251,23 @@ db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 
 ```go
 db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-	// Nested transaction 1.
-	if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		_, err := db.Model(table).Ctx(ctx).Data(g.Map{"id": 1, "name": "john"}).Insert()
-		return err
-	}); err != nil {
-		return err
-	}
-	// Nested transaction 2, panic.
-	if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		_, err := db.Model(table).Ctx(ctx).Data(g.Map{"id": 2, "name": "smith"}).Insert()
-		// Create a panic that can make this transaction rollback automatically.
-		panic("error")
-		return err
-	}); err != nil {
-		return err
-	}
-	return nil
+    // Nested transaction 1.
+    if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        _, err := db.Model(table).Ctx(ctx).Data(g.Map{"id": 1, "name": "john"}).Insert()
+        return err
+    }); err != nil {
+        return err
+    }
+    // Nested transaction 2, panic.
+    if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        _, err := db.Model(table).Ctx(ctx).Data(g.Map{"id": 2, "name": "smith"}).Insert()
+        // Create a panic that can make this transaction rollback automatically.
+        panic("error")
+        return err
+    }); err != nil {
+        return err
+    }
+    return nil
 })
 ```
 
@@ -289,23 +289,23 @@ db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 
 ```go
 db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-	// Nested transaction 1.
-	if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		_, err := db.Model(table).Ctx(ctx).Data(g.Map{"id": 1, "name": "john"}).Insert()
-		return err
-	}); err != nil {
-		return err
-	}
-	// Nested transaction 2, panic.
-	if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		_, err := db.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert()
-		// Create a panic that can make this transaction rollback automatically.
-		panic("error")
-		return err
-	}); err != nil {
-		return err
-	}
-	return nil
+    // Nested transaction 1.
+    if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        _, err := db.Model(table).Ctx(ctx).Data(g.Map{"id": 1, "name": "john"}).Insert()
+        return err
+    }); err != nil {
+        return err
+    }
+    // Nested transaction 2, panic.
+    if err := db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        _, err := db.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert()
+        // Create a panic that can make this transaction rollback automatically.
+        panic("error")
+        return err
+    }); err != nil {
+        return err
+    }
+    return nil
 })
 ```
 
@@ -332,30 +332,30 @@ db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
 ```go
 tx, err := db.Begin()
 if err != nil {
-	panic(err)
+    panic(err)
 }
 defer func() {
-	if err := recover(); err != nil {
-		_ = tx.Rollback()
-	}
+    if err := recover(); err != nil {
+        _ = tx.Rollback()
+    }
 }()
 if _, err = tx.Model(table).Data(g.Map{"id": 1, "name": "john"}).Insert(); err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.SavePoint("MyPoint"); err != nil {
-	panic(err)
+    panic(err)
 }
 if _, err = tx.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert(); err != nil {
-	panic(err)
+    panic(err)
 }
 if _, err = tx.Model(table).Data(g.Map{"id": 3, "name": "green"}).Insert(); err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.RollbackTo("MyPoint"); err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.Commit(); err != nil {
-	panic(err)
+    panic(err)
 }
 ```
 
@@ -397,9 +397,9 @@ mysql> select * from `user`;
 ```go
 // 用户注册HTTP接口
 func (*userApi) Signup(r *ghttp.Request) {
-	// ....
-	service.User.Signup(r.Context(), userServiceSignupReq)
-	// ...
+    // ....
+    service.User.Signup(r.Context(), userServiceSignupReq)
+    // ...
 }
 ```
 
@@ -410,19 +410,19 @@ func (*userApi) Signup(r *ghttp.Request) {
 ```go
 // 用户注册业务逻辑处理
 func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
-	// ....
-	dao.User.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		err := dao.User.Ctx(ctx).Save(r.UserInfo)
-		if err != nil {
-			return err
-		}
-		err := dao.UserDetail.Ctx(ctx).Save(r.UserDetail)
-		if err != nil {
-			return err
-		}
-		return nil
-	})
-	// ...
+    // ....
+    dao.User.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        err := dao.User.Ctx(ctx).Save(r.UserInfo)
+        if err != nil {
+            return err
+        }
+        err := dao.UserDetail.Ctx(ctx).Save(r.UserDetail)
+        if err != nil {
+            return err
+        }
+        return nil
+    })
+    // ...
 }
 ```
 
@@ -430,32 +430,32 @@ func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
 
 ```go
 func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
-	// ....
-	dao.User.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		err := dao.User.Ctx(ctx).Save(r.UserInfo)
-		if err != nil {
-			return err
-		}
-		err := dao.UserDetail.Ctx(ctx).Save(r.UserDetail)
-		if err != nil {
-			return err
-		}
-		err := service.XXXA.Call(ctx, ...)
-		if err != nil {
-			return err
-		}
-		err := service.XXXB.Call(ctx, ...)
-		if err != nil {
-			return err
-		}
-		err := service.XXXB.Call(ctx, ...)
-		if err != nil {
-			return err
-		}
+    // ....
+    dao.User.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        err := dao.User.Ctx(ctx).Save(r.UserInfo)
+        if err != nil {
+            return err
+        }
+        err := dao.UserDetail.Ctx(ctx).Save(r.UserDetail)
+        if err != nil {
+            return err
+        }
+        err := service.XXXA.Call(ctx, ...)
+        if err != nil {
+            return err
+        }
+        err := service.XXXB.Call(ctx, ...)
+        if err != nil {
+            return err
+        }
+        err := service.XXXB.Call(ctx, ...)
+        if err != nil {
+            return err
+        }
         // ...
-		return nil
-	})
-	// ...
+        return nil
+    })
+    // ...
 }
 ```dao
 

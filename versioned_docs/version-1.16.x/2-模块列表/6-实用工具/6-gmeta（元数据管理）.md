@@ -37,18 +37,18 @@ func Get(object interface{}, key string) *gvar.Var
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gmeta"
+    "fmt"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gmeta"
 )
 
 func main() {
-	type User struct {
-		gmeta.Meta `orm:"user" db:"mysql"`
-		Id         int
-		Name       string
-	}
-	g.Dump(gmeta.Data(User{}))
+    type User struct {
+        gmeta.Meta `orm:"user" db:"mysql"`
+        Id         int
+        Name       string
+    }
+    g.Dump(gmeta.Data(User{}))
 }
 ```
 
@@ -69,19 +69,19 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/util/gmeta"
+    "fmt"
+    "github.com/gogf/gf/util/gmeta"
 )
 
 func main() {
-	type User struct {
-		gmeta.Meta `orm:"user" db:"mysql"`
-		Id         int
-		Name       string
-	}
-	user := User{}
-	fmt.Println(gmeta.Get(user, "orm").String())
-	fmt.Println(gmeta.Get(user, "db").String())
+    type User struct {
+        gmeta.Meta `orm:"user" db:"mysql"`
+        Id         int
+        Name       string
+    }
+    user := User{}
+    fmt.Println(gmeta.Get(user, "orm").String())
+    fmt.Println(gmeta.Get(user, "db").String())
 }
 ```
 

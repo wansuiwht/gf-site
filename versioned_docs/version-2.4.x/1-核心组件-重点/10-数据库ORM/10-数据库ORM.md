@@ -67,7 +67,7 @@ hide_title: true
 
 ```go
 db, err := gdb.New(gdb.ConfigNode{
-	Link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test",
+    Link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test",
 })
 ```
 

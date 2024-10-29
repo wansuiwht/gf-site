@@ -40,64 +40,64 @@ func RegisterConverter(fn interface{}) (err error)
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 type Src struct {
-	A int
+    A int
 }
 
 type Dst struct {
-	B int
+    B int
 }
 
 type SrcWrap struct {
-	Value Src
+    Value Src
 }
 
 type DstWrap struct {
-	Value Dst
+    Value Dst
 }
 
 func SrcToDstConverter(src Src) (dst *Dst, err error) {
-	return &Dst{B: src.A}, nil
+    return &Dst{B: src.A}, nil
 }
 
 // SrcToDstConverter is custom converting function for custom type.
 func main() {
-	// register custom converter function.
-	err := gconv.RegisterConverter(SrcToDstConverter)
-	if err != nil {
-		panic(err)
-	}
+    // register custom converter function.
+    err := gconv.RegisterConverter(SrcToDstConverter)
+    if err != nil {
+        panic(err)
+    }
 
-	// custom struct converting.
-	var (
-		src = Src{A: 1}
-		dst *Dst
-	)
-	err = gconv.Scan(src, &dst)
-	if err != nil {
-		panic(err)
-	}
+    // custom struct converting.
+    var (
+        src = Src{A: 1}
+        dst *Dst
+    )
+    err = gconv.Scan(src, &dst)
+    if err != nil {
+        panic(err)
+    }
 
-	fmt.Println("src:", src)
-	fmt.Println("dst:", dst)
+    fmt.Println("src:", src)
+    fmt.Println("dst:", dst)
 
-	// custom struct attributes converting.
-	var (
-		srcWrap = SrcWrap{Src{A: 1}}
-		dstWrap *DstWrap
-	)
-	err = gconv.Scan(srcWrap, &dstWrap)
-	if err != nil {
-		panic(err)
-	}
+    // custom struct attributes converting.
+    var (
+        srcWrap = SrcWrap{Src{A: 1}}
+        dstWrap *DstWrap
+    )
+    err = gconv.Scan(srcWrap, &dstWrap)
+    if err != nil {
+        panic(err)
+    }
 
-	fmt.Println("srcWrap:", srcWrap)
-	fmt.Println("dstWrap:", dstWrap)
+    fmt.Println("srcWrap:", srcWrap)
+    fmt.Println("dstWrap:", dstWrap)
 }
 ```
 
@@ -118,50 +118,50 @@ dstWrap: &{{1}}
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 type Src struct {
-	A int
+    A int
 }
 
 type Dst struct {
-	B int
+    B int
 }
 
 type SrcWrap struct {
-	Value Src
+    Value Src
 }
 
 type DstWrap struct {
-	Value Dst
+    Value Dst
 }
 
 // SrcToDstConverter is custom converting function for custom type.
 func SrcToDstConverter(src Src) (dst *Dst, err error) {
-	return &Dst{B: src.A}, nil
+    return &Dst{B: src.A}, nil
 }
 
 func main() {
-	// register custom converter function.
-	err := gconv.RegisterConverter(SrcToDstConverter)
-	if err != nil {
-		panic(err)
-	}
+    // register custom converter function.
+    err := gconv.RegisterConverter(SrcToDstConverter)
+    if err != nil {
+        panic(err)
+    }
 
-	// custom struct converting.
-	var src = Src{A: 1}
-	dst := gconv.ConvertWithRefer(src, Dst{})
-	fmt.Println("src:", src)
-	fmt.Println("dst:", dst)
+    // custom struct converting.
+    var src = Src{A: 1}
+    dst := gconv.ConvertWithRefer(src, Dst{})
+    fmt.Println("src:", src)
+    fmt.Println("dst:", dst)
 
-	// custom struct attributes converting.
-	var srcWrap = SrcWrap{Src{A: 1}}
-	dstWrap := gconv.ConvertWithRefer(srcWrap, &DstWrap{})
-	fmt.Println("srcWrap:", srcWrap)
-	fmt.Println("dstWrap:", dstWrap)
+    // custom struct attributes converting.
+    var srcWrap = SrcWrap{Src{A: 1}}
+    dstWrap := gconv.ConvertWithRefer(srcWrap, &DstWrap{})
+    fmt.Println("srcWrap:", srcWrap)
+    fmt.Println("dstWrap:", dstWrap)
 }
 ```
 
@@ -173,68 +173,68 @@ func main() {
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/os/gtime"
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/os/gtime"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 type MyTime = *gtime.Time
 
 type Src struct {
-	A MyTime
+    A MyTime
 }
 
 type Dst struct {
-	B string
+    B string
 }
 
 type SrcWrap struct {
-	Value Src
+    Value Src
 }
 
 type DstWrap struct {
-	Value Dst
+    Value Dst
 }
 
 // SrcToDstConverter is custom converting function for custom type.
 func SrcToDstConverter(src Src) (dst *Dst, err error) {
-	return &Dst{B: src.A.Format("Y-m-d")}, nil
+    return &Dst{B: src.A.Format("Y-m-d")}, nil
 }
 
 // SrcToDstConverter is custom converting function for custom type.
 func main() {
-	// register custom converter function.
-	err := gconv.RegisterConverter(SrcToDstConverter)
-	if err != nil {
-		panic(err)
-	}
+    // register custom converter function.
+    err := gconv.RegisterConverter(SrcToDstConverter)
+    if err != nil {
+        panic(err)
+    }
 
-	// custom struct converting.
-	var (
-		src = Src{A: gtime.Now()}
-		dst *Dst
-	)
-	err = gconv.Scan(src, &dst)
-	if err != nil {
-		panic(err)
-	}
+    // custom struct converting.
+    var (
+        src = Src{A: gtime.Now()}
+        dst *Dst
+    )
+    err = gconv.Scan(src, &dst)
+    if err != nil {
+        panic(err)
+    }
 
-	fmt.Println("src:", src)
-	fmt.Println("dst:", dst)
+    fmt.Println("src:", src)
+    fmt.Println("dst:", dst)
 
-	// custom struct attributes converting.
-	var (
-		srcWrap = SrcWrap{Src{A: gtime.Now()}}
-		dstWrap *DstWrap
-	)
-	err = gconv.Scan(srcWrap, &dstWrap)
-	if err != nil {
-		panic(err)
-	}
+    // custom struct attributes converting.
+    var (
+        srcWrap = SrcWrap{Src{A: gtime.Now()}}
+        dstWrap *DstWrap
+    )
+    err = gconv.Scan(srcWrap, &dstWrap)
+    if err != nil {
+        panic(err)
+    }
 
-	fmt.Println("srcWrap:", srcWrap)
-	fmt.Println("dstWrap:", dstWrap)
+    fmt.Println("srcWrap:", srcWrap)
+    fmt.Println("dstWrap:", dstWrap)
 }
 ```
 
@@ -255,53 +255,53 @@ dstWrap: &{{2024-01-22}}
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/os/gtime"
-	"github.com/gogf/gf/v2/util/gconv"
+    "github.com/gogf/gf/v2/os/gtime"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 type MyTime = *gtime.Time
 
 type Src struct {
-	A MyTime
+    A MyTime
 }
 
 type Dst struct {
-	B string
+    B string
 }
 
 type SrcWrap struct {
-	Value Src
+    Value Src
 }
 
 type DstWrap struct {
-	Value Dst
+    Value Dst
 }
 
 // SrcToDstConverter is custom converting function for custom type.
 func SrcToDstConverter(src Src) (dst *Dst, err error) {
-	return &Dst{B: src.A.Format("Y-m-d")}, nil
+    return &Dst{B: src.A.Format("Y-m-d")}, nil
 }
 
 // SrcToDstConverter is custom converting function for custom type.
 func main() {
-	// register custom converter function.
-	err := gconv.RegisterConverter(SrcToDstConverter)
-	if err != nil {
-		panic(err)
-	}
+    // register custom converter function.
+    err := gconv.RegisterConverter(SrcToDstConverter)
+    if err != nil {
+        panic(err)
+    }
 
-	// custom struct converting.
-	var src = Src{A: gtime.Now()}
-	dst := gconv.ConvertWithRefer(src, &Dst{})
-	fmt.Println("src:", src)
-	fmt.Println("dst:", dst)
+    // custom struct converting.
+    var src = Src{A: gtime.Now()}
+    dst := gconv.ConvertWithRefer(src, &Dst{})
+    fmt.Println("src:", src)
+    fmt.Println("dst:", dst)
 
-	// custom struct attributes converting.
-	var srcWrap = SrcWrap{Src{A: gtime.Now()}}
-	dstWrap := gconv.ConvertWithRefer(srcWrap, &DstWrap{})
-	fmt.Println("srcWrap:", srcWrap)
-	fmt.Println("dstWrap:", dstWrap)
+    // custom struct attributes converting.
+    var srcWrap = SrcWrap{Src{A: gtime.Now()}}
+    dstWrap := gconv.ConvertWithRefer(srcWrap, &DstWrap{})
+    fmt.Println("srcWrap:", srcWrap)
+    fmt.Println("dstWrap:", dstWrap)
 }
 ```

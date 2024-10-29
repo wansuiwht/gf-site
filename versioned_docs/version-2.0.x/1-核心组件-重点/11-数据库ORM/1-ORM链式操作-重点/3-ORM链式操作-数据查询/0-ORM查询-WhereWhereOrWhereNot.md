@@ -210,7 +210,7 @@ func (m *Model) Builder() *WhereBuilder
 // SELECT * FROM `user` WHERE `id`=1 AND `address`="USA" AND (`status`="active" OR `status`="pending")
 m := g.DB().Model("user")
 all, err := m.Where("id", 1).Where("address", "USA").Where(
-	m.Builder().Where("status", "active").WhereOr("status", "pending"),
+    m.Builder().Where("status", "active").WhereOr("status", "pending"),
 ).All()
 ```
 

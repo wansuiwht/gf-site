@@ -28,29 +28,29 @@ func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx TX)
 
 ```go
 g.DB().Transaction(context.TODO(), func(ctx context.Context, tx gdb.TX) error {
-	// user
-	result, err := tx.Ctx(ctx).Insert("user", g.Map{
-		"passport": "john",
-		"password": "12345678",
-		"nickname": "JohnGuo",
-	})
-	if err != nil {
-		return err
-	}
-	// user_detail
-	id, err := result.LastInsertId()
-	if err != nil {
-		return err
-	}
-	_, err = tx.Ctx(ctx).Insert("user_detail", g.Map{
-		"uid":       id,
-		"site":      "https://johng.cn",
-		"true_name": "GuoQiang",
-	})
-	if err != nil {
-		return err
-	}
-	return nil
+    // user
+    result, err := tx.Ctx(ctx).Insert("user", g.Map{
+        "passport": "john",
+        "password": "12345678",
+        "nickname": "JohnGuo",
+    })
+    if err != nil {
+        return err
+    }
+    // user_detail
+    id, err := result.LastInsertId()
+    if err != nil {
+        return err
+    }
+    _, err = tx.Ctx(ctx).Insert("user_detail", g.Map{
+        "uid":       id,
+        "site":      "https://johng.cn",
+        "true_name": "GuoQiang",
+    })
+    if err != nil {
+        return err
+    }
+    return nil
 })
 ```
 

@@ -70,32 +70,32 @@ func CtxId(ctx context.Context) string
 package main
 
 import (
-	"context"
-	"time"
+    "context"
+    "time"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		traceID := gctx.CtxId(r.Context())
-		g.Log().Info(r.Context(), "handler")
-		r.Response.Write(traceID)
-	})
-	s.SetPort(8199)
-	go s.Start()
+    s := g.Server()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        traceID := gctx.CtxId(r.Context())
+        g.Log().Info(r.Context(), "handler")
+        r.Response.Write(traceID)
+    })
+    s.SetPort(8199)
+    go s.Start()
 
-	time.Sleep(time.Second)
+    time.Sleep(time.Second)
 
-	req, err := g.Client().Get(context.Background(), "http://127.0.0.1:8199/")
-	if err != nil {
-		panic(err)
-	}
-	defer req.Close()
-	req.RawDump()
+    req, err := g.Client().Get(context.Background(), "http://127.0.0.1:8199/")
+    if err != nil {
+        panic(err)
+    }
+    defer req.Close()
+    req.RawDump()
 }
 ```
 
@@ -140,29 +140,29 @@ Trace-Id: 908d2027560af616e218e912d2ac3972
 package main
 
 import (
-	"time"
+    "time"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		traceID := gctx.CtxId(r.Context())
-		g.Log().Info(r.Context(), "handler")
-		r.Response.Write(traceID)
-	})
-	s.SetPort(8199)
-	go s.Start()
+    s := g.Server()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        traceID := gctx.CtxId(r.Context())
+        g.Log().Info(r.Context(), "handler")
+        r.Response.Write(traceID)
+    })
+    s.SetPort(8199)
+    go s.Start()
 
-	time.Sleep(time.Second)
+    time.Sleep(time.Second)
 
-	ctx := gctx.New()
-	g.Log().Info(ctx, "request starts")
-	content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/")
-	g.Log().Infof(ctx, "response: %s", content)
+    ctx := gctx.New()
+    g.Log().Info(ctx, "request starts")
+    content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/")
+    g.Log().Infof(ctx, "response: %s", content)
 }
 ```
 
@@ -189,32 +189,32 @@ func main() {
 package main
 
 import (
-	"context"
-	"time"
+    "context"
+    "time"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/net/gtrace"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/text/gstr"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/net/gtrace"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/text/gstr"
 )
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		traceID := gctx.CtxId(r.Context())
-		g.Log().Info(r.Context(), "handler")
-		r.Response.Write(traceID)
-	})
-	s.SetPort(8199)
-	go s.Start()
+    s := g.Server()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        traceID := gctx.CtxId(r.Context())
+        g.Log().Info(r.Context(), "handler")
+        r.Response.Write(traceID)
+    })
+    s.SetPort(8199)
+    go s.Start()
 
-	time.Sleep(time.Second)
+    time.Sleep(time.Second)
 
-	ctx, _ := gtrace.WithTraceID(context.Background(), gstr.Repeat("a", 32))
-	g.Log().Info(ctx, "request starts")
-	content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/")
-	g.Log().Infof(ctx, "response: %s", content)
+    ctx, _ := gtrace.WithTraceID(context.Background(), gstr.Repeat("a", 32))
+    g.Log().Info(ctx, "request starts")
+    content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/")
+    g.Log().Infof(ctx, "response: %s", content)
 }
 ```
 
@@ -252,47 +252,47 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/net/gtrace"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/text/gstr"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/net/gtrace"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/text/gstr"
 )
 
 func main() {
-	// 内部服务
-	internalServer := g.Server("internalServer")
-	internalServer.BindHandler("/", func(r *ghttp.Request) {
-		traceID := gctx.CtxId(r.Context())
-		g.Log().Info(r.Context(), "internalServer handler")
-		r.Response.Write(traceID)
-	})
-	internalServer.SetPort(8199)
-	go internalServer.Start()
+    // 内部服务
+    internalServer := g.Server("internalServer")
+    internalServer.BindHandler("/", func(r *ghttp.Request) {
+        traceID := gctx.CtxId(r.Context())
+        g.Log().Info(r.Context(), "internalServer handler")
+        r.Response.Write(traceID)
+    })
+    internalServer.SetPort(8199)
+    go internalServer.Start()
 
-	// 外部服务，访问以测试
-	// http://127.0.0.1:8299/?RequestID=33612a70-990a-11ea-87fe-fd68517e7a2d
-	userSideServer := g.Server("userSideServer")
-	userSideServer.Use(func(r *ghttp.Request) {
-		requestID := gstr.Replace(r.Get("RequestID").String(), "-", "")
-		if requestID != "" {
-			newCtx, err := gtrace.WithTraceID(r.Context(), requestID)
-			if err != nil {
-				panic(err)
-			}
-			r.SetCtx(newCtx)
-		}
-		r.Middleware.Next()
-	})
-	userSideServer.BindHandler("/", func(r *ghttp.Request) {
-		ctx := r.Context()
-		g.Log().Info(ctx, "request internalServer starts")
-		content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/")
-		g.Log().Infof(ctx, "internalServer response: %s", content)
-		r.Response.Write(content)
-	})
-	userSideServer.SetPort(8299)
-	userSideServer.Run()
+    // 外部服务，访问以测试
+    // http://127.0.0.1:8299/?RequestID=33612a70-990a-11ea-87fe-fd68517e7a2d
+    userSideServer := g.Server("userSideServer")
+    userSideServer.Use(func(r *ghttp.Request) {
+        requestID := gstr.Replace(r.Get("RequestID").String(), "-", "")
+        if requestID != "" {
+            newCtx, err := gtrace.WithTraceID(r.Context(), requestID)
+            if err != nil {
+                panic(err)
+            }
+            r.SetCtx(newCtx)
+        }
+        r.Middleware.Next()
+    })
+    userSideServer.BindHandler("/", func(r *ghttp.Request) {
+        ctx := r.Context()
+        g.Log().Info(ctx, "request internalServer starts")
+        content := g.Client().GetContent(ctx, "http://127.0.0.1:8199/")
+        g.Log().Infof(ctx, "internalServer response: %s", content)
+        r.Response.Write(content)
+    })
+    userSideServer.SetPort(8299)
+    userSideServer.Run()
 }
 ```
 

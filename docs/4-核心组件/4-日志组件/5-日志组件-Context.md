@@ -30,27 +30,27 @@ logger:
 package main
 
 import (
-	"context"
+    "context"
 
-	"github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/frame/g"
 )
 
 func main() {
-	var ctx = context.Background()
+    var ctx = context.Background()
 
-	// 可以直接使用String作为Key
-	ctx = context.WithValue(ctx, "RequestId", "123456789")
+    // 可以直接使用String作为Key
+    ctx = context.WithValue(ctx, "RequestId", "123456789")
 
-	// 如需将Key提取为公共变量，可以使用gctx.StrKey类型，或直接使用string类型
-	const userIdKey gctx.StrKey = "UserId" // or const userIdKey = "UserId"
-	ctx = context.WithValue(ctx, userIdKey, "10000")
+    // 如需将Key提取为公共变量，可以使用gctx.StrKey类型，或直接使用string类型
+    const userIdKey gctx.StrKey = "UserId" // or const userIdKey = "UserId"
+    ctx = context.WithValue(ctx, userIdKey, "10000")
 
-	// 不能自定义类型
-	type notPrintKeyType string
-	const notPrintKey notPrintKeyType = "NotPrintKey"
-	ctx = context.WithValue(ctx, notPrintKey, "notPrintValue") // 不会打印 notPrintValue
+    // 不能自定义类型
+    type notPrintKeyType string
+    const notPrintKey notPrintKeyType = "NotPrintKey"
+    ctx = context.WithValue(ctx, notPrintKey, "notPrintValue") // 不会打印 notPrintValue
 
-	g.Log().Error(ctx, "runtime error")
+    g.Log().Error(ctx, "runtime error")
 }
 ```
 

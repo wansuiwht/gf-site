@@ -23,13 +23,13 @@ func (r *Response) DefaultCORSOptions() CORSOptions
 // See https://www.w3.org/TR/cors/ .
 // 服务端允许跨域请求选项
 type CORSOptions struct {
-	AllowDomain      []string // Used for allowing requests from custom domains
-	AllowOrigin      string   // Access-Control-Allow-Origin
-	AllowCredentials string   // Access-Control-Allow-Credentials
-	ExposeHeaders    string   // Access-Control-Expose-Headers
-	MaxAge           int      // Access-Control-Max-Age
-	AllowMethods     string   // Access-Control-Allow-Methods
-	AllowHeaders     string   // Access-Control-Allow-Headers
+    AllowDomain      []string // Used for allowing requests from custom domains
+    AllowOrigin      string   // Access-Control-Allow-Origin
+    AllowCredentials string   // Access-Control-Allow-Credentials
+    ExposeHeaders    string   // Access-Control-Expose-Headers
+    MaxAge           int      // Access-Control-Max-Age
+    AllowMethods     string   // Access-Control-Allow-Methods
+    AllowHeaders     string   // Access-Control-Allow-Headers
 }
 ```
 
@@ -48,10 +48,10 @@ type CORSOptions struct {
 ```go
 // 允许跨域请求中间件
 func Middleware(r *ghttp.Request) {
-	corsOptions := r.Response.DefaultCORSOptions()
-	corsOptions.AllowDomain = []string{"goframe.org", "johng.cn"}
-	r.Response.CORS(corsOptions)
-	r.Middleware.Next()
+    corsOptions := r.Response.DefaultCORSOptions()
+    corsOptions.AllowDomain = []string{"goframe.org", "johng.cn"}
+    r.Response.CORS(corsOptions)
+    r.Middleware.Next()
 }
 ```
 
@@ -67,21 +67,21 @@ func Middleware(r *ghttp.Request) {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func Order(r *ghttp.Request) {
-	r.Response.Write("GET")
+    r.Response.Write("GET")
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/api.v1", func(group *ghttp.RouterGroup) {
-		group.GET("/order", Order)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/api.v1", func(group *ghttp.RouterGroup) {
+        group.GET("/order", Order)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -103,27 +103,27 @@ $.get("http://localhost:8199/api.v1/order", function(result){
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func MiddlewareCORS(r *ghttp.Request) {
-	r.Response.CORSDefault()
-	r.Middleware.Next()
+    r.Response.CORSDefault()
+    r.Middleware.Next()
 }
 
 func Order(r *ghttp.Request) {
-	r.Response.Write("GET")
+    r.Response.Write("GET")
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/api.v1", func(group *ghttp.RouterGroup) {
-		group.Middleware(MiddlewareCORS)
-		group.GET("/order", Order)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/api.v1", func(group *ghttp.RouterGroup) {
+        group.Middleware(MiddlewareCORS)
+        group.GET("/order", Order)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -143,29 +143,29 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func MiddlewareCORS(r *ghttp.Request) {
-	corsOptions := r.Response.DefaultCORSOptions()
-	corsOptions.AllowDomain = []string{"goframe.org", "baidu.com"}
-	r.Response.CORS(corsOptions)
-	r.Middleware.Next()
+    corsOptions := r.Response.DefaultCORSOptions()
+    corsOptions.AllowDomain = []string{"goframe.org", "baidu.com"}
+    r.Response.CORS(corsOptions)
+    r.Middleware.Next()
 }
 
 func Order(r *ghttp.Request) {
-	r.Response.Write("GET")
+    r.Response.Write("GET")
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/api.v1", func(group *ghttp.RouterGroup) {
-		group.Middleware(MiddlewareCORS)
-		group.GET("/order", Order)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/api.v1", func(group *ghttp.RouterGroup) {
+        group.Middleware(MiddlewareCORS)
+        group.GET("/order", Order)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -179,32 +179,32 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func MiddlewareCORS(r *ghttp.Request) {
-	corsOptions := r.Response.DefaultCORSOptions()
-	corsOptions.AllowDomain = []string{"goframe.org"}
-	if !r.Response.CORSAllowedOrigin(corsOptions) {
-		r.Response.WriteStatus(http.StatusForbidden)
-		return
-	}
-	r.Response.CORS(corsOptions)
-	r.Middleware.Next()
+    corsOptions := r.Response.DefaultCORSOptions()
+    corsOptions.AllowDomain = []string{"goframe.org"}
+    if !r.Response.CORSAllowedOrigin(corsOptions) {
+        r.Response.WriteStatus(http.StatusForbidden)
+        return
+    }
+    r.Response.CORS(corsOptions)
+    r.Middleware.Next()
 }
 
 func Order(r *ghttp.Request) {
-	r.Response.Write("GET")
+    r.Response.Write("GET")
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/api.v1", func(group *ghttp.RouterGroup) {
-		group.Middleware(MiddlewareCORS)
-		group.GET("/order", Order)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/api.v1", func(group *ghttp.RouterGroup) {
+        group.Middleware(MiddlewareCORS)
+        group.GET("/order", Order)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```

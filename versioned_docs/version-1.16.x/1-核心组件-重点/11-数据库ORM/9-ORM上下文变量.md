@@ -59,16 +59,16 @@ context deadline exceeded, SELECT SLEEP(10)
 package main
 
 import (
-	"context"
-	"github.com/gogf/gf/frame/g"
+    "context"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	ctx := context.WithValue(context.Background(), "Trace-Id", "123456789")
-	_, err := g.DB().Ctx(ctx).Query("SELECT 1")
-	if err != nil {
-		panic(err)
-	}
+    ctx := context.WithValue(context.Background(), "Trace-Id", "123456789")
+    _, err := g.DB().Ctx(ctx).Query("SELECT 1")
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
@@ -86,16 +86,16 @@ func main() {
 package main
 
 import (
-	"context"
-	"github.com/gogf/gf/frame/g"
+    "context"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	ctx := context.WithValue(context.Background(), "Trace-Id", "123456789")
-	_, err := g.DB().Model("user").Ctx(ctx).All()
-	if err != nil {
-		panic(err)
-	}
+    ctx := context.WithValue(context.Background(), "Trace-Id", "123456789")
+    _, err := g.DB().Model("user").Ctx(ctx).All()
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 

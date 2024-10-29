@@ -53,21 +53,21 @@ func main() {
 package main
 
 import (
-   	"fmt"
+       "fmt"
 
-   	"github.com/gogf/gf/v2/frame/g"
-   	"github.com/gogf/gf/v2/os/gctx"
+       "github.com/gogf/gf/v2/frame/g"
+       "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-   	c := g.Client()
-   	c.SetCookie("name", "john")
-   	c.SetCookie("score", "100")
-   	if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
-   		panic(e)
-   	} else {
-   		fmt.Println(r.ReadAllString())
-   	}
+       c := g.Client()
+       c.SetCookie("name", "john")
+       c.SetCookie("score", "100")
+       if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
+           panic(e)
+       } else {
+           fmt.Println(r.ReadAllString())
+       }
 }
 ```
 
@@ -93,23 +93,23 @@ func main() {
 package main
 
 import (
-   	"fmt"
+       "fmt"
 
-   	"github.com/gogf/gf/v2/frame/g"
-   	"github.com/gogf/gf/v2/os/gctx"
+       "github.com/gogf/gf/v2/frame/g"
+       "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-   	c := g.Client()
-   	c.SetCookieMap(g.MapStrStr{
-   		"name":  "john",
-   		"score": "100",
-   	})
-   	if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
-   		panic(e)
-   	} else {
-   		fmt.Println(r.ReadAllString())
-   	}
+       c := g.Client()
+       c.SetCookieMap(g.MapStrStr{
+           "name":  "john",
+           "score": "100",
+       })
+       if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
+           panic(e)
+       } else {
+           fmt.Println(r.ReadAllString())
+       }
 }
 ```
 

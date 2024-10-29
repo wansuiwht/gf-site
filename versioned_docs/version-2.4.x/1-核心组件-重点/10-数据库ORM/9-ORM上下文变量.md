@@ -41,15 +41,15 @@ context deadline exceeded, SELECT SLEEP(10)
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	_, err := g.DB().Model("user").Ctx(gctx.New()).All()
-	if err != nil {
-		panic(err)
-	}
+    _, err := g.DB().Model("user").Ctx(gctx.New()).All()
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 

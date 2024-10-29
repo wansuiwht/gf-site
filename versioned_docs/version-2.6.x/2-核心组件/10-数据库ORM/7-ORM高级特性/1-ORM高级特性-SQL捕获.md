@@ -37,42 +37,42 @@ CREATE TABLE `user` (
 package main
 
 import (
-	"context"
+    "context"
 
-	_ "github.com/gogf/gf/contrib/drivers/mysql/v2"
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/gtime"
+    _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    "github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/gtime"
 )
 
 type User struct {
-	Id         int
-	Passport   string
-	Password   string
-	Nickname   string
-	CreateTime *gtime.Time
+    Id         int
+    Passport   string
+    Password   string
+    Nickname   string
+    CreateTime *gtime.Time
 }
 
 func initUser(ctx context.Context) error {
-	_, err := g.Model("user").Ctx(ctx).Data(User{
-		Id:       1,
-		Passport: "john",
-		Password: "12345678",
-		Nickname: "John",
-	}).Insert()
-	return err
+    _, err := g.Model("user").Ctx(ctx).Data(User{
+        Id:       1,
+        Passport: "john",
+        Password: "12345678",
+        Nickname: "John",
+    }).Insert()
+    return err
 }
 
 func main() {
-	var ctx = gctx.New()
-	sqlArray, err := gdb.CatchSQL(ctx, func(ctx context.Context) error {
-		return initUser(ctx)
-	})
-	if err != nil {
-		panic(err)
-	}
-	g.Dump(sqlArray)
+    var ctx = gctx.New()
+    sqlArray, err := gdb.CatchSQL(ctx, func(ctx context.Context) error {
+        return initUser(ctx)
+    })
+    if err != nil {
+        panic(err)
+    }
+    g.Dump(sqlArray)
 }
 ```
 
@@ -117,42 +117,42 @@ CREATE TABLE `user` (
 package main
 
 import (
-	"context"
+    "context"
 
-	_ "github.com/gogf/gf/contrib/drivers/mysql/v2"
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/gtime"
+    _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    "github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/gtime"
 )
 
 type User struct {
-	Id         int
-	Passport   string
-	Password   string
-	Nickname   string
-	CreateTime *gtime.Time
+    Id         int
+    Passport   string
+    Password   string
+    Nickname   string
+    CreateTime *gtime.Time
 }
 
 func initUser(ctx context.Context) error {
-	_, err := g.Model("user").Ctx(ctx).Data(User{
-		Id:       1,
-		Passport: "john",
-		Password: "12345678",
-		Nickname: "John",
-	}).Insert()
-	return err
+    _, err := g.Model("user").Ctx(ctx).Data(User{
+        Id:       1,
+        Passport: "john",
+        Password: "12345678",
+        Nickname: "John",
+    }).Insert()
+    return err
 }
 
 func main() {
-	var ctx = gctx.New()
-	sql, err := gdb.ToSQL(ctx, func(ctx context.Context) error {
-		return initUser(ctx)
-	})
-	if err != nil {
-		panic(err)
-	}
-	g.Dump(sql)
+    var ctx = gctx.New()
+    sql, err := gdb.ToSQL(ctx, func(ctx context.Context) error {
+        return initUser(ctx)
+    })
+    if err != nil {
+        panic(err)
+    }
+    g.Dump(sql)
 }
 ```
 

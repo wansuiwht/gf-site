@@ -137,30 +137,30 @@ $ redis-cli
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gvar"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/gvar"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	var (
-		err    error
-		result *gvar.Var
-		key    = "user"
-		data   = g.Map{
-			"id":   10000,
-			"name": "john",
-		}
-	)
-	_, err = g.Redis().Do("SET", key, data)
-	if err != nil {
-		panic(err)
-	}
-	result, err = g.Redis().DoVar("GET", key)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(result.Map())
+    var (
+        err    error
+        result *gvar.Var
+        key    = "user"
+        data   = g.Map{
+            "id":   10000,
+            "name": "john",
+        }
+    )
+    _, err = g.Redis().Do("SET", key, data)
+    if err != nil {
+        panic(err)
+    }
+    result, err = g.Redis().DoVar("GET", key)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(result.Map())
 }
 
 ```
@@ -171,40 +171,40 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gvar"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/gvar"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	type User struct {
-		Id   int
-		Name string
-	}
-	var (
-		err    error
-		result *gvar.Var
-		key    = "user"
-		user   = &User{
-			Id:   10000,
-			Name: "john",
-		}
-	)
+    type User struct {
+        Id   int
+        Name string
+    }
+    var (
+        err    error
+        result *gvar.Var
+        key    = "user"
+        user   = &User{
+            Id:   10000,
+            Name: "john",
+        }
+    )
 
-	_, err = g.Redis().Do("SET", key, user)
-	if err != nil {
-		panic(err)
-	}
-	result, err = g.Redis().DoVar("GET", key)
-	if err != nil {
-		panic(err)
-	}
+    _, err = g.Redis().Do("SET", key, user)
+    if err != nil {
+        panic(err)
+    }
+    result, err = g.Redis().DoVar("GET", key)
+    if err != nil {
+        panic(err)
+    }
 
-	var user2 *User
-	if err = result.Struct(&user2); err != nil {
-		panic(err)
-	}
-	fmt.Println(user2.Id, user2.Name)
+    var user2 *User
+    if err = result.Struct(&user2); err != nil {
+        panic(err)
+    }
+    fmt.Println(user2.Id, user2.Name)
 }
 
 ```

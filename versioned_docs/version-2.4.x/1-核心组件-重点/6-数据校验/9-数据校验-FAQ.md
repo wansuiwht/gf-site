@@ -10,8 +10,8 @@ hide_title: true
 
 ```go
 type User struct {
-	Name string `v:"required"`
-	Age  uint   `v:"required"`
+    Name string `v:"required"`
+    Age  uint   `v:"required"`
 }
 ```
 

@@ -19,22 +19,22 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
 )
 
 func main() {
-	s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.ALL("/json", func(r *ghttp.Request) {
-			r.Response.WriteJson(g.Map{
-				"id":   1,
-				"name": "john",
-			})
-		})
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.ALL("/json", func(r *ghttp.Request) {
+            r.Response.WriteJson(g.Map{
+                "id":   1,
+                "name": "john",
+            })
+        })
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 ```
@@ -61,22 +61,22 @@ Content-Length: 22
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
 )
 
 func main() {
-	s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.ALL("/jsonp", func(r *ghttp.Request) {
-			r.Response.WriteJsonP(g.Map{
-				"id":   1,
-				"name": "john",
-			})
-		})
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.ALL("/jsonp", func(r *ghttp.Request) {
+            r.Response.WriteJsonP(g.Map{
+                "id":   1,
+                "name": "john",
+            })
+        })
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 ```
@@ -101,23 +101,23 @@ MyCallback({"id":1,"name":"john"})
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
 )
 
 func main() {
-	s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.ALL("/xml", func(r *ghttp.Request) {
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.ALL("/xml", func(r *ghttp.Request) {
             r.Response.Write(`<?xml version="1.0" encoding="UTF-8"?>`)
-			r.Response.WriteXml(g.Map{
-				"id":   1,
-				"name": "john",
-			})
-		})
-	})
-	s.SetPort(8199)
-	s.Run()
+            r.Response.WriteXml(g.Map{
+                "id":   1,
+                "name": "john",
+            })
+        })
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 ```

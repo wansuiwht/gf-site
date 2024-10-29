@@ -15,12 +15,12 @@ ARGUMENT
     MAIN    main golang file path for "gf build", it's "main.go" in default
 
 OPTION
-    -f,	--file     file path of the Dockerfile. it's "manifest/docker/Dockerfile" in default
-    -s,	--shell    path of the shell file which is executed before docker build
-    -t,	--tag      tag name for this docker, which is usually used for docker push
-    -p,	--push     auto push the docker image to docker registry if "-t" option passed
-    -e,	--extra    extra build options passed to "docker image"
-    -h,	--help     more information about this command
+    -f,    --file     file path of the Dockerfile. it's "manifest/docker/Dockerfile" in default
+    -s,    --shell    path of the shell file which is executed before docker build
+    -t,    --tag      tag name for this docker, which is usually used for docker push
+    -p,    --push     auto push the docker image to docker registry if "-t" option passed
+    -e,    --extra    extra build options passed to "docker image"
+    -h,    --help     more information about this command
 
 EXAMPLE
     gf docker

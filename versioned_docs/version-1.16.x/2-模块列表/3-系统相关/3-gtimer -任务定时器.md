@@ -70,20 +70,20 @@ ok      command-line-arguments    6.602s
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/os/gtime"
-	"github.com/gogf/gf/os/gtimer"
-	"time"
+    "fmt"
+    "github.com/gogf/gf/os/gtime"
+    "github.com/gogf/gf/os/gtimer"
+    "time"
 )
 
 func main() {
-	now := time.Now()
-	gtimer.AddTimes(time.Second, 10, func() {
-		fmt.Println(gtime.Now(), time.Duration(time.Now().UnixNano()-now.UnixNano()))
-		now = time.Now()
-	})
+    now := time.Now()
+    gtimer.AddTimes(time.Second, 10, func() {
+        fmt.Println(gtime.Now(), time.Duration(time.Now().UnixNano()-now.UnixNano()))
+        now = time.Now()
+    })
 
-	select {}
+    select {}
 }
 ```
 
@@ -142,18 +142,18 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/os/gtime"
-	"github.com/gogf/gf/os/gtimer"
-	"time"
+    "fmt"
+    "github.com/gogf/gf/os/gtime"
+    "github.com/gogf/gf/os/gtimer"
+    "time"
 )
 
 func main() {
-	fmt.Println("Start:", gtime.Now())
-	gtimer.DelayAdd(time.Second, time.Second, func() {
-		fmt.Println("Running:", gtime.Now())
-	})
-	select {}
+    fmt.Println("Start:", gtime.Now())
+    gtimer.DelayAdd(time.Second, time.Second, func() {
+        fmt.Println("Running:", gtime.Now())
+    })
+    select {}
 }
 ```
 
@@ -180,20 +180,20 @@ Running: 2021-05-27 13:26:11
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/os/gtime"
-	"github.com/gogf/gf/os/gtimer"
-	"time"
+    "fmt"
+    "github.com/gogf/gf/os/gtime"
+    "github.com/gogf/gf/os/gtimer"
+    "time"
 )
 
 func main() {
-	gtimer.SetTimeout(time.Second, func() {
-		fmt.Println("SetTimeout:", gtime.Now())
-	})
-	gtimer.SetInterval(time.Second, func() {
-		fmt.Println("SetInterval:", gtime.Now())
-	})
-	select {}
+    gtimer.SetTimeout(time.Second, func() {
+        fmt.Println("SetTimeout:", gtime.Now())
+    })
+    gtimer.SetInterval(time.Second, func() {
+        fmt.Println("SetInterval:", gtime.Now())
+    })
+    select {}
 }
 ```
 
@@ -221,18 +221,18 @@ SetInterval: 2021-05-27 13:20:58
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/os/gtime"
-	"github.com/gogf/gf/os/gtimer"
-	"time"
+    "fmt"
+    "github.com/gogf/gf/os/gtime"
+    "github.com/gogf/gf/os/gtimer"
+    "time"
 )
 
 func main() {
-	gtimer.SetInterval(time.Second, func() {
-		fmt.Println("exit:", gtime.Now())
-		gtimer.Exit()
-	})
-	select {}
+    gtimer.SetInterval(time.Second, func() {
+        fmt.Println("exit:", gtime.Now())
+        gtimer.Exit()
+    })
+    select {}
 }
 ```
 

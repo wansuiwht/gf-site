@@ -10,25 +10,25 @@ hide_title: true
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var ctx = gctx.New()
-	_, err := g.Redis().Set(ctx, "key", "value")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	value, err := g.Redis().Get(ctx, "key")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	fmt.Println(value.String())
+    var ctx = gctx.New()
+    _, err := g.Redis().Set(ctx, "key", "value")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    value, err := g.Redis().Get(ctx, "key")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    fmt.Println(value.String())
 }
 ```
 
@@ -43,36 +43,36 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var ctx = gctx.New()
-	err := g.Redis().SetEX(ctx, "key", "value", 1)
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	value, err := g.Redis().Get(ctx, "key")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	fmt.Println(value.IsNil())
-	fmt.Println(value.String())
+    var ctx = gctx.New()
+    err := g.Redis().SetEX(ctx, "key", "value", 1)
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    value, err := g.Redis().Get(ctx, "key")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    fmt.Println(value.IsNil())
+    fmt.Println(value.String())
 
-	time.Sleep(time.Second)
+    time.Sleep(time.Second)
 
-	value, err = g.Redis().Get(ctx, "key")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	fmt.Println(value.IsNil())
-	fmt.Println(value.Val())
+    value, err = g.Redis().Get(ctx, "key")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    fmt.Println(value.IsNil())
+    fmt.Println(value.Val())
 }
 ```
 
@@ -90,46 +90,46 @@ true
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var (
-		ctx = gctx.New()
-		key = "key"
-	)
-	_, err := g.Redis().HSet(ctx, key, g.Map{
-		"id":    1,
-		"name":  "john",
-		"score": 100,
-	})
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
+    var (
+        ctx = gctx.New()
+        key = "key"
+    )
+    _, err := g.Redis().HSet(ctx, key, g.Map{
+        "id":    1,
+        "name":  "john",
+        "score": 100,
+    })
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
 
-	// retrieve hash map
-	value, err := g.Redis().HGetAll(ctx, key)
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	fmt.Println(value.Map())
+    // retrieve hash map
+    value, err := g.Redis().HGetAll(ctx, key)
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    fmt.Println(value.Map())
 
-	// scan to struct
-	type User struct {
-		Id    uint64
-		Name  string
-		Score float64
-	}
-	var user *User
-	if err = value.Scan(&user); err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	g.Dump(user)
+    // scan to struct
+    type User struct {
+        Id    uint64
+        Name  string
+        Score float64
+    }
+    var user *User
+    if err = value.Scan(&user); err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    g.Dump(user)
 }
 ```
 
@@ -150,32 +150,32 @@ map[id:1 name:john score:100]
 package main
 
 import (
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var (
-		ctx = gctx.New()
-		key = "key"
-	)
-	err := g.Redis().HMSet(ctx, key, g.Map{
-		"id":    1,
-		"name":  "john",
-		"score": 100,
-	})
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
+    var (
+        ctx = gctx.New()
+        key = "key"
+    )
+    err := g.Redis().HMSet(ctx, key, g.Map{
+        "id":    1,
+        "name":  "john",
+        "score": 100,
+    })
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
 
-	// retrieve hash map
-	values, err := g.Redis().HMGet(ctx, key, "id", "name")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	g.Dump(values.Strings())
+    // retrieve hash map
+    values, err := g.Redis().HMGet(ctx, key, "id", "name")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    g.Dump(values.Strings())
 }
 ```
 

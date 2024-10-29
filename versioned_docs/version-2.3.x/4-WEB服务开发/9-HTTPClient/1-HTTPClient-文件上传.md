@@ -16,23 +16,23 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 // Upload uploads files to /tmp .
 func Upload(r *ghttp.Request) {
-	files := r.GetUploadFiles("upload-file")
+    files := r.GetUploadFiles("upload-file")
     names, err := files.Save("/tmp/")
     if err != nil {
-		r.Response.WriteExit(err)
-	}
-	r.Response.WriteExit("upload successfully: ", names)
+        r.Response.WriteExit(err)
+    }
+    r.Response.WriteExit("upload successfully: ", names)
 }
 
 // UploadShow shows uploading simgle file page.
 func UploadShow(r *ghttp.Request) {
-	r.Response.Write(`
+    r.Response.Write(`
     <html>
     <head>
         <title>GF Upload File Demo</title>
@@ -49,7 +49,7 @@ func UploadShow(r *ghttp.Request) {
 
 // UploadShowBatch shows uploading multiple files page.
 func UploadShowBatch(r *ghttp.Request) {
-	r.Response.Write(`
+    r.Response.Write(`
     <html>
     <head>
         <title>GF Upload Files Demo</title>
@@ -66,14 +66,14 @@ func UploadShowBatch(r *ghttp.Request) {
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/upload", func(group *ghttp.RouterGroup) {
-		group.POST("/", Upload)
-		group.ALL("/show", UploadShow)
-		group.ALL("/batch", UploadShowBatch)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/upload", func(group *ghttp.RouterGroup) {
+        group.POST("/", Upload)
+        group.ALL("/show", UploadShow)
+        group.ALL("/batch", UploadShowBatch)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -100,24 +100,24 @@ func main() {
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 func main() {
-	var (
-		ctx  = gctx.New()
-		path = "/home/john/Workspace/Go/github.com/gogf/gf/v2/version.go"
-	)
-	result, err := g.Client().Post(ctx, "http://127.0.0.1:8199/upload", "upload-file=@file:"+path)
-	if err != nil {
-		glog.Fatalf(ctx, `%+v`, err)
-	}
-	defer result.Close()
-	fmt.Println(result.ReadAllString())
+    var (
+        ctx  = gctx.New()
+        path = "/home/john/Workspace/Go/github.com/gogf/gf/v2/version.go"
+    )
+    result, err := g.Client().Post(ctx, "http://127.0.0.1:8199/upload", "upload-file=@file:"+path)
+    if err != nil {
+        glog.Fatalf(ctx, `%+v`, err)
+    }
+    defer result.Close()
+    fmt.Println(result.ReadAllString())
 }
 ```
 
@@ -131,29 +131,29 @@ func main() {
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 func main() {
-	var (
-		ctx   = gctx.New()
-		path1 = "/Users/john/Pictures/logo1.png"
-		path2 = "/Users/john/Pictures/logo2.png"
-	)
-	result, err := g.Client().Post(
-		ctx,
-		"http://127.0.0.1:8199/upload",
-		fmt.Sprintf(`upload-file=@file:%s&upload-file=@file:%s`, path1, path2),
-	)
-	if err != nil {
-		glog.Fatalf(ctx, `%+v`, err)
-	}
-	defer result.Close()
-	fmt.Println(result.ReadAllString())
+    var (
+        ctx   = gctx.New()
+        path1 = "/Users/john/Pictures/logo1.png"
+        path2 = "/Users/john/Pictures/logo2.png"
+    )
+    result, err := g.Client().Post(
+        ctx,
+        "http://127.0.0.1:8199/upload",
+        fmt.Sprintf(`upload-file=@file:%s&upload-file=@file:%s`, path1, path2),
+    )
+    if err != nil {
+        glog.Fatalf(ctx, `%+v`, err)
+    }
+    defer result.Close()
+    fmt.Println(result.ReadAllString())
 }
 ```
 

@@ -10,27 +10,27 @@ hide_title: true
 package main
 
 import (
-	_ "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
 
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var ctx = gctx.New()
-	db, err := gdb.New(gdb.ConfigNode{
-		Link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test",
-	})
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	err = db.PingMaster()
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	stats := db.Stats(ctx)
-	g.Dump(stats)
+    var ctx = gctx.New()
+    db, err := gdb.New(gdb.ConfigNode{
+        Link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test",
+    })
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    err = db.PingMaster()
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    stats := db.Stats(ctx)
+    g.Dump(stats)
 }
 ```
 

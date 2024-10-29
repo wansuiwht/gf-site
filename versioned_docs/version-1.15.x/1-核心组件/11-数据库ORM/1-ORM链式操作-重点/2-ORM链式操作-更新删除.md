@@ -48,8 +48,8 @@ r, err := db.Table("user").Update(g.Map{"status" : 1}, 1)
 ```go
 // Counter  is the type for update count.
 type Counter struct {
-	Field string
-	Value float64
+    Field string
+    Value float64
 }
 ```
 
@@ -57,7 +57,7 @@ type Counter struct {
 
 ```go
 updateData := g.Map{
-	"views": &gdb.Counter{
+    "views": &gdb.Counter{
         Field: "views",
         Value: 1,
     },
@@ -70,7 +70,7 @@ result, err := db.Update("article", updateData, "id", 1)
 
 ```go
 updateData := g.Map{
-	"views": &gdb.Counter{
+    "views": &gdb.Counter{
         Field: "clicks",
         Value: 1,
     },

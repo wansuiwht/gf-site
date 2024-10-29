@@ -31,25 +31,25 @@ CREATE TABLE `sell_spec` (
 ```go
 // SellSpec 是通过GoFrame工具自动生成的数据结构，由工具维护。
 type SellSpec struct {
-	Id        uint        `description:"主键"`
-	Product   string      `description:"产品名称"`
-	Resources string      `description:"资源规格(cpu:memory)，例如：[\"0:0.25\", \"0:1\", \"1:2\"]"`
-	DiskMin   int         `description:"磁盘最小容量"`
-	DiskMax   int         `description:"磁盘最大容量"`
-	DiskStep  int         `description:"磁盘递增大小"`
-	Shards    string      `description:"分片规格，例如：[1,3,5,8,12,16,24,32,40,48,64,80,96,128]"`
-	Replicas  string      `description:"副本规格，例如：[1,2,3,4,5,6,7,8,9,12]"`
-	CreatedAt *gtime.Time `description:"创建时间"`
-	UpdatedAt *gtime.Time `description:"更新时间"`
+    Id        uint        `description:"主键"`
+    Product   string      `description:"产品名称"`
+    Resources string      `description:"资源规格(cpu:memory)，例如：[\"0:0.25\", \"0:1\", \"1:2\"]"`
+    DiskMin   int         `description:"磁盘最小容量"`
+    DiskMax   int         `description:"磁盘最大容量"`
+    DiskStep  int         `description:"磁盘递增大小"`
+    Shards    string      `description:"分片规格，例如：[1,3,5,8,12,16,24,32,40,48,64,80,96,128]"`
+    Replicas  string      `description:"副本规格，例如：[1,2,3,4,5,6,7,8,9,12]"`
+    CreatedAt *gtime.Time `description:"创建时间"`
+    UpdatedAt *gtime.Time `description:"更新时间"`
 }
 
 // SellSpecItem 是扩展entity的自定义数据结构，
 // 其中部分字段Resources/Shards/Replicas被覆盖为了数组类型，方便ORM操作时自动进行类型转换。
 type SellSpecItem struct {
-	entity.SellSpec
-	Resources []string `dc:"资源规格"`
-	Shards    []int    `dc:"分片规格"`
-	Replicas  []int    `dc:"副本规格"`
+    entity.SellSpec
+    Resources []string `dc:"资源规格"`
+    Shards    []int    `dc:"分片规格"`
+    Replicas  []int    `dc:"副本规格"`
 }
 ```
 
@@ -59,15 +59,15 @@ type SellSpecItem struct {
 
 ```go
 _, err = dao.SellSpec.Ctx(ctx).Data(v1.SellSpecItem{
-	SellSpec: entity.SellSpec{
-		Product:  "redis",
-		DiskMin:  50,
-		DiskMax:  1000,
-		DiskStep: 10,
-	},
-	Resources: []string{"1:2", "2:4", "4:8"},
-	Shards:    []int{1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 128},
-	Replicas:  []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 12},
+    SellSpec: entity.SellSpec{
+        Product:  "redis",
+        DiskMin:  50,
+        DiskMax:  1000,
+        DiskStep: 10,
+    },
+    Resources: []string{"1:2", "2:4", "4:8"},
+    Shards:    []int{1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 128},
+    Replicas:  []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 12},
 }).Insert()
 ```
 

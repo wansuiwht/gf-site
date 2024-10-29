@@ -62,99 +62,99 @@ message DeleteRes {}
 package main
 
 import (
-	"context"
-	"fmt"
-	"gftracing/examples/grpc+db+redis+log/protobuf/user"
-	"gftracing/tracing"
-	"github.com/gogf/gcache-adapter/adapter"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/katyusha/krpc"
-	"google.golang.org/grpc"
-	"net"
-	"time"
+    "context"
+    "fmt"
+    "gftracing/examples/grpc+db+redis+log/protobuf/user"
+    "gftracing/tracing"
+    "github.com/gogf/gcache-adapter/adapter"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/katyusha/krpc"
+    "google.golang.org/grpc"
+    "net"
+    "time"
 )
 
 type server struct{}
 
 const (
-	ServiceName       = "tracing-grpc-server"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "tracing-grpc-server"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(err)
-	}
-	defer flush()
+    flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(err)
+    }
+    defer flush()
 
-	g.DB().GetCache().SetAdapter(adapter.NewRedis(g.Redis()))
+    g.DB().GetCache().SetAdapter(adapter.NewRedis(g.Redis()))
 
-	address := ":8000"
-	listen, err := net.Listen("tcp", address)
-	if err != nil {
-		g.Log().Fatalf("failed to listen: %v", err)
-	}
-	s := grpc.NewServer(
-		grpc.ChainUnaryInterceptor(
-			krpc.Server.UnaryError,
-			krpc.Server.UnaryRecover,
-			krpc.Server.UnaryTracing,
-			krpc.Server.UnaryValidate,
-		),
-	)
-	user.RegisterUserServer(s, &server{})
-	g.Log().Printf("grpc server starts listening on %s", address)
-	if err := s.Serve(listen); err != nil {
-		g.Log().Fatalf("failed to serve: %v", err)
-	}
+    address := ":8000"
+    listen, err := net.Listen("tcp", address)
+    if err != nil {
+        g.Log().Fatalf("failed to listen: %v", err)
+    }
+    s := grpc.NewServer(
+        grpc.ChainUnaryInterceptor(
+            krpc.Server.UnaryError,
+            krpc.Server.UnaryRecover,
+            krpc.Server.UnaryTracing,
+            krpc.Server.UnaryValidate,
+        ),
+    )
+    user.RegisterUserServer(s, &server{})
+    g.Log().Printf("grpc server starts listening on %s", address)
+    if err := s.Serve(listen); err != nil {
+        g.Log().Fatalf("failed to serve: %v", err)
+    }
 }
 
 // Insert is a route handler for inserting user info into dtabase.
 func (s *server) Insert(ctx context.Context, req *user.InsertReq) (*user.InsertRes, error) {
-	res := user.InsertRes{}
-	result, err := g.Table("user").Ctx(ctx).Insert(g.Map{
-		"name": req.Name,
-	})
-	if err != nil {
-		return nil, err
-	}
-	id, _ := result.LastInsertId()
-	res.Id = int32(id)
-	return &res, nil
+    res := user.InsertRes{}
+    result, err := g.Table("user").Ctx(ctx).Insert(g.Map{
+        "name": req.Name,
+    })
+    if err != nil {
+        return nil, err
+    }
+    id, _ := result.LastInsertId()
+    res.Id = int32(id)
+    return &res, nil
 }
 
 // Query is a route handler for querying user info. It firstly retrieves the info from redis,
 // if there's nothing in the redis, it then does db select.
 func (s *server) Query(ctx context.Context, req *user.QueryReq) (*user.QueryRes, error) {
-	res := user.QueryRes{}
-	err := g.Table("user").
-		Ctx(ctx).
-		Cache(5*time.Second, s.userCacheKey(req.Id)).
-		WherePri(req.Id).
-		Scan(&res)
-	if err != nil {
-		return nil, err
-	}
-	return &res, nil
+    res := user.QueryRes{}
+    err := g.Table("user").
+        Ctx(ctx).
+        Cache(5*time.Second, s.userCacheKey(req.Id)).
+        WherePri(req.Id).
+        Scan(&res)
+    if err != nil {
+        return nil, err
+    }
+    return &res, nil
 }
 
 // Delete is a route handler for deleting specified user info.
 func (s *server) Delete(ctx context.Context, req *user.DeleteReq) (*user.DeleteRes, error) {
-	res := user.DeleteRes{}
-	_, err := g.Table("user").
-		Ctx(ctx).
-		Cache(-1, s.userCacheKey(req.Id)).
-		WherePri(req.Id).
-		Delete()
-	if err != nil {
-		return nil, err
-	}
-	return &res, nil
+    res := user.DeleteRes{}
+    _, err := g.Table("user").
+        Ctx(ctx).
+        Cache(-1, s.userCacheKey(req.Id)).
+        WherePri(req.Id).
+        Delete()
+    if err != nil {
+        return nil, err
+    }
+    return &res, nil
 }
 
 func (s *server) userCacheKey(id int32) string {
-	return fmt.Sprintf(`userInfo:%d`, id)
+    return fmt.Sprintf(`userInfo:%d`, id)
 }
 ```
 
@@ -187,94 +187,94 @@ g.DB().GetCache().SetAdapter(adapter.NewRedis(g.Redis()))
 package main
 
 import (
-	"context"
-	"gftracing/examples/grpc+db+redis+log/protobuf/user"
-	"gftracing/tracing"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/gtrace"
-	"github.com/gogf/katyusha/krpc"
-	"google.golang.org/grpc"
+    "context"
+    "gftracing/examples/grpc+db+redis+log/protobuf/user"
+    "gftracing/tracing"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/gtrace"
+    "github.com/gogf/katyusha/krpc"
+    "google.golang.org/grpc"
 )
 
 const (
-	ServiceName       = "tracing-grpc-client"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "tracing-grpc-client"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(err)
-	}
-	defer flush()
+    flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(err)
+    }
+    defer flush()
 
-	StartRequests()
+    StartRequests()
 }
 
 func StartRequests() {
-	ctx, span := gtrace.NewSpan(context.Background(), "StartRequests")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(context.Background(), "StartRequests")
+    defer span.End()
 
-	grpcClientOptions := make([]grpc.DialOption, 0)
-	grpcClientOptions = append(
-		grpcClientOptions,
-		grpc.WithInsecure(),
-		grpc.WithBlock(),
-		grpc.WithChainUnaryInterceptor(
-			krpc.Client.UnaryError,
-			krpc.Client.UnaryTracing,
-		),
-	)
+    grpcClientOptions := make([]grpc.DialOption, 0)
+    grpcClientOptions = append(
+        grpcClientOptions,
+        grpc.WithInsecure(),
+        grpc.WithBlock(),
+        grpc.WithChainUnaryInterceptor(
+            krpc.Client.UnaryError,
+            krpc.Client.UnaryTracing,
+        ),
+    )
 
-	conn, err := grpc.Dial(":8000", grpcClientOptions...)
-	if err != nil {
-		g.Log().Fatalf("did not connect: %v", err)
-	}
-	defer conn.Close()
+    conn, err := grpc.Dial(":8000", grpcClientOptions...)
+    if err != nil {
+        g.Log().Fatalf("did not connect: %v", err)
+    }
+    defer conn.Close()
 
-	client := user.NewUserClient(conn)
+    client := user.NewUserClient(conn)
 
-	// Baggage.
-	ctx = gtrace.SetBaggageValue(ctx, "uid", 100)
+    // Baggage.
+    ctx = gtrace.SetBaggageValue(ctx, "uid", 100)
 
-	// Insert.
-	insertRes, err := client.Insert(ctx, &user.InsertReq{
-		Name: "john",
-	})
-	if err != nil {
-		g.Log().Ctx(ctx).Fatalf(`%+v`, err)
-	}
-	g.Log().Ctx(ctx).Println("insert:", insertRes.Id)
+    // Insert.
+    insertRes, err := client.Insert(ctx, &user.InsertReq{
+        Name: "john",
+    })
+    if err != nil {
+        g.Log().Ctx(ctx).Fatalf(`%+v`, err)
+    }
+    g.Log().Ctx(ctx).Println("insert:", insertRes.Id)
 
-	// Query.
-	queryRes, err := client.Query(ctx, &user.QueryReq{
-		Id: insertRes.Id,
-	})
-	if err != nil {
-		g.Log().Ctx(ctx).Printf(`%+v`, err)
-		return
-	}
-	g.Log().Ctx(ctx).Println("query:", queryRes)
+    // Query.
+    queryRes, err := client.Query(ctx, &user.QueryReq{
+        Id: insertRes.Id,
+    })
+    if err != nil {
+        g.Log().Ctx(ctx).Printf(`%+v`, err)
+        return
+    }
+    g.Log().Ctx(ctx).Println("query:", queryRes)
 
-	// Delete.
-	_, err = client.Delete(ctx, &user.DeleteReq{
-		Id: insertRes.Id,
-	})
-	if err != nil {
-		g.Log().Ctx(ctx).Printf(`%+v`, err)
-		return
-	}
-	g.Log().Ctx(ctx).Println("delete:", insertRes.Id)
+    // Delete.
+    _, err = client.Delete(ctx, &user.DeleteReq{
+        Id: insertRes.Id,
+    })
+    if err != nil {
+        g.Log().Ctx(ctx).Printf(`%+v`, err)
+        return
+    }
+    g.Log().Ctx(ctx).Println("delete:", insertRes.Id)
 
-	// Delete with error.
-	_, err = client.Delete(ctx, &user.DeleteReq{
-		Id: -1,
-	})
-	if err != nil {
-		g.Log().Ctx(ctx).Printf(`%+v`, err)
-		return
-	}
-	g.Log().Ctx(ctx).Println("delete:", -1)
+    // Delete with error.
+    _, err = client.Delete(ctx, &user.DeleteReq{
+        Id: -1,
+    })
+    if err != nil {
+        g.Log().Ctx(ctx).Printf(`%+v`, err)
+        return
+    }
+    g.Log().Ctx(ctx).Println("delete:", -1)
 
 }
 ```

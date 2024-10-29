@@ -12,12 +12,12 @@ hide_title: true
 
 ```bash
 curl localhost:8000/Execute -d '{
-	"Component": "mysql",
-	"ResourceId": "cdb-gy6hm0ee",
-	"Port": 6379,
-	"SQL": "show databases;",
-	"UserName": "root",
-	"Password": ""
+    "Component": "mysql",
+    "ResourceId": "cdb-gy6hm0ee",
+    "Port": 6379,
+    "SQL": "show databases;",
+    "UserName": "root",
+    "Password": ""
 }'
 ```
 
@@ -27,11 +27,11 @@ curl localhost:8000/Execute -d '{
 
 ```bash
 curl -X POST -H "Content-Type: application/json" localhost:8000/Execute -d '{
-	"Component": "mysql",
-	"ResourceId": "cdb-gy6hm0ee",
-	"Port": 6379,
-	"SQL": "show databases;",
-	"UserName": "root",
-	"Password": ""
+    "Component": "mysql",
+    "ResourceId": "cdb-gy6hm0ee",
+    "Port": 6379,
+    "SQL": "show databases;",
+    "UserName": "root",
+    "Password": ""
 }'
 ```

@@ -97,19 +97,19 @@ D:\Program Files\Go\bin\pkg\mod\github.com\gogf\gf@v1.16.6\net\ghttp\internal\cl
 ```go
 func main() {
 
-	//定时任务1
-	gcron.AddSingleton("*/5 * * * * *", func() {
-		task.Test()
-		glog.Debug("gcron1")
-	})
+    //定时任务1
+    gcron.AddSingleton("*/5 * * * * *", func() {
+        task.Test()
+        glog.Debug("gcron1")
+    })
 
-	//定时任务2
-	gcron.AddSingleton("*/10 * * * * *", func() {
-		glog.Debug("gcron2")
-	})
+    //定时任务2
+    gcron.AddSingleton("*/10 * * * * *", func() {
+        glog.Debug("gcron2")
+    })
 
-	//接收http请求
-	g.Server().Run()
+    //接收http请求
+    g.Server().Run()
 
 }
 ```

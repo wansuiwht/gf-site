@@ -207,13 +207,13 @@ func (m *Model) OmitNilData() *Model
 ```go
 // User is the golang structure of table user for DAO operations like Where/Data.
 type User struct {
-	g.Meta   `orm:"table:user, do:true"`
-	Id       interface{} // User ID
-	Passport interface{} // User Passport
-	Password interface{} // User Password
-	Nickname interface{} // User Nickname
-	CreateAt *gtime.Time // Created Time
-	UpdateAt *gtime.Time // Updated Time
+    g.Meta   `orm:"table:user, do:true"`
+    Id       interface{} // User ID
+    Passport interface{} // User Passport
+    Password interface{} // User Password
+    Nickname interface{} // User Nickname
+    CreateAt *gtime.Time // Created Time
+    UpdateAt *gtime.Time // Updated Time
 }
 ```
 
@@ -221,12 +221,12 @@ type User struct {
 
 ```go
 dao.User.Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
-	_, err = dao.User.Ctx(ctx).Data(do.User{
-		Passport: in.Passport,
-		Password: in.Password,
-		Nickname: in.Nickname,
-	}).Insert()
-	return err
+    _, err = dao.User.Ctx(ctx).Data(do.User{
+        Passport: in.Passport,
+        Password: in.Password,
+        Nickname: in.Nickname,
+    }).Insert()
+    return err
 })
 ```
 
@@ -235,8 +235,8 @@ dao.User.Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
 ```go
 var user *entity.User
 err = dao.User.Ctx(ctx).Where(do.User{
-	Passport: in.Passport,
-	Password: in.Password,
+    Passport: in.Passport,
+    Password: in.Password,
 }).Scan(&user)
 ```
 

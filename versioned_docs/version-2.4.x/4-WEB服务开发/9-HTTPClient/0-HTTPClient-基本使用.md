@@ -258,20 +258,20 @@ g.Client().GetVar(ctx, url).Scan(&users)
 
 ```go
 func ExampleNew() {
-	var (
-		ctx    = gctx.New()
-		client = gclient.New()
-	)
+    var (
+        ctx    = gctx.New()
+        client = gclient.New()
+    )
 
-	if r, err := client.Get(ctx, "http://127.0.0.1:8999/var/json"); err != nil {
-		panic(err)
-	} else {
-		defer r.Close()
-		fmt.Println(r.ReadAllString())
-	}
+    if r, err := client.Get(ctx, "http://127.0.0.1:8999/var/json"); err != nil {
+        panic(err)
+    } else {
+        defer r.Close()
+        fmt.Println(r.ReadAllString())
+    }
 
-	// Output:
-	// {"id":1,"name":"john"}
+    // Output:
+    // {"id":1,"name":"john"}
 }
 ```
 
@@ -281,32 +281,32 @@ func ExampleNew() {
 
 ```go
 func ExampleNew_MultiConn_Recommend() {
-	var (
-		ctx    = gctx.New()
-		client = g.Client()
-	)
+    var (
+        ctx    = gctx.New()
+        client = g.Client()
+    )
 
-	// controls the maximum idle(keep-alive) connections to keep per-host
-	client.Transport.(*http.Transport).MaxIdleConnsPerHost = 5
+    // controls the maximum idle(keep-alive) connections to keep per-host
+    client.Transport.(*http.Transport).MaxIdleConnsPerHost = 5
 
-	for i := 0; i < 5; i++ {
-		go func() {
-			if r, err := client.Get(ctx, "http://127.0.0.1:8999/var/json"); err != nil {
-				panic(err)
-			} else {
-				fmt.Println(r.ReadAllString())
-				r.Close()
-			}
-		}()
-	}
+    for i := 0; i < 5; i++ {
+        go func() {
+            if r, err := client.Get(ctx, "http://127.0.0.1:8999/var/json"); err != nil {
+                panic(err)
+            } else {
+                fmt.Println(r.ReadAllString())
+                r.Close()
+            }
+        }()
+    }
 
-	time.Sleep(time.Second * 1)
+    time.Sleep(time.Second * 1)
 
-	// Output:
-	//{"id":1,"name":"john"}
-	//{"id":1,"name":"john"}
-	//{"id":1,"name":"john"}
-	//{"id":1,"name":"john"}
-	//{"id":1,"name":"john"}
+    // Output:
+    //{"id":1,"name":"john"}
+    //{"id":1,"name":"john"}
+    //{"id":1,"name":"john"}
+    //{"id":1,"name":"john"}
+    //{"id":1,"name":"john"}
 }
 ```

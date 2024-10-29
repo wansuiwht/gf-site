@@ -62,83 +62,83 @@ message DeleteRes {}
 package main
 
 import (
-	"context"
-	"fmt"
-	"time"
+    "context"
+    "fmt"
+    "time"
 
-	"github.com/gogf/gf/contrib/trace/jaeger/v2"
-	"github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gcache"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/katyusha/krpc"
+    "github.com/gogf/gf/contrib/trace/jaeger/v2"
+    "github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
+    "github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gcache"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/katyusha/krpc"
 )
 
 type server struct{}
 
 const (
-	ServiceName       = "grpc-server-with-db"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "grpc-server-with-db"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	var ctx = gctx.New()
-	tp, err := jaeger.Init(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	defer tp.Shutdown(ctx)
+    var ctx = gctx.New()
+    tp, err := jaeger.Init(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    defer tp.Shutdown(ctx)
 
-	// Set ORM cache adapter with redis.
-	g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
+    // Set ORM cache adapter with redis.
+    g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 
-	s := krpc.Server.NewGrpcServer()
-	user.RegisterUserServer(s.Server, &server{})
-	s.Run()
+    s := krpc.Server.NewGrpcServer()
+    user.RegisterUserServer(s.Server, &server{})
+    s.Run()
 }
 
 // Insert is a route handler for inserting user info into database.
 func (s *server) Insert(ctx context.Context, req *user.InsertReq) (res *user.InsertRes, err error) {
-	result, err := g.Model("user").Ctx(ctx).Insert(g.Map{
-		"name": req.Name,
-	})
-	if err != nil {
-		return nil, err
-	}
-	id, _ := result.LastInsertId()
-	res = &user.InsertRes{
-		Id: int32(id),
-	}
-	return
+    result, err := g.Model("user").Ctx(ctx).Insert(g.Map{
+        "name": req.Name,
+    })
+    if err != nil {
+        return nil, err
+    }
+    id, _ := result.LastInsertId()
+    res = &user.InsertRes{
+        Id: int32(id),
+    }
+    return
 }
 
 // Query is a route handler for querying user info. It firstly retrieves the info from redis,
 // if there's nothing in the redis, it then does db select.
 func (s *server) Query(ctx context.Context, req *user.QueryReq) (res *user.QueryRes, err error) {
-	err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
-		Duration: 5 * time.Second,
-		Name:     s.userCacheKey(req.Id),
-		Force:    false,
-	}).WherePri(req.Id).Scan(&res)
-	if err != nil {
-		return nil, err
-	}
-	return
+    err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
+        Duration: 5 * time.Second,
+        Name:     s.userCacheKey(req.Id),
+        Force:    false,
+    }).WherePri(req.Id).Scan(&res)
+    if err != nil {
+        return nil, err
+    }
+    return
 }
 
 // Delete is a route handler for deleting specified user info.
 func (s *server) Delete(ctx context.Context, req *user.DeleteReq) (res *user.DeleteRes, err error) {
-	err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
-		Duration: -1,
-		Name:     s.userCacheKey(req.Id),
-		Force:    false,
-	}).WherePri(req.Id).Scan(&res)
-	return
+    err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
+        Duration: -1,
+        Name:     s.userCacheKey(req.Id),
+        Force:    false,
+    }).WherePri(req.Id).Scan(&res)
+    return
 }
 
 func (s *server) userCacheKey(id int32) string {
-	return fmt.Sprintf(`userInfo:%d`, id)
+    return fmt.Sprintf(`userInfo:%d`, id)
 }
 ```
 
@@ -162,79 +162,79 @@ g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 package main
 
 import (
-	"github.com/gogf/gf/contrib/trace/jaeger/v2"
-	"github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/gtrace"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/contrib/trace/jaeger/v2"
+    "github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/gtrace"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 const (
-	ServiceName       = "grpc-client-with-db"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "grpc-client-with-db"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	var ctx = gctx.New()
-	tp, err := jaeger.Init(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	defer tp.Shutdown(ctx)
+    var ctx = gctx.New()
+    tp, err := jaeger.Init(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    defer tp.Shutdown(ctx)
 
-	StartRequests()
+    StartRequests()
 }
 
 func StartRequests() {
-	ctx, span := gtrace.NewSpan(gctx.New(), "StartRequests")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(gctx.New(), "StartRequests")
+    defer span.End()
 
-	var client, err = user.NewClient()
-	if err != nil {
-		g.Log().Fatalf(ctx, `%+v`, err)
-	}
+    var client, err = user.NewClient()
+    if err != nil {
+        g.Log().Fatalf(ctx, `%+v`, err)
+    }
 
-	// Baggage.
-	ctx = gtrace.SetBaggageValue(ctx, "uid", 100)
+    // Baggage.
+    ctx = gtrace.SetBaggageValue(ctx, "uid", 100)
 
-	// Insert.
-	insertRes, err := client.User().Insert(ctx, &user.InsertReq{
-		Name: "john",
-	})
-	if err != nil {
-		g.Log().Fatalf(ctx, `%+v`, err)
-	}
-	g.Log().Info(ctx, "insert id:", insertRes.Id)
+    // Insert.
+    insertRes, err := client.User().Insert(ctx, &user.InsertReq{
+        Name: "john",
+    })
+    if err != nil {
+        g.Log().Fatalf(ctx, `%+v`, err)
+    }
+    g.Log().Info(ctx, "insert id:", insertRes.Id)
 
-	// Query.
-	queryRes, err := client.User().Query(ctx, &user.QueryReq{
-		Id: insertRes.Id,
-	})
-	if err != nil {
-		g.Log().Errorf(ctx, `%+v`, err)
-		return
-	}
-	g.Log().Info(ctx, "query result:", queryRes)
+    // Query.
+    queryRes, err := client.User().Query(ctx, &user.QueryReq{
+        Id: insertRes.Id,
+    })
+    if err != nil {
+        g.Log().Errorf(ctx, `%+v`, err)
+        return
+    }
+    g.Log().Info(ctx, "query result:", queryRes)
 
-	// Delete.
-	_, err = client.User().Delete(ctx, &user.DeleteReq{
-		Id: insertRes.Id,
-	})
-	if err != nil {
-		g.Log().Errorf(ctx, `%+v`, err)
-		return
-	}
-	g.Log().Info(ctx, "delete id:", insertRes.Id)
+    // Delete.
+    _, err = client.User().Delete(ctx, &user.DeleteReq{
+        Id: insertRes.Id,
+    })
+    if err != nil {
+        g.Log().Errorf(ctx, `%+v`, err)
+        return
+    }
+    g.Log().Info(ctx, "delete id:", insertRes.Id)
 
-	// Delete with error.
-	_, err = client.User().Delete(ctx, &user.DeleteReq{
-		Id: -1,
-	})
-	if err != nil {
-		g.Log().Errorf(ctx, `%+v`, err)
-		return
-	}
-	g.Log().Info(ctx, "delete id:", -1)
+    // Delete with error.
+    _, err = client.User().Delete(ctx, &user.DeleteReq{
+        Id: -1,
+    })
+    if err != nil {
+        g.Log().Errorf(ctx, `%+v`, err)
+        return
+    }
+    g.Log().Info(ctx, "delete id:", -1)
 }
 ```
 

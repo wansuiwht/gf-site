@@ -90,36 +90,36 @@ func Instance(name ...string) *Redis
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/database/gredis"
-	"github.com/gogf/gf/util/gconv"
+    "fmt"
+    "github.com/gogf/gf/database/gredis"
+    "github.com/gogf/gf/util/gconv"
 )
 
 var (
-	config = gredis.Config{
-		Host : "127.0.0.1",
-		Port : 6379,
-		Db   : 1,
-	}
+    config = gredis.Config{
+        Host : "127.0.0.1",
+        Port : 6379,
+        Db   : 1,
+    }
 )
 
 func main() {
-	group := "test"
-	gredis.SetConfig(&config, group)
+    group := "test"
+    gredis.SetConfig(&config, group)
 
-	redis := gredis.Instance(group)
-	defer redis.Close()
+    redis := gredis.Instance(group)
+    defer redis.Close()
 
-	_, err := redis.Do("SET", "k", "v")
-	if err != nil {
-		panic(err)
-	}
+    _, err := redis.Do("SET", "k", "v")
+    if err != nil {
+        panic(err)
+    }
 
-	r, err := redis.Do("GET", "k")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(gconv.String(r))
+    r, err := redis.Do("GET", "k")
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(gconv.String(r))
 }
 
 ```

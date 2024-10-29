@@ -29,17 +29,17 @@ import "github.com/gogf/csrf"
 ```go
 s := g.Server()
 s.Group("/api.v2", func(group *ghttp.RouterGroup) {
-	group.Middleware(csrf.NewWithCfg(csrf.Config{
-		Cookie: &http.Cookie{
-			Name: "_csrf",// token name in cookie
-		},
-		ExpireTime:      time.Hour * 24,
-		TokenLength:     32,
-		TokenRequestKey: "X-Token",// use this key to read token in request param
-	}))
-	group.ALL("/csrf", func(r *ghttp.Request) {
-		r.Response.Writeln(r.Method + ": " + r.RequestURI)
-	})
+    group.Middleware(csrf.NewWithCfg(csrf.Config{
+        Cookie: &http.Cookie{
+            Name: "_csrf",// token name in cookie
+        },
+        ExpireTime:      time.Hour * 24,
+        TokenLength:     32,
+        TokenRequestKey: "X-Token",// use this key to read token in request param
+    }))
+    group.ALL("/csrf", func(r *ghttp.Request) {
+        r.Response.Writeln(r.Method + ": " + r.RequestURI)
+    })
 })
 ```
 
@@ -55,25 +55,25 @@ s.Group("/api.v2", func(group *ghttp.RouterGroup) {
 package main
 
 import (
-	"net/http"
-	"time"
+    "net/http"
+    "time"
 
-	"github.com/gogf/csrf"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/csrf"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
 )
 
 // default cfg
 func main() {
-	s := g.Server()
-	s.Group("/api.v2", func(group *ghttp.RouterGroup) {
-		group.Middleware(csrf.New())
-		group.ALL("/csrf", func(r *ghttp.Request) {
-			r.Response.Writeln(r.Method + ": " + r.RequestURI)
-		})
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/api.v2", func(group *ghttp.RouterGroup) {
+        group.Middleware(csrf.New())
+        group.ALL("/csrf", func(r *ghttp.Request) {
+            r.Response.Writeln(r.Method + ": " + r.RequestURI)
+        })
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -83,34 +83,34 @@ func main() {
 package main
 
 import (
-	"net/http"
-	"time"
+    "net/http"
+    "time"
 
-	"github.com/gogf/csrf"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/csrf"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
 )
 
 // set cfg
 func main() {
-	s := g.Server()
-	s.Group("/api.v2", func(group *ghttp.RouterGroup) {
-		group.Middleware(csrf.NewWithCfg(csrf.Config{
-			Cookie: &http.Cookie{
-				Name: "_csrf",// token name in cookie
-				Secure:   true,
-				SameSite: http.SameSiteNoneMode,// 自定义samesite
-			},
-			ExpireTime:      time.Hour * 24,
-			TokenLength:     32,
-			TokenRequestKey: "X-Token",// use this key to read token in request param
-		}))
-		group.ALL("/csrf", func(r *ghttp.Request) {
-			r.Response.Writeln(r.Method + ": " + r.RequestURI)
-		})
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/api.v2", func(group *ghttp.RouterGroup) {
+        group.Middleware(csrf.NewWithCfg(csrf.Config{
+            Cookie: &http.Cookie{
+                Name: "_csrf",// token name in cookie
+                Secure:   true,
+                SameSite: http.SameSiteNoneMode,// 自定义samesite
+            },
+            ExpireTime:      time.Hour * 24,
+            TokenLength:     32,
+            TokenRequestKey: "X-Token",// use this key to read token in request param
+        }))
+        group.ALL("/csrf", func(r *ghttp.Request) {
+            r.Response.Writeln(r.Method + ": " + r.RequestURI)
+        })
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 

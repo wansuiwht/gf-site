@@ -73,11 +73,11 @@ nick name  nickname      match
 ```go
 // 查询接口返回数据结构
 type GetDoctorInfoRes struct {
-	UserInfo             *UserInfo   `protobuf:"bytes,1,opt,name=UserInfo,proto3" json:"UserInfo,omitempty"`
-	DoctorInfo           *DoctorInfo `protobuf:"bytes,2,opt,name=DoctorInfo,proto3" json:"DoctorInfo,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
+    UserInfo             *UserInfo   `protobuf:"bytes,1,opt,name=UserInfo,proto3" json:"UserInfo,omitempty"`
+    DoctorInfo           *DoctorInfo `protobuf:"bytes,2,opt,name=DoctorInfo,proto3" json:"DoctorInfo,omitempty"`
+    XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+    XXX_unrecognized     []byte      `json:"-"`
+    XXX_sizecache        int32       `json:"-"`
 }
 ```
 
@@ -86,13 +86,13 @@ type GetDoctorInfoRes struct {
 ```go
 // 用户基础信息
 type UserInfo struct {
-	Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Avatar               string   `protobuf:"bytes,2,opt,name=avatar,proto3" json:"avatar,omitempty"`
-	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Sex                  int32    `protobuf:"varint,4,opt,name=sex,proto3" json:"sex,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+    Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+    Avatar               string   `protobuf:"bytes,2,opt,name=avatar,proto3" json:"avatar,omitempty"`
+    Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+    Sex                  int32    `protobuf:"varint,4,opt,name=sex,proto3" json:"sex,omitempty"`
+    XXX_NoUnkeyedLiteral struct{} `json:"-"`
+    XXX_unrecognized     []byte   `json:"-"`
+    XXX_sizecache        int32    `json:"-"`
 }
 ```
 
@@ -101,14 +101,14 @@ type UserInfo struct {
 ```go
 // 医生信息
 type DoctorInfo struct {
-	Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Hospital             string   `protobuf:"bytes,4,opt,name=hospital,proto3" json:"hospital,omitempty"`
-	Section              string   `protobuf:"bytes,6,opt,name=section,proto3" json:"section,omitempty"`
-	Title                string   `protobuf:"bytes,8,opt,name=title,proto3" json:"title,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+    Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+    Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+    Hospital             string   `protobuf:"bytes,4,opt,name=hospital,proto3" json:"hospital,omitempty"`
+    Section              string   `protobuf:"bytes,6,opt,name=section,proto3" json:"section,omitempty"`
+    Title                string   `protobuf:"bytes,8,opt,name=title,proto3" json:"title,omitempty"`
+    XXX_NoUnkeyedLiteral struct{} `json:"-"`
+    XXX_unrecognized     []byte   `json:"-"`
+    XXX_sizecache        int32    `json:"-"`
 }
 ```
 
@@ -118,25 +118,25 @@ type DoctorInfo struct {
 // 查询医生信息
 func (s *Service) GetDoctorInfo(ctx context.Context, req *pb.GetDoctorInfoReq) (res *pb.GetDoctorInfoRes, err error) {
     // Protobuf返回数据结构
-	res = &pb.GetDoctorInfoRes{}
-	// 查询医生信息
+    res = &pb.GetDoctorInfoRes{}
+    // 查询医生信息
     // SELECT `id`,`avatar`,`name`,`sex` FROM `user` WHERE `user_id`=xxx
-	err = dao.PrimaryDoctorUser.
-		Ctx(ctx).
-		Fields(res.DoctorInfo).
-		Where(dao.PrimaryDoctorUser.Columns.UserId, req.Id).
-		Scan(&res.DoctorInfo)
-	if err != nil {
-		return
-	}
-	// 查询基础用户信息
+    err = dao.PrimaryDoctorUser.
+        Ctx(ctx).
+        Fields(res.DoctorInfo).
+        Where(dao.PrimaryDoctorUser.Columns.UserId, req.Id).
+        Scan(&res.DoctorInfo)
+    if err != nil {
+        return
+    }
+    // 查询基础用户信息
     // SELECT `id`,`name`,`hospital`,`section`,`title` FROM `doctor_user` WHERE `id`=xxx
-	err = dao.PrimaryUser.
-		Ctx(ctx).
-		Fields(res.DoctorInfo).
-		Where(dao.PrimaryUser.Columns.Id, req.Id).
-		Scan(&res.UserInfo)
-	return res, err
+    err = dao.PrimaryUser.
+        Ctx(ctx).
+        Fields(res.DoctorInfo).
+        Where(dao.PrimaryUser.Columns.Id, req.Id).
+        Scan(&res.UserInfo)
+    return res, err
 }
 ```
 

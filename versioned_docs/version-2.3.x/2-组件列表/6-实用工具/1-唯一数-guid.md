@@ -71,11 +71,11 @@ goarch: amd64
 pkg: github.com/gogf/gf/v2/util/guid
 cpu: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
 Benchmark_S
-Benchmark_S-12           	 2665587	       423.8 ns/op
+Benchmark_S-12                2665587           423.8 ns/op
 Benchmark_S_Data_1
-Benchmark_S_Data_1-12    	 2027568	       568.2 ns/op
+Benchmark_S_Data_1-12         2027568           568.2 ns/op
 Benchmark_S_Data_2
-Benchmark_S_Data_2-12    	 4352824	       275.5 ns/op
+Benchmark_S_Data_2-12         4352824           275.5 ns/op
 PASS
 ```
 
@@ -85,12 +85,12 @@ PASS
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/v2/util/guid"
+    "fmt"
+    "github.com/gogf/gf/v2/util/guid"
 )
 
 func main() {
-	fmt.Printf("TraceId: %s", guid.S())
+    fmt.Printf("TraceId: %s", guid.S())
 }
 ```
 

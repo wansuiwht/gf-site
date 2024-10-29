@@ -26,8 +26,8 @@ hide_title: true
 ```go
 // Driver is the interface for integrating sql drivers into package gdb.
 type Driver interface {
-	// New creates and returns a database object for specified database server.
-	New(core *Core, node *ConfigNode) (DB, error)
+    // New creates and returns a database object for specified database server.
+    New(core *Core, node *ConfigNode) (DB, error)
 }
 
 ```

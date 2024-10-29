@@ -29,54 +29,54 @@ import "github.com/gogf/gf/container/gset"
 package main
 
 import (
-	"github.com/gogf/gf/container/gset"
-	"fmt"
+    "github.com/gogf/gf/container/gset"
+    "fmt"
 )
 
 func main() {
-	// 创建一个并发安全的集合对象
-	s := gset.New(true)
+    // 创建一个并发安全的集合对象
+    s := gset.New(true)
 
-	// 添加数据项
-	s.Add(1)
+    // 添加数据项
+    s.Add(1)
 
-	// 批量添加数据项
-	s.Add([]interface{}{1, 2, 3}...)
+    // 批量添加数据项
+    s.Add([]interface{}{1, 2, 3}...)
 
-	// 集合数据项大小
-	fmt.Println(s.Size())
+    // 集合数据项大小
+    fmt.Println(s.Size())
 
-	// 集合中是否存在指定数据项
-	fmt.Println(s.Contains(2))
+    // 集合中是否存在指定数据项
+    fmt.Println(s.Contains(2))
 
-	// 返回数据项slice
-	fmt.Println(s.Slice())
+    // 返回数据项slice
+    fmt.Println(s.Slice())
 
-	// 删除数据项
-	s.Remove(3)
+    // 删除数据项
+    s.Remove(3)
 
-	// 遍历数据项
-	s.Iterator(func(v interface{}) bool {
-		fmt.Println("Iterator:", v)
-		return true
-	})
+    // 遍历数据项
+    s.Iterator(func(v interface{}) bool {
+        fmt.Println("Iterator:", v)
+        return true
+    })
 
-	// 将集合转换为字符串
-	fmt.Println(s.String())
+    // 将集合转换为字符串
+    fmt.Println(s.String())
 
-	// 并发安全写锁操作
-	s.LockFunc(func(m map[interface{}]struct{}) {
-		m[4] = struct{}{}
-	})
+    // 并发安全写锁操作
+    s.LockFunc(func(m map[interface{}]struct{}) {
+        m[4] = struct{}{}
+    })
 
-	// 并发安全读锁操作
-	s.RLockFunc(func(m map[interface{}]struct{}) {
-		fmt.Println(m)
-	})
+    // 并发安全读锁操作
+    s.RLockFunc(func(m map[interface{}]struct{}) {
+        fmt.Println(m)
+    })
 
-	// 清空集合
-	s.Clear()
-	fmt.Println(s.Size())
+    // 清空集合
+    s.Clear()
+    fmt.Println(s.Size())
 }
 
 ```
@@ -118,24 +118,24 @@ func (set *Set) Complement(full *Set) (newSet *Set)
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/container/gset"
+    "fmt"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/container/gset"
 )
 
 func main() {
-	s1 := gset.NewFrom(g.Slice{1, 2, 3})
-	s2 := gset.NewFrom(g.Slice{4, 5, 6})
-	s3 := gset.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7})
+    s1 := gset.NewFrom(g.Slice{1, 2, 3})
+    s2 := gset.NewFrom(g.Slice{4, 5, 6})
+    s3 := gset.NewFrom(g.Slice{1, 2, 3, 4, 5, 6, 7})
 
-	// 交集
-	fmt.Println(s3.Intersect(s1).Slice())
-	// 差集
-	fmt.Println(s3.Diff(s1).Slice())
-	// 并集
-	fmt.Println(s1.Union(s2).Slice())
-	// 补集
-	fmt.Println(s1.Complement(s3).Slice())
+    // 交集
+    fmt.Println(s3.Intersect(s1).Slice())
+    // 差集
+    fmt.Println(s3.Diff(s1).Slice())
+    // 并集
+    fmt.Println(s1.Union(s2).Slice())
+    // 补集
+    fmt.Println(s1.Complement(s3).Slice())
 }
 
 ```
@@ -156,21 +156,21 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gset"
+    "fmt"
+    "github.com/gogf/gf/container/gset"
 )
 
 func main() {
-	var set gset.StrSet
-	set.Add("a")
-	fmt.Println(set.Contains("a"))
-	fmt.Println(set.Contains("A"))
-	fmt.Println(set.ContainsI("A"))
+    var set gset.StrSet
+    set.Add("a")
+    fmt.Println(set.Contains("a"))
+    fmt.Println(set.Contains("A"))
+    fmt.Println(set.ContainsI("A"))
 
-	// Output:
-	// true
-	// false
-	// true
+    // Output:
+    // true
+    // false
+    // true
 }
 
 ```
@@ -181,21 +181,21 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gset"
+    "fmt"
+    "github.com/gogf/gf/container/gset"
 )
 
 func main() {
-	var set gset.Set
-	set.Add(1, 2, 3, 4)
-	fmt.Println(set.Pop())
-	fmt.Println(set.Pops(2))
-	fmt.Println(set.Size())
+    var set gset.Set
+    set.Add(1, 2, 3, 4)
+    fmt.Println(set.Pop())
+    fmt.Println(set.Pops(2))
+    fmt.Println(set.Size())
 
-	// May Output:
-	// 1
-	// [2 3]
-	// 1
+    // May Output:
+    // 1
+    // [2 3]
+    // 1
 }
 
 ```
@@ -206,17 +206,17 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gset"
+    "fmt"
+    "github.com/gogf/gf/container/gset"
 )
 
 func main() {
-	var set gset.Set
-	set.Add("a", "b", "c", "d")
-	fmt.Println(set.Join(","))
+    var set gset.Set
+    set.Add("a", "b", "c", "d")
+    fmt.Println(set.Join(","))
 
-	// May Output:
-	// a,b,c,d
+    // May Output:
+    // a,b,c,d
 }
 
 ```
@@ -227,21 +227,21 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gset"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/gset"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	var s1, s2 gset.Set
-	s1.Add(g.Slice{1, 2, 3}...)
-	s2.Add(g.Slice{2, 3}...)
-	fmt.Println(s1.IsSubsetOf(&s2))
-	fmt.Println(s2.IsSubsetOf(&s1))
+    var s1, s2 gset.Set
+    s1.Add(g.Slice{1, 2, 3}...)
+    s2.Add(g.Slice{2, 3}...)
+    fmt.Println(s1.IsSubsetOf(&s2))
+    fmt.Println(s2.IsSubsetOf(&s1))
 
-	// Output:
-	// false
-	// true
+    // Output:
+    // false
+    // true
 }
 
 ```
@@ -260,20 +260,20 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gset"
+    "fmt"
+    "github.com/gogf/gf/container/gset"
 )
 
 func main() {
-	var set gset.Set
-	fmt.Println(set.AddIfNotExist(1))
-	fmt.Println(set.AddIfNotExist(1))
-	fmt.Println(set.Slice())
+    var set gset.Set
+    fmt.Println(set.AddIfNotExist(1))
+    fmt.Println(set.AddIfNotExist(1))
+    fmt.Println(set.Slice())
 
-	// Output:
-	// true
-	// false
-	// [1]
+    // Output:
+    // true
+    // false
+    // [1]
 }
 
 ```
@@ -284,26 +284,26 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gset"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/gset"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	var (
-		set    gset.StrSet
-		names  = g.SliceStr{"user", "user_detail"}
-		prefix = "gf_"
-	)
-	set.Add(names...)
-	// Add prefix for given table names.
-	set.Walk(func(item string) string {
-		return prefix + item
-	})
-	fmt.Println(set.Slice())
+    var (
+        set    gset.StrSet
+        names  = g.SliceStr{"user", "user_detail"}
+        prefix = "gf_"
+    )
+    set.Add(names...)
+    // Add prefix for given table names.
+    set.Walk(func(item string) string {
+        return prefix + item
+    })
+    fmt.Println(set.Slice())
 
-	// May Output:
-	// [gf_user gf_user_detail]
+    // May Output:
+    // [gf_user gf_user_detail]
 }
 
 ```
@@ -314,24 +314,24 @@ func main() {
 
 ````undefined
 import (
-	"encoding/json"
-	"fmt"
-	"github.com/gogf/gf/container/gset"
+    "encoding/json"
+    "fmt"
+    "github.com/gogf/gf/container/gset"
 )
 
 func main() {
-	type Student struct {
-		Id     int
-		Name   string
-		Scores *gset.IntSet
-	}
-	s := Student{
-		Id:     1,
-		Name:   "john",
-		Scores: gset.NewIntSetFrom([]int{100, 99, 98}),
-	}
-	b, _ := json.Marshal(s)
-	fmt.Println(string(b))
+    type Student struct {
+        Id     int
+        Name   string
+        Scores *gset.IntSet
+    }
+    s := Student{
+        Id:     1,
+        Name:   "john",
+        Scores: gset.NewIntSetFrom([]int{100, 99, 98}),
+    }
+    b, _ := json.Marshal(s)
+    fmt.Println(string(b))
 }
 ```
 执行后，输出结果：
@@ -351,22 +351,22 @@ func main() {
 
 
    import (
-   	"encoding/json"
-   	"fmt"
-   	"github.com/gogf/gf/container/gset"
+       "encoding/json"
+       "fmt"
+       "github.com/gogf/gf/container/gset"
    )
 
 
    func main() {
-   	b := []byte(`{"Id":1,"Name":"john","Scores":[100,99,98]}`)
-   	type Student struct {
-   		Id     int
-   		Name   string
-   		Scores *gset.IntSet
-   	}
-   	s := Student{}
-   	json.Unmarshal(b, &s)
-   	fmt.Println(s)
+       b := []byte(`{"Id":1,"Name":"john","Scores":[100,99,98]}`)
+       type Student struct {
+           Id     int
+           Name   string
+           Scores *gset.IntSet
+       }
+       s := Student{}
+       json.Unmarshal(b, &s)
+       fmt.Println(s)
    }
 
    ```

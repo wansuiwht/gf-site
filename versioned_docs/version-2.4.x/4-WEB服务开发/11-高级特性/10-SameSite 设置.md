@@ -22,16 +22,16 @@ hide_title: true
 
 ```go
 func main() {
-	s := g.Server()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		r.Cookie.SetHttpCookie(&http.Cookie{
-			Name:     "test",
-			Value:    "1234",
-			Secure:   true,
-			SameSite: http.SameSiteNoneMode,// 自定义samesite，配合secure一起使用
-		})
-	})
-	s.SetAddr("127.0.0.1:8080")
-	s.Run()
+    s := g.Server()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        r.Cookie.SetHttpCookie(&http.Cookie{
+            Name:     "test",
+            Value:    "1234",
+            Secure:   true,
+            SameSite: http.SameSiteNoneMode,// 自定义samesite，配合secure一起使用
+        })
+    })
+    s.SetAddr("127.0.0.1:8080")
+    s.Run()
 }
 ```

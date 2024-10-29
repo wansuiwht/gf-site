@@ -62,12 +62,12 @@ g.Model("user").RightJoinOnFields("user_detail", "id", "=", "uid").Fields("user.
 // LEFT JOIN `time_window` ON (`resource_task_schedule`.`resource_id`=`time_window`.`resource_id`)
 // WHERE (time_window.`status`="valid") AND (`time_window`.`start_time` <= 3600)
 var (
-	orm                = dao.ResourceTaskSchedule.Ctx(ctx)
-	tsTable            = dao.ResourceTaskSchedule.Table()
-	tsCls              = dao.ResourceTaskSchedule.Columns()
-	twTable            = dao.TimeWindow.Table()
-	twCls              = dao.TimeWindow.Columns()
-	scheduleItems      []scheduleItem
+    orm                = dao.ResourceTaskSchedule.Ctx(ctx)
+    tsTable            = dao.ResourceTaskSchedule.Table()
+    tsCls              = dao.ResourceTaskSchedule.Columns()
+    twTable            = dao.TimeWindow.Table()
+    twCls              = dao.TimeWindow.Columns()
+    scheduleItems      []scheduleItem
 )
 orm = orm.FieldsPrefix(tsTable, tsCls)
 orm = orm.FieldsPrefix(twTable, twCls.TimeWindow)
@@ -85,41 +85,41 @@ err = orm.Scan(&scheduleItems)
 // or (`resource_network`.`vip`like '%10.0.1.3%')
 // ORDER BY `id` Desc LIMIT 0,2
 var (
-	orm    = dao.ResourceInfo.Ctx(ctx).OmitEmpty()
-	rTable = dao.ResourceInfo.Table()
-	rCls   = dao.ResourceInfo.Columns()
-	nTable = dao.ResourceNetwork.Table()
-	nCls   = dao.ResourceNetwork.Columns()
+    orm    = dao.ResourceInfo.Ctx(ctx).OmitEmpty()
+    rTable = dao.ResourceInfo.Table()
+    rCls   = dao.ResourceInfo.Columns()
+    nTable = dao.ResourceNetwork.Table()
+    nCls   = dao.ResourceNetwork.Columns()
 )
 orm = orm.LeftJoinOnField(nTable, rCls.ResourceId)
 orm = orm.WherePrefix(rTable, do.ResourceInfo{
-	AppId:        req.AppIds,
-	ResourceId:   req.ResourceIds,
-	Region:       req.Regions,
-	Zone:         req.Zones,
-	ResourceName: req.ResourceNames,
-	Status:       req.Statuses,
-	BusinessType: req.Products,
-	Engine:       req.Engines,
-	Version:      req.Versions,
+    AppId:        req.AppIds,
+    ResourceId:   req.ResourceIds,
+    Region:       req.Regions,
+    Zone:         req.Zones,
+    ResourceName: req.ResourceNames,
+    Status:       req.Statuses,
+    BusinessType: req.Products,
+    Engine:       req.Engines,
+    Version:      req.Versions,
 })
 orm = orm.WherePrefix(nTable, do.ResourceNetwork{
-	Vip:      req.Vips,
-	VpcId:    req.VpcIds,
-	SubnetId: req.SubnetIds,
+    Vip:      req.Vips,
+    VpcId:    req.VpcIds,
+    SubnetId: req.SubnetIds,
 })
 // Fuzzy like querying.
 if req.Key != "" {
-	var (
-		keyLike = "%" + req.Key + "%"
-	)
-	whereFormat := fmt.Sprintf(
-		"(`%s`.`%s` like ?) or (`%s`.`%s` like ?) or (`%s`.`%s`like ?) ",
-		rTable, rCls.ResourceId,
-		rTable, rCls.ResourceName,
-		nTable, nCls.Vip,
-	)
-	orm = orm.Where(whereFormat, keyLike, keyLike, keyLike)
+    var (
+        keyLike = "%" + req.Key + "%"
+    )
+    whereFormat := fmt.Sprintf(
+        "(`%s`.`%s` like ?) or (`%s`.`%s` like ?) or (`%s`.`%s`like ?) ",
+        rTable, rCls.ResourceId,
+        rTable, rCls.ResourceName,
+        nTable, nCls.Vip,
+    )
+    orm = orm.Where(whereFormat, keyLike, keyLike, keyLike)
 }
 // Resource items.
 err = orm.Distinct().FieldsPrefix(rTable, "*").Order(req.Order, req.OrderDirection).Limit(req.Offset, req.Limit).Scan(&res.Items)

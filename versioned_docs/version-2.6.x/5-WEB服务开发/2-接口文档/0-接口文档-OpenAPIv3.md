@@ -49,36 +49,36 @@ hide_title: true
 package main
 
 import (
-	"context"
+    "context"
 
-	"github.com/gogf/gf/v2/errors/gcode"
-	"github.com/gogf/gf/v2/errors/gerror"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/errors/gcode"
+    "github.com/gogf/gf/v2/errors/gerror"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 type GetListReq struct {
-	g.Meta `path:"/user" tags:"User" method:"get" x-group:"User/Info" summary:"Get user list with basic info."`
-	Page   int `dc:"Page number" d:"1" x-sort:"1"`
-	Size   int `dc:"Size for per page." d:"10" x-sort:"2"`
+    g.Meta `path:"/user" tags:"User" method:"get" x-group:"User/Info" summary:"Get user list with basic info."`
+    Page   int `dc:"Page number" d:"1" x-sort:"1"`
+    Size   int `dc:"Size for per page." d:"10" x-sort:"2"`
 }
 type GetListRes struct{}
 
 type Controller struct{}
 
 func (c *Controller) GetList(ctx context.Context, req *GetListReq) (res *GetListRes, err error) {
-	return nil, gerror.NewCode(gcode.CodeNotImplemented)
+    return nil, gerror.NewCode(gcode.CodeNotImplemented)
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.Bind(new(Controller))
-	})
-	s.SetOpenApiPath("/api.json")
-	s.SetSwaggerPath("/swagger")
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.Bind(new(Controller))
+    })
+    s.SetOpenApiPath("/api.json")
+    s.SetSwaggerPath("/swagger")
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 

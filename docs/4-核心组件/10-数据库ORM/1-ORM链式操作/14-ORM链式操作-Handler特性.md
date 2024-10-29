@@ -10,25 +10,25 @@ hide_title: true
 
 ```go
 func AmountGreaterThan1000(m *gdb.Model) *gdb.Model {
-	return m.WhereGT("amount", 1000)
+    return m.WhereGT("amount", 1000)
 }
 
 func PaidWithCreditCard(m *gdb.Model) *gdb.Model {
-	return m.Where("pay_mode_sign", "credit_card")
+    return m.Where("pay_mode_sign", "credit_card")
 }
 
 func PaidWithCod(m *gdb.Model) *gdb.Model {
-	return m.Where("pay_mode_sign", "cod")
+    return m.Where("pay_mode_sign", "cod")
 }
 
 func OrderStatus(statuses []string) func(m *gdb.Model) *gdb.Model {
-	return func(m *gdb.Model) *gdb.Model {
-		return m.Where("status", statuses)
-	}
+    return func(m *gdb.Model) *gdb.Model {
+        return m.Where("status", statuses)
+    }
 }
 
 var (
-	m = g.Model("product_order")
+    m = g.Model("product_order")
 )
 
 m.Handler(AmountGreaterThan1000, PaidWithCreditCard).Scan(&orders)
@@ -48,22 +48,22 @@ m.Handler(AmountGreaterThan1000, OrderStatus([]string{"paid", "shipped"})).Scan(
 
 ```go
 func Paginate(r *ghttp.Request) func(m *gdb.Model) *gdb.Model {
-	return func(m *gdb.Model) *gdb.Model {
-		type Pagination struct {
-			Page int
-			Size int
-		}
-		var pagination Pagination
-		_ = r.Parse(&pagination)
-		switch {
-		case pagination.Size > 100:
-			pagination.Size = 100
+    return func(m *gdb.Model) *gdb.Model {
+        type Pagination struct {
+            Page int
+            Size int
+        }
+        var pagination Pagination
+        _ = r.Parse(&pagination)
+        switch {
+        case pagination.Size > 100:
+            pagination.Size = 100
 
-		case pagination.Size <= 0:
-			pagination.Size = 10
-		}
-		return m.Page(pagination.Page, pagination.Size)
-	}
+        case pagination.Size <= 0:
+            pagination.Size = 10
+        }
+        return m.Page(pagination.Page, pagination.Size)
+    }
 }
 
 m.Handler(Paginate(r)).Scan(&users)

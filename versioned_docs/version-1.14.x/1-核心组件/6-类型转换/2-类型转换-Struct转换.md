@@ -60,24 +60,24 @@ nick name  Nick_Name      match
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gconv"
 )
 
 func main() {
-	type User struct {
-		Uid  int
-		Name string
-	}
-	params := g.Map{
-		"uid":  1,
-		"name": "john",
-	}
-	var user *User
-	if err := gconv.Struct(params, &user); err != nil {
-		panic(err)
-	}
-	g.Dump(user)
+    type User struct {
+        Uid  int
+        Name string
+    }
+    params := g.Map{
+        "uid":  1,
+        "name": "john",
+    }
+    var user *User
+    if err := gconv.Struct(params, &user); err != nil {
+        panic(err)
+    }
+    g.Dump(user)
 }
 
 ```
@@ -86,8 +86,8 @@ func main() {
 
 ```json
 {
-	"Name": "john",
-	"Uid": 1
+    "Name": "john",
+    "Uid": 1
 }
 
 ```
@@ -100,36 +100,36 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gconv"
 )
 
 func main() {
-	type Ids struct {
-		Id         int    `json:"id"`
-		Uid        int    `json:"uid"`
-	}
-	type Base struct {
-		Ids
-		CreateTime string `json:"create_time"`
-	}
-	type User struct {
-		Base
-		Passport   string `json:"passport"`
-		Password   string `json:"password"`
-		Nickname   string `json:"nickname"`
-	}
-	data := g.Map{
-		"id"          : 1,
-		"uid"         : 100,
-		"passport"    : "john",
-		"password"    : "123456",
-		"nickname"    : "John",
-		"create_time" : "2019",
-	}
-	user := new(User)
-	gconv.StructDeep(data, user)
-	g.Dump(user)
+    type Ids struct {
+        Id         int    `json:"id"`
+        Uid        int    `json:"uid"`
+    }
+    type Base struct {
+        Ids
+        CreateTime string `json:"create_time"`
+    }
+    type User struct {
+        Base
+        Passport   string `json:"passport"`
+        Password   string `json:"password"`
+        Nickname   string `json:"nickname"`
+    }
+    data := g.Map{
+        "id"          : 1,
+        "uid"         : 100,
+        "passport"    : "john",
+        "password"    : "123456",
+        "nickname"    : "John",
+        "create_time" : "2019",
+    }
+    user := new(User)
+    gconv.StructDeep(data, user)
+    g.Dump(user)
 }
 
 ```
@@ -138,14 +138,14 @@ func main() {
 
 ```json
 {
-	"Base": {
-		"id": 1,
-		"uid": 100,
-		"create_time": "2019"
-	},
-	"nickname": "John",
-	"passport": "john",
-	"password": "123456"
+    "Base": {
+        "id": 1,
+        "uid": 100,
+        "create_time": "2019"
+    },
+    "nickname": "John",
+    "passport": "john",
+    "password": "123456"
 }
 
 ```
@@ -209,20 +209,20 @@ func main() {
 
 ```json
 {
-	"Uid": 1,
-	"Name": "john",
-	"Site_Url": "https://goframe.org",
-	"NickName": "johng",
-	"Pass1": "123",
-	"Pass2": "456"
+    "Uid": 1,
+    "Name": "john",
+    "Site_Url": "https://goframe.org",
+    "NickName": "johng",
+    "Pass1": "123",
+    "Pass2": "456"
 }
 {
-	"Uid": 2,
-	"Name": "smith",
-	"Site_Url": "https://goframe.org",
-	"NickName": "johng",
-	"Pass1": "111",
-	"Pass2": "222"
+    "Uid": 2,
+    "Name": "smith",
+    "Site_Url": "https://goframe.org",
+    "NickName": "johng",
+    "Pass1": "111",
+    "Pass2": "222"
 }
 
 ```
@@ -254,12 +254,12 @@ func main() {
 
     user1  := new(User1)
     user2  := new(User2)
-	scores := g.Map{
-		"Scores": g.Map{
-			"Name":   "john",
-			"Result": 100,
-		},
-	}
+    scores := g.Map{
+        "Scores": g.Map{
+            "Name":   "john",
+            "Result": 100,
+        },
+    }
 
     if err := gconv.Struct(scores, user1); err != nil {
         fmt.Println(err)
@@ -279,16 +279,16 @@ func main() {
 
 ```json
 {
-	"Scores": {
-		"Name": "john",
-		"Result": 100
-	}
+    "Scores": {
+        "Name": "john",
+        "Result": 100
+    }
 }
 {
-	"Scores": {
-		"Name": "john",
-		"Result": 100
-	}
+    "Scores": {
+        "Name": "john",
+        "Result": 100
+    }
 }
 
 ```

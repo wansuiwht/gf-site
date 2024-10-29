@@ -22,15 +22,15 @@ func (r *ClientResponse) RawResponse() string
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	response, err := g.Client().Get("https://goframe.org")
-	if err != nil {
-		panic(err)
-	}
-	response.RawDump()
+    response, err := g.Client().Get("https://goframe.org")
+    if err != nil {
+        panic(err)
+    }
+    response.RawDump()
 }
 
 ```

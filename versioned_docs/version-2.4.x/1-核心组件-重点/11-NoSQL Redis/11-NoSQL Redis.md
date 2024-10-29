@@ -22,9 +22,9 @@ go get -u github.com/gogf/gf/contrib/nosql/redis/v2
 
 ```go
 import (
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
 
-	// other imported packages.
+    // other imported packages.
 )
 ```
 

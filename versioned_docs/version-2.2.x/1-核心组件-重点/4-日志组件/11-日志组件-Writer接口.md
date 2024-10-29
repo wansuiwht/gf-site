@@ -12,7 +12,7 @@ hide_title: true
 
 ```go
 type Writer interface {
-	Write(p []byte) (n int, err error)
+    Write(p []byte) (n int, err error)
 }
 ```
 
@@ -28,37 +28,37 @@ type Writer interface {
 package main
 
 import (
-	"context"
-	"fmt"
+    "context"
+    "fmt"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/glog"
-	"github.com/gogf/gf/v2/text/gregex"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/text/gregex"
 )
 
 type MyWriter struct {
-	logger *glog.Logger
+    logger *glog.Logger
 }
 
 func (w *MyWriter) Write(p []byte) (n int, err error) {
-	var (
-		s   = string(p)
-		ctx = context.Background()
-	)
-	if gregex.IsMatchString(`PANI|FATA`, s) {
-		fmt.Println("SERIOUS ISSUE OCCURRED!! I'd better tell monitor in first time!")
-		g.Client().PostContent(ctx, "http://monitor.mydomain.com", s)
-	}
-	return w.logger.Write(p)
+    var (
+        s   = string(p)
+        ctx = context.Background()
+    )
+    if gregex.IsMatchString(`PANI|FATA`, s) {
+        fmt.Println("SERIOUS ISSUE OCCURRED!! I'd better tell monitor in first time!")
+        g.Client().PostContent(ctx, "http://monitor.mydomain.com", s)
+    }
+    return w.logger.Write(p)
 }
 
 func main() {
-	var ctx = context.Background()
-	glog.SetWriter(&MyWriter{
-		logger: glog.New(),
-	})
-	glog.Fatal(ctx, "FATAL ERROR")
+    var ctx = context.Background()
+    glog.SetWriter(&MyWriter{
+        logger: glog.New(),
+    })
+    glog.Fatal(ctx, "FATAL ERROR")
 }
 ```
 
@@ -83,34 +83,34 @@ Stack:
 package main
 
 import (
-	"context"
+    "context"
 
-	"github.com/gogf/gf/v2/os/glog"
-	"github.com/robertkowalski/graylog-golang"
+    "github.com/gogf/gf/v2/os/glog"
+    "github.com/robertkowalski/graylog-golang"
 )
 
 type MyGrayLogWriter struct {
-	gelf    *gelf.Gelf
-	logger  *glog.Logger
+    gelf    *gelf.Gelf
+    logger  *glog.Logger
 }
 
 func (w *MyGrayLogWriter) Write(p []byte) (n int, err error) {
-	w.gelf.Send(p)
-	return w.logger.Write(p)
+    w.gelf.Send(p)
+    return w.logger.Write(p)
 }
 
 func main() {
-	var ctx = context.Background()
-	glog.SetWriter(&MyGrayLogWriter{
-		logger : glog.New(),
-		gelf   : gelf.New(gelf.Config{
-			GraylogPort     : 80,
-			GraylogHostname : "graylog-host.com",
-			Connection      : "wan",
-			MaxChunkSizeWan : 42,
-			MaxChunkSizeLan : 1337,
-		}),
-	})
-	glog.Println(ctx, "test log")
+    var ctx = context.Background()
+    glog.SetWriter(&MyGrayLogWriter{
+        logger : glog.New(),
+        gelf   : gelf.New(gelf.Config{
+            GraylogPort     : 80,
+            GraylogHostname : "graylog-host.com",
+            Connection      : "wan",
+            MaxChunkSizeWan : 42,
+            MaxChunkSizeLan : 1337,
+        }),
+    })
+    glog.Println(ctx, "test log")
 }
 ```

@@ -50,44 +50,44 @@ Dump(values ...interface{})
 
 ```go
 type User struct {
-  	Name string
-  	Age int
+      Name string
+      Age int
 }
 
 type Location struct {
-  	Province string
-  	City string
+      Province string
+      City string
 }
 
 type UserInfo struct {
-  	U User
-  	L Location
+      U User
+      L Location
 }
 
 func main() {
-  	userList := make([]UserInfo, 0)
-  	userList = append(userList, UserInfo{
-  		U: User{
-  			Name: "郭强",
-  			Age:  18,
-  		},
-  		L: Location{
-  			Province: "四川",
-  			City:     "成都",
-  		},
-  	})
-  	userList = append(userList, UserInfo{
-  		U: User{
-  			Name: "黄骞",
-  			Age:  18,
-  		},
-  		L: Location{
-  			Province: "江苏",
-  			City:     "南京",
-  		},
-  	})
+      userList := make([]UserInfo, 0)
+      userList = append(userList, UserInfo{
+          U: User{
+              Name: "郭强",
+              Age:  18,
+          },
+          L: Location{
+              Province: "四川",
+              City:     "成都",
+          },
+      })
+      userList = append(userList, UserInfo{
+          U: User{
+              Name: "黄骞",
+              Age:  18,
+          },
+          L: Location{
+              Province: "江苏",
+              City:     "南京",
+          },
+      })
 
-  	gutil.Dump(userList)
+      gutil.Dump(userList)
 }
 
 // Output:
@@ -146,44 +146,44 @@ DumpWithType(values ...interface{})
 
 ```go
 type User struct {
-  	Name string
-  	Age int
+      Name string
+      Age int
 }
 
 type Location struct {
-  	Province string
-  	City string
+      Province string
+      City string
 }
 
 type UserInfo struct {
-  	U User
-  	L Location
+      U User
+      L Location
 }
 
 func main() {
-  	userList := make([]UserInfo, 0)
-  	userList = append(userList, UserInfo{
-  		U: User{
-  			Name: "郭强",
-  			Age:  18,
-  		},
-  		L: Location{
-  			Province: "四川",
-  			City:     "成都",
-  		},
-  	})
-  	userList = append(userList, UserInfo{
-  		U: User{
-  			Name: "黄骞",
-  			Age:  18,
-  		},
-  		L: Location{
-  			Province: "江苏",
-  			City:     "南京",
-  		},
-  	})
+      userList := make([]UserInfo, 0)
+      userList = append(userList, UserInfo{
+          U: User{
+              Name: "郭强",
+              Age:  18,
+          },
+          L: Location{
+              Province: "四川",
+              City:     "成都",
+          },
+      })
+      userList = append(userList, UserInfo{
+          U: User{
+              Name: "黄骞",
+              Age:  18,
+          },
+          L: Location{
+              Province: "江苏",
+              City:     "南京",
+          },
+      })
 
-  	gutil.DumpWithType(userList)
+      gutil.DumpWithType(userList)
 }
 
 // Output:
@@ -235,44 +235,44 @@ DumpTo(writer io.Writer, value interface{}, option DumpOption)
 package main
 
 import (
-  	"bytes"
-  	"fmt"
-  	"github.com/gogf/gf/v2/util/gutil"
-  	"io"
+      "bytes"
+      "fmt"
+      "github.com/gogf/gf/v2/util/gutil"
+      "io"
 )
 
 type UserInfo struct {
-  	Name     string
-  	Age      int
-  	Province string
-  	City     string
+      Name     string
+      Age      int
+      Province string
+      City     string
 }
 
 type DumpWriter struct {
-  	Content string
+      Content string
 }
 
 func (d *DumpWriter) Write(p []byte) (n int, err error) {
-  	buffer := bytes.NewBuffer(nil)
-  	buffer.WriteString("I'm Start!\n")
-  	buffer.WriteString(string(p))
-  	buffer.WriteString("\nI'm End!\n")
+      buffer := bytes.NewBuffer(nil)
+      buffer.WriteString("I'm Start!\n")
+      buffer.WriteString(string(p))
+      buffer.WriteString("\nI'm End!\n")
 
-  	d.Content = buffer.String()
+      d.Content = buffer.String()
 
-  	return buffer.Len(), nil
+      return buffer.Len(), nil
 }
 
 func main() {
-  	u := UserInfo{
-  		"a", 18, "b", "c",
-  	}
+      u := UserInfo{
+          "a", 18, "b", "c",
+      }
 
-  	var dw io.Writer = &DumpWriter{}
+      var dw io.Writer = &DumpWriter{}
 
-  	gutil.DumpTo(dw, u, gutil.DumpOption{})
+      gutil.DumpTo(dw, u, gutil.DumpOption{})
 
-  	fmt.Println(dw.(*DumpWriter).Content)
+      fmt.Println(dw.(*DumpWriter).Content)
 }
 
 // Output:

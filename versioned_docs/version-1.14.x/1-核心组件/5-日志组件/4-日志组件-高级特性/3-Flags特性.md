@@ -23,17 +23,17 @@ F_TIME_STD = F_TIME_DATE | F_TIME_MILLI // (默认)打印当前日期+时间+毫
 package main
 
 import (
-	"github.com/gogf/gf/os/glog"
+    "github.com/gogf/gf/os/glog"
 )
 
 func main() {
-	l := glog.New()
-	l.SetFlags(glog.F_TIME_TIME|glog.F_FILE_SHORT)
-	l.Println("time and short line number")
-	l.SetFlags(glog.F_TIME_MILLI|glog.F_FILE_LONG)
-	l.Println("time with millisecond and long line number")
-	l.SetFlags(glog.F_TIME_STD|glog.F_FILE_LONG)
-	l.Println("standard time format and long line number")
+    l := glog.New()
+    l.SetFlags(glog.F_TIME_TIME|glog.F_FILE_SHORT)
+    l.Println("time and short line number")
+    l.SetFlags(glog.F_TIME_MILLI|glog.F_FILE_LONG)
+    l.Println("time with millisecond and long line number")
+    l.SetFlags(glog.F_TIME_STD|glog.F_FILE_LONG)
+    l.Println("standard time format and long line number")
 }
 
 ```

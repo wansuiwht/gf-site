@@ -18,22 +18,22 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"runtime"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "runtime"
 )
 
 func main() {
-	runtime.SetMutexProfileFraction(1) // (非必需)开启对锁调用的跟踪
-	runtime.SetBlockProfileRate(1)     // (非必需)开启对阻塞操作的跟踪
+    runtime.SetMutexProfileFraction(1) // (非必需)开启对锁调用的跟踪
+    runtime.SetBlockProfileRate(1)     // (非必需)开启对阻塞操作的跟踪
 
-	s := g.Server()
-	s.EnablePProf()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		r.Response.Writeln("哈喽世界！")
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.EnablePProf()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        r.Response.Writeln("哈喽世界！")
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -63,13 +63,13 @@ func StartPProfServer(port int, pattern ...string)
 package main
 
 import (
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func main() {
-	go ghttp.StartPProfServer(8199)
-	// 其他服务启动、运行
-	// ...
+    go ghttp.StartPProfServer(8199)
+    // 其他服务启动、运行
+    // ...
 }
 ```
 
@@ -79,20 +79,20 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func main() {
-	go ghttp.StartPProfServer(8299)
+    go ghttp.StartPProfServer(8299)
 
-	s := g.Server()
-	s.EnablePProf()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		r.Response.Writeln("哈喽世界！")
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.EnablePProf()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        r.Response.Writeln("哈喽世界！")
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 

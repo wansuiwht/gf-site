@@ -12,20 +12,20 @@ hide_title: true
 
 ```go
 type CacheOption struct {
-	// Duration is the TTL for the cache.
-	// If the parameter `Duration` < 0, which means it clear the cache with given `Name`.
-	// If the parameter `Duration` = 0, which means it never expires.
-	// If the parameter `Duration` > 0, which means it expires after `Duration`.
-	Duration time.Duration
+    // Duration is the TTL for the cache.
+    // If the parameter `Duration` < 0, which means it clear the cache with given `Name`.
+    // If the parameter `Duration` = 0, which means it never expires.
+    // If the parameter `Duration` > 0, which means it expires after `Duration`.
+    Duration time.Duration
 
-	// Name is an optional unique name for the cache.
-	// The Name is used to bind a name to the cache, which means you can later control the cache
-	// like changing the `duration` or clearing the cache with specified Name.
-	Name string
+    // Name is an optional unique name for the cache.
+    // The Name is used to bind a name to the cache, which means you can later control the cache
+    // like changing the `duration` or clearing the cache with specified Name.
+    Name string
 
-	// Force caches the query result whatever the result is nil or not.
-	// It is used to avoid Cache Penetration.
-	Force bool
+    // Force caches the query result whatever the result is nil or not.
+    // It is used to avoid Cache Penetration.
+    Force bool
 }
 
 // Cache sets the cache feature for the model. It caches the result of the sql, which means
@@ -91,55 +91,55 @@ CREATE TABLE `user` (
 package main
 
 import (
-	"time"
+    "time"
 
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var (
-		db  = g.DB()
-		ctx = gctx.New()
-	)
+    var (
+        db  = g.DB()
+        ctx = gctx.New()
+    )
 
-	// 开启调试模式，以便于记录所有执行的SQL
-	db.SetDebug(true)
+    // 开启调试模式，以便于记录所有执行的SQL
+    db.SetDebug(true)
 
-	// 写入测试数据
-	_, err := g.Model("user").Ctx(ctx).Data(g.Map{
-		"name": "john",
-		"site": "https://goframe.org",
-	}).Insert()
+    // 写入测试数据
+    _, err := g.Model("user").Ctx(ctx).Data(g.Map{
+        "name": "john",
+        "site": "https://goframe.org",
+    }).Insert()
 
-	// 执行2次查询并将查询结果缓存1小时，并可执行缓存名称(可选)
-	for i := 0; i < 2; i++ {
-		r, _ := g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
-			Duration: time.Hour,
-			Name:     "vip-user",
-			Force:    false,
-		}).Where("uid", 1).One()
-		g.Log().Debug(ctx, r.Map())
-	}
+    // 执行2次查询并将查询结果缓存1小时，并可执行缓存名称(可选)
+    for i := 0; i < 2; i++ {
+        r, _ := g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
+            Duration: time.Hour,
+            Name:     "vip-user",
+            Force:    false,
+        }).Where("uid", 1).One()
+        g.Log().Debug(ctx, r.Map())
+    }
 
-	// 执行更新操作，并清理指定名称的查询缓存
-	_, err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
-		Duration: -1,
-		Name:     "vip-user",
-		Force:    false,
-	}).Data(gdb.Map{"name": "smith"}).Where("uid", 1).Update()
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
+    // 执行更新操作，并清理指定名称的查询缓存
+    _, err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
+        Duration: -1,
+        Name:     "vip-user",
+        Force:    false,
+    }).Data(gdb.Map{"name": "smith"}).Where("uid", 1).Update()
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
 
-	// 再次执行查询，启用查询缓存特性
-	r, _ := g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
-		Duration: time.Hour,
-		Name:     "vip-user",
-		Force:    false,
-	}).Where("uid", 1).One()
-	g.Log().Debug(ctx, r.Map())
+    // 再次执行查询，启用查询缓存特性
+    r, _ := g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
+        Duration: time.Hour,
+        Name:     "vip-user",
+        Force:    false,
+    }).Where("uid", 1).One()
+    g.Log().Debug(ctx, r.Map())
 }
 ```
 

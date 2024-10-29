@@ -16,23 +16,23 @@ hide_title: true
 
 ```go
 const (
-	// 上下文变量存储键名，前后端系统共享
-	ContextKey = "ContextKey"
+    // 上下文变量存储键名，前后端系统共享
+    ContextKey = "ContextKey"
 )
 
 // 请求上下文结构
 type Context struct {
-	Session *ghttp.Session // 当前Session管理对象
-	User    *ContextUser   // 上下文用户信息
-	Data    g.Map          // 自定KV变量，业务模块根据需要设置，不固定
+    Session *ghttp.Session // 当前Session管理对象
+    User    *ContextUser   // 上下文用户信息
+    Data    g.Map          // 自定KV变量，业务模块根据需要设置，不固定
 }
 
 // 请求上下文中的用户信息
 type ContextUser struct {
-	Id       uint   // 用户ID
-	Passport string // 用户账号
-	Nickname string // 用户名称
-	Avatar   string // 用户头像
+    Id       uint   // 用户ID
+    Passport string // 用户账号
+    Nickname string // 用户名称
+    Avatar   string // 用户头像
 }
 ```
 
@@ -55,24 +55,24 @@ type contextService struct{}
 
 // 初始化上下文对象指针到上下文对象中，以便后续的请求流程中可以修改。
 func (s *contextService) Init(r *ghttp.Request, customCtx *model.Context) {
-	r.SetCtxVar(model.ContextKey, customCtx)
+    r.SetCtxVar(model.ContextKey, customCtx)
 }
 
 // 获得上下文变量，如果没有设置，那么返回nil
 func (s *contextService) Get(ctx context.Context) *model.Context {
-	value := ctx.Value(model.ContextKey)
-	if value == nil {
-		return nil
-	}
-	if localCtx, ok := value.(*model.Context); ok {
-		return localCtx
-	}
-	return nil
+    value := ctx.Value(model.ContextKey)
+    if value == nil {
+        return nil
+    }
+    if localCtx, ok := value.(*model.Context); ok {
+        return localCtx
+    }
+    return nil
 }
 
 // 将上下文信息设置到上下文请求中，注意是完整覆盖
 func (s *contextService) SetUser(ctx context.Context, ctxUser *model.ContextUser) {
-	s.Get(ctx).User = ctxUser
+    s.Get(ctx).User = ctxUser
 }
 ```
 
@@ -83,26 +83,26 @@ func (s *contextService) SetUser(ctx context.Context, ctxUser *model.ContextUser
 ```go
 // 自定义上下文对象
 func (s *middlewareService) Ctx(r *ghttp.Request) {
-	// 初始化，务必最开始执行
-	customCtx := &model.Context{
-		Session: r.Session,
-		Data:    make(g.Map),
-	}
-	service.Context.Init(r, customCtx)
-	if userEntity := Session.GetUser(r.Context()); userEntity != nil {
-		customCtx.User = &model.ContextUser{
-			Id:       userEntity.Id,
-			Passport: userEntity.Passport,
-			Nickname: userEntity.Nickname,
-			Avatar:   userEntity.Avatar,
-		}
-	}
-	// 将自定义的上下文对象传递到模板变量中使用
-	r.Assigns(g.Map{
-		"Context": customCtx,
-	})
-	// 执行下一步请求逻辑
-	r.Middleware.Next()
+    // 初始化，务必最开始执行
+    customCtx := &model.Context{
+        Session: r.Session,
+        Data:    make(g.Map),
+    }
+    service.Context.Init(r, customCtx)
+    if userEntity := Session.GetUser(r.Context()); userEntity != nil {
+        customCtx.User = &model.ContextUser{
+            Id:       userEntity.Id,
+            Passport: userEntity.Passport,
+            Nickname: userEntity.Nickname,
+            Avatar:   userEntity.Avatar,
+        }
+    }
+    // 将自定义的上下文对象传递到模板变量中使用
+    r.Assigns(g.Map{
+        "Context": customCtx,
+    })
+    // 执行下一步请求逻辑
+    r.Middleware.Next()
 }
 ```
 

@@ -26,34 +26,34 @@ g.Validator().Ctx(ctx).Rules(rules).Messages(customErrorMessages).CheckStruct(ob
 package main
 
 import (
-	"context"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gvalid"
+    "context"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gvalid"
 )
 
 func main() {
-	type User struct {
-		Age  int
-		Name string
-	}
-	rules := map[string]string{
-		"Name": "required|length:6,16",
-		"Age":  "between:18,30",
-	}
-	messages := map[string]interface{}{
-		"Name": map[string]string{
-			"required": "名称不能为空",
-			"length":   "名称长度为:min到:max个字符",
-		},
-		"Age": "年龄为18到30周岁",
-	}
-	user := User{Name: "john"}
-	err := gvalid.CheckStruct(context.TODO(), user, rules, messages)
-	// 也可以使用链式操作
-	// err := g.Validator().Rules(rules).Messages(messages).CheckStruct(user)
-	if err != nil {
-		g.Dump(err.Maps())
-	}
+    type User struct {
+        Age  int
+        Name string
+    }
+    rules := map[string]string{
+        "Name": "required|length:6,16",
+        "Age":  "between:18,30",
+    }
+    messages := map[string]interface{}{
+        "Name": map[string]string{
+            "required": "名称不能为空",
+            "length":   "名称长度为:min到:max个字符",
+        },
+        "Age": "年龄为18到30周岁",
+    }
+    user := User{Name: "john"}
+    err := gvalid.CheckStruct(context.TODO(), user, rules, messages)
+    // 也可以使用链式操作
+    // err := g.Validator().Rules(rules).Messages(messages).CheckStruct(user)
+    if err != nil {
+        g.Dump(err.Maps())
+    }
 }
 ```
 
@@ -61,12 +61,12 @@ func main() {
 
 ```
 {
-	"Age": {
-		"between": "年龄为18到30周岁"
-	},
-	"Name": {
-		"length": "名称长度为6到16个字符"
-	}
+    "Age": {
+        "between": "年龄为18到30周岁"
+    },
+    "Name": {
+        "length": "名称长度为6到16个字符"
+    }
 }
 ```
 
@@ -78,45 +78,45 @@ func main() {
 package main
 
 import (
-	"context"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gvalid"
+    "context"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gvalid"
 )
 
 type User struct {
-	Uid   int    `v:"uid      @integer|min:1#|请输入用户ID"`
-	Name  string `v:"name     @required|length:6,30#请输入用户名称|用户名称长度非法"`
-	Pass1 string `v:"password1@required|password3"`
-	Pass2 string `v:"password2@required|password3|same:Pass2#|密码格式不合法|两次密码不一致，请重新输入"`
+    Uid   int    `v:"uid      @integer|min:1#|请输入用户ID"`
+    Name  string `v:"name     @required|length:6,30#请输入用户名称|用户名称长度非法"`
+    Pass1 string `v:"password1@required|password3"`
+    Pass2 string `v:"password2@required|password3|same:Pass2#|密码格式不合法|两次密码不一致，请重新输入"`
 }
 
 func main() {
-	user := &User{
-		Name:  "john",
-		Pass1: "Abc123!@#",
-		Pass2: "123",
-	}
+    user := &User{
+        Name:  "john",
+        Pass1: "Abc123!@#",
+        Pass2: "123",
+    }
 
-	// 使用结构体定义的校验规则和错误提示进行校验
-	if e := gvalid.CheckStruct(context.TODO(), user, nil); e != nil {
-		g.Dump(e.Items())
-	}
+    // 使用结构体定义的校验规则和错误提示进行校验
+    if e := gvalid.CheckStruct(context.TODO(), user, nil); e != nil {
+        g.Dump(e.Items())
+    }
 
-	// 自定义校验规则和错误提示，对定义的特定校验规则和错误提示进行覆盖
-	rules := map[string]string{
-		"uid": "min:6",
-	}
-	messages := map[string]interface{}{
-		"password2": map[string]string{
-			"password3": "名称不能为空",
-		},
-	}
-	err := gvalid.CheckStruct(context.TODO(), user, rules, messages)
-	// 也可以使用链式操作
-	// err := g.Validator().Rules(rules).Messages(messages).CheckStruct(user)
-	if err != nil {
-		g.Dump(err.Items())
-	}
+    // 自定义校验规则和错误提示，对定义的特定校验规则和错误提示进行覆盖
+    rules := map[string]string{
+        "uid": "min:6",
+    }
+    messages := map[string]interface{}{
+        "password2": map[string]string{
+            "password3": "名称不能为空",
+        },
+    }
+    err := gvalid.CheckStruct(context.TODO(), user, rules, messages)
+    // 也可以使用链式操作
+    // err := g.Validator().Rules(rules).Messages(messages).CheckStruct(user)
+    if err != nil {
+        g.Dump(err.Items())
+    }
 }
 ```
 
@@ -178,32 +178,32 @@ func main() {
 package main
 
 import (
-	"context"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gvalid"
+    "context"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gvalid"
 )
 
 func main() {
-	type Pass struct {
-		Pass1 string `valid:"password1@required|same:password2#请输入您的密码|您两次输入的密码不一致"`
-		Pass2 string `valid:"password2@required|same:password1#请再次输入您的密码|您两次输入的密码不一致"`
-	}
-	type User struct {
-		Pass
-		Id   int
-		Name string `valid:"name@required#请输入您的姓名"`
-	}
-	user := &User{
-		Name: "john",
-		Pass: Pass{
-			Pass1: "1",
-			Pass2: "2",
-		},
-	}
-	err := gvalid.CheckStruct(context.TODO(), user, nil)
-	// 也可以使用链式操作
-	// err := g.Validator().CheckStruct(user)
-	g.Dump(err.Maps())
+    type Pass struct {
+        Pass1 string `valid:"password1@required|same:password2#请输入您的密码|您两次输入的密码不一致"`
+        Pass2 string `valid:"password2@required|same:password1#请再次输入您的密码|您两次输入的密码不一致"`
+    }
+    type User struct {
+        Pass
+        Id   int
+        Name string `valid:"name@required#请输入您的姓名"`
+    }
+    user := &User{
+        Name: "john",
+        Pass: Pass{
+            Pass1: "1",
+            Pass2: "2",
+        },
+    }
+    err := gvalid.CheckStruct(context.TODO(), user, nil)
+    // 也可以使用链式操作
+    // err := g.Validator().CheckStruct(user)
+    g.Dump(err.Maps())
 }
 ```
 
@@ -211,12 +211,12 @@ func main() {
 
 ```
 {
-	"password1": {
-		"same": "您两次输入的密码不一致"
-	},
-	"password2": {
-		"same": "您两次输入的密码不一致"
-	}
+    "password1": {
+        "same": "您两次输入的密码不一致"
+    },
+    "password2": {
+        "same": "您两次输入的密码不一致"
+    }
 }
 ```
 
@@ -229,10 +229,10 @@ func main() {
 
 ```go
 type MyStruct struct {
-	Base `p:"base"`
+    Base `p:"base"`
 }
 
 type MyStruct struct {
-	BaseStruct Base `p:"base"`
+    BaseStruct Base `p:"base"`
 }
 ```

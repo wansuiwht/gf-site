@@ -14,32 +14,32 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/gsession"
-	"github.com/gogf/gf/v2/os/gtime"
-	"time"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/gsession"
+    "github.com/gogf/gf/v2/os/gtime"
+    "time"
 )
 
 func main() {
-	s := g.Server()
-	s.SetSessionMaxAge(time.Minute)
-	s.SetSessionStorage(gsession.NewStorageMemory())
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.ALL("/set", func(r *ghttp.Request) {
-			r.Session.MustSet("time", gtime.Timestamp())
-			r.Response.Write("ok")
-		})
-		group.ALL("/get", func(r *ghttp.Request) {
-			r.Response.Write(r.Session.Data())
-		})
-		group.ALL("/del", func(r *ghttp.Request) {
-			_ = r.Session.RemoveAll()
-			r.Response.Write("ok")
-		})
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.SetSessionMaxAge(time.Minute)
+    s.SetSessionStorage(gsession.NewStorageMemory())
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.ALL("/set", func(r *ghttp.Request) {
+            r.Session.MustSet("time", gtime.Timestamp())
+            r.Response.Write("ok")
+        })
+        group.ALL("/get", func(r *ghttp.Request) {
+            r.Response.Write(r.Session.Data())
+        })
+        group.ALL("/del", func(r *ghttp.Request) {
+            _ = r.Session.RemoveAll()
+            r.Response.Write("ok")
+        })
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 

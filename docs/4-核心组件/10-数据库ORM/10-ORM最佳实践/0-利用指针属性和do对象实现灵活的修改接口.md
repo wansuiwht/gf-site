@@ -33,8 +33,8 @@ CREATE TABLE `user`(
 type Status string
 
 const (
-	StatusEnabled  = "enabled"
-	StatusDisabled = "disabled"
+    StatusEnabled  = "enabled"
+    StatusDisabled = "disabled"
 )
 ```
 
@@ -42,15 +42,15 @@ const (
 
 ```go
 type User struct {
-	g.Meta    `table:"uer" orm:"do:true"`
-	Id        interface{}
-	Passport  interface{}
-	Password  interface{}
-	Nickname  interface{}
-	Status    interface{}
-	Brief     interface{}
-	CreatedAt interface{}
-	UpdatedAt interface{}
+    g.Meta    `table:"uer" orm:"do:true"`
+    Id        interface{}
+    Passport  interface{}
+    Password  interface{}
+    Nickname  interface{}
+    Status    interface{}
+    Brief     interface{}
+    CreatedAt interface{}
+    UpdatedAt interface{}
 }
 ```
 
@@ -60,12 +60,12 @@ type User struct {
 
 ```go
 type UpdateReq struct {
-	g.Meta   `path:"/user/{Id}" method:"post" summary:"修改用户信息"`
-	Passport string  `v:"required" dc:"用户账号"`
-	Password *string `dc:"修改用户密码"`
-	Nickname *string `dc:"修改用户昵称"`
-	Status   *Status `dc:"修改用户状态"`
-	Brief    *string `dc:"修改用户描述"`
+    g.Meta   `path:"/user/{Id}" method:"post" summary:"修改用户信息"`
+    Passport string  `v:"required" dc:"用户账号"`
+    Password *string `dc:"修改用户密码"`
+    Nickname *string `dc:"修改用户昵称"`
+    Status   *Status `dc:"修改用户状态"`
+    Brief    *string `dc:"修改用户描述"`
 }
 ```
 
@@ -77,14 +77,14 @@ type UpdateReq struct {
 
 ```go
 func (c *Controller) Update(ctx context.Context, req *v1.UpdateReq) (res *v1.UpdateRes, err error) {
-	_, err = dao.User.Ctx(ctx).Data(do.User{
-		Password: req.Password,
-		Nickname: req.Nickname,
-		Status:   req.Status,
-		Brief:    req.Brief,
-	}).Where(do.User{
-		Passport: req.Passport,
-	}).Update()
-	return
+    _, err = dao.User.Ctx(ctx).Data(do.User{
+        Password: req.Password,
+        Nickname: req.Nickname,
+        Status:   req.Status,
+        Brief:    req.Brief,
+    }).Where(do.User{
+        Passport: req.Passport,
+    }).Update()
+    return
 }
 ```

@@ -23,22 +23,22 @@ func (r *Response) RawResponse() string
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	response, err := g.Client().Post(
-		gctx.New(),
-		"https://goframe.org",
-		g.Map{
-			"name": "john",
-		},
-	)
-	if err != nil {
-		panic(err)
-	}
-	response.RawDump()
+    response, err := g.Client().Post(
+        gctx.New(),
+        "https://goframe.org",
+        g.Map{
+            "name": "john",
+        },
+    )
+    if err != nil {
+        panic(err)
+    }
+    response.RawDump()
 }
 ```
 

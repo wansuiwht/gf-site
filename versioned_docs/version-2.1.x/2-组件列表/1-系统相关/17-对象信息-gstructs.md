@@ -52,18 +52,18 @@ Fields(in FieldsInput) ([]Field, error)
 
 ```go
 func main() {
-  	type User struct {
-  		Id   int
-  		Name string `params:"name"`
-  		Pass string `my-tag1:"pass1" my-tag2:"pass2" params:"pass"`
-  	}
-  	var user *User
-  	fields, _ := gstructs.Fields(gstructs.FieldsInput{
-  		Pointer:         user,
-  		RecursiveOption: 0,
-  	})
+      type User struct {
+          Id   int
+          Name string `params:"name"`
+          Pass string `my-tag1:"pass1" my-tag2:"pass2" params:"pass"`
+      }
+      var user *User
+      fields, _ := gstructs.Fields(gstructs.FieldsInput{
+          Pointer:         user,
+          RecursiveOption: 0,
+      })
 
-  	g.Dump(fields)
+      g.Dump(fields)
 }
 
 // Output:
@@ -150,15 +150,15 @@ TagMapName(pointer interface{}, priority []string) (map[string]string, error)
 
 ```go
 func main() {
-  	type User struct {
-  		Id   int
-  		Name string `params:"name"`
-  		Pass string `my-tag1:"pass1" my-tag2:"pass2" params:"pass"`
-  	}
-  	var user User
-  	m, _ := gstructs.TagMapName(user, []string{"params"})
+      type User struct {
+          Id   int
+          Name string `params:"name"`
+          Pass string `my-tag1:"pass1" my-tag2:"pass2" params:"pass"`
+      }
+      var user User
+      m, _ := gstructs.TagMapName(user, []string{"params"})
 
-  	g.Dump(m)
+      g.Dump(m)
 }
 
 // Output:

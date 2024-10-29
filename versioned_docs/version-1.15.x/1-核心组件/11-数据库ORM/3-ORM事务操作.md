@@ -168,18 +168,18 @@ CREATE TABLE `user` (
 ```go
 tx, err := db.Begin()
 if err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.Begin(); err != nil {
-	panic(err)
+    panic(err)
 }
 _, err = tx.Model(table).Data(g.Map{"id": 1, "name": "john"}).Insert()
 if err = tx.Rollback(); err != nil {
-	panic(err)
+    panic(err)
 }
 _, err = tx.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert()
 if err = tx.Commit(); err != nil {
-	panic(err)
+    panic(err)
 }
 ```
 
@@ -222,24 +222,24 @@ mysql> select * from `user`;
 
 ```
 if err = db.Transaction(func(tx *gdb.TX) error {
-	// Nested transaction 1.
-	if err = tx.Transaction(func(tx *gdb.TX) error {
-		_, err = tx.Model(table).Data(g.Map{"id": 1, "name": "john"}).Insert()
-		return err
-	}); err != nil {
-		return err
-	}
-	// Nested transaction 2, panic.
-	if err = tx.Transaction(func(tx *gdb.TX) error {
-		_, err = tx.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert()
-		// Create a panic that can make this transaction rollback automatically.
-		panic("error")
-	}); err != nil {
-		return err
-	}
-	return nil
+    // Nested transaction 1.
+    if err = tx.Transaction(func(tx *gdb.TX) error {
+        _, err = tx.Model(table).Data(g.Map{"id": 1, "name": "john"}).Insert()
+        return err
+    }); err != nil {
+        return err
+    }
+    // Nested transaction 2, panic.
+    if err = tx.Transaction(func(tx *gdb.TX) error {
+        _, err = tx.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert()
+        // Create a panic that can make this transaction rollback automatically.
+        panic("error")
+    }); err != nil {
+        return err
+    }
+    return nil
 }); err != nil {
-	panic(err)
+    panic(err)
 }
 ```
 
@@ -263,30 +263,30 @@ if err = db.Transaction(func(tx *gdb.TX) error {
 ```go
 tx, err := db.Begin()
 if err != nil {
-	panic(err)
+    panic(err)
 }
 defer func() {
-	if err := recover(); err != nil {
-		_ = tx.Rollback()
-	}
+    if err := recover(); err != nil {
+        _ = tx.Rollback()
+    }
 }()
 if _, err = tx.Model(table).Data(g.Map{"id": 1, "name": "john"}).Insert(); err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.SavePoint("MyPoint"); err != nil {
-	panic(err)
+    panic(err)
 }
 if _, err = tx.Model(table).Data(g.Map{"id": 2, "name": "smith"}).Insert(); err != nil {
-	panic(err)
+    panic(err)
 }
 if _, err = tx.Model(table).Data(g.Map{"id": 3, "name": "green"}).Insert(); err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.RollbackTo("MyPoint"); err != nil {
-	panic(err)
+    panic(err)
 }
 if err = tx.Commit(); err != nil {
-	panic(err)
+    panic(err)
 }
 ```
 

@@ -32,22 +32,22 @@ import "github.com/gogf/gf/v2/encoding/gcharset"
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/encoding/gcharset"
+    "github.com/gogf/gf/v2/encoding/gcharset"
 )
 
 func main() {
-	var (
-		src        = "~{;(<dR;:x>F#,6@WCN^O`GW!#"
-		srcCharset = "GB2312"
-		dstCharset = "UTF-8"
-	)
-	str, err := gcharset.Convert(dstCharset, srcCharset, src)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(str)
+    var (
+        src        = "~{;(<dR;:x>F#,6@WCN^O`GW!#"
+        srcCharset = "GB2312"
+        dstCharset = "UTF-8"
+    )
+    str, err := gcharset.Convert(dstCharset, srcCharset, src)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(str)
 }
 ```
 

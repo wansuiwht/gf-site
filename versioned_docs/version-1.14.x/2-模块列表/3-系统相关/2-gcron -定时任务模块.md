@@ -142,34 +142,34 @@ func main() {
 
 ```html
 [
-	{
-		"Spec": "0 30 * * * *",
-		"Cmd": "main.main.func1",
-		"Time": "2018-10-25T10:05:28.898768522+08:00",
-		"Name": "",
-		"Status": {}
-	},
-	{
-		"Spec": "* * * * * *",
-		"Cmd": "main.main.func2",
-		"Time": "2018-10-25T10:05:28.898773631+08:00",
-		"Name": "second-cron",
-		"Status": {}
-	},
-	{
-		"Spec": "@hourly",
-		"Cmd": "main.main.func3",
-		"Time": "2018-10-25T10:05:28.89885461+08:00",
-		"Name": "",
-		"Status": {}
-	},
-	{
-		"Spec": "@every 1h30m",
-		"Cmd": "main.main.func4",
-		"Time": "2018-10-25T10:05:28.89885883+08:00",
-		"Name": "",
-		"Status": {}
-	}
+    {
+        "Spec": "0 30 * * * *",
+        "Cmd": "main.main.func1",
+        "Time": "2018-10-25T10:05:28.898768522+08:00",
+        "Name": "",
+        "Status": {}
+    },
+    {
+        "Spec": "* * * * * *",
+        "Cmd": "main.main.func2",
+        "Time": "2018-10-25T10:05:28.898773631+08:00",
+        "Name": "second-cron",
+        "Status": {}
+    },
+    {
+        "Spec": "@hourly",
+        "Cmd": "main.main.func3",
+        "Time": "2018-10-25T10:05:28.89885461+08:00",
+        "Name": "",
+        "Status": {}
+    },
+    {
+        "Spec": "@every 1h30m",
+        "Cmd": "main.main.func4",
+        "Time": "2018-10-25T10:05:28.89885883+08:00",
+        "Name": "",
+        "Status": {}
+    }
 ]
 2018-10-25 10:05:29.000 Every second
 2018-10-25 10:05:30.000 Every second
@@ -231,17 +231,17 @@ func GetLogLevel() int
 package main
 
 import (
-	"github.com/gogf/gf/os/gcron"
-	"github.com/gogf/gf/os/glog"
-	"time"
+    "github.com/gogf/gf/os/gcron"
+    "github.com/gogf/gf/os/glog"
+    "time"
 )
 
 func main() {
-	gcron.SetLogLevel(glog.LEVEL_ALL)
-	gcron.Add("* * * * * ?", func() {
-		glog.Println("test")
-	})
-	time.Sleep(3 * time.Second)
+    gcron.SetLogLevel(glog.LEVEL_ALL)
+    gcron.Add("* * * * * ?", func() {
+        glog.Println("test")
+    })
+    time.Sleep(3 * time.Second)
 }
 
 ```

@@ -14,26 +14,26 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	type User struct {
-		Name string `v:"required#请输入用户姓名"`
-		Type int    `v:"required#请选择用户类型"`
-	}
-	var (
-		ctx  = gctx.New()
-		user = User{}
-		data = g.Map{
-			"name": "john",
-		}
-	)
-	err := g.Validator().Assoc(data).Data(user).Run(ctx)
-	if err != nil {
-		g.Dump(err.Items())
-	}
+    type User struct {
+        Name string `v:"required#请输入用户姓名"`
+        Type int    `v:"required#请选择用户类型"`
+    }
+    var (
+        ctx  = gctx.New()
+        user = User{}
+        data = g.Map{
+            "name": "john",
+        }
+    )
+    err := g.Validator().Assoc(data).Data(user).Run(ctx)
+    if err != nil {
+        g.Dump(err.Items())
+    }
 }
 ```
 

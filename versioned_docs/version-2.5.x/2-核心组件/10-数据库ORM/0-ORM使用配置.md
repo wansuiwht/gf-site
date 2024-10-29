@@ -76,17 +76,17 @@ database:
     prefix:                "(可选)表名前缀"
     dryRun:                "(可选)ORM空跑(只读不写)"
     charset:               "(可选)数据库编码(如: utf8/gbk/gb2312)，一般设置为utf8"
-	protocol:              "(可选)数据库连接协议，默认为TCP"
+    protocol:              "(可选)数据库连接协议，默认为TCP"
     weight:                "(可选)负载均衡权重，用于负载均衡控制，不使用应用层的负载均衡机制请置空"
     timezone:              "(可选)时区配置，例如:local"
     namespace:             "(可选)用以支持个别数据库服务Catalog&Schema区分的问题，原有的Schema代表数据库名称，而NameSpace代表个别数据库服务的Schema"
     maxIdle:               "(可选)连接池最大闲置的连接数"
     maxOpen:               "(可选)连接池最大打开的连接数"
     maxLifetime:           "(可选)连接对象可重复使用的时间长度"
-	queryTimeout:          "(可选)查询语句超时时长"
-	execTimeout:           "(可选)写入语句超时时长"
-	tranTimeout:           "(可选)事务处理超时时长"
-	prepareTimeout:        "(可选)预准备SQL语句执行超时时长"
+    queryTimeout:          "(可选)查询语句超时时长"
+    execTimeout:           "(可选)写入语句超时时长"
+    tranTimeout:           "(可选)事务处理超时时长"
+    prepareTimeout:        "(可选)预准备SQL语句执行超时时长"
     createdAt:             "(可选)自动创建时间字段名称"
     updatedAt:             "(可选)自动更新时间字段名称"
     deletedAt:             "(可选)软删除时间字段名称"
@@ -115,7 +115,7 @@ database:
     maxIdle:       "10"
     maxOpen:       "100"
     maxLifetime:   "30s"
- 	protocol
+     protocol
 ```
 
 使用该配置方式时，为保证数据库安全，默认底层不支持多行 `SQL` 语句执行。为了得到更多配置项控制，请参考推荐的简化配置，同时建议您务必了解清楚简化配置项中每个连接参数的功能作用。
@@ -193,7 +193,7 @@ type ConfigNode  struct {
     Pass             string        // 密码
     Name             string        // 数据库名称
     Type             string        // 数据库类型：mysql, sqlite, mssql, pgsql, oracle
-	Link             string        // (可选)自定义链接信息，当该字段被设置值时，以上链接字段(Host,Port,User,Pass,Name)将失效(该字段是一个扩展功能)
+    Link             string        // (可选)自定义链接信息，当该字段被设置值时，以上链接字段(Host,Port,User,Pass,Name)将失效(该字段是一个扩展功能)
     Extra            string        // (可选)不同数据库的额外特性配置，由底层数据库driver定义
     Role             string        // (可选，默认为master)数据库的角色，用于主从操作分离，至少需要有一个master，参数值：master, slave
     Debug            bool          // (可选)开启调试模式
@@ -283,27 +283,27 @@ gdb.SetConfig(gdb.Config {
 
 ```go
 import (
-	"database/sql"
+    "database/sql"
 
-	"github.com/gogf/gf/contrib/drivers/mysql/v2"
-	"github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    "github.com/gogf/gf/v2/database/gdb"
 )
 
 type MyBizDriver struct {
-	mysql.Driver
+    mysql.Driver
 }
 
 // Open creates and returns an underlying sql.DB object for mysql.
 // Note that it converts time.Time argument to local timezone in default.
 func (d *MyBizDriver) Open(config *gdb.ConfigNode) (db *sql.DB, err error) {
-	config.User = d.decode(config.User)
-	config.Pass = d.decode(config.Pass)
-	return d.Driver.Open(config)
+    config.User = d.decode(config.User)
+    config.Pass = d.decode(config.Pass)
+    return d.Driver.Open(config)
 }
 
 func (d *MyBizDriver) decode(s string) string {
-	// 执行字段解密处理逻辑
-	// ...
-	return s
+    // 执行字段解密处理逻辑
+    // ...
+    return s
 }
 ```

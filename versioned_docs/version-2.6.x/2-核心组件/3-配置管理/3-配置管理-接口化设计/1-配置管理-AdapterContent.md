@@ -16,10 +16,10 @@ hide_title: true
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/os/gcfg"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/gcfg"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 const content = `
@@ -36,14 +36,14 @@ database:
 `
 
 func main() {
-	var ctx = gctx.New()
-	adapter, err := gcfg.NewAdapterContent(content)
-	if err != nil {
-		panic(err)
-	}
-	config := gcfg.NewWithAdapter(adapter)
-	fmt.Println(config.MustGet(ctx, "server.address").String())
-	fmt.Println(config.MustGet(ctx, "database.default").Map())
+    var ctx = gctx.New()
+    adapter, err := gcfg.NewAdapterContent(content)
+    if err != nil {
+        panic(err)
+    }
+    config := gcfg.NewWithAdapter(adapter)
+    fmt.Println(config.MustGet(ctx, "server.address").String())
+    fmt.Println(config.MustGet(ctx, "database.default").Map())
 }
 ```
 

@@ -115,15 +115,15 @@ EXAMPLE
 如果您是使用的 `Visual Studio Code`，那么可以安装插件 [RunOnSave](https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave) 随后配置插件：
 
 ```
-		"emeraldwalk.runonsave": {
-			"commands": [
-				{
-					"match": ".*logic.*go",
-					"isAsync": true,
-					"cmd": "gf gen service"
-				}
-			]
-		}
+        "emeraldwalk.runonsave": {
+            "commands": [
+                {
+                    "match": ".*logic.*go",
+                    "isAsync": true,
+                    "cmd": "gf gen service"
+                }
+            ]
+        }
 ```
 
 ## 具体使用手摸手

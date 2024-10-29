@@ -11,7 +11,7 @@ hide_title: true
 ```go
 r, err := g.Model("order").Where("status", 1).All()
 if err != nil {
-	return err
+    return err
 }
 if len(r) == 0 {
     // 结果为空
@@ -23,7 +23,7 @@ if len(r) == 0 {
 ```go
 r, err := g.Model("order").Where("status", 1).All()
 if err != nil {
-	return err
+    return err
 }
 if r.IsEmpty() {
     // 结果为空
@@ -61,7 +61,7 @@ if r.IsEmpty() {
 ```go
 r, err := g.Model("order").Where("status", 1).Value()
 if err != nil {
-	return err
+    return err
 }
 if r.IsEmpty() {
     // 结果为空

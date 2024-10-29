@@ -77,32 +77,32 @@ redis:
   default:
     address: 127.0.0.1:6379
     db:      1
-	pass:    "password" # 在此配置密码, 没有可去掉
+    pass:    "password" # 在此配置密码, 没有可去掉
 ```
 
 ```go
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-	var ctx = gctx.New()
-	_, err := g.Redis().Set(ctx, "key", "value")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	value, err := g.Redis().Get(ctx, "key")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	fmt.Println(value.String())
+    var ctx = gctx.New()
+    _, err := g.Redis().Set(ctx, "key", "value")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    value, err := g.Redis().Get(ctx, "key")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    fmt.Println(value.String())
 }
 ```
 
@@ -131,36 +131,36 @@ func ClearConfig()
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
 
-	"github.com/gogf/gf/v2/database/gredis"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/database/gredis"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 var (
-	config = gredis.Config{
-		Address: "127.0.0.1:6379",
-		Db:      1,
-		Pass:    "password",
-	}
-	group = "cache"
-	ctx   = gctx.New()
+    config = gredis.Config{
+        Address: "127.0.0.1:6379",
+        Db:      1,
+        Pass:    "password",
+    }
+    group = "cache"
+    ctx   = gctx.New()
 )
 
 func main() {
-	gredis.SetConfig(&config, group)
+    gredis.SetConfig(&config, group)
 
-	_, err := g.Redis(group).Set(ctx, "key", "value")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	value, err := g.Redis(group).Get(ctx, "key")
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	fmt.Println(value.String())
+    _, err := g.Redis(group).Set(ctx, "key", "value")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    value, err := g.Redis(group).Get(ctx, "key")
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    fmt.Println(value.String())
 }
 ```

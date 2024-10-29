@@ -23,28 +23,28 @@ func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx *TX
 
 ```go
 func Register() error {
-	return db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
-		var (
-			result sql.Result
-			err    error
-		)
-		// 写入用户基础数据
-		result, err = tx.Table("user").Insert(g.Map{
-			"name":  "john",
-			"score": 100,
-			//...
-		})
-		if err != nil {
-			return err
-		}
-		// 写入用户详情数据，需要用到上一次写入得到的用户uid
-		result, err = tx.Table("user_detail").Insert(g.Map{
-			"uid":   result.LastInsertId(),
-			"phone": "18010576258",
-			//...
-		})
-		return err
-	})
+    return db.Transaction(ctx, func(ctx context.Context, tx *gdb.TX) error {
+        var (
+            result sql.Result
+            err    error
+        )
+        // 写入用户基础数据
+        result, err = tx.Table("user").Insert(g.Map{
+            "name":  "john",
+            "score": 100,
+            //...
+        })
+        if err != nil {
+            return err
+        }
+        // 写入用户详情数据，需要用到上一次写入得到的用户uid
+        result, err = tx.Table("user_detail").Insert(g.Map{
+            "uid":   result.LastInsertId(),
+            "phone": "18010576258",
+            //...
+        })
+        return err
+    })
 }
 ```
 
@@ -54,56 +54,56 @@ func Register() error {
 
 ```go
 func Register() error {
-	var (
-		uid int64
-		err error
-	)
-	tx, err := g.DB().Begin()
-	if err != nil {
-		return err
-	}
-	// 方法退出时检验返回值，
-	// 如果结果成功则执行tx.Commit()提交,
-	// 否则执行tx.Rollback()回滚操作。
-	defer func() {
-		if err != nil {
-			tx.Rollback()
-		} else {
-			tx.Commit()
-		}
-	}()
-	// 写入用户基础数据
-	uid, err = AddUserInfo(tx, g.Map{
-		"name":  "john",
-		"score": 100,
-		//...
-	})
-	if err != nil {
-		return err
-	}
-	// 写入用户详情数据，需要用到上一次写入得到的用户uid
-	err = AddUserDetail(tx, g.Map{
-		"uid":   uid,
-		"phone": "18010576259",
-		//...
-	})
-	return err
+    var (
+        uid int64
+        err error
+    )
+    tx, err := g.DB().Begin()
+    if err != nil {
+        return err
+    }
+    // 方法退出时检验返回值，
+    // 如果结果成功则执行tx.Commit()提交,
+    // 否则执行tx.Rollback()回滚操作。
+    defer func() {
+        if err != nil {
+            tx.Rollback()
+        } else {
+            tx.Commit()
+        }
+    }()
+    // 写入用户基础数据
+    uid, err = AddUserInfo(tx, g.Map{
+        "name":  "john",
+        "score": 100,
+        //...
+    })
+    if err != nil {
+        return err
+    }
+    // 写入用户详情数据，需要用到上一次写入得到的用户uid
+    err = AddUserDetail(tx, g.Map{
+        "uid":   uid,
+        "phone": "18010576259",
+        //...
+    })
+    return err
 }
 
 func AddUserInfo(tx *gdb.TX, data g.Map) (int64, error) {
-	result, err := g.Table("user").TX(tx).Data(data).Insert()
-	if err != nil {
-		return 0, err
-	}
-	uid, err := result.LastInsertId()
-	if err != nil {
-		return 0, err
-	}
-	return uid, nil
+    result, err := g.Table("user").TX(tx).Data(data).Insert()
+    if err != nil {
+        return 0, err
+    }
+    uid, err := result.LastInsertId()
+    if err != nil {
+        return 0, err
+    }
+    return uid, nil
 }
 
 func AddUserDetail(tx *gdb.TX, data g.Map) error {
-	_, err := g.Table("user_detail").TX(tx).Data(data).Insert()
-	return err
+    _, err := g.Table("user_detail").TX(tx).Data(data).Insert()
+    return err
 }
 ```

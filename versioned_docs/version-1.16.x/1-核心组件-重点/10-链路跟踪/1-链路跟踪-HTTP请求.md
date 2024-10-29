@@ -16,38 +16,38 @@ hide_title: true
 package main
 
 import (
-	"context"
-	"gftracing/tracing"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/net/gtrace"
+    "context"
+    "gftracing/tracing"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/net/gtrace"
 )
 
 const (
-	ServiceName       = "tracing-http-client"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "tracing-http-client"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(err)
-	}
-	defer flush()
+    flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(err)
+    }
+    defer flush()
 
-	StartRequests()
+    StartRequests()
 }
 
 func StartRequests() {
-	ctx, span := gtrace.NewSpan(context.Background(), "StartRequests")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(context.Background(), "StartRequests")
+    defer span.End()
 
-	ctx = gtrace.SetBaggageValue(ctx, "name", "john")
+    ctx = gtrace.SetBaggageValue(ctx, "name", "john")
 
-	client := g.Client().Use(ghttp.MiddlewareClientTracing)
+    client := g.Client().Use(ghttp.MiddlewareClientTracing)
 
-	content := client.Ctx(ctx).GetContent("http://127.0.0.1:8199/hello")
-	g.Log().Ctx(ctx).Print(content)
+    content := client.Ctx(ctx).GetContent("http://127.0.0.1:8199/hello")
+    g.Log().Ctx(ctx).Print(content)
 }
 ```
 
@@ -64,40 +64,40 @@ func StartRequests() {
 package main
 
 import (
-	"gftracing/tracing"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/net/gtrace"
+    "gftracing/tracing"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/net/gtrace"
 )
 
 const (
-	ServiceName       = "tracing-http-server"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "tracing-http-server"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(err)
-	}
-	defer flush()
+    flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(err)
+    }
+    defer flush()
 
-	s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.Middleware(ghttp.MiddlewareServerTracing)
-		group.GET("/hello", HelloHandler)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.Middleware(ghttp.MiddlewareServerTracing)
+        group.GET("/hello", HelloHandler)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 func HelloHandler(r *ghttp.Request) {
-	ctx, span := gtrace.NewSpan(r.Context(), "HelloHandler")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(r.Context(), "HelloHandler")
+    defer span.End()
 
-	value := gtrace.GetBaggageVar(ctx, "name").String()
+    value := gtrace.GetBaggageVar(ctx, "name").String()
 
-	r.Response.Write("hello:", value)
+    r.Response.Write("hello:", value)
 }
 ```
 
@@ -190,63 +190,63 @@ func HelloHandler(r *ghttp.Request) {
 package main
 
 import (
-	"context"
-	"gftracing/tracing"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/net/gtrace"
+    "context"
+    "gftracing/tracing"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/net/gtrace"
 )
 
 const (
-	ServiceName       = "tracing-http-client"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "tracing-http-client"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(err)
-	}
-	defer flush()
+    flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(err)
+    }
+    defer flush()
 
-	StartRequests()
+    StartRequests()
 }
 
 func StartRequests() {
-	ctx, span := gtrace.NewSpan(context.Background(), "StartRequests")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(context.Background(), "StartRequests")
+    defer span.End()
 
-	client := g.Client().Use(ghttp.MiddlewareClientTracing)
-	// Add user info.
-	idStr := client.Ctx(ctx).PostContent(
-		"http://127.0.0.1:8199/user/insert",
-		g.Map{
-			"name": "john",
-		},
-	)
-	if idStr == "" {
-		g.Log().Ctx(ctx).Print("retrieve empty id string")
-		return
-	}
-	g.Log().Ctx(ctx).Print("insert:", idStr)
+    client := g.Client().Use(ghttp.MiddlewareClientTracing)
+    // Add user info.
+    idStr := client.Ctx(ctx).PostContent(
+        "http://127.0.0.1:8199/user/insert",
+        g.Map{
+            "name": "john",
+        },
+    )
+    if idStr == "" {
+        g.Log().Ctx(ctx).Print("retrieve empty id string")
+        return
+    }
+    g.Log().Ctx(ctx).Print("insert:", idStr)
 
-	// Query user info.
-	userJson := client.Ctx(ctx).GetContent(
-		"http://127.0.0.1:8199/user/query",
-		g.Map{
-			"id": idStr,
-		},
-	)
-	g.Log().Ctx(ctx).Print("query:", idStr, userJson)
+    // Query user info.
+    userJson := client.Ctx(ctx).GetContent(
+        "http://127.0.0.1:8199/user/query",
+        g.Map{
+            "id": idStr,
+        },
+    )
+    g.Log().Ctx(ctx).Print("query:", idStr, userJson)
 
-	// Delete user info.
-	deleteResult := client.Ctx(ctx).PostContent(
-		"http://127.0.0.1:8199/user/delete",
-		g.Map{
-			"id": idStr,
-		},
-	)
-	g.Log().Ctx(ctx).Print("delete:", idStr, deleteResult)
+    // Delete user info.
+    deleteResult := client.Ctx(ctx).PostContent(
+        "http://127.0.0.1:8199/user/delete",
+        g.Map{
+            "id": idStr,
+        },
+    )
+    g.Log().Ctx(ctx).Print("delete:", idStr, deleteResult)
 }
 ```
 
@@ -264,110 +264,110 @@ func StartRequests() {
 package main
 
 import (
-	"fmt"
-	"gftracing/tracing"
-	"github.com/gogf/gcache-adapter/adapter"
-	"github.com/gogf/gf/errors/gerror"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
-	"time"
+    "fmt"
+    "gftracing/tracing"
+    "github.com/gogf/gcache-adapter/adapter"
+    "github.com/gogf/gf/errors/gerror"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
+    "time"
 )
 
 type tracingApi struct{}
 
 const (
-	ServiceName       = "tracing-http-server"
-	JaegerUdpEndpoint = "localhost:6831"
+    ServiceName       = "tracing-http-server"
+    JaegerUdpEndpoint = "localhost:6831"
 )
 
 func main() {
-	flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
-	if err != nil {
-		g.Log().Fatal(err)
-	}
-	defer flush()
+    flush, err := tracing.InitJaeger(ServiceName, JaegerUdpEndpoint)
+    if err != nil {
+        g.Log().Fatal(err)
+    }
+    defer flush()
 
-	g.DB().GetCache().SetAdapter(adapter.NewRedis(g.Redis()))
+    g.DB().GetCache().SetAdapter(adapter.NewRedis(g.Redis()))
 
-	s := g.Server()
-	s.Group("/", func(group *ghttp.RouterGroup) {
-		group.Middleware(ghttp.MiddlewareServerTracing)
-		group.ALL("/user", new(tracingApi))
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.Middleware(ghttp.MiddlewareServerTracing)
+        group.ALL("/user", new(tracingApi))
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 type userApiInsert struct {
-	Name string `v:"required#Please input user name."`
+    Name string `v:"required#Please input user name."`
 }
 
 // Insert is a route handler for inserting user info into dtabase.
 func (api *tracingApi) Insert(r *ghttp.Request) {
-	var (
-		dataReq *userApiInsert
-	)
-	if err := r.Parse(&dataReq); err != nil {
-		r.Response.WriteExit(gerror.Current(err))
-	}
-	result, err := g.Table("user").Ctx(r.Context()).Insert(g.Map{
-		"name": dataReq.Name,
-	})
-	if err != nil {
-		r.Response.WriteExit(gerror.Current(err))
-	}
-	id, _ := result.LastInsertId()
-	r.Response.Write(id)
+    var (
+        dataReq *userApiInsert
+    )
+    if err := r.Parse(&dataReq); err != nil {
+        r.Response.WriteExit(gerror.Current(err))
+    }
+    result, err := g.Table("user").Ctx(r.Context()).Insert(g.Map{
+        "name": dataReq.Name,
+    })
+    if err != nil {
+        r.Response.WriteExit(gerror.Current(err))
+    }
+    id, _ := result.LastInsertId()
+    r.Response.Write(id)
 }
 
 type userApiQuery struct {
-	Id int `v:"min:1#User id is required for querying."`
+    Id int `v:"min:1#User id is required for querying."`
 }
 
 // Query is a route handler for querying user info. It firstly retrieves the info from redis,
 // if there's nothing in the redis, it then does db select.
 func (api *tracingApi) Query(r *ghttp.Request) {
-	var (
-		dataReq *userApiQuery
-	)
-	if err := r.Parse(&dataReq); err != nil {
-		r.Response.WriteExit(gerror.Current(err))
-	}
-	one, err := g.Table("user").
-		Ctx(r.Context()).
-		Cache(5*time.Second, api.userCacheKey(dataReq.Id)).
-		FindOne(dataReq.Id)
-	if err != nil {
-		r.Response.WriteExit(gerror.Current(err))
-	}
-	r.Response.WriteJson(one)
+    var (
+        dataReq *userApiQuery
+    )
+    if err := r.Parse(&dataReq); err != nil {
+        r.Response.WriteExit(gerror.Current(err))
+    }
+    one, err := g.Table("user").
+        Ctx(r.Context()).
+        Cache(5*time.Second, api.userCacheKey(dataReq.Id)).
+        FindOne(dataReq.Id)
+    if err != nil {
+        r.Response.WriteExit(gerror.Current(err))
+    }
+    r.Response.WriteJson(one)
 }
 
 type userApiDelete struct {
-	Id int `v:"min:1#User id is required for deleting."`
+    Id int `v:"min:1#User id is required for deleting."`
 }
 
 // Delete is a route handler for deleting specified user info.
 func (api *tracingApi) Delete(r *ghttp.Request) {
-	var (
-		dataReq *userApiDelete
-	)
-	if err := r.Parse(&dataReq); err != nil {
-		r.Response.WriteExit(gerror.Current(err))
-	}
-	_, err := g.Table("user").
-		Ctx(r.Context()).
-		Cache(-1, api.userCacheKey(dataReq.Id)).
-		WherePri(dataReq.Id).
-		Delete()
-	if err != nil {
-		r.Response.WriteExit(gerror.Current(err))
-	}
-	r.Response.Write("ok")
+    var (
+        dataReq *userApiDelete
+    )
+    if err := r.Parse(&dataReq); err != nil {
+        r.Response.WriteExit(gerror.Current(err))
+    }
+    _, err := g.Table("user").
+        Ctx(r.Context()).
+        Cache(-1, api.userCacheKey(dataReq.Id)).
+        WherePri(dataReq.Id).
+        Delete()
+    if err != nil {
+        r.Response.WriteExit(gerror.Current(err))
+    }
+    r.Response.Write("ok")
 }
 
 func (api *tracingApi) userCacheKey(id int) string {
-	return fmt.Sprintf(`userInfo:%d`, id)
+    return fmt.Sprintf(`userInfo:%d`, id)
 }
 ```
 

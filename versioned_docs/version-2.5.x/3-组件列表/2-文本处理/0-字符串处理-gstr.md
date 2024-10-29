@@ -50,13 +50,13 @@ IsNumeric(s string) bool
 
 ```go
 func ExampleIsNumeric() {
-  	fmt.Println(gstr.IsNumeric("88"))
-  	fmt.Println(gstr.IsNumeric("3.1415926"))
-  	fmt.Println(gstr.IsNumeric("abc"))
-  	// Output:
-  	// true
-  	// true
-  	// false
+      fmt.Println(gstr.IsNumeric("88"))
+      fmt.Println(gstr.IsNumeric("3.1415926"))
+      fmt.Println(gstr.IsNumeric("abc"))
+      // Output:
+      // true
+      // true
+      // false
 }
 ```
 
@@ -93,14 +93,14 @@ LenRune(str string) int
 
 ```go
 func ExampleLenRune() {
-  	var (
-  		str    = `GoFrame框架`
-  		result = gstr.LenRune(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `GoFrame框架`
+          result = gstr.LenRune(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 9
+      // Output:
+      // 9
 }
 ```
 
@@ -137,15 +137,15 @@ Repeat(input string, multiplier int) string
 
 ```go
 func ExampleRepeat() {
-  	var (
-  		input      = `goframe `
-  		multiplier = 3
-  		result     = gstr.Repeat(input, multiplier)
-  	)
-  	fmt.Println(result)
+      var (
+          input      = `goframe `
+          multiplier = 3
+          result     = gstr.Repeat(input, multiplier)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe goframe goframe
+      // Output:
+      // goframe goframe goframe
 }
 ```
 
@@ -182,14 +182,14 @@ ToLower(s string) string
 
 ```go
 func ExampleToLower() {
-  	var (
-  		s      = `GOFRAME`
-  		result = gstr.ToLower(s)
-  	)
-  	fmt.Println(result)
+      var (
+          s      = `GOFRAME`
+          result = gstr.ToLower(s)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe
+      // Output:
+      // goframe
 }
 ```
 
@@ -224,14 +224,14 @@ ToUpper(s string) string
 
 ```go
 func ExampleToUpper() {
-  	var (
-  		s      = `goframe`
-  		result = gstr.ToUpper(s)
-  	)
-  	fmt.Println(result)
+      var (
+          s      = `goframe`
+          result = gstr.ToUpper(s)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// GOFRAME
+      // Output:
+      // GOFRAME
 }
 ```
 
@@ -266,14 +266,14 @@ UcFirst(s string) string
 
 ```go
 func ExampleUcFirst() {
-  	var (
-  		s      = `hello`
-  		result = gstr.UcFirst(s)
-  	)
-  	fmt.Println(result)
+      var (
+          s      = `hello`
+          result = gstr.UcFirst(s)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// Hello
+      // Output:
+      // Hello
 }
 ```
 
@@ -308,14 +308,14 @@ LcFirst(s string) string
 
 ```go
 func ExampleLcFirst() {
-  	var (
-  		str    = `Goframe`
-  		result = gstr.LcFirst(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `Goframe`
+          result = gstr.LcFirst(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe
+      // Output:
+      // goframe
 }
 ```
 
@@ -350,14 +350,14 @@ UcWords(str string) string
 
 ```go
 func ExampleUcWords() {
-  	var (
-  		str    = `hello world`
-  		result = gstr.UcWords(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          result = gstr.UcWords(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// Hello World
+      // Output:
+      // Hello World
 }
 ```
 
@@ -392,12 +392,12 @@ IsLetterLower(b byte) bool
 
 ```go
 func ExampleIsLetterLower() {
-  	fmt.Println(gstr.IsLetterLower('a'))
-  	fmt.Println(gstr.IsLetterLower('A'))
+      fmt.Println(gstr.IsLetterLower('a'))
+      fmt.Println(gstr.IsLetterLower('A'))
 
-  	// Output:
-  	// true
-  	// false
+      // Output:
+      // true
+      // false
 }
 ```
 
@@ -432,12 +432,12 @@ IsLetterUpper(b byte) bool
 
 ```go
 func ExampleIsLetterUpper() {
-  	fmt.Println(gstr.IsLetterUpper('A'))
-  	fmt.Println(gstr.IsLetterUpper('a'))
+      fmt.Println(gstr.IsLetterUpper('A'))
+      fmt.Println(gstr.IsLetterUpper('a'))
 
-  	// Output:
-  	// true
-  	// false
+      // Output:
+      // true
+      // false
 }
 ```
 
@@ -474,14 +474,14 @@ Compare(a, b string) int
 
 ```go
 func ExampleCompare() {
-  	fmt.Println(gstr.Compare("c", "c"))
-  	fmt.Println(gstr.Compare("a", "b"))
-  	fmt.Println(gstr.Compare("c", "b"))
+      fmt.Println(gstr.Compare("c", "c"))
+      fmt.Println(gstr.Compare("a", "b"))
+      fmt.Println(gstr.Compare("c", "b"))
 
-  	// Output:
-  	// 0
-  	// -1
-  	// 1
+      // Output:
+      // 0
+      // -1
+      // 1
 }
 ```
 
@@ -516,14 +516,14 @@ Equal(a, b string) bool
 
 ```go
 func ExampleEqual() {
-  	fmt.Println(gstr.Equal(`A`, `a`))
-  	fmt.Println(gstr.Equal(`A`, `A`))
-  	fmt.Println(gstr.Equal(`A`, `B`))
+      fmt.Println(gstr.Equal(`A`, `a`))
+      fmt.Println(gstr.Equal(`A`, `A`))
+      fmt.Println(gstr.Equal(`A`, `B`))
 
-  	// Output:
-  	// true
-  	// true
-  	// false
+      // Output:
+      // true
+      // true
+      // false
 }
 ```
 
@@ -560,15 +560,15 @@ Split(str, delimiter string) []string
 
 ```go
 func ExampleSplit() {
-  	var (
-  		str       = `a|b|c|d`
-  		delimiter = `|`
-  		result    = gstr.Split(str, delimiter)
-  	)
-  	fmt.Printf(`%#v`, result)
+      var (
+          str       = `a|b|c|d`
+          delimiter = `|`
+          result    = gstr.Split(str, delimiter)
+      )
+      fmt.Printf(`%#v`, result)
 
-  	// Output:
-  	// []string{"a", "b", "c", "d"}
+      // Output:
+      // []string{"a", "b", "c", "d"}
 }
 ```
 
@@ -603,15 +603,15 @@ SplitAndTrim(str, delimiter string, characterMask ...string) []string
 
 ```go
 func ExampleSplitAndTrim() {
-  	var (
-  		str       = `a|b|||||c|d`
-  		delimiter = `|`
-  		result    = gstr.SplitAndTrim(str, delimiter)
-  	)
-  	fmt.Printf(`%#v`, result)
+      var (
+          str       = `a|b|||||c|d`
+          delimiter = `|`
+          result    = gstr.SplitAndTrim(str, delimiter)
+      )
+      fmt.Printf(`%#v`, result)
 
-  	// Output:
-  	// []string{"a", "b", "c", "d"}
+      // Output:
+      // []string{"a", "b", "c", "d"}
 }
 ```
 
@@ -646,15 +646,15 @@ Join(array []string, sep string) string
 
 ```go
 func ExampleJoin() {
-  	var (
-  		array  = []string{"goframe", "is", "very", "easy", "to", "use"}
-  		sep    = ` `
-  		result = gstr.Join(array, sep)
-  	)
-  	fmt.Println(result)
+      var (
+          array  = []string{"goframe", "is", "very", "easy", "to", "use"}
+          sep    = ` `
+          result = gstr.Join(array, sep)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe is very easy to use
+      // Output:
+      // goframe is very easy to use
 }
 ```
 
@@ -689,15 +689,15 @@ JoinAny(array interface{}, sep string) string
 
 ```go
 func ExampleJoinAny() {
-  	var (
-  		sep    = `,`
-  		arr2   = []int{99, 73, 85, 66}
-  		result = gstr.JoinAny(arr2, sep)
-  	)
-  	fmt.Println(result)
+      var (
+          sep    = `,`
+          arr2   = []int{99, 73, 85, 66}
+          result = gstr.JoinAny(arr2, sep)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 99,73,85,66
+      // Output:
+      // 99,73,85,66
 }
 ```
 
@@ -732,15 +732,15 @@ Explode(delimiter, str string) []string
 
 ```go
 func ExampleExplode() {
-  	var (
-  		str       = `Hello World`
-  		delimiter = " "
-  		result    = gstr.Explode(delimiter, str)
-  	)
-  	fmt.Printf(`%#v`, result)
+      var (
+          str       = `Hello World`
+          delimiter = " "
+          result    = gstr.Explode(delimiter, str)
+      )
+      fmt.Printf(`%#v`, result)
 
-  	// Output:
-  	// []string{"Hello", "World"}
+      // Output:
+      // []string{"Hello", "World"}
 }
 ```
 
@@ -775,15 +775,15 @@ Implode(glue string, pieces []string) string
 
 ```go
 func ExampleImplode() {
-  	var (
-  		pieces = []string{"goframe", "is", "very", "easy", "to", "use"}
-  		glue   = " "
-  		result = gstr.Implode(glue, pieces)
-  	)
-  	fmt.Println(result)
+      var (
+          pieces = []string{"goframe", "is", "very", "easy", "to", "use"}
+          glue   = " "
+          result = gstr.Implode(glue, pieces)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe is very easy to use
+      // Output:
+      // goframe is very easy to use
 }
 ```
 
@@ -818,16 +818,16 @@ ChunkSplit(body string, chunkLen int, end string) string
 
 ```go
 func ExampleChunkSplit() {
-  	var (
-  		body     = `1234567890`
-  		chunkLen = 2
-  		end      = "#"
-  		result   = gstr.ChunkSplit(body, chunkLen, end)
-  	)
-  	fmt.Println(result)
+      var (
+          body     = `1234567890`
+          chunkLen = 2
+          end      = "#"
+          result   = gstr.ChunkSplit(body, chunkLen, end)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 12#34#56#78#90#
+      // Output:
+      // 12#34#56#78#90#
 }
 ```
 
@@ -862,14 +862,14 @@ Fields(str string) []string
 
 ```go
 func ExampleFields() {
-  	var (
-  		str    = `Hello World`
-  		result = gstr.Fields(str)
-  	)
-  	fmt.Printf(`%#v`, result)
+      var (
+          str    = `Hello World`
+          result = gstr.Fields(str)
+      )
+      fmt.Printf(`%#v`, result)
 
-  	// Output:
-  	// []string{"Hello", "World"}
+      // Output:
+      // []string{"Hello", "World"}
 }
 ```
 
@@ -906,15 +906,15 @@ AddSlashes(str string) string
 
 ```go
 func ExampleAddSlashes() {
-  	var (
-  		str    = `'aa'"bb"cc\r\n\d\t`
-  		result = gstr.AddSlashes(str)
-  	)
+      var (
+          str    = `'aa'"bb"cc\r\n\d\t`
+          result = gstr.AddSlashes(str)
+      )
 
-  	fmt.Println(result)
+      fmt.Println(result)
 
-  	// Output:
-  	// \'aa\'\"bb\"cc\\r\\n\\d\\t
+      // Output:
+      // \'aa\'\"bb\"cc\\r\\n\\d\\t
 }
 ```
 
@@ -949,14 +949,14 @@ StripSlashes(str string) string
 
 ```go
 func ExampleStripSlashes() {
-  	var (
-  		str    = `C:\\windows\\GoFrame\\test`
-  		result = gstr.StripSlashes(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `C:\\windows\\GoFrame\\test`
+          result = gstr.StripSlashes(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// C:\windows\GoFrame\test
+      // Output:
+      // C:\windows\GoFrame\test
 }
 ```
 
@@ -991,24 +991,24 @@ QuoteMeta(str string, chars ...string) string
 
 ```go
 func ExampleQuoteMeta() {
-  	{
-  		var (
-  			str    = `.\+?[^]()`
-  			result = gstr.QuoteMeta(str)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			str    = `https://goframe.org/pages/viewpage.action?pageId=1114327`
-  			result = gstr.QuoteMeta(str)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              str    = `.\+?[^]()`
+              result = gstr.QuoteMeta(str)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              str    = `https://goframe.org/pages/viewpage.action?pageId=1114327`
+              result = gstr.QuoteMeta(str)
+          )
+          fmt.Println(result)
+      }
 
-  	// Output:
-  	// \.\\\+\?\[\^\]\(\)
-  	// https://goframe\.org/pages/viewpage\.action\?pageId=1114327
+      // Output:
+      // \.\\\+\?\[\^\]\(\)
+      // https://goframe\.org/pages/viewpage\.action\?pageId=1114327
 
 }
 ```
@@ -1046,19 +1046,19 @@ Count(s, substr string) int
 
 ```go
 func ExampleCount() {
-  	var (
-  		str     = `goframe is very, very easy to use`
-  		substr1 = "goframe"
-  		substr2 = "very"
-  		result1 = gstr.Count(str, substr1)
-  		result2 = gstr.Count(str, substr2)
-  	)
-  	fmt.Println(result1)
-  	fmt.Println(result2)
+      var (
+          str     = `goframe is very, very easy to use`
+          substr1 = "goframe"
+          substr2 = "very"
+          result1 = gstr.Count(str, substr1)
+          result2 = gstr.Count(str, substr2)
+      )
+      fmt.Println(result1)
+      fmt.Println(result2)
 
-  	// Output:
-  	// 1
-  	// 2
+      // Output:
+      // 1
+      // 2
 }
 ```
 
@@ -1093,19 +1093,19 @@ CountI(s, substr string) int
 
 ```go
 func ExampleCountI() {
-  	var (
-  		str     = `goframe is very, very easy to use`
-  		substr1 = "GOFRAME"
-  		substr2 = "VERY"
-  		result1 = gstr.CountI(str, substr1)
-  		result2 = gstr.CountI(str, substr2)
-  	)
-  	fmt.Println(result1)
-  	fmt.Println(result2)
+      var (
+          str     = `goframe is very, very easy to use`
+          substr1 = "GOFRAME"
+          substr2 = "VERY"
+          result1 = gstr.CountI(str, substr1)
+          result2 = gstr.CountI(str, substr2)
+      )
+      fmt.Println(result1)
+      fmt.Println(result2)
 
-  	// Output:
-  	// 1
-  	// 2
+      // Output:
+      // 1
+      // 2
 }
 ```
 
@@ -1140,14 +1140,14 @@ CountWords(str string) map[string]int
 
 ```go
 func ExampleCountWords() {
-  	var (
-  		str    = `goframe is very, very easy to use!`
-  		result = gstr.CountWords(str)
-  	)
-  	fmt.Printf(`%#v`, result)
+      var (
+          str    = `goframe is very, very easy to use!`
+          result = gstr.CountWords(str)
+      )
+      fmt.Printf(`%#v`, result)
 
-  	// Output:
-  	// map[string]int{"easy":1, "goframe":1, "is":1, "to":1, "use!":1, "very":1, "very,":1}
+      // Output:
+      // map[string]int{"easy":1, "goframe":1, "is":1, "to":1, "use!":1, "very":1, "very,":1}
 }
 ```
 
@@ -1182,14 +1182,14 @@ CountChars(str string, noSpace ...bool) map[string]int
 
 ```go
 func ExampleCountChars() {
-  	var (
-  		str    = `goframe`
-  		result = gstr.CountChars(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `goframe`
+          result = gstr.CountChars(str)
+      )
+      fmt.Println(result)
 
-  	// May Output:
-  	// map[a:1 e:1 f:1 g:1 m:1 o:1 r:1]
+      // May Output:
+      // map[a:1 e:1 f:1 g:1 m:1 o:1 r:1]
 }
 ```
 
@@ -1226,15 +1226,15 @@ SearchArray(a []string, s string) int
 
 ```go
 func ExampleSearchArray() {
-  	var (
-  		array  = []string{"goframe", "is", "very", "nice"}
-  		str    = `goframe`
-  		result = gstr.SearchArray(array, str)
-  	)
-  	fmt.Println(result)
+      var (
+          array  = []string{"goframe", "is", "very", "nice"}
+          str    = `goframe`
+          result = gstr.SearchArray(array, str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 0
+      // Output:
+      // 0
 }
 ```
 
@@ -1269,15 +1269,15 @@ InArray(a []string, s string) bool
 
 ```go
 func ExampleInArray() {
-  	var (
-  		a      = []string{"goframe", "is", "very", "easy", "to", "use"}
-  		s      = "goframe"
-  		result = gstr.InArray(a, s)
-  	)
-  	fmt.Println(result)
+      var (
+          a      = []string{"goframe", "is", "very", "easy", "to", "use"}
+          s      = "goframe"
+          result = gstr.InArray(a, s)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// true
+      // Output:
+      // true
 }
 ```
 
@@ -1312,16 +1312,16 @@ PrefixArray(array []string, prefix string)
 
 ```go
 func ExamplePrefixArray() {
-  	var (
-  		strArray = []string{"tom", "lily", "john"}
-  	)
+      var (
+          strArray = []string{"tom", "lily", "john"}
+      )
 
-  	gstr.PrefixArray(strArray, "classA_")
+      gstr.PrefixArray(strArray, "classA_")
 
-  	fmt.Println(strArray)
+      fmt.Println(strArray)
 
-  	// Output:
-  	// [classA_tom classA_lily classA_john]
+      // Output:
+      // [classA_tom classA_lily classA_john]
 }
 ```
 
@@ -1358,14 +1358,14 @@ CaseCamel(s string) string
 
 ```go
 func ExampleCaseCamel() {
-  	var (
-  		str    = `hello world`
-  		result = gstr.CaseCamel(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          result = gstr.CaseCamel(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// HelloWorld
+      // Output:
+      // HelloWorld
 }
 ```
 
@@ -1400,14 +1400,14 @@ CaseCamelLower(s string) string
 
 ```go
 func ExampleCaseCamelLower() {
-  	var (
-  		str    = `hello world`
-  		result = gstr.CaseCamelLower(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          result = gstr.CaseCamelLower(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// helloWorld
+      // Output:
+      // helloWorld
 }
 ```
 
@@ -1442,14 +1442,14 @@ CaseSnake(s string) string
 
 ```go
 func ExampleCaseSnake() {
-  	var (
-  		str    = `hello world`
-  		result = gstr.CaseSnake(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          result = gstr.CaseSnake(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// hello_world
+      // Output:
+      // hello_world
 }
 ```
 
@@ -1484,14 +1484,14 @@ CaseSnakeScreaming(s string) string
 
 ```go
 func ExampleCaseSnakeScreaming() {
-  	var (
-  		str    = `hello world`
-  		result = gstr.CaseSnakeScreaming(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          result = gstr.CaseSnakeScreaming(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// HELLO_WORLD
+      // Output:
+      // HELLO_WORLD
 }
 ```
 
@@ -1526,14 +1526,14 @@ CaseSnakeFirstUpper(word string, underscore ...string) string
 
 ```go
 func ExampleCaseSnakeFirstUpper() {
-  	var (
-  		str    = `RGBCodeMd5`
-  		result = gstr.CaseSnakeFirstUpper(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `RGBCodeMd5`
+          result = gstr.CaseSnakeFirstUpper(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// rgb_code_md5
+      // Output:
+      // rgb_code_md5
 }
 ```
 
@@ -1568,14 +1568,14 @@ CaseKebab(s string) string
 
 ```go
 func ExampleCaseKebab() {
-  	var (
-  		str    = `hello world`
-  		result = gstr.CaseKebab(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          result = gstr.CaseKebab(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// hello-world
+      // Output:
+      // hello-world
 }
 ```
 
@@ -1610,14 +1610,14 @@ CaseKebabScreaming(s string) string
 
 ```go
 func ExampleCaseKebabScreaming() {
-  	var (
-  		str    = `hello world`
-  		result = gstr.CaseKebabScreaming(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          result = gstr.CaseKebabScreaming(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// HELLO-WORLD
+      // Output:
+      // HELLO-WORLD
 }
 ```
 
@@ -1652,15 +1652,15 @@ CaseDelimited(s string, del byte) string
 
 ```go
 func ExampleCaseDelimited() {
-  	var (
-  		str    = `hello world`
-  		del    = byte('-')
-  		result = gstr.CaseDelimited(str, del)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `hello world`
+          del    = byte('-')
+          result = gstr.CaseDelimited(str, del)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// hello-world
+      // Output:
+      // hello-world
 }
 ```
 
@@ -1695,26 +1695,26 @@ CaseDelimitedScreaming(s string, del uint8, screaming bool) string
 
 ```go
 func ExampleCaseDelimitedScreaming() {
-  	{
-  		var (
-  			str    = `hello world`
-  			del    = byte('-')
-  			result = gstr.CaseDelimitedScreaming(str, del, true)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			str    = `hello world`
-  			del    = byte('-')
-  			result = gstr.CaseDelimitedScreaming(str, del, false)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              str    = `hello world`
+              del    = byte('-')
+              result = gstr.CaseDelimitedScreaming(str, del, true)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              str    = `hello world`
+              del    = byte('-')
+              result = gstr.CaseDelimitedScreaming(str, del, false)
+          )
+          fmt.Println(result)
+      }
 
-  	// Output:
-  	// HELLO-WORLD
-  	// hello-world
+      // Output:
+      // HELLO-WORLD
+      // hello-world
 }
 ```
 
@@ -1751,26 +1751,26 @@ Contains(str, substr string) bool
 
 ```go
 func ExampleContains() {
-  	{
-  		var (
-  			str    = `Hello World`
-  			substr = `Hello`
-  			result = gstr.Contains(str, substr)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			str    = `Hello World`
-  			substr = `hello`
-  			result = gstr.Contains(str, substr)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              str    = `Hello World`
+              substr = `Hello`
+              result = gstr.Contains(str, substr)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              str    = `Hello World`
+              substr = `hello`
+              result = gstr.Contains(str, substr)
+          )
+          fmt.Println(result)
+      }
 
-  	// Output:
-  	// true
-  	// false
+      // Output:
+      // true
+      // false
 }
 ```
 
@@ -1805,18 +1805,18 @@ ContainsI(str, substr string) bool
 
 ```go
 func ExampleContainsI() {
-  	var (
-  		str     = `Hello World`
-  		substr  = "hello"
-  		result1 = gstr.Contains(str, substr)
-  		result2 = gstr.ContainsI(str, substr)
-  	)
-  	fmt.Println(result1)
-  	fmt.Println(result2)
+      var (
+          str     = `Hello World`
+          substr  = "hello"
+          result1 = gstr.Contains(str, substr)
+          result2 = gstr.ContainsI(str, substr)
+      )
+      fmt.Println(result1)
+      fmt.Println(result2)
 
-  	// Output:
-  	// false
-  	// true
+      // Output:
+      // false
+      // true
 }
 ```
 
@@ -1851,26 +1851,26 @@ ContainsAny(s, chars string) bool
 
 ```go
 func ExampleContainsAny() {
-  	{
-  		var (
-  			s      = `goframe`
-  			chars  = "g"
-  			result = gstr.ContainsAny(s, chars)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			s      = `goframe`
-  			chars  = "G"
-  			result = gstr.ContainsAny(s, chars)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              s      = `goframe`
+              chars  = "g"
+              result = gstr.ContainsAny(s, chars)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              s      = `goframe`
+              chars  = "G"
+              result = gstr.ContainsAny(s, chars)
+          )
+          fmt.Println(result)
+      }
 
-  	// Output:
-  	// true
-  	// false
+      // Output:
+      // true
+      // false
 }
 ```
 
@@ -1907,14 +1907,14 @@ Chr(ascii int) string
 
 ```go
 func ExampleChr() {
-  	var (
-  		ascii  = 65 // A
-  		result = gstr.Chr(ascii)
-  	)
-  	fmt.Println(result)
+      var (
+          ascii  = 65 // A
+          result = gstr.Chr(ascii)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// A
+      // Output:
+      // A
 }
 ```
 
@@ -1949,15 +1949,15 @@ Ord(char string) int
 
 ```go
 func ExampleOrd() {
-  	var (
-  		str    = `goframe`
-  		result = gstr.Ord(str)
-  	)
+      var (
+          str    = `goframe`
+          result = gstr.Ord(str)
+      )
 
-  	fmt.Println(result)
+      fmt.Println(result)
 
-  	// Output:
-  	// 103
+      // Output:
+      // 103
 }
 ```
 
@@ -1992,14 +1992,14 @@ OctStr(str string) string
 
 ```go
 func ExampleOctStr() {
-  	var (
-  		str    = `\346\200\241`
-  		result = gstr.OctStr(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `\346\200\241`
+          result = gstr.OctStr(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 怡
+      // Output:
+      // 怡
 }
 ```
 
@@ -2034,14 +2034,14 @@ Reverse(str string) string
 
 ```go
 func ExampleReverse() {
-  	var (
-  		str    = `123456`
-  		result = gstr.Reverse(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `123456`
+          result = gstr.Reverse(str)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 654321
+      // Output:
+      // 654321
 }
 ```
 
@@ -2079,17 +2079,17 @@ NumberFormat(number float64, decimals int, decPoint, thousandsSep string) string
 
 ```go
 func ExampleNumberFormat() {
-  	var (
-  		number       float64 = 123456
-  		decimals             = 2
-  		decPoint             = "."
-  		thousandsSep         = ","
-  		result               = gstr.NumberFormat(number, decimals, decPoint, thousandsSep)
-  	)
-  	fmt.Println(result)
+      var (
+          number       float64 = 123456
+          decimals             = 2
+          decPoint             = "."
+          thousandsSep         = ","
+          result               = gstr.NumberFormat(number, decimals, decPoint, thousandsSep)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 123,456.00
+      // Output:
+      // 123,456.00
 }
 ```
 
@@ -2124,14 +2124,14 @@ Shuffle(str string) string
 
 ```go
 func ExampleShuffle() {
-  	var (
-  		str    = `123456`
-  		result = gstr.Shuffle(str)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `123456`
+          result = gstr.Shuffle(str)
+      )
+      fmt.Println(result)
 
-  	// May Output:
-  	// 563214
+      // May Output:
+      // 563214
 }
 ```
 
@@ -2166,16 +2166,16 @@ HideStr(str string, percent int, hide string) string
 
 ```go
 func ExampleHideStr() {
-  	var (
-  		str     = `13800138000`
-  		percent = 40
-  		hide    = `*`
-  		result  = gstr.HideStr(str, percent, hide)
-  	)
-  	fmt.Println(result)
+      var (
+          str     = `13800138000`
+          percent = 40
+          hide    = `*`
+          result  = gstr.HideStr(str, percent, hide)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 138****8000
+      // Output:
+      // 138****8000
 }
 ```
 
@@ -2210,20 +2210,20 @@ Nl2Br(str string, isXhtml ...bool) string
 
 ```go
 func ExampleNl2Br() {
-  	var (
-  		str = `goframe
+      var (
+          str = `goframe
 is
 very
 easy
 to
 use`
-  		result = gstr.Nl2Br(str)
-  	)
+          result = gstr.Nl2Br(str)
+      )
 
-  	fmt.Println(result)
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe<br>is<br>very<br>easy<br>to<br>use
+      // Output:
+      // goframe<br>is<br>very<br>easy<br>to<br>use
 }
 ```
 
@@ -2258,34 +2258,34 @@ WordWrap(str string, width int, br string) string
 
 ```go
 func ExampleWordWrap() {
-  	{
-  		var (
-  			str    = `A very long woooooooooooooooooord. and something`
-  			width  = 8
-  			br     = "\n"
-  			result = gstr.WordWrap(str, width, br)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			str    = `The quick brown fox jumped over the lazy dog.`
-  			width  = 20
-  			br     = "<br />\n"
-  			result = gstr.WordWrap(str, width, br)
-  		)
-  		fmt.Printf("%v", result)
-  	}
+      {
+          var (
+              str    = `A very long woooooooooooooooooord. and something`
+              width  = 8
+              br     = "\n"
+              result = gstr.WordWrap(str, width, br)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              str    = `The quick brown fox jumped over the lazy dog.`
+              width  = 20
+              br     = "<br />\n"
+              result = gstr.WordWrap(str, width, br)
+          )
+          fmt.Printf("%v", result)
+      }
 
-  	// Output:
-  	// A very
-  	// long
-  	// woooooooooooooooooord.
-  	// and
-  	// something
-  	// The quick brown fox<br />
-  	// jumped over the lazy<br />
-  	// dog.
+      // Output:
+      // A very
+      // long
+      // woooooooooooooooooord.
+      // and
+      // something
+      // The quick brown fox<br />
+      // jumped over the lazy<br />
+      // dog.
 }
 ```
 
@@ -2322,15 +2322,15 @@ IsSubDomain(subDomain string, mainDomain string) bool
 
 ```go
 func ExampleIsSubDomain() {
-  	var (
-  		subDomain  = `s.goframe.org`
-  		mainDomain = `goframe.org`
-  		result     = gstr.IsSubDomain(subDomain, mainDomain)
-  	)
-  	fmt.Println(result)
+      var (
+          subDomain  = `s.goframe.org`
+          mainDomain = `goframe.org`
+          result     = gstr.IsSubDomain(subDomain, mainDomain)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// true
+      // Output:
+      // true
 }
 
 
@@ -2369,53 +2369,53 @@ Parse(s string) (result map[string]interface{}, err error)
 
 ```go
 func ExampleParse() {
-  	{
-  		var (
-  			str       = `v1=m&v2=n`
-  			result, _ = gstr.Parse(str)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			str       = `v[a][a]=m&v[a][b]=n`
-  			result, _ = gstr.Parse(str)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		// The form of nested Slice is not yet supported.
-  		var str = `v[][]=m&v[][]=n`
-  		result, err := gstr.Parse(str)
-  		if err != nil {
-  			panic(err)
-  		}
-  		fmt.Println(result)
-  	}
-  	{
-  		// This will produce an error.
-  		var str = `v=m&v[a]=n`
-  		result, err := gstr.Parse(str)
-  		if err != nil {
-  			println(err)
-  		}
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			str       = `a .[[b=c`
-  			result, _ = gstr.Parse(str)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              str       = `v1=m&v2=n`
+              result, _ = gstr.Parse(str)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              str       = `v[a][a]=m&v[a][b]=n`
+              result, _ = gstr.Parse(str)
+          )
+          fmt.Println(result)
+      }
+      {
+          // The form of nested Slice is not yet supported.
+          var str = `v[][]=m&v[][]=n`
+          result, err := gstr.Parse(str)
+          if err != nil {
+              panic(err)
+          }
+          fmt.Println(result)
+      }
+      {
+          // This will produce an error.
+          var str = `v=m&v[a]=n`
+          result, err := gstr.Parse(str)
+          if err != nil {
+              println(err)
+          }
+          fmt.Println(result)
+      }
+      {
+          var (
+              str       = `a .[[b=c`
+              result, _ = gstr.Parse(str)
+          )
+          fmt.Println(result)
+      }
 
-  	// May Output:
-  	// map[v1:m v2:n]
-  	// map[v:map[a:map[a:m b:n]]]
-  	// map[v:map[]]
-  	// Error: expected type 'map[string]interface{}' for key 'v', but got 'string'
-  	// map[]
-  	// map[a___[b:c]
+      // May Output:
+      // map[v1:m v2:n]
+      // map[v:map[a:map[a:m b:n]]]
+      // map[v:map[]]
+      // Error: expected type 'map[string]interface{}' for key 'v', but got 'string'
+      // map[]
+      // map[a___[b:c]
 }
 ```
 
@@ -2452,15 +2452,15 @@ Pos(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePos() {
-  	var (
-  		haystack = `Hello World`
-  		needle   = `World`
-  		result   = gstr.Pos(haystack, needle)
-  	)
-  	fmt.Println(result)
+      var (
+          haystack = `Hello World`
+          needle   = `World`
+          result   = gstr.Pos(haystack, needle)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 6
+      // Output:
+      // 6
 }
 ```
 
@@ -2495,18 +2495,18 @@ PosRune(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePosRune() {
-  	var (
-  		haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
-  		needle   = `Go`
-  		posI     = gstr.PosRune(haystack, needle)
-  		posR     = gstr.PosRRune(haystack, needle)
-  	)
-  	fmt.Println(posI)
-  	fmt.Println(posR)
+      var (
+          haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
+          needle   = `Go`
+          posI     = gstr.PosRune(haystack, needle)
+          posR     = gstr.PosRRune(haystack, needle)
+      )
+      fmt.Println(posI)
+      fmt.Println(posR)
 
-  	// Output:
-  	// 0
-  	// 22
+      // Output:
+      // 0
+      // 22
 }
 ```
 
@@ -2541,18 +2541,18 @@ PosI(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePosI() {
-  	var (
-  		haystack = `goframe is very, very easy to use`
-  		needle   = `very`
-  		posI     = gstr.PosI(haystack, needle)
-  		posR     = gstr.PosR(haystack, needle)
-  	)
-  	fmt.Println(posI)
-  	fmt.Println(posR)
+      var (
+          haystack = `goframe is very, very easy to use`
+          needle   = `very`
+          posI     = gstr.PosI(haystack, needle)
+          posR     = gstr.PosR(haystack, needle)
+      )
+      fmt.Println(posI)
+      fmt.Println(posR)
 
-  	// Output:
-  	// 11
-  	// 17
+      // Output:
+      // 11
+      // 17
 }
 ```
 
@@ -2587,28 +2587,28 @@ PosIRune(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePosIRune() {
-  	{
-  		var (
-  			haystack    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
-  			needle      = `高性能`
-  			startOffset = 10
-  			result      = gstr.PosIRune(haystack, needle, startOffset)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			haystack    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
-  			needle      = `高性能`
-  			startOffset = 30
-  			result      = gstr.PosIRune(haystack, needle, startOffset)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              haystack    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
+              needle      = `高性能`
+              startOffset = 10
+              result      = gstr.PosIRune(haystack, needle, startOffset)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              haystack    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
+              needle      = `高性能`
+              startOffset = 30
+              result      = gstr.PosIRune(haystack, needle, startOffset)
+          )
+          fmt.Println(result)
+      }
 
-  	// Output:
-  	// 14
-  	// -1
+      // Output:
+      // 14
+      // -1
 }
 ```
 
@@ -2643,18 +2643,18 @@ PosR(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePosR() {
-  	var (
-  		haystack = `goframe is very, very easy to use`
-  		needle   = `very`
-  		posI     = gstr.PosI(haystack, needle)
-  		posR     = gstr.PosR(haystack, needle)
-  	)
-  	fmt.Println(posI)
-  	fmt.Println(posR)
+      var (
+          haystack = `goframe is very, very easy to use`
+          needle   = `very`
+          posI     = gstr.PosI(haystack, needle)
+          posR     = gstr.PosR(haystack, needle)
+      )
+      fmt.Println(posI)
+      fmt.Println(posR)
 
-  	// Output:
-  	// 11
-  	// 17
+      // Output:
+      // 11
+      // 17
 }
 ```
 
@@ -2689,18 +2689,18 @@ PosRRune(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePosRRune() {
-  	var (
-  		haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
-  		needle   = `Go`
-  		posI     = gstr.PosIRune(haystack, needle)
-  		posR     = gstr.PosRRune(haystack, needle)
-  	)
-  	fmt.Println(posI)
-  	fmt.Println(posR)
+      var (
+          haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
+          needle   = `Go`
+          posI     = gstr.PosIRune(haystack, needle)
+          posR     = gstr.PosRRune(haystack, needle)
+      )
+      fmt.Println(posI)
+      fmt.Println(posR)
 
-  	// Output:
-  	// 0
-  	// 22
+      // Output:
+      // 0
+      // 22
 }
 ```
 
@@ -2735,18 +2735,18 @@ PosRI(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePosRI() {
-  	var (
-  		haystack = `goframe is very, very easy to use`
-  		needle   = `VERY`
-  		posI     = gstr.PosI(haystack, needle)
-  		posR     = gstr.PosRI(haystack, needle)
-  	)
-  	fmt.Println(posI)
-  	fmt.Println(posR)
+      var (
+          haystack = `goframe is very, very easy to use`
+          needle   = `VERY`
+          posI     = gstr.PosI(haystack, needle)
+          posR     = gstr.PosRI(haystack, needle)
+      )
+      fmt.Println(posI)
+      fmt.Println(posR)
 
-  	// Output:
-  	// 11
-  	// 17
+      // Output:
+      // 11
+      // 17
 }
 ```
 
@@ -2781,18 +2781,18 @@ PosRIRune(haystack, needle string, startOffset ...int) int
 
 ```go
 func ExamplePosRIRune() {
-  	var (
-  		haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
-  		needle   = `GO`
-  		posI     = gstr.PosIRune(haystack, needle)
-  		posR     = gstr.PosRIRune(haystack, needle)
-  	)
-  	fmt.Println(posI)
-  	fmt.Println(posR)
+      var (
+          haystack = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架`
+          needle   = `GO`
+          posI     = gstr.PosIRune(haystack, needle)
+          posR     = gstr.PosRIRune(haystack, needle)
+      )
+      fmt.Println(posI)
+      fmt.Println(posR)
 
-  	// Output:
-  	// 0
-  	// 22
+      // Output:
+      // 0
+      // 22
 }
 ```
 
@@ -2829,16 +2829,16 @@ Replace(origin, search, replace string, count ...int) string
 
 ```go
 func ExampleReplace() {
-  	var (
-  		origin  = `golang is very nice!`
-  		search  = `golang`
-  		replace = `goframe`
-  		result  = gstr.Replace(origin, search, replace)
-  	)
-  	fmt.Println(result)
+      var (
+          origin  = `golang is very nice!`
+          search  = `golang`
+          replace = `goframe`
+          result  = gstr.Replace(origin, search, replace)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe is very nice!
+      // Output:
+      // goframe is very nice!
 }
 ```
 
@@ -2873,16 +2873,16 @@ ReplaceI(origin, search, replace string, count ...int) string
 
 ```go
 func ExampleReplaceI() {
-  	var (
-  		origin  = `golang is very nice!`
-  		search  = `GOLANG`
-  		replace = `goframe`
-  		result  = gstr.ReplaceI(origin, search, replace)
-  	)
-  	fmt.Println(result)
+      var (
+          origin  = `golang is very nice!`
+          search  = `GOLANG`
+          replace = `goframe`
+          result  = gstr.ReplaceI(origin, search, replace)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe is very nice!
+      // Output:
+      // goframe is very nice!
 }
 ```
 
@@ -2917,26 +2917,26 @@ ReplaceByArray(origin string, array []string) string
 
 ```go
 func ExampleReplaceByArray() {
-  	{
-  		var (
-  			origin = `golang is very nice`
-  			array  = []string{"lang", "frame"}
-  			result = gstr.ReplaceByArray(origin, array)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			origin = `golang is very good`
-  			array  = []string{"golang", "goframe", "good", "nice"}
-  			result = gstr.ReplaceByArray(origin, array)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              origin = `golang is very nice`
+              array  = []string{"lang", "frame"}
+              result = gstr.ReplaceByArray(origin, array)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              origin = `golang is very good`
+              array  = []string{"golang", "goframe", "good", "nice"}
+              result = gstr.ReplaceByArray(origin, array)
+          )
+          fmt.Println(result)
+      }
 
-  	// Output:
-  	// goframe is very nice
-  	// goframe is very nice
+      // Output:
+      // goframe is very nice
+      // goframe is very nice
 }
 ```
 
@@ -2971,16 +2971,16 @@ ReplaceIByArray(origin string, array []string) string
 
 ```go
 func ExampleReplaceIByArray() {
-  	var (
-  		origin = `golang is very Good`
-  		array  = []string{"Golang", "goframe", "GOOD", "nice"}
-  		result = gstr.ReplaceIByArray(origin, array)
-  	)
+      var (
+          origin = `golang is very Good`
+          array  = []string{"Golang", "goframe", "GOOD", "nice"}
+          result = gstr.ReplaceIByArray(origin, array)
+      )
 
-  	fmt.Println(result)
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe is very nice
+      // Output:
+      // goframe is very nice
 }
 ```
 
@@ -3015,31 +3015,31 @@ ReplaceByMap(origin string, replaces map[string]string) string
 
 ```go
 func ExampleReplaceByMap() {
-  	{
-  		var (
-  			origin   = `golang is very nice`
-  			replaces = map[string]string{
-  				"lang": "frame",
-  			}
-  			result = gstr.ReplaceByMap(origin, replaces)
-  		)
-  		fmt.Println(result)
-  	}
-  	{
-  		var (
-  			origin   = `golang is very good`
-  			replaces = map[string]string{
-  				"golang": "goframe",
-  				"good":   "nice",
-  			}
-  			result = gstr.ReplaceByMap(origin, replaces)
-  		)
-  		fmt.Println(result)
-  	}
+      {
+          var (
+              origin   = `golang is very nice`
+              replaces = map[string]string{
+                  "lang": "frame",
+              }
+              result = gstr.ReplaceByMap(origin, replaces)
+          )
+          fmt.Println(result)
+      }
+      {
+          var (
+              origin   = `golang is very good`
+              replaces = map[string]string{
+                  "golang": "goframe",
+                  "good":   "nice",
+              }
+              result = gstr.ReplaceByMap(origin, replaces)
+          )
+          fmt.Println(result)
+      }
 
-  	// Output:
-  	// goframe is very nice
-  	// goframe is very nice
+      // Output:
+      // goframe is very nice
+      // goframe is very nice
 }
 ```
 
@@ -3074,17 +3074,17 @@ ReplaceIByMap(origin string, replaces map[string]string) string
 
 ```go
 func ExampleReplaceIByMap() {
-  	var (
-  		origin   = `golang is very nice`
-  		replaces = map[string]string{
-  			"Lang": "frame",
-  		}
-  		result = gstr.ReplaceIByMap(origin, replaces)
-  	)
-  	fmt.Println(result)
+      var (
+          origin   = `golang is very nice`
+          replaces = map[string]string{
+              "Lang": "frame",
+          }
+          result = gstr.ReplaceIByMap(origin, replaces)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// goframe is very nice
+      // Output:
+      // goframe is very nice
 }
 ```
 
@@ -3121,15 +3121,15 @@ Str(haystack string, needle string) string
 
 ```go
 func ExampleStr() {
-  	var (
-  		haystack = `xxx.jpg`
-  		needle   = `.`
-  		result   = gstr.Str(haystack, needle)
-  	)
-  	fmt.Println(result)
+      var (
+          haystack = `xxx.jpg`
+          needle   = `.`
+          result   = gstr.Str(haystack, needle)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// .jpg
+      // Output:
+      // .jpg
 }
 ```
 
@@ -3164,15 +3164,15 @@ StrEx(haystack string, needle string) string
 
 ```go
 func ExampleStrEx() {
-  	var (
-  		haystack = `https://goframe.org/index.html?a=1&b=2`
-  		needle   = `?`
-  		result   = gstr.StrEx(haystack, needle)
-  	)
-  	fmt.Println(result)
+      var (
+          haystack = `https://goframe.org/index.html?a=1&b=2`
+          needle   = `?`
+          result   = gstr.StrEx(haystack, needle)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// a=1&b=2
+      // Output:
+      // a=1&b=2
 }
 ```
 
@@ -3207,15 +3207,15 @@ StrTill(haystack string, needle string) string
 
 ```go
 func ExampleStrTill() {
-  	var (
-  		haystack = `https://goframe.org/index.html?test=123456`
-  		needle   = `?`
-  		result   = gstr.StrTill(haystack, needle)
-  	)
-  	fmt.Println(result)
+      var (
+          haystack = `https://goframe.org/index.html?test=123456`
+          needle   = `?`
+          result   = gstr.StrTill(haystack, needle)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// https://goframe.org/index.html?
+      // Output:
+      // https://goframe.org/index.html?
 }
 ```
 
@@ -3250,15 +3250,15 @@ StrTillEx(haystack string, needle string) string
 
 ```go
 func ExampleStrTillEx() {
-  	var (
-  		haystack = `https://goframe.org/index.html?test=123456`
-  		needle   = `?`
-  		result   = gstr.StrTillEx(haystack, needle)
-  	)
-  	fmt.Println(result)
+      var (
+          haystack = `https://goframe.org/index.html?test=123456`
+          needle   = `?`
+          result   = gstr.StrTillEx(haystack, needle)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// https://goframe.org/index.html
+      // Output:
+      // https://goframe.org/index.html
 }
 ```
 
@@ -3293,16 +3293,16 @@ SubStr(str string, start int, length ...int) (substr string)
 
 ```go
 func ExampleSubStr() {
-  	var (
-  		str    = `1234567890`
-  		start  = 0
-  		length = 4
-  		subStr = gstr.SubStr(str, start, length)
-  	)
-  	fmt.Println(subStr)
+      var (
+          str    = `1234567890`
+          start  = 0
+          length = 4
+          subStr = gstr.SubStr(str, start, length)
+      )
+      fmt.Println(subStr)
 
-  	// Output:
-  	// 1234
+      // Output:
+      // 1234
 }
 ```
 
@@ -3337,16 +3337,16 @@ SubStrRune(str string, start int, length ...int) (substr string)
 
 ```go
 func ExampleSubStrRune() {
-  	var (
-  		str    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架。`
-  		start  = 14
-  		length = 3
-  		subStr = gstr.SubStrRune(str, start, length)
-  	)
-  	fmt.Println(subStr)
+      var (
+          str    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架。`
+          start  = 14
+          length = 3
+          subStr = gstr.SubStrRune(str, start, length)
+      )
+      fmt.Println(subStr)
 
-  	// Output:
-  	// 高性能
+      // Output:
+      // 高性能
 }
 ```
 
@@ -3381,16 +3381,16 @@ StrLimit(str string, length int, suffix ...string) string
 
 ```go
 func ExampleStrLimit() {
-  	var (
-  		str    = `123456789`
-  		length = 3
-  		suffix = `...`
-  		result = gstr.StrLimit(str, length, suffix)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `123456789`
+          length = 3
+          suffix = `...`
+          result = gstr.StrLimit(str, length, suffix)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 123...
+      // Output:
+      // 123...
 }
 ```
 
@@ -3425,16 +3425,16 @@ StrLimitRune(str string, length int, suffix ...string) string
 
 ```go
 func ExampleStrLimitRune() {
-  	var (
-  		str    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架。`
-  		length = 17
-  		suffix = "..."
-  		result = gstr.StrLimitRune(str, length, suffix)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `GoFrame是一款模块化、高性能、企业级的Go基础开发框架。`
+          length = 17
+          suffix = "..."
+          result = gstr.StrLimitRune(str, length, suffix)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// GoFrame是一款模块化、高性能...
+      // Output:
+      // GoFrame是一款模块化、高性能...
 }
 ```
 
@@ -3469,15 +3469,15 @@ SubStrFrom(str string, need string) (substr string)
 
 ```go
 func ExampleSubStrFrom() {
-  	var (
-  		str  = "我爱GoFrameGood"
-  		need = `爱`
-  	)
+      var (
+          str  = "我爱GoFrameGood"
+          need = `爱`
+      )
 
-  	fmt.Println(gstr.SubStrFrom(str, need))
+      fmt.Println(gstr.SubStrFrom(str, need))
 
-  	// Output:
-  	// 爱GoFrameGood
+      // Output:
+      // 爱GoFrameGood
 }
 ```
 
@@ -3512,15 +3512,15 @@ SubStrFromEx(str string, need string) (substr string)
 
 ```go
 func ExampleSubStrFromEx() {
-  	var (
-  		str  = "我爱GoFrameGood"
-  		need = `爱`
-  	)
+      var (
+          str  = "我爱GoFrameGood"
+          need = `爱`
+      )
 
-  	fmt.Println(gstr.SubStrFromEx(str, need))
+      fmt.Println(gstr.SubStrFromEx(str, need))
 
-  	// Output:
-  	// GoFrameGood
+      // Output:
+      // GoFrameGood
 }
 ```
 
@@ -3555,15 +3555,15 @@ SubStrFromR(str string, need string) (substr string)
 
 ```go
 func ExampleSubStrFromR() {
-  	var (
-  		str  = "我爱GoFrameGood"
-  		need = `Go`
-  	)
+      var (
+          str  = "我爱GoFrameGood"
+          need = `Go`
+      )
 
-  	fmt.Println(gstr.SubStrFromR(str, need))
+      fmt.Println(gstr.SubStrFromR(str, need))
 
-  	// Output:
-  	// Good
+      // Output:
+      // Good
 }
 ```
 
@@ -3598,15 +3598,15 @@ SubStrFromREx(str string, need string) (substr string)
 
 ```go
 func ExampleSubStrFromREx() {
-  	var (
-  		str  = "我爱GoFrameGood"
-  		need = `Go`
-  	)
+      var (
+          str  = "我爱GoFrameGood"
+          need = `Go`
+      )
 
-  	fmt.Println(gstr.SubStrFromREx(str, need))
+      fmt.Println(gstr.SubStrFromREx(str, need))
 
-  	// Output:
-  	// od
+      // Output:
+      // od
 }
 ```
 
@@ -3643,15 +3643,15 @@ Trim(str string, characterMask ...string) string
 
 ```go
 func ExampleTrim() {
-  	var (
-  		str           = `*Hello World*`
-  		characterMask = "*"
-  		result        = gstr.Trim(str, characterMask)
-  	)
-  	fmt.Println(result)
+      var (
+          str           = `*Hello World*`
+          characterMask = "*"
+          result        = gstr.Trim(str, characterMask)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// Hello World
+      // Output:
+      // Hello World
 }
 ```
 
@@ -3686,16 +3686,16 @@ TrimStr(str string, cut string, count ...int) string
 
 ```go
 func ExampleTrimStr() {
-  	var (
-  		str    = `Hello World`
-  		cut    = "World"
-  		count  = -1
-  		result = gstr.TrimStr(str, cut, count)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `Hello World`
+          cut    = "World"
+          count  = -1
+          result = gstr.TrimStr(str, cut, count)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// Hello
+      // Output:
+      // Hello
 }
 ```
 
@@ -3730,15 +3730,15 @@ TrimLeft(str string, characterMask ...string) string
 
 ```go
 func ExampleTrimLeft() {
-  	var (
-  		str           = `*Hello World*`
-  		characterMask = "*"
-  		result        = gstr.TrimLeft(str, characterMask)
-  	)
-  	fmt.Println(result)
+      var (
+          str           = `*Hello World*`
+          characterMask = "*"
+          result        = gstr.TrimLeft(str, characterMask)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// Hello World*
+      // Output:
+      // Hello World*
 }
 ```
 
@@ -3773,16 +3773,16 @@ TrimLeftStr(str string, cut string, count ...int) string
 
 ```go
 func ExampleTrimLeftStr() {
-  	var (
-  		str    = `**Hello World**`
-  		cut    = "*"
-  		count  = 1
-  		result = gstr.TrimLeftStr(str, cut, count)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `**Hello World**`
+          cut    = "*"
+          count  = 1
+          result = gstr.TrimLeftStr(str, cut, count)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// *Hello World**
+      // Output:
+      // *Hello World**
 }
 ```
 
@@ -3817,15 +3817,15 @@ TrimRight(str string, characterMask ...string) string
 
 ```go
 func ExampleTrimRight() {
-  	var (
-  		str           = `**Hello World**`
-  		characterMask = "*def" // []byte{"*", "d", "e", "f"}
-  		result        = gstr.TrimRight(str, characterMask)
-  	)
-  	fmt.Println(result)
+      var (
+          str           = `**Hello World**`
+          characterMask = "*def" // []byte{"*", "d", "e", "f"}
+          result        = gstr.TrimRight(str, characterMask)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// **Hello Worl
+      // Output:
+      // **Hello Worl
 }
 ```
 
@@ -3860,16 +3860,16 @@ TrimRightStr(str string, cut string, count ...int) string
 
 ```go
 func ExampleTrimRightStr() {
-  	var (
-  		str    = `Hello World!`
-  		cut    = "!"
-  		count  = -1
-  		result = gstr.TrimRightStr(str, cut, count)
-  	)
-  	fmt.Println(result)
+      var (
+          str    = `Hello World!`
+          cut    = "!"
+          count  = -1
+          result = gstr.TrimRightStr(str, cut, count)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// Hello World
+      // Output:
+      // Hello World
 }
 ```
 
@@ -3904,15 +3904,15 @@ TrimAll(str string, characterMask ...string) string
 
 ```go
 func ExampleTrimAll() {
-  	var (
-  		str           = `*Hello World*`
-  		characterMask = "*"
-  		result        = gstr.TrimAll(str, characterMask)
-  	)
-  	fmt.Println(result)
+      var (
+          str           = `*Hello World*`
+          characterMask = "*"
+          result        = gstr.TrimAll(str, characterMask)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// HelloWorld
+      // Output:
+      // HelloWorld
 }
 ```
 
@@ -3947,15 +3947,15 @@ HasPrefix(s, prefix string) bool
 
 ```go
 func ExampleHasPrefix() {
-  	var (
-  		s      = `Hello World`
-  		prefix = "Hello"
-  		result = gstr.HasPrefix(s, prefix)
-  	)
-  	fmt.Println(result)
+      var (
+          s      = `Hello World`
+          prefix = "Hello"
+          result = gstr.HasPrefix(s, prefix)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// true
+      // Output:
+      // true
 }
 ```
 
@@ -3990,15 +3990,15 @@ HasSuffix(s, suffix string) bool
 
 ```go
 func ExampleHasSuffix() {
-  	var (
-  		s      = `my best love is goframe`
-  		prefix = "goframe"
-  		result = gstr.HasSuffix(s, prefix)
-  	)
-  	fmt.Println(result)
+      var (
+          s      = `my best love is goframe`
+          prefix = "goframe"
+          result = gstr.HasSuffix(s, prefix)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// true
+      // Output:
+      // true
 }
 ```
 
@@ -4035,14 +4035,14 @@ CompareVersion(a, b string) int
 
 ```go
 func ExampleCompareVersion() {
-  	fmt.Println(gstr.CompareVersion("v2.11.9", "v2.10.8"))
-  	fmt.Println(gstr.CompareVersion("1.10.8", "1.19.7"))
-  	fmt.Println(gstr.CompareVersion("2.8.beta", "2.8"))
+      fmt.Println(gstr.CompareVersion("v2.11.9", "v2.10.8"))
+      fmt.Println(gstr.CompareVersion("1.10.8", "1.19.7"))
+      fmt.Println(gstr.CompareVersion("2.8.beta", "2.8"))
 
-  	// Output:
-  	// 1
-  	// -1
-  	// 0
+      // Output:
+      // 1
+      // -1
+      // 0
 }
 ```
 
@@ -4077,17 +4077,17 @@ CompareVersionGo(a, b string) int
 
 ```go
 func ExampleCompareVersionGo() {
-  	fmt.Println(gstr.CompareVersionGo("v2.11.9", "v2.10.8"))
-  	fmt.Println(gstr.CompareVersionGo("v4.20.1", "v4.20.1+incompatible"))
-  	fmt.Println(gstr.CompareVersionGo(
-  		"v0.0.2-20180626092158-b2ccc119800e",
-  		"v1.0.1-20190626092158-b2ccc519800e",
-  	))
+      fmt.Println(gstr.CompareVersionGo("v2.11.9", "v2.10.8"))
+      fmt.Println(gstr.CompareVersionGo("v4.20.1", "v4.20.1+incompatible"))
+      fmt.Println(gstr.CompareVersionGo(
+          "v0.0.2-20180626092158-b2ccc119800e",
+          "v1.0.1-20190626092158-b2ccc519800e",
+      ))
 
-  	// Output:
-  	// 1
-  	// 1
-  	// -1
+      // Output:
+      // 1
+      // 1
+      // -1
 }
 ```
 
@@ -4124,18 +4124,18 @@ Levenshtein(str1, str2 string, costIns, costRep, costDel int) int
 
 ```go
 func ExampleLevenshtein() {
-  	var (
-  		str1    = "Hello World"
-  		str2    = "hallo World"
-  		costIns = 1
-  		costRep = 1
-  		costDel = 1
-  		result  = gstr.Levenshtein(str1, str2, costIns, costRep, costDel)
-  	)
-  	fmt.Println(result)
+      var (
+          str1    = "Hello World"
+          str2    = "hallo World"
+          costIns = 1
+          costRep = 1
+          costDel = 1
+          result  = gstr.Levenshtein(str1, str2, costIns, costRep, costDel)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 2
+      // Output:
+      // 2
 }
 ```
 
@@ -4170,16 +4170,16 @@ SimilarText(first, second string, percent *float64) int
 
 ```go
 func ExampleSimilarText() {
-  	var (
-  		first   = `AaBbCcDd`
-  		second  = `ad`
-  		percent = 0.80
-  		result  = gstr.SimilarText(first, second, &percent)
-  	)
-  	fmt.Println(result)
+      var (
+          first   = `AaBbCcDd`
+          second  = `ad`
+          percent = 0.80
+          result  = gstr.SimilarText(first, second, &percent)
+      )
+      fmt.Println(result)
 
-  	// Output:
-  	// 2
+      // Output:
+      // 2
 }
 ```
 
@@ -4214,15 +4214,15 @@ Soundex(str string) string
 
 ```go
 func ExampleSoundex() {
-  	var (
-  		str1    = `Hello`
-  		str2    = `Hallo`
-  		result1 = gstr.Soundex(str1)
-  		result2 = gstr.Soundex(str2)
-  	)
-  	fmt.Println(result1, result2)
+      var (
+          str1    = `Hello`
+          str2    = `Hallo`
+          result1 = gstr.Soundex(str1)
+          result2 = gstr.Soundex(str2)
+      )
+      fmt.Println(result1, result2)
 
-  	// Output:
-  	// H400 H400
+      // Output:
+      // H400 H400
 }
 ```

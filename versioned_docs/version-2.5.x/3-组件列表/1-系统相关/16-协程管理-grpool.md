@@ -84,12 +84,12 @@ func New(limit ...int) *Pool
 package main
 
 import (
- 	"context"
- 	"fmt"
- 	"github.com/gogf/gf/v2/os/gctx"
- 	"github.com/gogf/gf/v2/os/grpool"
- 	"github.com/gogf/gf/v2/os/gtimer"
- 	"time"
+     "context"
+     "fmt"
+     "github.com/gogf/gf/v2/os/gctx"
+     "github.com/gogf/gf/v2/os/grpool"
+     "github.com/gogf/gf/v2/os/gtimer"
+     "time"
 )
 
 var (
@@ -97,23 +97,23 @@ var (
 )
 
 func job(ctx context.Context) {
- 	time.Sleep(1*time.Second)
+     time.Sleep(1*time.Second)
 }
 
 func main() {
- 	pool := grpool.New(100)
- 	for i := 0; i < 1000; i++ {
-     	pool.Add(ctx,job)
- 	}
- 	fmt.Println("worker:", pool.Size())
- 	fmt.Println(" jobs:", pool.Jobs())
- 	gtimer.SetInterval(ctx,time.Second, func(ctx context.Context) {
-     	fmt.Println("worker:", pool.Size())
-     	fmt.Println(" jobs:", pool.Jobs())
-     	fmt.Println()
- 	})
+     pool := grpool.New(100)
+     for i := 0; i < 1000; i++ {
+         pool.Add(ctx,job)
+     }
+     fmt.Println("worker:", pool.Size())
+     fmt.Println(" jobs:", pool.Jobs())
+     gtimer.SetInterval(ctx,time.Second, func(ctx context.Context) {
+         fmt.Println("worker:", pool.Size())
+         fmt.Println(" jobs:", pool.Jobs())
+         fmt.Println()
+     })
 
- 	select {}
+     select {}
 }
 ```
 
@@ -125,11 +125,11 @@ func main() {
 package main
 
 import (
- 	"context"
- 	"fmt"
- 	"github.com/gogf/gf/v2/os/gctx"
- 	"github.com/gogf/gf/v2/os/grpool"
- 	"sync"
+     "context"
+     "fmt"
+     "github.com/gogf/gf/v2/os/gctx"
+     "github.com/gogf/gf/v2/os/grpool"
+     "sync"
 )
 
 var (
@@ -137,15 +137,15 @@ var (
 )
 
 func main() {
- 	wg := sync.WaitGroup{}
- 	for i := 0; i < 10; i++ {
-    	wg.Add(1)
-    	grpool.Add(ctx,func(ctx context.Context) {
-       		fmt.Println(i)
-       		wg.Done()
-    	})
- 	}
- 	wg.Wait()
+     wg := sync.WaitGroup{}
+     for i := 0; i < 10; i++ {
+        wg.Add(1)
+        grpool.Add(ctx,func(ctx context.Context) {
+               fmt.Println(i)
+               wg.Done()
+        })
+     }
+     wg.Wait()
 }
 ```
 
@@ -213,11 +213,11 @@ func main() {
 package main
 
 import (
- 	"context"
- 	"fmt"
- 	"github.com/gogf/gf/v2/os/gctx"
- 	"github.com/gogf/gf/v2/os/grpool"
- 	"sync"
+     "context"
+     "fmt"
+     "github.com/gogf/gf/v2/os/gctx"
+     "github.com/gogf/gf/v2/os/grpool"
+     "sync"
 )
 
 var (
@@ -225,16 +225,16 @@ var (
 )
 
 func main() {
- 	wg := sync.WaitGroup{}
- 	for i := 0; i < 10; i++ {
-    	wg.Add(1)
-    	v := i
-    	grpool.Add(ctx, func(ctx context.Context) {
-       		fmt.Println(v)
-       		wg.Done()
-    	})
- 	}
- 	wg.Wait()
+     wg := sync.WaitGroup{}
+     for i := 0; i < 10; i++ {
+        wg.Add(1)
+        v := i
+        grpool.Add(ctx, func(ctx context.Context) {
+               fmt.Println(v)
+               wg.Done()
+        })
+     }
+     wg.Wait()
 }
 ```
 
@@ -262,32 +262,32 @@ func main() {
 package main
 
 import (
-	"context"
-	"fmt"
-	"github.com/gogf/gf/v2/container/garray"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/grpool"
-	"time"
+    "context"
+    "fmt"
+    "github.com/gogf/gf/v2/container/garray"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/grpool"
+    "time"
 )
 
 var (
-	ctx = gctx.New()
+    ctx = gctx.New()
 )
 func main() {
-	array := garray.NewArray(true)
-	grpool.AddWithRecover(ctx, func(ctx context.Context) {
-		array.Append(1)
-		array.Append(2)
-		panic(1)
-	}, func(err error) {
-		array.Append(1)
-	})
-	grpool.AddWithRecover(ctx, func(ctx context.Context) {
-		panic(1)
-		array.Append(1)
-	})
-	time.Sleep(500 * time.Millisecond)
-	fmt.Print(array.Len())
+    array := garray.NewArray(true)
+    grpool.AddWithRecover(ctx, func(ctx context.Context) {
+        array.Append(1)
+        array.Append(2)
+        panic(1)
+    }, func(err error) {
+        array.Append(1)
+    })
+    grpool.AddWithRecover(ctx, func(ctx context.Context) {
+        panic(1)
+        array.Append(1)
+    })
+    time.Sleep(500 * time.Millisecond)
+    fmt.Print(array.Len())
 }
 ```
 
@@ -299,13 +299,13 @@ func main() {
 package main
 
 import (
- 	"context"
- 	"fmt"
- 	"github.com/gogf/gf/v2/os/gctx"
- 	"github.com/gogf/gf/v2/os/grpool"
- 	"github.com/gogf/gf/v2/os/gtime"
- 	"sync"
- 	"time"
+     "context"
+     "fmt"
+     "github.com/gogf/gf/v2/os/gctx"
+     "github.com/gogf/gf/v2/os/grpool"
+     "github.com/gogf/gf/v2/os/gtime"
+     "sync"
+     "time"
 )
 
 var (
@@ -313,18 +313,18 @@ var (
 )
 
 func main() {
- 	start := gtime.TimestampMilli()
- 	wg := sync.WaitGroup{}
- 	for i := 0; i < 10000000; i++ {
-    	wg.Add(1)
-    	grpool.Add(ctx,func(ctx context.Context) {
-       		time.Sleep(time.Millisecond)
-       		wg.Done()
-    	})
- 	}
- 	wg.Wait()
- 	fmt.Println(grpool.Size())
- 	fmt.Println("time spent:", gtime.TimestampMilli() - start)
+     start := gtime.TimestampMilli()
+     wg := sync.WaitGroup{}
+     for i := 0; i < 10000000; i++ {
+        wg.Add(1)
+        grpool.Add(ctx,func(ctx context.Context) {
+               time.Sleep(time.Millisecond)
+               wg.Done()
+        })
+     }
+     wg.Wait()
+     fmt.Println(grpool.Size())
+     fmt.Println("time spent:", gtime.TimestampMilli() - start)
 }
 ```
 
@@ -334,24 +334,24 @@ func main() {
 package main
 
 import (
- 	"fmt"
- 	"github.com/gogf/gf/v2/os/gtime"
- 	"sync"
- 	"time"
+     "fmt"
+     "github.com/gogf/gf/v2/os/gtime"
+     "sync"
+     "time"
 )
 
 func main() {
- 	start := gtime.TimestampMilli()
- 	wg := sync.WaitGroup{}
- 	for i := 0; i < 10000000; i++ {
-    	wg.Add(1)
-    	go func() {
-       		time.Sleep(time.Millisecond)
-       		wg.Done()
-    	}()
- 	}
- 	wg.Wait()
- 	fmt.Println("time spent:", gtime.TimestampMilli() - start)
+     start := gtime.TimestampMilli()
+     wg := sync.WaitGroup{}
+     for i := 0; i < 10000000; i++ {
+        wg.Add(1)
+        go func() {
+               time.Sleep(time.Millisecond)
+               wg.Done()
+        }()
+     }
+     wg.Wait()
+     fmt.Println("time spent:", gtime.TimestampMilli() - start)
 }
 ```
 

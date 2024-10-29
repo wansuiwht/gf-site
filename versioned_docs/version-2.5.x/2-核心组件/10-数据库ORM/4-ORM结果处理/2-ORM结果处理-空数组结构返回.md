@@ -12,31 +12,31 @@ hide_title: true
 package main
 
 import (
-	_ "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
 
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/encoding/gjson"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gtime"
+    "github.com/gogf/gf/v2/encoding/gjson"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gtime"
 )
 
 func main() {
-	type User struct {
-		Id        uint64      // 主键
-		Passport  string      // 账号
-		Password  string      // 密码
-		NickName  string      // 昵称
-		CreatedAt *gtime.Time // 创建时间
-		UpdatedAt *gtime.Time // 更新时间
-	}
-	type Response struct {
-		Users []User
-	}
-	var res = &Response{}
-	err := g.Model("user").WhereGT("id", 10).Scan(&res.Users)
-	fmt.Println(err)
-	fmt.Println(gjson.MustEncodeString(res))
+    type User struct {
+        Id        uint64      // 主键
+        Passport  string      // 账号
+        Password  string      // 密码
+        NickName  string      // 昵称
+        CreatedAt *gtime.Time // 创建时间
+        UpdatedAt *gtime.Time // 更新时间
+    }
+    type Response struct {
+        Users []User
+    }
+    var res = &Response{}
+    err := g.Model("user").WhereGT("id", 10).Scan(&res.Users)
+    fmt.Println(err)
+    fmt.Println(gjson.MustEncodeString(res))
 }
 ```
 
@@ -57,33 +57,33 @@ func main() {
 package main
 
 import (
-	_ "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
 
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/encoding/gjson"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gtime"
+    "github.com/gogf/gf/v2/encoding/gjson"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gtime"
 )
 
 func main() {
-	type User struct {
-		Id        uint64      // 主键
-		Passport  string      // 账号
-		Password  string      // 密码
-		NickName  string      // 昵称
-		CreatedAt *gtime.Time // 创建时间
-		UpdatedAt *gtime.Time // 更新时间
-	}
-	type Response struct {
-		Users []User
-	}
-	var res = &Response{
-		Users: make([]User, 0),
-	}
-	err := g.Model("user").WhereGT("id", 10).Scan(&res.Users)
-	fmt.Println(err)
-	fmt.Println(gjson.MustEncodeString(res))
+    type User struct {
+        Id        uint64      // 主键
+        Passport  string      // 账号
+        Password  string      // 密码
+        NickName  string      // 昵称
+        CreatedAt *gtime.Time // 创建时间
+        UpdatedAt *gtime.Time // 更新时间
+    }
+    type Response struct {
+        Users []User
+    }
+    var res = &Response{
+        Users: make([]User, 0),
+    }
+    err := g.Model("user").WhereGT("id", 10).Scan(&res.Users)
+    fmt.Println(err)
+    fmt.Println(gjson.MustEncodeString(res))
 }
 ```
 

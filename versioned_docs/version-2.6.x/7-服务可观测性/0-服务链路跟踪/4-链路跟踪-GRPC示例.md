@@ -57,92 +57,92 @@ message DeleteRes {}
 package main
 
 import (
-	_ "github.com/gogf/gf/contrib/drivers/mysql/v2"
-	_ "github.com/gogf/gf/contrib/nosql/redis/v2"
-	"github.com/gogf/gf/contrib/registry/etcd/v2"
-	"github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
+    _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
+    _ "github.com/gogf/gf/contrib/nosql/redis/v2"
+    "github.com/gogf/gf/contrib/registry/etcd/v2"
+    "github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
 
-	"context"
-	"fmt"
-	"time"
+    "context"
+    "fmt"
+    "time"
 
-	"github.com/gogf/gf/contrib/rpc/grpcx/v2"
-	"github.com/gogf/gf/contrib/trace/otlpgrpc/v2"
-	"github.com/gogf/gf/v2/database/gdb"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gcache"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/contrib/rpc/grpcx/v2"
+    "github.com/gogf/gf/contrib/trace/otlpgrpc/v2"
+    "github.com/gogf/gf/v2/database/gdb"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gcache"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 type Controller struct {
-	user.UnimplementedUserServer
+    user.UnimplementedUserServer
 }
 
 const (
     serviceName = "otlp-grpc-server"
-	endpoint    = "tracing-analysis-dc-bj.aliyuncs.com:8090"
-	traceToken  = "******_******"
+    endpoint    = "tracing-analysis-dc-bj.aliyuncs.com:8090"
+    traceToken  = "******_******"
 )
 
 func main() {
-	grpcx.Resolver.Register(etcd.New("127.0.0.1:2379"))
+    grpcx.Resolver.Register(etcd.New("127.0.0.1:2379"))
 
-	var ctx = gctx.New()
+    var ctx = gctx.New()
     shutdown, err := otlpgrpc.Init(serviceName, endpoint, traceToken)
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	defer shutdown()
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    defer shutdown()
 
     // Set ORM cache adapter with redis.
-	g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
+    g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 
-	s := grpcx.Server.New()
-	user.RegisterUserServer(s.Server, &Controller{})
-	s.Run()
+    s := grpcx.Server.New()
+    user.RegisterUserServer(s.Server, &Controller{})
+    s.Run()
 }
 
 // Insert is a route handler for inserting user info into database.
 func (s *Controller) Insert(ctx context.Context, req *user.InsertReq) (res *user.InsertRes, err error) {
-	result, err := g.Model("user").Ctx(ctx).Insert(g.Map{
-		"name": req.Name,
-	})
-	if err != nil {
-		return nil, err
-	}
-	id, _ := result.LastInsertId()
-	res = &user.InsertRes{
-		Id: int32(id),
-	}
-	return
+    result, err := g.Model("user").Ctx(ctx).Insert(g.Map{
+        "name": req.Name,
+    })
+    if err != nil {
+        return nil, err
+    }
+    id, _ := result.LastInsertId()
+    res = &user.InsertRes{
+        Id: int32(id),
+    }
+    return
 }
 
 // Query is a route handler for querying user info. It firstly retrieves the info from redis,
 // if there's nothing in the redis, it then does db select.
 func (s *Controller) Query(ctx context.Context, req *user.QueryReq) (res *user.QueryRes, err error) {
-	err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
-		Duration: 5 * time.Second,
-		Name:     s.userCacheKey(req.Id),
-		Force:    false,
-	}).WherePri(req.Id).Scan(&res)
-	if err != nil {
-		return nil, err
-	}
-	return
+    err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
+        Duration: 5 * time.Second,
+        Name:     s.userCacheKey(req.Id),
+        Force:    false,
+    }).WherePri(req.Id).Scan(&res)
+    if err != nil {
+        return nil, err
+    }
+    return
 }
 
 // Delete is a route handler for deleting specified user info.
 func (s *Controller) Delete(ctx context.Context, req *user.DeleteReq) (res *user.DeleteRes, err error) {
-	err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
-		Duration: -1,
-		Name:     s.userCacheKey(req.Id),
-		Force:    false,
-	}).WherePri(req.Id).Scan(&res)
-	return
+    err = g.Model("user").Ctx(ctx).Cache(gdb.CacheOption{
+        Duration: -1,
+        Name:     s.userCacheKey(req.Id),
+        Force:    false,
+    }).WherePri(req.Id).Scan(&res)
+    return
 }
 
 func (s *Controller) userCacheKey(id int32) string {
-	return fmt.Sprintf(`userInfo:%d`, id)
+    return fmt.Sprintf(`userInfo:%d`, id)
 }
 ```
 
@@ -166,81 +166,81 @@ g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 package main
 
 import (
-	"github.com/gogf/gf/contrib/registry/etcd/v2"
-	"github.com/gogf/gf/contrib/rpc/grpcx/v2"
-	"github.com/gogf/gf/contrib/trace/otlpgrpc/v2"
-	"github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/gtrace"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/contrib/registry/etcd/v2"
+    "github.com/gogf/gf/contrib/rpc/grpcx/v2"
+    "github.com/gogf/gf/contrib/trace/otlpgrpc/v2"
+    "github.com/gogf/gf/example/trace/grpc_with_db/protobuf/user"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/gtrace"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 const (
- 	serviceName = "otlp-grpc-client"
-	endpoint    = "tracing-analysis-dc-bj.aliyuncs.com:8090"
-	traceToken  = "******_******"
+     serviceName = "otlp-grpc-client"
+    endpoint    = "tracing-analysis-dc-bj.aliyuncs.com:8090"
+    traceToken  = "******_******"
 )
 
 func main() {
-	grpcx.Resolver.Register(etcd.New("127.0.0.1:2379"))
+    grpcx.Resolver.Register(etcd.New("127.0.0.1:2379"))
 
-	var ctx = gctx.New()
+    var ctx = gctx.New()
     shutdown, err := otlpgrpc.Init(serviceName, endpoint, traceToken)
-	if err != nil {
-		g.Log().Fatal(ctx, err)
-	}
-	defer shutdown()
+    if err != nil {
+        g.Log().Fatal(ctx, err)
+    }
+    defer shutdown()
 
     StartRequests()
 }
 
 func StartRequests() {
-	ctx, span := gtrace.NewSpan(gctx.New(), "StartRequests")
-	defer span.End()
+    ctx, span := gtrace.NewSpan(gctx.New(), "StartRequests")
+    defer span.End()
 
-	client := user.NewUserClient(grpcx.Client.MustNewGrpcClientConn("demo"))
+    client := user.NewUserClient(grpcx.Client.MustNewGrpcClientConn("demo"))
 
-	// Baggage.
-	ctx = gtrace.SetBaggageValue(ctx, "uid", 100)
+    // Baggage.
+    ctx = gtrace.SetBaggageValue(ctx, "uid", 100)
 
-	// Insert.
-	insertRes, err := client.Insert(ctx, &user.InsertReq{
-		Name: "john",
-	})
-	if err != nil {
-		g.Log().Fatalf(ctx, `%+v`, err)
-	}
-	g.Log().Info(ctx, "insert id:", insertRes.Id)
+    // Insert.
+    insertRes, err := client.Insert(ctx, &user.InsertReq{
+        Name: "john",
+    })
+    if err != nil {
+        g.Log().Fatalf(ctx, `%+v`, err)
+    }
+    g.Log().Info(ctx, "insert id:", insertRes.Id)
 
-	// Query.
-	queryRes, err := client.Query(ctx, &user.QueryReq{
-		Id: insertRes.Id,
-	})
-	if err != nil {
-		g.Log().Errorf(ctx, `%+v`, err)
-		return
-	}
-	g.Log().Info(ctx, "query result:", queryRes)
+    // Query.
+    queryRes, err := client.Query(ctx, &user.QueryReq{
+        Id: insertRes.Id,
+    })
+    if err != nil {
+        g.Log().Errorf(ctx, `%+v`, err)
+        return
+    }
+    g.Log().Info(ctx, "query result:", queryRes)
 
-	// Delete.
-	_, err = client.Delete(ctx, &user.DeleteReq{
-		Id: insertRes.Id,
-	})
-	if err != nil {
-		g.Log().Errorf(ctx, `%+v`, err)
-		return
-	}
-	g.Log().Info(ctx, "delete id:", insertRes.Id)
+    // Delete.
+    _, err = client.Delete(ctx, &user.DeleteReq{
+        Id: insertRes.Id,
+    })
+    if err != nil {
+        g.Log().Errorf(ctx, `%+v`, err)
+        return
+    }
+    g.Log().Info(ctx, "delete id:", insertRes.Id)
 
-	// Delete with error.
-	_, err = client.Delete(ctx, &user.DeleteReq{
-		Id: -1,
-	})
-	if err != nil {
-		g.Log().Errorf(ctx, `%+v`, err)
-		return
-	}
-	g.Log().Info(ctx, "delete id:", -1)
+    // Delete with error.
+    _, err = client.Delete(ctx, &user.DeleteReq{
+        Id: -1,
+    })
+    if err != nil {
+        g.Log().Errorf(ctx, `%+v`, err)
+        return
+    }
+    g.Log().Info(ctx, "delete id:", -1)
 }
 ```
 

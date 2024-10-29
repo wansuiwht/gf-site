@@ -26,14 +26,14 @@ func Register(name string, driver Driver) error
 ```go
 // DriverMysql is the driver for mysql database.
 type DriverMysql struct {
-	*Core
+    *Core
 }
 
 // New creates and returns a database object for mysql.
 // It implements the interface of gdb.Driver for extra database driver installation.
 func (d *DriverMysql) New(core *Core, node *ConfigNode) (DB, error) {
-	return &DriverMysql{
-		Core: core,
-	}, nil
+    return &DriverMysql{
+        Core: core,
+    }, nil
 }
 ```

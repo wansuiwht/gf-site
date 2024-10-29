@@ -103,8 +103,8 @@ gfcli:
       prefix: "primary_"
       tables: "user, userDetail"
 
-	# sqlite需要自行编译带sqlite驱动的gf，下载库代码后修改路径文件（gf\cmd\gf\internal\cmd\cmd_gen_dao.go）的import包，取消注释即可。sqlite驱动依赖了gcc
-	- link: "sqlite:./file.db"
+    # sqlite需要自行编译带sqlite驱动的gf，下载库代码后修改路径文件（gf\cmd\gf\internal\cmd\cmd_gen_dao.go）的import包，取消注释即可。sqlite驱动依赖了gcc
+    - link: "sqlite:./file.db"
 ```
 
 ## 参数说明

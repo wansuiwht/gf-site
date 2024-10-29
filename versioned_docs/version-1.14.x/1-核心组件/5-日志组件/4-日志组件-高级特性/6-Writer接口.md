@@ -10,7 +10,7 @@ hide_title: true
 
 ```go
 type Writer interface {
-	Write(p []byte) (n int, err error)
+    Write(p []byte) (n int, err error)
 }
 
 ```
@@ -27,30 +27,30 @@ type Writer interface {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/os/glog"
-	"github.com/gogf/gf/text/gregex"
+    "fmt"
+    "github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/os/glog"
+    "github.com/gogf/gf/text/gregex"
 )
 
 type MyWriter struct {
-	logger *glog.Logger
+    logger *glog.Logger
 }
 
 func (w *MyWriter) Write(p []byte) (n int, err error) {
-	s := string(p)
-	if gregex.IsMatchString(`\[(PANI|FATA)\]`, s) {
-		fmt.Println("SERIOUS ISSUE OCCURRED!! I'd better tell monitor in first time!")
-		ghttp.PostContent("http://monitor.mydomain.com", s)
-	}
-	return w.logger.Write(p)
+    s := string(p)
+    if gregex.IsMatchString(`\[(PANI|FATA)\]`, s) {
+        fmt.Println("SERIOUS ISSUE OCCURRED!! I'd better tell monitor in first time!")
+        ghttp.PostContent("http://monitor.mydomain.com", s)
+    }
+    return w.logger.Write(p)
 }
 
 func main() {
-	glog.SetWriter(&MyWriter{
-		logger : glog.New(),
-	})
-	glog.Fatal("FATAL ERROR")
+    glog.SetWriter(&MyWriter{
+        logger : glog.New(),
+    })
+    glog.Fatal("FATAL ERROR")
 }
 
 ```
@@ -77,32 +77,32 @@ Stack:
 package main
 
 import (
-	"github.com/gogf/gf/os/glog"
-	"github.com/robertkowalski/graylog-golang"
+    "github.com/gogf/gf/os/glog"
+    "github.com/robertkowalski/graylog-golang"
 )
 
 type MyGrayLogWriter struct {
-	gelf    *gelf.Gelf
-	logger  *glog.Logger
+    gelf    *gelf.Gelf
+    logger  *glog.Logger
 }
 
 func (w *MyGrayLogWriter) Write(p []byte) (n int, err error) {
-	w.gelf.Send(p)
-	return w.logger.Write(p)
+    w.gelf.Send(p)
+    return w.logger.Write(p)
 }
 
 func main() {
-	glog.SetWriter(&MyGrayLogWriter{
-		logger : glog.New(),
-		gelf   : gelf.New(gelf.Config{
-			GraylogPort     : 80,
-			GraylogHostname : "graylog-host.com",
-			Connection      : "wan",
-			MaxChunkSizeWan : 42,
-			MaxChunkSizeLan : 1337,
-		}),
-	})
-	glog.Println("test log")
+    glog.SetWriter(&MyGrayLogWriter{
+        logger : glog.New(),
+        gelf   : gelf.New(gelf.Config{
+            GraylogPort     : 80,
+            GraylogHostname : "graylog-host.com",
+            Connection      : "wan",
+            MaxChunkSizeWan : 42,
+            MaxChunkSizeLan : 1337,
+        }),
+    })
+    glog.Println("test log")
 }
 
 ```

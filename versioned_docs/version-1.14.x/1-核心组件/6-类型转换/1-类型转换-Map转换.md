@@ -26,30 +26,30 @@ func MapDeep(value interface{}, tags ...string) map[string]interface{}
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gconv"
 )
 
 func main() {
-	type User struct {
-		Uid  int    `c:"uid"`
-		Name string `c:"name"`
-	}
-	// 对象
-	g.Dump(gconv.Map(User{
-		Uid:  1,
-		Name: "john",
-	}))
-	// 对象指针
-	g.Dump(gconv.Map(&User{
-		Uid:  1,
-		Name: "john",
-	}))
+    type User struct {
+        Uid  int    `c:"uid"`
+        Name string `c:"name"`
+    }
+    // 对象
+    g.Dump(gconv.Map(User{
+        Uid:  1,
+        Name: "john",
+    }))
+    // 对象指针
+    g.Dump(gconv.Map(&User{
+        Uid:  1,
+        Name: "john",
+    }))
 
-	// 任意map类型
-	g.Dump(gconv.Map(map[int]int{
-		100: 10000,
-	}))
+    // 任意map类型
+    g.Dump(gconv.Map(map[int]int{
+        100: 10000,
+    }))
 }
 
 ```
@@ -79,25 +79,25 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gconv"
 )
 
 func main() {
-	type User struct {
-		Uid      int
-		Name     string `c:"-"`
-		NickName string `c:"nickname, omitempty"`
-		Pass1    string `c:"password1"`
-		Pass2    string `c:"password2"`
-	}
-	user := User{
-		Uid:   100,
-		Name:  "john",
-		Pass1: "123",
-		Pass2: "456",
-	}
-	g.Dump(gconv.Map(user))
+    type User struct {
+        Uid      int
+        Name     string `c:"-"`
+        NickName string `c:"nickname, omitempty"`
+        Pass1    string `c:"password1"`
+        Pass2    string `c:"password2"`
+    }
+    user := User{
+        Uid:   100,
+        Name:  "john",
+        Pass1: "123",
+        Pass2: "456",
+    }
+    g.Dump(gconv.Map(user))
 }
 
 ```
@@ -119,20 +119,20 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gconv"
 )
 
 func main() {
-	type User struct {
-		Id   int    `c:"uid"`
-		Name string `my-tag:"nick-name" c:"name"`
-	}
-	user := &User{
-		Id:   1,
-		Name: "john",
-	}
-	g.Dump(gconv.Map(user, "my-tag"))
+    type User struct {
+        Id   int    `c:"uid"`
+        Name string `my-tag:"nick-name" c:"name"`
+    }
+    user := &User{
+        Id:   1,
+        Name: "john",
+    }
+    g.Dump(gconv.Map(user, "my-tag"))
 }
 
 ```
@@ -141,8 +141,8 @@ func main() {
 
 ```json
 {
-	"nick-name": "john",
-	"uid": 1
+    "nick-name": "john",
+    "uid": 1
 }
 
 ```
@@ -157,28 +157,28 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/util/gconv"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/util/gconv"
 )
 
 func main() {
-	type Base struct {
-		Id   int    `c:"id"`
-		Date string `c:"date"`
-	}
-	type User struct {
-		Base     `c:"base"`
-		Passport string `c:"passport"`
-		Password string `c:"password"`
-		Nickname string `c:"nickname"`
-	}
-	user := new(User)
-	user.Id = 1
-	user.Date = "2019"
-	user.Nickname = "John"
-	user.Passport = "johng"
-	user.Password = "123456"
-	g.Dump(gconv.MapDeep(user))
+    type Base struct {
+        Id   int    `c:"id"`
+        Date string `c:"date"`
+    }
+    type User struct {
+        Base     `c:"base"`
+        Passport string `c:"passport"`
+        Password string `c:"password"`
+        Nickname string `c:"nickname"`
+    }
+    user := new(User)
+    user.Id = 1
+    user.Date = "2019"
+    user.Nickname = "John"
+    user.Passport = "johng"
+    user.Password = "123456"
+    g.Dump(gconv.MapDeep(user))
 }
 
 ```

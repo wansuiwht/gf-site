@@ -29,8 +29,8 @@ func (p *Parser) GetOptAll() map[string]string
 ```go
 // ParserOption manages the parsing options.
 type ParserOption struct {
-	CaseSensitive bool // Marks options parsing in case-sensitive way.
-	Strict        bool // Whether stops parsing and returns error if invalid option passed.
+    CaseSensitive bool // Marks options parsing in case-sensitive way.
+    Strict        bool // Whether stops parsing and returns error if invalid option passed.
 }
 ```
 
@@ -38,11 +38,11 @@ type ParserOption struct {
 
 ```go
 parser, err := gcmd.Parse(g.MapStrBool{
-	"n,name":    true,
-	"v,version": true,
-	"a,arch":    true,
-	"o,os":      true,
-	"p,path":    true,
+    "n,name":    true,
+    "v,version": true,
+    "a,arch":    true,
+    "o,os":      true,
+    "p,path":    true,
 })
 ```
 
@@ -54,25 +54,25 @@ parser, err := gcmd.Parse(g.MapStrBool{
 
 ```go
 func ExampleParse() {
-	os.Args = []string{"gf", "build", "main.go", "-o=gf.exe", "-y"}
-	p, err := gcmd.Parse(g.MapStrBool{
-		"o,output": true,
-		"y,yes":    false,
-	})
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(p.GetOpt("o"))
-	fmt.Println(p.GetOpt("output"))
-	fmt.Println(p.GetOpt("y") != nil)
-	fmt.Println(p.GetOpt("yes") != nil)
-	fmt.Println(p.GetOpt("none") != nil)
+    os.Args = []string{"gf", "build", "main.go", "-o=gf.exe", "-y"}
+    p, err := gcmd.Parse(g.MapStrBool{
+        "o,output": true,
+        "y,yes":    false,
+    })
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(p.GetOpt("o"))
+    fmt.Println(p.GetOpt("output"))
+    fmt.Println(p.GetOpt("y") != nil)
+    fmt.Println(p.GetOpt("yes") != nil)
+    fmt.Println(p.GetOpt("none") != nil)
 
-	// Output:
-	// gf.exe
-	// gf.exe
-	// true
-	// true
-	// false
+    // Output:
+    // gf.exe
+    // gf.exe
+    // true
+    // true
+    // false
 }
 ```

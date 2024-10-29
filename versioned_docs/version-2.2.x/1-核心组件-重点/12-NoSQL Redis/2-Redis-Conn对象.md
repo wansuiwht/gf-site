@@ -14,21 +14,21 @@ hide_title: true
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/util/gconv"
+    "fmt"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 func main() {
-	var (
-		ctx = gctx.New()
-	)
-	conn, _ := g.Redis().Conn(ctx)
-	defer conn.Close(ctx)
-	conn.Do(ctx, "SET", "k", "v")
-	v, _ := conn.Do(ctx,"GET", "k")
-	fmt.Println(gconv.String(v))
+    var (
+        ctx = gctx.New()
+    )
+    conn, _ := g.Redis().Conn(ctx)
+    defer conn.Close(ctx)
+    conn.Do(ctx, "SET", "k", "v")
+    v, _ := conn.Do(ctx,"GET", "k")
+    fmt.Println(gconv.String(v))
 }
 ```
 
@@ -45,29 +45,29 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/util/gconv"
+    "fmt"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 func main() {
-	var (
-		ctx = gctx.New()
-	)
-	conn, _ := g.Redis().Conn(ctx)
-	defer conn.Close(ctx)
-	_, err := conn.Do(ctx, "SUBSCRIBE", "channel")
-	if err != nil {
-		panic(err)
-	}
-	for {
-		reply, err := conn.Receive(ctx)
-		if err != nil {
-			panic(err)
-		}
-		fmt.Println(gconv.Strings(reply))
-	}
+    var (
+        ctx = gctx.New()
+    )
+    conn, _ := g.Redis().Conn(ctx)
+    defer conn.Close(ctx)
+    _, err := conn.Do(ctx, "SUBSCRIBE", "channel")
+    if err != nil {
+        panic(err)
+    }
+    for {
+        reply, err := conn.Receive(ctx)
+        if err != nil {
+            panic(err)
+        }
+        fmt.Println(gconv.Strings(reply))
+    }
 }
 ```
 

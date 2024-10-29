@@ -172,9 +172,9 @@ err := db.Table("user_scores").
 // Usage example:
 //
 // type Entity struct {
-// 	   User       *EntityUser
-// 	   UserDetail *EntityUserDetail
-//	   UserScores []*EntityUserScores
+//        User       *EntityUser
+//        UserDetail *EntityUserDetail
+//       UserScores []*EntityUserScores
 // }
 // var users []*Entity
 // or

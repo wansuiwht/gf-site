@@ -151,11 +151,11 @@ g.Model("user").Data(g.List{
 ```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES('id+2','john','123456','now()')
 g.Model("user").Data(g.Map{
-	"id":          "id+2",
-	"passport":    "john",
-	"password":    "123456",
-	"nickname":    "JohnGuo",
-	"create_time": "now()",
+    "id":          "id+2",
+    "passport":    "john",
+    "password":    "123456",
+    "nickname":    "JohnGuo",
+    "create_time": "now()",
 }).Insert()
 // 执行报错：Error Code: 1136. Column count doesn't match value count at row 1
 ```
@@ -165,10 +165,10 @@ g.Model("user").Data(g.Map{
 ```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES(id+2,'john','123456',now())
 g.Model("user").Data(g.Map{
-	"id":          gdb.Raw("id+2"),
-	"passport":    "john",
-	"password":    "123456",
-	"nickname":    "JohnGuo",
-	"create_time": gdb.Raw("now()"),
+    "id":          gdb.Raw("id+2"),
+    "passport":    "john",
+    "password":    "123456",
+    "nickname":    "JohnGuo",
+    "create_time": gdb.Raw("now()"),
 }).Insert()
 ```

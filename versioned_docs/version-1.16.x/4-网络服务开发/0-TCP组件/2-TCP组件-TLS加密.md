@@ -14,54 +14,54 @@ hide_title: true
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/gtcp"
-	"github.com/gogf/gf/util/gconv"
-	"time"
+    "fmt"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/gtcp"
+    "github.com/gogf/gf/util/gconv"
+    "time"
 )
 
 func main() {
-	address := "127.0.0.1:8999"
-	crtFile := "server.crt"
-	keyFile := "server.key"
-	// TLS Server
-	go gtcp.NewServerKeyCrt(address, crtFile, keyFile, func(conn *gtcp.Conn) {
-		defer conn.Close()
-		for {
-			data, err := conn.Recv(-1)
-			if len(data) > 0 {
-				fmt.Println(string(data))
-			}
-			if err != nil {
-				// if client closes, err will be: EOF
-				g.Log().Error(err)
-				break
-			}
-		}
-	}).Run()
+    address := "127.0.0.1:8999"
+    crtFile := "server.crt"
+    keyFile := "server.key"
+    // TLS Server
+    go gtcp.NewServerKeyCrt(address, crtFile, keyFile, func(conn *gtcp.Conn) {
+        defer conn.Close()
+        for {
+            data, err := conn.Recv(-1)
+            if len(data) > 0 {
+                fmt.Println(string(data))
+            }
+            if err != nil {
+                // if client closes, err will be: EOF
+                g.Log().Error(err)
+                break
+            }
+        }
+    }).Run()
 
-	time.Sleep(time.Second)
+    time.Sleep(time.Second)
 
-	// Client
-	conn, err := gtcp.NewConnKeyCrt(address, crtFile, keyFile)
-	if err != nil {
-		panic(err)
-	}
-	defer conn.Close()
-	for i := 0; i < 10; i++ {
-		if err := conn.Send([]byte(gconv.String(i))); err != nil {
-			g.Log().Error(err)
-		}
-		time.Sleep(time.Second)
-		if i == 5 {
-			conn.Close()
-			break
-		}
-	}
+    // Client
+    conn, err := gtcp.NewConnKeyCrt(address, crtFile, keyFile)
+    if err != nil {
+        panic(err)
+    }
+    defer conn.Close()
+    for i := 0; i < 10; i++ {
+        if err := conn.Send([]byte(gconv.String(i))); err != nil {
+            g.Log().Error(err)
+        }
+        time.Sleep(time.Second)
+        if i == 5 {
+            conn.Close()
+            break
+        }
+    }
 
-	// exit after 5 seconds
-	time.Sleep(5 * time.Second)
+    // exit after 5 seconds
+    time.Sleep(5 * time.Second)
 }
 
 ```
@@ -79,59 +79,59 @@ panic: x509: certificate has expired or is not yet valid
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/net/gtcp"
-	"github.com/gogf/gf/util/gconv"
-	"time"
+    "fmt"
+    "github.com/gogf/gf/net/gtcp"
+    "github.com/gogf/gf/util/gconv"
+    "time"
 )
 
 func main() {
-	address := "127.0.0.1:8999"
-	crtFile := "server.crt"
-	keyFile := "server.key"
-	// TLS Server
-	go gtcp.NewServerKeyCrt(address, crtFile, keyFile, func(conn *gtcp.Conn) {
-		defer conn.Close()
-		for {
-			data, err := conn.Recv(-1)
-			if len(data) > 0 {
-				fmt.Println(string(data))
-			}
-			if err != nil {
-				// if client closes, err will be: EOF
-				g.Log().Error(err)
-				break
-			}
-		}
-	}).Run()
+    address := "127.0.0.1:8999"
+    crtFile := "server.crt"
+    keyFile := "server.key"
+    // TLS Server
+    go gtcp.NewServerKeyCrt(address, crtFile, keyFile, func(conn *gtcp.Conn) {
+        defer conn.Close()
+        for {
+            data, err := conn.Recv(-1)
+            if len(data) > 0 {
+                fmt.Println(string(data))
+            }
+            if err != nil {
+                // if client closes, err will be: EOF
+                g.Log().Error(err)
+                break
+            }
+        }
+    }).Run()
 
-	time.Sleep(time.Second)
+    time.Sleep(time.Second)
 
-	// Client
-	tlsConfig, err := gtcp.LoadKeyCrt(crtFile, keyFile)
-	if err != nil {
-		panic(err)
-	}
-	tlsConfig.InsecureSkipVerify = true
+    // Client
+    tlsConfig, err := gtcp.LoadKeyCrt(crtFile, keyFile)
+    if err != nil {
+        panic(err)
+    }
+    tlsConfig.InsecureSkipVerify = true
 
-	conn, err := gtcp.NewConnTLS(address, tlsConfig)
-	if err != nil {
-		panic(err)
-	}
-	defer conn.Close()
-	for i := 0; i < 10; i++ {
-		if err := conn.Send([]byte(gconv.String(i))); err != nil {
-			g.Log().Error(err)
-		}
-		time.Sleep(time.Second)
-		if i == 5 {
-			conn.Close()
-			break
-		}
-	}
+    conn, err := gtcp.NewConnTLS(address, tlsConfig)
+    if err != nil {
+        panic(err)
+    }
+    defer conn.Close()
+    for i := 0; i < 10; i++ {
+        if err := conn.Send([]byte(gconv.String(i))); err != nil {
+            g.Log().Error(err)
+        }
+        time.Sleep(time.Second)
+        if i == 5 {
+            conn.Close()
+            break
+        }
+    }
 
-	// exit after 5 seconds
-	time.Sleep(5 * time.Second)
+    // exit after 5 seconds
+    time.Sleep(5 * time.Second)
 }
 
 ```

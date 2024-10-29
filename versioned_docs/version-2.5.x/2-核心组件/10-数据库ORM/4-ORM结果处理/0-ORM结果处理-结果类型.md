@@ -56,27 +56,27 @@ uid  name   site
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 type User struct {
-	Uid  int
-	Name string
+    Uid  int
+    Name string
 }
 
 func main() {
-	var (
-		user *User
-		ctx  = gctx.New()
-	)
-	err := g.DB().Model("user").Where("uid", 1).Scan(&user)
-	if err != nil {
-		g.Log().Header(false).Fatal(ctx, err)
-	}
-	if user != nil {
-		g.Log().Header(false).Print(ctx, user)
-	}
+    var (
+        user *User
+        ctx  = gctx.New()
+    )
+    err := g.DB().Model("user").Where("uid", 1).Scan(&user)
+    if err != nil {
+        g.Log().Header(false).Fatal(ctx, err)
+    }
+    if user != nil {
+        g.Log().Header(false).Print(ctx, user)
+    }
 }
 ```
 
@@ -129,30 +129,30 @@ Nick-Name  Nick_Name      match
 package main
 
 import (
-	"database/sql"
+    "database/sql"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/os/gctx"
 )
 
 type User struct {
-	Uid  int
-	Name string
-	Site string
+    Uid  int
+    Name string
+    Site string
 }
 
 func main() {
-	var (
-		user []*User
-		ctx  = gctx.New()
-	)
-	err := g.DB().Model("user").Where("uid", 1).Scan(&user)
-	if err != nil && err != sql.ErrNoRows {
-		g.Log().Header(false).Fatal(ctx, err)
-	}
-	if user != nil {
-		g.Log().Header(false).Print(ctx, user)
-	}
+    var (
+        user []*User
+        ctx  = gctx.New()
+    )
+    err := g.DB().Model("user").Where("uid", 1).Scan(&user)
+    if err != nil && err != sql.ErrNoRows {
+        g.Log().Header(false).Fatal(ctx, err)
+    }
+    if user != nil {
+        g.Log().Header(false).Print(ctx, user)
+    }
 }
 ```
 

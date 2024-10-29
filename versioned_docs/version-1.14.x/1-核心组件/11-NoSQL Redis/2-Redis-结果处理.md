@@ -41,24 +41,24 @@ v
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	conn := g.Redis().Conn()
-	defer conn.Close()
-	_, err := conn.Do("SUBSCRIBE", "channel")
-	if err != nil {
-		panic(err)
-	}
-	for {
-		reply, err := conn.ReceiveVar()
-		if err != nil {
-			panic(err)
-		}
-		fmt.Println(reply.Strings())
-	}
+    conn := g.Redis().Conn()
+    defer conn.Close()
+    _, err := conn.Do("SUBSCRIBE", "channel")
+    if err != nil {
+        panic(err)
+    }
+    for {
+        reply, err := conn.ReceiveVar()
+        if err != nil {
+            panic(err)
+        }
+        fmt.Println(reply.Strings())
+    }
 }
 
 ```
@@ -90,33 +90,33 @@ $ redis-cli
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/container/gvar"
-	"github.com/gogf/gf/frame/g"
+    "fmt"
+    "github.com/gogf/gf/container/gvar"
+    "github.com/gogf/gf/frame/g"
 )
 
 func main() {
-	var (
-		err    error
-		result *gvar.Var
-		key    = "user"
-	)
-	_, err = g.Redis().Do("HSET", key, "id", 10000)
-	if err != nil {
-		panic(err)
-	}
-	_, err = g.Redis().Do("HSET", key, "name", "john")
-	if err != nil {
-		panic(err)
-	}
-	result, err = g.Redis().DoVar("HGETALL", key)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(result.Map())
+    var (
+        err    error
+        result *gvar.Var
+        key    = "user"
+    )
+    _, err = g.Redis().Do("HSET", key, "id", 10000)
+    if err != nil {
+        panic(err)
+    }
+    _, err = g.Redis().Do("HSET", key, "name", "john")
+    if err != nil {
+        panic(err)
+    }
+    result, err = g.Redis().DoVar("HGETALL", key)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(result.Map())
 
-	// May Output:
-	// map[id:10000 name:john]
+    // May Output:
+    // map[id:10000 name:john]
 }
 
 ```

@@ -15,7 +15,7 @@ hide_title: true
 <html lang="zh">
 <head>
     <title>gf websocket echo server</title>
- 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 </head>
@@ -121,36 +121,36 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/gfile"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/gfile"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 var ctx = gctx.New()
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/ws", func(r *ghttp.Request) {
-		ws, err := r.WebSocket()
-		if err != nil {
-			glog.Error(ctx, err)
-			r.Exit()
-		}
-		for {
-			msgType, msg, err := ws.ReadMessage()
-			if err != nil {
-				return
-			}
-			if err = ws.WriteMessage(msgType, msg); err != nil {
-				return
-			}
-		}
-	})
-	s.SetServerRoot(gfile.MainPkgPath())
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.BindHandler("/ws", func(r *ghttp.Request) {
+        ws, err := r.WebSocket()
+        if err != nil {
+            glog.Error(ctx, err)
+            r.Exit()
+        }
+        for {
+            msgType, msg, err := ws.ReadMessage()
+            if err != nil {
+                return
+            }
+            if err = ws.WriteMessage(msgType, msg); err != nil {
+                return
+            }
+        }
+    })
+    s.SetServerRoot(gfile.MainPkgPath())
+    s.SetPort(8199)
+    s.Run()
 }
 
 ```
@@ -173,37 +173,37 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/gctx"
-	"github.com/gogf/gf/v2/os/gfile"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/gctx"
+    "github.com/gogf/gf/v2/os/gfile"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 var ctx = gctx.New()
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/wss", func(r *ghttp.Request) {
-		ws, err := r.WebSocket()
-		if err != nil {
-			glog.Error(ctx, err)
-			r.Exit()
-		}
-		for {
-			msgType, msg, err := ws.ReadMessage()
-			if err != nil {
-				return
-			}
-			if err = ws.WriteMessage(msgType, msg); err != nil {
-				return
-			}
-		}
-	})
-	s.SetServerRoot(gfile.MainPkgPath())
-	s.EnableHTTPS("../../https/server.crt", "../../https/server.key")
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.BindHandler("/wss", func(r *ghttp.Request) {
+        ws, err := r.WebSocket()
+        if err != nil {
+            glog.Error(ctx, err)
+            r.Exit()
+        }
+        for {
+            msgType, msg, err := ws.ReadMessage()
+            if err != nil {
+                return
+            }
+            if err = ws.WriteMessage(msgType, msg); err != nil {
+                return
+            }
+        }
+    })
+    s.SetServerRoot(gfile.MainPkgPath())
+    s.EnableHTTPS("../../https/server.crt", "../../https/server.key")
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -228,36 +228,36 @@ func main() {
  package main
 
 import (
-	"crypto/tls"
-	"fmt"
-	"net/http"
-	"time"
+    "crypto/tls"
+    "fmt"
+    "net/http"
+    "time"
 
-	"github.com/gogf/gf/v2/net/gclient"
-	"github.com/gorilla/websocket"
+    "github.com/gogf/gf/v2/net/gclient"
+    "github.com/gorilla/websocket"
 )
 
 func main() {
-	client := gclient.NewWebSocket()
-	client.HandshakeTimeout = time.Second    // 设置超时时间
-	client.Proxy = http.ProxyFromEnvironment // 设置代理
-	client.TLSClientConfig = &tls.Config{}   // 设置 tls 配置
+    client := gclient.NewWebSocket()
+    client.HandshakeTimeout = time.Second    // 设置超时时间
+    client.Proxy = http.ProxyFromEnvironment // 设置代理
+    client.TLSClientConfig = &tls.Config{}   // 设置 tls 配置
 
-	conn, _, err := client.Dial("ws://127.0.0.1:8199/ws", nil)
-	if err != nil {
-		panic(err)
-	}
-	defer conn.Close()
+    conn, _, err := client.Dial("ws://127.0.0.1:8199/ws", nil)
+    if err != nil {
+        panic(err)
+    }
+    defer conn.Close()
 
-	err = conn.WriteMessage(websocket.TextMessage, []byte("hello word"))
-	if err != nil {
-		panic(err)
-	}
+    err = conn.WriteMessage(websocket.TextMessage, []byte("hello word"))
+    if err != nil {
+        panic(err)
+    }
 
-	mt, data, err := conn.ReadMessage()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(mt, string(data))
+    mt, data, err := conn.ReadMessage()
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(mt, string(data))
 }
 ```

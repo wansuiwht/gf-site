@@ -16,23 +16,23 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/frame/g"
+    "github.com/gogf/gf/net/ghttp"
 )
 
 // Upload uploads files to /tmp .
 func Upload(r *ghttp.Request) {
-	files := r.GetUploadFiles("upload-file")
+    files := r.GetUploadFiles("upload-file")
     names, err := files.Save("/tmp/")
     if err != nil {
-		r.Response.WriteExit(err)
-	}
-	r.Response.WriteExit("upload successfully: ", names)
+        r.Response.WriteExit(err)
+    }
+    r.Response.WriteExit("upload successfully: ", names)
 }
 
 // UploadShow shows uploading simgle file page.
 func UploadShow(r *ghttp.Request) {
-	r.Response.Write(`
+    r.Response.Write(`
     <html>
     <head>
         <title>GF Upload File Demo</title>
@@ -49,7 +49,7 @@ func UploadShow(r *ghttp.Request) {
 
 // UploadShowBatch shows uploading multiple files page.
 func UploadShowBatch(r *ghttp.Request) {
-	r.Response.Write(`
+    r.Response.Write(`
     <html>
     <head>
         <title>GF Upload Files Demo</title>
@@ -66,14 +66,14 @@ func UploadShowBatch(r *ghttp.Request) {
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/upload", func(group *ghttp.RouterGroup) {
-		group.POST("/", Upload)
-		group.ALL("/show", UploadShow)
-		group.ALL("/batch", UploadShowBatch)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/upload", func(group *ghttp.RouterGroup) {
+        group.POST("/", Upload)
+        group.ALL("/show", UploadShow)
+        group.ALL("/batch", UploadShowBatch)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 ```
@@ -134,24 +134,24 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/net/ghttp"
-	"github.com/gogf/gf/os/glog"
+    "fmt"
+    "github.com/gogf/gf/net/ghttp"
+    "github.com/gogf/gf/os/glog"
 )
 
 func main() {
-	path1 := "/Users/john/Pictures/logo1.png"
-	path2 := "/Users/john/Pictures/logo2.png"
-	r, e := ghttp.Post(
-		"http://127.0.0.1:8199/upload",
-		fmt.Sprintf(`upload-file=@file:%s&upload-file=@file:%s`, path1, path2),
-	)
-	if e != nil {
-		glog.Error(e)
-	} else {
-		fmt.Println(string(r.ReadAll()))
-		r.Close()
-	}
+    path1 := "/Users/john/Pictures/logo1.png"
+    path2 := "/Users/john/Pictures/logo2.png"
+    r, e := ghttp.Post(
+        "http://127.0.0.1:8199/upload",
+        fmt.Sprintf(`upload-file=@file:%s&upload-file=@file:%s`, path1, path2),
+    )
+    if e != nil {
+        glog.Error(e)
+    } else {
+        fmt.Println(string(r.ReadAll()))
+        r.Close()
+    }
 }
 
 ```

@@ -103,26 +103,26 @@ func (d *Domain) BindHookHandlerByMap(pattern string, hookmap map[string]Handler
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
-	"github.com/gogf/gf/v2/os/glog"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/os/glog"
 )
 
 func main() {
-	// 基本事件回调使用
-	p := "/:name/info/{uid}"
-	s := g.Server()
-	s.BindHookHandlerByMap(p, map[string]ghttp.HandlerFunc{
-		ghttp.HookBeforeServe:  func(r *ghttp.Request) { glog.Println(ghttp.HookBeforeServe) },
-		ghttp.HookAfterServe:   func(r *ghttp.Request) { glog.Println(ghttp.HookAfterServe) },
-		ghttp.HookBeforeOutput: func(r *ghttp.Request) { glog.Println(ghttp.HookBeforeOutput) },
-		ghttp.HookAfterOutput:  func(r *ghttp.Request) { glog.Println(ghttp.HookAfterOutput) },
-	})
-	s.BindHandler(p, func(r *ghttp.Request) {
-		r.Response.Write("用户:", r.Get("name"), ", uid:", r.Get("uid"))
-	})
-	s.SetPort(8199)
-	s.Run()
+    // 基本事件回调使用
+    p := "/:name/info/{uid}"
+    s := g.Server()
+    s.BindHookHandlerByMap(p, map[string]ghttp.HandlerFunc{
+        ghttp.HookBeforeServe:  func(r *ghttp.Request) { glog.Println(ghttp.HookBeforeServe) },
+        ghttp.HookAfterServe:   func(r *ghttp.Request) { glog.Println(ghttp.HookAfterServe) },
+        ghttp.HookBeforeOutput: func(r *ghttp.Request) { glog.Println(ghttp.HookBeforeOutput) },
+        ghttp.HookAfterOutput:  func(r *ghttp.Request) { glog.Println(ghttp.HookAfterOutput) },
+    })
+    s.BindHandler(p, func(r *ghttp.Request) {
+        r.Response.Write("用户:", r.Get("name"), ", uid:", r.Get("uid"))
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 
 ```
@@ -135,34 +135,34 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 // 优先调用的HOOK
 func beforeServeHook1(r *ghttp.Request) {
-	r.SetParam("name", "GoFrame")
-	r.Response.Writeln("set name")
+    r.SetParam("name", "GoFrame")
+    r.Response.Writeln("set name")
 }
 
 // 随后调用的HOOK
 func beforeServeHook2(r *ghttp.Request) {
-	r.SetParam("site", "https://goframe.org")
-	r.Response.Writeln("set site")
+    r.SetParam("site", "https://goframe.org")
+    r.Response.Writeln("set site")
 }
 
 // 允许对同一个路由同一个事件注册多个回调函数，按照注册顺序进行优先级调用。
 // 为便于在路由表中对比查看优先级，这里讲HOOK回调函数单独定义为了两个函数。
 func main() {
-	s := g.Server()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		r.Response.Writeln(r.Get("name"))
-		r.Response.Writeln(r.Get("site"))
-	})
-	s.BindHookHandler("/", ghttp.HookBeforeServe, beforeServeHook1)
-	s.BindHookHandler("/", ghttp.HookBeforeServe, beforeServeHook2)
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        r.Response.Writeln(r.Get("name"))
+        r.Response.Writeln(r.Get("site"))
+    })
+    s.BindHookHandler("/", ghttp.HookBeforeServe, beforeServeHook1)
+    s.BindHookHandler("/", ghttp.HookBeforeServe, beforeServeHook2)
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -194,38 +194,38 @@ https://goframe.org
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "fmt"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func main() {
-	s := g.Server()
-	// 多事件回调示例，事件1
-	pattern1 := "/:name/info"
-	s.BindHookHandlerByMap(pattern1, map[string]ghttp.HandlerFunc{
-		ghttp.HookBeforeServe: func(r *ghttp.Request) {
-			r.SetParam("uid", 1000)
-		},
-	})
-	s.BindHandler(pattern1, func(r *ghttp.Request) {
-		r.Response.Write("用户:", r.Get("name"), ", uid:", r.Get("uid"))
-	})
+    s := g.Server()
+    // 多事件回调示例，事件1
+    pattern1 := "/:name/info"
+    s.BindHookHandlerByMap(pattern1, map[string]ghttp.HandlerFunc{
+        ghttp.HookBeforeServe: func(r *ghttp.Request) {
+            r.SetParam("uid", 1000)
+        },
+    })
+    s.BindHandler(pattern1, func(r *ghttp.Request) {
+        r.Response.Write("用户:", r.Get("name"), ", uid:", r.Get("uid"))
+    })
 
-	// 多事件回调示例，事件2
-	pattern2 := "/{object}/list/{page}.java"
-	s.BindHookHandlerByMap(pattern2, map[string]ghttp.HandlerFunc{
-		ghttp.HookBeforeOutput: func(r *ghttp.Request) {
-			r.Response.SetBuffer([]byte(
-				fmt.Sprintf("通过事件修改输出内容, object:%s, page:%s", r.Get("object"), r.GetRouterString("page"))),
-			)
-		},
-	})
-	s.BindHandler(pattern2, func(r *ghttp.Request) {
-		r.Response.Write(r.Router.Uri)
-	})
-	s.SetPort(8199)
-	s.Run()
+    // 多事件回调示例，事件2
+    pattern2 := "/{object}/list/{page}.java"
+    s.BindHookHandlerByMap(pattern2, map[string]ghttp.HandlerFunc{
+        ghttp.HookBeforeOutput: func(r *ghttp.Request) {
+            r.Response.SetBuffer([]byte(
+                fmt.Sprintf("通过事件修改输出内容, object:%s, page:%s", r.Get("object"), r.GetRouterString("page"))),
+            )
+        },
+    })
+    s.BindHandler(pattern2, func(r *ghttp.Request) {
+        r.Response.Write(r.Router.Uri)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -241,33 +241,33 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/priority/show", func(r *ghttp.Request) {
-		r.Response.Writeln("priority service")
-	})
+    s := g.Server()
+    s.BindHandler("/priority/show", func(r *ghttp.Request) {
+        r.Response.Writeln("priority service")
+    })
 
-	s.BindHookHandlerByMap("/priority/:name", map[string]ghttp.HandlerFunc{
-		ghttp.HookBeforeServe: func(r *ghttp.Request) {
-			r.Response.Writeln("/priority/:name")
-		},
-	})
-	s.BindHookHandlerByMap("/priority/*any", map[string]ghttp.HandlerFunc{
-		ghttp.HookBeforeServe: func(r *ghttp.Request) {
-			r.Response.Writeln("/priority/*any")
-		},
-	})
-	s.BindHookHandlerByMap("/priority/show", map[string]ghttp.HandlerFunc{
-		ghttp.HookBeforeServe: func(r *ghttp.Request) {
-			r.Response.Writeln("/priority/show")
-		},
-	})
-	s.SetPort(8199)
-	s.Run()
+    s.BindHookHandlerByMap("/priority/:name", map[string]ghttp.HandlerFunc{
+        ghttp.HookBeforeServe: func(r *ghttp.Request) {
+            r.Response.Writeln("/priority/:name")
+        },
+    })
+    s.BindHookHandlerByMap("/priority/*any", map[string]ghttp.HandlerFunc{
+        ghttp.HookBeforeServe: func(r *ghttp.Request) {
+            r.Response.Writeln("/priority/*any")
+        },
+    })
+    s.BindHookHandlerByMap("/priority/show", map[string]ghttp.HandlerFunc{
+        ghttp.HookBeforeServe: func(r *ghttp.Request) {
+            r.Response.Writeln("/priority/show")
+        },
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -328,24 +328,24 @@ $.get("http://localhost:8199/api.v1/order", function(result){
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func Order(r *ghttp.Request) {
-	r.Response.Write("GET")
+    r.Response.Write("GET")
 }
 
 func main() {
-	s := g.Server()
-	s.Group("/api.v1", func(group *ghttp.RouterGroup) {
-		group.Hook("/*any", ghttp.HookBeforeServe, func(r *ghttp.Request) {
-			r.Response.CORSDefault()
-		})
-		group.GET("/order", Order)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.Group("/api.v1", func(group *ghttp.RouterGroup) {
+        group.Hook("/*any", ghttp.HookBeforeServe, func(r *ghttp.Request) {
+            r.Response.CORSDefault()
+        })
+        group.GET("/order", Order)
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 

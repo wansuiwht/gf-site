@@ -12,15 +12,15 @@ hide_title: true
 
 ```go
 func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask, err error) {
-	out = new(model.TaskDetail)
-	err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(out)
-	if err != nil {
-		if err == sql.ErrNoRows {
-			err = gerror.Newf(`record not found for "%d"`, id)
-		}
-		return
-	}
-	return
+    out = new(model.TaskDetail)
+    err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(out)
+    if err != nil {
+        if err == sql.ErrNoRows {
+            err = gerror.Newf(`record not found for "%d"`, id)
+        }
+        return
+    }
+    return
 }
 ```
 
@@ -30,14 +30,14 @@ func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask
 
 ```go
 func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask, err error) {
-	err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(&out)
-	if err != nil {
-		return
-	}
-	if out == nil {
-		err = gerror.Newf(`record not found for "%d"`, id)
-	}
-	return
+    err = dao.ResourceTask.Ctx(ctx).WherePri(id).Scan(&out)
+    if err != nil {
+        return
+    }
+    if out == nil {
+        err = gerror.Newf(`record not found for "%d"`, id)
+    }
+    return
 }
 ```
 

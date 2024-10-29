@@ -12,14 +12,14 @@ hide_title: true
 package main
 
 import (
-	"github.com/gogf/gf/v2/encoding/gjson"
-	"github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/encoding/gjson"
+    "github.com/gogf/gf/v2/frame/g"
 )
 
 func main() {
-	str := `{"Id":1492404095703580672,"Name":"Jason"}`
-	strJson := gjson.New(str)
-	g.Dump(strJson)
+    str := `{"Id":1492404095703580672,"Name":"Jason"}`
+    strJson := gjson.New(str)
+    g.Dump(strJson)
 }
 ```
 
@@ -35,16 +35,16 @@ func main() {
 package main
 
 import (
-	"github.com/gogf/gf/v2/encoding/gjson"
-	"github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/encoding/gjson"
+    "github.com/gogf/gf/v2/frame/g"
 )
 
 func main() {
-	str := `{"Id":1492404095703580672,"Name":"Jason"}`
-	strJson := gjson.NewWithOptions(str, gjson.Options{
-		StrNumber: true,
-	})
-	g.Dump(strJson)
+    str := `{"Id":1492404095703580672,"Name":"Jason"}`
+    strJson := gjson.NewWithOptions(str, gjson.Options{
+        StrNumber: true,
+    })
+    g.Dump(strJson)
 }
 ```
 

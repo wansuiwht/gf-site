@@ -63,13 +63,13 @@ redis:
 
 ```go
 func main() {
-	var (
-		ctx = context.Background()
-	)
-	conn, _ := g.Redis().Conn(ctx)
-	conn.Do(ctx, "SET", "Key", "Value")
-	v, _ := conn.Do(ctx, "GET", "Key")
-	fmt.Println(v.String())
+    var (
+        ctx = context.Background()
+    )
+    conn, _ := g.Redis().Conn(ctx)
+    conn.Do(ctx, "SET", "Key", "Value")
+    v, _ := conn.Do(ctx, "GET", "Key")
+    fmt.Println(v.String())
 }
 ```
 
@@ -104,36 +104,36 @@ func Instance(name ...string) *Redis
 package main
 
 import (
-	"context"
-	"fmt"
-	"github.com/gogf/gf/v2/database/gredis"
-	"github.com/gogf/gf/v2/util/gconv"
+    "context"
+    "fmt"
+    "github.com/gogf/gf/v2/database/gredis"
+    "github.com/gogf/gf/v2/util/gconv"
 )
 
 var (
-	config = gredis.Config{
-		Address: "192.168.1.2:6379, 192.168.1.3:6379",
-		Db   : 1,
-	}
-	ctx = context.Background()
+    config = gredis.Config{
+        Address: "192.168.1.2:6379, 192.168.1.3:6379",
+        Db   : 1,
+    }
+    ctx = context.Background()
 )
 
 func main() {
-	group := "test"
-	gredis.SetConfig(&config, group)
+    group := "test"
+    gredis.SetConfig(&config, group)
 
-	redis := gredis.Instance(group)
-	defer redis.Close(ctx)
+    redis := gredis.Instance(group)
+    defer redis.Close(ctx)
 
-	_, err := redis.Do(ctx, "SET", "k", "v")
-	if err != nil {
-		panic(err)
-	}
+    _, err := redis.Do(ctx, "SET", "k", "v")
+    if err != nil {
+        panic(err)
+    }
 
-	r, err := redis.Do(ctx, "GET", "k")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(gconv.String(r))
+    r, err := redis.Do(ctx, "GET", "k")
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(gconv.String(r))
 }
 ```

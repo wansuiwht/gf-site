@@ -174,7 +174,7 @@ type ConfigNode  struct {
     Pass             string        // 密码
     Name             string        // 数据库名称
     Type             string        // 数据库类型：mysql, sqlite, mssql, pgsql, oracle
-	Link             string        // (可选)自定义链接信息，当该字段被设置值时，以上链接字段(Host,Port,User,Pass,Name)将失效(该字段是一个扩展功能)     Role             string        // (可选，默认为master)数据库的角色，用于主从操作分离，至少需要有一个master，参数值：master, slave
+    Link             string        // (可选)自定义链接信息，当该字段被设置值时，以上链接字段(Host,Port,User,Pass,Name)将失效(该字段是一个扩展功能)     Role             string        // (可选，默认为master)数据库的角色，用于主从操作分离，至少需要有一个master，参数值：master, slave
     Debug            bool          // (可选)开启调试模式
     Charset          string        // (可选，默认为 utf8)编码，默认为 utf8
     Prefix           string        // (可选)表名前缀

@@ -61,11 +61,11 @@ goos: linux
 goarch: amd64
 pkg: github.com/gogf/gf/util/guid
 Benchmark_S
-Benchmark_S-4          	 1525240	       737 ns/op
+Benchmark_S-4               1525240           737 ns/op
 Benchmark_S_Data_1
-Benchmark_S_Data_1-4   	 1294222	       920 ns/op
+Benchmark_S_Data_1-4        1294222           920 ns/op
 Benchmark_S_Data_2
-Benchmark_S_Data_2-4   	 1344630	       889 ns/op
+Benchmark_S_Data_2-4        1344630           889 ns/op
 PASS
 
 ```
@@ -76,12 +76,12 @@ PASS
 package main
 
 import (
-	"fmt"
-	"github.com/gogf/gf/util/guid"
+    "fmt"
+    "github.com/gogf/gf/util/guid"
 )
 
 func main() {
-	fmt.Printf("TraceId: %s", guid.S())
+    fmt.Printf("TraceId: %s", guid.S())
 }
 
 ```

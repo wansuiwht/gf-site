@@ -22,21 +22,21 @@ func (c *Client) SetHeaderRaw(headers string) *Client
 package main
 
 import (
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
 )
 
 func main() {
-	s := g.Server()
-	s.BindHandler("/", func(r *ghttp.Request) {
-		r.Response.Writef(
-			"Span-Id:%s,Trace-Id:%s",
-			r.Header.Get("Span-Id"),
-			r.Header.Get("Trace-Id"),
-		)
-	})
-	s.SetPort(8199)
-	s.Run()
+    s := g.Server()
+    s.BindHandler("/", func(r *ghttp.Request) {
+        r.Response.Writef(
+            "Span-Id:%s,Trace-Id:%s",
+            r.Header.Get("Span-Id"),
+            r.Header.Get("Trace-Id"),
+        )
+    })
+    s.SetPort(8199)
+    s.Run()
 }
 ```
 
@@ -58,21 +58,21 @@ func main() {
 package main
 
 import (
-   	"fmt"
+       "fmt"
 
-   	"github.com/gogf/gf/v2/frame/g"
-   	"github.com/gogf/gf/v2/os/gctx"
+       "github.com/gogf/gf/v2/frame/g"
+       "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-   	c := g.Client()
-   	c.SetHeader("Span-Id", "0.0.1")
-   	c.SetHeader("Trace-Id", "NBC56410N97LJ016FQA")
-   	if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
-   		panic(e)
-   	} else {
-   		fmt.Println(r.ReadAllString())
-   	}
+       c := g.Client()
+       c.SetHeader("Span-Id", "0.0.1")
+       c.SetHeader("Trace-Id", "NBC56410N97LJ016FQA")
+       if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
+           panic(e)
+       } else {
+           fmt.Println(r.ReadAllString())
+       }
 }
 ```
 
@@ -98,25 +98,25 @@ func main() {
 package main
 
 import (
-   	"fmt"
+       "fmt"
 
-   	"github.com/gogf/gf/v2/frame/g"
-   	"github.com/gogf/gf/v2/os/gctx"
+       "github.com/gogf/gf/v2/frame/g"
+       "github.com/gogf/gf/v2/os/gctx"
 )
 
 func main() {
-   	c := g.Client()
-   	c.SetHeaderRaw(`
+       c := g.Client()
+       c.SetHeaderRaw(`
            Referer: https://localhost
            Span-Id: 0.0.1
            Trace-Id: NBC56410N97LJ016FQA
            User-Agent: MyTestClient
        `)
-   	if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
-   		panic(e)
-   	} else {
-   		fmt.Println(r.ReadAllString())
-   	}
+       if r, e := c.Get(gctx.New(), "http://127.0.0.1:8199/"); e != nil {
+           panic(e)
+       } else {
+           fmt.Println(r.ReadAllString())
+       }
 }
 ```
 

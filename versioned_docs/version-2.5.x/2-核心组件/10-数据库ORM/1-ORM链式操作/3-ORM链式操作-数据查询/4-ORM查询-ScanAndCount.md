@@ -17,17 +17,17 @@ hide_title: true
 ```go
 // GetList 获取实例的用户列表.
 func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (items []entity.UserInfo, total int, err error) {
-	items = make([]entity.UserInfo, 0)
-	orm := dao.UserInfo.Ctx(ctx).OmitEmpty().Where(do.UserInfo{
-		ResourceId: in.ResourceId,
-		Status:     in.Statuses,
-	})
-	err = orm.Order(in.OrderBy, in.OrderDirection).Limit(in.Offset, in.Limit).Scan(&items)
-	if err != nil {
-		return
-	}
-	total, err = orm.Count()
-	return
+    items = make([]entity.UserInfo, 0)
+    orm := dao.UserInfo.Ctx(ctx).OmitEmpty().Where(do.UserInfo{
+        ResourceId: in.ResourceId,
+        Status:     in.Statuses,
+    })
+    err = orm.Order(in.OrderBy, in.OrderDirection).Limit(in.Offset, in.Limit).Scan(&items)
+    if err != nil {
+        return
+    }
+    total, err = orm.Count()
+    return
 }
 ```
 
@@ -36,16 +36,16 @@ func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (
 ```go
 // GetList 获取实例的用户列表.
 func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (items []entity.UserInfo, total int, err error) {
-	items = make([]entity.UserInfo, 0)
-	err = dao.UserInfo.Ctx(ctx).OmitEmpty().
-		Where(do.UserInfo{
-			ResourceId: in.ResourceId,
-			Status:     in.Statuses,
-		}).
-		Order(in.OrderBy, in.OrderDirection).
-		Limit(in.Offset, in.Limit).
-		ScanAndCount(&items, &total, true)
-	return
+    items = make([]entity.UserInfo, 0)
+    err = dao.UserInfo.Ctx(ctx).OmitEmpty().
+        Where(do.UserInfo{
+            ResourceId: in.ResourceId,
+            Status:     in.Statuses,
+        }).
+        Order(in.OrderBy, in.OrderDirection).
+        Limit(in.Offset, in.Limit).
+        ScanAndCount(&items, &total, true)
+    return
 }
 ```
 
