@@ -2,5 +2,5 @@
 
 cd .github/workflows
 node generate-contributors.js
-ls -l
+ls -lh ../../static/img
 cd -
