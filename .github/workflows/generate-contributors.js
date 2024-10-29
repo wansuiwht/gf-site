@@ -10,9 +10,9 @@ const svgPath = "../../static/img/contributors.svg"
 const quality = 10
 
 // 单个头像的宽高
-const width = 65, height = 65
+const width = 64, height = 64
 // 头像之间的间距
-const xSpace = 2, ySpace = 2
+const xSpace = 4, ySpace = 4
 // 每一行的头像数量
 const row = 20
 
