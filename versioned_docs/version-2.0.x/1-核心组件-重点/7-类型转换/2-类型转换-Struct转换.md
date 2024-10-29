@@ -8,7 +8,7 @@ hide_title: true
 
 `gconv` 模块通过 `Struct` 转换方法执行 `struct` 类型转换，其定义如下：
 
-```
+```go
 // Struct maps the params key-value pairs to the corresponding struct object's attributes.
 // The third parameter `mapping` is unnecessary, indicating the mapping rules between the
 // custom key name and the attribute name(case sensitive).

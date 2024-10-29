@@ -12,7 +12,7 @@ hide_title: true
 
 ## 相关方法
 
-```
+```go
 // SetAdapter sets custom adapter for current redis client.
 func (r *Redis) SetAdapter(adapter Adapter)
 

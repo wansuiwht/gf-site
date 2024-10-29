@@ -119,7 +119,7 @@ db.Transaction(func(tx *gdb.TX) error {
 
 从 `GoFrame` 版本 `v1.15.7` 开始，提供了对数据库嵌套事务的支持。需要注意的是，数据库服务往往并不支持嵌套事务，而是依靠 `ORM` 组件层通过 `Transaction Save Point` 特性实现的。相关方法：
 
-```
+```go
 // Begin starts a nested transaction procedure.
 func (tx *TX) Begin() error
 

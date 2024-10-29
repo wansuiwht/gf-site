@@ -130,7 +130,7 @@ r, err := db.Table("user").Data(g.List{
 
 `gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。例如：
 
-```
+```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES('id+2','john','123456','now()')
 db.Model("user").Data(g.Map{
 	"id":          "id+2",
@@ -144,7 +144,7 @@ db.Model("user").Data(g.Map{
 
 使用 `gdb.Raw` 改造后：
 
-```
+```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES(id+2,'john','123456',now())
 db.Model("user").Data(g.Map{
 	"id":          gdb.Raw("id+2"),

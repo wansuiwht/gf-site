@@ -16,7 +16,7 @@ hide_title: true
 
 我们将之前的 `hello world` 项目做一些改变，增加一个 `go.mod` 文件（也可以在项目根目录下使用 `go mod init 项目名称` 命令初始化项目生成该文件），内容如下：
 
-```
+```go
 module my-hello
 ```
 
@@ -71,7 +71,7 @@ module my-hello
 
 
 
-```
+```go
 module my-hello
 
 
@@ -96,7 +96,7 @@ require github.com/gogf/gf latest
 
 
 
-```
+```go
 module my-hello
 
 
@@ -134,7 +134,7 @@ require github.com/gogf/gf v1.6.13
 
 
 
-```
+```bash
 export GO111MODULE=on GOPROXY=https://goproxy.cn; go get -u github.com/gogf/gf
 ```
 
@@ -161,7 +161,7 @@ export GO111MODULE=on GOPROXY=https://goproxy.cn; go get -u github.com/gogf/gf
 
 
 
-```
+```go
 module my-hello
 
 

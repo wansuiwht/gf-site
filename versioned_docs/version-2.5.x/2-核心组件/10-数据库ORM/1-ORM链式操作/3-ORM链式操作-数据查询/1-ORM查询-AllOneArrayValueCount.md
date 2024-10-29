@@ -27,7 +27,7 @@ func (m *Model) CountColumn(column string) (int, error)
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `score`>60
 Model("user").Where("score>?", 60).All()
 

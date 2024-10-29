@@ -10,7 +10,7 @@ hide_title: true
 
 [https://github.com/gogf/gf/v2/blob/master/os/gsession/gsession\_storage.go](https://github.com/gogf/gf/v2/blob/master/os/gsession/gsession_storage.go)
 
-```
+```go
 // Storage is the interface definition for session storage.
 type Storage interface {
 	// New creates a custom session id.

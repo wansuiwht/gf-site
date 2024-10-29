@@ -12,7 +12,7 @@ hide_title: true
 
 **常用方法：**
 
-```
+```go
 // SQL操作方法，返回原生的标准库sql对象
 Query(query string, args ...interface{}) (*sql.Rows, error)
 Exec(query string, args ...interface{}) (sql.Result, error)

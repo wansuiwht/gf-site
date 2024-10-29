@@ -22,7 +22,7 @@ hide_title: true
 
 
 
-```
+```go
 // uid,nickname,passport,password
 g.Model("user").FieldsStr()
 ```
@@ -37,7 +37,7 @@ g.Model("user").FieldsStr()
 
 
 
-```
+```go
 // gf_uid,gf_nickname,gf_passport,gf_password
 g.Model("user").FieldsStr("gf_")
 ```
@@ -56,7 +56,7 @@ g.Model("user").FieldsStr("gf_")
 
 
 
-```
+```go
 // uid,nickname
 g.Model("user").FieldsExStr("passport, password")
 ```
@@ -71,7 +71,7 @@ g.Model("user").FieldsExStr("passport, password")
 
 
 
-```
+```go
 // gf_uid,gf_nickname
 g.Model("user").FieldsExStr("passport, password", "gf_")
 ```

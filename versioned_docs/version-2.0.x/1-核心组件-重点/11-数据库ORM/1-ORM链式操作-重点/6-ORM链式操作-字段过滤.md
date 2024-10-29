@@ -107,7 +107,7 @@ func (m *Model) OmitEmptyData() *Model
 
 空值会影响于写入/更新操作方法，如 `Insert`, `Replace`, `Update`, `Save` 操作。如以下操作（以 `map` 为例， `struct` 同理）：
 
-```
+```go
 // UPDATE `user` SET `name`='john',update_time=null WHERE `id`=1
 db.Table("user").Data(g.Map{
     "name"        : "john",
@@ -117,7 +117,7 @@ db.Table("user").Data(g.Map{
 
 针对空值情况，我们可以通过 `OmitEmpty` 方法来过滤掉这些空值。例如，以上示例可以修改为：
 
-```
+```go
 // UPDATE `user` SET `name`='john' WHERE `id`=1
 db.Table("user").OmitEmpty().Data(g.Map{
     "name"        : "john",
@@ -158,7 +158,7 @@ db.Table("user").OmitEmpty().Data(user).Insert()
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `passport`='john' LIMIT 1
 r, err := db.Table("user").Where(g.Map{
     "nickname" : "",

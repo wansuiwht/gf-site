@@ -4,7 +4,7 @@ sidebar_position: 7
 hide_title: true
 ---
 
-```
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 ```
@@ -13,7 +13,7 @@ db := g.DB()
 
 使用字符串、 `slice` 参数类型。当使用 `slice` 参数类型时，预处理占位符只需要一个 `?` 即可。
 
-```
+```go
 // SELECT * FROM user WHERE uid IN(100,10000,90000)
 db.Model("user").Where("uid IN(?,?,?)", 100, 10000, 90000).All()
 db.Model("user").Where("uid", g.Slice{100, 10000, 90000}).All()
@@ -28,7 +28,7 @@ db.Model("user").Where("age", g.Slice{18, 50}).Count()
 
 使用任意 `map` 参数类型。
 
-```
+```go
 // SELECT * FROM user WHERE gender=1 AND uid IN(100,10000,90000)
 db.Model("user").Where(g.Map{
     "gender" : 1,
@@ -53,7 +53,7 @@ db.Model("user").Where(User{
 
 为提高易用性，当传递的 `slice` 参数为空或 `nil` 时，查询并不会报错，而是转换为一个 `false` 条件语句。
 
-```
+```go
 // SELECT * FROM `user` WHERE 0=1
 db.Model("user").Where("uid", g.Slice{}).All()
 db.Model("user").Where("uid", nil).All()
@@ -70,7 +70,7 @@ func (m *Model) WhereOrNotIn(column string, in interface{}) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `gender`=1 AND `type` IN(1,2,3)
 db.Model("user").Where("gender", 1).WhereIn("type", g.Slice{1,2,3}).All()
 
@@ -105,7 +105,7 @@ func (m *Model) WhereOrNotLike(column string, like interface{}) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `gender`=1 AND `name` LIKE 'john%'
 db.Model("user").Where("gender", 1).WhereLike("name", "john%").All()
 
@@ -123,7 +123,7 @@ db.Model("user").Where("gender", 1).WhereOrNotLike("name", "john%").All()
 
 我们直接将统计方法使用在 `Fields` 方法上，例如：
 
-```
+```go
 // SELECT MIN(score) FROM `user` WHERE `uid`=1
 db.Model("user").Fields("MIN(score)").Where("uid", 1).Value()
 
@@ -148,7 +148,7 @@ func (m *Model) Sum(column string) (float64, error)
 
 上面的示例使用快捷统计方法改造后：
 
-```
+```go
 // SELECT MIN(`score`) FROM `user` WHERE `uid`=1
 db.Model("user").Where("uid", 1).Min("score")
 
@@ -202,7 +202,7 @@ func (m *Model) Distinct() *Model
 
 使用示例：
 
-```
+```go
 // SELECT COUNT(DISTINCT `name`) FROM `user`
 db.Model("user").Distinct().CountColumn("name")
 
@@ -229,7 +229,7 @@ func (m *Model) WhereOrNotBetween(column string, min, max interface{}) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `gender`=0 AND `age` BETWEEN 16 AND 20
 db.Model("user").Where("gender", 0).WhereBetween("age", 16, 20).All()
 
@@ -256,7 +256,7 @@ func (m *Model) WhereOrNotNull(columns ...string) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `created_at` > '2021-05-01 00:00:00' AND `inviter` IS NULL
 db.Model("user").Where("created_at>?", gtime.New("2021-05-01")).WhereNull("inviter").All()
 
@@ -272,7 +272,7 @@ db.Model("user").Where("created_at>?", gtime.New("2021-05-01")).WhereOrNotNull("
 
 同时，这几个方法的参数支持多个字段输入，例如：
 
-```
+```go
 // SELECT * FROM `user` WHERE `created_at` > '2021-05-01 00:00:00' AND `inviter` IS NULL AND `creator` IS NULL
 db.Model("user").Where("created_at>?", gtime.New("2021-05-01")).WhereNull("inviter", "creator").All()
 ```

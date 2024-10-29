@@ -54,7 +54,7 @@ CREATE TABLE `user_scores` (
 
 那么 `Golang` 的模型可定义如下：
 
-```
+```go
 // 用户详情
 type UserDetail struct {
 	gmeta.Meta `orm:"table:user_detail"`
@@ -196,7 +196,7 @@ mysql> select * from `user_score`;
 
 新的 `With` 特性下，数据查询相当简便，例如，我们查询一条数据：
 
-```
+```go
 // 重新声明一下，防止大家上下来回拉动
 // 用户详情
 type UserDetail struct {
@@ -564,7 +564,7 @@ type ContentListItem struct {
 
 如果关联的模型属性也带有 `with` 标签，那么将会递归执行关联查询。 `With` 特性支持无限层级的递归关联。以下示例，仅供参考：
 
-```
+```go
 // 用户详情
 type UserDetail struct {
 	gmeta.Meta `orm:"table:user_detail"`

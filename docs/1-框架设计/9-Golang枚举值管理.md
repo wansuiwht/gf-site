@@ -10,7 +10,7 @@ hide_title: true
 
 例如，在 `Kubernetes` 项目中，有大量的以常量形式定义的"枚举值"：
 
-```
+```go
 // PodPhase is a label for the condition of a pod at the current time.
 type PodPhase string
 

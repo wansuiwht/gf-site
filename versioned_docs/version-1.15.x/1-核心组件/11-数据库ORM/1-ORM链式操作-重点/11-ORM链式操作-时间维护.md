@@ -44,7 +44,7 @@ r, err := db.Table("user").Data(g.Map{"uid": 10001, "name": "john"}).Save()
 
 在执行 `Insert/InsertIgnore/BatchInsert/BatchInsertIgnore` 方法时自动写入该时间，在执行 `Save/Update` 时更新该时间（注意当写入数据存在时会更新 `updated_at` 时间，不会更新 `created_at` 时间）。
 
-```
+```go
 // UPDATE `user` SET `name`='john guo',`updated_at`='2020-06-06 21:00:00' WHERE name='john'
 r, err := db.Table("user").Data(g.Map{"name" : "john guo"}).Where("name", "john").Update()
 // UPDATE `user` SET `status`=1,`updated_at`='2020-06-06 21:00:00' ORDER BY `login_time` asc LIMIT 10

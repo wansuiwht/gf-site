@@ -48,7 +48,7 @@ func TestJson(t *testing.T) {
 
 以下错误：
 
-```
+```bash
 D:\Program Files\Go\bin\pkg\mod\github.com\gogf\gf@v1.16.6\net\ghttp\internal\client\client_tracing.go:73:3: undefined: attribute.Any
 D:\Program Files\Go\bin\pkg\mod\github.com\gogf\gf@v1.16.6\net\ghttp\internal\client\client_tracing_tracer.go:150:3: undefined: attribute.Any
 D:\Program Files\Go\bin\pkg\mod\github.com\gogf\gf@v1.16.6\net\ghttp\internal\client\client_tracing_tracer.go:151:3: undefined: attribute.Any
@@ -146,7 +146,7 @@ func main() {
 
 ### 1、 `Linux` 下执行 `go build main.go` 提示连接超时 `connection timed out`
 
-```
+```bash
 go: github.com/gogf/gf@v1.14.6-0.20201214132204-c685876e6f67: Get "https://proxy.golang.org/github.com/gogf/gf/@v/v1.14.6-0.20201214132204-c685876e6f67.mod":
 dial tcp 172.217.160.113:443:
 connect: connection timed out
@@ -154,7 +154,7 @@ connect: connection timed out
 
 解决办法：
 
-```
+```bash
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 ```
@@ -166,7 +166,7 @@ export GOPROXY=https://goproxy.cn
 
 ### 2、 `Linux` 下安装 `gf` 提示命令不存在 `command not found`
 
-```
+```bash
 ./gf install
 安装后
 执行gf -v

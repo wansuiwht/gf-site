@@ -64,7 +64,7 @@ OnDuplicate(g.Map{
 
 数据写入/保存方法需要结合 `Data` 方法使用：
 
-```
+```go
 // INSERT INTO `user`(`name`) VALUES('john')
 g.Model("user").Data(g.Map{"name": "john"}).Insert()
 
@@ -109,7 +109,7 @@ g.Model("user").Data(user).Insert()
 
 ### 示例2，数据批量写入
 
-```
+```go
 // INSERT INTO `user`(`name`) VALUES('john_1'),('john_2'),('john_3')
 g.Model("user").Data(g.List{
     {"name": "john_1"},
@@ -120,7 +120,7 @@ g.Model("user").Data(g.List{
 
 可以通过 `Batch` 方法指定批量操作中分批写入条数数量（默认是 `10`），以下示例将会被拆分为两条写入请求：
 
-```
+```go
 // INSERT INTO `user`(`name`) VALUES('john_1'),('john_2')
 // INSERT INTO `user`(`name`) VALUES('john_3')
 g.Model("user").Data(g.List{
@@ -134,7 +134,7 @@ g.Model("user").Data(g.List{
 
 批量保存操作与单条保存操作原理是一样的，当写入的数据中存在主键或者唯一索引时将会更新原有记录值，否则新写入一条记录。
 
-```
+```go
 // INSERT INTO `user`(`uid`,`name`) VALUES(10000,'john_1'),(10001,'john_2'),(10002,'john_3')
 // ON DUPLICATE KEY UPDATE `uid`=VALUES(`uid`),`name`=VALUES(`name`)
 g.Model("user").Data(g.List{
@@ -148,7 +148,7 @@ g.Model("user").Data(g.List{
 
 `gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。例如：
 
-```
+```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES('id+2','john','123456','now()')
 g.Model("user").Data(g.Map{
 	"id":          "id+2",
@@ -162,7 +162,7 @@ g.Model("user").Data(g.Map{
 
 使用 `gdb.Raw` 改造后：
 
-```
+```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES(id+2,'john','123456',now())
 g.Model("user").Data(g.Map{
 	"id":          gdb.Raw("id+2"),

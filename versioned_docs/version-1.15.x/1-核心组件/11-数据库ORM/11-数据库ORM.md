@@ -35,7 +35,7 @@ type Result      []Record               // 返回数据表记录列表
 
 以下是 `DB` 接口提供的常用方法列表，详细的方法列表请参考接口文档： [https://godoc.org/github.com/gogf/gf/database/gdb](https://godoc.org/github.com/gogf/gf/database/gdb)
 
-```
+```go
 // 创建模型对象
 Model(table ...string) *Model
 

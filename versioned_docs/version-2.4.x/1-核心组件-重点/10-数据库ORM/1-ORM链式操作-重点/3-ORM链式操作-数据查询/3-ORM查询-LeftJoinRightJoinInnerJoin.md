@@ -14,7 +14,7 @@ hide_title: true
 
 使用示例：
 
-```
+```go
 // 查询符合条件的单条记录(第一条)
 // SELECT u.*,ud.site FROM user u LEFT JOIN user_detail ud ON u.uid=ud.uid WHERE u.uid=1 LIMIT 1
 g.Model("user u").LeftJoin("user_detail ud", "u.uid=ud.uid").Fields("u.*,ud.site").Where("u.uid", 1).One()
@@ -34,7 +34,7 @@ g.Model("user u,user_detail ud").Where("u.uid=ud.uid").Fields("u.*,ud.city").All
 
 ## 自定义数据表别名
 
-```
+```go
 // SELECT * FROM `user` AS u LEFT JOIN `user_detail` as ud ON(ud.id=u.id) WHERE u.id=1 LIMIT 1
 g.Model("user", "u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1).One()
 g.Model("user").As("u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1).One()
@@ -42,7 +42,7 @@ g.Model("user").As("u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id"
 
 ## 结合 `dao` 使用示例
 
-```
+```go
 // SELECT resource_task_schedule.id,...,time_window.time_window
 // FROM `resource_task_schedule`
 // LEFT JOIN `time_window` ON (`resource_task_schedule`.`resource_id`=`time_window`.`resource_id`)
@@ -63,7 +63,7 @@ orm = orm.WherePrefixLTE(twTable, twCls.StartTime, 3600)
 err = orm.Scan(&scheduleItems)
 ```
 
-```
+```go
 // SELECT DISTINCT resource_info.* FROM `resource_info`
 // LEFT JOIN `resource_network` ON (`resource_info`.`resource_id`=`resource_network`.`resource_id`)
 // WHERE (`resource_info`.`resource_id` like '%10.0.1.3%')

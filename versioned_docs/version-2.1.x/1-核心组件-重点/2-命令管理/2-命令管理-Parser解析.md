@@ -26,7 +26,7 @@ func (p *Parser) GetOptAll() map[string]string
 
 其中， `ParserOption` 如下：
 
-```
+```go
 // ParserOption manages the parsing options.
 type ParserOption struct {
 	CaseSensitive bool // Marks options parsing in case-sensitive way.

@@ -8,7 +8,7 @@ hide_title: true
 
 当前方法列表可能滞后于源代码，详细的方法列表请参考接口文档： [https://godoc.org/github.com/gogf/gf/database/gdb#Model](https://godoc.org/github.com/gogf/gf/database/gdb#Model)
 
-```
+```go
 // 写入/更新/删除基本操作
 func (m *Model) Insert(data ...interface{}) (result sql.Result, err error)
 func (m *Model) InsertAndGetId(data ...interface{}) (lastInsertId int64, err error)

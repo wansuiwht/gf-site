@@ -14,7 +14,7 @@ hide_title: true
 
 本文档的方法列表可能滞后于于代码，详细的方法列表请查看接口文档，以下方法仅供参考。
 
-```
+```go
 // SQL操作方法，返回原生的标准库sql对象
 Query(ctx context.Context, query string, args ...interface{}) (*sql.Rows, error)
 Exec(ctx context.Context, query string, args ...interface{}) (sql.Result, error)
@@ -50,7 +50,7 @@ Delete(ctx context.Context, table string, condition interface{}, args ...interfa
 
 ### 1\. `ORM` 对象
 
-```
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 
@@ -114,7 +114,7 @@ _, err := db.Insert(ctx, "user", gdb.List {
 
 ### 7\. 数据更新/删除
 
-```
+```go
 // db.Update/db.Delete 同理
 // UPDATE `user` SET `name`='john' WHERE `uid`=10000
 r, err := db.Update(ctx, "user", gdb.Map {"name": "john"}, "uid=?", 10000)

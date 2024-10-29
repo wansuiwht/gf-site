@@ -10,7 +10,7 @@ hide_title: true
 
 ## 接口定义
 
-```
+```go
 // apiUnmarshalValue is the interface for custom defined types customizing value assignment.
 // Note that only pointer can implement interface apiUnmarshalValue.
 type apiUnmarshalValue interface {

@@ -19,7 +19,7 @@ func (r *Response) DefaultCORSOptions() CORSOptions
 
 `CORS` 是 `W3` 互联网标准组织对HTTP跨域请求的标准，在 `ghttp` 模块中，我们可以通过 `CORSOptions` 对象来管理对应的跨域请求选项。定义如下：
 
-```
+```go
 // See https://www.w3.org/TR/cors/ .
 // 服务端允许跨域请求选项
 type CORSOptions struct {
@@ -45,7 +45,7 @@ type CORSOptions struct {
 
 大多数时候，我们需要限制请求来源为我们受信任的域名列表，我们可以使用 `AllowDomain` 配置，使用方式：
 
-```
+```go
 // 允许跨域请求中间件
 func Middleware(r *ghttp.Request) {
 	corsOptions := r.Response.DefaultCORSOptions()

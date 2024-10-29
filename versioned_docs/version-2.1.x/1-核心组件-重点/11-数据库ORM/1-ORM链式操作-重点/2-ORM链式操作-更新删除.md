@@ -12,7 +12,7 @@ hide_title: true
 
 使用示例：
 
-```
+```go
 // UPDATE `user` SET `name`='john guo' WHERE name='john'
 g.Model("user").Data(g.Map{"name" : "john guo"}).Where("name", "john").Update()
 g.Model("user").Data("name='john guo'").Where("name", "john").Update()
@@ -27,7 +27,7 @@ g.Model("user").Data(g.Map{"status" : 1}).Where(1).Update()
 
 也可以直接给 `Update` 方法传递 `data` 及 `where` 参数：
 
-```
+```go
 // UPDATE `user` SET `name`='john guo' WHERE name='john'
 g.Model("user").Update(g.Map{"name" : "john guo"}, "name", "john")
 g.Model("user").Update("name='john guo'", "name", "john")
@@ -43,7 +43,7 @@ g.Model("user").Update(g.Map{"status" : 1}, 1)
 
 `Counter` 数据结构定义：
 
-```
+```go
 // Counter  is the type for update count.
 type Counter struct {
 	Field string
@@ -81,7 +81,7 @@ result, err := db.Update("article", updateData, "id", 1)
 
 我们可以通过 `Increment` 和 `Decrement` 方法实现对指定字段的自增/自减常用操作。两个方法的定义如下：
 
-```
+```go
 // Increment increments a column's value by a given amount.
 func (m *Model) Increment(column string, amount float64) (sql.Result, error)
 
@@ -91,7 +91,7 @@ func (m *Model) Decrement(column string, amount float64) (sql.Result, error)
 
 使用示例：
 
-```
+```go
 // UPDATE `article` SET `views`=`views`+10000 WHERE `id`=1
 g.Model("article").Where("id", 1).Increment("views", 10000)
 // UPDATE `article` SET `views`=`views`-10000 WHERE `id`=1
@@ -102,7 +102,7 @@ g.Model("article").Where("id", 1).Decrement("views", 10000)
 
 `gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。例如：
 
-```
+```go
 // UPDATE `user` SET login_count='login_count+1',update_time='now()' WHERE id=1
 g.Model("user").Data(g.Map{
     "login_count": "login_count+1",
@@ -113,7 +113,7 @@ g.Model("user").Data(g.Map{
 
 使用 `gdb.Raw` 改造后：
 
-```
+```go
 // UPDATE `user` SET login_count=login_count+1,update_time=now() WHERE id=1
 g.Model("user").Data(g.Map{
     "login_count": gdb.Raw("login_count+1"),
@@ -127,7 +127,7 @@ g.Model("user").Data(g.Map{
 
 使用示例：
 
-```
+```go
 // DELETE FROM `user` WHERE uid=10
 g.Model("user").Where("uid", 10).Delete()
 // DELETE FROM `user` ORDER BY `login_time` asc LIMIT 10
@@ -136,7 +136,7 @@ g.Model("user").Order("login_time asc").Limit(10).Delete()
 
 也可以直接给 `Delete` 方法传递 `where` 参数：
 
-```
+```go
 // DELETE FROM `user` WHERE `uid`=10
 g.Model("user").Delete("uid", 10)
 // DELETE FROM `user` WHERE `score`<60

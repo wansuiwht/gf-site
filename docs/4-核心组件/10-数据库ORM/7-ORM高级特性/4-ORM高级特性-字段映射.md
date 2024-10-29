@@ -31,7 +31,7 @@ nick name  nickname      match
 
 该特性需要依靠 `DB` 中定义的 `TableFields` 接口实现来支持的。如果不实现该接口，那么上层业务需要维护属性/键名到数据表字段的映射关系，维护这种非业务逻辑的工作成本是比较大的。框架的目标是尽可能让业务开发同学的精力聚焦于业务，因此框架组件中能够自动化的地方均采用自动化设计。目前对接到框架的 `driver` 实现均支持该接口。
 
-```
+```go
 // TableFields retrieves and returns the fields' information of specified table of current
 // schema.
 //
@@ -51,7 +51,7 @@ func (db DB) TableFields(ctx context.Context, table string, schema ...string) (f
 
 每个数据表的字段信息，将在数据表的第一次操作时执行查询并缓存到内存中。如果需要手动刷新字段缓存，那么可以依靠以下方法实现：
 
-```
+```go
 // ClearTableFields removes certain cached table fields of current configuration group.
 func (c *Core) ClearTableFields(ctx context.Context, table string, schema ...string) (err error)
 
@@ -77,7 +77,7 @@ g.DB().GetCore()
 
 1） `GetDoctorInfoRes`
 
-```
+```go
 // 查询接口返回数据结构
 type GetDoctorInfoRes struct {
 	UserInfo             *UserInfo   `protobuf:"bytes,1,opt,name=UserInfo,proto3" json:"UserInfo,omitempty"`
@@ -90,7 +90,7 @@ type GetDoctorInfoRes struct {
 
 2） `UserInfo`
 
-```
+```go
 // 用户基础信息
 type UserInfo struct {
 	Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -105,7 +105,7 @@ type UserInfo struct {
 
 3） `DoctorInfo`
 
-```
+```go
 // 医生信息
 type DoctorInfo struct {
 	Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -121,7 +121,7 @@ type DoctorInfo struct {
 
 4、查询接口实现代码
 
-```
+```go
 // 查询医生信息
 func (s *Service) GetDoctorInfo(ctx context.Context, req *pb.GetDoctorInfoReq) (res *pb.GetDoctorInfoRes, err error) {
     // Protobuf返回数据结构

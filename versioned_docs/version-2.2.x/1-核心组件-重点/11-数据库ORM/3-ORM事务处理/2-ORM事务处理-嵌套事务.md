@@ -6,7 +6,7 @@ hide_title: true
 
 从 `GoFrame ORM` 支持数据库嵌套事务。需要注意的是，数据库服务往往并不支持嵌套事务，而是依靠 `ORM` 组件层通过 `Transaction Save Point` 特性实现的。相关方法：
 
-```
+```go
 // Begin starts a nested transaction procedure.
 func (tx *TX) Begin() error
 
@@ -281,7 +281,7 @@ mysql> select * from `user`;
 
 ### `controller`
 
-```
+```go
 // 用户注册HTTP接口
 func (*cUser) Signup(r *ghttp.Request) {
 	// ....
@@ -294,7 +294,7 @@ func (*cUser) Signup(r *ghttp.Request) {
 
 ### `service`
 
-```
+```go
 // 用户注册业务逻辑处理
 func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
 	// ....

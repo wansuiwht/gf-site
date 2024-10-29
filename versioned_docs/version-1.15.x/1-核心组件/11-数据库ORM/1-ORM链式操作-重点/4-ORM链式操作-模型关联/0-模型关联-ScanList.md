@@ -213,7 +213,7 @@ func (m *Model) ScanList(listPointer interface{}, attributeName string, relation
 
 方法定义：
 
-```
+```go
 // ListItemValues retrieves and returns the elements of all item struct/map with key <key>.
 // Note that the parameter <list> should be type of slice which contains elements of map or struct,
 // or else it returns an empty slice.

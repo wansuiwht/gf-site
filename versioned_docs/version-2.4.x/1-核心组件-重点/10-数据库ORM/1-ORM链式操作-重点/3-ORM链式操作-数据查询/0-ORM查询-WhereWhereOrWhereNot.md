@@ -54,7 +54,7 @@ func (m *Model) WhereOrNotNull(columns ...string) *Model
 
 使用示例：
 
-```
+```go
 // WHERE `uid`=1
 Where("uid=1")
 Where("uid", 1)
@@ -94,7 +94,7 @@ Where(Condition{1, 18})
 
 `Where + string`，条件参数使用字符串和预处理。
 
-```
+```go
 // 查询多条记录并使用Limit分页
 // SELECT * FROM user WHERE uid>1 LIMIT 0,10
 g.Model("user").Where("uid > ?", 1).Limit(0, 10).All()
@@ -120,7 +120,7 @@ g.Model("user").Where("uid=?", 1).WhereOr("name=?", "john").One()
 
 `Where + slice`，预处理参数可直接通过 `slice` 参数给定。
 
-```
+```go
 // SELECT * FROM user WHERE age>18 AND name like '%john%'
 g.Model("user").Where("age>? AND name like ?", g.Slice{18, "%john%"}).All()
 
@@ -130,7 +130,7 @@ g.Model("user").Where("status=?", g.Slice{1}).All()
 
 `Where + map`，条件参数使用任意 `map` 类型传递。
 
-```
+```go
 // SELECT * FROM user WHERE uid=1 AND name='john' LIMIT 1
 g.Model("user").Where(g.Map{"uid" : 1, "name" : "john"}).One()
 
@@ -170,7 +170,7 @@ g.Model("article").Where(condition).All()
 
 在某些场景中，在输入带有字符串的条件语句时，往往需要结合 `fmt.Sprintf` 来格式化条件（当然，注意在字符串中使用占位符代替变量的输入而不是直接将变量格式化），因此我们提供了 `Where+fmt.Sprintf` 结合的便捷方法 `Wheref`。使用示例：
 
-```
+```go
 // WHERE score > 100 and status in('succeeded','completed')
 Wheref(`score > ? and status in (?)`, 100, g.Slice{"succeeded", "completed"})
 ```
@@ -179,7 +179,7 @@ Wheref(`score > ? and status in (?)`, 100, g.Slice{"succeeded", "completed"})
 
 `WherePri` 方法的功能同 `Where`，但提供了对表主键的智能识别，常用于根据主键的便捷数据查询。假如 `user` 表的主键为 `uid`，我们来看一下 `Where` 与 `WherePri` 的区别：
 
-```
+```go
 // WHERE `uid`=1
 Where("uid", 1)
 WherePri(1)
@@ -199,14 +199,14 @@ WherePri(g.Slice{1,2,3})
 
 我们可以使用 `Model` 的 `Builder` 方法生成 `WhereBuilder` 对象。该方法定义如下：
 
-```
+```go
 // Builder creates and returns a WhereBuilder.
 func (m *Model) Builder() *WhereBuilder
 ```
 
 ### 使用示例
 
-```
+```go
 // SELECT * FROM `user` WHERE `id`=1 AND `address`="USA" AND (`status`="active" OR `status`="pending")
 m := g.Model("user")
 all, err := m.Where("id", 1).Where("address", "USA").Where(

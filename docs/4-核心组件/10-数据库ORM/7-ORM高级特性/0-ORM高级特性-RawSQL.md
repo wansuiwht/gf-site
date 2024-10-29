@@ -10,7 +10,7 @@ hide_title: true
 
 `gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。例如：
 
-```
+```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES('id+2','john','123456','now()')
 g.Model("user").Data(g.Map{
 	"id":          "id+2",
@@ -24,7 +24,7 @@ g.Model("user").Data(g.Map{
 
 使用 `gdb.Raw` 改造后：
 
-```
+```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES(id+2,'john','123456',now())
 g.Model("user").Data(g.Map{
 	"id":          gdb.Raw("id+2"),
@@ -37,7 +37,7 @@ g.Model("user").Data(g.Map{
 
 ## 在 `Update` 中使用 `RawSQL`
 
-```
+```go
 // UPDATE `user` SET login_count='login_count+1',update_time='now()' WHERE id=1
 g.Model("user").Data(g.Map{
     "login_count": "login_count+1",
@@ -48,7 +48,7 @@ g.Model("user").Data(g.Map{
 
 使用 `gdb.Raw` 改造后：
 
-```
+```go
 // UPDATE `user` SET login_count=login_count+1,update_time=now() WHERE id=1
 g.Model("user").Data(g.Map{
     "login_count": gdb.Raw("login_count+1"),
@@ -60,14 +60,14 @@ g.Model("user").Data(g.Map{
 
 时间函数 `now()` 将会被转换为字符串作为 `SQL` 参数执行：
 
-```
+```go
 // SELECT * FROM `user` WHERE `created_at`<'now()'
 g.Model("user").WhereLT("created_at", "now()").All()
 ```
 
 使用 `gdb.Raw` 改造后：
 
-```
+```go
 // SELECT * FROM `user` WHERE `created_at`<now()
 g.Model("user").WhereLT("created_at", gdb.Raw("now()")).All()
 ```

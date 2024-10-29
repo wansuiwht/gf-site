@@ -54,7 +54,7 @@ CREATE TABLE `user_scores` (
 
 那么 `Golang` 的模型可定义如下：
 
-```
+```go
 // 用户详情
 type UserDetail struct {
 	gmeta.Meta `orm:"table:user_detail"`
@@ -353,7 +353,7 @@ with:uid
 
 这两个方法的定义如下：
 
-```
+```go
 // With creates and returns an ORM model based on meta data of given object.
 // It also enables model association operations feature on given `object`.
 // It can be called multiple times to add one or more objects to model and enable

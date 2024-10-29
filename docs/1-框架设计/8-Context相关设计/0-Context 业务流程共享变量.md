@@ -14,7 +14,7 @@ hide_title: true
 
 上下文对象中往往存储一些需要共享的变量，这些变量通常使用结构化的对象来存储，以方便维护。例如，我们在 `model` 定义一个上下文中的共享变量：
 
-```
+```go
 const (
 	// 上下文变量存储键名，前后端系统共享
 	ContextKey = "ContextKey"
@@ -47,7 +47,7 @@ type ContextUser struct {
 
 由于该上下文对象也是和业务逻辑相关的，因此我们需要通过 `service` 对象将上下文变量封装起来以方便其他模块使用。
 
-```
+```go
 // 上下文管理服务
 var Context = new(contextService)
 
@@ -80,7 +80,7 @@ func (s *contextService) SetUser(ctx context.Context, ctxUser *model.ContextUser
 
 上下文的变量必须在请求一开始便注入到请求流程中，以便于其他方法调用。在 `HTTP` 请求中我们可以使用 `GoFrame` 的中间件来实现。在 `GRPC` 请求中我们也可以使用拦截器来实现。在 `service` 层的 `middleware` 管理对象中，我们可以这样来定义：
 
-```
+```go
 // 自定义上下文对象
 func (s *middlewareService) Ctx(r *ghttp.Request) {
 	// 初始化，务必最开始执行
@@ -116,7 +116,7 @@ func (s *middlewareService) Ctx(r *ghttp.Request) {
 
 约定俗成的，方法定义的第一个输入参数往往预留给 `context.Context` 类型参数使用，以便接受上下文变量，特别是 `service` 层的方法。例如：
 
-```
+```go
 // 执行用户登录
 func (s *userService) Login(ctx context.Context, loginReq *define.UserServiceLoginReq) error {
     ...
@@ -148,7 +148,7 @@ service.Context.Get(ctx)
 
 通过以下方式设置/获取自定义的 `key-value` 键值对。
 
-```
+```go
 // 设置自定义键值对
 service.Context.Get(ctx).Data[key] = value
 

@@ -20,7 +20,7 @@ func(T1) (T2, error)
 
 注册转换方法的函数如下:
 
-```
+```go
 // RegisterConverter to register custom converter.
 // It must be registered before you use this custom converting feature.
 // It is suggested to do it in boot procedure of the process.

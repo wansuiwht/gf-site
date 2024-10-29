@@ -58,7 +58,7 @@ g.DB().GetCache().SetAdapter(redisCache)
 
 为简化数据库的查询缓存管理，从 `v2.2.0` 版本开始，提供了两个缓存管理方法：
 
-```
+```go
 // ClearCache removes cached sql result of certain table.
 func (c *Core) ClearCache(ctx context.Context, table string) (err error)
 

@@ -14,7 +14,7 @@ hide_title: true
 
 使用示例：
 
-```
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 
@@ -37,7 +37,7 @@ db.Model("user u,user_detail ud").Where("u.uid=ud.uid").Fields("u.*,ud.city").Al
 
 ## 自定义数据表别名
 
-```
+```go
 // SELECT * FROM `user` AS u LEFT JOIN `user_detail` as ud ON(ud.id=u.id) WHERE u.id=1 LIMIT 1
 db.Model("user", "u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1).One()
 db.Model("user").As("u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1).One()

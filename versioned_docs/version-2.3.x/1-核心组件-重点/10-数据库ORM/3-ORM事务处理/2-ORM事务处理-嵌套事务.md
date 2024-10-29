@@ -247,7 +247,7 @@ mysql> select * from `user`;
 
 ### `controller`
 
-```
+```go
 // 用户注册HTTP接口
 func (*cUser) Signup(r *ghttp.Request) {
 	// ....
@@ -260,7 +260,7 @@ func (*cUser) Signup(r *ghttp.Request) {
 
 ### `service`
 
-```
+```go
 // 用户注册业务逻辑处理
 func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
 	// ....

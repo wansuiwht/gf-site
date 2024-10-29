@@ -12,7 +12,7 @@ hide_title: true
 
 之前我们有提到 `Driver` 的驱动接口，在实现该接口之后，我们可以通过以下方法注册自定义驱动到 `gdb` 模块：
 
-```
+```go
 // Register registers custom database driver to gdb.
 func Register(name string, driver Driver) error
 ```
@@ -25,7 +25,7 @@ func Register(name string, driver Driver) error
 
 需要说明的是，最常见的驱动开发或者修改方式是直接继承于现有 `*Core` 类型，因为在 `Driver` 接口中会传递该类型的对象，例如：
 
-```
+```go
 // DriverMysql is the driver for mysql database.
 type DriverMysql struct {
 	*Core

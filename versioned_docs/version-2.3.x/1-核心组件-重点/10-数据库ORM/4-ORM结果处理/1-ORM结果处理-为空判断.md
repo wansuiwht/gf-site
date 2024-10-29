@@ -72,7 +72,7 @@ if r.IsEmpty() {
 
 查询返回字段值数组本身类型为 `[]gdb.Value` 类型，因此直接判断长度是否为 `0` 即可。
 
-```
+```go
 // Array/FindArray
 r, err := g.Model("order").Fields("id").Where("status", 1).Array()
 if err != nil {

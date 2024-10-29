@@ -121,7 +121,7 @@ db.Transaction(context.TODO(), func(ctx context.Context, tx *gdb.TX) error {
 
 从 `goframe` 版本 `v1.16` 版本开始，提供了对数据库嵌套事务的支持。需要注意的是，数据库服务往往并不支持嵌套事务，而是依靠 `ORM` 组件层通过 `Transaction Save Point` 特性实现的。相关方法：
 
-```
+```go
 // Begin starts a nested transaction procedure.
 func (tx *TX) Begin() error
 
@@ -394,7 +394,7 @@ mysql> select * from `user`;
 
 `api`
 
-```
+```go
 // 用户注册HTTP接口
 func (*userApi) Signup(r *ghttp.Request) {
 	// ....
@@ -407,7 +407,7 @@ func (*userApi) Signup(r *ghttp.Request) {
 
 `service`
 
-```
+```go
 // 用户注册业务逻辑处理
 func (*userService) Signup(ctx context.Context, r *model.UserServiceSignupReq) {
 	// ....

@@ -10,7 +10,7 @@ hide_title: true
 
 ### `Handler` 方法定义
 
-```
+```go
 // Handler is function handler for custom logging content outputs.
 type Handler func(ctx context.Context, in *HandlerInput)
 ```
@@ -19,7 +19,7 @@ type Handler func(ctx context.Context, in *HandlerInput)
 
 ### `Handler` 参数定义
 
-```
+```go
 // HandlerInput is the input parameter struct for logging Handler.
 type HandlerInput struct {
 	Logger       *Logger         // Logger.
@@ -47,7 +47,7 @@ type HandlerInput struct {
 
 ### `Handler` 注册到 `Logger` 方法
 
-```
+```go
 // SetHandlers sets the logging handlers for current logger.
 func (l *Logger) SetHandlers(handlers ...Handler)
 ```
@@ -161,7 +161,7 @@ func main() {
 
 开发者可以通过以下两个方法来设置和获取全局默认的 `Handler`。
 
-```
+```go
 // SetDefaultHandler sets default handler for package.
 func SetDefaultHandler(handler Handler)
 

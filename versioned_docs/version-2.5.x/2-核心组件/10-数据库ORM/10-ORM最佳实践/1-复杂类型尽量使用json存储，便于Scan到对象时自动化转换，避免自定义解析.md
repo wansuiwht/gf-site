@@ -28,7 +28,7 @@ CREATE TABLE `sell_spec` (
 
 其中的 `resources, shards, replicas` 我们定义为 `json` 格式，目的是可以存储自定义的资源、分片、副本规格列表（非顺序性）。那么我们的 `go struct` 定义如下：
 
-```
+```go
 // SellSpec 是通过GoFrame工具自动生成的数据结构，由工具维护。
 type SellSpec struct {
 	Id        uint        `description:"主键"`

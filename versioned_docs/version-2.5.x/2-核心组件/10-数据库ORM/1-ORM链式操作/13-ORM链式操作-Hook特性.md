@@ -29,7 +29,7 @@ type HookHandler struct {
 
 `Hook` 注册方法：
 
-```
+```go
 // Hook sets the hook functions for current model.
 func (m *Model) Hook(hook HookHandler) *Model
 ```
@@ -38,7 +38,7 @@ func (m *Model) Hook(hook HookHandler) *Model
 
 查询 `birth_day` 字段时，同时计算出当前用户的年龄：
 
-```
+```go
 // Hook function definition.
 var hook = gdb.HookHandler{
 	Select: func(ctx context.Context, in *gdb.HookSelectInput) (result gdb.Result, err error) {

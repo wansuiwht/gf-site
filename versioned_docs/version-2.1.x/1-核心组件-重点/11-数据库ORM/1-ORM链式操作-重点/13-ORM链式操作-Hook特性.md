@@ -29,7 +29,7 @@ type HookHandler struct {
 
 `Hook` 注册方法：
 
-```
+```go
 // Hook sets the hook functions for current model.
 func (m *Model) Hook(hook HookHandler) *Model
 ```

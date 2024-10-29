@@ -10,7 +10,7 @@ hide_title: true
 
 我们可以在 `Where` 条件中使用子查询语句，示例：
 
-```
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 

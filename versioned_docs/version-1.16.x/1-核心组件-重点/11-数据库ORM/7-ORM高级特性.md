@@ -108,7 +108,7 @@ nick name  nickname      match
 
 1） `GetDoctorInfoRes`
 
-```
+```go
 // 查询接口返回数据结构
 type GetDoctorInfoRes struct {
 	UserInfo             *UserInfo   `protobuf:"bytes,1,opt,name=UserInfo,proto3" json:"UserInfo,omitempty"`
@@ -121,7 +121,7 @@ type GetDoctorInfoRes struct {
 
 2） `UserInfo`
 
-```
+```go
 // 用户基础信息
 type UserInfo struct {
 	Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -136,7 +136,7 @@ type UserInfo struct {
 
 3） `DoctorInfo`
 
-```
+```go
 // 医生信息
 type DoctorInfo struct {
 	Id                   uint32   `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -152,7 +152,7 @@ type DoctorInfo struct {
 
 4、查询接口实现代码
 
-```
+```go
 // 查询医生信息
 func (s *Service) GetDoctorInfo(ctx context.Context, req *pb.GetDoctorInfoReq) (res *pb.GetDoctorInfoRes, err error) {
     // Protobuf返回数据结构

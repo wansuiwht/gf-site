@@ -14,7 +14,7 @@ hide_title: true
 
 使用传统的分页查询逻辑代码：
 
-```
+```go
 // GetList 获取实例的用户列表.
 func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (items []entity.UserInfo, total int, err error) {
 	items = make([]entity.UserInfo, 0)
@@ -33,7 +33,7 @@ func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (
 
 使用 `ScanAndCount` 方法实现分页查询：
 
-```
+```go
 // GetList 获取实例的用户列表.
 func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (items []entity.UserInfo, total int, err error) {
 	items = make([]entity.UserInfo, 0)

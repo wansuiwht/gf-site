@@ -8,7 +8,7 @@ hide_title: true
 
 ## 方法定义
 
-```
+```go
 // Union does "(SELECT xxx FROM xxx) UNION (SELECT xxx FROM xxx) ..." statement.
 func (c *Core) Union(unions ...*Model) *Model
 
@@ -20,7 +20,7 @@ func (c *Core) UnionAll(unions ...*Model) *Model
 
 使用 `Union` 操作符，多个 `SELECT` 语句会删除重复的数据。
 
-```
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 

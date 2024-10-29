@@ -8,7 +8,7 @@ hide_title: true
 
 方法定义：
 
-```
+```go
 // AllAndCount retrieves all records and the total count of records from the model.
 // If useFieldForCount is true, it will use the fields specified in the model for counting;
 // otherwise, it will use a constant value of 1 for counting.
@@ -33,7 +33,7 @@ func (m *Model) AllAndCount(useFieldForCount bool) (result Result, totalCount in
 
 使用示例：
 
-```
+```go
 // SELECT `uid`,`name` FROM `user` WHERE `status`='deleted' LIMIT 0,10
 // SELECT COUNT(`uid`,`name`) FROM `user` WHERE `status`='deleted'
 all, count, err := Model("user").Fields("uid", "name").Where("status", "deleted").Limit(0, 10).AllAndCount(true)

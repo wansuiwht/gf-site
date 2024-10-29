@@ -8,7 +8,7 @@ hide_title: true
 
 该方法定义如下：
 
-```
+```go
 // Scan automatically calls MapToMap, MapToMaps, Struct or Structs function according to
 // the type of parameter `pointer` to implement the converting.
 // It calls function MapToMap if `pointer` is type of *map to do the converting.

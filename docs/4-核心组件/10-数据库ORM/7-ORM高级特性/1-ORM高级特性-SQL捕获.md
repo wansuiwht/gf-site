@@ -10,7 +10,7 @@ hide_title: true
 
 我们可以使用 `gdb.CatchSQL` 方法来捕获指定范围内执行的 `SQL` 列表。该方法的定义如下：
 
-```
+```go
 // CatchSQL catches and returns all sql statements that are EXECUTED in given closure function.
 // Be caution that, all the following sql statements should use the context object passing by function `f`.
 func CatchSQL(ctx context.Context, f func(ctx context.Context) error) (sqlArray []string, err error)
@@ -89,7 +89,7 @@ func main() {
 
 我们可以通过 `gdb.ToSQL` 来将给定的 `SQL` 操作转换为 `SQL` 语句，并不真正提交执行。该方法的定义如下：
 
-```
+```go
 // ToSQL formats and returns the last one of sql statements in given closure function
 // WITHOUT TRULY EXECUTING IT.
 // Be caution that, all the following sql statements should use the context object passing by function `f`.

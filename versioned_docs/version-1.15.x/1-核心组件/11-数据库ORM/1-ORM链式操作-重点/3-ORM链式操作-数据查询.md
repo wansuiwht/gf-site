@@ -187,7 +187,7 @@ r, err := db.Table("student").Order("class asc,course asc,score desc").All()
 
 同时， `goframe` 的 `ORM` 提供了一些常用的排序方法：
 
-```
+```go
 // 按照指定字段递增排序
 func (m *Model) OrderAsc(column string) *Model
 // 按照指定字段递减排序
@@ -198,7 +198,7 @@ func (m *Model) OrderRandom() *Model
 
 使用示例：
 
-```
+```go
 // SELECT `id`,`title` FROM `article` ORDER BY `created_at` ASC
 db.Model("article").Fields("id,title").OrderAsc("created_at").All()
 // SELECT `id`,`title` FROM `article` ORDER BY `views` DESC
@@ -349,7 +349,7 @@ r, err := db.Table("user").Where(User{
 
 为提高易用性，当传递的 `slice` 参数为空或 `nil` 时，查询并不会报错，而是转换为一个 `false` 条件语句。
 
-```
+```go
 // SELECT * FROM `user` WHERE 0=1
 r, err := db.Table("user").Where("uid", g.Slice{}).All()
 r, err := db.Table("user").Where("uid", nil).All()
@@ -366,7 +366,7 @@ func (m *Model) WhereOrNotIn(column string, in interface{}) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `gender`=1 AND `type` IN(1,2,3)
 db.Model("user").Where("gender", 1).WhereIn("type", g.Slice{1,2,3}).All()
 // SELECT * FROM `user` WHERE `gender`=1 AND `type` NOT IN(1,2,3)
@@ -399,7 +399,7 @@ func (m *Model) WhereOrNotLike(column string, like interface{}) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `gender`=1 AND `name` LIKE 'john%'
 db.Model("user").Where("gender", 1).WhereLike("name", "john%").All()
 // SELECT * FROM `user` WHERE `gender`=1 AND `name` NOT LIKE 'john%'
@@ -415,7 +415,7 @@ db.Model("user").Where("gender", 1).WhereOrNotLike("name", "john%").All()
 
 我们直接将统计方法使用在 `Fields` 方法上，例如：
 
-```
+```go
 // SELECT MIN(score) FROM `user` WHERE `uid`=1
 db.Table("user").Fields("MIN(score)").Where("uid", 1).Value()
 // SELECT MAX(score) FROM `user` WHERE `uid`=1
@@ -437,7 +437,7 @@ func (m *Model) Sum(column string) (float64, error)
 
 上面的示例使用快捷统计方法改造后：
 
-```
+```go
 // SELECT MIN(`score`) FROM `user` WHERE `uid`=1
 db.Table("user").Where("uid", 1).Min("score")
 // SELECT MAX(`score`) FROM `user` WHERE `uid`=1
@@ -488,7 +488,7 @@ func (m *Model) Distinct() *Model
 
 使用示例：
 
-```
+```go
 // SELECT COUNT(DISTINCT `name`) FROM `user`
 db.Table("user").Distinct().CountColumn("name")
 // SELECT COUNT(DISTINCT uid,name) FROM `user`
@@ -514,7 +514,7 @@ func (m *Model) WhereOrNotBetween(column string, min, max interface{}) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `gender`=0 AND `age` BETWEEN 16 AND 20
 db.Model("user").Where("gender", 0).WhereBetween("age", 16, 20).All()
 // SELECT * FROM `user` WHERE `gender`=0 AND `age` NOT BETWEEN 16 AND 20
@@ -539,7 +539,7 @@ func (m *Model) WhereOrNotNull(columns ...string) *Model
 
 使用示例：
 
-```
+```go
 // SELECT * FROM `user` WHERE `created_at` > '2021-05-01 00:00:00' AND `inviter` IS NULL
 db.Model("user").Where("created_at>?", gtime.New("2021-05-01")).WhereNull("inviter").All()
 // SELECT * FROM `user` WHERE `created_at` > '2021-05-01 00:00:00' AND `inviter` IS NOT NULL
@@ -553,7 +553,7 @@ db.Model("user").Where("created_at>?", gtime.New("2021-05-01")).WhereOrNotNull("
 
 同时，这几个方法的参数支持多个字段输入，例如：
 
-```
+```go
 // SELECT * FROM `user` WHERE `created_at` > '2021-05-01 00:00:00' AND `inviter` IS NULL AND `creator` IS NULL
 db.Model("user").Where("created_at>?", gtime.New("2021-05-01")).WhereNull("inviter", "creator").All()
 ```

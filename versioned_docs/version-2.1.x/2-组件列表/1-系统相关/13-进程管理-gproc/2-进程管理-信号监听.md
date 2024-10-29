@@ -10,7 +10,7 @@ hide_title: true
 
 相关方法：
 
-```
+```go
 // AddSigHandler adds custom signal handler for custom one or more signals.
 func AddSigHandler(handler SigHandler, signals ...os.Signal)
 

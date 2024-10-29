@@ -214,7 +214,7 @@ type ConfigNode  struct {
 
 接口文档： [https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb](https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb)
 
-```
+```go
 // 添加一个数据库节点到指定的分组中
 func AddConfigNode(group string, node ConfigNode)
 // 添加一个配置分组到数据库配置管理中(同名覆盖)

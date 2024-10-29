@@ -12,7 +12,7 @@ hide_title: true
 
 `Structs` 方法定义如下：
 
-```
+```go
 // Structs converts any slice to given struct slice.
 func Structs(params interface{}, pointer interface{}, mapping ...map[string]string) (err error)
 ```

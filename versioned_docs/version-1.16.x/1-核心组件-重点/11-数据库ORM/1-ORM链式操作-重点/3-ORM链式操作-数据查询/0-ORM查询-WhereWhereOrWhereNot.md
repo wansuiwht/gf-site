@@ -53,7 +53,7 @@ func (m *Model) WhereOrNotNull(columns ...string) *Model
 
 使用示例：
 
-```
+```go
 // WHERE `uid`=1
 Where("uid=1")
 Where("uid", 1)
@@ -93,7 +93,7 @@ Where(Condition{1, 18})
 
 `Where + string`，条件参数使用字符串和预处理。
 
-```
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 
@@ -122,7 +122,7 @@ db.Model("user").Where("uid=?", 1).Or("name=?", "john").One()
 
 `Where + slice`，预处理参数可直接通过 `slice` 参数给定。
 
-```
+```go
 // SELECT * FROM user WHERE age>18 AND name like '%john%'
 db.Model("user").Where("age>? AND name like ?", g.Slice{18, "%john%"}).All()
 
@@ -132,7 +132,7 @@ db.Model("user").Where("status=?", g.Slice{1}).All()
 
 `Where + map`，条件参数使用任意 `map` 类型传递。
 
-```
+```go
 // SELECT * FROM user WHERE uid=1 AND name='john' LIMIT 1
 db.Model("user").Where(g.Map{"uid" : 1, "name" : "john"}).One()
 
@@ -172,7 +172,7 @@ db.Model("article").Where(condition).All()
 
 `WherePri` 方法的功能同 `Where`，但提供了对表主键的智能识别，常用于根据主键的便捷数据查询。假如 `user` 表的主键为 `uid`，我们来看一下 `Where` 与 `WherePri` 的区别：
 
-```
+```go
 // WHERE `uid`=1
 Where("uid", 1)
 WherePri(1)

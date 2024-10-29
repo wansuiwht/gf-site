@@ -73,7 +73,7 @@ db, err := gdb.New(gdb.ConfigNode{
 
 ### 获取数据库对象单例
 
-```
+```go
 // 获取默认配置的数据库对象(配置名称为"default")
 db := g.DB()
 

@@ -198,7 +198,7 @@ fmt.Println(r.ReadAllString())
 
 
 
-```
+```go
 // 返回content为[]bytes类型
 content := g.Client().PostBytes(ctx,
        "http://user.svc/v1/user/create",
@@ -218,7 +218,7 @@ content := g.Client().PostBytes(ctx,
 
 
 
-```
+```go
 // 返回content为string类型
 content := g.Client().PostContent(ctx,
        "http://user.svc/v1/user/create",
@@ -240,13 +240,13 @@ type User struct {
 }
 ```
 
-```
+```go
 // Struct
 var user *User
 g.Client().GetVar(ctx, url).Scan(&user)
 ```
 
-```
+```go
 // Struct数组
 var users []*User
 g.Client().GetVar(ctx, url).Scan(&users)

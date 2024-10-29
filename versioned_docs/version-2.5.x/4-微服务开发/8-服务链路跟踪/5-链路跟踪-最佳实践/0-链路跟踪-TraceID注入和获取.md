@@ -30,7 +30,7 @@ hide_title: true
 
 通过 `gctx.New/WithCtx` 方法创建一个带有 `TraceID` 的 `Context`，该 `Context` 参数用于传递给请求方法。随后可以通过 `gctx.CtxId` 方法获取整个链路的 `TraceID`。相关方法：
 
-```
+```go
 // New creates and returns a context which contains context id.
 func New() context.Context
 
@@ -44,7 +44,7 @@ func WithCtx(ctx context.Context) context.Context
 
 这里还有个高级的用法，客户端可以自定义 `TraceID`，使用 `gtrace.WithTraceID` 方法。方法定义如下：
 
-```
+```go
 // WithTraceID injects custom trace id into context to propagate.
 func WithTraceID(ctx context.Context, traceID string) (context.Context, error)
 ```
@@ -57,7 +57,7 @@ func WithTraceID(ctx context.Context, traceID string) (context.Context, error)
 
 如果使用 `GoFrame` 框架的 `Server`，直接通过 `gctx.CtxId` 方法即可获取 `TraceID`。相关方法：
 
-```
+```go
 // CtxId retrieves and returns the context id from context.
 func CtxId(ctx context.Context) string
 ```

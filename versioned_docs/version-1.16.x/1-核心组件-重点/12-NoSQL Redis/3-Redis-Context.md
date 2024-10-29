@@ -6,7 +6,7 @@ hide_title: true
 
 `gredis` 组件支持 `Context` 上下文变量的传递，主要用于请求控制、链路跟踪特性等场景。上下文变量传递可以通过 `Ctx` 链式操作方法实现，方法定义如下：
 
-```
+```go
 // Ctx is a channing function which sets the context for next operation.
 func (r *Redis) Ctx(ctx context.Context) *Redis
 ```
