@@ -7,10 +7,10 @@ const githubUrl = `https://api.github.com/repos/gogf/gf/contributors`
 // 生成 svg 的位置
 const svgPath = "../../static/img/contributors.svg"
 // 单个头像的质量, 1 - 100
-const quality = 10
+const quality = 5
 
 // 单个头像的宽高
-const width = 64, height = 64
+const width = 62, height = 62
 // 头像之间的间距
 const xSpace = 4, ySpace = 4
 // 每一行的头像数量
@@ -60,10 +60,7 @@ async function genSvg(data) {
     let svgHeight = (height + ySpace) * contributorsArr.length + ySpace
 
     // 创建 svg 内容
-    let svgContent = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="${svgWidth}" height="${svgHeight}">
-            <style> .gf-svg { cursor:pointer } </style>
-        `
+    let svgContent = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgWidth}" height="${svgHeight}"><style> .gf-svg { cursor:pointer } </style>`
 
     // x 表示头像的 x 坐标，y 表示头像的 y 坐标
     // 初始从左上角开始
@@ -82,6 +79,9 @@ async function genSvg(data) {
     }
 
     svgContent += `</svg>`
+
+    // 精简 svg 内容
+    svgContent = svgContent.replace(/>\s+</g, "><")
 
     // 保存 svg 文件
     fs.writeFileSync(svgPath, svgContent)
@@ -110,20 +110,10 @@ async function generateAvatar(contributor, x, y) {
     const base64Image = await convertImageToBase64(contributor.avatar_url)
     const clipPathId = `clip-${contributor.login}`
 
-    return `
-        <defs>
-          <clipPath id="${clipPathId}">
-            <circle cx="${x + width / 2}" cy="${y + height / 2}" r="${width / 2}" />
-          </clipPath>
-        </defs>
-        <a
-          class="gf-svg" target="_blank" rel="nofollow"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="${contributor.html_url}" 
-          id="${contributor.login}">
-          <image x="${x}" y="${y}" width="${width}" height="${height}" xlink:href="${base64Image}" clip-path="url(#${clipPathId})"/>
-        </a>
+    return `<defs><clipPath id="${clipPathId}"><circle cx="${x + width / 2}" cy="${y + height / 2}" r="${width / 2}" /></clipPath></defs>
+    <a class="gf-svg" target="_blank" rel="nofollow" xlink:href="${contributor.html_url}" id="${contributor.login}">
+      <image x="${x}" y="${y}" width="${width}" height="${height}" xlink:href="${base64Image}" clip-path="url(#${clipPathId})"/>
+    </a>
     `
 }
 
