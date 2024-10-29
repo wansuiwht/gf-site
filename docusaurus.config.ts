@@ -76,17 +76,6 @@ const config: Config = {
         // ... other options
       },
     ],
-    // 常见问题
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'faq',
-        path: 'faq',
-        routeBasePath: 'faq',
-        sidebarPath: require.resolve('./sidebars.ts'),
-        // ... other options
-      },
-    ],
     // 版本发布
     [
       '@docusaurus/plugin-content-docs',
@@ -178,13 +167,6 @@ const config: Config = {
               to: '/docs/服务可观测性',
             },
           ],
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          docsPluginId: 'faq',
-          position: 'right',
-          label: '常见问题',
         },
         {
           type: 'docSidebar',
