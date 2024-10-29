@@ -1,6 +1,7 @@
 ---
 title: 'ORM最佳实践'
 sidebar_position: 10
+hide_title: true
 ---
 
 ## 查询时避免返回对象初始化及 `sql.ErrNoRows` 判断

@@ -1,6 +1,7 @@
 ---
 title: 'ghash (经典哈希函数)'
 sidebar_position: 4
+hide_title: true
 ---
 
 常用经典哈希函数Go语言实现，提供 `uint32` 及 `uint64` 类型的哈希函数。

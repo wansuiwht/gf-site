@@ -1,6 +1,7 @@
 ---
 title: 'gsha1 (SHA1算法)'
 sidebar_position: 3
+hide_title: true
 ---
 
 SHA1算法。

@@ -1,6 +1,7 @@
 ---
 title: 'gvar (通用变量)'
 sidebar_position: 4
+hide_title: true
 ---
 
 `通用动态变量`，支持各种内置的数据类型转换，可以作为 `interface{}` 类型的替代数据类型，并且该类型支持并发安全开关。

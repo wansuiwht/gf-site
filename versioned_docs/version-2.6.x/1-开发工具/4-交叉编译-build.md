@@ -1,6 +1,7 @@
 ---
 title: '交叉编译-build'
 sidebar_position: 4
+hide_title: true
 ---
 
 ## 使用方式

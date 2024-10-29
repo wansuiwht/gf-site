@@ -1,6 +1,7 @@
 ---
 title: 'gtime (时间管理模块)'
 sidebar_position: 1
+hide_title: true
 ---
 
 通用时间管理模块，封装了常用的时间/日期相关的方法。并支持自定义的日期格式化语法，格式化语法灵感来源于 `PHP` 的 `date` 函数语法 ( [http://php.net/manual/zh/function.date.php](http://php.net/manual/zh/function.date.php) )。

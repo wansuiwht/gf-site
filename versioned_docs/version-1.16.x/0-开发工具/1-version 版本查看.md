@@ -1,6 +1,7 @@
 ---
 title: 'version 版本查看'
 sidebar_position: 1
+hide_title: true
 ---
 
 使用方式：

@@ -1,6 +1,7 @@
 ---
 title: 'ORM事务操作'
 sidebar_position: 3
+hide_title: true
 ---
 
 使用 `goframe` 的 `ORM` 组件进行事务操作比较简便，可以通过两种操作方式来实现。

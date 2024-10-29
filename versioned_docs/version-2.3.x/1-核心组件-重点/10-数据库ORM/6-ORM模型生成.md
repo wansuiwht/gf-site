@@ -1,6 +1,7 @@
 ---
 title: 'ORM模型生成'
 sidebar_position: 6
+hide_title: true
 ---
 
 ## 模型自动生成

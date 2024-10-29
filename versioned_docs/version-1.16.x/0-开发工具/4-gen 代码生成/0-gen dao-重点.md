@@ -1,6 +1,7 @@
 ---
 title: 'gen dao(重点)'
 sidebar_position: 0
+hide_title: true
 ---
 
 `dao` 命令用于生成 `dao` 数据访问对象文件，以及 `model` 数据结构定义文件。推荐使用配置文件来管理生成规则。

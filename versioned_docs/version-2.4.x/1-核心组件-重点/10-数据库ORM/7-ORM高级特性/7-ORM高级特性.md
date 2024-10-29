@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性'
 sidebar_position: 7
+hide_title: true
 ---
 
 - [ORM高级特性-调试模式](output/goframe-v2.4-md/核心组件-重点/数据库ORM/ORM高级特性/ORM高级特性-调试模式)

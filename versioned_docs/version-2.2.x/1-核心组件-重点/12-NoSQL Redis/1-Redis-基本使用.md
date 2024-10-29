@@ -1,6 +1,7 @@
 ---
 title: 'Redis-基本使用'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## `Do` 方法

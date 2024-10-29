@@ -1,6 +1,7 @@
 ---
 title: 'HTTPClient-自定义Header'
 sidebar_position: 3
+hide_title: true
 ---
 
 HTTP客户端发起请求时可以自定义发送给服务端的 `Header` 内容，该特性使用 `SetHeader*` 相关方法实现。

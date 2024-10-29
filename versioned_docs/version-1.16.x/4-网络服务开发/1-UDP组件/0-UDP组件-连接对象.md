@@ -1,6 +1,7 @@
 ---
 title: 'UDP组件-连接对象'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gudp` 模块提供了非常简便易用的 `gudp.Conn` 链接操作对象。

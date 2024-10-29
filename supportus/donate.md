@@ -1,6 +1,7 @@
 ---
 title: '来杯咖啡'
-sidebar_position: 1
+sidebar_position: 0
+hide_title: true
 ---
 
 We currently accept donation by `Wechat`/ `Alipay`/ `Gitee`, please note your `github`/ `gitee` account in your payment bill.

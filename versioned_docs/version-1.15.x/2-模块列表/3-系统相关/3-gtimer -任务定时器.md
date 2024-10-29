@@ -1,6 +1,7 @@
 ---
 title: 'gtimer (任务定时器)'
 sidebar_position: 3
+hide_title: true
 ---
 
 `gtimer` 是一个并发安全的高性能任务定时器，类似于 `Java` 的 `Timer`。 `gtimer` 内部实现采用灵活高效的分层时间轮（ `Hierarchical Timing Wheel`）设计，被设计为可单进程管理维护百万级别以上数量的定时任务。 `gtimer` 任务定时器与 `gcron` 定时任务模块区别:

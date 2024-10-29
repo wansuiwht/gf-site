@@ -1,6 +1,7 @@
 ---
 title: 'gbase64 (BASE64编解码)'
 sidebar_position: 3
+hide_title: true
 ---
 
 `BASE64` 编码解析。

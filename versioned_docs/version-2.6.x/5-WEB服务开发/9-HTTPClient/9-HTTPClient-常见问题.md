@@ -1,6 +1,7 @@
 ---
 title: 'HTTPClient-常见问题'
 sidebar_position: 9
+hide_title: true
 ---
 
 ## 是否需要保存复用创建的 `gclient.Client` 对象

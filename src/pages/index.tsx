@@ -289,7 +289,7 @@ function Contributors() {
                     贡献者列表
                 </h1>
                 <div className="text-center mb-10">
-                    感谢所有参与<code>GoFrame</code>开发的贡献者!!!
+                💖感谢所有参与<code>GoFrame</code>开源建设的贡献者💖
                 </div>
                 <div className="contributors text-center">
                     <ContributorsSVG title="GoFrame Contributors" />

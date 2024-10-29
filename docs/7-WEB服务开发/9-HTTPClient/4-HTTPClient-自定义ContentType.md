@@ -1,6 +1,7 @@
 ---
 title: 'HTTPClient-自定义ContentType'
 sidebar_position: 4
+hide_title: true
 ---
 
 ## 示例1，提交 `Json` 请求

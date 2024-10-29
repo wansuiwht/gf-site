@@ -1,6 +1,7 @@
 ---
 title: '数据返回-Stream返回'
 sidebar_position: 6
+hide_title: true
 ---
 
 我们可以很简单实现HTTP流式数据返回。

@@ -1,6 +1,7 @@
 ---
 title: 'gvar (通用变量)'
 sidebar_position: 4
+hide_title: true
 ---
 
 ![](/markdown/fddd8301173dc4a4c61bb31538f6a0e1.png)

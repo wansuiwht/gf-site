@@ -1,6 +1,7 @@
 ---
 title: '日志组件-Flags特性'
 sidebar_position: 3
+hide_title: true
 ---
 
 `flags` 用于控制日志组件的额外特性开关，这些属性使用常量进行组合控制，包括：

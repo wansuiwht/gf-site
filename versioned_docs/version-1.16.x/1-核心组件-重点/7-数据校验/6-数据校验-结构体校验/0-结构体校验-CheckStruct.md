@@ -1,6 +1,7 @@
 ---
 title: '结构体校验-CheckStruct'
 sidebar_position: 0
+hide_title: true
 ---
 
 `CheckStruct` 的使用方式同 `CheckMap`，除了第一个参数为 `struct类型` 的结构体对象（也可以是对象指针）。

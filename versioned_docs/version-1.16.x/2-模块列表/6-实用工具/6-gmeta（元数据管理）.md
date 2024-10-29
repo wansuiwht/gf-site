@@ -1,6 +1,7 @@
 ---
 title: 'gmeta（元数据管理）'
 sidebar_position: 6
+hide_title: true
 ---
 
 ## 基本介绍

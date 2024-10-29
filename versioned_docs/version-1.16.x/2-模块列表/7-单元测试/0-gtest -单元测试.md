@@ -1,6 +1,7 @@
 ---
 title: 'gtest (单元测试)'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gtest` 模块提供了简便化的、轻量级的、常用的单元测试方法。是基于标准库 `testing` 的功能扩展封装，主要增加实现了以下特性：

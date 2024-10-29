@@ -1,6 +1,7 @@
 ---
 title: '链路跟踪-HTTP示例-Baggage'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## `baggage` 链路数据传递

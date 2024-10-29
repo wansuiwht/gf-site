@@ -1,6 +1,7 @@
 ---
 title: 'install 工具安装'
 sidebar_position: 0
+hide_title: true
 ---
 
 项目地址： [https://github.com/gogf/gf-cli](https://github.com/gogf/gf-cli)

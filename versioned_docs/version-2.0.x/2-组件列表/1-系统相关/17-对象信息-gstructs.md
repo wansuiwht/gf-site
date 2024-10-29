@@ -1,6 +1,7 @@
 ---
 title: '对象信息-gstructs'
 sidebar_position: 17
+hide_title: true
 ---
 
 ## 基本介绍

@@ -1,6 +1,7 @@
 ---
 title: 'Redis-结果处理'
 sidebar_position: 3
+hide_title: true
 ---
 
 可以看到通过客户端方法 `Do/Receive` 获取可供方便转换的 `gvar.Var` 通用变量结果。通过 `gvar.Var` 的强大转换功能可以转换为任意的数据类型，如基本数据类型 `Int`, `String`, `Strings`，或者结构体 `Struct` 等等。

@@ -1,6 +1,7 @@
 ---
 title: '兼容修复-fix'
 sidebar_position: 9
+hide_title: true
 ---
 
 该命令从框架 `v2.3` 版本开始提供。

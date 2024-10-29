@@ -1,6 +1,7 @@
 ---
 title: 'TCP组件-连接对象'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gtcp` 模块提供了简便易用的 `gtcp.Conn` 链接操作对象。

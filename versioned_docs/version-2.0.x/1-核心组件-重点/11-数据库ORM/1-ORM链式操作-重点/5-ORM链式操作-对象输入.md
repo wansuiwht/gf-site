@@ -1,6 +1,7 @@
 ---
 title: 'ORM链式操作-对象输入'
 sidebar_position: 5
+hide_title: true
 ---
 
 `Data/Where/WherePri/And/Or` 方法支持任意的 `string/map/slice/struct/*struct` 数据类型参数，该特性为 `gdb` 提供了很高的灵活性。当使用 `struct`/ `*struct` 对象作为输入参数时，将会被自动解析为 `map` 类型，只有 `struct` 的 **公开属性** 能够被转换，并且支持 `orm`/ `gconv`/ `json` 标签，用于定义转换后的键名，即与表字段的映射关系。

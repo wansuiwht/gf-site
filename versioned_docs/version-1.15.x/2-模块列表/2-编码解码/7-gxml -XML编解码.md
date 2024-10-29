@@ -1,6 +1,7 @@
 ---
 title: 'gxml (XML编解码)'
 sidebar_position: 7
+hide_title: true
 ---
 
 XML数据格式编码解析。

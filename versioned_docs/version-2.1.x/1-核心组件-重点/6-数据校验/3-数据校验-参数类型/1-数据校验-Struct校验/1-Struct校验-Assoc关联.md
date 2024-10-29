@@ -1,6 +1,7 @@
 ---
 title: 'Struct校验-Assoc关联'
 sidebar_position: 1
+hide_title: true
 ---
 
 为了避免结构体默认值带来的困惑，从 `goframe v2.0` 版本开始，我们增加了一个 `Assoc` 方法，用于结构体校验时严格按照给定的参数而不是按照结构体的属性值，而校验规则同样会自动读取结构体中的 `gvalid tag`。

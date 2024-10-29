@@ -1,6 +1,7 @@
 ---
 title: 'gpool (对象复用池)'
 sidebar_position: 8
+hide_title: true
 ---
 
 对象复用池（并发安全）。将对象进行缓存复用，支持 `过期时间`、 `创建方法` 及 `销毁方法` 定义。

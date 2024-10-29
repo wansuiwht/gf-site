@@ -1,6 +1,7 @@
 ---
 title: 'gyaml (YAML编解码)'
 sidebar_position: 9
+hide_title: true
 ---
 
 `YAML` 数据格式编码解析。

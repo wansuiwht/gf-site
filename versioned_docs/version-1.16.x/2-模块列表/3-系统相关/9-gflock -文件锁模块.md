@@ -1,6 +1,7 @@
 ---
 title: 'gflock (文件锁模块)'
 sidebar_position: 9
+hide_title: true
 ---
 
 文件锁常用于多进程的互斥锁操作，当一个进程对指定文件锁进程 `Lock` 之后，其他进程将会被阻塞等待，直到该文件锁被同一个进程 `Unlock`(或者对应进程退出)。同时， `gflock` 也支持类 `TryLock/TryRLock` 特性。 `gflock` 的文件锁特性是依靠底层系统提供的文件锁API实现的。

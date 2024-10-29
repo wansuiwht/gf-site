@@ -1,6 +1,7 @@
 ---
 title: 'gstr (字符串处理)'
 sidebar_position: 1
+hide_title: true
 ---
 
 `gstr` 提供了丰富的字符串处理方法。

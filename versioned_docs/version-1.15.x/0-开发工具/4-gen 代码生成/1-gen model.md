@@ -1,6 +1,7 @@
 ---
 title: 'gen model'
 sidebar_position: 1
+hide_title: true
 ---
 
 `gen model` 命令生成的 `model` 采用包管理方式维护数据表操作及数据结构定义，一张数据表一个包。未来不再推荐这种方式，而是推荐使用 `dao` 的使用方式，具体请参考 [gen dao](output/goframe-v1.15-md/开发工具/gen%20代码生成/gen%20dao) 命令及 DAO数据访问对象设计。

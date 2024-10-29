@@ -1,6 +1,7 @@
 ---
 title: 'Session-文件存储'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 文件存储

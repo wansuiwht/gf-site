@@ -1,4 +1,4 @@
-const LATEST_VERSION_LABEL = '2.8.0-beta';
+const LATEST_VERSION_LABEL = 'Latest';
 
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
@@ -153,11 +153,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'quick',
-          position: 'right',
+          position: 'left',
           label: '快速开始',
         },
         {
-          position: 'right',
+          position: 'left',
           label: '开发手册',
           items: [
             {
@@ -190,7 +190,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'release',
-          position: 'right',
+          position: 'left',
           label: '发布记录',
         },
 
@@ -198,14 +198,14 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'communication',
-          position: 'right',
+          position: 'left',
           label: '技术交流',
         },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           docsPluginId: 'supportus',
-          position: 'right',
+          position: 'left',
           label: '支持我们',
         },
         {

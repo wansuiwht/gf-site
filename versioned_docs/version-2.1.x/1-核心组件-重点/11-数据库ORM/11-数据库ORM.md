@@ -1,6 +1,7 @@
 ---
 title: '数据库ORM'
 sidebar_position: 11
+hide_title: true
 ---
 
 ## 驱动引入

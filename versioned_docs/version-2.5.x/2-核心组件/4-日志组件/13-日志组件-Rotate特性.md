@@ -1,6 +1,7 @@
 ---
 title: '日志组件-Rotate特性'
 sidebar_position: 13
+hide_title: true
 ---
 
 滚动切分目前属于实验性特性，如有问题请随时反馈。

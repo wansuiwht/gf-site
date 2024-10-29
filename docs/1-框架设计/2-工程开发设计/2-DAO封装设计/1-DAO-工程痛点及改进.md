@@ -1,6 +1,7 @@
 ---
 title: 'DAO-工程痛点及改进'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## 一、基本介绍

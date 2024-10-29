@@ -1,6 +1,7 @@
 ---
 title: '日志组件-Json格式'
 sidebar_position: 2
+hide_title: true
 ---
 
 `glog` 对日志分析工具非常友好，支持输出 `JSON` 格式的日志内容，以便于后期对日志内容进行解析分析。想要支持 `JSON` 数据格式的日志输出非常简单，给打印方法提供 `map`/ `struct` 类型参数即可。

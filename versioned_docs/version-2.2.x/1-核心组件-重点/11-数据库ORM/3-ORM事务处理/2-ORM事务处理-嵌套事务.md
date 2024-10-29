@@ -1,6 +1,7 @@
 ---
 title: 'ORM事务处理-嵌套事务'
 sidebar_position: 2
+hide_title: true
 ---
 
 从 `GoFrame ORM` 支持数据库嵌套事务。需要注意的是，数据库服务往往并不支持嵌套事务，而是依靠 `ORM` 组件层通过 `Transaction Save Point` 特性实现的。相关方法：

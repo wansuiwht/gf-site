@@ -1,6 +1,7 @@
 ---
 title: 'Redis-结果处理'
 sidebar_position: 2
+hide_title: true
 ---
 
 可以看到通过客户端方法 `Do/Receive` 获取的数据都是二进制形式 `[]byte` 的，需要开发者手动进行数据转换。

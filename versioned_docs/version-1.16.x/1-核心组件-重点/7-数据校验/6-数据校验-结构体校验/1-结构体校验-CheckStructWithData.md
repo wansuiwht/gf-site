@@ -1,6 +1,7 @@
 ---
 title: '结构体校验-CheckStructWithData'
 sidebar_position: 1
+hide_title: true
 ---
 
 为了避免结构体默认值带来的困惑，从 `goframe v1.16` 版本开始，我们增加了一个新的结构体校验方法 `CheckStructWithData`，用于结构体校验时严格按照给定的 `map` 参数而不是按照结构体的属性值，而校验规则同样会自动读取结构体中的 `gvalid tag`。我们来看一个示例，我们将之前的示例进行简单的修改：

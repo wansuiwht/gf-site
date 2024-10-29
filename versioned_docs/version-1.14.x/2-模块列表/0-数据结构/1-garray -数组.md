@@ -1,6 +1,7 @@
 ---
 title: 'garray (数组)'
 sidebar_position: 1
+hide_title: true
 ---
 
 数组容器，提供普通数组，及排序数组，支持数据项唯一性矫正，支持并发安全开关控制。

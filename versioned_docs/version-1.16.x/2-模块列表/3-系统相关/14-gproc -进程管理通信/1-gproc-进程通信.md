@@ -1,6 +1,7 @@
 ---
 title: 'gproc-进程通信'
 sidebar_position: 1
+hide_title: true
 ---
 
 目前gproc组件提供的进程通信特性属于实验性特性！

@@ -1,6 +1,7 @@
 ---
 title: '请求输入-JSON/XML'
 sidebar_position: 3
+hide_title: true
 ---
 
 从 `GoFrame v1.11` 版本开始， `Request` 对象提供了对客户端提交的 `JSON/XML` 数据格式的原生支持，为开发者提供了更便捷的数据获取特性，以进一步提高开发效率。

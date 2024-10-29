@@ -1,6 +1,7 @@
 ---
 title: '日志组件-Stack特性'
 sidebar_position: 4
+hide_title: true
 ---
 
 错误日志信息支持 `stack` 特性，该特性可以自动打印出当前调用日志组件方法的堆栈信息，该堆栈信息可以通过 `Notice*/Warning*/Error*/Critical*/Panic*/Fatal*` 等错误日志输出方法触发，也可以通过 `GetStack/PrintStack` 获取/打印。错误信息的 `stack` 信息对于调试来说相当有用。

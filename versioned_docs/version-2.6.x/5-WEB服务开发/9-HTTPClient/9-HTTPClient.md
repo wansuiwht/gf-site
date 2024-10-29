@@ -1,6 +1,7 @@
 ---
 title: 'HTTPClient'
 sidebar_position: 9
+hide_title: true
 ---
 
 ## 基本介绍

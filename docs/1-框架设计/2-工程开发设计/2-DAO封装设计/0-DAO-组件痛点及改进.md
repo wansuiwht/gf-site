@@ -1,6 +1,7 @@
 ---
 title: 'DAO-组件痛点及改进'
 sidebar_position: 0
+hide_title: true
 ---
 
 关于 `DAO` 数据访问对象设计其实是关于 `GoFrame` 框架工程化实践中比较重要一块设计。

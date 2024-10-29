@@ -1,6 +1,7 @@
 ---
 title: 'gen model'
 sidebar_position: 1
+hide_title: true
 ---
 
 `gen model` 命令生成的 `model` 采用包管理方式维护数据表操作及数据结构定义，一张数据表一个包。

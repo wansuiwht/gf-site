@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性-类型转换'
 sidebar_position: 5
+hide_title: true
 ---
 
 `gdb` 的数据记录结果（ `Value`）支持非常灵活的类型转换，并内置支持常用的数十种数据类型的转换。 `Result`/ `Record` 的类型转换请查看后续 [ORM高级特性](https://itician.org/database/gdb/senior) 章节。

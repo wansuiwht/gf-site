@@ -1,6 +1,7 @@
 ---
 title: '树形类型-gtree'
 sidebar_position: 7
+hide_title: true
 ---
 
 ## 基本介绍

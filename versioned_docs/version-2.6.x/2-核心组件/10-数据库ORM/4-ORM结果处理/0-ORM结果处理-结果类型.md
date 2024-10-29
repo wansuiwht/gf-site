@@ -1,6 +1,7 @@
 ---
 title: 'ORM结果处理-结果类型'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 一、数据结构

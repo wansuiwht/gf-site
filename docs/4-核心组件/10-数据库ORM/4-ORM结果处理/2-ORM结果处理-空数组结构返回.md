@@ -1,6 +1,7 @@
 ---
 title: 'ORM结果处理-空数组结构返回'
 sidebar_position: 2
+hide_title: true
 ---
 
 ## 痛点描述

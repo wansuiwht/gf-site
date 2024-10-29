@@ -1,6 +1,7 @@
 ---
 title: '安全类型-gtype'
 sidebar_position: 5
+hide_title: true
 ---
 
 ## 基本介绍

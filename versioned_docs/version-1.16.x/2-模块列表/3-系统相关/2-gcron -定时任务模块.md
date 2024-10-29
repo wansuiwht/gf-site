@@ -1,6 +1,7 @@
 ---
 title: 'gcron (定时任务模块)'
 sidebar_position: 2
+hide_title: true
 ---
 
 `gcron` 模块提供了对定时任务的实现，支持类似 `crontab` 的配置管理方式，并支持最小粒度到 `秒` 的定时任务管理。

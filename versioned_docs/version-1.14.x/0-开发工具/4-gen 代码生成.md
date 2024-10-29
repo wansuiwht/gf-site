@@ -1,6 +1,7 @@
 ---
 title: 'gen 代码生成'
 sidebar_position: 4
+hide_title: true
 ---
 
 使用方式： `gf gen TYPE [OPTION]`

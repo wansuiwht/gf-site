@@ -1,6 +1,7 @@
 ---
 title: 'init 项目创建'
 sidebar_position: 2
+hide_title: true
 ---
 
 使用方式：

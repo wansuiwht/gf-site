@@ -1,6 +1,7 @@
 ---
 title: 'ORM链式操作-写入保存'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## `Insert/Replace/Save`

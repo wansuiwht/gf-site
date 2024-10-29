@@ -1,6 +1,7 @@
 ---
 title: 'swagger API文档生成'
 sidebar_position: 6
+hide_title: true
 ---
 
 使用方式：

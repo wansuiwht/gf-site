@@ -1,6 +1,7 @@
 ---
 title: 'mod 包管理扩展功能'
 sidebar_position: 10
+hide_title: true
 ---
 
 使用方式： `gf mod path`

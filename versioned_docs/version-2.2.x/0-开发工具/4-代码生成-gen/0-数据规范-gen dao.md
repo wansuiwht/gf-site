@@ -1,6 +1,7 @@
 ---
 title: '数据规范-gen dao'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gen dao` 命令是 `CLI` 中最频繁使用、也是框架设计的工程规范能否准确落地的关键命令。该命令用于生成 `dao` 数据访问对象、 `do` 数据转化模型及 `entity` 实例数据模型 `Go` 代码文件。由于该命令的参数、选项较多，我们推荐使用配置文件来管理生成规则。

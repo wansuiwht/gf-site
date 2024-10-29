@@ -1,6 +1,7 @@
 ---
 title: 'guuid (UUID)'
 sidebar_position: 5
+hide_title: true
 ---
 
 `guuid` 提供了通用的 `UUID` 生成功能。

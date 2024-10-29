@@ -1,6 +1,7 @@
 ---
 title: 'HTTPServer-监控指标'
 sidebar_position: 11
+hide_title: true
 ---
 
 `HTTP Server` 支持监控指标能力，默认是关闭的不影响性能，只有在 `metric` 特性全局开启时该组件才会默认开启监控指标计算和生成功能。

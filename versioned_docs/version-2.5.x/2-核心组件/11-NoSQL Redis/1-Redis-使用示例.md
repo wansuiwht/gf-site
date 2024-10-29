@@ -1,6 +1,7 @@
 ---
 title: 'Redis-使用示例'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## `Set/Get` 操作

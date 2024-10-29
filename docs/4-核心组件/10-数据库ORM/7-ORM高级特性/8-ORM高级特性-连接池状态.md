@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性-连接池状态'
 sidebar_position: 8
+hide_title: true
 ---
 
 我们可以通过 `DB.Stats` 方法获取 `orm` 对象的连接池状态。我们来看个示例：

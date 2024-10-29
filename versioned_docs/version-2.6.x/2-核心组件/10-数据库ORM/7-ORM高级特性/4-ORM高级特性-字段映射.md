@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性-字段映射'
 sidebar_position: 4
+hide_title: true
 ---
 
 ## 基本介绍

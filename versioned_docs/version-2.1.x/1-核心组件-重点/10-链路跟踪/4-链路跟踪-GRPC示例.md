@@ -1,6 +1,7 @@
 ---
 title: '链路跟踪-GRPC示例'
 sidebar_position: 4
+hide_title: true
 ---
 
 在本章节中，我们将之前介绍 `HTTP Client&Server` 的示例修改为 `GRPC` 微服务，并演示如何使用 `GoFrame` 框架开发一个简单的 `GRPC` 服务端和客户端，并且为 `GRPC` 微服务增加链路跟踪特性。

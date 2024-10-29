@@ -1,6 +1,7 @@
 ---
 title: '唯一数-guid'
 sidebar_position: 1
+hide_title: true
 ---
 
 `guid` 提供了更简便更高性能的全局唯一数生成功能。生成的 `uid` 字符串仅包含 **数字及小写英文字符**。

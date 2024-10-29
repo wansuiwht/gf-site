@@ -1,6 +1,7 @@
 ---
 title: '枚举维护-gen enums'
 sidebar_position: 3
+hide_title: true
 ---
 
 该功能特性为 **实验性特性**，从 `v2.4` 版本开始提供。

@@ -1,6 +1,7 @@
 ---
 title: 'grpool (Goroutine池)'
 sidebar_position: 16
+hide_title: true
 ---
 
 ## 基本介绍

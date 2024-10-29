@@ -1,6 +1,7 @@
 ---
 title: 'ORM事务处理-常规操作'
 sidebar_position: 0
+hide_title: true
 ---
 
 常规的事务操作方法为 `Begin/Commit/Rollback`，每一个方法指定特定的事务操作。开启事务操作可以通过执行 `db.Begin` 方法，该方法返回事务的操作接口，类型为 `gdb.Tx`，通过该对象执行后续的数据库操作，并可通过 `tx.Commit` 提交修改，或者通过 `tx.Rollback` 回滚修改。

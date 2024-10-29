@@ -1,6 +1,7 @@
 ---
 title: '互斥锁-gmutex'
 sidebar_position: 2
+hide_title: true
 ---
 
 `gmutex.Mutex` 互斥锁对象支持读写控制，互斥锁功能逻辑与标准库 `sync.RWMutex` 类似，可并发读但不可并发写。

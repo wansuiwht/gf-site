@@ -1,6 +1,7 @@
 ---
 title: 'install 工具安装'
 sidebar_position: 0
+hide_title: true
 ---
 
 使用方式： `./gf install`

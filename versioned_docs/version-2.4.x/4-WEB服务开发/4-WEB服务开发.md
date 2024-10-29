@@ -1,6 +1,7 @@
 ---
 title: 'WEB服务开发'
 sidebar_position: 4
+hide_title: true
 ---
 
 - [开始使用](output/goframe-v2.4-md/WEB服务开发/开始使用)

@@ -1,6 +1,7 @@
 ---
 title: 'update 工具更新'
 sidebar_position: 11
+hide_title: true
 ---
 
 使用方式： `gf update`

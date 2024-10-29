@@ -1,6 +1,7 @@
 ---
 title: '文件管理-gfile'
 sidebar_position: 9
+hide_title: true
 ---
 
 ## 基本介绍

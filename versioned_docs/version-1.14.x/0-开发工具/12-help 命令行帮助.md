@@ -1,6 +1,7 @@
 ---
 title: 'help 命令行帮助'
 sidebar_position: 12
+hide_title: true
 ---
 
 使用方式：

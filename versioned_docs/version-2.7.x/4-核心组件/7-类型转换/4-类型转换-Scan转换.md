@@ -1,6 +1,7 @@
 ---
 title: '类型转换-Scan转换'
 sidebar_position: 4
+hide_title: true
 ---
 
 前面关于复杂类型的转换功能如果大家觉得还不够的话，那么您可以了解下 `Scan` 转换方法，该方法可以实现对任意参数到 `struct/struct数组/map/map数组` 的转换，并且根据开发者输入的转换目标参数自动识别执行转换。

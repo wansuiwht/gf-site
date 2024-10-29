@@ -1,6 +1,7 @@
 ---
 title: '接口文档-OpenAPIv3'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 一、 `OpenAPIv3`

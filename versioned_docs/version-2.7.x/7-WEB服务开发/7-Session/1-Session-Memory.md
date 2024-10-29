@@ -1,6 +1,7 @@
 ---
 title: 'Session-Memory'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## 内存存储

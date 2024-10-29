@@ -1,6 +1,7 @@
 ---
 title: 'ORM查询-Struct/Structs/Scan'
 sidebar_position: 2
+hide_title: true
 ---
 
 ## `Struct`

@@ -1,6 +1,7 @@
 ---
 title: '数据返回-Exit控制'
 sidebar_position: 3
+hide_title: true
 ---
 
 ## `Exit`, `ExitAll` 与 `ExitHook`

@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性-类型识别'
 sidebar_position: 6
+hide_title: true
 ---
 
 使用 `GoFrame ORM` 查询数据时，由于字段值是一个泛型对象，返回的数据类型将会被自动识别映射到 `Go` 变量类型，作为泛型的具体值。

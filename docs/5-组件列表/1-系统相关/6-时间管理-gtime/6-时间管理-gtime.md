@@ -1,6 +1,7 @@
 ---
 title: '时间管理-gtime'
 sidebar_position: 6
+hide_title: true
 ---
 
 ## 基本介绍

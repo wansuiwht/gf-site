@@ -1,6 +1,7 @@
 ---
 title: 'gqueue (队列)'
 sidebar_position: 6
+hide_title: true
 ---
 
 动态大小的并发安全队列。同时， `gqueue` 也支持固定队列大小，固定队列大小时队列效率和标准库的 `channel` 无异。

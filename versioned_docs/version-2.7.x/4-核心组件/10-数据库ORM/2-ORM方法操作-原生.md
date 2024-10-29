@@ -1,6 +1,7 @@
 ---
 title: 'ORM方法操作(原生)'
 sidebar_position: 2
+hide_title: true
 ---
 
 ## 方法操作

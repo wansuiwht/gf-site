@@ -1,6 +1,7 @@
 ---
 title: 'ORM查询-Scan'
 sidebar_position: 3
+hide_title: true
 ---
 
 `Scan` 方法支持将查询结果转换为结构体或者结构体数组， `Scan` 方法将会根据给定的参数类型自动识别执行的转换类型。

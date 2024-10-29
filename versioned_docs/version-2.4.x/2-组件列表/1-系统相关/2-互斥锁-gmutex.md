@@ -1,6 +1,7 @@
 ---
 title: '互斥锁-gmutex'
 sidebar_position: 2
+hide_title: true
 ---
 
 `gmutex` 模块是基于 `atomic` \+ `channel` 实现的高级互斥锁模块，支持更丰富的互斥锁特性。

@@ -1,6 +1,7 @@
 ---
 title: 'HTTPClient-文件上传'
 sidebar_position: 1
+hide_title: true
 ---
 
 `GoFrame` 支持非常方便的表单文件上传功能，并且HTTP客户端对上传功能进行了必要的封装并极大简化了上传功能调用。

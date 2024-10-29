@@ -98,7 +98,13 @@ body .button--secondary {
 
 @import "./output.css";
 
+.markdown {
+  --ifm-h2-vertical-rhythm-top: 1;
+}
 
+.markdown > p:first-child {
+  padding-top: 20px;
+}
 
 code {
   padding: 0.2em 0.4em;
@@ -106,12 +112,10 @@ code {
   border-radius: 3px;
   border: 0px;
   color: #c7254e;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
   font-size: 90%;
 }
 
 pre {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
   font-size: 90%;
 }
 

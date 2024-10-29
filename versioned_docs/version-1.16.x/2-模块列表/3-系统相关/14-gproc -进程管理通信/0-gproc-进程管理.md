@@ -1,6 +1,7 @@
 ---
 title: 'gproc-进程管理'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 执行Shell命令

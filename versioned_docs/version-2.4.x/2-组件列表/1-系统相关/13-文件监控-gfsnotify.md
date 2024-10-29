@@ -1,6 +1,7 @@
 ---
 title: '文件监控-gfsnotify'
 sidebar_position: 13
+hide_title: true
 ---
 
 `gfsnotify` 能监控指定文件/目录的改变，如文件的增加、删除、修改、重命名等操作。

@@ -1,6 +1,7 @@
 ---
 title: 'Redis-配置管理'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gredis` 组件支持两种方式来管理 `redis` 配置和获取 `redis` 对象，一种是通过 **配置组件+单例对象** 的方式；一种是模块化通过 **配置管理方法** 及对象创建方法。

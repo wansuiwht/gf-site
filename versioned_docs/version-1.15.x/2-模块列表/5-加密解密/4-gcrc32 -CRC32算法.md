@@ -1,6 +1,7 @@
 ---
 title: 'gcrc32 (CRC32算法)'
 sidebar_position: 4
+hide_title: true
 ---
 
 CRC32算法。

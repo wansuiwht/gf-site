@@ -1,6 +1,7 @@
 ---
 title: 'gcmd (命令行解析执行)'
 sidebar_position: 7
+hide_title: true
 ---
 
 `gcmd` 模块提供了对命令行参数、选项的读取功能，以及对应参数的回调函数绑定功能。

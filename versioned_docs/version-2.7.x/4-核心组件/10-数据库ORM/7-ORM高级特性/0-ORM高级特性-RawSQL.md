@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性-RawSQL'
 sidebar_position: 0
+hide_title: true
 ---
 
 由于 `ORM` 的安全性保障，所有输入的参数在底层都将使用预处理模式执行，防止常见的 `SQL` 注入风险。在某一些场景中，我们期望在生成执行的SQL语句中嵌入自定义的SQL语句，那么我们可以使用 `ORM` 的 `RawSQL` 特性，通过 `gdb.Raw` 类型来实现。我们来看几个示例。

@@ -1,6 +1,7 @@
 ---
 title: 'grand (随机数管理)'
 sidebar_position: 2
+hide_title: true
 ---
 
 `grand` 模块实现了对随机数操作的封装和改进，实现了极高的随机数生成性能，提供了丰富的随机数相关操作方法。

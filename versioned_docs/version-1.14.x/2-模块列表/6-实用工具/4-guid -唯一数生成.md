@@ -1,6 +1,7 @@
 ---
 title: 'guid (唯一数生成)'
 sidebar_position: 4
+hide_title: true
 ---
 
 `guid` 提供了更简便更高性能的唯一数生成功能。

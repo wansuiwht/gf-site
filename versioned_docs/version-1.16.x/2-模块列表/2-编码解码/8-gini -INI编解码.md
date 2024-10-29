@@ -1,6 +1,7 @@
 ---
 title: 'gini (INI编解码)'
 sidebar_position: 8
+hide_title: true
 ---
 
 INI数据格式编码解析。

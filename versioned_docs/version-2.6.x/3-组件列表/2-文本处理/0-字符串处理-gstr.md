@@ -1,6 +1,7 @@
 ---
 title: '字符串处理-gstr'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gstr` 提供了强大便捷的文本处理组件，组件内置了大量常用的字符串处理方法，比较于 `Golang` 标准库更加全面丰富，可应对绝大部分业务场景。

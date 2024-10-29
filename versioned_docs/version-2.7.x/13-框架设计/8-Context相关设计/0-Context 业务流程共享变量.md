@@ -1,6 +1,7 @@
 ---
 title: 'Context: 业务流程共享变量'
 sidebar_position: 0
+hide_title: true
 ---
 
 `Context` 指的是标准库的 `context.Context`，是一个接口对象，常用于 **异步 `IO` 控制** 以及 **上下文流程变量的传递**。本文将要介绍的，是如何使用 `Context` 传递流程间共享变量。

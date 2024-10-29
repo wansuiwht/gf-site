@@ -1,6 +1,7 @@
 ---
 title: 'ORM接口开发'
 sidebar_position: 7
+hide_title: true
 ---
 
 `gdb` 模块使用了非常灵活且扩展性强的接口设计，接口设计允许开发者可以非常方便地自定义实现和替换接口定义中的任何方法。

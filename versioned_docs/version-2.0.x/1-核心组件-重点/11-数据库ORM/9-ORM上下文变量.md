@@ -1,6 +1,7 @@
 ---
 title: 'ORM上下文变量'
 sidebar_position: 9
+hide_title: true
 ---
 
 `ORM` 支持传递自定义的 `context` 上下文变量，用于异步 `IO` 控制、上下文信息传递（特别是链路跟踪信息的传递）、以及嵌套事务支持。

@@ -1,6 +1,7 @@
 ---
 title: 'Map校验-基本使用'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 默认错误提示

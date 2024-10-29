@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性-类型转换'
 sidebar_position: 6
+hide_title: true
 ---
 
 `gdb` 的数据记录结果（ `Value`）支持非常灵活的类型转换，并内置支持常用的数十种数据类型的转换。

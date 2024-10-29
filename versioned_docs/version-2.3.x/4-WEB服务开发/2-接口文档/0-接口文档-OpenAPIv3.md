@@ -1,6 +1,7 @@
 ---
 title: '接口文档-OpenAPIv3'
 sidebar_position: 0
+hide_title: true
 ---
 
 `OpenAPIv3` 协议主要使用在规范路由中，阅读接口文档协议介绍之前，请先了解一下规范路由： [路由注册-规范路由](output/goframe-v2.3-md/WEB服务开发/路由管理/路由管理-路由注册/路由注册-规范路由)

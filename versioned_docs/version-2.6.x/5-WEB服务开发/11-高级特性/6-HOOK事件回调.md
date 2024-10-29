@@ -1,6 +1,7 @@
 ---
 title: 'HOOK事件回调'
 sidebar_position: 6
+hide_title: true
 ---
 
 ![](/markdown/b14b0a15203c5e5e32b39e8f7635b373.png)

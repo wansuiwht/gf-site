@@ -1,6 +1,7 @@
 ---
 title: '进程管理-gproc'
 sidebar_position: 13
+hide_title: true
 ---
 
 进程管理以及进程间的通信是通过 `gproc` 模块实现的，其中进程间通信采用的是本地socket通信机制。

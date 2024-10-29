@@ -1,6 +1,7 @@
 ---
-title: '交流群'
+title: '技术交流群'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 加入QQ群

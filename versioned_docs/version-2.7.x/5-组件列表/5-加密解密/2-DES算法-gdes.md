@@ -1,6 +1,7 @@
 ---
 title: 'DES算法-gdes'
 sidebar_position: 2
+hide_title: true
 ---
 
 DES算法。

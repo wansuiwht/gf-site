@@ -1,6 +1,7 @@
 ---
 title: 'gmd5 (MD5算法)'
 sidebar_position: 0
+hide_title: true
 ---
 
 MD5算法。

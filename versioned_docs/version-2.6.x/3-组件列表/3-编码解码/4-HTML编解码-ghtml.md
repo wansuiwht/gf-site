@@ -1,6 +1,7 @@
 ---
 title: 'HTML编解码-ghtml'
 sidebar_position: 4
+hide_title: true
 ---
 
 HTML编码解析。

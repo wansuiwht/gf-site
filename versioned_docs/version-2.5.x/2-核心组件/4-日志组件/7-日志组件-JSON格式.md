@@ -1,6 +1,7 @@
 ---
 title: '日志组件-JSON格式'
 sidebar_position: 7
+hide_title: true
 ---
 
 `glog` 对日志分析工具非常友好，支持输出 `JSON` 格式的日志内容，以便于后期对日志内容进行解析分析。

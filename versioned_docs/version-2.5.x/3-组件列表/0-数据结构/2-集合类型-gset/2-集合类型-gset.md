@@ -1,6 +1,7 @@
 ---
 title: '集合类型-gset'
 sidebar_position: 2
+hide_title: true
 ---
 
 ## 基本介绍

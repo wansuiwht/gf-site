@@ -1,6 +1,7 @@
 ---
 title: '本地文档-doc'
 sidebar_position: 10
+hide_title: true
 ---
 
 该命令从框架 `v2.7.2` 版本开始提供。

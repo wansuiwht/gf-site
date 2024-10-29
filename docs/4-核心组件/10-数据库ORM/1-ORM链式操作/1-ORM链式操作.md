@@ -1,6 +1,7 @@
 ---
 title: 'ORM链式操作(🔥重点🔥)'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## 基本介绍

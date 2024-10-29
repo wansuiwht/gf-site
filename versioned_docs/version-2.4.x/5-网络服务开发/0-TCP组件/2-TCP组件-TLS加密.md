@@ -1,6 +1,7 @@
 ---
 title: 'TCP组件-TLS加密'
 sidebar_position: 2
+hide_title: true
 ---
 
 `gtcp` 模块支持 `TLS` 加密通信服务端及客户端，在对安全要求比较高的场景中非常必要。 `TLS` 服务端创建可以通过 `NewServerTLS` 或者 `NewServerKeyCrt` 方法实现。 `TLS` 客户端创建可以通过 `NewConnKeyCrt` 或者 `NewConnTLS` 方法实现。

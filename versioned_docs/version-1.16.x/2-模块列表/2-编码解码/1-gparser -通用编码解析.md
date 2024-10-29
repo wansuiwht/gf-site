@@ -1,6 +1,7 @@
 ---
 title: 'gparser (通用编码解析)'
 sidebar_position: 1
+hide_title: true
 ---
 
 `gf` 框架针对常用的数据格式编码解析，提供了非常强大灵活的功能，由 `gparser` 模块提供， **支持Go变量(interface{})、Struct、JSON、XML、YAML/YML、TOML数据格式之间的相互转换**，支持按照层级进行数据检索访问、支持运行时动态新增/修改/删除层级变量(并发安全)等特性。 `gparser` 包使得对于未知数据结构、多维数组结构的访问、操作变得异常的简便。

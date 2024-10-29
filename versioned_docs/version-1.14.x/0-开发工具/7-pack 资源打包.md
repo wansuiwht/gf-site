@@ -1,6 +1,7 @@
 ---
 title: 'pack 资源打包'
 sidebar_position: 7
+hide_title: true
 ---
 
 使用方式： `gf pack SRC DST`

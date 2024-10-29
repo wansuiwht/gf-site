@@ -1,6 +1,7 @@
 ---
 title: 'gdebug (调试功能)'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gdebug` 模块提供了一些实用的“调试”相关的方法。所谓的“调试”方法大多数和开发环境有一定关系，包含堆栈和调用链信息分析，并且性能往往不是特别高。

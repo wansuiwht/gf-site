@@ -1,6 +1,7 @@
 ---
 title: 'gset (集合)'
 sidebar_position: 2
+hide_title: true
 ---
 
 集合，即不可重复的一组元素，元素项可以为任意类型。

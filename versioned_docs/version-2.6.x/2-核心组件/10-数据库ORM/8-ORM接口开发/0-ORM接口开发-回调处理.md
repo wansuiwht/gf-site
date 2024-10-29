@@ -1,6 +1,7 @@
 ---
 title: 'ORM接口开发-回调处理'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 基本介绍

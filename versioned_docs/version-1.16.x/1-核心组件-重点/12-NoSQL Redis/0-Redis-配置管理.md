@@ -1,6 +1,7 @@
 ---
 title: 'Redis-配置管理'
 sidebar_position: 0
+hide_title: true
 ---
 
 `goframe` 框架支持两种方式来管理 `redis` 配置和获取 `redis` 对象，一种是通过配置文件+单例对象的方式；一种是模块化通过配置管理方法及对象创建方法。

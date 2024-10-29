@@ -1,6 +1,7 @@
 ---
 title: 'gtype (并发安全类型)'
 sidebar_position: 5
+hide_title: true
 ---
 
 并发安全基本类型。

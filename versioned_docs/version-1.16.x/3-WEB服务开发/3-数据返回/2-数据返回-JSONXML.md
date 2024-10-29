@@ -1,6 +1,7 @@
 ---
 title: '数据返回-JSON/XML'
 sidebar_position: 2
+hide_title: true
 ---
 
 接口文档： [https://godoc.org/github.com/gogf/gf/net/ghttp#Response](https://godoc.org/github.com/gogf/gf/net/ghttp#Response)

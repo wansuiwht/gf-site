@@ -1,6 +1,7 @@
 ---
 title: 'ORM结果处理-为空判断'
 sidebar_position: 1
+hide_title: true
 ---
 
 使用 `gf ORM` 对返回结果为空判断非常简便，大部分场景下直接判断返回的数据是否为 `nil` 或者长度为 `0`，或者使用 `IsEmpty/IsNil` 方法。

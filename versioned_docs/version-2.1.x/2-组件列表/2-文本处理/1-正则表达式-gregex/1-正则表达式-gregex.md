@@ -1,6 +1,7 @@
 ---
 title: '正则表达式-gregex'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## 基本介绍

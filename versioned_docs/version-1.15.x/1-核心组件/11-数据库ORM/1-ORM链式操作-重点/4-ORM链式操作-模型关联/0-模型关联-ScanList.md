@@ -1,6 +1,7 @@
 ---
 title: '模型关联-ScanList'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gf` 的 `ORM` 没有采用其他 `ORM` 常见的 `BelongsTo`, `HasOne`, `HasMany`, `ManyToMany` 这样的模型关联设计，这样的关联关系维护较繁琐，例如外键约束、额外的标签备注等，对开发者有一定的心智负担。因此 `gf` 框架不倾向于通过向模型结构体中注入过多复杂的标签内容、关联属性或方法，并一如既往地尝试着简化设计，目标是使得模型关联查询尽可能得易于理解、使用便捷。

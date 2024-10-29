@@ -1,6 +1,7 @@
 ---
 title: '工具方法-gutil'
 sidebar_position: 6
+hide_title: true
 ---
 
 ## 基本介绍

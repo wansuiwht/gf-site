@@ -1,6 +1,7 @@
 ---
 title: 'gtree (树形)'
 sidebar_position: 7
+hide_title: true
 ---
 
 支持并发安全开关特性的树形容器，树形数据结构的特点是支持有序遍历、内存占用低、复杂度稳定、适合大数据量存储。该模块包含多个数据结构的树形容器： `RedBlackTree`、 `AVLTree` 和 `BTree`。

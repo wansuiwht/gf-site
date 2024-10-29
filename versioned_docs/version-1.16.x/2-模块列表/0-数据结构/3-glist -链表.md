@@ -1,6 +1,7 @@
 ---
 title: 'glist (链表)'
 sidebar_position: 3
+hide_title: true
 ---
 
 带并发安全开关的双向列表。

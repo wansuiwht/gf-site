@@ -1,6 +1,7 @@
 ---
 title: 'ORM使用配置'
 sidebar_position: 0
+hide_title: true
 ---
 
 ## 配置文件

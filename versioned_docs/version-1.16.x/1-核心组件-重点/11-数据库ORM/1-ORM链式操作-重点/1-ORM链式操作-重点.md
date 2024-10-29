@@ -1,6 +1,7 @@
 ---
 title: 'ORM链式操作(重点)'
 sidebar_position: 1
+hide_title: true
 ---
 
 `gdb` 链式操作使用方式简单灵活，是 `GoFrame` 框架官方推荐的数据库操作方式。链式操作可以通过数据库对象的 `db.Table`/ `db.Model` 方法或者事务对象的 `tx.Table`/ `tx.Model` 方法，基于指定的数据表返回一个链式操作对象 `*Model`，该对象可以执行以下方法。当前方法列表可能滞后于源代码，详细的方法列表请参考接口文档： [https://godoc.org/github.com/gogf/gf/database/gdb#Model](https://godoc.org/github.com/gogf/gf/database/gdb#Model)

@@ -1,6 +1,7 @@
 ---
 title: '日志组件-Handler'
 sidebar_position: 6
+hide_title: true
 ---
 
 从 `v2.0` 版本开始， `glog` 组件提供了超级强大的、可自定义日志处理的 `Handler` 特性。 `Handler` 采用了中间件设计方式，开发者可以为日志对象注册多个处理 `Handler`，也可以在 `Handler` 中覆盖默认的日志组件处理逻辑。

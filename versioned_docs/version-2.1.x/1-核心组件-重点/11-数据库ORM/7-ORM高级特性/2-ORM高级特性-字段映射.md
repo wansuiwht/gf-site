@@ -1,6 +1,7 @@
 ---
 title: 'ORM高级特性-字段映射'
 sidebar_position: 2
+hide_title: true
 ---
 
 在对数据进行写入、更新使用诸如 `Fields/Data/Scan` 方法时，如果给定的参数为 `map/struct` 类型，给定参数的键名/属性名称将会自动按照忽略大小写及特殊字符的方式与数据表的字段进行自动识别映射。

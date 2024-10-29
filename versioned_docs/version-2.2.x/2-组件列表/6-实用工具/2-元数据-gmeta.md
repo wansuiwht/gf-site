@@ -1,6 +1,7 @@
 ---
 title: '元数据-gmeta'
 sidebar_position: 2
+hide_title: true
 ---
 
 ## 基本介绍

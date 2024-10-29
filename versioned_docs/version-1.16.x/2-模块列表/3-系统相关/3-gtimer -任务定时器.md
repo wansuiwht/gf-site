@@ -1,6 +1,7 @@
 ---
 title: 'gtimer (任务定时器)'
 sidebar_position: 3
+hide_title: true
 ---
 
 `gtimer` 是一个并发安全的高性能任务定时器，类似于 `Java` 的 `Timer`。 `gtimer` 组件旧版本采用的是分层时间轮（ `Hierarchical Timing Wheel`）设计，从 `goframe v1.16` 版本开始，采用了优先级队列（ `PriorityQueue`）实现。

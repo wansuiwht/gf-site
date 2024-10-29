@@ -1,6 +1,7 @@
 ---
 title: 'HTTPClient-请求信息打印'
 sidebar_position: 5
+hide_title: true
 ---
 
 `ghttp` 客户端支持对HTTP请求的输入与输出原始信息获取与打印，方便调试，相关方法如下：

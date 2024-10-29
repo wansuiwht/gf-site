@@ -1,6 +1,7 @@
 ---
 title: 'gring (并发安全环结构)'
 sidebar_position: 9
+hide_title: true
 ---
 
 ## gring

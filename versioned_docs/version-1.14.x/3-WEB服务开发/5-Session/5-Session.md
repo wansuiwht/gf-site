@@ -1,6 +1,7 @@
 ---
 title: 'Session'
 sidebar_position: 5
+hide_title: true
 ---
 
 `GF` 框架提供了完善的 `Session` 管理能力，由 `gsession` 模块实现。由于 `Session` 机制在 `HTTP` 服务中最常用，因此后续章节中将着重以 `HTTP` 服务为示例介绍 `Session` 的使用。

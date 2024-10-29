@@ -1,6 +1,7 @@
 ---
 title: 'gtest (单元测试)'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gtest` 模块提供了常用的单元测试方法。

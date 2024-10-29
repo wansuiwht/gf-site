@@ -1,6 +1,7 @@
 ---
 title: 'gtoml (TOML编解码)'
 sidebar_position: 10
+hide_title: true
 ---
 
 TOML数据格式编码解析。

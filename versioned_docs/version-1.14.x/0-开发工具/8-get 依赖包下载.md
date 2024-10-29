@@ -1,6 +1,7 @@
 ---
 title: 'get 依赖包下载'
 sidebar_position: 8
+hide_title: true
 ---
 
 使用方式： `gf get PACKAGE`

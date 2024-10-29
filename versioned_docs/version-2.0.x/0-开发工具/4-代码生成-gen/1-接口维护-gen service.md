@@ -1,6 +1,7 @@
 ---
 title: '接口维护-gen service'
 sidebar_position: 1
+hide_title: true
 ---
 
 该功能特性从 `v2.1` 版本开始提供。

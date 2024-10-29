@@ -1,6 +1,7 @@
 ---
 title: 'Redis-接口化设计'
 sidebar_position: 4
+hide_title: true
 ---
 
 `gredis` 采用接口化设计，具有强大的灵活性和扩展性。

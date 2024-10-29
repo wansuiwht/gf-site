@@ -1,6 +1,7 @@
 ---
 title: '日志组件-Writer接口'
 sidebar_position: 6
+hide_title: true
 ---
 
 ## 自定义 `Writer` 接口

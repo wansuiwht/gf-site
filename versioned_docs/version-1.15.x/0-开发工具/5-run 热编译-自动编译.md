@@ -1,6 +1,7 @@
 ---
 title: 'run 热编译(自动编译)'
 sidebar_position: 5
+hide_title: true
 ---
 
 ## 注意

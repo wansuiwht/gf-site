@@ -1,6 +1,7 @@
 ---
 title: '数据返回-Redirect'
 sidebar_position: 2
+hide_title: true
 ---
 
 我们可以通过 `RedirectTo/RedirectBack` 来实现页面之间的跳转，该功能通过 `Location Header` 实现。相关方法：

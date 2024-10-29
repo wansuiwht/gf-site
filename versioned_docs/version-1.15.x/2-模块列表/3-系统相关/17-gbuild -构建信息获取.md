@@ -1,6 +1,7 @@
 ---
 title: 'gbuild (构建信息获取)'
 sidebar_position: 17
+hide_title: true
 ---
 
 用于获取采用 `gf build` 命令构建程序的构建信息。

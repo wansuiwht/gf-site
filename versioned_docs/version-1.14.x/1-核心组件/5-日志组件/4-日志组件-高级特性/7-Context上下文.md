@@ -1,6 +1,7 @@
 ---
 title: 'Context上下文'
 sidebar_position: 7
+hide_title: true
 ---
 
 `glog` 支持标准库 `context.Context` 接口对象中上下文变量的自动读取打印。

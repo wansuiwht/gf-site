@@ -1,6 +1,7 @@
 ---
 title: 'gregex (正则表达式)'
 sidebar_position: 0
+hide_title: true
 ---
 
 `gregex` 提供了对正则表达式的支持，底层是对标准库 `regexp` 的封装，极大地简化了正则的使用，并采用了解析缓存设计，提高了执行效率。

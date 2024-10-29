@@ -1,6 +1,7 @@
 ---
 title: 'ORM查询-All/One/Array/Value/Count'
 sidebar_position: 1
+hide_title: true
 ---
 
 ## `All/One/Array/Value/Count`

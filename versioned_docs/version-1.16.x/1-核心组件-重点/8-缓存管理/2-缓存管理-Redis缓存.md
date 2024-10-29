@@ -1,6 +1,7 @@
 ---
 title: '缓存管理-Redis缓存'
 sidebar_position: 2
+hide_title: true
 ---
 
 `GF` 框架通过社区模块提供了 `gcache` 的 `Redis` 缓存适配实现，仓库地址： [https://github.com/gogf/gcache-adapter](https://github.com/gogf/gcache-adapter) 使用方式请参考仓库 `README` 介绍。

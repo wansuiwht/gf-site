@@ -1,6 +1,7 @@
 ---
 title: 'grpool (Goroutine池)'
 sidebar_position: 16
+hide_title: true
 ---
 
 Go语言中的 `goroutine` 虽然相对于系统线程来说比较轻量级（初始栈大小仅 `2KB`），但是在高并发量下的 `goroutine` 频繁创建和销毁对于性能损耗以及 `GC` 来说压力也不小。充分将 `goroutine` 复用，减少 `goroutine` 的创建/销毁的性能损耗，这便是 `grpool` 对 `goroutine` 进行池化封装的目的。例如，针对于 `100W` 个执行任务，使用 `goroutine` 的话需要不停创建并销毁 `100W` 个 `goroutine`，而使用 `grpool` 也许底层只需要几万个 `goroutine` 便能充分复用地执行完成所有任务。

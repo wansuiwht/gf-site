@@ -1,6 +1,7 @@
 ---
 title: '分页管理-URL模板'
 sidebar_position: 3
+hide_title: true
 ---
 
 `gpage` 支持自定义 `URL` 模板，在模板中可以使用 `{.page}` 内置变量替换页码的内容，我们来看一个简单的示例：

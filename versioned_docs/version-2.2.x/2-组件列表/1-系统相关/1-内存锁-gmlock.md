@@ -1,6 +1,7 @@
 ---
 title: '内存锁-gmlock'
 sidebar_position: 1
+hide_title: true
 ---
 
 内存锁模块，也称之为 `动态互斥锁` 模块，支持按照 `给定键名动态生成互斥锁`，并发安全并支持 `Try*Lock` 特性。

@@ -1,6 +1,7 @@
 ---
 title: 'ORM链式操作-更新删除'
 sidebar_position: 2
+hide_title: true
 ---
 
 为安全性保证、防止误操作， `Update` 及 `Delete` 方法必须带有 `Where` 条件才能提交执行，否则将会错误返回，错误信息如： `there should be WHERE condition statement for XXX operation`。 `goframe` 是一款用于企业生产级别的框架，各个模块设计严谨，工程实践的细节处理得比较好。

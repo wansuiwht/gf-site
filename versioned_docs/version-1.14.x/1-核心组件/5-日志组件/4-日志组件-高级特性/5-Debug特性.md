@@ -1,6 +1,7 @@
 ---
 title: 'Debug特性'
 sidebar_position: 5
+hide_title: true
 ---
 
 `Debug/Debugf` 是非常有用的几个方法，用于调试信息的记录，常用于开发/测试环境中，当应用上线之后可以方便地使用 `SetDebug` 或者配置文件进行开启/关闭。

@@ -1,6 +1,7 @@
 ---
 title: '数据返回-JSON/XML'
 sidebar_position: 1
+hide_title: true
 ---
 
 相关方法：

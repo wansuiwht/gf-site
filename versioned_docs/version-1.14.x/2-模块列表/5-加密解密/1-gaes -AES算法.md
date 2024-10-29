@@ -1,6 +1,7 @@
 ---
 title: 'gaes (AES算法)'
 sidebar_position: 1
+hide_title: true
 ---
 
 AES算法。

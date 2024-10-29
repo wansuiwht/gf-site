@@ -1,6 +1,7 @@
 ---
 title: 'NoSQL Redis'
 sidebar_position: 12
+hide_title: true
 ---
 
 ## 基本介绍

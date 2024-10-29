@@ -1,6 +1,7 @@
 ---
 title: '模板引擎-XSS处理'
 sidebar_position: 5
+hide_title: true
 ---
 
 默认情况下，模板引擎对所有的变量输出并没有使用 `HTML` 转码处理，也就是说，如果开发者处理不好，可能会存在XSS漏洞。

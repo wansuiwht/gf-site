@@ -1,6 +1,7 @@
 ---
 title: 'ORM查询-Union/UnionAll'
 sidebar_position: 5
+hide_title: true
 ---
 
 `GoFrame ORM` 组件支持 `Union/UnionAll` 操作， `Union/UnionAll` 操作符用于连接两个以上的 `SELECT` 语句的结果组合到一个结果集合中，关于 `Union/UnionAll` 组合查询的相关介绍可以参考MySQL的官方文档介绍 [https://dev.mysql.com/doc/refman/8.0/en/union.html](https://dev.mysql.com/doc/refman/8.0/en/union.html) 。我们可以通过链式操作或者方法操作来实现 `Union/UnionAll` 操作。

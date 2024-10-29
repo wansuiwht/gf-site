@@ -1,6 +1,7 @@
 ---
 title: 'Redis-命令交互'
 sidebar_position: 2
+hide_title: true
 ---
 
 ## `Do` 方法

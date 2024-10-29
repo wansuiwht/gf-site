@@ -1,6 +1,7 @@
 ---
 title: 'NoSQL Redis'
 sidebar_position: 12
+hide_title: true
 ---
 
 Redis客户端由 `gredis` 模块实现，底层采用了链接池设计。

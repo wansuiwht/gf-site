@@ -1,6 +1,7 @@
 ---
 title: 'ORM最佳实践'
 sidebar_position: 10
+hide_title: true
 ---
 
 ## 基本介绍

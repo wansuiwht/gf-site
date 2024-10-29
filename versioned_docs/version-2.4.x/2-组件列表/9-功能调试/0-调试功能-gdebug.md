@@ -1,6 +1,7 @@
 ---
 title: '调试功能-gdebug'
 sidebar_position: 0
+hide_title: true
 ---
 
 `goframe` 框架提供了丰富的调试功能，由 `gdebug` 组件实现。

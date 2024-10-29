@@ -1,6 +1,7 @@
 ---
 title: 'ORM查询-AllAndCount'
 sidebar_position: 2
+hide_title: true
 ---
 
 该方法从 `v2.5.0` 版本开始提供，用于同时查询数据记录列表及总数量，一般用于分页查询场景中，简化分页查询逻辑。

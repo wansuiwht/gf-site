@@ -1,6 +1,7 @@
 ---
 title: 'HTTPClient-常见问题'
 sidebar_position: 8
+hide_title: true
 ---
 
 ## `invalid semicolon separator in query`

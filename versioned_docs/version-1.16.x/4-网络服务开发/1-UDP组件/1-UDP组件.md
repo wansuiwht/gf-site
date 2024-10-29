@@ -1,6 +1,7 @@
 ---
 title: 'UDP组件'
 sidebar_position: 1
+hide_title: true
 ---
 
 `UDP (User Datagram Protocol)` 一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。 `UDP` 服务端通过 `gudp.Server` 实现，客户端通过 `gudp.Conn` 对象或者工具方法实现。
