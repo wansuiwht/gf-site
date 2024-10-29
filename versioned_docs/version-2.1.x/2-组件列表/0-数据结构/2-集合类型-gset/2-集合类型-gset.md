@@ -21,8 +21,4 @@ import "github.com/gogf/gf/v2/container/gset"
 
 **接口文档**： [https://pkg.go.dev/github.com/gogf/gf/v2/container/gset](https://pkg.go.dev/github.com/gogf/gf/v2/container/gset)
 
-## 相关文档
-
-- [集合类型-基本使用](output/goframe-v2.1-md/组件列表/数据结构/集合类型-gset/集合类型-基本使用)
-- [集合类型-性能测试](output/goframe-v2.1-md/组件列表/数据结构/集合类型-gset/集合类型-性能测试)
-- [集合类型-方法介绍](output/goframe-v2.1-md/组件列表/数据结构/集合类型-gset/集合类型-方法介绍)
+    

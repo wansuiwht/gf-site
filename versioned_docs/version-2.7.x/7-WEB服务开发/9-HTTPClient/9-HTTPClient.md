@@ -75,16 +75,4 @@ func (r *Response) Close() error
 1. `ghttp` 客户端默认关闭了 `KeepAlive` 功能以及对服务端 `TLS` 证书的校验功能，如果需要启用可自定义客户端的 `Transport` 属性。
 2. **连接池参数设定**、 **连接代理设置** 等这些高级功能也可以通过自定义客户端的 `Transport` 属性实现，该数据继承于标准库的 `http.Transport` 对象。
 
-## 相关文档
-
-- [HTTPClient-基本使用](/docs/WEB服务开发/HTTPClient/HTTPClient-基本使用)
-- [HTTPClient-文件上传](/docs/WEB服务开发/HTTPClient/HTTPClient-文件上传)
-- [HTTPClient-自定义Cookie](/docs/WEB服务开发/HTTPClient/HTTPClient-自定义Cookie)
-- [HTTPClient-自定义Header](/docs/WEB服务开发/HTTPClient/HTTPClient-自定义Header)
-- [HTTPClient-自定义ContentType](/docs/WEB服务开发/HTTPClient/HTTPClient-自定义ContentType)
-- [HTTPClient-自定义Transport](/docs/WEB服务开发/HTTPClient/HTTPClient-自定义Transport)
-- [HTTPClient-请求信息打印](/docs/WEB服务开发/HTTPClient/HTTPClient-请求信息打印)
-- [HTTPClient-代理Proxy设置](/docs/WEB服务开发/HTTPClient/HTTPClient-代理Proxy设置)
-- [HTTPClient-拦截器/中间件](/docs/WEB服务开发/HTTPClient/HTTPClient-拦截器中间件)
-- [HTTPClient-常见问题](/docs/WEB服务开发/HTTPClient/HTTPClient-常见问题)
-- [HTTPClient-监控指标](/docs/WEB服务开发/HTTPClient/HTTPClient-监控指标)
+    

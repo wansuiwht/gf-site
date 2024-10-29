@@ -19,10 +19,4 @@ import "github.com/gogf/gf/v2/os/gtime"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/os/gtime](https://pkg.go.dev/github.com/gogf/gf/v2/os/gtime)
 
-## 相关文档
-
-- [时间管理-时间格式](output/goframe-v2.6-md/组件列表/系统相关/时间管理-gtime/时间管理-时间格式)
-- [时间管理-时间对象](output/goframe-v2.6-md/组件列表/系统相关/时间管理-gtime/时间管理-时间对象)
-- [时间管理-工具方法](output/goframe-v2.6-md/组件列表/系统相关/时间管理-gtime/时间管理-工具方法)
-- [时间管理-时区设置](output/goframe-v2.6-md/组件列表/系统相关/时间管理-gtime/时间管理-时区设置)
-- [时间管理-方法介绍](output/goframe-v2.6-md/组件列表/系统相关/时间管理-gtime/时间管理-方法介绍)
+    

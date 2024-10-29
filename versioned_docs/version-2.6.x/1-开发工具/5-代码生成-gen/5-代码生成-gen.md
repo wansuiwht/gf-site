@@ -32,11 +32,4 @@ DESCRIPTION
     Please use "gf gen dao -h" for specified type help.
 ```
 
-## 相关文档
-
-- [接口规范-gen ctrl](output/goframe-v2.6-md/开发工具/代码生成-gen/接口规范-gen%20ctrl)
-- [数据规范-gen dao](output/goframe-v2.6-md/开发工具/代码生成-gen/数据规范-gen%20dao)
-- [模块规范-gen service](output/goframe-v2.6-md/开发工具/代码生成-gen/模块规范-gen%20service)
-- [枚举维护-gen enums](output/goframe-v2.6-md/开发工具/代码生成-gen/枚举维护-gen%20enums)
-- [协议编译-gen pb](output/goframe-v2.6-md/开发工具/代码生成-gen/协议编译-gen%20pb)
-- [数据表PB-gen pbentity](output/goframe-v2.6-md/开发工具/代码生成-gen/数据表PB-gen%20pbentity)
+    

@@ -51,10 +51,4 @@ import (
 - 支持单例对象、也支持动态创建对象
 - 接口化设计，很高的灵活性和扩展性
 
-## 相关文档
-
-- [Redis-配置管理](/docs/组件列表/NoSQL%20Redis/Redis-配置管理)
-- [Redis-使用示例](/docs/组件列表/NoSQL%20Redis/Redis-使用示例)
-- [Redis-命令交互](/docs/组件列表/NoSQL%20Redis/Redis-命令交互)
-- [Redis-Conn对象](/docs/组件列表/NoSQL%20Redis/Redis-Conn对象)
-- [Redis-接口化设计](/docs/组件列表/NoSQL%20Redis/Redis-接口化设计)
+    

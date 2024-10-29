@@ -23,7 +23,4 @@ import "github.com/gogf/gf/v2/container/gring"
 
 > `gring` 支持链式操作。
 
-## 相关文档
-
-- [并发安全环-基本使用](/docs/组件列表/数据结构/并发安全环-gring/并发安全环-基本使用)
-- [并发安全环-方法介绍](/docs/组件列表/数据结构/并发安全环-gring/并发安全环-方法介绍)
+    

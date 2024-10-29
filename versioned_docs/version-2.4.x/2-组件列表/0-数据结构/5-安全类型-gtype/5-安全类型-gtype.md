@@ -25,7 +25,4 @@ import "github.com/gogf/gf/v2/container/gtype"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/gtype](https://pkg.go.dev/github.com/gogf/gf/v2/container/gtype)
 
-## 相关文档
-
-- [安全类型-基本使用](output/goframe-v2.4-md/组件列表/数据结构/安全类型-gtype/安全类型-基本使用)
-- [安全类型-性能测试](output/goframe-v2.4-md/组件列表/数据结构/安全类型-gtype/安全类型-性能测试)
+    

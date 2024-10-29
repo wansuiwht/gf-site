@@ -14,8 +14,4 @@ sidebar_position: 3
 
 接口文档： [https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb#TX](https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb#TX)
 
-## 相关文档
-
-- [ORM事务处理-常规操作](output/goframe-v2.0-md/核心组件-重点/数据库ORM/ORM事务处理/ORM事务处理-常规操作)
-- [ORM事务处理-闭包操作](output/goframe-v2.0-md/核心组件-重点/数据库ORM/ORM事务处理/ORM事务处理-闭包操作)
-- [ORM事务处理-嵌套事务](output/goframe-v2.0-md/核心组件-重点/数据库ORM/ORM事务处理/ORM事务处理-嵌套事务)
+    

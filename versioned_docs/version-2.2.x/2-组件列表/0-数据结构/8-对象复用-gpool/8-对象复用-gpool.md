@@ -33,6 +33,4 @@ import "github.com/gogf/gf/v2/container/gpool"
 
 `sync.Pool` 的对象生命周期不支持自定义过期时间，究其原因， `sync.Pool` 并不是一个 `Cache`； `sync.Pool` 设计初衷是为了缓解GC `压力`， `sync.Pool` 中的对象会在 `GC` 开始前全部清除；并且 `sync.Pool` 不支持对象创建方法及销毁方法。
 
-## 相关文档
-
-- [对象复用-基本使用](output/goframe-v2.2-md/组件列表/数据结构/对象复用-gpool/对象复用-基本使用)
+    

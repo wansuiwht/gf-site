@@ -24,10 +24,4 @@ DESCRIPTION
     Please use "gf gen dao -h" for specified type help.
 ```
 
-## 相关文档
-
-- [数据规范-gen dao](output/goframe-v2.3-md/开发工具/代码生成-gen/数据规范-gen%20dao)
-- [接口维护-gen service](output/goframe-v2.3-md/开发工具/代码生成-gen/接口维护-gen%20service)
-- [协议编译-gen pb](output/goframe-v2.3-md/开发工具/代码生成-gen/协议编译-gen%20pb)
-- [数据表PB-gen pbentity](output/goframe-v2.3-md/开发工具/代码生成-gen/数据表PB-gen%20pbentity)
-- [枚举维护-gen enums](output/goframe-v2.3-md/开发工具/代码生成-gen/枚举维护-gen%20enums)
+    

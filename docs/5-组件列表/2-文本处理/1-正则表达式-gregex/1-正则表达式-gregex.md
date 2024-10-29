@@ -17,7 +17,4 @@ import "github.com/gogf/gf/v2/text/gregex"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/text/gregex](https://pkg.go.dev/github.com/gogf/gf/v2/text/gregex)
 
-## 相关文档
-
-- [正则表达式-基本使用](/docs/组件列表/文本处理/正则表达式-gregex/正则表达式-基本使用)
-- [正则表达式-方法介绍](/docs/组件列表/文本处理/正则表达式-gregex/正则表达式-方法介绍)
+    

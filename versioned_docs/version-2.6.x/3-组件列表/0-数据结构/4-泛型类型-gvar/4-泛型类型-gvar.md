@@ -25,8 +25,4 @@ import "github.com/gogf/gf/v2/container/gvar"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/gvar](https://pkg.go.dev/github.com/gogf/gf/v2/container/gvar)
 
-## 相关文档
-
-- [泛型类型-基本使用](output/goframe-v2.6-md/组件列表/数据结构/泛型类型-gvar/泛型类型-基本使用)
-- [泛型类型-方法介绍](output/goframe-v2.6-md/组件列表/数据结构/泛型类型-gvar/泛型类型-方法介绍)
-- [泛型类型-注意事项](output/goframe-v2.6-md/组件列表/数据结构/泛型类型-gvar/泛型类型-注意事项)
+    

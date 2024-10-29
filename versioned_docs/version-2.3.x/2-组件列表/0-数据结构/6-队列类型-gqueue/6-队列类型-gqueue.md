@@ -21,7 +21,4 @@ import "github.com/gogf/gf/v2/container/gqueue"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/gqueue](https://pkg.go.dev/github.com/gogf/gf/v2/container/gqueue)
 
-## 相关文档
-
-- [队列类型-基本使用](output/goframe-v2.3-md/组件列表/数据结构/队列类型-gqueue/队列类型-基本使用)
-- [队列类型-性能测试](output/goframe-v2.3-md/组件列表/数据结构/队列类型-gqueue/队列类型-性能测试)
+    

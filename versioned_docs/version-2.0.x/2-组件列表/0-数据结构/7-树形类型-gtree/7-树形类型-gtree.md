@@ -52,7 +52,4 @@ func ComparatorUint64(a, b interface{}) int
 func ComparatorUint8(a, b interface{}) int
 ```
 
-## 相关文档
-
-- [树形类型-基本使用](output/goframe-v2.0-md/组件列表/数据结构/树形类型-gtree/树形类型-基本使用)
-- [树形类型-方法介绍](output/goframe-v2.0-md/组件列表/数据结构/树形类型-gtree/树形类型-方法介绍)
+    

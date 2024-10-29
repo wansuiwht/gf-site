@@ -34,10 +34,4 @@ import "github.com/gogf/gf/v2/os/gcron"
 10. `Stop` 方法用于停止定时任务( `Remove` 会停止并删除), 可通过 `name` 参数指定需要停止的任务名称。
 11. `Close` 方法用于关闭自定义的定时任务管理对象。
 
-## 相关文档
-
-- [定时任务-表达式](output/goframe-v2.2-md/组件列表/系统相关/定时任务-gcron/定时任务-表达式)
-- [定时任务-基本使用](output/goframe-v2.2-md/组件列表/系统相关/定时任务-gcron/定时任务-基本使用)
-- [定时任务-日志管理](output/goframe-v2.2-md/组件列表/系统相关/定时任务-gcron/定时任务-日志管理)
-- [定时任务-注意事项](output/goframe-v2.2-md/组件列表/系统相关/定时任务-gcron/定时任务-注意事项)
-- [定时任务-gcron与gtimer](output/goframe-v2.2-md/组件列表/系统相关/定时任务-gcron/定时任务-gcron与gtimer)
+    

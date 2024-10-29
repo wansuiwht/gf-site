@@ -21,7 +21,4 @@ import "github.com/gogf/gf/v2/container/glist"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/glist](https://pkg.go.dev/github.com/gogf/gf/v2/container/glist)
 
-## 相关文档
-
-- [链表类型-基本使用](output/goframe-v2.4-md/组件列表/数据结构/链表类型-glist/链表类型-基本使用)
-- [链表类型-性能测试](output/goframe-v2.4-md/组件列表/数据结构/链表类型-glist/链表类型-性能测试)
+    

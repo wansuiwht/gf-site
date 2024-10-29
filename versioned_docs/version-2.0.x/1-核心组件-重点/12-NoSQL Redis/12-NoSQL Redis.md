@@ -40,10 +40,4 @@ import "github.com/gogf/gf/v2/database/gredis"
 - 支持单例对象、也支持动态创建对象
 - 接口化设计，很高的灵活性和扩展性
 
-## 相关文档
-
-- [Redis-配置管理](output/goframe-v2.0-md/核心组件-重点/NoSQL%20Redis/Redis-配置管理)
-- [Redis-基本使用](output/goframe-v2.0-md/核心组件-重点/NoSQL%20Redis/Redis-基本使用)
-- [Redis-Conn对象](output/goframe-v2.0-md/核心组件-重点/NoSQL%20Redis/Redis-Conn对象)
-- [Redis-结果处理](output/goframe-v2.0-md/核心组件-重点/NoSQL%20Redis/Redis-结果处理)
-- [Redis-接口化设计](output/goframe-v2.0-md/核心组件-重点/NoSQL%20Redis/Redis-接口化设计)
+    

@@ -30,7 +30,4 @@ import "github.com/gogf/gf/v2/container/garray"
    - `SortedArray`, `SortedIntArray`, `SortedStrArray`
    - 其中排序数组 `SortedArray`，需要给定排序比较方法，在工具包 `gutil` 中也定义了很多 `Comparator*` 比较方法
 
-## 相关文档
-
-- [数组类型-基本使用](output/goframe-v2.3-md/组件列表/数据结构/数组类型-garray/数组类型-基本使用)
-- [数组类型-方法介绍](output/goframe-v2.3-md/组件列表/数据结构/数组类型-garray/数组类型-方法介绍)
+    

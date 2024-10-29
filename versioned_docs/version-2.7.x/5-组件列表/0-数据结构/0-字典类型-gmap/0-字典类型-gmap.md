@@ -29,8 +29,4 @@ import "github.com/gogf/gf/v2/container/gmap"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/gmap](https://pkg.go.dev/github.com/gogf/gf/v2/container/gmap)
 
-## 相关文档
-
-- [字典类型-基本使用](https://goframe.org/pages/viewpage.action?pageId=30736711)
-- [字典类型-性能测试](https://goframe.org/pages/viewpage.action?pageId=30736719)
-- [字典类型-方法介绍](https://goframe.org/pages/viewpage.action?pageId=30736716)
+    

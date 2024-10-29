@@ -55,7 +55,4 @@ import "github.com/gogf/gf/v2/os/gtimer"
 
 具体请查看章节 [定时任务-gcron与gtimer](output/goframe-v2.1-md/组件列表/系统相关/定时任务-gcron/定时任务-gcron与gtimer)
 
-## 相关文档
-
-- [定时器-基本使用](output/goframe-v2.1-md/组件列表/系统相关/定时器-gtimer/定时器-基本使用)
-- [定时器-性能测试](output/goframe-v2.1-md/组件列表/系统相关/定时器-gtimer/定时器-性能测试)
+    
