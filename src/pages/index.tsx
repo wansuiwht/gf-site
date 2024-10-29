@@ -280,12 +280,31 @@ function Users() {
     );
 }
 
+function Contributors() {
+    return (
+        <section>
+            <div className="container mt-20">
+                <h1 className="text-center largest font-bold">
+                    贡献者列表
+                </h1>
+                <div className="text-center mb-10">
+                    感谢所有参与<code>GoFrame</code>开发的贡献者!!!
+                </div>
+                <div className="contributors text-center">
+                    <img alt="GoFrame Contributors" src="/gf-site/contributors.svg" />
+                </div>
+            </div>
+        </section>
+    );
+}
+
 export default function Home(): JSX.Element {
     return (
         <Layout>
             <HomepageHeader/>
             <Features/>
             <Users/>
+            <Contributors/>
             <div className="mt-20"></div>
         </Layout>
     );

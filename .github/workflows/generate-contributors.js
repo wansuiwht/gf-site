@@ -10,7 +10,7 @@ const svgPath = "../../static/contributors.svg"
 const quality = 10
 
 // 单个头像的宽高
-const width = 30, height = 30
+const width = 65, height = 65
 // 头像之间的间距
 const xSpace = 2, ySpace = 2
 // 每一行的头像数量
@@ -135,7 +135,7 @@ async function convertImageToBase64(url) {
     const compressedBuffer = await sharp(Buffer.from(buffer))
         .toFormat("jpeg", { quality })
         .toBuffer()
-
     const base64Image = compressedBuffer.toString("base64")
+
     return `data:image/jpeg;base64,${base64Image}`
 }
