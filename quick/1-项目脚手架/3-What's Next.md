@@ -1,6 +1,7 @@
 ---
 slug: /scaffold-next
 title: "What's Next"
+hide_title: true
 sidebar_position: 3
 ---
 
