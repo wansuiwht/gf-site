@@ -1,4 +1,5 @@
 ---
+slug: '/donate'
 title: '来杯咖啡'
 sidebar_position: 0
 hide_title: true

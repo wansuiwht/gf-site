@@ -162,27 +162,27 @@ const config: Config = {
           items: [
             {
               label: '框架设计',
-              to: '/docs/框架设计',
+              to: '/docs/design',
             },
             {
               label: '开发工具',
-              to: '/docs/开发工具',
+              to: '/docs/cli',
             },
             {
               label: '组件手册',
-              to: '/docs/核心组件',
+              to: '/docs/core',
             },
             {
               label: '微服务开发',
-              to: '/docs/微服务开发',
+              to: '/docs/micro',
             },
             {
               label: 'WEB服务开发',
-              to: '/docs/WEB服务开发',
+              to: '/docs/web',
             },
             {
               label: '服务可观测性',
-              to: '/docs/服务可观测性',
+              to: '/docs/obs',
             },
           ],
         },
