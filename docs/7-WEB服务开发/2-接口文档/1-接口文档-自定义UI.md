@@ -8,7 +8,10 @@ hide_title: true
 
 `GoFrame` 的 `Server` 默认自带的 `OpenAPI` 接口文档UI是 `redoc` 开源组件，该组件不支持页面 `Try It Out` 功能的。很多同学都在问，能否使用 `SwaggerUI` 页面来展示 `OpenAPI` 接口文档？有的企业内部并不支持连接外网的部分资源，那么能否将内部的接口文档UI替换为内部可访问的资源呢？
 
-了解 `OpenAPI` 这个东东的小伙伴应该都知道， `OpenAPI` 只是通用的接口定义规范，而展示的接口文档UI是可以随便替换的，并且这种UI界面以及平台还特别多！使用 `GoFrame Server` 来切换接口文档UI页面，或者将接口文档对接到第三方接口文档平台 - **非常简单！详见示例： [gf/example/httpserver/swagger-set-template/main.go at master · gogf/gf (github.com)](https://github.com/gogf/gf/blob/master/example/httpserver/swagger-set-template/main.go)**
+了解 `OpenAPI` 这个东东的小伙伴应该都知道， `OpenAPI` 只是通用的接口定义规范，而展示的接口文档UI是可以随便替换的，
+并且这种UI界面以及平台还特别多！使用 `GoFrame Server` 来切换接口文档UI页面，
+或者将接口文档对接到第三方接口文档平台 - **非常简单！详见示例：
+[gf/example/httpserver/swagger-set-template/main.go](https://github.com/gogf/gf/blob/master/example/httpserver/swagger-set-template/main.go)**
 
 ## 使用示例
 

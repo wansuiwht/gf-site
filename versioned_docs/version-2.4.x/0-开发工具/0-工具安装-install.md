@@ -30,13 +30,13 @@ go env GOARCH
 
 #### 版本在v2.0+
 
-预编译二进制下载： [Releases · gogf/gf (github.com)](https://github.com/gogf/gf/releases)
+预编译二进制下载： [releases](https://github.com/gogf/gf/releases)
 
 源码：[gf/cmd/gf](https://github.com/gogf/gf/tree/master/cmd/gf)
 
 #### 版本在v2.0-
 
-预编译二进制下载： [Releases · gogf/gf-cli (github.com)](https://github.com/gogf/gf-cli/releases)
+预编译二进制下载： [releases](https://github.com/gogf/gf-cli/releases)
 
 源码： [gogf/gf-cli](https://github.com/gogf/gf-cli)
 

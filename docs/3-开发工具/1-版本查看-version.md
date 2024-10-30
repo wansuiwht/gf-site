@@ -11,18 +11,11 @@ hide_title: true
 
 用以查看当前 `gf` 命令行工具编译时的版本信息。
 
-| 栏目 | 说明 |
-| --- | --- |
-| 首行 | 工具的版本号 |
-| Env Detail | 环境信息：<br />go的版本号<br />当前项目对于goframe的依赖情况 |
-| CLI Detail / CLI Built Detail | 工具的详细信息：<br />安装目录<br />构建时的go版本<br />构建时的gf版本<br />预编译的构建信息更加详细 |
-| Others Detail | 其他详细信息：<br />文档地址<br />当前系统时间 |
-
 ## 使用示例
 
 ### `>= v2.5.7`
 
-```bash
+```html
 $ gf version
 v2.7.2
 Welcome to GoFrame!
@@ -44,7 +37,7 @@ Others Detail:
 
 ### `< v2.5.6`
 
-```bash
+```html
 $ gf version
 GoFrame CLI Tool v2.0.0, https://goframe.org
 GoFrame Version: v2.0.0-beta.0.20211214160159-19c9f0a48845 in current go.mod

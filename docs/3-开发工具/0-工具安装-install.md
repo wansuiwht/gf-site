@@ -25,7 +25,7 @@ go env GOOS
 go env GOARCH
 ```
 
-下载地址： [Releases · gogf/gf (github.com)](https://github.com/gogf/gf/releases)
+下载地址： [releases](https://github.com/gogf/gf/releases)
 
 ### 通过 `go install` 安装
 
@@ -38,13 +38,13 @@ go install github.com/gogf/gf/cmd/gf/v2@v2.5.5 # 指定版本(版本需要 >= v2
 
 #### v2版本
 
-预编译二进制下载： [Releases · gogf/gf (github.com)](https://github.com/gogf/gf/releases)
+预编译二进制下载： [releases](https://github.com/gogf/gf/releases)
 
 源码：[gf/cmd/gf](https://github.com/gogf/gf/tree/master/cmd/gf)
 
 #### v1版本
 
-预编译二进制下载： [Releases · gogf/gf-cli (github.com)](https://github.com/gogf/gf-cli/releases)
+预编译二进制下载： [releases](https://github.com/gogf/gf-cli/releases)
 
 源码： [gogf/gf-cli](https://github.com/gogf/gf-cli)
 
