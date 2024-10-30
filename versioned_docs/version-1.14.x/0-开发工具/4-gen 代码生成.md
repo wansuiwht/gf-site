@@ -31,7 +31,7 @@ hide_title: true
 | 名称 | 必须 | 默认值 | 含义 | 示例 |
 | --- | --- | --- | --- | --- |
 | `gfcli.gen.dao` | 是 |  | `dao` 代码生成配置项，可以有多个配置项构成数组，支持多个数据库生成。 | - |
-| `link` | 是 |  | 分为两部分，第一部分表示你连接的数据库类型 `mysql`, `postgresql` 等, 第二部分就是连接数据库的 `dsn` 信息。具体请参考 [ORM使用配置](output/goframe-v1.14-md/核心组件/数据库ORM/ORM使用配置) 章节。 | ```<br />mysql:root:12345678@tcp(127.0.0.1:3306)/user<br />``` |
+| `link` | 是 |  | 分为两部分，第一部分表示你连接的数据库类型 `mysql`, `postgresql` 等, 第二部分就是连接数据库的 `dsn` 信息。具体请参考 [ORM使用配置](../1-核心组件/10-数据库ORM/0-ORM使用配置.md) 章节。 | ```<br />mysql:root:12345678@tcp(127.0.0.1:3306)/user<br />``` |
 | `mod` | 否 |  | 用于生成 `go` 文件的 `import` 计算，默认情况下会自动读取当前项目根目录下的 `go.mod` 获取。 | `github.com/gogf/gf-demos` |
 | `group` | 否 | `default` | 在数据库配置中的数据库分组名称。 | `default`<br />`order`<br />`user` |
 | `prefix` | 否 |  | 生成数据库对象及文件的前缀，以便区分不同数据库或者不同数据库中的相同表名，防止数据表同名覆盖。 | `order_`<br />`user_` |

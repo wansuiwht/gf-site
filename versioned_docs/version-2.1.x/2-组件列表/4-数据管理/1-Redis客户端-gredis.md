@@ -4,4 +4,4 @@ sidebar_position: 1
 hide_title: true
 ---
 
-`Redis` 的功能由 `gredis` 模块实现，具体请参考 [NoSQL Redis](output/goframe-v2.1-md/核心组件-重点/NoSQL%20Redis) 章节。
+`Redis` 的功能由 `gredis` 模块实现，具体请参考 [NoSQL Redis](../../1-核心组件-重点/12-NoSQL Redis/12-NoSQL Redis.md) 章节。

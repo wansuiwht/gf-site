@@ -78,7 +78,7 @@ CONFIGURATION SUPPORT
 | `gfcli.gen.pbentity` |  | 代码生成配置项，可以有多个配置项构成数组，支持多个数据库生成。不同的数据库可以设置不同的生成规则，例如可以生成到不同的位置或者文件。 | - |
 | `path` | `manifest/protobuf/pbentity` | 生成 `proto` 文件的存储 **目录** 地址。 | `protobuf/pbentity` |
 | `package` | 自动识别 `go.mod` | 生成的 `proto` 文件中的 `go_package` 路径，并自动识别 `package` 名称 | - |
-| `link` |  | 分为两部分，第一部分表示你连接的数据库类型 `mysql`, `postgresql` 等, 第二部分就是连接数据库的 `dsn` 信息。具体请参考 [ORM使用配置](output/goframe-v2.4-md/核心组件-重点/数据库ORM/ORM使用配置) 章节。 | - |
+| `link` |  | 分为两部分，第一部分表示你连接的数据库类型 `mysql`, `postgresql` 等, 第二部分就是连接数据库的 `dsn` 信息。具体请参考 [ORM使用配置](../../1-核心组件-重点/10-数据库ORM/0-ORM使用配置.md) 章节。 | - |
 | `prefix` |  | 生成数据库对象及文件的前缀，以便区分不同数据库或者不同数据库中的相同表名，防止数据表同名覆盖。 | `order_`<br />`user_` |
 | `removePrefix` |  | 删除数据表的指定前缀名称。多个前缀以 `,` 号分隔。 | `gf_` |
 | `tables` |  | 指定当前数据库中需要执行代码生成的数据表。如果为空，表示数据库的所有表都会生成。 | `user, user_detail` |

@@ -6,7 +6,7 @@ hide_title: true
 
 `gdb` 的数据记录结果（ `Value`）支持非常灵活的类型转换，并内置支持常用的数十种数据类型的转换。 `Result`/ `Record` 的类型转换请查看后续 [ORM高级特性](https://itician.org/database/gdb/senior) 章节。
 
-> `Value` 类型是 `*gvar.Var` 类型的别名，因此可以使用 `gvar.Var` 数据类型的所有转换方法，具体请查看 [泛型类型-gvar](output/goframe-v2.0-md/组件列表/数据结构/泛型类型-gvar) 章节
+> `Value` 类型是 `*gvar.Var` 类型的别名，因此可以使用 `gvar.Var` 数据类型的所有转换方法，具体请查看 [泛型类型-gvar](../../../2-组件列表/0-数据结构/4-泛型类型-gvar/4-泛型类型-gvar.md) 章节
 
 使用示例：
 

@@ -54,6 +54,6 @@ import "github.com/gogf/gf/v2/os/gtimer"
 
 ## 与 `gcron` 区别
 
-具体请查看章节 [定时任务-gcron与gtimer](output/goframe-v2.2-md/组件列表/系统相关/定时任务-gcron/定时任务-gcron与gtimer)
+具体请查看章节 [定时任务-gcron与gtimer](../6-定时任务-gcron/4-定时任务-gcron与gtimer.md)
 
     

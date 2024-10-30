@@ -19,6 +19,6 @@ type User struct {
 
 这里有 **三种** 解决方案：
 
-1. （推荐）使用 `Struct` 校验的 `Assoc` 联合校验方法设置联合校验参数，在校验 `Struct` 类型参数时，参数值将以 `Assoc` 方法中给定的参数为准执行校验。如果使用框架的 `Server`，采用结构化的 `API` 输入输出（ `XxxReq/XxxRes`），那么 `Server` 将会自动调用 `Assoc` 执行校验，开发者无需担心默认值的影响。文档链接： [Struct校验-Assoc关联](output/goframe-v2.4-md/核心组件-重点/数据校验/数据校验-参数类型/数据校验-Struct校验/Struct校验-Assoc关联)
+1. （推荐）使用 `Struct` 校验的 `Assoc` 联合校验方法设置联合校验参数，在校验 `Struct` 类型参数时，参数值将以 `Assoc` 方法中给定的参数为准执行校验。如果使用框架的 `Server`，采用结构化的 `API` 输入输出（ `XxxReq/XxxRes`），那么 `Server` 将会自动调用 `Assoc` 执行校验，开发者无需担心默认值的影响。文档链接： [Struct校验-Assoc关联](3-数据校验-参数类型/1-数据校验-Struct校验/1-Struct校验-Assoc关联.md)
 2. 使用组合校验规则来弥补默认值对 `required` 规则的影响，例如以上示例中将 `Age` 属性的校验规则修改为 `required|min:1` 将能达到业务校验的效果。
 3. 将属性改为指针类型，例如 `*int`、 `*float64`、 `*g.Var` 等，通过指针类型默认值为 `nil` 的特点绕过了这个问题。

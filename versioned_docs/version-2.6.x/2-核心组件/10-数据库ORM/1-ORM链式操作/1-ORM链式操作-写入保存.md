@@ -166,7 +166,7 @@ g.Model("user").Data(g.List{
 
 ## `RawSQL` 语句嵌入
 
-`gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。更详细的介绍请参考章节： [ORM高级特性-RawSQL](output/goframe-v2.6-md/核心组件/数据库ORM/ORM高级特性/ORM高级特性-RawSQL)。例如：
+`gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。更详细的介绍请参考章节： [ORM高级特性-RawSQL](../7-ORM高级特性/0-ORM高级特性-RawSQL.md)。例如：
 
 ```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES('id+2','john','123456','now()')

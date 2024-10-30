@@ -89,6 +89,6 @@ db, err := gdb.Instance("user")
 
 由于 `go` 标准库的数据库操作对象采用接口实现，因此提供了非常好的可扩展性和兼容性。框架已支持的第三方数据库驱动请参考： [https://github.com/gogf/gf/tree/master/contrib/drivers](https://github.com/gogf/gf/tree/master/contrib/drivers)
 
-额外接入新的数据库相当方便，可参考源码中关于 `PostgreSQL`、 `SQLite`、 `Oracle`、 `SQL Server` 的接入方式。具体介绍请参考后续 [ORM接口开发-驱动开发](output/goframe-v2.1-md/核心组件-重点/数据库ORM/ORM接口开发/ORM接口开发-驱动开发) 章节。
+额外接入新的数据库相当方便，可参考源码中关于 `PostgreSQL`、 `SQLite`、 `Oracle`、 `SQL Server` 的接入方式。具体介绍请参考后续 [ORM接口开发-驱动开发](8-ORM接口开发/1-ORM接口开发-驱动开发.md) 章节。
 
     

@@ -4,7 +4,7 @@ sidebar_position: 11
 hide_title: true
 ---
 
-`Writer` 接口是最底层的 `IO` 写入接口，如果业务需要自定义日志内容打印，建议使用 `Handler` 特性，参考章节： [日志组件-Handler](output/goframe-v2.1-md/核心组件-重点/日志组件/日志组件-Handler)
+`Writer` 接口是最底层的 `IO` 写入接口，如果业务需要自定义日志内容打印，建议使用 `Handler` 特性，参考章节： [日志组件-Handler](6-日志组件-Handler.md)
 
 ## 自定义 `Writer` 接口
 

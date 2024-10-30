@@ -62,4 +62,4 @@ if tx, err := db.Begin(); err == nil {
 }
 ```
 
-其他链式操作请参考 [ORM链式操作(重点)](output/goframe-v2.1-md/核心组件-重点/数据库ORM/ORM链式操作-重点) 章节。
+其他链式操作请参考 [ORM链式操作(重点)](../1-ORM链式操作-重点/1-ORM链式操作-重点.md) 章节。

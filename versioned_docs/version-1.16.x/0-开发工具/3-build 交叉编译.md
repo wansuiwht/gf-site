@@ -63,7 +63,7 @@ PLATFORMS
 
 编译配置文件选项示例：
 
-编译的配置默认读取的是默认配置文件 `config.toml`，我们也可以通过命令行参数 `-gf.gcfg.file=build.toml` 来修改默认读取的配置文件，关于如何修改配置管理组件默认的配置目录及文件请参考章节： [配置管理](output/goframe-v1.16-md/核心组件-重点/配置管理)
+编译的配置默认读取的是默认配置文件 `config.toml`，我们也可以通过命令行参数 `-gf.gcfg.file=build.toml` 来修改默认读取的配置文件，关于如何修改配置管理组件默认的配置目录及文件请参考章节： [配置管理](../1-核心组件-重点/2-配置管理/2-配置管理.md)
 
 ```
 [gfcli]
@@ -95,7 +95,7 @@ PLATFORMS
 | `extra` | 否 |  | 额外自定义的编译参数，会直接传递给 `go build` 命令 |  |
 | `varmap` | 否 |  | 自定义的内置变量键值对 | ```<br />[gfcli]<br />    [gfcli.build]<br />        name     = "gf"<br />        arch     = "all"<br />        system   = "all"<br />        mod      = "none"<br />        cgo      = 0<br />        [gfcli.build.varmap]<br />            k1 = "v1"<br />            k2 = "v2"<br />``` |
 
-编译时的内置变量可以在运行时通过 `gbuild` 包 [gbuild (构建信息获取)](output/goframe-v1.16-md/模块列表/系统相关/gbuild%20-构建信息获取) 获取。
+编译时的内置变量可以在运行时通过 `gbuild` 包 [gbuild (构建信息获取)](../2-模块列表/3-系统相关/17-gbuild -构建信息获取.md) 获取。
 
 使用示例：
 

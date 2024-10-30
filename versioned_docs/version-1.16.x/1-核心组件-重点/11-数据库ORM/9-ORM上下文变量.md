@@ -49,9 +49,9 @@ context deadline exceeded, SELECT SLEEP(10)
         debug  = true
 ```
 
-其中，我们通过日志组件的 `CtxKeys` 配置来指定需要打印到日志中的上下文信息中的变量名称，因此当 `context` 上下文变量中存在键名为 `Trace-Id` 的变量时，将会被自动打印到日志中。关于日志组件的上下文特性介绍具体请参考 [日志组件-Context上下文](output/goframe-v1.16-md/核心组件-重点/日志组件/日志组件-高级特性/日志组件-Context上下文) 章节。同时，仅当数据库配置的 `debug` 打开时才会记录完整的 `SQL` 执行日志，因此这里配置中的 `debug=true`。
+其中，我们通过日志组件的 `CtxKeys` 配置来指定需要打印到日志中的上下文信息中的变量名称，因此当 `context` 上下文变量中存在键名为 `Trace-Id` 的变量时，将会被自动打印到日志中。关于日志组件的上下文特性介绍具体请参考 [日志组件-Context上下文](../5-日志组件/4-日志组件-高级特性/7-日志组件-Context上下文.md) 章节。同时，仅当数据库配置的 `debug` 打开时才会记录完整的 `SQL` 执行日志，因此这里配置中的 `debug=true`。
 
-`ORM` 组件同时支持 `goframe` 框架的 `logger` 组件 `CtxKeys` 特性（自定义链路信息传递），同时也支持标准的 `OpenTelemetry` 链路跟踪信息传递，具体请参考章节： [链路跟踪](output/goframe-v1.16-md/核心组件-重点/链路跟踪)
+`ORM` 组件同时支持 `goframe` 框架的 `logger` 组件 `CtxKeys` 特性（自定义链路信息传递），同时也支持标准的 `OpenTelemetry` 链路跟踪信息传递，具体请参考章节： [链路跟踪](../10-链路跟踪/10-链路跟踪.md)
 
 2、 `Golang` 代码示例
 
@@ -110,4 +110,4 @@ func main() {
 
 ## 示例4，嵌套事务支持
 
-嵌套事务的支持依赖 `Context` 上下文变量的层级传递，具体请参考章节： [ORM事务处理](output/goframe-v1.16-md/核心组件-重点/数据库ORM/ORM事务处理)
+嵌套事务的支持依赖 `Context` 上下文变量的层级传递，具体请参考章节： [ORM事务处理](3-ORM事务处理.md)

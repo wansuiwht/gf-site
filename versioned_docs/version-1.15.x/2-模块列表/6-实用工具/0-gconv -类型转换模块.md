@@ -4,4 +4,4 @@ sidebar_position: 0
 hide_title: true
 ---
 
-类型转换功能由 `gconv` 模块实现，具体请参考 [类型转换](output/goframe-v1.15-md/核心组件/类型转换) 章节。
+类型转换功能由 `gconv` 模块实现，具体请参考 [类型转换](../../1-核心组件/6-类型转换/6-类型转换.md) 章节。

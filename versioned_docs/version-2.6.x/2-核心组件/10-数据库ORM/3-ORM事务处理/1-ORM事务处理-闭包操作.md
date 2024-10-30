@@ -54,4 +54,4 @@ g.DB().Transaction(context.TODO(), func(ctx context.Context, tx gdb.TX) error {
 })
 ```
 
-通过闭包操作的方式可以很简便地实现嵌套事务，且对上层业务开发同学来说无感知，具体可以继续阅读章节： [ORM事务处理-嵌套事务](output/goframe-v2.6-md/核心组件/数据库ORM/ORM事务处理/ORM事务处理-嵌套事务)
+通过闭包操作的方式可以很简便地实现嵌套事务，且对上层业务开发同学来说无感知，具体可以继续阅读章节： [ORM事务处理-嵌套事务](2-ORM事务处理-嵌套事务.md)

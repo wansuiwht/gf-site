@@ -33,7 +33,7 @@ g.DB().GetCache().SetAdapter(adapter)
 
 更多介绍请参考：
 
-1. `gcache` 模块 [缓存管理-缓存适配](output/goframe-v1.16-md/核心组件-重点/缓存管理/缓存管理-缓存适配) 章节。
+1. `gcache` 模块 [缓存管理-缓存适配](../../8-缓存管理/1-缓存管理-缓存适配.md) 章节。
 2. `Redis` 适配器: [https://github.com/gogf/gcache-adapter](https://github.com/gogf/gcache-adapter) 使用方式请参考仓库 `README` 介绍。
 
 `Redis` 的缓存是基于查询 `SQL` 作为键名，查询结果作为键值。通过 `Cache` 链式方法对缓存的写入和清除都非常便捷。

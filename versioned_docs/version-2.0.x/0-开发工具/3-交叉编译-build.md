@@ -21,7 +21,7 @@ hide_title: true
 
 ## 编译配置文件
 
-`build` 支持同时从命令行以及配置文件指定编译参数、选项。 `GoFrame` 框架的所有组件及所有生态项目都是使用的同一个配置管理组件，默认的配置文件以及配置使用请参考章节 [配置管理](output/goframe-v2.0-md/核心组件-重点/配置管理)。以下是一个简单的配置示例供参考（以 `config.yaml` 为例）：
+`build` 支持同时从命令行以及配置文件指定编译参数、选项。 `GoFrame` 框架的所有组件及所有生态项目都是使用的同一个配置管理组件，默认的配置文件以及配置使用请参考章节 [配置管理](../1-核心组件-重点/3-配置管理/3-配置管理.md)。以下是一个简单的配置示例供参考（以 `config.yaml` 为例）：
 
 ```
 gfcli:
@@ -52,7 +52,7 @@ gfcli:
 | `extra` | 否 |  | 额外自定义的编译参数，会直接传递给 `go build` 命令 |  |
 | `varMap` | 否 |  | 自定义的内置变量键值对 | ```<br />gfcli:<br />  build:<br />    name:     "gf"<br />    arch:     "all"<br />    system:   "all"<br />    mod:      "none"<br />    cgo:      0<br />    pack:     ""<br />    version:  "v1.0.0"<br />    output:   "./bin"<br />    extra:    ""<br />    varMap:<br />      k1: v1<br />      k2: v2<br />``` |
 
-编译时的内置变量可以在运行时通过 `gbuild` 包 [构建信息-gbuild](output/goframe-v2.0-md/组件列表/系统相关/构建信息-gbuild) 获取。
+编译时的内置变量可以在运行时通过 `gbuild` 包 [构建信息-gbuild](../2-组件列表/1-系统相关/16-构建信息-gbuild.md) 获取。
 
 ## 使用示例
 

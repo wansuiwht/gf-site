@@ -43,4 +43,4 @@ func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask
 
 注意代码中 `&out` 的使用。
 
-更多的介绍请参考： [ORM结果处理-为空判断](output/goframe-v2.0-md/核心组件-重点/数据库ORM/ORM结果处理/ORM结果处理-为空判断)
+更多的介绍请参考： [ORM结果处理-为空判断](4-ORM结果处理/1-ORM结果处理-为空判断.md)

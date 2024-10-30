@@ -143,4 +143,4 @@ if err == sql.ErrNoRows {
 }
 ```
 
-由于 `struct` 转换利用了 `Golang` 反射特性，执行性能会有一定的损耗。如果您涉及到大量查询结果数据的 `struct` 数组对象转换，并且需要提高转换性能，请参考自定义实现对应 `struct` 的 `UnmarshalValue` 方法： [类型转换-UnmarshalValue](output/goframe-v2.6-md/核心组件/类型转换/类型转换-UnmarshalValue)
+由于 `struct` 转换利用了 `Golang` 反射特性，执行性能会有一定的损耗。如果您涉及到大量查询结果数据的 `struct` 数组对象转换，并且需要提高转换性能，请参考自定义实现对应 `struct` 的 `UnmarshalValue` 方法： [类型转换-UnmarshalValue](../../7-类型转换/6-类型转换-UnmarshalValue.md)

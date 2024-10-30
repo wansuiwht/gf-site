@@ -4,4 +4,4 @@ sidebar_position: 15
 hide_title: true
 ---
 
-模板引擎由 `gview` 模块实现，具体请参考 [模板引擎](output/goframe-v2.5-md/核心组件/模板引擎) 章节。
+模板引擎由 `gview` 模块实现，具体请参考 [模板引擎](../../2-核心组件/9-模板引擎/9-模板引擎.md) 章节。

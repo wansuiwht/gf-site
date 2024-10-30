@@ -43,10 +43,10 @@ g.Log().Error(ctx,"runtime error")
 
 ## 传递给 `Handler`
 
-如果开发者自定义了日志对象的 `Handler`，那么每个日志打印传递的ctx上下文变量将会传递给 `Handler` 中。关于日志 `Handler` 的介绍请参考章节： [日志组件-Handler](output/goframe-v2.1-md/核心组件-重点/日志组件/日志组件-Handler)
+如果开发者自定义了日志对象的 `Handler`，那么每个日志打印传递的ctx上下文变量将会传递给 `Handler` 中。关于日志 `Handler` 的介绍请参考章节： [日志组件-Handler](6-日志组件-Handler.md)
 
 ## 链路跟踪支持
 
-`glog` 组件支持 `OpenTelemetry` 标准的链路跟踪特性，该支持是内置的，无需开发者做任何设置，具体请参考章节： [链路跟踪](output/goframe-v2.1-md/核心组件-重点/链路跟踪)
+`glog` 组件支持 `OpenTelemetry` 标准的链路跟踪特性，该支持是内置的，无需开发者做任何设置，具体请参考章节： [链路跟踪](../10-链路跟踪/10-链路跟踪.md)
 
 ![](/markdown/2abb21a4e3b46f63000b653b7ddd4dda.png)

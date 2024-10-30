@@ -6,4 +6,4 @@ hide_title: true
 
 ## 模型自动生成
 
-`GoFrame` 框架支持非常便捷的数据表模型生成功能，通过 `gf gen dao/model` 工具链命令实现，具体请参考 [开发工具](output/goframe-v2.0-md/开发工具) 章节。
+`GoFrame` 框架支持非常便捷的数据表模型生成功能，通过 `gf gen dao/model` 工具链命令实现，具体请参考 [开发工具](../../0-开发工具/0-开发工具.md) 章节。

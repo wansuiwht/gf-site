@@ -66,4 +66,4 @@ type Storage interface {
 ## 注意事项
 
 - `Storage` 接口中，并不是所有的接口方法都需要实现，开发者仅需要根据业务需要，实现特定调用时机的一些接口即可。
-- 为了提高 `Session` 的执行性能，接口有 `gmap.StrAnyMap` 容器类型的使用，开发时可以参考一下章节： [字典类型-gmap](output/goframe-v2.6-md/组件列表/数据结构/字典类型-gmap)
+- 为了提高 `Session` 的执行性能，接口有 `gmap.StrAnyMap` 容器类型的使用，开发时可以参考一下章节： [字典类型-gmap](../../3-组件列表/0-数据结构/0-字典类型-gmap/0-字典类型-gmap.md)

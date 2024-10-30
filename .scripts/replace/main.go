@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	path = `/Users/john/Workspace/github/gogf/gf-site/docs`
+	path = `/Users/john/Workspace/github/gogf/gf-site/versioned_docs/version-1.14.x`
 )
 
 func main() {
@@ -32,7 +32,7 @@ func main() {
 	for _, file := range files {
 		content := gfile.GetContents(file)
 		newContent, _ := gregex.ReplaceStringFuncMatch(
-			`\[([^\]]+?)\]\((/docs/.+?)\)`,
+			`\[([^\]]+?)\]\((output/goframe.+?)\)`,
 			content,
 			func(match []string) string {
 				if gstr.HasSuffix(match[2], ".md") {

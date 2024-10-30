@@ -59,10 +59,10 @@ Stack:
 
 ## 传递给 `Handler`
 
-如果开发者自定义了日志对象的 `Handler`，那么每个日志打印传递的 `ctx` 上下文变量将会传递给 `Handler` 中。关于日志 `Handler` 的介绍请参考章节： [日志组件-Handler](output/goframe-v2.6-md/核心组件/日志组件/日志组件-Handler)
+如果开发者自定义了日志对象的 `Handler`，那么每个日志打印传递的 `ctx` 上下文变量将会传递给 `Handler` 中。关于日志 `Handler` 的介绍请参考章节： [日志组件-Handler](6-日志组件-Handler.md)
 
 ## 链路跟踪支持
 
-`glog` 组件支持 `OpenTelemetry` 标准的链路跟踪特性，该支持是内置的，无需开发者做任何设置，具体请参考章节： [服务链路跟踪](output/goframe-v2.6-md/服务可观测性/服务链路跟踪)
+`glog` 组件支持 `OpenTelemetry` 标准的链路跟踪特性，该支持是内置的，无需开发者做任何设置，具体请参考章节： [服务链路跟踪](../../7-服务可观测性/0-服务链路跟踪/0-服务链路跟踪.md)
 
 ![](/markdown/91e737fdb26b736e63e76c0248e32c81.png)

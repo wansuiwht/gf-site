@@ -122,7 +122,7 @@ hide_title: true
 | `sqlite` | `sqlite: 文件绝对路径` (如: `/var/lib/db.sqlite3`) | [go-sqlite3](https://github.com/mattn/go-sqlite3) |
 | `oracle` | `oracle: 账号/密码@地址:端口/数据库名称` | [go-oci8](https://github.com/mattn/go-oci8) |
 
-各数据库类型更详细的 `link` 参数信息请查看对应引擎官网，参考 [数据库ORM](output/goframe-v1.16-md/核心组件-重点/数据库ORM) 章节。
+各数据库类型更详细的 `link` 参数信息请查看对应引擎官网，参考 [数据库ORM](11-数据库ORM.md) 章节。
 
 ### 日志输出配置
 
@@ -140,7 +140,7 @@ hide_title: true
 
 ```
 
-其中 `database.logger` 即为 `gdb` 的日志配置，当该配置不存在时，将会使用日志组件的默认配置，具体请参考 [日志组件](output/goframe-v1.16-md/核心组件-重点/日志组件) 章节。
+其中 `database.logger` 即为 `gdb` 的日志配置，当该配置不存在时，将会使用日志组件的默认配置，具体请参考 [日志组件](../5-日志组件/5-日志组件.md) 章节。
 
 需要注意哦：由于 `ORM` 底层都是采用安全的预处理执行方式，提交到底层的 `SQL` 与参数其实是分开的，因此日志中记录的完整 `SQL` 仅作参考方便人工阅读，并不是真正提交到底层的 `SQL` 语句。
 

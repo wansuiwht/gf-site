@@ -4,7 +4,7 @@ sidebar_position: 4
 hide_title: true
 ---
 
-允许接口跨域往往是需要结合 [路由管理-中间件/拦截器](output/goframe-v2.4-md/WEB服务开发/路由管理/路由管理-中间件拦截器) 一起使用，来统一设置某些路由规则下的接口可以跨域访问。同时，针对允许 `WebSocket` 的跨域请求访问，也是通过该方式来实现。
+允许接口跨域往往是需要结合 [路由管理-中间件/拦截器](output/goframe-v2.4-md/WEB服务开发/路由管理/路由管理-中间件拦截器.md) 一起使用，来统一设置某些路由规则下的接口可以跨域访问。同时，针对允许 `WebSocket` 的跨域请求访问，也是通过该方式来实现。
 
 相关方法： [https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response](https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response)
 

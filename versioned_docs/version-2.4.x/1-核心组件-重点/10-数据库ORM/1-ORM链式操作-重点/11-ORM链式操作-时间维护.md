@@ -15,7 +15,7 @@ hide_title: true
   - `updated_at` 用于记录修改时更新，每次记录变更时更新。
   - `deleted_at` 用于记录的软删除特性，只有当记录删除时会写入一次。
 
-字段名称其实不区分大小写，也会忽略特殊字符，例如 `CreatedAt`, `UpdatedAt`, `DeletedAt` 也是支持的。此外，时间字段名称可以通过配置文件进行自定义修改，并可使用 `TimeMaintainDisabled` 配置完整关闭该特性，具体请参考 [ORM使用配置](output/goframe-v2.4-md/核心组件-重点/数据库ORM/ORM使用配置) 章节。
+字段名称其实不区分大小写，也会忽略特殊字符，例如 `CreatedAt`, `UpdatedAt`, `DeletedAt` 也是支持的。此外，时间字段名称可以通过配置文件进行自定义修改，并可使用 `TimeMaintainDisabled` 配置完整关闭该特性，具体请参考 [ORM使用配置](../0-ORM使用配置.md) 章节。
 
 对时间类型的固定其实是为了形成一种规范。
 

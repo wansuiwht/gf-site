@@ -104,7 +104,7 @@ func HelloHandler(r *ghttp.Request) {
 服务端代码简要说明：
 
 1. 当然，服务端也是需要通过 `initTracer` 方法初始化 `Jaeger`。
-2. 服务端通过 `group.Middleware(ghttp.MiddlewareServerTracing)` 注册一个分组路由中间件，该中间件的作用是启用链路跟踪特性，所有该分组路由下的请求都将会经过中间件的处理后再将请求转交给路由方法。我们在项目中也可以注册 **全局中间件** 的形式来启用链路跟踪特性，关于中间件的介绍请查看 [路由管理-中间件/拦截器](output/goframe-v1.15-md/WEB服务开发/路由管理/路由管理-中间件拦截器) 章节。
+2. 服务端通过 `group.Middleware(ghttp.MiddlewareServerTracing)` 注册一个分组路由中间件，该中间件的作用是启用链路跟踪特性，所有该分组路由下的请求都将会经过中间件的处理后再将请求转交给路由方法。我们在项目中也可以注册 **全局中间件** 的形式来启用链路跟踪特性，关于中间件的介绍请查看 [路由管理-中间件/拦截器](../../3-WEB服务开发/1-路由管理/2-路由管理-中间件拦截器.md) 章节。
 3. 服务端通过 `gtrace.GetBaggageVar(ctx, "name").String()` 方法获取客户端提交的 `baggage` 信息，并转换为字符串返回。
 
 ### 效果查看
@@ -375,9 +375,9 @@ func (api *tracingApi) userCacheKey(id int) string {
 
 1. 首先，客户端也是需要通过 `initTracer` 方法初始化 `Jaeger`。
 2. 在本示例中，我们使用到了数据库和数据库缓存功能，以便于同时演示 `orm` 和 `redis` 的链路跟踪记录。
-3. 我们在程序启动时通过 `g.DB().GetCache().SetAdapter(adapter.NewRedis(g.Redis()))` 设置当前数据库缓存管理的适配器为 `redis`。关于缓存适配器的介绍感兴趣可以参考 [缓存管理-缓存适配](output/goframe-v1.15-md/核心组件/缓存管理/缓存管理-缓存适配) 章节。
+3. 我们在程序启动时通过 `g.DB().GetCache().SetAdapter(adapter.NewRedis(g.Redis()))` 设置当前数据库缓存管理的适配器为 `redis`。关于缓存适配器的介绍感兴趣可以参考 [缓存管理-缓存适配](../8-缓存管理/1-缓存管理-缓存适配.md) 章节。
 4. 在 `orm` 的操作中，需要通过 `Ctx` 方法将上下文变量传递到组件中， `orm` 组件会自动识别当前上下文中是否包含Tracing链路信息，如果包含则自动启用链路跟踪特性。
-5. 在 `orm` 的操作中，这里使用 `Cache` 方法缓存查询结果到 `redis` 中，并在删除操作中也使用 `Cache` 方法清除 `redis` 中的缓存结果。关于 `orm` 的缓存管理介绍请参考 [ORM链式操作-查询缓存](output/goframe-v1.15-md/核心组件/数据库ORM/ORM链式操作-重点/ORM链式操作-查询缓存) 章节。在 `orm` 的内部实现中，也是会将该 `context.Context` 上下文变量传递给 `redis` 链式操作中， `redis` 组件也有一个 `Ctx` 链式操作方法，这样 `redis` 组件也会自动识别链路信息并做自动开启。
+5. 在 `orm` 的操作中，这里使用 `Cache` 方法缓存查询结果到 `redis` 中，并在删除操作中也使用 `Cache` 方法清除 `redis` 中的缓存结果。关于 `orm` 的缓存管理介绍请参考 [ORM链式操作-查询缓存](../11-数据库ORM/1-ORM链式操作-重点/10-ORM链式操作-查询缓存.md) 章节。在 `orm` 的内部实现中，也是会将该 `context.Context` 上下文变量传递给 `redis` 链式操作中， `redis` 组件也有一个 `Ctx` 链式操作方法，这样 `redis` 组件也会自动识别链路信息并做自动开启。
 
 ### 效果查看
 

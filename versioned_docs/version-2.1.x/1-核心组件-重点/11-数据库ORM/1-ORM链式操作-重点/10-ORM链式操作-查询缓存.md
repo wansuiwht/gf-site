@@ -50,7 +50,7 @@ redisCache := gcache.NewAdapterRedis(g.Redis())
 g.DB().GetCache().SetAdapter(redisCache)
 ```
 
-更多介绍请参考： [缓存管理-Redis缓存](output/goframe-v2.1-md/核心组件-重点/缓存管理/缓存管理-Redis缓存)
+更多介绍请参考： [缓存管理-Redis缓存](../../8-缓存管理/2-缓存管理-Redis缓存.md)
 
 ## 使用示例
 

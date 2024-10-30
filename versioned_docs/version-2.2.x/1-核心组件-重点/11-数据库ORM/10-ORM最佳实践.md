@@ -43,7 +43,7 @@ func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask
 
 注意代码中 `&out` 的使用。
 
-更多的介绍请参考： [ORM结果处理-为空判断](output/goframe-v2.2-md/核心组件-重点/数据库ORM/ORM结果处理/ORM结果处理-为空判断)
+更多的介绍请参考： [ORM结果处理-为空判断](4-ORM结果处理/1-ORM结果处理-为空判断.md)
 
 ## 复杂类型尽量使用 `json` 存储，便于 `Scan` 到对象时自动化转换，避免自定义解析
 

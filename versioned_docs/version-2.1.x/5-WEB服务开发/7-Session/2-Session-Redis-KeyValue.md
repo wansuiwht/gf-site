@@ -10,7 +10,7 @@ hide_title: true
 
 `gsession` 的 `Redis` 存储使用 `StorageRedis` 对象实现，与文件存储比较类似，为了提高执行效率，也是采用了 `内存+Redis` 的方式。与文件存储唯一不同的是，在每一次请求中如果需要对 `Session` 进行操作时，将会从 `Redis` 中拉取一次最新的 `Session` 数据（而文件存储只会在 `Session` 不存在时读取一次文件）。在每一次请求结束之后，将全量的 `Session` 数据通过 `JSON` 序列化之后通过 `KeyValue` 方式更新到 `Redis` 服务中。
 
-如果单个用户下(以用户维度举例) `Session` 数据量不大的业务场景中，都推荐使用这种 `Storage` 方式。如果单个用户 `Session` 数据量较大（例如 `>10MB`），可以参考 `HashTable` 的 `Storage` 方式： [Session-Redis-HashTable](output/goframe-v2.1-md/WEB服务开发/Session/Session-Redis-HashTable)
+如果单个用户下(以用户维度举例) `Session` 数据量不大的业务场景中，都推荐使用这种 `Storage` 方式。如果单个用户 `Session` 数据量较大（例如 `>10MB`），可以参考 `HashTable` 的 `Storage` 方式： [Session-Redis-HashTable](3-Session-Redis-HashTable.md)
 
 ## 使用示例
 

@@ -108,7 +108,7 @@ Nick-Name  Nick_Name      match
 
 ```
 
-由于数据库结果集转 `struct` 的底层是依靠 `gconv.Struct` 方法实现的，因此如果想要实现 **自定义的属性转换**，以及更详细的映射规则说明，请参考 [类型转换-Struct转换](output/goframe-v1.15-md/核心组件/类型转换/类型转换-Struct转换) 章节。
+由于数据库结果集转 `struct` 的底层是依靠 `gconv.Struct` 方法实现的，因此如果想要实现 **自定义的属性转换**，以及更详细的映射规则说明，请参考 [类型转换-Struct转换](../6-类型转换/2-类型转换-Struct转换.md) 章节。
 
 ## 三、 `Result` 数据集合
 
@@ -116,7 +116,7 @@ Nick-Name  Nick_Name      match
 
 接口文档： [https://godoc.org/github.com/gogf/gf/database/gdb](https://godoc.org/github.com/gogf/gf/database/gdb)
 
-由于方法比较简单，这里便不再举例说明。需要注意的是两个方法 `Record.Map` 及 `Result.List`，这两个方法也是使用比较频繁的方法，用以将 `ORM` 查询结果信息转换为可做展示的数据类型。由于结果集字段值底层为 `[]byte` 类型，虽然使用了新的 `Value` 类型做了封装，并且也提供了数十种常见的类型转换方法（具体请阅读 [gvar (通用变量)](output/goframe-v1.15-md/模块列表/数据结构/gvar%20-通用变量) 章节），但是大多数时候需要直接将结果 `Result` 或者 `Record` 直接作为 `json` 或者 `xml` 数据结构返回，就需要做转换才行。
+由于方法比较简单，这里便不再举例说明。需要注意的是两个方法 `Record.Map` 及 `Result.List`，这两个方法也是使用比较频繁的方法，用以将 `ORM` 查询结果信息转换为可做展示的数据类型。由于结果集字段值底层为 `[]byte` 类型，虽然使用了新的 `Value` 类型做了封装，并且也提供了数十种常见的类型转换方法（具体请阅读 [gvar (通用变量)](../../2-模块列表/0-数据结构/4-gvar -通用变量.md) 章节），但是大多数时候需要直接将结果 `Result` 或者 `Record` 直接作为 `json` 或者 `xml` 数据结构返回，就需要做转换才行。
 
 使用示例：
 
@@ -312,4 +312,4 @@ if err == sql.ErrNoRows {
 }
 ```
 
-由于 `struct` 转换利用了 `Golang` 反射特性，执行性能会有一定的损耗。如果您涉及到大量查询结果数据的 `struct` 数组对象转换，并且需要提高转换性能，请参考自定义实现对应 `struct` 的 `UnmarshalValue` 方法： [类型转换-UnmarshalValue](output/goframe-v1.15-md/核心组件/类型转换/类型转换-UnmarshalValue)
+由于 `struct` 转换利用了 `Golang` 反射特性，执行性能会有一定的损耗。如果您涉及到大量查询结果数据的 `struct` 数组对象转换，并且需要提高转换性能，请参考自定义实现对应 `struct` 的 `UnmarshalValue` 方法： [类型转换-UnmarshalValue](../6-类型转换/3-类型转换-UnmarshalValue.md)

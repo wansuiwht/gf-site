@@ -8,7 +8,7 @@ hide_title: true
 
 ![](/markdown/36170436fbf077c5f57ae6873988225a.png)
 
-如果数据库执行出现该错误，可能是由于本地数据库连接池的连接已经过期，可以检查一下客户端配置的 `MaxLifeTime` 配置是否超过数据库服务端设置的连接最大超时时间。更多客户端配置请参考章节： [ORM使用配置](output/goframe-v2.6-md/核心组件/数据库ORM/ORM使用配置)
+如果数据库执行出现该错误，可能是由于本地数据库连接池的连接已经过期，可以检查一下客户端配置的 `MaxLifeTime` 配置是否超过数据库服务端设置的连接最大超时时间。更多客户端配置请参考章节： [ORM使用配置](0-ORM使用配置.md)
 
 ## `update/insert` 操作不生效
 
@@ -20,7 +20,7 @@ dryRun = "(可选)ORM空跑(只读不写)"
 
 这行配置一定要删掉或者设置为0
 
-否则出现 `update insert` 操作不生效的现象。具体请参考文档： [ORM高级特性](output/goframe-v2.6-md/核心组件/数据库ORM/ORM高级特性)
+否则出现 `update insert` 操作不生效的现象。具体请参考文档： [ORM高级特性](output/goframe-v2.6-md/核心组件/数据库ORM/ORM高级特性.md)
 
 ## `cannot find database driver for specified database type "xxx"， did you misspell type name "xxx" or forget importing the database driver?`
 
