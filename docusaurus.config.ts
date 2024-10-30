@@ -7,7 +7,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 // https://docusaurus.io/docs/3.2.1/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
 // https://docusaurus.io/docs/3.2.1/api/docusaurus-config
 const config: Config = {
-  title: 'GoFrame官网 - 类似PHP-Laravel和Java-SpringBoot的Go企业级开发框架',
+  title: 'GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架',
   tagline:
     'GoFrame is a modular, powerful, high-performance and enterprise-class application development framework of Golang.',
   favicon: '/img/favicon.ico',

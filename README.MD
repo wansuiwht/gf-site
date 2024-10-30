@@ -1,24 +1,7 @@
-# gfdoc-md
+# gf-site
 
-https://www.hailaz.cn/gfdoc-md/
+预览地址：https://gogf.github.io/gf-site/
 
-<https://docusaurus.io/zh-CN/docs>
-
-## docs 文档下载方式
-
-```shell
-# 先安装工具
-go install github.com/hailaz/doc2pdf/cmd/doc2pdf@latest
-# 运行下载
-doc2pdf gf -m=md
-# 复制生成的文件到docs和static
-cp -r -f output/goframe-latest-md/* docs/
-cp -r -f output/goframe-latest-md-static/* static/
-
-# windows
-# xcopy /s /y A\* B\
-
-```
 
 ## 本地运行
 
@@ -73,8 +56,8 @@ https://docusaurus.io/zh-CN/docs/markdown-features/code-blocks
     - 【来杯咖啡】
     - 【加入我们】
 
-
-```bash
+## 多语言
+```shell
 # 多语言文档路径
 https://docusaurus.io/docs/i18n/introduction#translation-files-location
 https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#i18n
@@ -85,7 +68,10 @@ cp -r docs/** i18n/en/docusaurus-plugin-content-docs/current
 mkdir -p i18n/en/docusaurus-plugin-content-docs-quick/current
 cp -r quick/** i18n/en/docusaurus-plugin-content-docs-quick/current
 
+# 创建多语言元数据
+npm run write-translations -- --locale en
 
+# 指定i18n语言运行
 npm run start -- --locale en
 
 ```
