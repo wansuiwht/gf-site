@@ -44,15 +44,15 @@ database:
 
 | 类型 | link示例 | extra参数 |
 | --- | --- | --- |
-| `mysql` | ```<br />mysql:root:12345678@tcp(127.0.0.1:3306)/test?loc=Local&parseTime=true<br />``` | [mysql](https://github.com/go-sql-driver/mysql) |
-| `mariadb` | ```<br />mariadb:root:12345678@tcp(127.0.0.1:3306)/test?loc=Local&parseTime=true<br />``` | [mysql](https://github.com/go-sql-driver/mysql) |
-| `tidb` | ```<br />tidb:root:12345678@tcp(127.0.0.1:3306)/test?loc=Local&parseTime=true<br />``` | [mysql](https://github.com/go-sql-driver/mysql) |
-| `pgsql` | ```<br />pgsql:root:12345678@tcp(127.0.0.1:5432)/test<br />``` | [pq](https://github.com/lib/pq) |
-| `mssql` | ```<br />mssql:root:12345678@tcp(127.0.0.1:1433)/test?encrypt=disable<br />``` | [go-mssqldb](https://github.com/microsoft/go-mssqldb) |
-| `sqlite` | ```<br />sqlite::@file(/var/data/db.sqlite3)<br />``` | pure go:<br />[go-sqlite](https://github.com/glebarez/go-sqlite)<br />32bit-cgo:<br />[go-sqlite3](https://github.com/mattn/go-sqlite3) |
-| `oracle` | ```<br />oracle:root:12345678@tcp(127.0.0.1:5432)/test<br />``` | [go-ora](https://github.com/sijms/go-ora) |
-| `clickhouse` | ```<br />clickhouse:root:12345678@tcp(127.0.0.1:9000)/test<br />``` | [clickhouse-go](https://github.com/ClickHouse/clickhouse-go) |
-| `dm` | ```<br />dm:root:12345678@tcp(127.0.0.1:5236)/test<br />``` | [dm](https://gitee.com/chunanyong/dm) |
+| `mysql` | ```mysql:root:12345678@tcp(127.0.0.1:3306)/test?loc=Local&parseTime=true``` | [mysql](https://github.com/go-sql-driver/mysql) |
+| `mariadb` | ```mariadb:root:12345678@tcp(127.0.0.1:3306)/test?loc=Local&parseTime=true``` | [mysql](https://github.com/go-sql-driver/mysql) |
+| `tidb` | ```tidb:root:12345678@tcp(127.0.0.1:3306)/test?loc=Local&parseTime=true``` | [mysql](https://github.com/go-sql-driver/mysql) |
+| `pgsql` | ```pgsql:root:12345678@tcp(127.0.0.1:5432)/test``` | [pq](https://github.com/lib/pq) |
+| `mssql` | ```mssql:root:12345678@tcp(127.0.0.1:1433)/test?encrypt=disable``` | [go-mssqldb](https://github.com/microsoft/go-mssqldb) |
+| `sqlite` | ```sqlite::@file(/var/data/db.sqlite3)``` | pure go:[go-sqlite](https://github.com/glebarez/go-sqlite)32bit-cgo:[go-sqlite3](https://github.com/mattn/go-sqlite3) |
+| `oracle` | ```oracle:root:12345678@tcp(127.0.0.1:5432)/test``` | [go-ora](https://github.com/sijms/go-ora) |
+| `clickhouse` | ```clickhouse:root:12345678@tcp(127.0.0.1:9000)/test``` | [clickhouse-go](https://github.com/ClickHouse/clickhouse-go) |
+| `dm` | ```dm:root:12345678@tcp(127.0.0.1:5236)/test``` | [dm](https://gitee.com/chunanyong/dm) |
 
 更多框架支持的数据库类型请参考： [https://github.com/gogf/gf/tree/master/contrib/drivers](https://github.com/gogf/gf/tree/master/contrib/drivers)
 
