@@ -34,7 +34,7 @@ import "github.com/gogf/gf/v2/text/gstr"
 
 
 
-```
+```go
 IsNumeric(s string) bool
 ```
 
@@ -77,7 +77,7 @@ func ExampleIsNumeric() {
 
 
 
-```
+```go
 LenRune(str string) int
 ```
 
@@ -121,7 +121,7 @@ func ExampleLenRune() {
 
 
 
-```
+```go
 Repeat(input string, multiplier int) string
 ```
 
@@ -166,7 +166,7 @@ func ExampleRepeat() {
 
 
 
-```
+```go
 ToLower(s string) string
 ```
 
@@ -208,7 +208,7 @@ func ExampleToLower() {
 
 
 
-```
+```go
 ToUpper(s string) string
 ```
 
@@ -250,7 +250,7 @@ func ExampleToUpper() {
 
 
 
-```
+```go
 UcFirst(s string) string
 ```
 
@@ -292,7 +292,7 @@ func ExampleUcFirst() {
 
 
 
-```
+```go
 LcFirst(s string) string
 ```
 
@@ -334,7 +334,7 @@ func ExampleLcFirst() {
 
 
 
-```
+```go
 UcWords(str string) string
 ```
 
@@ -376,7 +376,7 @@ func ExampleUcWords() {
 
 
 
-```
+```go
 IsLetterLower(b byte) bool
 ```
 
@@ -416,7 +416,7 @@ func ExampleIsLetterLower() {
 
 
 
-```
+```go
 IsLetterUpper(b byte) bool
 ```
 
@@ -458,7 +458,7 @@ func ExampleIsLetterUpper() {
 
 
 
-```
+```go
 Compare(a, b string) int
 ```
 
@@ -500,7 +500,7 @@ func ExampleCompare() {
 
 
 
-```
+```go
 Equal(a, b string) bool
 ```
 
@@ -544,7 +544,7 @@ func ExampleEqual() {
 
 
 
-```
+```go
 Split(str, delimiter string) []string
 ```
 
@@ -587,7 +587,7 @@ func ExampleSplit() {
 
 
 
-```
+```go
 SplitAndTrim(str, delimiter string, characterMask ...string) []string
 ```
 
@@ -630,7 +630,7 @@ func ExampleSplitAndTrim() {
 
 
 
-```
+```go
 Join(array []string, sep string) string
 ```
 
@@ -673,7 +673,7 @@ func ExampleJoin() {
 
 
 
-```
+```go
 JoinAny(array interface{}, sep string) string
 ```
 
@@ -716,7 +716,7 @@ func ExampleJoinAny() {
 
 
 
-```
+```go
 Explode(delimiter, str string) []string
 ```
 
@@ -759,7 +759,7 @@ func ExampleExplode() {
 
 
 
-```
+```go
 Implode(glue string, pieces []string) string
 ```
 
@@ -802,7 +802,7 @@ func ExampleImplode() {
 
 
 
-```
+```go
 ChunkSplit(body string, chunkLen int, end string) string
 ```
 
@@ -846,7 +846,7 @@ func ExampleChunkSplit() {
 
 
 
-```
+```go
 Fields(str string) []string
 ```
 
@@ -890,7 +890,7 @@ func ExampleFields() {
 
 
 
-```
+```go
 AddSlashes(str string) string
 ```
 
@@ -933,7 +933,7 @@ func ExampleAddSlashes() {
 
 
 
-```
+```go
 StripSlashes(str string) string
 ```
 
@@ -975,7 +975,7 @@ func ExampleStripSlashes() {
 
 
 
-```
+```go
 QuoteMeta(str string, chars ...string) string
 ```
 
@@ -1030,7 +1030,7 @@ func ExampleQuoteMeta() {
 
 
 
-```
+```go
 Count(s, substr string) int
 ```
 
@@ -1077,7 +1077,7 @@ func ExampleCount() {
 
 
 
-```
+```go
 CountI(s, substr string) int
 ```
 
@@ -1124,7 +1124,7 @@ func ExampleCountI() {
 
 
 
-```
+```go
 CountWords(str string) map[string]int
 ```
 
@@ -1166,7 +1166,7 @@ func ExampleCountWords() {
 
 
 
-```
+```go
 CountChars(str string, noSpace ...bool) map[string]int
 ```
 
@@ -1210,7 +1210,7 @@ func ExampleCountChars() {
 
 
 
-```
+```go
 SearchArray(a []string, s string) int
 ```
 
@@ -1253,7 +1253,7 @@ func ExampleSearchArray() {
 
 
 
-```
+```go
 InArray(a []string, s string) bool
 ```
 
@@ -1296,7 +1296,7 @@ func ExampleInArray() {
 
 
 
-```
+```go
 PrefixArray(array []string, prefix string)
 ```
 
@@ -1342,7 +1342,7 @@ func ExamplePrefixArray() {
 
 
 
-```
+```go
 CaseCamel(s string) string
 ```
 
@@ -1384,7 +1384,7 @@ func ExampleCaseCamel() {
 
 
 
-```
+```go
 CaseCamelLower(s string) string
 ```
 
@@ -1426,7 +1426,7 @@ func ExampleCaseCamelLower() {
 
 
 
-```
+```go
 CaseSnake(s string) string
 ```
 
@@ -1468,7 +1468,7 @@ func ExampleCaseSnake() {
 
 
 
-```
+```go
 CaseSnakeScreaming(s string) string
 ```
 
@@ -1510,7 +1510,7 @@ func ExampleCaseSnakeScreaming() {
 
 
 
-```
+```go
 CaseSnakeFirstUpper(word string, underscore ...string) string
 ```
 
@@ -1552,7 +1552,7 @@ func ExampleCaseSnakeFirstUpper() {
 
 
 
-```
+```go
 CaseKebab(s string) string
 ```
 
@@ -1594,7 +1594,7 @@ func ExampleCaseKebab() {
 
 
 
-```
+```go
 CaseKebabScreaming(s string) string
 ```
 
@@ -1636,7 +1636,7 @@ func ExampleCaseKebabScreaming() {
 
 
 
-```
+```go
 CaseDelimited(s string, del byte) string
 ```
 
@@ -1679,7 +1679,7 @@ func ExampleCaseDelimited() {
 
 
 
-```
+```go
 CaseDelimitedScreaming(s string, del uint8, screaming bool) string
 ```
 
@@ -1735,7 +1735,7 @@ func ExampleCaseDelimitedScreaming() {
 
 
 
-```
+```go
 Contains(str, substr string) bool
 ```
 
@@ -1789,7 +1789,7 @@ func ExampleContains() {
 
 
 
-```
+```go
 ContainsI(str, substr string) bool
 ```
 
@@ -1835,7 +1835,7 @@ func ExampleContainsI() {
 
 
 
-```
+```go
 ContainsAny(s, chars string) bool
 ```
 
@@ -1891,7 +1891,7 @@ func ExampleContainsAny() {
 
 
 
-```
+```go
 Chr(ascii int) string
 ```
 
@@ -1933,7 +1933,7 @@ func ExampleChr() {
 
 
 
-```
+```go
 Ord(char string) int
 ```
 
@@ -1976,7 +1976,7 @@ func ExampleOrd() {
 
 
 
-```
+```go
 OctStr(str string) string
 ```
 
@@ -2018,7 +2018,7 @@ func ExampleOctStr() {
 
 
 
-```
+```go
 Reverse(str string) string
 ```
 
@@ -2063,7 +2063,7 @@ func ExampleReverse() {
 
 
 
-```
+```go
 NumberFormat(number float64, decimals int, decPoint, thousandsSep string) string
 ```
 
@@ -2108,7 +2108,7 @@ func ExampleNumberFormat() {
 
 
 
-```
+```go
 Shuffle(str string) string
 ```
 
@@ -2150,7 +2150,7 @@ func ExampleShuffle() {
 
 
 
-```
+```go
 HideStr(str string, percent int, hide string) string
 ```
 
@@ -2194,7 +2194,7 @@ func ExampleHideStr() {
 
 
 
-```
+```go
 Nl2Br(str string, isXhtml ...bool) string
 ```
 
@@ -2242,7 +2242,7 @@ use`
 
 
 
-```
+```go
 WordWrap(str string, width int, br string) string
 ```
 
@@ -2306,7 +2306,7 @@ func ExampleWordWrap() {
 
 
 
-```
+```go
 IsSubDomain(subDomain string, mainDomain string) bool
 ```
 
@@ -2353,7 +2353,7 @@ func ExampleIsSubDomain() {
 
 
 
-```
+```go
 Parse(s string) (result map[string]interface{}, err error)
 ```
 
@@ -2436,7 +2436,7 @@ func ExampleParse() {
 
 
 
-```
+```go
 Pos(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2479,7 +2479,7 @@ func ExamplePos() {
 
 
 
-```
+```go
 PosRune(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2525,7 +2525,7 @@ func ExamplePosRune() {
 
 
 
-```
+```go
 PosI(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2571,7 +2571,7 @@ func ExamplePosI() {
 
 
 
-```
+```go
 PosIRune(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2627,7 +2627,7 @@ func ExamplePosIRune() {
 
 
 
-```
+```go
 PosR(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2673,7 +2673,7 @@ func ExamplePosR() {
 
 
 
-```
+```go
 PosRRune(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2719,7 +2719,7 @@ func ExamplePosRRune() {
 
 
 
-```
+```go
 PosRI(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2765,7 +2765,7 @@ func ExamplePosRI() {
 
 
 
-```
+```go
 PosRIRune(haystack, needle string, startOffset ...int) int
 ```
 
@@ -2813,7 +2813,7 @@ func ExamplePosRIRune() {
 
 
 
-```
+```go
 Replace(origin, search, replace string, count ...int) string
 ```
 
@@ -2857,7 +2857,7 @@ func ExampleReplace() {
 
 
 
-```
+```go
 ReplaceI(origin, search, replace string, count ...int) string
 ```
 
@@ -2901,7 +2901,7 @@ func ExampleReplaceI() {
 
 
 
-```
+```go
 ReplaceByArray(origin string, array []string) string
 ```
 
@@ -2955,7 +2955,7 @@ func ExampleReplaceByArray() {
 
 
 
-```
+```go
 ReplaceIByArray(origin string, array []string) string
 ```
 
@@ -2999,7 +2999,7 @@ func ExampleReplaceIByArray() {
 
 
 
-```
+```go
 ReplaceByMap(origin string, replaces map[string]string) string
 ```
 
@@ -3058,7 +3058,7 @@ func ExampleReplaceByMap() {
 
 
 
-```
+```go
 ReplaceIByMap(origin string, replaces map[string]string) string
 ```
 
@@ -3105,7 +3105,7 @@ func ExampleReplaceIByMap() {
 
 
 
-```
+```go
 Str(haystack string, needle string) string
 ```
 
@@ -3148,7 +3148,7 @@ func ExampleStr() {
 
 
 
-```
+```go
 StrEx(haystack string, needle string) string
 ```
 
@@ -3191,7 +3191,7 @@ func ExampleStrEx() {
 
 
 
-```
+```go
 StrTill(haystack string, needle string) string
 ```
 
@@ -3234,7 +3234,7 @@ func ExampleStrTill() {
 
 
 
-```
+```go
 StrTillEx(haystack string, needle string) string
 ```
 
@@ -3277,7 +3277,7 @@ func ExampleStrTillEx() {
 
 
 
-```
+```go
 SubStr(str string, start int, length ...int) (substr string)
 ```
 
@@ -3321,7 +3321,7 @@ func ExampleSubStr() {
 
 
 
-```
+```go
 SubStrRune(str string, start int, length ...int) (substr string)
 ```
 
@@ -3365,7 +3365,7 @@ func ExampleSubStrRune() {
 
 
 
-```
+```go
 StrLimit(str string, length int, suffix ...string) string
 ```
 
@@ -3409,7 +3409,7 @@ func ExampleStrLimit() {
 
 
 
-```
+```go
 StrLimitRune(str string, length int, suffix ...string) string
 ```
 
@@ -3453,7 +3453,7 @@ func ExampleStrLimitRune() {
 
 
 
-```
+```go
 SubStrFrom(str string, need string) (substr string)
 ```
 
@@ -3496,7 +3496,7 @@ func ExampleSubStrFrom() {
 
 
 
-```
+```go
 SubStrFromEx(str string, need string) (substr string)
 ```
 
@@ -3539,7 +3539,7 @@ func ExampleSubStrFromEx() {
 
 
 
-```
+```go
 SubStrFromR(str string, need string) (substr string)
 ```
 
@@ -3582,7 +3582,7 @@ func ExampleSubStrFromR() {
 
 
 
-```
+```go
 SubStrFromREx(str string, need string) (substr string)
 ```
 
@@ -3627,7 +3627,7 @@ func ExampleSubStrFromREx() {
 
 
 
-```
+```go
 Trim(str string, characterMask ...string) string
 ```
 
@@ -3670,7 +3670,7 @@ func ExampleTrim() {
 
 
 
-```
+```go
 TrimStr(str string, cut string, count ...int) string
 ```
 
@@ -3714,7 +3714,7 @@ func ExampleTrimStr() {
 
 
 
-```
+```go
 TrimLeft(str string, characterMask ...string) string
 ```
 
@@ -3757,7 +3757,7 @@ func ExampleTrimLeft() {
 
 
 
-```
+```go
 TrimLeftStr(str string, cut string, count ...int) string
 ```
 
@@ -3801,7 +3801,7 @@ func ExampleTrimLeftStr() {
 
 
 
-```
+```go
 TrimRight(str string, characterMask ...string) string
 ```
 
@@ -3844,7 +3844,7 @@ func ExampleTrimRight() {
 
 
 
-```
+```go
 TrimRightStr(str string, cut string, count ...int) string
 ```
 
@@ -3888,7 +3888,7 @@ func ExampleTrimRightStr() {
 
 
 
-```
+```go
 TrimAll(str string, characterMask ...string) string
 ```
 
@@ -3931,7 +3931,7 @@ func ExampleTrimAll() {
 
 
 
-```
+```go
 HasPrefix(s, prefix string) bool
 ```
 
@@ -3974,7 +3974,7 @@ func ExampleHasPrefix() {
 
 
 
-```
+```go
 HasSuffix(s, suffix string) bool
 ```
 
@@ -4019,7 +4019,7 @@ func ExampleHasSuffix() {
 
 
 
-```
+```go
 CompareVersion(a, b string) int
 ```
 
@@ -4061,7 +4061,7 @@ func ExampleCompareVersion() {
 
 
 
-```
+```go
 CompareVersionGo(a, b string) int
 ```
 
@@ -4108,7 +4108,7 @@ func ExampleCompareVersionGo() {
 
 
 
-```
+```go
 Levenshtein(str1, str2 string, costIns, costRep, costDel int) int
 ```
 
@@ -4154,7 +4154,7 @@ func ExampleLevenshtein() {
 
 
 
-```
+```go
 SimilarText(first, second string, percent *float64) int
 ```
 
@@ -4198,7 +4198,7 @@ func ExampleSimilarText() {
 
 
 
-```
+```go
 Soundex(str string) string
 ```
 

@@ -8,7 +8,7 @@ hide_title: true
 
 之前的章节中我们知道， `glog` 组件支持通过设置日志文件名称的方式，使得日志文件按照日期进行输出。从 `GF v1.12` 版本开始， `glog` 组件也支持对日志文件进行滚动切分的特性，该特性涉及到日志对象配置属性中的以下几个配置项：
 
-```
+```go
 RotateSize           int64          // Rotate the logging file if its size > 0 in bytes.
 RotateExpire         time.Duration  // Rotate the logging file if its mtime exceeds this duration.
 RotateBackupLimit    int            // Max backup for rotated files, default is 0, means no backups.
@@ -34,7 +34,7 @@ RotateCheckInterval  time.Duration  // Asynchronizely checks the backups and exp
 
 `glog` 组件的日志输出文件固定格式为 `*.log`，即使用 `.log` 作为日志文件名后缀。为方便统一规范管理，切分文件的格式也是固定的，开发者无法自定义。当日志文件被滚动切分时，当前被切分的日志文件将会按照” `*.切分时间.log`“的格式进行重命名。其中 `切分时间` 的格式为： `年月日时分秒毫秒微秒`，例如:
 
-```
+```html
 access.log          -> access.20200326101301899002.log
 access.20200326.log -> access.20200326.20200326101301899002.log
 ```
@@ -51,7 +51,7 @@ access.20200326.log -> access.20200326.20200326101301899002.log
 
 
 
-```
+```yaml
 logger:
      Path:                  "/var/log"
      Level:                 "all"
@@ -81,7 +81,7 @@ logger:
 
 
 
-```
+```yaml
 logger:
      Path:                  "/var/log"
      Level:                 "all"

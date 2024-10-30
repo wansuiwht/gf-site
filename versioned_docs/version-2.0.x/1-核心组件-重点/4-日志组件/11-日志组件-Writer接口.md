@@ -64,7 +64,7 @@ func main() {
 
 执行后，输出结果为：
 
-```
+```html
 SERIOUS ISSUE OCCURRED!! I'd better tell monitor in first time!
 2019-05-23 20:14:49.374 [FATA] FATAL ERROR
 Stack:

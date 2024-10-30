@@ -12,7 +12,7 @@ hide_title: true
 
 ### 使用配置
 
-```
+```yaml
 # 日志组件配置
 logger:
   Path:    "/var/log/my-app"

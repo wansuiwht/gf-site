@@ -109,7 +109,7 @@ func main() {
 
 可以看到，我们可以在 `Handler` 中通过 `Buffer` 属性操作来控制输出的日志内容。如果在所有的前置中间件 `Handler` 处理后 `Buffer` 内容为空，那么继续 `Next` 执行后将会执行日志中间件默认的 `Handler` 逻辑。执行本示例的代码后，终端输出：
 
-```
+```html
 {"time":"2021-12-31 11:03:25.438","level":"DEBU","content":"Debugging..."}
 {"time":"2021-12-31 11:03:25.438","level":"WARN","content":"It is warning info"}
 {"time":"2021-12-31 11:03:25.438","level":"ERRO","content":"Error occurs, please have a check \nStack:\n1.  main.main\n    C:/hailaz/test/main.go:42"}
@@ -223,7 +223,7 @@ func main() {
 
 执行后，终端输出：
 
-```
+```html
 {"time":"2022-06-20 10:51:50.235","level":"DEBU","content":"Debugging..."}
 {"time":"2022-06-20 10:51:50.235","level":"WARN","content":"It is warning info"}
 {"time":"2022-06-20 10:51:50.235","level":"ERRO","content":"Error occurs, please have a check"}
@@ -259,7 +259,7 @@ func main() {
 
 执行后，终端输出：
 
-```
+```html
 {"Time":"2022-06-20 20:04:04.725","Level":"DEBU","Content":"Debugging..."}
 {"Time":"2022-06-20 20:04:04.725","Level":"WARN","Content":"It is warning info"}
 {"Time":"2022-06-20 20:04:04.725","Level":"ERRO","Content":"Error occurs, please have a check","Stack":"1.  main.main\n    /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf/.test/main.go:16\n"}
@@ -292,7 +292,7 @@ func main() {
 
 执行后，终端输出：
 
-```
+```html
 Time="2023-11-23 21:00:08.671" Level=INFO Content=caution name=admin
 Time="2023-11-23 21:00:08.671" Level=ERRO oops="use of closed network connection" status=500 Stack="1.  main.main\n    /Users/txqiangguo/Workspace/gogf/gf/example/.test/main.go:16\n"
 ```

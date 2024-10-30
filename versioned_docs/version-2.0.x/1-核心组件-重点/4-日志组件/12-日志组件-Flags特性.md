@@ -6,7 +6,7 @@ hide_title: true
 
 `flags` 用于控制日志组件的额外特性开关，这些属性使用常量进行组合控制，包括：
 
-```
+```go
 F_ASYNC      = 1 << iota // 开启日志异步输出
 F_FILE_LONG              // 打印调用行号信息，完整绝对路径，例如：/a/b/c/d.go:23
 F_FILE_SHORT             // 打印调用行号信息，仅打印文件名，例如：d.go:23，覆盖 F_FILE_LONG.
@@ -42,7 +42,7 @@ func main() {
 
 执行后，终端输出结果为：
 
-```
+```html
 PS C:\hailaz\test> go run .\main.go
 16:05:35 main.go:13: time and short line number
 16:05:35.108 C:/hailaz/test/main.go:15: time with millisecond and long line number

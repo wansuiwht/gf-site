@@ -42,7 +42,7 @@ func main() {
 
 执行后，终端展示结果为：
 
-```
+```html
 <nil>
 {"Users":null}
 ```
@@ -89,7 +89,7 @@ func main() {
 
 执行后，终端展示结果为：
 
-```
+```html
 <nil>
 {"Users":[]}
 ```

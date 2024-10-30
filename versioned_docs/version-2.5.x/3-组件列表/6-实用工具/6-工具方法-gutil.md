@@ -34,7 +34,7 @@ import "github.com/gogf/gf/v2/util/gutil"
 
 
 
-```
+```go
 Dump(values ...interface{})
 ```
 
@@ -130,7 +130,7 @@ func main() {
 
 
 
-```
+```go
 DumpWithType(values ...interface{})
 ```
 
@@ -226,7 +226,7 @@ func main() {
 
 
 
-```
+```go
 DumpTo(writer io.Writer, value interface{}, option DumpOption)
 ```
 

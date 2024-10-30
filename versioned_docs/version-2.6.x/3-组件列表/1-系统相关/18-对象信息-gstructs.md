@@ -36,7 +36,7 @@ import "github.com/gogf/gf/v2/os/gstructs"
 
 
 
-```
+```go
 Fields(in FieldsInput) ([]Field, error)
 ```
 
@@ -134,7 +134,7 @@ func main() {
 
 
 
-```
+```go
 TagMapName(pointer interface{}, priority []string) (map[string]string, error)
 ```
 

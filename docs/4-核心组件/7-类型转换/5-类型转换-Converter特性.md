@@ -10,7 +10,7 @@ hide_title: true
 
 转换方法定义如下:
 
-```
+```go
 func(T1) (T2, error)
 ```
 

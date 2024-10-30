@@ -49,7 +49,7 @@ func main() {
 
 运行后，终端输出：
 
-```
+```html
 :8888
 map[debug:true link:mysql:root:12345678@tcp(127.0.0.1:3306)/test]
 ```
