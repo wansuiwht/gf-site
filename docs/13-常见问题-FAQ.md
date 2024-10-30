@@ -136,7 +136,11 @@ func main() {
 
 ### 5、 `HTTP Server` 出现 `context cancel` 报错
 
-从框架 `v2.5` 版本开始，框架的 `HTTP Server` 的 `Request` 对象将会直接继承与标准库的 `http.Request` 对象，其中就包括其中的 `context` 上下文对象，具体请参考发布记录： [v2.5 2023-07-17](/docs/版本发布记录/v2.5%202023-07-17.md)。当客户端例如浏览器、 `HTTP Client` 取消请求时，服务端会接收到 `context cancel` 操作( `context.Done`)，但是服务端并不会直接报出 `context cancel` 的错误。这种错误往往在业务逻辑调用了底层的数据库、消息组件等组件时，由这些组件识别到 `context cancel` 操作，将会停止执行并往上抛出 `context cancel` 错误提醒上层已经终止执行。
+从框架 `v2.5` 版本开始，框架的 `HTTP Server` 的 `Request` 对象将会直接继承与标准库的 `http.Request` 对象，
+其中就包括其中的 `context` 上下文对象。当客户端例如浏览器、 `HTTP Client` 取消请求时，
+服务端会接收到 `context cancel` 操作( `context.Done`)，但是服务端并不会直接报出 `context cancel` 的错误。
+这种错误往往在业务逻辑调用了底层的数据库、消息组件等组件时，由这些组件识别到 `context cancel` 操作，
+将会停止执行并往上抛出 `context cancel` 错误提醒上层已经终止执行。
 
 这是符合标准库设计的行为，客户端终止请求后，服务端也没有继续执行下去的必要。
 

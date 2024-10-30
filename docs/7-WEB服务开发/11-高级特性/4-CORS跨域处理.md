@@ -4,7 +4,7 @@ sidebar_position: 4
 hide_title: true
 ---
 
-允许接口跨域往往是需要结合 [路由管理-中间件/拦截器](/docs/WEB服务开发/路由管理/路由管理-中间件拦截器.md) 一起使用，来统一设置某些路由规则下的接口可以跨域访问。同时，针对允许 `WebSocket` 的跨域请求访问，也是通过该方式来实现。
+允许接口跨域往往是需要结合 [路由管理-中间件/拦截器](../1-%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86/2-%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8/0-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D.md) 一起使用，来统一设置某些路由规则下的接口可以跨域访问。同时，针对允许 `WebSocket` 的跨域请求访问，也是通过该方式来实现。
 
 相关方法： [https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response](https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response)
 
