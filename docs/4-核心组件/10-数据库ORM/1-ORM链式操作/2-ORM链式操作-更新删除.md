@@ -101,7 +101,7 @@ g.Model("article").Where("id", 1).Decrement("views", 10000)
 
 ## `RawSQL` 语句嵌入
 
-`gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。更详细的介绍请参考章节： [ORM高级特性-RawSQL](/docs/核心组件/数据库ORM/ORM高级特性/ORM高级特性-RawSQL)。例如：
+`gdb.Raw` 是字符串类型，该类型的参数将会直接作为 `SQL` 片段嵌入到提交到底层的 `SQL` 语句中，不会被自动转换为字符串参数类型、也不会被当做预处理参数。更详细的介绍请参考章节： [ORM高级特性-RawSQL](../7-ORM高级特性/0-ORM高级特性-RawSQL.md)。例如：
 
 ```go
 // UPDATE `user` SET login_count='login_count+1',update_time='now()' WHERE id=1
@@ -146,4 +146,4 @@ g.Model("user").Delete("score < ", 60)
 
 ## 软删除特性
 
-软删除特性请查看章节： [ORM链式操作-时间维护](/docs/核心组件/数据库ORM/ORM链式操作/ORM链式操作-时间维护)
+软删除特性请查看章节： [ORM链式操作-时间维护](11-ORM链式操作-时间维护.md)
