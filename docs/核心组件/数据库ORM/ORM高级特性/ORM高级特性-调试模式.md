@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/senior/debugging'
+slug: '/core/gdb/senior-debugging
 title: 'ORM高级特性-调试模式'
 sidebar_position: 2
 hide_title: true

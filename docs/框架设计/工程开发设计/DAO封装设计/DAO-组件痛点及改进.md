@@ -1,5 +1,5 @@
 ---
-slug: '/design/project/dao/pain'
+slug: '/design/project/dao-pain
 title: 'DAO-组件痛点及改进'
 sidebar_position: 0
 hide_title: true

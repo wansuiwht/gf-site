@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/chaining/model'
+slug: '/core/gdb/chaining-model
 title: 'ORM链式操作-模型创建'
 sidebar_position: 0
 hide_title: true

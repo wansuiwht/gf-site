@@ -1,5 +1,5 @@
 ---
-slug: '/components/contrib/nosql/redis/config'
+slug: '/components/contrib/nosql-redis-config
 title: 'Redis-配置管理'
 sidebar_position: 0
 hide_title: true

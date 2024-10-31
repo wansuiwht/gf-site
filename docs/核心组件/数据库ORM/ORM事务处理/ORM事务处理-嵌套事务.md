@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/transaction/nested'
+slug: '/core/gdb/transaction-nested
 title: 'ORM事务处理-嵌套事务'
 sidebar_position: 2
 hide_title: true
