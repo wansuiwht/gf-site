@@ -126,7 +126,7 @@ func main() {
 | `v` | `valid` | 数据校验标签。 | [Struct校验-基本使用](核心组件/数据校验/数据校验-参数类型/数据校验-Struct校验/Struct校验-基本使用.md) |
 | `p` | `param` | 自定义请求参数匹配。 | [请求输入-对象处理](WEB服务开发/请求输入/请求输入-对象处理.md) |
 | `d` | `default` | 请求参数默认值绑定。 | [请求输入-默认值绑定](WEB服务开发/请求输入/请求输入-默认值绑定.md) |
-| `orm` | `orm` | ORM标签，用于指定表名、关联关系。 | [数据规范-gen dao](开发工具/代码生成-gen/数据规范-gen dao.md)<br />[模型关联-静态关联-With特性](核心组件/数据库ORM/ORM链式操作/ORM链式操作-模型关联/模型关联-静态关联-With特性.md) |
+| `orm` | `orm` | ORM标签，用于指定表名、关联关系。 | [数据规范-gen dao](开发工具/代码生成-gen/数据规范-gen%20dao.md)<br />[模型关联-静态关联-With特性](核心组件/数据库ORM/ORM链式操作/ORM链式操作-模型关联/模型关联-静态关联-With特性.md) |
 | `dc` | `description` | 通用结构体属性描述，ORM和接口都用到。属于框架默认的属性描述标签。 |  |
 
 其他：
@@ -166,7 +166,7 @@ export GOPROXY=https://goproxy.cn
 
 具体请看：
 
-- [Go Module](其他资料/准备工作/Go Module.md)
+- [Go Module](其他资料/准备工作/Go%20Module.md)
 - [https://goproxy.cn](https://goproxy.cn)
 
 ### 2、 `Linux` 下安装 `gf` 提示命令不存在 `command not found`

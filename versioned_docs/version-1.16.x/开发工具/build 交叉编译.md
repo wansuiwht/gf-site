@@ -95,7 +95,7 @@ PLATFORMS
 | `extra` | 否 |  | 额外自定义的编译参数，会直接传递给 `go build` 命令 |  |
 | `varmap` | 否 |  | 自定义的内置变量键值对 | ```<br />[gfcli]<br />    [gfcli.build]<br />        name     = "gf"<br />        arch     = "all"<br />        system   = "all"<br />        mod      = "none"<br />        cgo      = 0<br />        [gfcli.build.varmap]<br />            k1 = "v1"<br />            k2 = "v2"<br />``` |
 
-编译时的内置变量可以在运行时通过 `gbuild` 包 [gbuild (构建信息获取)](../模块列表/系统相关/gbuild -构建信息获取.md) 获取。
+编译时的内置变量可以在运行时通过 `gbuild` 包 [gbuild (构建信息获取)](../模块列表/系统相关/gbuild%20-构建信息获取.md) 获取。
 
 使用示例：
 
