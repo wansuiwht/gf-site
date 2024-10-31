@@ -1,0 +1,311 @@
+---
+title: 'gin使用炒鸡强大的gvalid数据校验组件'
+sidebar_position: 4
+---
+
+`GoFrame` 中 `gvalid` 模块实现了非常强大的数据校验功能，内置了 `40` 种常用的校验规则，支持单数据多规则校验、多数据多规则批量校验、自定义错误信息、自定义正则校验、自定义校验规则注册、支持 `struct tag` 规则及提示信息绑定等特性，是目前功能最强大的 `Go` 数据校验模块。
+
+目前个人的项目，我是使用 `gin` 来做路由部分， `gin` 框架可以使用 [go-playground/validator](https://github.com/go-playground/validator) 但是我在使用其时发现需要配置很多，大体如：
+
+- 需配置翻译，默认校验是英文返回；而且有时候需要自定义翻译的内容，得封装一个函数，毕竟有些内容自动翻译过来，意思就差了点
+- 返回了 `json tag` 字段名，这些内容是不希望展示给前端的，又得封装一个处理函数
+- 返回了后端定义的结构体名称，这些内容也是不希望展示给前端的，又得封装一个处理函数
+- 当涉及到一些复杂的校验规则，比如 `re_password` 字段需要与 `password` 字段的值相等这样的校验规则， `email` 字段需要符合邮箱格式。我们的自定义错误提示字段名称方法就不能很好解决错误提示信息中的其他字段名称了。如下：我只要密码校验，结果连邮箱校验也返回了
+
+
+
+
+
+
+
+
+
+```
+{"msg":{"email":"email必须是一个有效的邮箱","re_password":"re_password必须等于Password"}}
+```
+
+
+总之，业务复杂后，需要再封装校验的方法，越写越长，越来越多额外代码。还不如刚开始就使用最基础的 `if` 判断来的快。
+
+于是开始使用 `GoFrame` 的校验库，简直太方便了，以下为使用教程。
+
+## 导入
+
+首先需要导入 `gvalid` 模块：
+
+```
+import "github.com/gogf/gf/util/gvalid"
+```
+
+其内置 `40` 种常用的校验规则： [官方文档](https://itician.org/pages/viewpage.action?pageId=1114367)
+
+并且支持 [自定义校验规则](https://itician.org/pages/viewpage.action?pageId=1114282) 和 [自定义校验错误](https://itician.org/pages/viewpage.action?pageId=1114384) 。
+
+## 示例
+
+### 定义结构体
+
+```
+// SignUpParam 用户注册参数
+type SignUpParam struct {
+    Username   string `json:"username" form:"username" v:"username@required|length:6,30#请输入用户名|用户名长度应当在:min到:max之间"`   // 用户名
+    Password   string `json:"password" form:"password" v:"password@required|length:6,16#请输入密码|密码长度应当在:min到:max之间"`       // 密码
+    RePassword string `json:"rePassword" form:"rePassword" v:"rePassword@required|same:password#请输入密码|两次密码不一致，请重新输入"` // 重复密码
+    Nickname   string `json:"nickname" form:"nickname" v:"nickname@required#请输入中文名"`                                              // 中文名
+    Email      string `json:"email" form:"email" v:"email@required|email#请输入邮箱|邮箱不合法"`                                        // 邮箱
+}
+```
+
+以 `username` 的校验定义为例：
+
+```
+v:"username@required|length:6,30#请输入用户名|用户名长度应当在:min到:max之间"
+```
+
+一个一个看：
+
+#### `v` 标签
+
+` v` 为校验标签，类似 `gin` 中的 `binding`
+
+#### username@required\|length:6,30
+
+- `username ` 为属性别名，非必需参数，这里别名我写的和字段名一样，你可以自定义
+- `@` 分隔符，表示之后开始是校验规则
+- `required` 第一个校验规则，表示必填字段，不能为空
+- `|` 分隔符，多个校验规则分隔开，提示内容分隔也用它
+- `length:6,30` 第二个校验规则，表示内容长度
+
+#### \#请输入用户名\|用户名长度应当在:min到:max之间
+
+- `#` 分隔符，表示之后开始的是提示内容
+- `请输入用户名` 第一个校验规则 `required` 的提示内容
+- `|` 分隔符
+- `用户名长度应当在:min到:max之间` 第二个校验规则 `length:6,30` 的提示内容，其中使用 `:min` 和 `:max` 来读取校验规则 `length:6,30` 中的 `6,30`
+
+总结就是：
+
+```
+[属性别名@]校验规则[#错误提示]
+```
+
+`属性别名` 和 `错误提示` 为 **非必需字段**， `校验规则` 是 **必需字段**；
+
+- `属性别名` 和 `错误提示` 为 **非必需字段**， `校验规则` 是 **必需字段**；
+- `属性别名` 非必需字段，指定在校验中使用的对应 `struct` 属性的别名，同时校验成功后的 `map` 中的也将使用该别名返回，例如在处理请求表单时比较有用，因为表单的字段名称往往和 `struct` 的属性名称不一致；
+- `错误提示` 非必需字段，表示自定义的错误提示信息，当规则校验时对默认的错误提示信息进行覆盖；
+
+### 请求
+
+```
+// BindAndValid 封装模型绑定和参数校验
+func BindAndValid(c *gin.Context, params interface{}) *gvalid.Error {
+    _ = c.ShouldBind(params) // 展示校验库，就先不多写err判断了
+    // 校验
+    if err := gvalid.CheckStruct(params, nil); err != nil {
+        return err
+    }
+    return nil
+}
+
+// SignUp 注册
+func SignUp(c *gin.Context) {
+    var (
+        uParam model.SignUpParam
+    )
+    if err := BindAndValid(c, &uParam); err != nil {
+        c.JSON(http.StatusOK, gin.H{
+            "code": http.StatusInternalServerError,
+            "data": nil,
+            "msg":  err.Error(),
+        })
+        return
+    }
+    // 假设从数据库查出数据，返回结果封装为 userDto
+    c.JSON(http.StatusOK, gin.H{
+        "code": http.StatusOK,
+        "data": &userDto,
+        "msg":  "注册成功",
+    })
+
+}
+```
+
+上面的代码 **校验并返回提示内容** 核心就是：
+
+```
+// SignUpParam 用户注册参数
+// 1.校验
+if err := gvalid.CheckStruct(params, nil); err != nil {
+        return err
+}
+
+// 2.返回提示内容
+c.JSON(http.StatusOK, gin.H{
+    "code": http.StatusInternalServerError,
+    "data": nil,
+    "msg":  err.Error(), //返回提示内容
+})
+```
+
+非常简单，不用再封装翻译、纠正 `json tag` 名、结构体显示等等。
+
+**注意：**
+
+`gvalid.CheckStruct()` 返回的 `err` 类型为 `gvalid.Error`，其定义如下：
+
+```
+// Error is the validation error for validation result.
+type Error struct {
+    rules     []string          // Rules by sequence, which is used for keeping error sequence.
+    errors    ErrorMap          // Error map.
+    firstKey  string            // The first error rule key(nil in default).
+    firstItem map[string]string // The first error rule value(nil in default).
+}
+```
+
+可以获取具体的规则，错误返回，第一个规则和第一个返回错误返回值。不过 `GoFrame` 已经帮我们封装了很多现成的方法使用，如 `e.FirstItem()`、 `e.FirstString()`
+
+具体请看 [官方接口文档](https://godoc.org/github.com/gogf/gf/util/gvalid)  。
+
+### 测试
+
+我是使用 `Postman` 来测试的
+
+#### 测试 `username` 长度校验
+
+请求 `json`，故意设置长度不够：
+
+```
+{
+  "username": "ce",
+  "nickname": "测试1",
+  "password": "1234561",
+  "rePassword": "1234561",
+  "email": "sadasdasdsasd@qq.com"
+}
+```
+
+返回：
+
+```
+{
+    "code": 500,
+    "data": null,
+    "msg": "用户名长度应当在6到30之间"
+}
+```
+
+#### 测试密码
+
+请求 `json`，故意设置两个密码不一样：
+
+```
+{
+  "username": "usernameceshi",
+  "nickname": "测试1",
+  "password": "1234561",
+  "rePassword": "1234562",
+  "email": "sadasdasdsasd@qq.com"
+}
+```
+
+返回：
+
+```
+{
+    "code": 500,
+    "data": null,
+    "msg": "两次密码不一致，请重新输入"
+}
+```
+
+#### 测试邮箱
+
+请求 `json`，故意设置邮箱格式不对：
+
+```
+{
+  "username": "usernameceshi",
+  "nickName": "测试1",
+  "password": "1234561",
+  "rePassword": "1234561",
+  "email": "sadasdasdsasd@q@q.com"
+}
+```
+
+返回：
+
+```
+{
+    "code": 500,
+    "data": null,
+    "msg": "邮箱不合法"
+}
+```
+
+可能会有人想到，如果多个字段都填错呢？该怎么返回？
+
+我们正常来逻辑肯定是一个一个的去解决，对吧，先把第一个错了的返回，等用户修改好后再继续填写内容，直到全填对，验证通过。
+
+`GoFrame` 已经想到了这个问题，将代码中
+
+```
+"msg": err.Error(), //返回提示内容
+```
+
+`err.Error()` 改为 `err.FirstString()` 即可。
+
+#### 测试密码和邮箱
+
+请求 `json`，故意设置两个密码不一样和邮箱不对：
+
+```
+{
+  "username": "usernameceshi",
+  "nickname": "测试1",
+  "password": "1234561",
+  "rePassword": "1234562",
+  "email": "sadasdasdsasd@q@q.com"
+}
+```
+
+返回：
+
+```
+{
+    "code": 500,
+    "data": null,
+    "msg": "两次密码不一致，请重新输入"
+}
+```
+
+可以看到，只返回了两个密码不匹配错误，等我们填写对了之后，再验证：
+
+请求 `json`，故意设置邮箱格式不对：
+
+```
+{
+  "username": "usernameceshi",
+  "nickname": "测试1",
+  "password": "1234561",
+  "rePassword": "1234561",
+  "email": "sadasdasdsasd@q@q.com"
+}
+```
+
+返回：
+
+```
+{
+    "code": 500,
+    "data": null,
+    "msg": "邮箱不合法"
+}
+```
+
+至此，验证通过。真的使用很方便。
+
+非常推荐！如果你不使用 `GoFrame` 框架做开发，但是可以用其中的库啊，非常好使。 `GoFrame` 模块的理念和 `Go` 一致，都是按职责(模块)划分，不会导入多余的库。
+
+更多的内容请看： [GoFrame-数据校验](https://itician.org/pages/viewpage.action?pageId=1114678)
