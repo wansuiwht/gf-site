@@ -1,4 +1,5 @@
 ---
+slug: '/core/glog/handler'
 title: '日志组件-Handler'
 sidebar_position: 6
 hide_title: true

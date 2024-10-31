@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/chaining/query/scan'
 title: 'ORM查询-Scan'
 sidebar_position: 3
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/faq'
 title: 'ORM常见问题'
 sidebar_position: 11
 hide_title: true

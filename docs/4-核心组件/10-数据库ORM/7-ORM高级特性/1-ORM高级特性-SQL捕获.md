@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/senior/catch-sql'
 title: 'ORM高级特性-SQL捕获'
 sidebar_position: 1
 hide_title: true

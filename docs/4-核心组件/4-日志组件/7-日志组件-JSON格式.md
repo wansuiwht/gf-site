@@ -1,4 +1,5 @@
 ---
+slug: '/core/glog/json'
 title: '日志组件-JSON格式'
 sidebar_position: 7
 hide_title: true

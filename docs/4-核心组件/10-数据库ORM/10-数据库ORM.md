@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb'
 title: '数据库ORM🔥'
 sidebar_position: 10
 hide_title: true

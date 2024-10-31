@@ -1,4 +1,5 @@
 ---
+slug: '/other/official-resource'
 title: 'GoFrame官方教程'
 sidebar_position: 1
 hide_title: true

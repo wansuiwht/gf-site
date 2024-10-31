@@ -1,4 +1,5 @@
 ---
+slug: '/cli/gen/dao'
 title: '数据规范-gen dao'
 sidebar_position: 1
 hide_title: true

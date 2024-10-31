@@ -1,5 +1,5 @@
 ---
-slug: '/go-module'
+slug: '/install-go/go-module'
 title: 'Go Module'
 sidebar_position: 1
 hide_title: true

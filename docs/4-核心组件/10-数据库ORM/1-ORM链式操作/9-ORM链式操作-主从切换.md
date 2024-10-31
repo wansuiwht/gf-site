@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/chaining/master-slave'
 title: 'ORM链式操作-主从切换'
 sidebar_position: 9
 hide_title: true

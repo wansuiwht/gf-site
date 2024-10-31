@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/genv'
 title: '环境变量-genv'
 sidebar_position: 12
 hide_title: true

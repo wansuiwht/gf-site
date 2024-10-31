@@ -1,4 +1,5 @@
 ---
+slug: '/cli/gen/service'
 title: '模块规范-gen service'
 sidebar_position: 2
 hide_title: true

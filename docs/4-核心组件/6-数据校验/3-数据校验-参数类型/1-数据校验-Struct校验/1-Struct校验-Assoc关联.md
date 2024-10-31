@@ -1,4 +1,5 @@
 ---
+slug: '/core/gvalid/parameter-type/struct/assoc'
 title: 'Struct校验-Assoc关联'
 sidebar_position: 1
 hide_title: true

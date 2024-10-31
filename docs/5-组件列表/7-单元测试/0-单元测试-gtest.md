@@ -1,4 +1,5 @@
 ---
+slug: '/components/test/gtest'
 title: '单元测试-gtest'
 sidebar_position: 0
 hide_title: true

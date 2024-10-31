@@ -1,4 +1,5 @@
 ---
+slug: '/cli/init'
 title: '项目创建-init'
 sidebar_position: 3
 hide_title: true

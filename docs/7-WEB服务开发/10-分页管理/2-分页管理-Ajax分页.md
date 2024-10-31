@@ -1,4 +1,5 @@
 ---
+slug: '/web/paging/ajax'
 title: '分页管理-Ajax分页'
 sidebar_position: 2
 hide_title: true

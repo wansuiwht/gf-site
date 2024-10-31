@@ -1,4 +1,5 @@
 ---
+slug: '/web/paging/template'
 title: '分页管理-URL模板'
 sidebar_position: 3
 hide_title: true

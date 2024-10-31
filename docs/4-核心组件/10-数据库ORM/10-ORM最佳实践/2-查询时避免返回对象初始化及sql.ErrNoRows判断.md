@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/practice/avoid-object-initialization-and-sql-errnorows-error'
 title: '查询时避免返回对象初始化及sql.ErrNoRows判断'
 sidebar_position: 2
 hide_title: true

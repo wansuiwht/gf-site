@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/senior/connection-pool'
 title: 'ORM高级特性-连接池状态'
 sidebar_position: 8
 hide_title: true

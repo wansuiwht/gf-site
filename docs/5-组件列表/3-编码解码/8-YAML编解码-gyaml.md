@@ -1,4 +1,5 @@
 ---
+slug: '/components/encoding/gyaml'
 title: 'YAML编解码-gyaml'
 sidebar_position: 8
 hide_title: true

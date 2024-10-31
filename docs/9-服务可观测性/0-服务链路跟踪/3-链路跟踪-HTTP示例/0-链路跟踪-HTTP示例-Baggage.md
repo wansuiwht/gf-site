@@ -1,4 +1,5 @@
 ---
+slug: '/obs/tracing/http-example/baggage'
 title: '链路跟踪-HTTP示例-Baggage'
 sidebar_position: 0
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/web/response/exit-exitall-exithook'
 title: '数据返回-Exit控制'
 sidebar_position: 3
 hide_title: true

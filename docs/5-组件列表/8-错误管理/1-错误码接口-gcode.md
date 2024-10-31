@@ -1,4 +1,5 @@
 ---
+slug: '/components/error/gcode'
 title: '错误码接口-gcode'
 sidebar_position: 1
 hide_title: true

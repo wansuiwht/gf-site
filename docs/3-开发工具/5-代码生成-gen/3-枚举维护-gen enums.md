@@ -1,4 +1,5 @@
 ---
+slug: '/cli/gen/enums'
 title: '枚举维护-gen enums'
 sidebar_position: 3
 hide_title: true

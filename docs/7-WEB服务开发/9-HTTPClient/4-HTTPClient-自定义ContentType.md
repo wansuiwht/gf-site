@@ -1,4 +1,5 @@
 ---
+slug: '/web/http-client/content-type'
 title: 'HTTPClient-自定义ContentType'
 sidebar_position: 4
 hide_title: true

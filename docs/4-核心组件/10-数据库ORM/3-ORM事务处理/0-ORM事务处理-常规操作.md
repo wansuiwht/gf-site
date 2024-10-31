@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/transaction/basic'
 title: 'ORM事务处理-常规操作'
 sidebar_position: 0
 hide_title: true

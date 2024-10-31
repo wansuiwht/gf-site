@@ -1,4 +1,5 @@
 ---
+slug: '/components/encoding/gini'
 title: 'INI编解码-gini'
 sidebar_position: 7
 hide_title: true

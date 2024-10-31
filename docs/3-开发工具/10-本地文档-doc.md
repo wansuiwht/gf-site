@@ -1,4 +1,5 @@
 ---
+slug: '/cli/doc'
 title: '本地文档-doc'
 sidebar_position: 10
 hide_title: true

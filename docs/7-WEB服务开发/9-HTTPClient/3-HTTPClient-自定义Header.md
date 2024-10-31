@@ -1,4 +1,5 @@
 ---
+slug: '/web/http-client/header'
 title: 'HTTPClient-自定义Header'
 sidebar_position: 3
 hide_title: true

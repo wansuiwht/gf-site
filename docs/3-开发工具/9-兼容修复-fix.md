@@ -1,4 +1,5 @@
 ---
+slug: '/cli/fix'
 title: '兼容修复-fix'
 sidebar_position: 9
 hide_title: true

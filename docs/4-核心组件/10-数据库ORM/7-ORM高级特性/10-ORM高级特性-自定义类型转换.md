@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/senior/custom-type-converting'
 title: 'ORM高级特性-自定义类型转换'
 sidebar_position: 10
 hide_title: true

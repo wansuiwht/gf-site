@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gbuild'
 title: '构建信息-gbuild'
 sidebar_position: 17
 hide_title: true

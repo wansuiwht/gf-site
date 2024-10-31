@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/result/empty-check'
 title: 'ORM结果处理-为空判断'
 sidebar_position: 1
 hide_title: true

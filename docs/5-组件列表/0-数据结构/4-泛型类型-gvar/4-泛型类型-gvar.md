@@ -1,4 +1,5 @@
 ---
+slug: '/components/container/gvar'
 title: '泛型类型-gvar'
 sidebar_position: 4
 hide_title: true

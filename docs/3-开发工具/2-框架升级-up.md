@@ -1,4 +1,5 @@
 ---
+slug: '/cli/up'
 title: '框架升级-up'
 sidebar_position: 2
 hide_title: true

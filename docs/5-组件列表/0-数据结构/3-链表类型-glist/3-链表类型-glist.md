@@ -1,4 +1,5 @@
 ---
+slug: '/components/container/glist'
 title: '链表类型-glist'
 sidebar_position: 3
 hide_title: true

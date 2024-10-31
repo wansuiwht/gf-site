@@ -1,4 +1,5 @@
 ---
+slug: '/network/gtcp/conn'
 title: 'TCP组件-连接对象'
 sidebar_position: 0
 hide_title: true

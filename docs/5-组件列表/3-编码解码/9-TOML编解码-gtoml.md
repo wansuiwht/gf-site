@@ -1,4 +1,5 @@
 ---
+slug: '/components/encoding/gtoml'
 title: 'TOML编解码-gtoml'
 sidebar_position: 9
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/web/senior/hook'
 title: 'HOOK事件回调'
 sidebar_position: 6
 hide_title: true

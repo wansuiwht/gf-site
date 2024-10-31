@@ -1,4 +1,5 @@
 ---
+slug: '/web/http-client/example'
 title: 'HTTPClient-基本使用'
 sidebar_position: 0
 hide_title: true

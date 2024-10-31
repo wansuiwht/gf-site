@@ -1,4 +1,5 @@
 ---
+slug: '/components/container/gmap'
 title: '字典类型-gmap'
 sidebar_position: 0
 hide_title: true

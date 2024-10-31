@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gcmd'
 title: '命令管理-gcmd'
 sidebar_position: 4
 hide_title: true

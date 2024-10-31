@@ -1,4 +1,5 @@
 ---
+slug: '/cli/gen/pb'
 title: '协议编译-gen pb'
 sidebar_position: 4
 hide_title: true

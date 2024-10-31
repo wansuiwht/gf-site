@@ -1,4 +1,5 @@
 ---
+slug: '/core/gconv/struct'
 title: '类型转换-Struct转换'
 sidebar_position: 2
 hide_title: true

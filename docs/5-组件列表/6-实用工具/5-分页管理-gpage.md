@@ -1,4 +1,5 @@
 ---
+slug: '/components/util/gpage'
 title: '分页管理-gpage'
 sidebar_position: 5
 hide_title: true

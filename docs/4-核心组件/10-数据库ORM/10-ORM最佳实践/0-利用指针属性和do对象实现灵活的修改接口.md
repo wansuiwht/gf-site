@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/practice/using-pointer-and-do-for-update-api'
 title: '利用指针属性和do对象实现灵活的修改接口'
 sidebar_position: 0
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/components/encoding/gcharset'
 title: '字符集转换-gcharset'
 sidebar_position: 10
 hide_title: true

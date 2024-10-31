@@ -1,4 +1,5 @@
 ---
+slug: '/components/container/gpool'
 title: '对象复用-gpool'
 sidebar_position: 8
 hide_title: true

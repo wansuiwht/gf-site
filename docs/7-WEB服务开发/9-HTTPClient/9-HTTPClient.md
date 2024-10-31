@@ -1,4 +1,5 @@
 ---
+slug: '/web/http-client'
 title: 'HTTPClient'
 sidebar_position: 9
 hide_title: true

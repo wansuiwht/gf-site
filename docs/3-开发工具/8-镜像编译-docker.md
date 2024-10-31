@@ -1,4 +1,5 @@
 ---
+slug: '/cli/docker'
 title: '镜像编译-docker'
 sidebar_position: 8
 hide_title: true

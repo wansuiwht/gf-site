@@ -1,4 +1,5 @@
 ---
+slug: '/web/response/stream'
 title: '数据返回-Stream返回'
 sidebar_position: 6
 hide_title: true

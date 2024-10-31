@@ -1,4 +1,5 @@
 ---
+slug: '/components/contrib/nosql/redis/interface'
 title: 'Redis-接口化设计'
 sidebar_position: 4
 hide_title: true

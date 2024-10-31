@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gtimer'
 title: '定时器-gtimer'
 sidebar_position: 0
 hide_title: true

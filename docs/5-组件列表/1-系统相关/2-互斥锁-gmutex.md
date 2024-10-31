@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gmutex'
 title: '互斥锁-gmutex'
 sidebar_position: 2
 hide_title: true

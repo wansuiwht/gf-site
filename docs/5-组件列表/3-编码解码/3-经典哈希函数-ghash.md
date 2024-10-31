@@ -1,4 +1,5 @@
 ---
+slug: '/components/encoding/ghash'
 title: '经典哈希函数-ghash'
 sidebar_position: 3
 hide_title: true

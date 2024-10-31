@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/context'
 title: 'ORM上下文变量'
 sidebar_position: 9
 hide_title: true

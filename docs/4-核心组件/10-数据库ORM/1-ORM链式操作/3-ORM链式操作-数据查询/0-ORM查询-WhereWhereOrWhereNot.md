@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/chaining/query/where'
 title: 'ORM查询-Where/WhereOr/WhereNot'
 sidebar_position: 0
 hide_title: true

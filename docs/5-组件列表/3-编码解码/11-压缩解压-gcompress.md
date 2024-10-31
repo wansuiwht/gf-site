@@ -1,4 +1,5 @@
 ---
+slug: '/components/encoding/gcompress'
 title: '压缩/解压-gcompress'
 sidebar_position: 11
 hide_title: true

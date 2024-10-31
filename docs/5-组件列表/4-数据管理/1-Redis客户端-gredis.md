@@ -1,4 +1,5 @@
 ---
+slug: '/components/database/gredis'
 title: 'Redis客户端-gredis'
 sidebar_position: 1
 hide_title: true

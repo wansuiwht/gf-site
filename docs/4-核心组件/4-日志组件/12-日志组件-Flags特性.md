@@ -1,4 +1,5 @@
 ---
+slug: '/core/glog/flags'
 title: '日志组件-Flags特性'
 sidebar_position: 12
 hide_title: true

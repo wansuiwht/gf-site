@@ -1,4 +1,5 @@
 ---
+slug: '/core/gconv/unmarshal-value'
 title: '类型转换-UnmarshalValue'
 sidebar_position: 6
 hide_title: true

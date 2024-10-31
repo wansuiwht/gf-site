@@ -1,4 +1,5 @@
 ---
+slug: '/web/response/redirect'
 title: '数据返回-Redirect'
 sidebar_position: 2
 hide_title: true

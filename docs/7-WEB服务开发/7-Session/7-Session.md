@@ -1,4 +1,5 @@
 ---
+slug: '/web/session'
 title: 'Session'
 sidebar_position: 7
 hide_title: true

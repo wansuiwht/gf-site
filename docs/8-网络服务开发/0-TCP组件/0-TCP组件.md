@@ -1,4 +1,5 @@
 ---
+slug: '/network/gtcp'
 title: 'TCP组件'
 sidebar_position: 0
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/chaining/soft-time'
 title: 'ORM链式操作-时间维护'
 sidebar_position: 11
 hide_title: true

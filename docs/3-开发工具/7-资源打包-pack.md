@@ -1,4 +1,5 @@
 ---
+slug: '/cli/pack'
 title: '资源打包-pack'
 sidebar_position: 7
 hide_title: true

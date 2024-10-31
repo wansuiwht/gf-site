@@ -1,4 +1,5 @@
 ---
+slug: '/core/glog/context'
 title: '日志组件-Context'
 sidebar_position: 5
 hide_title: true

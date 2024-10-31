@@ -1,4 +1,5 @@
 ---
+slug: '/cli/run'
 title: '自动编译-run'
 sidebar_position: 6
 hide_title: true

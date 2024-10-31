@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/grpool'
 title: '协程管理-grpool'
 sidebar_position: 16
 hide_title: true

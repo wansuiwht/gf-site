@@ -1,4 +1,5 @@
 ---
+slug: '/core/gcache/redis'
 title: '缓存管理-Redis缓存'
 sidebar_position: 2
 hide_title: true

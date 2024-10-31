@@ -1,4 +1,5 @@
 ---
+slug: '/web/http-client/cookie'
 title: 'HTTPClient-自定义Cookie'
 sidebar_position: 2
 hide_title: true

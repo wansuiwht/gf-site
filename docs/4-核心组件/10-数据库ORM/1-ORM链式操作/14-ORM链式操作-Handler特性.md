@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/chaining/handler'
 title: 'ORM链式操作-Handler特性'
 sidebar_position: 14
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gcron'
 title: '定时任务-gcron'
 sidebar_position: 7
 hide_title: true

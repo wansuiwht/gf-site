@@ -1,4 +1,5 @@
 ---
+slug: '/web/http-client/metrics'
 title: 'HTTPClient-监控指标'
 sidebar_position: 10
 hide_title: true

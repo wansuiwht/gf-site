@@ -1,4 +1,5 @@
 ---
+slug: '/components/util/gconv'
 title: '类型转换-gconv'
 sidebar_position: 3
 hide_title: true

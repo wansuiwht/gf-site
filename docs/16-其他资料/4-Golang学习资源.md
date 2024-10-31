@@ -1,4 +1,5 @@
 ---
+slug: '/other/golang-resource'
 title: 'Golang学习资源'
 sidebar_position: 4
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gres'
 title: '资源管理-gres'
 sidebar_position: 10
 hide_title: true

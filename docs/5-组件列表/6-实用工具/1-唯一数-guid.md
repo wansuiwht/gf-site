@@ -1,4 +1,5 @@
 ---
+slug: '/components/util/guid'
 title: '唯一数-guid'
 sidebar_position: 1
 hide_title: true

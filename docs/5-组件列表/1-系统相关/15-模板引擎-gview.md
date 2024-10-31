@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gview'
 title: '模板引擎-gview'
 sidebar_position: 15
 hide_title: true

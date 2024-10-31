@@ -1,4 +1,5 @@
 ---
+slug: '/other/community-resource'
 title: 'GoFrame社区教程'
 sidebar_position: 2
 hide_title: true

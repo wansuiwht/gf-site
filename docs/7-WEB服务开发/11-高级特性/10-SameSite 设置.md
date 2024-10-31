@@ -1,5 +1,6 @@
 ---
-title: 'SameSite 设置'
+slug: '/web/senior/same-site'
+title: 'SameSite设置'
 sidebar_position: 10
 hide_title: true
 ---

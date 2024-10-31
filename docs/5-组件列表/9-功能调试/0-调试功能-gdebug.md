@@ -1,4 +1,5 @@
 ---
+slug: '/components/debug/gdebug'
 title: '调试功能-gdebug'
 sidebar_position: 0
 hide_title: true

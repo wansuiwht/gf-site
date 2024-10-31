@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/chaining/relation/scan-list'
 title: '模型关联-动态关联-ScanList'
 sidebar_position: 0
 hide_title: true

@@ -1,4 +1,5 @@
 ---
+slug: '/cli/install'
 title: '工具安装-install'
 sidebar_position: 0
 hide_title: true

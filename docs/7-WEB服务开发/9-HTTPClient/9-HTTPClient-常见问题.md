@@ -1,4 +1,5 @@
 ---
+slug: '/web/http-client/faq'
 title: 'HTTPClient-常见问题'
 sidebar_position: 9
 hide_title: true

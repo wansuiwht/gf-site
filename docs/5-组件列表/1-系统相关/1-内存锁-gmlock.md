@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gmlock'
 title: '内存锁-gmlock'
 sidebar_position: 1
 hide_title: true

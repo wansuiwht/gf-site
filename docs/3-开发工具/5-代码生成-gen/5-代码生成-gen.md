@@ -1,4 +1,5 @@
 ---
+slug: '/cli/gen'
 title: '代码生成-gen(🔥重点🔥)'
 sidebar_position: 5
 hide_title: true

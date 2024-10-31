@@ -1,4 +1,5 @@
 ---
+slug: '/core/gconv/scan'
 title: '类型转换-Scan转换'
 sidebar_position: 4
 hide_title: true

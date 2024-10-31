@@ -1,4 +1,5 @@
 ---
+slug: '/components/os/gfsnotify'
 title: '文件监控-gfsnotify'
 sidebar_position: 13
 hide_title: true

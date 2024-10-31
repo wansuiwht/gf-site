@@ -1,4 +1,5 @@
 ---
+slug: '/core/gdb/chaining/fields-retrieving'
 title: 'ORM链式操作-字段获取'
 sidebar_position: 7
 hide_title: true
