@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/chaining-schema
+slug: '/core/gdb/chaining-schema'
 title: 'ORM链式操作-数据库切换'
 sidebar_position: 12
 hide_title: true

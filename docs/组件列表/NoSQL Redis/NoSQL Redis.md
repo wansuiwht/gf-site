@@ -1,5 +1,5 @@
 ---
-slug: '/components/contrib/nosql-redis
+slug: '/components/contrib/nosql-redis'
 title: 'NoSQL Redis'
 sidebar_position: 11
 hide_title: true

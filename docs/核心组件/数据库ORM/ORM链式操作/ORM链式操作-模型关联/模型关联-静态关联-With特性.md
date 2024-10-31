@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/chaining-relation-with
+slug: '/core/gdb/chaining-relation-with'
 title: '模型关联-静态关联-With特性'
 sidebar_position: 1
 hide_title: true

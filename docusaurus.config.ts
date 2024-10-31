@@ -248,13 +248,13 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 };
 
-module.exports = {
-  scripts: [
-    {
-      src: 'https://hm.baidu.com/hm.js?38f38a0626fd7805722db06243cd0fa7',
-      async: true,
-    },
-  ],
-};
+// module.exports = {
+//   scripts: [
+//     {
+//       src: 'https://hm.baidu.com/hm.js?38f38a0626fd7805722db06243cd0fa7',
+//       async: true,
+//     },
+//   ],
+// };
 
 export default config;
