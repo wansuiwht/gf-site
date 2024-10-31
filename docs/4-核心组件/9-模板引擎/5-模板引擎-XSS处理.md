@@ -42,6 +42,6 @@ func main() {
 
 3、执行输出
 
-```
+```html
 姓名: &lt;script&gt;alert(&#39;john&#39;);&lt;/script&gt;
 ```
