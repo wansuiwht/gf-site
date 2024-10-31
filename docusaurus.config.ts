@@ -159,6 +159,7 @@ const config: Config = {
         {
           position: 'left',
           label: '开发手册',
+          to: '/docs/design',
           items: [
             {
               label: '框架设计',
@@ -174,7 +175,7 @@ const config: Config = {
             },
             {
               label: '微服务开发',
-              to: '/docs/micro',
+              to: '/docs/micro-service',
             },
             {
               label: 'WEB服务开发',
