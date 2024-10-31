@@ -4,9 +4,9 @@ title: '日志组件-Writer接口'
 sidebar_position: 11
 hide_title: true
 ---
-
+:::tip
 `Writer` 接口是最底层的 `IO` 写入接口，如果业务需要自定义日志内容打印，建议使用 `Handler` 特性，参考章节： [日志组件-Handler](日志组件-Handler.md)
-
+:::
 ## 自定义 `Writer` 接口
 
 `glog` 模块实现了标准输出以及文件输出的日志内容打印。当然，开发者也可以通过自定义 `io.Writer` 接口实现自定义的日志内容输出。 `io.Writer` 是标准库提供的内容输出接口，其定义如下：

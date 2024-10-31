@@ -8,9 +8,9 @@ hide_title: true
 ## 基本介绍
 
 命令行解析最主要的是针对于选项的解析， `gcmd` 组件提供了 `Parse` 方法，用于自定义解析选项，包括有哪些选项名称，每个选项是否带有数值。根据这一配置便可将所有的参数和选项进行解析归类。
-
+:::tip
 大部分场景下，我们并不需要显式创建 `Parser` 对象，因为我们有层级管理以及对象管理方式来管理多命令。但底层仍然是采用 `Parser` 方式实现，因此本章节大家了解原理即可。
-
+:::
 相关方法：
 
 更多 `Parser` 方法请参考接口文档： [https://pkg.go.dev/github.com/gogf/gf/v2/os/gcmd#Parser](https://pkg.go.dev/github.com/gogf/gf/v2/os/gcmd#Parser)

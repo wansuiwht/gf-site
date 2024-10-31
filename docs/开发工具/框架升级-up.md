@@ -4,9 +4,9 @@ title: '框架升级-up'
 sidebar_position: 2
 hide_title: true
 ---
-
+:::tip
 该命令从框架 `v2.3` 版本开始提供。
-
+:::
 ## 使用方式
 
 ```bash

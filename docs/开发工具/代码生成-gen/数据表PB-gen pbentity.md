@@ -4,9 +4,9 @@ title: '数据表PB-gen pbentity'
 sidebar_position: 5
 hide_title: true
 ---
-
+:::tip
 该功能特性从 `v2.4` 版本开始提供。
-
+:::
 ## 基本介绍
 
 该命令用于读取配置的数据库，根据数据表生成对应的 `proto` 数据结构文件。
@@ -70,9 +70,9 @@ CONFIGURATION SUPPORT
               option java_package  = "protobuf/demos";
               option php_namespace = "protobuf/demos";
 ```
-
+:::tip
 如果使用框架推荐的项目工程脚手架，并且系统安装了 `make` 工具，也可以使用 `make pbentity` 快捷指令。
-
+:::
 参数说明：
 
 | 名称 | 默认值 | 含义 | 示例 |

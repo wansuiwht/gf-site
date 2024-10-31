@@ -55,5 +55,6 @@ CLI Built Detail:
 在打印的版本信息中会自动检测当前项目使用的 `GoFrame` 版本（自动解析 `go.mod`），并以 `GoFrame Version` 的信息打印出来。
 
 在 `CLI Built Detail` 信息中展示的是当前二进制编译时使用的各种 `Golang` 版本以及 `GoFrame` 版本信息，编译时的 `Git` 提交版本、当前二进制文件的编译时间。
-
+:::warning
 大家请勿将 `GoFrame Version` 和 `CLI Built Detail` 中的 `GF Version` 混淆。
+:::

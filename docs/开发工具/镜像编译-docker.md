@@ -4,9 +4,9 @@ title: '镜像编译-docker'
 sidebar_position: 8
 hide_title: true
 ---
-
+:::tip
 从 `v2.5` 版本开始，考虑到各个工具命令的解耦性， `gf docker` 工具命令默认不再执行二进制构建编译，而是推荐大家通过 `Makefile` 构建脚本自行组织使用 `gf build, gf gen enums, gf docker` 等命令结合的方式来 **组合使用** 命令（工程项目中提供了对应的 `make build, make enums, make docker` 命令），组合使用更加灵活且易维护。
-
+:::
 ## 使用方式
 
 ```bash

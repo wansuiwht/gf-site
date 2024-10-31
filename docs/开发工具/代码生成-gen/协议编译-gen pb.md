@@ -4,9 +4,9 @@ title: '协议编译-gen pb'
 sidebar_position: 4
 hide_title: true
 ---
-
+:::tip
 该功能特性从 `v2.4` 版本开始提供。
-
+:::
 ## 基本介绍
 
 该命令用于编译 `proto` 文件，生成对应的 `protobuf go` 文件以及对应的控制器文件。
@@ -28,9 +28,9 @@ EXAMPLE
     gf gen pb
     gf gen pb -p . -a . -p .
 ```
-
+:::tip
 如果使用框架推荐的项目工程脚手架，并且系统安装了 `make` 工具，也可以使用 `make pb` 快捷指令。
-
+:::
 参数说明：
 
 | 名称 | 必须 | 默认值 | 含义 |

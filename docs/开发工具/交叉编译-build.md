@@ -55,9 +55,9 @@ gfcli:
 | `varMap` |  | 自定义的内置变量键值对，构建的二进制中可以通过 `gbuild` 包获取编译信息。 | ```<br />gfcli:<br />  build:<br />    name:     "gf"<br />    arch:     "all"<br />    system:   "all"<br />    mod:      "none"<br />    cgo:      0<br />    varMap:<br />      k1: v1<br />      k2: v2<br />``` |
 | `exitWhenError` | `false` | 当编译发生错误时，立即停止后续执行，并退出编译流程（使用 `os.Exit(1)`） |  |
 | `dumpEnv` | `false` | 每次编译之前在终端打印当前编译环境的环境变量信息 |  |
-
+:::tip
 编译时的内置变量可以在运行时通过 `gbuild` 包 [构建信息-gbuild](../组件列表/系统相关/构建信息-gbuild.md) 获取。
-
+:::
 ## 使用示例
 
 ```bash
