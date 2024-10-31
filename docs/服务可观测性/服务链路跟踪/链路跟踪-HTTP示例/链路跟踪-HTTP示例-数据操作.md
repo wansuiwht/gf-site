@@ -1,5 +1,5 @@
 ---
-slug: '/obs/tracing/http-example/with-database'
+slug: '/obs/tracing/http-example-with-database'
 title: '链路跟踪-HTTP示例-数据操作'
 sidebar_position: 1
 hide_title: true

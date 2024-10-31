@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/practice/using-json-for-complicated-field'
+slug: '/core/gdb/practice-using-json-for-complicated-field'
 title: '复杂类型尽量使用json存储，便于Scan到对象时自动化转换，避免自定义解析'
 sidebar_position: 1
 hide_title: true

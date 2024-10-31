@@ -1,9 +1,8 @@
 ---
 slug: '/faq'
 title: '常见问题(FAQ)'
-sidebar_position: 13
+sidebar_position: 10
 hide_title: true
-
 ---
 
 寄语：
@@ -97,7 +96,6 @@ D:\Program Files\Go\bin\pkg\mod\github.com\gogf\gf@v1.16.6\net\ghttp\internal\cl
 
 ```go
 func main() {
-
     //定时任务1
     gcron.AddSingleton("*/5 * * * * *", func() {
         task.Test()
@@ -111,7 +109,6 @@ func main() {
 
     //接收http请求
     g.Server().Run()
-
 }
 ```
 

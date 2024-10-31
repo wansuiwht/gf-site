@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/chaining/query/sub-query'
+slug: '/core/gdb/chaining-query-sub-query'
 title: 'ORM查询-子查询特性'
 sidebar_position: 8
 hide_title: true

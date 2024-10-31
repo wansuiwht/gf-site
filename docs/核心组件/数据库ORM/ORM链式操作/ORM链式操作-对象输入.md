@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/chaining/object-parameter'
+slug: '/core/gdb/chaining-object-parameter'
 title: 'ORM链式操作-对象输入'
 sidebar_position: 5
 hide_title: true

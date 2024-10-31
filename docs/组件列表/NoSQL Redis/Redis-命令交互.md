@@ -1,5 +1,5 @@
 ---
-slug: '/components/contrib/nosql/redis/do-and-serialization'
+slug: '/components/contrib/nosql-redis-do-and-serialization'
 title: 'Redis-命令交互'
 sidebar_position: 2
 hide_title: true

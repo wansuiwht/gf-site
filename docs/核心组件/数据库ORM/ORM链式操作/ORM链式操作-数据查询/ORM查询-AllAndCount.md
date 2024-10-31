@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/chaining/query/all-and-count'
+slug: '/core/gdb/chaining-query-all-and-count'
 title: 'ORM查询-AllAndCount'
 sidebar_position: 2
 hide_title: true

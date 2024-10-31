@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/senior/nested-struct-support'
+slug: '/core/gdb/senior-nested-struct-support'
 title: 'ORM高级特性-内嵌结构支持'
 sidebar_position: 9
 hide_title: true

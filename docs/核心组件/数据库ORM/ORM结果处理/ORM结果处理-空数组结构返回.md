@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/result/empty-array'
+slug: '/core/gdb/result-empty-array'
 title: 'ORM结果处理-空数组结构返回'
 sidebar_position: 2
 hide_title: true

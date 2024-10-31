@@ -1,5 +1,5 @@
 ---
-slug: '/core/gdb/senior/type-recognization'
+slug: '/core/gdb/senior-type-recognization'
 title: 'ORM高级特性-类型识别'
 sidebar_position: 6
 hide_title: true

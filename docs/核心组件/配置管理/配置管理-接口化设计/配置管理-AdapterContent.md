@@ -1,5 +1,5 @@
 ---
-slug: '/core/gcfg/interface/adapter-content'
+slug: '/core/gcfg/interface-adapter-content'
 title: '配置管理-AdapterContent'
 sidebar_position: 1
 hide_title: true
