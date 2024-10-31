@@ -246,15 +246,12 @@ const config: Config = {
       // 默认支持的语言 https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/generate-prism-languages/index.ts#L9-L23
     },
   } satisfies Preset.ThemeConfig,
+  scripts: [
+    {
+      src: 'https://hm.baidu.com/hm.js?38f38a0626fd7805722db06243cd0fa7',
+      async: true,
+    },
+  ],
 };
-
-// module.exports = {
-//   scripts: [
-//     {
-//       src: 'https://hm.baidu.com/hm.js?38f38a0626fd7805722db06243cd0fa7',
-//       async: true,
-//     },
-//   ],
-// };
 
 export default config;
