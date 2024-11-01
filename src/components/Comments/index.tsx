@@ -13,7 +13,7 @@ export default function Comments(): JSX.Element {
         repo="gogf/gf-site"
         repoId="R_kgDONDiuow"
         category="General"
-        categoryId="DIC_kwDONDiuo84Cj4QD"
+        categoryId="DIC_kwDONDiuo84Cj4QE"
         mapping="pathname"
         strict="0"
         reactionsEnabled="1"
