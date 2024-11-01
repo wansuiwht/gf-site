@@ -15,19 +15,11 @@ hide_title: true
 
 1. 使用常用的 `RSA` 算法生成秘钥文件
 
-
-
-
-
 ```shell
 openssl genrsa -out server.key 2048
 ```
 
 此外，我们也可以使用 `ECDSA` 算法来生成秘钥文件：
-
-
-
-
 
 ```shell
 openssl ecparam -genkey -name secp384r1 -out server.key
@@ -35,19 +27,11 @@ openssl ecparam -genkey -name secp384r1 -out server.key
 
 2. 根据秘钥文件生成证书文件
 
-
-
-
-
 ```shell
 openssl req -new -x509 -key server.key -out server.crt -days 365
 ```
 
 3. (可选)根据秘钥生成公钥文件，该文件用于客户端与服务端通信
-
-
-
-
 
 ```shell
 openssl rsa -in server.key -out server.key.public

@@ -31,28 +31,12 @@ func main() {
 
 1. `Query` 数据格式
 
-
-
-
-
-
-
-
-
 ```bash
 $ curl "http://127.0.0.1:8199/?name=john&pass=123"
 name: john, pass: 123
 ```
 
 2. `Form` 表单提交
-
-
-
-
-
-
-
-
 
 ```bash
 $ curl -d "name=john&pass=123" "http://127.0.0.1:8199/"
@@ -61,28 +45,12 @@ name: john, pass: 123
 
 3. `JSON` 数据格式
 
-
-
-
-
-
-
-
-
 ```bash
 $ curl -d '{"name":"john","pass":"123"}' "http://127.0.0.1:8199/"
 name: john, pass: 123
 ```
 
 4. `XML` 数据格式
-
-
-
-
-
-
-
-
 
 ```bash
 $ curl -d '<?xml version="1.0" encoding="UTF-8"?><doc><name>john</name><pass>123</pass></doc>' "http://127.0.0.1:8199/"
@@ -149,14 +117,6 @@ func main() {
 
 1. `JSON` 数据格式
 
-
-
-
-
-
-
-
-
 ```bash
 $ curl -d '{"username":"johngcn","password1":"123456","password2":"123456"}' "http://127.0.0.1:8199/register"
 {"code":0,"error":"","data":{"Name":"johngcn","Pass":"123456","Pass2":"123456"}}
@@ -166,21 +126,9 @@ $ curl -d '{"username":"johngcn","password1":"123456","password2":"1234567"}' "h
 {"code":1,"error":"两次密码不一致","data":null}
 ```
 
-
-
-
-
 可以看到，我们提交的 `JSON` 内容也被 `Parse` 方法智能地转换为了结构体对象。
 
 2. `XML` 数据格式
-
-
-
-
-
-
-
-
 
 ```bash
 $ curl -d '<?xml version="1.0" encoding="UTF-8"?><doc><username>johngcn</username><password1>123456</password1><password2>123456</password2></doc>' "http://127.0.0.1:8199/register"
@@ -190,9 +138,5 @@ $ curl -d '<?xml version="1.0" encoding="UTF-8"?><doc><username>johngcn</usernam
 $ curl -d '<?xml version="1.0" encoding="UTF-8"?><doc><username>johngcn</username><password1>123456</password1><password2>1234567</password2></doc>' "http://127.0.0.1:8199/register"
 {"code":1,"error":"两次密码不一致","data":null}
 ```
-
-
-
-
 
 可以看到，我们提交的 `XML` 内容也被 `Parse` 方法智能地转换为了结构体对象。

@@ -40,15 +40,7 @@ module my-hello
 
 ![](/markdown/f3f9552ca0703fb4e88ae2958b58815c.png)
 
-
-
-
-
 如果您本地环境已经有 `VPN` 功能，那么可以忽略 `proxy` 的设置。
-
-
-
-
 
 其中 `Proxy` 请输入代理地址下载依赖包，如果选择 `direct` 表示不使用代理。可选择的反向代理地址有：
 
@@ -63,14 +55,6 @@ module my-hello
 
 2. 手动修改 `go.mod` 文件如下：
 
-
-
-
-
-
-
-
-
 ```go
 module my-hello
 
@@ -78,23 +62,11 @@ module my-hello
 require github.com/gogf/gf latest
 ```
 
-
-
-
-
 增加 `GoFrame` 框架的依赖，其中 `latest` 表示使用最新版本，IDE将会立即去更新下载框架代码。成功后，IDE将会修改 `go.mod` 文件并生成 `go.sum` 依赖分析文件。
 
 ![](/markdown/cb698537b6d68707fb4c1284530d9f90.png)
 
 3. 随后 `go.mod` 文件被自动更新为：
-
-
-
-
-
-
-
-
 
 ```go
 module my-hello
@@ -102,10 +74,6 @@ module my-hello
 
 require github.com/gogf/gf v1.6.13
 ```
-
-
-
-
 
 其中 `v1.6.13` 表示vgo检测到的最新框架版本。
 
@@ -126,21 +94,9 @@ require github.com/gogf/gf v1.6.13
 
 1. 打开 `Terminal`，在项目根目录下执行:
 
-
-
-
-
-
-
-
-
 ```bash
 export GO111MODULE=on GOPROXY=https://goproxy.cn; go get -u github.com/gogf/gf
 ```
-
-
-
-
 
 该命令将会立即下载最新稳定版本的 `GoFrame` 框架。其中 `export GO111MODULE=on;` 表示开启 `Go Module` 特性（Go `1.11.x` 版本默认关闭，需要手动开启）， `export GOPROXY=https://goproxy.cn` 表示使用代理下载，原因你懂的，并且也能极大提高依赖包下载速度。代理地址也可使用：
 
@@ -153,24 +109,12 @@ export GO111MODULE=on GOPROXY=https://goproxy.cn; go get -u github.com/gogf/gf
 
 2. 随后 `go.mod` 文件内容被自动更新为：
 
-
-
-
-
-
-
-
-
 ```go
 module my-hello
 
 
 require github.com/gogf/gf v1.6.13 // indirect
 ```
-
-
-
-
 
 且生成了新的 `go.sum` 依赖分析文件，该文件充其量算是一个临时文件，对于我们平时开发工作来说意义不大。
 

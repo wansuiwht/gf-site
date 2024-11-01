@@ -29,27 +29,11 @@ import "github.com/gogf/gf/v2/os/gstructs"
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Fields(in FieldsInput) ([]Field, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func main() {
@@ -127,27 +111,11 @@ func main() {
   - 只会返回可导出的字段(首字母大写的字段)。
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 TagMapName(pointer interface{}, priority []string) (map[string]string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func main() {

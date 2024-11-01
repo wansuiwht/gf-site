@@ -27,27 +27,11 @@ import "github.com/gogf/gf/v2/util/gutil"
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Dump(values ...interface{})
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 type User struct {
@@ -123,27 +107,11 @@ func main() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 DumpWithType(values ...interface{})
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 type User struct {
@@ -218,14 +186,6 @@ func main() {
 - 说明： `DumpTo` 将 `value` 以自定义的输出形式写入到 `write` 中。
 
 - 格式：
-
-
-
-
-
-
-
-
 
 ```go
 DumpTo(writer io.Writer, value interface{}, option DumpOption)

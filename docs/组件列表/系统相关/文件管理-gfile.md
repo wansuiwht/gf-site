@@ -28,27 +28,11 @@ import "github.com/gogf/gf/v2/os/gfile"
 - 说明：读取指定路径文件内容，以字符串形式返回。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetContents(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetContents() {
@@ -77,27 +61,11 @@ func ExampleGetContents() {
 - 说明：带缓存获取文件内容，可设置缓存超时，文件发生变化自动清除缓存。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetContentsWithCache(path string, duration ...time.Duration) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetContentsWithCache() {
@@ -136,27 +104,11 @@ func ExampleGetContentsWithCache() {
 - 说明：带缓存获取文件内容，可设置缓存超时，文件发生变化自动清除缓存，返回\[\]byte。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetBytesWithCache(path string, duration ...time.Duration) []byte
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetBytesWithCache() {
@@ -195,27 +147,11 @@ func ExampleGetBytesWithCache() {
 - 说明：读取指定路径文件内容，以字节形式返回。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetBytes(path string) []byte
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetBytes() {
@@ -244,27 +180,11 @@ func ExampleGetBytes() {
 - 说明：以某个字符定位截取指定长度的文件内容以字节形式返回
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetBytesTilChar(reader io.ReaderAt, char byte, start int64) ([]byte, int64)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetBytesTilChar() {
@@ -298,27 +218,11 @@ func ExampleGetBytesTilChar() {
 - 说明：以指定的区间读取文件内容
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetBytesByTwoOffsets(reader io.ReaderAt, start int64, end int64) []byte
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetBytesByTwoOffsets() {
@@ -350,27 +254,11 @@ func ExampleGetBytesByTwoOffsets() {
 - 说明：往指定路径文件添加字符串内容。如果文件不存在将会递归的形式自动创建。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func putContents(path string, data []byte, flag int, perm os.FileMode) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePutContents() {
@@ -399,27 +287,11 @@ func ExamplePutContents() {
 - 说明：以字节形式写入指定文件，如果文件不存在将会递归的形式自动创建
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func PutBytes(path string, content []byte) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePutBytes() {
@@ -447,27 +319,11 @@ func ExamplePutBytes() {
 - 说明：追加字符串内容到指定文件，如果文件不存在将会递归的形式自动创建。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func PutContentsAppend(path string, content string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePutContentsAppend() {
@@ -503,27 +359,11 @@ func ExamplePutContentsAppend() {
 - 说明：追加字节内容到指定文件。如果文件不存在将会递归的形式自动创建。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func PutBytesAppend(path string, content []byte) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePutBytesAppend() {
@@ -558,27 +398,11 @@ func ExamplePutBytesAppend() {
 - 说明：从某个偏移量开始，获取文件中指定字符所在下标
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetNextCharOffset(reader io.ReaderAt, char byte, start int64) int64
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetNextCharOffset() {
@@ -610,27 +434,11 @@ func ExampleGetNextCharOffset() {
 - 说明：从某个偏移量开始，获取文件中指定字符所在下标
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetNextCharOffsetByPath(path string, char byte, start int64) int64
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetNextCharOffsetByPath() {
@@ -659,27 +467,11 @@ func ExampleGetNextCharOffsetByPath() {
 - 说明：以某个字符定位截取指定长度的文件内容以字节形式返回
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetBytesTilCharByPath(path string, char byte, start int64) ([]byte, int64)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetBytesTilCharByPath() {
@@ -707,27 +499,11 @@ func ExampleGetBytesTilCharByPath() {
 - 说明：用两个偏移量截取指定文件的内容以字节形式返回
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func GetBytesByTwoOffsetsByPath(path string, start int64, end int64) []byte
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGetBytesByTwoOffsetsByPath() {
@@ -755,27 +531,11 @@ func ExampleGetBytesByTwoOffsetsByPath() {
 - 说明：以字符串形式逐行读取文件内容
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ReadLines(file string, callback func(text string) error) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReadLines() {
@@ -808,27 +568,11 @@ func ExampleReadLines() {
 - 说明：以字节形式逐行读取文件内容
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ReadLinesBytes(file string, callback func(bytes []byte) error) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReadLinesBytes() {
@@ -862,27 +606,11 @@ func ExampleReadLinesBytes() {
 - 注意：如果给定文件路径是软链，将会修改源文件
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Truncate(path string, size int) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTruncate(){
@@ -916,27 +644,11 @@ func ExampleTruncate(){
 - 说明：替换指定文件的指定内容为新内容
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ReplaceFile(search, replace, path string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceFile() {
@@ -970,27 +682,11 @@ func ExampleReplaceFile() {
 - 说明：使用自定义函数替换指定文件内容
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ReplaceFileFunc(f func(path, content string) string, path string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceFileFunc() {
@@ -1028,27 +724,11 @@ func ExampleReplaceFileFunc() {
 - 说明：扫描指定目录，替换符合条件的文件的指定内容为新内容
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ReplaceDir(search, replace, path, pattern string, recursive ...bool) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceDir() {
@@ -1083,27 +763,11 @@ func ExampleReplaceDir() {
 - 说明：扫描指定目录，使用自定义函数替换符合条件的文件的指定内容为新内容
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ReplaceDirFunc(f func(path, content string) string, path, pattern string, recursive ...bool) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceDirFunc() {
@@ -1144,27 +808,11 @@ func ExampleReplaceDirFunc() {
 - 说明：获取路径修改时间
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func MTime(path string) time.Time
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleMTime() {
@@ -1182,27 +830,11 @@ func ExampleMTime() {
 - 说明：获取路径修改时间戳（秒）
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func MTimestamp(path string) int64
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleMTimestamp() {
@@ -1220,27 +852,11 @@ func ExampleMTimestamp() {
 - 说明：获取路径修改时间戳（毫秒）
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func MTimestampMilli(path string) int64
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleMTimestampMilli() {
@@ -1260,27 +876,11 @@ func ExampleMTimestampMilli() {
 - 说明：获取路径大小，不进行格式化
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Size(path string) int64
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSize() {
@@ -1306,27 +906,11 @@ func ExampleSize() {
 - 说明：获取路径大小，并格式化成硬盘容量
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func SizeFormat(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSizeFormat() {
@@ -1352,27 +936,11 @@ func ExampleSizeFormat() {
 - 说明：获取给定路径容量大小，并格式化人类易读的硬盘容量格式
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ReadableSize(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReadableSize() {
@@ -1398,27 +966,11 @@ func ExampleReadableSize() {
 - 说明：硬盘容量大小字符串转换为大小整形
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func StrToSize(sizeStr string) int64
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStrToSize() {
@@ -1436,27 +988,11 @@ func ExampleStrToSize() {
 - 说明：大小整形转换为硬盘容量大小字符串\`K、m、g、t、p、e、b\`
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func FormatSize(raw int64) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleFormatSize() {
@@ -1482,27 +1018,11 @@ func ExampleFormatSize() {
 - 说明：排序多个路径，按首字母进行排序，数字优先。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func SortFiles(files []string) []string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSortFiles() {
@@ -1533,27 +1053,11 @@ func ExampleSortFiles() {
 - 说明：在指定目录（默认包含当前目录、运行目录、主函数目录；不会递归子目录）中搜索文件并返回真实路径。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Search(name string, prioritySearchPaths ...string) (realPath string, err error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSearch() {
@@ -1584,27 +1088,11 @@ func ExampleSearch() {
 - 说明：扫描指定目录，可扫描文件或目录，支持递归扫描。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ScanDir(path string, pattern string, recursive ...bool) ([]string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleScanDir() {
@@ -1641,27 +1129,11 @@ func ExampleScanDir() {
 - 说明：扫描指定目录的文件，支持递归扫描
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ScanDirFile(path string, pattern string, recursive ...bool) ([]string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleScanDirFile() {
@@ -1697,27 +1169,11 @@ func ExampleScanDirFile() {
 - 说明：扫描指定目录（自定义过滤方法），可扫描文件或目录，支持递归扫描
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ScanDirFunc(path string, pattern string, recursive bool, handler func(path string) string) ([]string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleScanDirFunc() {
@@ -1758,27 +1214,11 @@ func ExampleScanDirFunc() {
 - 说明：扫描指定目录的文件（自定义过滤方法），支持递归扫描。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ScanDirFileFunc(path string, pattern string, recursive bool, handler func(path string) string) ([]string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleScanDirFileFunc() {
@@ -1826,27 +1266,11 @@ func ExampleScanDirFileFunc() {
 - 说明：获取当前工作路径。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Pwd() string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePwd() {
@@ -1864,27 +1288,11 @@ func ExamplePwd() {
 - 说明：获取运行用户的主目录
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Home(names ...string) (string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleHome() {
@@ -1904,27 +1312,11 @@ func ExampleHome() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Temp(names ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTempDir() {
@@ -1950,27 +1342,11 @@ func ExampleTempDir() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func SelfPath() string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSelfPath() {
@@ -1991,27 +1367,11 @@ func ExampleSelfPath() {
 - 说明：检查给定的路径是否是文件夹。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func IsDir(path string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsDir() {
@@ -2036,27 +1396,11 @@ func ExampleIsDir() {
 - 说明：检查给定的路径是否是文件。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func IsFile(path string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsFile() {
@@ -2084,27 +1428,11 @@ func ExampleIsFile() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func IsReadable(path string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsReadable() {
@@ -2128,27 +1456,11 @@ func ExampleIsReadable() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func IsWritable(path string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsWritable() {
@@ -2172,27 +1484,11 @@ func ExampleIsWritable() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Chmod(path string, mode os.FileMode) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleChmod() {
@@ -2231,27 +1527,11 @@ func ExampleChmod() {
 - 说明：创建文件夹，支持递归创建（建议采用绝对路径）,创建后的文件夹权限为： `drwxr-xr-x`。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Mkdir(path string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleMkdir() {
@@ -2278,27 +1558,11 @@ func ExampleMkdir() {
 - 注意：如果需要创建文件的已存在，则会清空该文件的内容！
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Create(path string) (*os.File, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCreate() {
@@ -2344,27 +1608,11 @@ func ExampleCreate() {
 - 说明：以只读的方式打开文件/文件夹。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Open(path string) (*os.File, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleOpen() {
@@ -2393,27 +1641,11 @@ func ExampleOpen() {
 - 说明：以指定\`flag\`以及\`perm\`的方式打开文件/文件夹。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func OpenFile(path string, flag int, perm os.FileMode) (*os.File, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleOpenFile() {
@@ -2450,27 +1682,11 @@ func ExampleOpenFile() {
 - 说明：以指定\`flag\`的方式打开文件/文件夹。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func OpenWithFlag(path string, flag int) (*os.File, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleOpenWithFlag() {
@@ -2508,27 +1724,11 @@ func ExampleOpenWithFlag() {
 - 说明：以指定\`flag\`以及\`perm\`的方式打开文件/文件夹。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func OpenWithFlagPerm(path string, flag int, perm os.FileMode) (*os.File, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleOpenWithFlagPerm() {
@@ -2566,27 +1766,11 @@ func ExampleOpenWithFlagPerm() {
 - 说明：获取给定路径的文件详情。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Stat(path string) (os.FileInfo, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStat() {
@@ -2619,27 +1803,11 @@ func ExampleStat() {
 - 说明：支持复制文件或目录
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Copy(src string, dst string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCopy() {
@@ -2688,27 +1856,11 @@ func ExampleCopy() {
 - 说明：复制文件
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func CopyFile(src, dst string) (err error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCopyFile() {
@@ -2743,27 +1895,11 @@ func ExampleCopyFile() {
 - 说明：支持复制文件或目录
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func CopyDir(src string, dst string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCopyDir() {
@@ -2804,27 +1940,11 @@ func ExampleCopyDir() {
 - 注意：如果 `dst` 已经存在并且是文件，将会被替换造成数据丢失！
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Move(src string, dst string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleMove() {
@@ -2858,27 +1978,11 @@ func ExampleMove() {
 - 注意：如果 `dst` 已经存在并且是文件，将会被替换造成数据丢失！
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Rename(src string, dst string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleRename() {
@@ -2911,27 +2015,11 @@ func ExampleRename() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Remove(path string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleRemove() {
@@ -2962,27 +2050,11 @@ func ExampleRemove() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func IsEmpty(path string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsEmpty() {
@@ -3013,27 +2085,11 @@ func ExampleIsEmpty() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func DirNames(path string) ([]string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleDirNames() {
@@ -3058,27 +2114,11 @@ func ExampleDirNames() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Glob(pattern string, onlyNames ...bool) ([]string, error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleGlob() {
@@ -3109,27 +2149,11 @@ func ExampleGlob() {
 - 说明：检查给定的路径是否存在 。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Exists(path string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleExists() {
@@ -3151,27 +2175,11 @@ func ExampleExists() {
 - 说明：使用给定的路径，更改当前的工作路径。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Chdir(dir string) error
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleChdir() {
@@ -3202,27 +2210,11 @@ func ExampleChdir() {
 - 说明：将多个字符串路径通过\`/\`进行连接。
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Join(paths ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleJoin() {
@@ -3249,27 +2241,11 @@ func ExampleJoin() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Abs(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleAbs() {
@@ -3295,27 +2271,11 @@ func ExampleAbs() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func RealPath(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleRealPath() {
@@ -3342,27 +2302,11 @@ func ExampleRealPath() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func SelfName() string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSelfName() {
@@ -3382,27 +2326,11 @@ func ExampleSelfName() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Basename(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleBasename() {
@@ -3426,27 +2354,11 @@ func ExampleBasename() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Name(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleName() {
@@ -3470,27 +2382,11 @@ func ExampleName() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Dir(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleDir() {
@@ -3514,27 +2410,11 @@ func ExampleDir() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func Ext(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleExt() {
@@ -3558,27 +2438,11 @@ func ExampleExt() {
 
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func ExtName(path string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleExtName() {
@@ -3605,27 +2469,11 @@ func ExampleExtName() {
   - `第一次调用该方法时，如果处于异步的goroutine中，可能会无法获取主包的路径`
 - 格式:
 
-
-
-
-
-
-
-
-
 ```go
 func MainPkgPath() string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func Test() {

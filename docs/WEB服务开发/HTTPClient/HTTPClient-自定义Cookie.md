@@ -42,14 +42,6 @@ func main() {
 
 1. 使用 `SetCookie` 方法
 
-
-
-
-
-
-
-
-
 ```go
 package main
 
@@ -72,23 +64,11 @@ func main() {
 }
 ```
 
-
-
-
-
 通过 `g.Client()` 创建一个自定义的HTTP请求客户端对象，并通过 `c.SetCookie` 方法设置自定义的 `Cookie`，这里我们设置了两个示例用的 `Cookie` 参数，一个 `name`，一个 `score`。
 
 2. 使用 `SetCookieMap` 方法
 
 这个方法更加简单，可以批量设置 `Cookie` 键值对。
-
-
-
-
-
-
-
-
 
 ```go
 package main
@@ -118,20 +98,8 @@ func main() {
 
 客户端代码执行后，终端将会打印出服务端的返回结果，如下：
 
-
-
-
-
-
-
-
-
 ```
 map[name:john score:100]
 ```
-
-
-
-
 
 可以看到，服务端已经接收到了客户端自定义的 `Cookie` 参数。

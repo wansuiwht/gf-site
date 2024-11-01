@@ -27,27 +27,11 @@ import "github.com/gogf/gf/v2/text/gstr"
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 IsNumeric(s string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsNumeric() {
@@ -70,27 +54,11 @@ func ExampleIsNumeric() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 LenRune(str string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleLenRune() {
@@ -114,27 +82,11 @@ func ExampleLenRune() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Repeat(input string, multiplier int) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleRepeat() {
@@ -159,27 +111,11 @@ func ExampleRepeat() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ToLower(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleToLower() {
@@ -201,27 +137,11 @@ func ExampleToLower() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ToUpper(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleToUpper() {
@@ -243,27 +163,11 @@ func ExampleToUpper() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 UcFirst(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleUcFirst() {
@@ -285,27 +189,11 @@ func ExampleUcFirst() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 LcFirst(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleLcFirst() {
@@ -327,27 +215,11 @@ func ExampleLcFirst() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 UcWords(str string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleUcWords() {
@@ -369,27 +241,11 @@ func ExampleUcWords() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 IsLetterLower(b byte) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsLetterLower() {
@@ -409,27 +265,11 @@ func ExampleIsLetterLower() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 IsLetterUpper(b byte) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsLetterUpper() {
@@ -451,27 +291,11 @@ func ExampleIsLetterUpper() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Compare(a, b string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCompare() {
@@ -493,27 +317,11 @@ func ExampleCompare() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Equal(a, b string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleEqual() {
@@ -537,27 +345,11 @@ func ExampleEqual() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Split(str, delimiter string) []string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSplit() {
@@ -580,27 +372,11 @@ func ExampleSplit() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SplitAndTrim(str, delimiter string, characterMask ...string) []string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSplitAndTrim() {
@@ -623,27 +399,11 @@ func ExampleSplitAndTrim() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Join(array []string, sep string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleJoin() {
@@ -666,27 +426,11 @@ func ExampleJoin() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 JoinAny(array interface{}, sep string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleJoinAny() {
@@ -709,27 +453,11 @@ func ExampleJoinAny() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Explode(delimiter, str string) []string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleExplode() {
@@ -752,27 +480,11 @@ func ExampleExplode() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Implode(glue string, pieces []string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleImplode() {
@@ -795,27 +507,11 @@ func ExampleImplode() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ChunkSplit(body string, chunkLen int, end string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleChunkSplit() {
@@ -839,27 +535,11 @@ func ExampleChunkSplit() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Fields(str string) []string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleFields() {
@@ -883,27 +563,11 @@ func ExampleFields() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 AddSlashes(str string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleAddSlashes() {
@@ -926,27 +590,11 @@ func ExampleAddSlashes() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 StripSlashes(str string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStripSlashes() {
@@ -968,27 +616,11 @@ func ExampleStripSlashes() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 QuoteMeta(str string, chars ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleQuoteMeta() {
@@ -1023,27 +655,11 @@ func ExampleQuoteMeta() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Count(s, substr string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCount() {
@@ -1070,27 +686,11 @@ func ExampleCount() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CountI(s, substr string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCountI() {
@@ -1117,27 +717,11 @@ func ExampleCountI() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CountWords(str string) map[string]int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCountWords() {
@@ -1159,27 +743,11 @@ func ExampleCountWords() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CountChars(str string, noSpace ...bool) map[string]int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCountChars() {
@@ -1203,27 +771,11 @@ func ExampleCountChars() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SearchArray(a []string, s string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSearchArray() {
@@ -1246,27 +798,11 @@ func ExampleSearchArray() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 InArray(a []string, s string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleInArray() {
@@ -1289,27 +825,11 @@ func ExampleInArray() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PrefixArray(array []string, prefix string)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePrefixArray() {
@@ -1335,27 +855,11 @@ func ExamplePrefixArray() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseCamel(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseCamel() {
@@ -1377,27 +881,11 @@ func ExampleCaseCamel() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseCamelLower(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseCamelLower() {
@@ -1419,27 +907,11 @@ func ExampleCaseCamelLower() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseSnake(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseSnake() {
@@ -1461,27 +933,11 @@ func ExampleCaseSnake() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseSnakeScreaming(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseSnakeScreaming() {
@@ -1503,27 +959,11 @@ func ExampleCaseSnakeScreaming() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseSnakeFirstUpper(word string, underscore ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseSnakeFirstUpper() {
@@ -1545,27 +985,11 @@ func ExampleCaseSnakeFirstUpper() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseKebab(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseKebab() {
@@ -1587,27 +1011,11 @@ func ExampleCaseKebab() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseKebabScreaming(s string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseKebabScreaming() {
@@ -1629,27 +1037,11 @@ func ExampleCaseKebabScreaming() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseDelimited(s string, del byte) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseDelimited() {
@@ -1672,27 +1064,11 @@ func ExampleCaseDelimited() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CaseDelimitedScreaming(s string, del uint8, screaming bool) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCaseDelimitedScreaming() {
@@ -1728,27 +1104,11 @@ func ExampleCaseDelimitedScreaming() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Contains(str, substr string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleContains() {
@@ -1782,27 +1142,11 @@ func ExampleContains() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ContainsI(str, substr string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleContainsI() {
@@ -1828,27 +1172,11 @@ func ExampleContainsI() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ContainsAny(s, chars string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleContainsAny() {
@@ -1884,27 +1212,11 @@ func ExampleContainsAny() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Chr(ascii int) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleChr() {
@@ -1926,27 +1238,11 @@ func ExampleChr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Ord(char string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleOrd() {
@@ -1969,27 +1265,11 @@ func ExampleOrd() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 OctStr(str string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleOctStr() {
@@ -2011,27 +1291,11 @@ func ExampleOctStr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Reverse(str string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReverse() {
@@ -2056,27 +1320,11 @@ func ExampleReverse() {
   - 参数 `thousand` 设置千位分隔符。
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 NumberFormat(number float64, decimals int, decPoint, thousandsSep string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleNumberFormat() {
@@ -2101,27 +1349,11 @@ func ExampleNumberFormat() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Shuffle(str string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleShuffle() {
@@ -2143,27 +1375,11 @@ func ExampleShuffle() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 HideStr(str string, percent int, hide string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleHideStr() {
@@ -2187,27 +1403,11 @@ func ExampleHideStr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Nl2Br(str string, isXhtml ...bool) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleNl2Br() {
@@ -2235,27 +1435,11 @@ use`
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 WordWrap(str string, width int, br string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleWordWrap() {
@@ -2299,27 +1483,11 @@ func ExampleWordWrap() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 IsSubDomain(subDomain string, mainDomain string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleIsSubDomain() {
@@ -2346,27 +1514,11 @@ func ExampleIsSubDomain() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Parse(s string) (result map[string]interface{}, err error)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleParse() {
@@ -2429,27 +1581,11 @@ func ExampleParse() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Pos(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePos() {
@@ -2472,27 +1608,11 @@ func ExamplePos() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PosRune(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePosRune() {
@@ -2518,27 +1638,11 @@ func ExamplePosRune() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PosI(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePosI() {
@@ -2564,27 +1668,11 @@ func ExamplePosI() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PosIRune(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePosIRune() {
@@ -2620,27 +1708,11 @@ func ExamplePosIRune() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PosR(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePosR() {
@@ -2666,27 +1738,11 @@ func ExamplePosR() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PosRRune(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePosRRune() {
@@ -2712,27 +1768,11 @@ func ExamplePosRRune() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PosRI(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePosRI() {
@@ -2758,27 +1798,11 @@ func ExamplePosRI() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 PosRIRune(haystack, needle string, startOffset ...int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExamplePosRIRune() {
@@ -2806,27 +1830,11 @@ func ExamplePosRIRune() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Replace(origin, search, replace string, count ...int) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplace() {
@@ -2850,27 +1858,11 @@ func ExampleReplace() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ReplaceI(origin, search, replace string, count ...int) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceI() {
@@ -2894,27 +1886,11 @@ func ExampleReplaceI() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ReplaceByArray(origin string, array []string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceByArray() {
@@ -2948,27 +1924,11 @@ func ExampleReplaceByArray() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ReplaceIByArray(origin string, array []string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceIByArray() {
@@ -2992,27 +1952,11 @@ func ExampleReplaceIByArray() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ReplaceByMap(origin string, replaces map[string]string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceByMap() {
@@ -3051,27 +1995,11 @@ func ExampleReplaceByMap() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 ReplaceIByMap(origin string, replaces map[string]string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleReplaceIByMap() {
@@ -3098,27 +2026,11 @@ func ExampleReplaceIByMap() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Str(haystack string, needle string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStr() {
@@ -3141,27 +2053,11 @@ func ExampleStr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 StrEx(haystack string, needle string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStrEx() {
@@ -3184,27 +2080,11 @@ func ExampleStrEx() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 StrTill(haystack string, needle string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStrTill() {
@@ -3227,27 +2107,11 @@ func ExampleStrTill() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 StrTillEx(haystack string, needle string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStrTillEx() {
@@ -3270,27 +2134,11 @@ func ExampleStrTillEx() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SubStr(str string, start int, length ...int) (substr string)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSubStr() {
@@ -3314,27 +2162,11 @@ func ExampleSubStr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SubStrRune(str string, start int, length ...int) (substr string)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSubStrRune() {
@@ -3358,27 +2190,11 @@ func ExampleSubStrRune() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 StrLimit(str string, length int, suffix ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStrLimit() {
@@ -3402,27 +2218,11 @@ func ExampleStrLimit() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 StrLimitRune(str string, length int, suffix ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleStrLimitRune() {
@@ -3446,27 +2246,11 @@ func ExampleStrLimitRune() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SubStrFrom(str string, need string) (substr string)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSubStrFrom() {
@@ -3489,27 +2273,11 @@ func ExampleSubStrFrom() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SubStrFromEx(str string, need string) (substr string)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSubStrFromEx() {
@@ -3532,27 +2300,11 @@ func ExampleSubStrFromEx() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SubStrFromR(str string, need string) (substr string)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSubStrFromR() {
@@ -3575,27 +2327,11 @@ func ExampleSubStrFromR() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SubStrFromREx(str string, need string) (substr string)
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSubStrFromREx() {
@@ -3620,27 +2356,11 @@ func ExampleSubStrFromREx() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Trim(str string, characterMask ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTrim() {
@@ -3663,27 +2383,11 @@ func ExampleTrim() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 TrimStr(str string, cut string, count ...int) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTrimStr() {
@@ -3707,27 +2411,11 @@ func ExampleTrimStr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 TrimLeft(str string, characterMask ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTrimLeft() {
@@ -3750,27 +2438,11 @@ func ExampleTrimLeft() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 TrimLeftStr(str string, cut string, count ...int) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTrimLeftStr() {
@@ -3794,27 +2466,11 @@ func ExampleTrimLeftStr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 TrimRight(str string, characterMask ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTrimRight() {
@@ -3837,27 +2493,11 @@ func ExampleTrimRight() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 TrimRightStr(str string, cut string, count ...int) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTrimRightStr() {
@@ -3881,27 +2521,11 @@ func ExampleTrimRightStr() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 TrimAll(str string, characterMask ...string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleTrimAll() {
@@ -3924,27 +2548,11 @@ func ExampleTrimAll() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 HasPrefix(s, prefix string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleHasPrefix() {
@@ -3967,27 +2575,11 @@ func ExampleHasPrefix() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 HasSuffix(s, suffix string) bool
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleHasSuffix() {
@@ -4012,27 +2604,11 @@ func ExampleHasSuffix() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CompareVersion(a, b string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCompareVersion() {
@@ -4054,27 +2630,11 @@ func ExampleCompareVersion() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 CompareVersionGo(a, b string) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleCompareVersionGo() {
@@ -4101,27 +2661,11 @@ func ExampleCompareVersionGo() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Levenshtein(str1, str2 string, costIns, costRep, costDel int) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleLevenshtein() {
@@ -4147,27 +2691,11 @@ func ExampleLevenshtein() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 SimilarText(first, second string, percent *float64) int
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSimilarText() {
@@ -4191,27 +2719,11 @@ func ExampleSimilarText() {
 
 - 格式：
 
-
-
-
-
-
-
-
-
 ```go
 Soundex(str string) string
 ```
 
 - 示例：
-
-
-
-
-
-
-
-
 
 ```go
 func ExampleSoundex() {

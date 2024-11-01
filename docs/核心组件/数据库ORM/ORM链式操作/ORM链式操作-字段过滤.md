@@ -15,28 +15,12 @@ hide_title: true
 1. 假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`。
 2. 查询字段过滤
 
-
-
-
-
-
-
-
-
 ```go
 // SELECT `uid`,`nickname` FROM `user` ORDER BY `uid` asc
 g.Model("user").Fields("uid, nickname").Order("uid asc").All()
 ```
 
 3. 写入字段过滤
-
-
-
-
-
-
-
-
 
 ```go
 m := g.Map{

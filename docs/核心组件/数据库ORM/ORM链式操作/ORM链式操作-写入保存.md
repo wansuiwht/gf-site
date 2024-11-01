@@ -23,14 +23,6 @@ hide_title: true
 
 使用 `INSERT INTO` 语句进行数据库写入，如果写入的数据中存在主键或者唯一索引时，更新原有数据，否则写入一条新数据。对于部分数据库，例如 `PgSQL, SQL server, Oracle` 可以使用 `OnConflict` 方法指定冲突键。
 
-
-
-
-
-
-
-
-
 ```go
 db.Model(table).Data(g.Map{
        "id":          1,

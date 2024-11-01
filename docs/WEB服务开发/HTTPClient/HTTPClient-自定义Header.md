@@ -47,14 +47,6 @@ func main() {
 
 1. 使用 `SetHeader` 方法
 
-
-
-
-
-
-
-
-
 ```go
 package main
 
@@ -77,23 +69,11 @@ func main() {
 }
 ```
 
-
-
-
-
 通过 `g.Client()` 创建一个自定义的HTTP请求客户端对象，并通过 `c.SetHeader` 设置自定义的 `Header` 信息。
 
 2. 使用 `SetHeaderRaw` 方法
 
 这个方法更加简单，可以通过原始的Header字符串来设置客户端请求Header。
-
-
-
-
-
-
-
-
 
 ```go
 package main
@@ -124,14 +104,6 @@ func main() {
 3. 执行结果
 
 客户端代码执行后，终端将会打印出服务端的返回结果，如下：
-
-
-
-
-
-
-
-
 
 ```
 Span-Id:0.0.1,Trace-Id:NBC56410N97LJ016FQA

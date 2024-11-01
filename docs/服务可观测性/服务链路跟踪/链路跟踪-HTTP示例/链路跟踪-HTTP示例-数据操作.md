@@ -218,14 +218,6 @@ func (c *cTrace) userCacheKey(id int) string {
 2. 在本示例中，我们使用到了数据库和数据库缓存功能，以便于同时演示 `ORM` 和 `Redis` 的链路跟踪记录。
 3. 我们在程序启动时通过以下方法设置当前数据库缓存管理的适配器为 `redis`。关于缓存适配器的介绍感兴趣可以参考 [缓存管理-接口设计](../../../核心组件/缓存管理/缓存管理-接口设计.md) 章节。
 
-
-
-
-
-
-
-
-
 ```go
 g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 ```
