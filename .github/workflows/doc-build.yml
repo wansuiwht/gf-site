@@ -25,6 +25,7 @@ jobs:
         run: bash .github/workflows/generate-contributors.sh
       - name: Build website
         run: npm run build
+      # https://github.com/appleboy/scp-action
       - name: Deploy to server
         uses: appleboy/scp-action@v0.1.7
         with:
