@@ -35,6 +35,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           source: "./build/*"
           target: "/home/www/goframe.org"
+          strip_components: 1
+          rm: true
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
