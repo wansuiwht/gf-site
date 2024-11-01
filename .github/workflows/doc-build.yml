@@ -1,15 +1,13 @@
-name: Deploy to GitHub Pages
+name: 构建和部署文档
 
 on:
   push:
     branches:
       - 'main'
-  # schedule:
-  #   - cron: '0 15 * * *'
 
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: 构建和部署文档
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

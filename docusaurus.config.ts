@@ -12,7 +12,7 @@ const config: Config = {
     'GoFrame is a modular, powerful, high-performance and enterprise-class application development framework of Golang.',
   favicon: '/img/favicon.ico',
   url: 'https://goframe.org/',
-  baseUrl: '/gf-site/',
+  baseUrl: '/',
   trailingSlash: false,
   organizationName: 'gogf',
   projectName: 'gf',
