@@ -14,9 +14,9 @@ hide_title: true
 ### 1、客户端
 
 如果使用 `GoFrame` 框架的 `Client`，那么所有的请求将会自带 `TraceID` 的注入。 `GoFrame` 的 `TraceID` 使用的是 `OpenTelemetry` 规范，是由十六进制字符组成的的 `32` 字节字符串。
-
+:::tip
 强烈建议大家统一使用 `gclient` 组件，不仅功能全面而且自带链路跟踪能力。
-
+:::
 ### 2、服务端
 
 如果使用 `GoFrame` 框架的 `Server`，如果请求带有 `TraceID`，那么将会自动承接到 `Context` 中；否则，将会自动注入标准的 `TraceID`，并传递给后续逻辑。

@@ -18,9 +18,9 @@ import "github.com/gogf/gf/v2/os/gfile"
 **接口文档**：
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/os/gfile](https://pkg.go.dev/github.com/gogf/gf/v2/os/gfile)
-
+:::tip
 以下常用方法列表，文档更新可能滞后于代码新特性，更多的方法及示例请参考代码文档： [https://pkg.go.dev/github.com/gogf/gf/v2/os/gfile](https://pkg.go.dev/github.com/gogf/gf/v2/os/gfile)
-
+:::
 ## 内容管理
 
 ### `GetContents`

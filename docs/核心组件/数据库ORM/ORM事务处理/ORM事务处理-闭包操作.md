@@ -22,9 +22,9 @@ func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx TX)
 ```
 
 当给定的闭包方法返回的 `error` 为 `nil` 时，那么闭包执行结束后当前事务自动执行 `Commit` 提交操作；否则自动执行 `Rollback` 回滚操作。闭包中的 `context.Context` 参数为 `goframe v1.16` 版本后新增的上下文变量，主要用于链路跟踪传递以及嵌套事务管理。由于上下文变量是嵌套事务管理的重要参数，因此上下文变量通过显示的参数传递定义。
-
+:::tip
 如果闭包内部操作产生 `panic` 中断，该事务也将自动进行回滚，以保证操作安全。
-
+:::
 使用示例：
 
 ```go

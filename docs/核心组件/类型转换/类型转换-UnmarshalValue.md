@@ -6,9 +6,9 @@ hide_title: true
 ---
 
 当然，想必您已经猜到了，在对一些复杂类型（如 `struct`）的转换时， `gconv` 模块内部其实使用了反射的特性来实现的。这虽然为开发者提供了极大的便捷，但是这确实是以性能损耗为代价的。其实在对于 `struct` 转换时，如果开发者已经 **明确转换规则**，并且对于其中的性能损耗比较在意，那么可以对特定的 `struct` 实现 `UnmarshalValue` 接口来实现 **自定义转换**。当使用 `gconv` 模块对该 `struct` 进行转换时，无论该 `struct` 是直接作为转换对象或者作为转换对象的属性， `gconv` 都将会自动识别其实现的 `UnmarshalValue` 接口并直接调用该接口实现类型转换，而不会使用反射特性来实现转换。
-
+:::tip
 标准库的常用反序列化接口，如 `UnmarshalText(text []byte) error` 其实也是支持的哟，使用方式同 `UnmarshalValue`，只是参数不同。
-
+:::
 ## 接口定义
 
 ```go
@@ -20,7 +20,7 @@ type apiUnmarshalValue interface {
 ```
 
 可以看到，自定义的类型可以通过定义 `UnmarshalValue` 方法来实现自定义的类型转换。这里的输入参数为 `interface{}` 类型，开发者可以在实际使用场景中通过 类型断言 或者其他方式进行类型转换。
-
+:::warning
 需要特别注意，由于 `UnmarshalValue` 类型转换会修改当前对象的属性值，因此需要保证该接口实现的接受者( `Receiver`)是指针类型。
 
 正确的接口实现定义示例（使用指针接受）：
@@ -34,7 +34,7 @@ func (c *Receiver) UnmarshalValue(interface{}) error
 ```go
 func (c Receiver) UnmarshalValue(interface{}) error
 ```
-
+:::
 ## 使用示例
 
 ### 1、自定义数据表查询结果 `struct` 转换
@@ -195,9 +195,9 @@ func main() {
     },
 ]
 ```
-
+:::tip
 可以看到自定义的 `UnmarshalValue` 类型转换方法中没有使用到反射特性，因此转换的性能会得到极大的提升。小伙伴们可以尝试着增加写入的数据量（例如 `100W`），同时对比一下去掉 `UnmarshalValue` 后的类型转换所开销的时间。
-
+:::
 ### 2、自定义二进制TCP数据解包
 
 一个TCP通信的数据包解包示例。

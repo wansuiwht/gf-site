@@ -8,14 +8,14 @@ hide_title: true
 默认情况下，模板引擎对所有的变量输出并没有使用 `HTML` 转码处理，也就是说，如果开发者处理不好，可能会存在XSS漏洞。
 
 不用担心， `GoFrame` 框架当然已经充分考虑到这点，并且为开发者提供了比较灵活的配置参数来控制是否默认转义变量输出的 `HTML` 内容。该特性可以通过 `AutoEncode` 配置项，或者 `SetAutoEncode` 方法来开启/关闭。
-
+:::tip
 需要注意的是，该特性并不会影响 `include` 模板的内置函数。
-
+:::
 使用示例：
 
 1、配置文件
 
-```
+```toml
 [viewer]
     delimiters  =  ["${", "}"]
     autoencode  =  true

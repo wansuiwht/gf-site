@@ -24,8 +24,8 @@ hide_title: true
 
 
 ```go
-    // SELECT `uid`,`nickname` FROM `user` ORDER BY `uid` asc
-    g.Model("user").Fields("uid, nickname").Order("uid asc").All()
+// SELECT `uid`,`nickname` FROM `user` ORDER BY `uid` asc
+g.Model("user").Fields("uid, nickname").Order("uid asc").All()
 ```
 
 3. 写入字段过滤
@@ -40,13 +40,13 @@ hide_title: true
 
 ```go
 m := g.Map{
-        "uid"      : 10000,
-        "nickname" : "John Guo",
-        "passport" : "john",
-        "password" : "123456",
-    }
-    g.Model(table).Fields("nickname,passport,password").Data(m).Insert()
-    // INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
+    "uid"      : 10000,
+    "nickname" : "John Guo",
+    "passport" : "john",
+    "password" : "123456",
+}
+g.Model(table).Fields("nickname,passport,password").Data(m).Insert()
+// INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
 ```
 
 
@@ -55,38 +55,21 @@ m := g.Map{
 1. 假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`。
 2. 查询字段排除
 
-
-
-
-
-
-
-
-
 ```go
-    // SELECT `uid`,`nickname` FROM `user`
-    g.Model("user").FieldsEx("passport, password").All()
+// SELECT `uid`,`nickname` FROM `user`
+g.Model("user").FieldsEx("passport, password").All()
 ```
 
-3. 写入字段排除
-
-
-
-
-
-
-
-
-
+1. 写入字段排除
 ```go
-    m := g.Map{
-        "uid"      : 10000,
-        "nickname" : "John Guo",
-        "passport" : "john",
-        "password" : "123456",
-    }
-    g.Model(table).FieldsEx("uid").Data(m).Insert()
-    // INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
+m := g.Map{
+    "uid"      : 10000,
+    "nickname" : "John Guo",
+    "passport" : "john",
+    "password" : "123456",
+}
+g.Model(table).FieldsEx("uid").Data(m).Insert()
+// INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
 ```
 
 
@@ -145,9 +128,9 @@ user := User{
 g.Model("user").OmitEmpty().Data(user).Insert()
 // INSERT INTO `user`(`id`,`nickname`,`update_time`) VALUES(1,'john','2019-10-01 12:00:00')
 ```
-
+:::warning
 注意哟，批量写入/更新操作中 `OmitEmpty` 方法将会失效，因为在批量操作中，必须保证每个写入记录的字段是统一的。
-
+:::
 关于 `omitempty` 标签与 `OmitEmpty` 方法：
 
 1. 针对于 `struct` 的空值过滤大家会想到 `omitempty` 的标签。该标签常用于 `json` 转换的空值过滤，也在某一些第三方的 `ORM` 库中用作 `struct` 到数据表字段的空值过滤，即当属性为空值时不做转换。
@@ -258,7 +241,9 @@ r, err := g.Model("user").Filter().Data(g.Map{
 ```
 
 ~~其中 `id` 为不存在的字段，在写入数据时将会被过滤掉，不至于被构造成写入SQL中产生执行错误。~~
-
+:::tip
 ~~数据库没有设计为 `Data` 方法做自动过滤，而是需要开发者调用 `Filter` 方法来手动指定过滤，目的是友好地提醒开发者可能误写/传递错误了字段名称。如果强制性的自动过滤可能会引起难以预料的业务逻辑异常，例如，由于字段名称拼写错误导致自动过滤了本来需要输入的字段，导致写入数据库的数据不完整。~~
-
+:::
+:::warning
 从 `GoFrame v1.15.7` 版本开始，根据社区整体反馈，为提高组件易用性， `filter` 特性被设置为默认开启，不再需要显示调用， `Filter` 方法已被标记废弃。
+:::

@@ -4,9 +4,9 @@ title: 'ORM链式操作-更新删除'
 sidebar_position: 2
 hide_title: true
 ---
-
+:::warning
 为安全性保证、防止误操作， `Update` 及 `Delete` 方法必须带有 `Where` 条件才能提交执行，否则将会错误返回，错误信息如： `there should be WHERE condition statement for XXX operation`。 `goframe` 是一款用于企业生产级别的框架，各个模块设计严谨，工程实践的细节处理得比较好。
-
+:::
 ## `Update` 更新方法
 
 `Update` 用于数据的更新，往往需要结合 `Data` 及 `Where` 方法共同使用。 `Data` 方法用于指定需要更新的数据， `Where` 方法用于指定更新的条件范围。同时， `Update` 方法也支持直接给定数据和条件参数。

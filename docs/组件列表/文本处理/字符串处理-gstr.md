@@ -16,9 +16,9 @@ import "github.com/gogf/gf/v2/text/gstr"
 **接口文档**：
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/text/gstr](https://pkg.go.dev/github.com/gogf/gf/v2/text/gstr)
-
+:::tip
 以下常用方法列表，文档更新可能滞后于代码新特性，更多的方法及示例请参考代码文档： [https://pkg.go.dev/github.com/gogf/gf/v2/text/gstr](https://pkg.go.dev/github.com/gogf/gf/v2/text/gstr)
-
+:::
 ## 字符串判断
 
 ### `IsNumeric`

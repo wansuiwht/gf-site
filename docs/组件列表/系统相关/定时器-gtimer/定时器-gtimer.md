@@ -48,9 +48,9 @@ import "github.com/gogf/gf/v2/os/gtimer"
    - `gf.gtimer.interval=50`: 修改默认的时间刻度为 `50毫秒`
 2. 使用环境变量
    - `GF_GTIMER_INTERVAL=50`
-
+:::warning
 需要注意，定时器默认检测间隔时间越短，对 `CPU` 的使用量会越大。
-
+:::
 ## 注意事项🔥
 
 1. 由于现代的计算机都是使用软件实现的定时器， **任何的定时器都是存在误差的**，不会完全精准，可能延迟，也甚至会提前，但是不会不执行。并且在定时间隔比较大，或者并发量大，负载较高的系统中尤其明显。参考链接： [https://github.com/golang/go/issues/14410](https://github.com/golang/go/issues/14410)

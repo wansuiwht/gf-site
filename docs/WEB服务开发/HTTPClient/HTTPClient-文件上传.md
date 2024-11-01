@@ -6,9 +6,9 @@ hide_title: true
 ---
 
 `GoFrame` 支持非常方便的表单文件上传功能，并且HTTP客户端对上传功能进行了必要的封装并极大简化了上传功能调用。
-
+:::warning
 注意哦：上传文件大小受到 `ghttp.Server` 的 `ClientMaxBodySize` 配置影响： [https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#ServerConfig](https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#ServerConfig) 默认支持的上传文件大小为 `8MB`。
-
+:::
 ## 服务端
 
 在服务端通过 `Request` 对象获取上传文件：

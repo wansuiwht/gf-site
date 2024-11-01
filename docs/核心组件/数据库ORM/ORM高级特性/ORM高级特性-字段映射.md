@@ -8,12 +8,12 @@ hide_title: true
 ## 基本介绍
 
 在对数据进行写入、更新使用诸如 `Fields/Data/Scan` 方法时，如果给定的参数为 `map/struct` 类型，给定参数的键名/属性名称将会自动按照忽略大小写及特殊字符的方式与数据表的字段进行自动识别映射。
-
+:::tip
 这也是为什么使用数据库组件执行数据库操作时会出现 ``SHOW FULL COLUMNS FROM `xxx` `` 语句的原因，该语句每张表只会执行一次，随后缓存结果到内存。
-
+:::
 匹配规则的示例：
 
-```
+```html
 Map键名     字段名称     是否匹配
 nickname   nickname      match
 NICKNAME   nickname      match

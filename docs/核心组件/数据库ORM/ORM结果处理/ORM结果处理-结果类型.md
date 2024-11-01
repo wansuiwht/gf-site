@@ -83,7 +83,7 @@ func main() {
 
 执行后，输出结果为：
 
-```
+```json
 {"Uid":1,"Name":"john"}
 ```
 
@@ -101,7 +101,7 @@ func main() {
 
 以下是几个匹配的示例：
 
-```
+```html
 记录键名    struct属性     是否匹配
 name       Name           match
 Email      Email          match
@@ -113,9 +113,9 @@ nick_name  Nick_Name      match
 NickName   Nick_Name      match
 Nick-Name  Nick_Name      match
 ```
-
+:::tip
 由于数据库结果集转 `struct` 的底层是依靠 `gconv.Struct` 方法实现的，因此如果想要实现 **自定义的属性转换**，以及更详细的映射规则说明，请参考 [类型转换-Struct转换](../../类型转换/类型转换-Struct转换.md) 章节。
-
+:::
 ## 三、 `Result` 数据集合
 
 `Result/Record` 数据类型根据数据结果集操作的需要，往往需要根据记录中 **特定的字段** 作为键名进行数据检索，因此它包含多个用于转换 `Map/List` 的方法，同时也包含了常用数据结构 `JSON/XML` 的转换方法。
@@ -159,6 +159,6 @@ func main() {
 
 执行后，输出结果为：
 
-```
+```json
 [{"Uid":1,"Name":"john","Site":"https://goframe.org"}]
 ```

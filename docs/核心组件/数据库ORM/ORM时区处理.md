@@ -45,9 +45,9 @@ db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
 ```
 
 这里由于通过 `time.ParseInLocation` 创建的 `time.Time` 时间对象是 `+8` 时区，和 `loc=Local` 的时区一致，那么提交到数据库执行时不会被底层的 `driver` 修改。
-
+:::warning
 注意在写入数据中包含 `time.Time` 参数时，也需要注意时区转换的问题。
-
+:::
 ### 示例2，不设置 `loc` 参数
 
 **配置文件**
@@ -76,9 +76,9 @@ db.Model("user").Ctx(ctx).Where("create_time>? and create_time<?", t1, t2).One()
 ```
 
 这里由于通过 `time.ParseInLocation` 创建的 `time.Time` 时间对象是 `+8` 时区，那么提交到数据库执行时会被底层的 `driver` 修改为 `UTC` 时区。
-
+:::warning
 注意在写入数据中包含 `time.Time` 参数时，也需要注意时区转换的问题。
-
+:::
 ## 改进建议
 
 建议在配置中统一加上 `locl` 配置，例如（MySQL）： `loc=Local&parseTime=true`。以下是一个可供参考的配置：

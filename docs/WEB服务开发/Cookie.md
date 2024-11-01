@@ -35,9 +35,9 @@ type Cookie
 2. `Cookie.SetSessionId(id string)` 用于自定义设置 `SessionId` 到 `Cookie` 中，返回给客户端（往往是浏览器）存储，随后客户端每一次请求在 `Cookie` 中可带上该 `SessionId`。
 
 在设置 `Cookie` 变量的时候可以给定过期时间，该时间为可选参数，默认的 `Cookie` 过期时间为一年。
-
+:::tip
 默认的 `SessionId` 在 `Cookie` 中的存储名称为 `gfsession`。
-
+:::
 ## 使用示例
 
 ```go

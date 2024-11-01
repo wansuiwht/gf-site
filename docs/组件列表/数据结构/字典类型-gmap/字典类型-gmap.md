@@ -14,9 +14,9 @@ hide_title: true
 | `HashMap` | 哈希表 | `O(1)` | 否 | 否 | 高性能读写操作，内存占用较高，随机遍历 |
 | `ListMap` | 哈希表+双向链表 | `O(2)` | 否 | 是 | 支持按照写入顺序遍历，内存占用较高 |
 | `TreeMap` | 红黑树 | `O(log N)` | 是 | 是 | 内存占用紧凑，支持键名排序及有序遍历 |
-
+:::tip
 此外， `gmap` 模块支持多种以哈希表为基础数据结构的常见类型 `map` 定义： `IntIntMap`、 `IntStrMap`、 `IntAnyMap`、 `StrIntMap`、 `StrStrMap`、 `StrAnyMap`。
-
+:::
 **使用场景**：
 
 任何 `map`/哈希表/关联数组使用场景，尤其是并发安全场景中。

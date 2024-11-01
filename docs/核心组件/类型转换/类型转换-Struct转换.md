@@ -31,9 +31,9 @@ func Struct(params interface{}, pointer interface{}, mapping ...map[string]strin
 1. `params` 为需要转换到 `struct` 的变量参数，可以为任意数据类型，常见的数据类型为 `map`。
 2. `pointer` 为需要执行转的目标 `struct` 对象，这个参数必须为该 `struct` 的对象指针，转换成功后该对象的属性将会更新。
 3. `mapping` 为自定义的 `map键名` 到 `strcut属性` 之间的映射关系，此时 `params` 参数必须为 `map` 类型，否则该参数无意义。大部分场景下使用可以不用提供该参数，直接使用默认的转换规则即可。
-
+:::tip
 更多的 `struct` 相关转换方法请参考接口文档： [https://pkg.go.dev/github.com/gogf/gf/v2/util/gconv](https://pkg.go.dev/github.com/gogf/gf/v2/util/gconv)
-
+:::
 ## 转换规则
 
 `gconv` 模块的 `struct` 转换特性非常强大，支持任意数据类型到 `struct` 属性的映射转换。在没有提供自定义 `mapping` 转换规则的情况下，默认的转换规则如下：
@@ -63,9 +63,9 @@ func Struct(params interface{}, pointer interface{}, mapping ...map[string]strin
 
 提示
 
-```
+:::warning
 没有特殊情况，请尽量满足前三条规则，第四条规则性能较差
-```
+:::
 
 以下是几个 `map` 键名与 `struct` 属性名称的示例：
 
@@ -82,11 +82,6 @@ NickName   Nick_Name      match
 Nick-name  Nick_Name      match
 nick_name  Nick_Name      match
 nick name  Nick_Name      match
-```
-
-```
-
-
 ```
 
 ## 自动创建对象

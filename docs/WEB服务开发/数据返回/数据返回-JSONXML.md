@@ -20,9 +20,9 @@ func (r *Response) WriteXmlExit(content interface{}, rootTag ...string) error
 
 1. `WriteJson*` 方法用于返回 `JSON` 数据格式，参数为任意类型，可以为 `string`、 `map`、 `struct` 等等。返回的 `Content-Type` 为 `application/json`。
 2. `WriteXml*` 方法用于返回 `XML` 数据格式，参数为任意类型，可以为 `string`、 `map`、 `struct` 等等。返回的 `Content-Type` 为 `application/xml`。
-
+:::tip
 对 `JSON` 数据格式支持的同时，同时也支持 `JSONP` 协议。
-
+:::
 ## `JSON`
 
 ```go

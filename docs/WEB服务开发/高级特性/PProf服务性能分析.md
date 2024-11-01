@@ -8,9 +8,9 @@ hide_title: true
 `GoFrame` 框架的 `Web Server` 提供了非常强大和简便的服务性能分析功能，内部完美集成了 `pprof` 性能分析工具，可以在任何时候通过 `EnablePProf` 方法启用性能分析特性，并可自定义性能分析工具页面路由地址，不传递路由地址时，默认URI地址为 `/debug/pprof`。
 
 ## `PProf` 启用
-
+:::warning
 `PProf` 特性的启用会对程序性能产生一定影响，具体影响程度需要根据当前业务场景在 `PProd` 启用前后进行对比。
-
+:::
 ### `EnablePProf`
 
 我们来看一个简单的例子：
@@ -122,9 +122,9 @@ func main() {
 ![](/markdown/4aad1989545e9fe67cf46de3b06686aa.png)
 
 ## 性能采集分析🔥
-
+:::tip
 以下示例截图来源于示例项目，仅供参考。
-
+:::
 如果想要进行详细的性能分析，基本上离不开 `go tool pprof` 命令行工具的支持，在开启性能分析支持后，我们可以使用以下命令执行性能采集分析：
 
 ```bash
@@ -148,9 +148,9 @@ go tool pprof -http :8080 pprof.profile
 $ go tool pprof -http :8080 "http://127.0.0.1:8199/debug/pprof/profile"
 Serving web UI on http://localhost:8080
 ```
-
+:::tip
 图形化展示 `pprof` 需要安装 `Graphviz` 图形化工具，以我目前的系统为 `Ubuntu` 为例，直接执行 `sudo apt-get install graphviz` 命令即可安装完成图形化工具（如果是 `MacOS`，使用 `brew install Graphviz` 安装）。
-
+:::
 运行后将会使用默认的浏览器打开以下图形界面，展示这段时间抓取的CPU开销链路：
 
 ![](/markdown/56387af30ed4e111df652c5918f36313.png)

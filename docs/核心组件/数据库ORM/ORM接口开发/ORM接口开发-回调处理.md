@@ -76,9 +76,9 @@ func (d *MyDriver) DoCommit(ctx context.Context, in gdb.DoCommitInput) (out gdb.
 ```
 
 我们看到，这里在包初始化方法 `init` 中使用了 `gdb.Register("MyDriver", &MyDriver{})` 来注册了了一个自定义名称的驱动。我们也可以通过 `gdb.Register("mysql", &MyDriver{})` 来覆盖已有的框架 `mysql` 驱动为自己的驱动。
-
+:::tip
 驱动名称 `mysql` 为框架默认的 `DriverMysql` 驱动的名称。
-
+:::
 由于这里我们使用了一个新的驱动名称 `MyDriver`，因此在 `gdb` 配置中的 `type` 数据库类型时，需要填写该驱动名称。以下是一个使用配置的示例：
 
 ```yaml

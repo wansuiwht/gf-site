@@ -14,9 +14,9 @@ hide_title: true
 - ……
 
 以下以 `mysql` 类型为例，介绍数据库类型与 `Go` 变量类型的自动识别映射关系:
-
+:::tip
 版本可能随时迭代更新，具体可查看源码 [https://github.com/gogf/gf/blob/master/database/gdb/gdb\_core\_structure.go](https://github.com/gogf/gf/blob/master/database/gdb/gdb_core_structure.go)
-
+:::
 | 数据库类型 | Go变量类型 |
 | --- | --- |
 | `*char` | `string` |

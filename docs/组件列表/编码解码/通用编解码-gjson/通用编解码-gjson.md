@@ -13,9 +13,9 @@ hide_title: true
 2. 支持运行时数据修改；
 3. 支持动态创建层级数据结构，并转换为支持的数据格式；
 4. 支持 `JSON`、 `XML`、 `INI`、 `YAML/YML`、 `TOML`、 `PROPERTIES`、 `Struct` 数据格式相互转换；
-
+:::info
 需要注意 `gjson` 包支持多种数据格式的读取、写入和转换，不仅仅针对 `json` 格式。
-
+:::
 ## **使用方式**：
 
 ```go

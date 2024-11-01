@@ -18,9 +18,9 @@ func (db DB) Transaction(ctx context.Context, f func(ctx context.Context, tx TX)
 ```
 
 当给定的闭包方法返回的 `error` 为 `nil` 时，那么闭包执行结束后当前事务自动执行 `Commit` 提交操作；否则自动执行 `Rollback` 回滚操作。
-
+:::tip
 如果闭包内部操作产生 `panic` 中断，该事务也将进行回滚。
-
+:::
 ```go
 func Register() error {
     return g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {

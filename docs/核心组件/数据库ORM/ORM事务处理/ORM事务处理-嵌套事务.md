@@ -138,7 +138,7 @@ db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 2021-05-22 21:18:46.675 [DEBU] [  0 ms] [default] [txid:1] ROLLBACK TO SAVEPOINT `transaction0`
 2021-05-22 21:18:46.676 [DEBU] [  1 ms] [default] [txid:1] ROLLBACK
 ```
-
+:::warning
 假如 `ctx` 上下文变量没有层层传递下去，那么嵌套事务将会失败，我们来看一个错误的例子：
 
 ```go
@@ -178,7 +178,7 @@ db.Transaction(ctx, func(ctx context.Context, tx gdb.Tx) error {
 ```
 
 可以看到，第二条 `INSERT` 操作 ``INSERT INTO `user`(`id`,`name`) VALUES(2,'smith') `` 没有事务ID打印，表示没有使用到事务，那么该操作将会被真正提交到数据库执行，并不能被回滚。
-
+:::
 ## 四、 `SavePoint/RollbackTo`
 
 开发者也可以灵活使用 `Transaction Save Point` 特性，并实现自定义的 `SavePoint` 命名以及指定 `Point` 回滚操作。

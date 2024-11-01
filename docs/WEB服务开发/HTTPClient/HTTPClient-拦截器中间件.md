@@ -56,9 +56,9 @@ c.Use(func(c *gclient.Client, r *http.Request) (resp *gclient.Response, err erro
 ### 服务端
 
 服务端的逻辑很简单，就是把客户端提交的 `JSON` 参数按照 `map` 解析后再构造成 `JSON` 字符串返回给客户端。
-
+:::note
 往往服务端也需要通过中间件进行签名校验，我这里偷了一个懒，直接返回了客户端提交的数据。体谅一下文档维护作者😸。
-
+:::
 ```go
 package main
 

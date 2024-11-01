@@ -60,9 +60,9 @@ func main() {
 2020-12-28 23:46:56.349 [DEBU] {38d45cbf2743db16f1062074f7473e5c} [  5 ms] [default] [rows:0  ] SHOW FULL COLUMNS FROM `user`
 2020-12-28 23:46:56.354 [DEBU] {38d45cbf2743db16f1062074f7473e5c} [  5 ms] [default] [rows:100] SELECT * FROM `user`
 ```
-
+:::tip
 其中 ``SHOW FULL COLUMNS FROM `user` `` 为 `ORM` 组件的数据表字段获取查询，每个表在执行操作之前仅会查询一次并缓存结果到内存中。
-
+:::
 ## 嵌套事务支持
 
 嵌套事务的支持依赖 `Context` 上下文变量的层级传递，具体请参考章节： [ORM事务处理](ORM事务处理/ORM事务处理.md)

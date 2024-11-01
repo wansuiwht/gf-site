@@ -17,9 +17,9 @@ hide_title: true
   - `deleted_at` 用于记录的软删除特性，只有当记录删除时会写入一次。
 
 字段名称其实不区分大小写，也会忽略特殊字符，例如 `CreatedAt`, `UpdatedAt`, `DeletedAt` 也是支持的。此外，时间字段名称可以通过配置文件进行自定义修改，并可使用 `TimeMaintainDisabled` 配置完整关闭该特性，具体请参考 [ORM使用配置](../ORM使用配置.md) 章节。
-
+:::tip
 对时间类型的固定其实是为了形成一种规范。
-
+:::
 ### 特性的启用
 
 当数据表包含 `created_at`、 `updated_at`、 `deleted_at` 任意一个或多个字段时，该特性自动启用。
@@ -60,9 +60,9 @@ g.Model("user").Data("status", 1).Order("login_time asc").Limit(10).Update()
 // INSERT INTO `user`(`id`,`name`,`update_at`) VALUES(1,'john guo','2020-12-29 20:16:14') ON DUPLICATE KEY UPDATE `id`=VALUES(`id`),`name`=VALUES(`name`),`update_at`=VALUES(`update_at`)
 g.Model("user").Data(g.Map{"id": 1, "name": "john guo"}).Save()
 ```
-
+:::warning
 需要注意的是 `Replace` 方法也会更新该字段，因为该操作相当于删除已存在的旧数据并重新写一条数据。
-
+:::
 ### `deleted_at` 数据软删除
 
 软删除会稍微比较复杂一些，当软删除存在时，所有的查询语句都将会自动加上 `deleted_at` 的条件。

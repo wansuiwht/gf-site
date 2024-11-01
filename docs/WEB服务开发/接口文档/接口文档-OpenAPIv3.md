@@ -4,9 +4,9 @@ title: '接口文档-OpenAPIv3'
 sidebar_position: 0
 hide_title: true
 ---
-
+:::tip
 `OpenAPIv3` 协议主要使用在规范路由中，阅读接口文档协议介绍之前，请先了解一下规范路由： [路由注册-规范路由](../路由管理/路由管理-路由注册/路由注册-规范路由/路由注册-规范路由.md)
-
+:::
 ## 一、 `OpenAPIv3`
 
 详细的 `OpenAPIv3` 协议介绍请参考： [https://swagger.io/specification/](https://swagger.io/specification/)
@@ -39,9 +39,9 @@ hide_title: true
 | `default` | 参数的默认值 | 缩写 `d` |
 | `mime` | 接口的 `MIME` 类型，例如 `multipart/form-data` 一般是全局设置，默认为 `application/json`。 | 用于 `g.Meta` 标识接口元数据 |
 | `type` | 参数的类型，一般不需要设置，特殊参数需要手动设置，例如 `file` | 仅用于参数属性 |
-
+:::tip
 更多标签请参考标准的 `OpenAPIv3` 协议： [https://swagger.io/specification/](https://swagger.io/specification/)
-
+:::
 ### 2、扩展标签
 
 在 `OpenAPI` 规范里面，所有名称以 `x-` 开头的标签是开发者可自定义的扩展标签。扩展标签可以在任意的接口、属性中以 `Golang struct tag` 的形式定义，在接口文档生成时，将会作为独立的字段返回。例如：

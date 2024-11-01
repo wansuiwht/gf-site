@@ -19,9 +19,9 @@ hide_title: true
 4. `*Bytes` 方法用于获得服务端返回的二进制数据，如果请求失败返回 `nil`； `*Content` 方法用于请求获得字符串结果数据，如果请求失败返回空字符串； `Set*` 方法用于 `Client` 的参数设置。
 5. `*Var` 方法直接请求并获取HTTP接口结果为泛型类型便于转换。如果请求失败或者请求结果为空，会返回一个空的 `g.Var` 泛型对象，不影响转换方法调用。
 6. 可以看到，客户端的请求参数的数据参数 `data` 数据类型为 `interface{}` 类型，也就是说可以传递任意的数据类型，常见的参数数据类型为 `string`/ `map`，如果参数为 `map` 类型，参数值将会被自动 `urlencode` 编码。
-
+:::danger
 请使用给定的方法创建 `Client` 对象，而不要使用 `new(ghttp.Client)` 或者 `&ghttp.Client{}` 创建客户端对象，否则，哼哼。
-
+:::
 ## 链式操作
 
 `GoFrame` 框架的客户端支持便捷的链式操作，常用方法如下（文档方法列表可能滞后于源码，建议查看接口文档或源码 [https://pkg.go.dev/github.com/gogf/gf/v2/net/gclient](https://pkg.go.dev/github.com/gogf/gf/v2/net/gclient)）：
