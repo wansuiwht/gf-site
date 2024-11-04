@@ -39,6 +39,7 @@ const config: Config = {
       {
         // Will be passed to @docusaurus/plugin-content-docs (false to disable)
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
           lastVersion: 'current',
           // https://docusaurus.io/docs/versioning
@@ -74,67 +75,6 @@ const config: Config = {
         language: 'zh',
       },
     ],
-
-    // 快速开始
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'quick',
-        path: 'quick',
-        routeBasePath: 'quick',
-        sidebarPath: require.resolve('./sidebars.ts'),
-        // 编辑当前页面的配置
-        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
-        // 显示更新时间和作者
-        showLastUpdateTime: true,
-        showLastUpdateAuthor: true,
-      },
-    ],
-    // 版本发布
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'release',
-        path: 'release',
-        routeBasePath: 'release',
-        sidebarPath: require.resolve('./sidebars.ts'),
-        // 编辑当前页面的配置
-        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
-        // 显示更新时间和作者
-        showLastUpdateTime: true,
-        showLastUpdateAuthor: true,
-      },
-    ],
-    // 技术交流
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'communication',
-        path: 'communication',
-        routeBasePath: 'communication',
-        sidebarPath: require.resolve('./sidebars.ts'),
-        // 编辑当前页面的配置
-        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
-        // 显示更新时间和作者
-        showLastUpdateTime: true,
-        showLastUpdateAuthor: true,
-      },
-    ],
-    // 支持我们
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'supportus',
-        path: 'supportus',
-        routeBasePath: 'supportus',
-        sidebarPath: require.resolve('./sidebars.ts'),
-        // 编辑当前页面的配置
-        editUrl: 'https://github.com/gogf/gf-site/blob/main/',
-        // 显示更新时间和作者
-        showLastUpdateTime: true,
-        showLastUpdateAuthor: true,
-      },
-    ],
   ],
   themeConfig: {
     colorMode: {
@@ -151,14 +91,14 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          docsPluginId: 'quick',
+          sidebarId: 'quickSidebar',
           position: 'left',
           label: '快速开始',
         },
         {
           position: 'left',
           label: '开发手册',
+          sidebarId: 'mainSidebar',
           to: '/docs/design',
           items: [
             {
@@ -189,23 +129,20 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          docsPluginId: 'release',
+          sidebarId: 'releaseSidebar',
           position: 'left',
           label: '发布记录',
         },
 
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          docsPluginId: 'communication',
+          sidebarId: 'shareSidebar',
           position: 'left',
           label: '技术交流',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          docsPluginId: 'supportus',
+          sidebarId: 'supportusSidebar',
           position: 'left',
           label: '支持我们',
         },
