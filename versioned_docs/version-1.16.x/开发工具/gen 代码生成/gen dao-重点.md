@@ -105,7 +105,7 @@ EXAMPLES
 
 生成的代码结构示例：
 
-![](https://goframe.org/download/attachments/1114168/image2020-12-24_17-39-44.png?version=1&modificationDate=1608802784148&api=v2)
+![](https://wiki.goframe.org/download/attachments/1114168/image2020-12-24_17-39-44.png?version=1&modificationDate=1608802784148&api=v2)
 
 其中：
 

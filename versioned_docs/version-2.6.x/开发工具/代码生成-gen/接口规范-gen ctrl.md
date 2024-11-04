@@ -98,7 +98,7 @@ EXAMPLE
 
 ### 自动模式（推荐）
 
-如果您是使用的 `GolandIDE`，那么可以使用我们提供的配置文件： [watchers.xml](https://goframe.org/download/attachments/153977096/watchers.xml?version=1&modificationDate=1712065983366&api=v2)  自动监听代码文件修改时自动生成接口文件。使用方式，如下图：
+如果您是使用的 `GolandIDE`，那么可以使用我们提供的配置文件： [watchers.xml](https://wiki.goframe.org/download/attachments/153977096/watchers.xml?version=1&modificationDate=1712065983366&api=v2)  自动监听代码文件修改时自动生成接口文件。使用方式，如下图：
 
 ![](/markdown/a63382c77a0975b08407887e83ddf588.png)
 
@@ -124,7 +124,7 @@ EXAMPLE
 
 ### 为什么每一个 `api` 接口生成一个 `controller` 文件而不是合并到一个 `controller` 文件中
 
-![](https://goframe.org/download/attachments/93880327/image2023-6-15_16-29-12.png?version=1&modificationDate=1686817753666&api=v2)
+![](https://wiki.goframe.org/download/attachments/93880327/image2023-6-15_16-29-12.png?version=1&modificationDate=1686817753666&api=v2)
 
 当然，针对小型项目或者个人简单项目、一个 `api` 模块只有几个接口的项目而言，管理的方式并不会成为什么问题，可以根据个人喜好维护代码文件即可。我们这里以较复杂的业务项目，或者企业级项目，在一个 `api` 模块的接口比较多的场景来展开描述一下。
 

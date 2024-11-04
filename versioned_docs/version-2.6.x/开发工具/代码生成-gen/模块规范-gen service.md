@@ -106,7 +106,7 @@ EXAMPLE
 
 #### `Goland/Idea`
 
-如果您是使用的 `GolandIDE`，那么可以使用我们提供的配置文件： [watchers.xml](https://goframe.org/download/attachments/153977133/watchers.xml?version=1&modificationDate=1712065992240&api=v2)  自动监听代码文件修改时自动生成接口文件。使用方式，如下图：
+如果您是使用的 `GolandIDE`，那么可以使用我们提供的配置文件： [watchers.xml](https://wiki.goframe.org/download/attachments/153977133/watchers.xml?version=1&modificationDate=1712065992240&api=v2)  自动监听代码文件修改时自动生成接口文件。使用方式，如下图：
 
 ![](/markdown/b74a19e15deab89af89250d8d324d8b4.png)
 
@@ -130,7 +130,7 @@ EXAMPLE
 
 ### Step1：引入我们提供的配置
 
-我们建议您在使用 `Goland IDE` 时，使用我们提供的配置文件： [watchers.xml](https://goframe.org/download/attachments/153977133/watchers.xml?version=1&modificationDate=1712065992240&api=v2)
+我们建议您在使用 `Goland IDE` 时，使用我们提供的配置文件： [watchers.xml](https://wiki.goframe.org/download/attachments/153977133/watchers.xml?version=1&modificationDate=1712065992240&api=v2)
 
 ### Step2：编写您的业务逻辑代码
 

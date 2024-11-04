@@ -10,7 +10,7 @@ hide_title: true
 
 经过一系列的项目实践，我们发现 `ScanList` 虽然从运行时业务逻辑的角度来维护了模型关联关系，但是这种关联关系维护也不如期望的简便。因此，我们继续改进推出了可以通过模型简单维护关联关系的 `With` 模型关联特性，当然，这种特性仍然致力于提升整体框架的易用性和维护性，可以把 `With` 特性看做 `ScanList` 与模型关联关系维护的一种结合和改进。
 
-本特性需要感谢 [aries](https://goframe.org/display/~sunmoon%20"") 提供的宝贵建议。
+本特性需要感谢 [aries](https://wiki.goframe.org/display/~sunmoon%20"") 提供的宝贵建议。
 
 `With` 特性从 `goframe v1.15.7` 版本开始提供，目前属于实验性特性。
 

@@ -29,4 +29,4 @@ hide_title: true
 
 这里是本次 `GoFrame` 框架的技术分享的PPT稿件，欢迎各位按需取用。
 
-[gocn-GoFrame框架介绍及设计.pdf](https://goframe.org/download/attachments/7296880/gocn-GoFrame%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AE%BE%E8%AE%A1.pdf?version=1&modificationDate=1618678587595&api=v2)
+[gocn-GoFrame框架介绍及设计.pdf](https://wiki.goframe.org/download/attachments/7296880/gocn-GoFrame%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AE%BE%E8%AE%A1.pdf?version=1&modificationDate=1618678587595&api=v2)
