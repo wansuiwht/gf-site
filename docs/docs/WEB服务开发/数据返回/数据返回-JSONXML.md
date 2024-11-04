@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/response/json-xml'
+slug: '/docs/web/response-json-xml'
 title: '数据返回-JSON/XML'
 sidebar_position: 1
 hide_title: true

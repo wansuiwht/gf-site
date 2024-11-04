@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/encoding/gjson'
+slug: '/docs/components/encoding-gjson'
 title: '通用编解码-gjson'
 sidebar_position: 0
 hide_title: true

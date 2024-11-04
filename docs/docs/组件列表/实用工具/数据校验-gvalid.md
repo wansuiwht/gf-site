@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/util/gvalid'
+slug: '/docs/components/util-gvalid'
 title: '数据校验-gvalid'
 sidebar_position: 4
 hide_title: true

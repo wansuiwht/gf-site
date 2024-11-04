@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/container/gtype'
+slug: '/docs/components/container-gtype'
 title: '安全类型-gtype'
 sidebar_position: 5
 hide_title: true

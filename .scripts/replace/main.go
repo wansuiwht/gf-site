@@ -1,8 +1,8 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"path/filepath"
 
 	"github.com/gogf/gf/v2/encoding/gurl"
 	"github.com/gogf/gf/v2/frame/g"
@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	path = `/Users/john/Workspace/github/gogf/gf-site/versioned_docs/version-1.14.x`
+	path = `/Users/john/Workspace/github/gogf/gf-site`
 )
 
 func main() {
@@ -20,47 +20,44 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fileNameToMdPathMap := make(map[string]string)
-	for _, file := range files {
-		var fileName = gfile.Name(file)
-		fileNameToMdPathMap[fileName] = file
-		// 去掉序号前缀
-		fileNameWithoutOrder := gstr.SubStrFromEx(fileName, "-")
-		fileNameToMdPathMap[fileNameWithoutOrder] = file
-	}
-	g.DumpJson(fileNameToMdPathMap)
 	for _, file := range files {
 		content := gfile.GetContents(file)
 		newContent, _ := gregex.ReplaceStringFuncMatch(
-			`\[([^\]]+?)\]\((output/goframe.+?)\)`,
+			`\[([^\]]+?)\]\(([^\)]+?\.md)\)`,
 			content,
 			func(match []string) string {
-				if gstr.HasSuffix(match[2], ".md") {
+				var (
+					name    = match[1]
+					link    = match[2]
+					dirPath = gfile.Dir(file)
+				)
+				if gstr.HasPrefix(link, "http") {
 					return match[0]
 				}
-				var (
-					name     = match[1]
-					link     = match[2]
-					fileName = gfile.Basename(link)
+				link, _ = gurl.Decode(link)
+				if err = gfile.Chdir(dirPath); err != nil {
+					g.Log().Warning(context.Background(), err)
+					return match[0]
+				}
+				realPath := gfile.RealPath(link)
+				if realPath != "" {
+					return match[0]
+				}
+				link = gfile.Join(
+					gfile.Dir(link),
+					gfile.Name(link),
+					gfile.Name(link)+".md",
 				)
-				if absPath, ok := fileNameToMdPathMap[fileName]; ok {
-					newLink := relativePath(file, absPath)
-					return fmt.Sprintf(`[%s](%s)`, name, newLink)
+				realPath = gfile.RealPath(link)
+				if realPath == "" {
+					return match[0]
 				}
-				// 第一找不到，尝试decode
-				fileName, _ = gurl.Decode(fileName)
-				if absPath, ok := fileNameToMdPathMap[fileName]; ok {
-					newLink := relativePath(file, absPath)
-					return fmt.Sprintf(`[%s](%s)`, name, newLink)
+				if gstr.Contains(link, " ") {
+					link = gstr.Replace(link, " ", "%20")
 				}
-				return fmt.Sprintf(`[%s](%s.md)`, name, link)
+				return fmt.Sprintf(`[%s](%s)`, name, link)
 			},
 		)
 		_ = gfile.PutContents(file, newContent)
 	}
-}
-
-func relativePath(path1, path2 string) string {
-	p, _ := filepath.Rel(gfile.Dir(path1), path2)
-	return p
 }

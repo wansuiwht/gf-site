@@ -1,5 +1,5 @@
 ---
-slug: '/docs/obs/tracing/practice-inject-traceid'
+slug: '/docs/obs/tracing-practice-inject-traceid'
 title: '链路跟踪-TraceID注入和获取'
 sidebar_position: 0
 hide_title: true

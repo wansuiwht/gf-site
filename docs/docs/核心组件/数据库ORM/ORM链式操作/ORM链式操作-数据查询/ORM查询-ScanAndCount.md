@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-query-scan-and-count'
+slug: '/docs/core/gdb-chaining-query-scan-and-count'
 title: 'ORM查询-ScanAndCount'
 sidebar_position: 4
 hide_title: true

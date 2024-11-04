@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/transaction-closure'
+slug: '/docs/core/gdb-transaction-closure'
 title: 'ORM事务处理-闭包操作'
 sidebar_position: 1
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/senior-logging'
+slug: '/docs/core/gdb-senior-logging'
 title: 'ORM高级特性-日志输出'
 sidebar_position: 3
 hide_title: true

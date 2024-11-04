@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/encoding/gbinary'
+slug: '/docs/components/encoding-gbinary'
 title: '二进制编解码-gbinary'
 sidebar_position: 1
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/encoding/gjson-struct-converting'
+slug: '/docs/components/encoding-gjson-struct-converting'
 title: '通用编解码-Struct转换'
 sidebar_position: 2
 hide_title: true

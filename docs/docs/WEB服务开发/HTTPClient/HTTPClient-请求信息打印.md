@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/http-client/raw-request-response'
+slug: '/docs/web/http-client-raw-request-response'
 title: 'HTTPClient-请求信息打印'
 sidebar_position: 6
 hide_title: true

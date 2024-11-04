@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-query-all-one-array-value-count'
+slug: '/docs/core/gdb-chaining-query-all-one-array-value-count'
 title: 'ORM查询-All/One/Array/Value/Count'
 sidebar_position: 1
 hide_title: true

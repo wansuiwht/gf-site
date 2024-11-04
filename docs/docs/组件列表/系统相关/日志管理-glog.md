@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/glog'
+slug: '/docs/components/os-glog'
 title: '日志管理-glog'
 sidebar_position: 5
 hide_title: true

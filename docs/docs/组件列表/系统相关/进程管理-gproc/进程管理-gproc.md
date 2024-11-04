@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/gproc'
+slug: '/docs/components/os-gproc'
 title: '进程管理-gproc'
 sidebar_position: 14
 hide_title: true

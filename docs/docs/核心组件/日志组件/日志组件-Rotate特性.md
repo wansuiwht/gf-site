@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/glog/rotate'
+slug: '/docs/core/glog-rotate'
 title: '日志组件-Rotate特性'
 sidebar_position: 13
 hide_title: true

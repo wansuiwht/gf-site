@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/crypto/gmd5'
+slug: '/docs/components/crypto-gmd5'
 title: 'MD5算法-gmd5'
 sidebar_position: 0
 hide_title: true

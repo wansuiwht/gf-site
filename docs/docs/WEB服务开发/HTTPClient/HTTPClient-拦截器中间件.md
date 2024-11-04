@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/http-client/middleware'
+slug: '/docs/web/http-client-middleware'
 title: 'HTTPClient-拦截器/中间件'
 sidebar_position: 8
 hide_title: true

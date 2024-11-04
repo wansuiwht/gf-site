@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/senior/csrf'
+slug: '/docs/web/senior-csrf'
 title: 'CSRF防御设置'
 sidebar_position: 5
 hide_title: true

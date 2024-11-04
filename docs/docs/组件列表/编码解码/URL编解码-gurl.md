@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/encoding/gurl'
+slug: '/docs/components/encoding-gurl'
 title: 'URL编解码-gurl'
 sidebar_position: 5
 hide_title: true

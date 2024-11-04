@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-hook'
+slug: '/docs/core/gdb-chaining-hook'
 title: 'ORM链式操作-Hook特性'
 sidebar_position: 13
 hide_title: true

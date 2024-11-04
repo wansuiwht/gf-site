@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-transaction'
+slug: '/docs/core/gdb-chaining-transaction'
 title: 'ORM链式操作-事务处理'
 sidebar_position: 8
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/contrib/nosql-redis-example'
+slug: '/docs/components/contrib-nosql-redis-example'
 title: 'Redis-使用示例'
 sidebar_position: 1
 hide_title: true

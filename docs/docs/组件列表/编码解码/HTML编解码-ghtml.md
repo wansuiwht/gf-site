@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/encoding/ghtml'
+slug: '/docs/components/encoding-ghtml'
 title: 'HTML编解码-ghtml'
 sidebar_position: 4
 hide_title: true

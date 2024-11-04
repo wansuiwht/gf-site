@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/text/gstr'
+slug: '/docs/components/text-gstr'
 title: '字符串处理-gstr'
 sidebar_position: 0
 hide_title: true

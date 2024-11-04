@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/senior/websocket'
+slug: '/docs/web/senior-websocket'
 title: 'WebSocket服务'
 sidebar_position: 7
 hide_title: true

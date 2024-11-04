@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/request/json-xml-parameter'
+slug: '/docs/web/request-json-xml-parameter'
 title: '请求输入-JSON/XML'
 sidebar_position: 3
 hide_title: true

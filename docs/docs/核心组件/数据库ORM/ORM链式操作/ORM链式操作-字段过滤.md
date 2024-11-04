@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-fields-filtering'
+slug: '/docs/core/gdb-chaining-fields-filtering'
 title: 'ORM链式操作-字段过滤'
 sidebar_position: 6
 hide_title: true

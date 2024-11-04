@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/senior-fields-mapping'
+slug: '/docs/core/gdb-senior-fields-mapping'
 title: 'ORM高级特性-字段映射'
 sidebar_position: 4
 hide_title: true

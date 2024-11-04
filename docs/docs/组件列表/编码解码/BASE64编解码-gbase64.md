@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/encoding/gbase64'
+slug: '/docs/components/encoding-gbase64'
 title: 'BASE64编解码-gbase64'
 sidebar_position: 2
 hide_title: true

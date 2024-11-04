@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gcfg/interface-adapter-file'
+slug: '/docs/core/gcfg-interface-adapter-file'
 title: '配置管理-AdapterFile'
 sidebar_position: 0
 hide_title: true

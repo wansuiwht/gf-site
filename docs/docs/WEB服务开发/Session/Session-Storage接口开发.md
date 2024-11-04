@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/session/storage'
+slug: '/docs/web/session-storage'
 title: 'Session-Storage接口开发'
 sidebar_position: 4
 hide_title: true

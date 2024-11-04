@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/model-generating'
+slug: '/docs/core/gdb-model-generating'
 title: 'ORM模型生成'
 sidebar_position: 6
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/request/context'
+slug: '/docs/web/request-context'
 title: '请求输入-Context'
 sidebar_position: 6
 hide_title: true

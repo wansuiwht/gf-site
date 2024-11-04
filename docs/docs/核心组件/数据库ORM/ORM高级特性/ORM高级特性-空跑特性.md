@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/senior-dry-run'
+slug: '/docs/core/gdb-senior-dry-run'
 title: 'ORM高级特性-空跑特性'
 sidebar_position: 5
 hide_title: true

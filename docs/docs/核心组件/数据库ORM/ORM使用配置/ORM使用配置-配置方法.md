@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/config-funcs'
+slug: '/docs/core/gdb-config-funcs'
 title: 'ORM使用配置-配置方法'
 sidebar_position: 1
 ---

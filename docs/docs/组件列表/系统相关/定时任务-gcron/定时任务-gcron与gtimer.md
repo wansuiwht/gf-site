@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/gcron-differ-with-gtimer'
+slug: '/docs/components/os-gcron-differ-with-gtimer'
 title: '定时任务-gcron与gtimer'
 sidebar_position: 3
 hide_title: true

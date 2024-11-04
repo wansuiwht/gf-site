@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gcfg/toml'
+slug: '/docs/core/gcfg-toml'
 title: '配置管理-TOML格式'
 sidebar_position: 5
 hide_title: true

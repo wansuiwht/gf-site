@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/result-types'
+slug: '/docs/core/gdb-result-types'
 title: 'ORM结果处理-结果类型'
 sidebar_position: 0
 hide_title: true

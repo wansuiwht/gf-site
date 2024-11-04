@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/senior/https'
+slug: '/docs/web/senior-https'
 title: 'HTTPS & TLS'
 sidebar_position: 2
 hide_title: true

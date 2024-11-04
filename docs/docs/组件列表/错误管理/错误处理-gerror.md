@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/error/gerror'
+slug: '/docs/components/error-gerror'
 title: '错误处理-gerror'
 sidebar_position: 0
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-query-cache'
+slug: '/docs/core/gdb-chaining-query-cache'
 title: 'ORM链式操作-查询缓存'
 sidebar_position: 10
 hide_title: true

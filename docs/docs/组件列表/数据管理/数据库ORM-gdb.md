@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/database/gdb'
+slug: '/docs/components/database-gdb'
 title: '数据库ORM-gdb'
 sidebar_position: 0
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gcfg/yaml'
+slug: '/docs/core/gcfg-yaml'
 title: '配置管理-YAML格式'
 sidebar_position: 4
 hide_title: true

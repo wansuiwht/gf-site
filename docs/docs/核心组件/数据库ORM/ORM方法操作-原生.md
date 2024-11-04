@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/funcs'
+slug: '/docs/core/gdb-funcs'
 title: 'ORM方法操作(原生)'
 sidebar_position: 2
 hide_title: true

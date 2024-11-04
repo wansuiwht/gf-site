@@ -1,5 +1,5 @@
 ---
-slug: '/docs/obs/tracing/grpc-example'
+slug: '/docs/obs/tracing-grpc-example'
 title: '链路跟踪-GRPC示例'
 sidebar_position: 4
 hide_title: true

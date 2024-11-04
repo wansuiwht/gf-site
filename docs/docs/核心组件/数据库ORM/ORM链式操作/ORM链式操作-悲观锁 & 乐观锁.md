@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-locks'
+slug: '/docs/core/gdb-chaining-locks'
 title: 'ORM链式操作-悲观锁 & 乐观锁'
 sidebar_position: 15
 hide_title: true

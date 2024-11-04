@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/gstructs'
+slug: '/docs/components/os-gstructs'
 title: '对象信息-gstructs'
 sidebar_position: 18
 hide_title: true

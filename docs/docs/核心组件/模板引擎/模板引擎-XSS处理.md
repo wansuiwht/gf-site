@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gview/xss'
+slug: '/docs/core/gview-xss'
 title: '模板引擎-XSS处理'
 sidebar_position: 5
 hide_title: true

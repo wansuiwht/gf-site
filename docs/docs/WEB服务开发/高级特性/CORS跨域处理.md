@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/senior/cors'
+slug: '/docs/web/senior-cors'
 title: 'CORS跨域处理'
 sidebar_position: 4
 hide_title: true

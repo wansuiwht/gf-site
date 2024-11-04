@@ -1,5 +1,5 @@
 ---
-slug: '/docs/cli/gen/ctrl'
+slug: '/docs/cli/gen-ctrl'
 title: '接口规范-gen ctrl'
 sidebar_position: 0
 hide_title: true

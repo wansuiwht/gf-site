@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/interface-driver'
+slug: '/docs/core/gdb-interface-driver'
 title: 'ORM接口开发-驱动开发'
 sidebar_position: 1
 hide_title: true

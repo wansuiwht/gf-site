@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/gcache'
+slug: '/docs/components/os-gcache'
 title: '缓存管理-gcache'
 sidebar_position: 8
 hide_title: true

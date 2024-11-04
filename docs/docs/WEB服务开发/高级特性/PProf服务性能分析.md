@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/senior/pprof'
+slug: '/docs/web/senior-pprof'
 title: 'PProf服务性能分析'
 sidebar_position: 9
 hide_title: true

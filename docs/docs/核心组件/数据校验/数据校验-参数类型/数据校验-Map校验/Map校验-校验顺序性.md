@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gvalid/parameter-type-map-sequence'
+slug: '/docs/core/gvalid-parameter-type-map-sequence'
 title: 'Map校验-校验顺序性'
 sidebar_position: 1
 hide_title: true

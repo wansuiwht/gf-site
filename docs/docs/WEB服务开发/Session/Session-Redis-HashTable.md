@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/session/redis-hash-table'
+slug: '/docs/web/session-redis-hash-table'
 title: 'Session-Redis-HashTable'
 sidebar_position: 3
 hide_title: true

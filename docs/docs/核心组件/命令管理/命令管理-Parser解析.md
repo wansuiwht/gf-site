@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gcmd/parser'
+slug: '/docs/core/gcmd-parser'
 title: '命令管理-Parser解析'
 sidebar_position: 2
 hide_title: true

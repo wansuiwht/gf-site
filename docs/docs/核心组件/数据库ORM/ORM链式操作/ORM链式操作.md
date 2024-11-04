@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining'
+slug: '/docs/core/gdb-chaining'
 title: 'ORM链式操作(🔥重点🔥)'
 sidebar_position: 1
 hide_title: true

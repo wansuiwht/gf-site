@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/session/file'
+slug: '/docs/web/session-file'
 title: 'Session-File'
 sidebar_position: 0
 hide_title: true

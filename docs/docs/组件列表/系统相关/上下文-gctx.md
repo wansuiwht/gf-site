@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/gctx'
+slug: '/docs/components/os-gctx'
 title: '上下文-gctx'
 sidebar_position: 3
 hide_title: true

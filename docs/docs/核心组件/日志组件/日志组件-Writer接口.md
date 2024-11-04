@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/glog/writer'
+slug: '/docs/core/glog-writer'
 title: '日志组件-Writer接口'
 sidebar_position: 11
 hide_title: true

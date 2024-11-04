@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/timezone'
+slug: '/docs/core/gdb-timezone'
 title: 'ORM时区处理'
 sidebar_position: 5
 hide_title: true

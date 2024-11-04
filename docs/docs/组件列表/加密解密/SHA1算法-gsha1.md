@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/crypto/gsha1'
+slug: '/docs/components/crypto-gsha1'
 title: 'SHA1算法-gsha1'
 sidebar_position: 3
 hide_title: true

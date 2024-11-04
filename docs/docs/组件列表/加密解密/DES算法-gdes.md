@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/crypto/gdes'
+slug: '/docs/components/crypto-gdes'
 title: 'DES算法-gdes'
 sidebar_position: 2
 hide_title: true

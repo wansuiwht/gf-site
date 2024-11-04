@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/gcfg'
+slug: '/docs/components/os-gcfg'
 title: '配置管理-gcfg'
 sidebar_position: 11
 hide_title: true

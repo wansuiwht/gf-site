@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/encoding/gxml'
+slug: '/docs/components/encoding-gxml'
 title: 'XML编解码-gxml'
 sidebar_position: 6
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/crypto/gaes'
+slug: '/docs/components/crypto-gaes'
 title: 'AES算法-gaes'
 sidebar_position: 1
 hide_title: true

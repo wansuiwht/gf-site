@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/http-client/file-uploading'
+slug: '/docs/web/http-client-file-uploading'
 title: 'HTTPClient-文件上传'
 sidebar_position: 1
 hide_title: true

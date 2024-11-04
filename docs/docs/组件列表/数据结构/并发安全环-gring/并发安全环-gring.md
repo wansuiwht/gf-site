@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/container/gring'
+slug: '/docs/components/container-gring'
 title: '并发安全环-gring'
 sidebar_position: 9
 hide_title: true

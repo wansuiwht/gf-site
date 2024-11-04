@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/util/gmeta'
+slug: '/docs/components/util-gmeta'
 title: '元数据-gmeta'
 sidebar_position: 2
 hide_title: true

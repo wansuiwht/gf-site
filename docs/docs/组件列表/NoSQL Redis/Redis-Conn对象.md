@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/contrib/nosql-redis-conn'
+slug: '/docs/components/contrib-nosql-redis-conn'
 title: 'Redis-Conn对象'
 sidebar_position: 3
 hide_title: true

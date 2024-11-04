@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/text/gregex'
+slug: '/docs/components/text-gregex'
 title: '正则表达式-gregex'
 sidebar_position: 1
 hide_title: true

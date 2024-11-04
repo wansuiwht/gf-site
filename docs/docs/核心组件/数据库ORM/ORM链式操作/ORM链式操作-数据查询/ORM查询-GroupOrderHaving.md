@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-query-group-order-having'
+slug: '/docs/core/gdb-chaining-query-group-order-having'
 title: 'ORM查询-Group/Order/Having'
 sidebar_position: 6
 hide_title: true

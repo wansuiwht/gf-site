@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/session/redis-key-value'
+slug: '/docs/web/session-redis-key-value'
 title: 'Session-Redis-KeyValue'
 sidebar_position: 2
 hide_title: true

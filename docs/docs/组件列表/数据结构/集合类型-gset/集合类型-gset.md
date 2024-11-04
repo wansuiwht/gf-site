@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/container/gset'
+slug: '/docs/components/container-gset'
 title: '集合类型-gset'
 sidebar_position: 2
 hide_title: true

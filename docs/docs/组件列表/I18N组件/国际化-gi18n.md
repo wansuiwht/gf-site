@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/i18n/gi18n'
+slug: '/docs/components/i18n-gi18n'
 title: '国际化-gi18n'
 sidebar_position: 0
 hide_title: true

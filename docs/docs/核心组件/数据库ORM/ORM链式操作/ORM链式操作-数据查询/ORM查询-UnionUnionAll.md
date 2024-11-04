@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-query-union'
+slug: '/docs/core/gdb-chaining-query-union'
 title: 'ORM查询-Union/UnionAll'
 sidebar_position: 7
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/senior-raw-sql'
+slug: '/docs/core/gdb-senior-raw-sql'
 title: 'ORM高级特性-RawSQL'
 sidebar_position: 0
 hide_title: true

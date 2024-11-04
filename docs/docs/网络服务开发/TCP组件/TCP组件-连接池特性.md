@@ -1,5 +1,5 @@
 ---
-slug: '/docs/network/gtcp/connection-pool'
+slug: '/docs/network/gtcp-connection-pool'
 title: 'TCP组件-连接池特性'
 sidebar_position: 3
 hide_title: true

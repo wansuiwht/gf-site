@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/http-client/proxy'
+slug: '/docs/web/http-client-proxy'
 title: 'HTTPClient-代理Proxy设置'
 sidebar_position: 7
 hide_title: true

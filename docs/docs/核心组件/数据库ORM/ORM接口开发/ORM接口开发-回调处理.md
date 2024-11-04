@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/interface-callback'
+slug: '/docs/core/gdb-interface-callback'
 title: 'ORM接口开发-回调处理'
 sidebar_position: 0
 hide_title: true

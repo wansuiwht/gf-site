@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/container/gtree'
+slug: '/docs/components/container-gtree'
 title: '树形类型-gtree'
 sidebar_position: 7
 hide_title: true

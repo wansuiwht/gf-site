@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/config-faq'
+slug: '/docs/core/gdb-config-faq'
 title: 'ORM使用配置-常见问题'
 sidebar_position: 2
 ---

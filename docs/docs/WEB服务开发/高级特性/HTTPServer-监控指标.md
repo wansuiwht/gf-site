@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/senior/server-metrics'
+slug: '/docs/web/senior-server-metrics'
 title: 'HTTPServer-监控指标'
 sidebar_position: 11
 hide_title: true

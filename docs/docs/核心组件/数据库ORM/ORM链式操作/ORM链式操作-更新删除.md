@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/chaining-update-delete'
+slug: '/docs/core/gdb-chaining-update-delete'
 title: 'ORM链式操作-更新删除'
 sidebar_position: 2
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/senior-type-converting'
+slug: '/docs/core/gdb-senior-type-converting'
 title: 'ORM高级特性-类型转换'
 sidebar_position: 7
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gconv/map'
+slug: '/docs/core/gconv-map'
 title: '类型转换-Map转换'
 sidebar_position: 1
 hide_title: true

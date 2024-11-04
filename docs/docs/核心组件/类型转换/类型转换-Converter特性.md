@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gconv/converter'
+slug: '/docs/core/gconv-converter'
 title: '类型转换-Converter特性'
 sidebar_position: 5
 hide_title: true

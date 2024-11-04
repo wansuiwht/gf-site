@@ -1,5 +1,5 @@
 ---
-slug: '/docs/cli/gen/pbentity'
+slug: '/docs/cli/gen-pbentity'
 title: '数据表PB-gen pbentity'
 sidebar_position: 5
 hide_title: true

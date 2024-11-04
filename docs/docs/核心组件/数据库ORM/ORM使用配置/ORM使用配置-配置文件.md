@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/config-file'
+slug: '/docs/core/gdb-config-file'
 title: 'ORM使用配置-配置文件'
 sidebar_position: 0
 ---

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/components/os/gfile'
+slug: '/docs/components/os-gfile'
 title: '文件管理-gfile'
 sidebar_position: 9
 hide_title: true

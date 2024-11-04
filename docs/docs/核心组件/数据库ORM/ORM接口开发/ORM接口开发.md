@@ -1,5 +1,5 @@
 ---
-slug: '/docs/core/gdb/interface'
+slug: '/docs/core/gdb-interface'
 title: 'ORM接口开发'
 sidebar_position: 8
 hide_title: true

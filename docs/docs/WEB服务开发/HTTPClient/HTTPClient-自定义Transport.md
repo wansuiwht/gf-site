@@ -1,5 +1,5 @@
 ---
-slug: '/docs/web/http-client/transport'
+slug: '/docs/web/http-client-transport'
 title: 'HTTPClient-自定义Transport'
 sidebar_position: 5
 hide_title: true
