@@ -180,7 +180,7 @@ const config: Config = {
       theme: prismThemes.okaidia,
       darkTheme: prismThemes.dracula,
       defaultLanguage: 'go',
-      additionalLanguages: ['bash', 'javascript'], // 添加语言
+      additionalLanguages: ['bash', 'javascript', 'yaml', 'ini', 'json'], // 添加语言
       // 默认支持的语言 https://github.com/FormidableLabs/prism-react-renderer/blob/master/packages/generate-prism-languages/index.ts#L9-L23
     },
   } satisfies Preset.ThemeConfig,

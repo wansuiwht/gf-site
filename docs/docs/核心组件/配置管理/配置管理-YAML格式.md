@@ -32,28 +32,24 @@ YAML 支持的数据结构有三种。
 
 > ```javascript
 > animal: pets
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { animal: 'pets' }
->
 > ```
 
 Yaml 也允许另一种写法，将所有键值对写成一个行内对象。
 
 > ```javascript
 > hash: { name: Steve, foo: bar }
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { hash: { name: 'Steve', foo: 'bar' } }
->
 > ```
 
 ### 三、数组
@@ -64,14 +60,12 @@ Yaml 也允许另一种写法，将所有键值对写成一个行内对象。
 > - Cat
 > - Dog
 > - Goldfish
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > [ 'Cat', 'Dog', 'Goldfish' ]
->
 > ```
 
 数据结构的子成员是一个数组，则可以在该项下面缩进一个空格。
@@ -81,29 +75,24 @@ Yaml 也允许另一种写法，将所有键值对写成一个行内对象。
 >  - Cat
 >  - Dog
 >  - Goldfish
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > [ [ 'Cat', 'Dog', 'Goldfish' ] ]
->
 > ```
 
 数组也可以采用行内表示法。
 
 > ```javascript
 > animal: [Cat, Dog]
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
->
 > { animal: [ 'Cat', 'Dog' ] }
->
 > ```
 
 ### 四、复合结构
@@ -120,7 +109,6 @@ Yaml 也允许另一种写法，将所有键值对写成一个行内对象。
 >  Ruby: ruby-lang.org
 >  Python: python.org
 >  Perl: use.perl.org
->
 > ```
 
 转为 JavaScript 如下。
@@ -132,7 +120,6 @@ Yaml 也允许另一种写法，将所有键值对写成一个行内对象。
 >      Ruby: 'ruby-lang.org',
 >      Python: 'python.org',
 >      Perl: 'use.perl.org' } }
->
 > ```
 
 ### 五、纯量
@@ -151,70 +138,60 @@ Yaml 也允许另一种写法，将所有键值对写成一个行内对象。
 
 > ```javascript
 > number: 12.30
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { number: 12.30 }
->
 > ```
 
 布尔值用 `true` 和 `false` 表示。
 
 > ```javascript
 > isSet: true
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { isSet: true }
->
 > ```
 
 `null` 用 `~` 表示。
 
 > ```javascript
 > parent: ~
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { parent: null }
->
 > ```
 
 时间采用 ISO8601 格式。
 
 > ```javascript
 > iso8601: 2001-12-14t21:59:43.10-05:00
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { iso8601: new Date('2001-12-14t21:59:43.10-05:00') }
->
 > ```
 
 日期采用复合 iso8601 格式的年、月、日表示。
 
 > ```javascript
 > date: 1976-07-31
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { date: new Date('1976-07-31') }
->
 > ```
 
 YAML 允许使用两个感叹号，强制转换数据类型。
@@ -222,14 +199,12 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 > ```javascript
 > e: !!str 123
 > f: !!str true
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { e: '123', f: 'true' }
->
 > ```
 
 ### 六、字符串
@@ -240,28 +215,24 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 
 > ```javascript
 > str: 这是一行字符串
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { str: '这是一行字符串' }
->
 > ```
 
 如果字符串之中包含空格或特殊字符，需要放在引号之中。
 
 > ```javascript
 > str: '内容： 字符串'
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { str: '内容: 字符串' }
->
 > ```
 
 单引号和双引号都可以使用，双引号不会对特殊字符转义。
@@ -269,28 +240,24 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 > ```javascript
 > s1: '内容\n字符串'
 > s2: "内容\n字符串"
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { s1: '内容\\n字符串', s2: '内容\n字符串' }
->
 > ```
 
 单引号之中如果还有单引号，必须连续使用两个单引号转义。
 
 > ```javascript
 > str: 'labor''s day'
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { str: 'labor\'s day' }
->
 > ```
 
 字符串可以写成多行，从第二行开始，必须有一个单空格缩进。换行符会被转为空格。
@@ -299,14 +266,12 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 > str: 这是一段
 >   多行
 >   字符串
->
 > ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { str: '这是一段 多行 字符串' }
->
 > ```
 
 多行字符串可以使用 `|` 保留换行符，也可以使用 `>` 折叠换行。
@@ -315,17 +280,14 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 > this: |
 >   Foo
 >   Bar
-> that: >
->   Foo
+> that: >   Foo
 >   Bar
->
 > ```
 
 转为 JavaScript 代码如下。
 
 > ```javascript
 > { this: 'Foo\nBar\n', that: 'Foo Bar\n' }
->
 > ```
 
 `+` 表示保留文字块末尾的换行， `-` 表示删除字符串末尾的换行。
@@ -333,38 +295,29 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 > ```javascript
 > s1: |
 >   Foo
->
 > s2: |+
 >   Foo
->
 > s3: |-
 >   Foo
->
 > ```
 
 转为 JavaScript 代码如下。
 
 > ```javascript
 > { s1: 'Foo\n', s2: 'Foo\n\n\n', s3: 'Foo' }
->
 > ```
 
 字符串之中可以插入 HTML 标记。
 
 > ```javascript
 > message: |
->
->   <p style="color: red">
->     段落
->   </p>
->
-> ```
+>   <p style="color: red">     段落
+>   </p> ```
 
 转为 JavaScript 如下。
 
 > ```javascript
 > { message: '\n<p style="color: red">\n  段落\n</p>\n' }
->
 > ```
 
 ### 七、引用
@@ -375,35 +328,28 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 > defaults: &defaults
 >   adapter:  postgres
 >   host:     localhost
->
 > development:
 >   database: myapp_development
 >   <<: *defaults
->
 > test:
 >   database: myapp_test
 >   <<: *defaults
->
 > ```
 
 等同于下面的代码。
 
 > ```javascript
->
 > defaults:
 >   adapter:  postgres
 >   host:     localhost
->
 > development:
 >   database: myapp_development
 >   adapter:  postgres
 >   host:     localhost
->
 > test:
 >   database: myapp_test
 >   adapter:  postgres
 >   host:     localhost
->
 > ```
 
 `&` 用来建立锚点（ `defaults`）， `<<` 表示合并到当前数据， `*` 用来引用锚点。
@@ -416,7 +362,6 @@ YAML 允许使用两个感叹号，强制转换数据类型。
 > - Brian
 > - Oren
 > - *showell
->
 > ```
 
 转为 JavaScript 代码如下。

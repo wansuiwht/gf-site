@@ -101,7 +101,7 @@ d9ff549177a9: Waiting
 
 大部分场景下，我们推荐使用配置文件来管理工具的配置，在 `hack/config.yaml` 文件中维护，例如 `docker` 命令的配置示例：
 
-```
+```yaml
 gfcli:
   docker:
     build: "-a amd64 -s linux -p temp -ew"
