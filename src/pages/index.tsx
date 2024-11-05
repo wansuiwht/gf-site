@@ -314,10 +314,10 @@ function isMobileDevice() {
 export default function Home(): JSX.Element {
     return (
         <Layout>
-            <HomepageHeader/>
-            <Features/>
-            <Users/>
-            <Contributors/>
+            <HomepageHeader />
+            <Features />
+            <Users />
+            <Contributors />
             <div className="mt-20"></div>
         </Layout>
     );
