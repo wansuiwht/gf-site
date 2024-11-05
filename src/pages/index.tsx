@@ -297,9 +297,9 @@ function Contributors() {
                     {
                         isMobileDevice() ? (
                             <a href="https://github.com/gogf/gf/graphs/contributors" target="_blank">
-                                <img src={'/img/contributors.svg'} alt="GoFrame Contributors"/>
+                                <img src={'/img/contributors.svg'} alt="GoFrame Contributors" />
                             </a>) : (
-                            <ContributorsSVG title="GoFrame Contributors"/>
+                            <ContributorsSVG title="GoFrame Contributors" />
                         )}
                 </div>
             </div>
@@ -308,7 +308,10 @@ function Contributors() {
 }
 
 function isMobileDevice() {
-    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (typeof navigator !== 'undefined') {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    return false;
 }
 
 export default function Home(): JSX.Element {

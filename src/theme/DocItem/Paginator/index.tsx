@@ -11,8 +11,6 @@ type Props = WrapperProps<typeof PaginatorType>;
 export default function PaginatorWrapper(props: Props): JSX.Element {
   const { metadata } = useDoc();
   const { comments = true } = metadata.frontMatter;
-  console.log('PaginatorWrapper', props);
-  console.log('PaginatorWrapper comments', comments);
   return (
     <>
       <Paginator {...props} />
