@@ -228,7 +228,7 @@ function Features() {
             <div className="container mt-5 text-center">
                 <Link
                     className="button button--secondary button--md hover:bg-gray-200"
-                    to="/docs/design" style={{width: '200px'}}>
+                    to="/docs/design" style={{ width: '200px' }}>
                     了解更多 →
                 </Link>
             </div>
