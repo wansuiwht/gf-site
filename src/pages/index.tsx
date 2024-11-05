@@ -294,11 +294,21 @@ function Contributors() {
                     💖感谢所有参与<code>GoFrame</code>开源建设的贡献者💖
                 </div>
                 <div className="contributors text-center">
-                    <ContributorsSVG title="GoFrame Contributors" />
+                    {
+                        isMobileDevice() ? (
+                            <a href="https://github.com/gogf/gf/graphs/contributors" target="_blank">
+                                <img src={'/img/contributors.svg'} alt="GoFrame Contributors"/>
+                            </a>) : (
+                            <ContributorsSVG title="GoFrame Contributors"/>
+                        )}
                 </div>
             </div>
         </section>
-    );
+    )
+}
+
+function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 export default function Home(): JSX.Element {
