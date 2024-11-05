@@ -2,6 +2,7 @@
 slug: '/docs/core/gdb-config-funcs'
 title: 'ORM使用配置-配置方法'
 sidebar_position: 1
+hide_title: true
 ---
 :::tip
 以下为数据库底层管理配置介绍，如果您对数据库的底层配置管理比较感兴趣，可继续阅读后续章节。

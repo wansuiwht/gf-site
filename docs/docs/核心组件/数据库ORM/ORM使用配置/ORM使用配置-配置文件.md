@@ -2,6 +2,7 @@
 slug: '/docs/core/gdb-config-file'
 title: 'ORM使用配置-配置文件'
 sidebar_position: 0
+hide_title: true
 ---
 
 我们推荐使用配置组件来管理数据库配置，并使用 `g` 对象管理模块中的 `g.DB("数据库分组名称")` 方法获取数据库操作对象，数据库对象将会自动读取配置组件中的相应配置项，并自动初始化该数据库操作的单例对象。数据库配置管理功能使用的是配置管理组件实现（配置组件采用接口化设计默认使用文件系统实现），同样支持多种数据格式如： `toml/yaml/json/xml/ini/properties`。默认并且推荐的配置文件数据格式为 `yaml`。

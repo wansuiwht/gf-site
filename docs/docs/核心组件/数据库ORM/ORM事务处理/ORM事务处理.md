@@ -5,7 +5,6 @@ sidebar_position: 3
 hide_title: true
 ---
 
-## 基本介绍
 
 使用 `GoFrame ORM` 组件进行事务操作非常简便、安全，可以通过两种操作方式来实现。
 

@@ -2,6 +2,7 @@
 slug: '/docs/core/gdb-config-faq'
 title: 'ORM使用配置-常见问题'
 sidebar_position: 2
+hide_title: true
 ---
 
 ## 如何实现数据库账号密码在配置文件中加密
