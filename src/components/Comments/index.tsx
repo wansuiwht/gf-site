@@ -1,13 +1,12 @@
 import { useColorMode } from "@docusaurus/theme-common";
 import Giscus from "@giscus/react";
-import React from "react";
 
 // https://rikublock.dev/docs/tutorials/giscus-integration/
 export default function Comments(): JSX.Element {
   const { colorMode } = useColorMode();
 
   return (
-    <div>
+    <div className="docusaurus-mt-lg">
       <Giscus
         id="comments"
         repo="gogf/gf-site"
