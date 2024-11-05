@@ -103,11 +103,11 @@ body .button--secondary {
 }
 
 .markdown > p:first-child {
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .markdown > div:first-child {
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 code {
