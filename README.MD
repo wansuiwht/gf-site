@@ -2,7 +2,6 @@
 
 预览地址：https://gogf.github.io/gf-site/
 
-
 ## 本地运行
 
 ```shell
@@ -37,6 +36,7 @@ https://docusaurus.io/zh-CN/docs/markdown-features/code-blocks
 #### 拆分文档功能
 
 1. 按渐进式和查阅式把栏目分离
+
 - 【渐进式】
   - 【快速开始】
     - 【项目开发】等等
@@ -45,7 +45,7 @@ https://docusaurus.io/zh-CN/docs/markdown-features/code-blocks
   - 【开发文档】
     - 【模块文档】
     - 【开发工具】
-    - 【WEB开发】等等
+    - 【WEB 开发】等等
   - 【版本发布】
   - 【技术交流】
     - 【交流群】
@@ -57,6 +57,7 @@ https://docusaurus.io/zh-CN/docs/markdown-features/code-blocks
     - 【加入我们】
 
 ## 多语言
+
 ```shell
 # 多语言文档路径
 https://docusaurus.io/docs/i18n/introduction#translation-files-location
@@ -76,11 +77,11 @@ npm run start -- --locale en
 
 ```
 
+## 评论设置
 
+文档 https://rikublock.dev/docs/tutorials/giscus-integration/
 
-
-
-
-
-
-
+```shell
+# 因为插入的位置不同，我们使用 swizzle DocItem/Paginator来修改
+npm run swizzle @docusaurus/theme-classic DocItem/Paginator -- --wrap --typescript
+```
