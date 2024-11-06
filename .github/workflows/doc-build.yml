@@ -1,15 +1,15 @@
-name: Deploy to GitHub Pages
+name: 构建和部署文档
 
 on:
   push:
     branches:
       - 'main'
-  # schedule:
-  #   - cron: '0 15 * * *'
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   deploy:
-    name: Deploy to GitHub Pages
+    name: 构建和部署文档
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,8 +21,22 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: generate contributors
+        run: bash .github/workflows/generate-contributors.sh
       - name: Build website
-        run: npm run build
+        run: make build
+      # https://github.com/appleboy/scp-action
+      - name: Deploy to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: './build/*'
+          target: '/home/www/goframe.org'
+          strip_components: 1
+          rm: true
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

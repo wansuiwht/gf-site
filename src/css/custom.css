@@ -38,7 +38,7 @@
   Helvetica,
   Arial,
   sans-serif;
-  --ifm-font-color-base: #23262F;
+  --ifm-font-color-base: #172b4d;
   --ifm-font-color-subtle: #777E90;
   --ifm-button-font-weight: 500;
   --ifm-background-surface-color: #f9f9f9;
@@ -98,10 +98,33 @@ body .button--secondary {
 
 @import "./output.css";
 
+.markdown {
+  --ifm-h2-vertical-rhythm-top: 1;
+}
 
+.markdown > p:first-child {
+  margin-top: 20px;
+}
+
+.markdown > div:first-child {
+  margin-top: 20px;
+}
+
+.markdown > section:first-child {
+  margin-top: 20px;
+}
 
 code {
-  color: #ec2d5d;;
+  padding: 0.2em 0.4em;
+  background-color: rgba(27,31,35,0.03);
+  border-radius: 3px;
+  border: 0px;
+  color: #c7254e;
+  font-size: 90%;
+}
+
+pre {
+  font-size: 90%;
 }
 
 /* GitHub */
