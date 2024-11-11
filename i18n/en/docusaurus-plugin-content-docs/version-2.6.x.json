@@ -111,14 +111,6 @@
     "message": "ORM事务处理",
     "description": "The label for category ORM事务处理 in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.ORM结果处理": {
-    "message": "ORM结果处理",
-    "description": "The label for category ORM结果处理 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.ORM高级特性": {
-    "message": "ORM高级特性",
-    "description": "The label for category ORM高级特性 in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.ORM接口开发": {
     "message": "ORM接口开发",
     "description": "The label for category ORM接口开发 in sidebar tutorialSidebar"
@@ -126,6 +118,14 @@
   "sidebar.tutorialSidebar.category.ORM最佳实践": {
     "message": "ORM最佳实践",
     "description": "The label for category ORM最佳实践 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ORM结果处理": {
+    "message": "ORM结果处理",
+    "description": "The label for category ORM结果处理 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ORM高级特性": {
+    "message": "ORM高级特性",
+    "description": "The label for category ORM高级特性 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.NoSQL Redis": {
     "message": "NoSQL Redis",
@@ -142,6 +142,30 @@
   "sidebar.tutorialSidebar.category.组件列表": {
     "message": "组件列表",
     "description": "The label for category 组件列表 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.单元测试": {
+    "message": "单元测试",
+    "description": "The label for category 单元测试 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.功能调试": {
+    "message": "功能调试",
+    "description": "The label for category 功能调试 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.I18N组件": {
+    "message": "I18N组件",
+    "description": "The label for category I18N组件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.加密解密": {
+    "message": "加密解密",
+    "description": "The label for category 加密解密 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.实用工具": {
+    "message": "实用工具",
+    "description": "The label for category 实用工具 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据管理": {
+    "message": "数据管理",
+    "description": "The label for category 数据管理 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.数据结构": {
     "message": "数据结构",
@@ -187,6 +211,14 @@
     "message": "并发安全环-gring",
     "description": "The label for category 并发安全环-gring in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.文本处理": {
+    "message": "文本处理",
+    "description": "The label for category 文本处理 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.正则表达式-gregex": {
+    "message": "正则表达式-gregex",
+    "description": "The label for category 正则表达式-gregex in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.系统相关": {
     "message": "系统相关",
     "description": "The label for category 系统相关 in sidebar tutorialSidebar"
@@ -207,14 +239,6 @@
     "message": "进程管理-gproc",
     "description": "The label for category 进程管理-gproc in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.文本处理": {
-    "message": "文本处理",
-    "description": "The label for category 文本处理 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.正则表达式-gregex": {
-    "message": "正则表达式-gregex",
-    "description": "The label for category 正则表达式-gregex in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.编码解码": {
     "message": "编码解码",
     "description": "The label for category 编码解码 in sidebar tutorialSidebar"
@@ -223,37 +247,29 @@
     "message": "通用编解码-gjson",
     "description": "The label for category 通用编解码-gjson in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.数据管理": {
-    "message": "数据管理",
-    "description": "The label for category 数据管理 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.加密解密": {
-    "message": "加密解密",
-    "description": "The label for category 加密解密 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.实用工具": {
-    "message": "实用工具",
-    "description": "The label for category 实用工具 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.单元测试": {
-    "message": "单元测试",
-    "description": "The label for category 单元测试 in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.错误管理": {
     "message": "错误管理",
     "description": "The label for category 错误管理 in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.功能调试": {
-    "message": "功能调试",
-    "description": "The label for category 功能调试 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.I18N组件": {
-    "message": "I18N组件",
-    "description": "The label for category I18N组件 in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.微服务开发": {
     "message": "微服务开发",
     "description": "The label for category 微服务开发 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.服务可观测性": {
+    "message": "服务可观测性",
+    "description": "The label for category 服务可观测性 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.服务链路跟踪": {
+    "message": "服务链路跟踪",
+    "description": "The label for category 服务链路跟踪 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.链路跟踪-HTTP示例": {
+    "message": "链路跟踪-HTTP示例",
+    "description": "The label for category 链路跟踪-HTTP示例 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.链路跟踪-最佳实践": {
+    "message": "链路跟踪-最佳实践",
+    "description": "The label for category 链路跟踪-最佳实践 in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.WEB服务开发": {
     "message": "WEB服务开发",
@@ -322,21 +338,5 @@
   "sidebar.tutorialSidebar.category.UDP组件": {
     "message": "UDP组件",
     "description": "The label for category UDP组件 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.服务可观测性": {
-    "message": "服务可观测性",
-    "description": "The label for category 服务可观测性 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.服务链路跟踪": {
-    "message": "服务链路跟踪",
-    "description": "The label for category 服务链路跟踪 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.链路跟踪-HTTP示例": {
-    "message": "链路跟踪-HTTP示例",
-    "description": "The label for category 链路跟踪-HTTP示例 in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.链路跟踪-最佳实践": {
-    "message": "链路跟踪-最佳实践",
-    "description": "The label for category 链路跟踪-最佳实践 in sidebar tutorialSidebar"
   }
 }
