@@ -8,7 +8,7 @@ description: 'GoFrame框架中的UDP组件，使用gudp.Server和gudp.Conn实现
 ---
 
 ## 基本介绍
-`UDP (User Datagram Protocol)` 一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。 `UDP` 服务端通过 `gudp.Server` 实现，客户端通过 `gudp.Conn` 对象或者工具方法实现。
+`UDP (User Datagram Protocol)` 一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。 `UDP` 服务端通过 `gudp.Server` 实现，客户端通过 `gudp.ClientConn` 对象或者工具方法实现。
 
 **使用方式**：
 
@@ -18,37 +18,31 @@ import "github.com/gogf/gf/v2/net/gudp"
 
 **接口文档**： [https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp)
 
-```go
-type Server
-    func GetServer(name ...interface{}) *Server
-    func NewServer(address string, handler func(*Conn), names ...string) *Server
-    func (s *Server) Close() error
-    func (s *Server) Run() error
-    func (s *Server) SetAddress(address string)
-    func (s *Server) SetHandler(handler func(*Conn))
-```
 
-其中 `GetServer` 使用单例模式通过给定一个唯一的名称获取/创建一个Server，后续可通过 `SetAddress` 和 `SetHandler` 方法动态修改Server属性； `NewServer` 则直接根据给定参数创建一个Server对象。
-
-来一个简单的示例：
+## 使用示例
 
 ```go
 package main
 
 import (
-    "fmt"
-    "github.com/gogf/gf/v2/net/gudp"
+	"fmt"
+
+	"github.com/gogf/gf/v2/net/gudp"
 )
 
 func main() {
-    gudp.NewServer("127.0.0.1:8999", func(conn *gudp.Conn) {
-        defer conn.Close()
-        for {
-            if data, _ := conn.Recv(-1); len(data) > 0 {
-                fmt.Println(string(data))
-            }
-        }
-    }).Run()
+	handler := func(conn *gudp.ServerConn) {
+		defer conn.Close()
+		for {
+			if data, addr, _ := conn.Recv(-1); len(data) > 0 {
+				fmt.Println(string(data), addr.String())
+			}
+		}
+	}
+	err := gudp.NewServer("127.0.0.1:8999", handler).Run()
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 ```
 

@@ -17,32 +17,6 @@ import "github.com/gogf/gf/v2/net/gudp"
 
 **接口文档**： [https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp)
 
-```go
-type Conn
-    func NewConn(raddr string, laddr ...string) (*Conn, error)
-    func NewConnByNetConn(udp *net.UDPConn) *Conn
-    func (c *Conn) Close() error
-    func (c *Conn) LocalAddr() net.Addr
-    func (c *Conn) Recv(length int, retry ...Retry) ([]byte, error)
-    func (c *Conn) RecvPkg(retry ...Retry) (result []byte, err error)
-    func (c *Conn) RecvPkgWithTimeout(timeout time.Duration, retry ...Retry) ([]byte, error)
-    func (c *Conn) RecvWithTimeout(length int, timeout time.Duration, retry ...Retry) ([]byte, error)
-    func (c *Conn) RemoteAddr() net.Addr
-    func (c *Conn) Send(data []byte, retry ...Retry) error
-    func (c *Conn) SendPkg(data []byte, retry ...Retry) error
-    func (c *Conn) SendPkgWithTimeout(data []byte, timeout time.Duration, retry ...Retry) error
-    func (c *Conn) SendRecv(data []byte, receive int, retry ...Retry) ([]byte, error)
-    func (c *Conn) SendRecvPkg(data []byte, retry ...Retry) ([]byte, error)
-    func (c *Conn) SendRecvPkgWithTimeout(data []byte, timeout time.Duration, retry ...Retry) ([]byte, error)
-    func (c *Conn) SendRecvWithTimeout(data []byte, receive int, timeout time.Duration, retry ...Retry) ([]byte, error)
-    func (c *Conn) SendWithTimeout(data []byte, timeout time.Duration, retry ...Retry) error
-    func (c *Conn) SetDeadline(t time.Time) error
-    func (c *Conn) SetRecvBufferWait(d time.Duration)
-    func (c *Conn) SetRecvDeadline(t time.Time) error
-    func (c *Conn) SetSendDeadline(t time.Time) error
-```
-
-可以看到， `gudp.Conn` 和 `gtcp.Conn` 的方法非常类似，并且也支持简单协议的消息包方法。
 
 ## 基本介绍
 
@@ -54,46 +28,52 @@ type Conn
 package main
 
 import (
-    "fmt"
-    "github.com/gogf/gf/v2/frame/g"
-    "github.com/gogf/gf/v2/net/gudp"
-    "github.com/gogf/gf/v2/os/gtime"
-    "time"
+	"context"
+	"fmt"
+	"time"
+
+	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/net/gudp"
+	"github.com/gogf/gf/v2/os/gtime"
 )
 
 func main() {
-    // Server
-    go gudp.NewServer("127.0.0.1:8999", func(conn *gudp.Conn) {
-        defer conn.Close()
-        for {
-            data, err := conn.Recv(-1)
-            if len(data) > 0 {
-                if err := conn.Send(append([]byte("> "), data...)); err != nil {
-                    g.Log().Error(err)
-                }
-            }
-            if err != nil {
-                g.Log().Error(err)
-            }
-        }
-    }).Run()
+	var (
+		ctx    = context.Background()
+		logger = g.Log()
+	)
+	// Server
+	go gudp.NewServer("127.0.0.1:8999", func(conn *gudp.ServerConn) {
+		defer conn.Close()
+		for {
+			data, addr, err := conn.Recv(-1)
+			if len(data) > 0 {
+				if err = conn.Send(append([]byte("> "), data...), addr); err != nil {
+					logger.Error(ctx, err)
+				}
+			}
+			if err != nil {
+				logger.Error(ctx, err)
+			}
+		}
+	}).Run()
 
-    time.Sleep(time.Second)
+	time.Sleep(time.Second)
 
-    // Client
-    for {
-        if conn, err := gudp.NewConn("127.0.0.1:8999"); err == nil {
-            if b, err := conn.SendRecv([]byte(gtime.Datetime()), -1); err == nil {
-                fmt.Println(string(b), conn.LocalAddr(), conn.RemoteAddr())
-            } else {
-                g.Log().Error(err)
-            }
-            conn.Close()
-        } else {
-            g.Log().Error(err)
-        }
-        time.Sleep(time.Second)
-    }
+	// Client
+	for {
+		if conn, err := gudp.NewClientConn("127.0.0.1:8999"); err == nil {
+			if b, err := conn.SendRecv([]byte(gtime.Datetime()), -1); err == nil {
+				fmt.Println(string(b), conn.LocalAddr(), conn.RemoteAddr())
+			} else {
+				logger.Error(ctx, err)
+			}
+			conn.Close()
+		} else {
+			logger.Error(ctx, err)
+		}
+		time.Sleep(time.Second)
+	}
 }
 ```
 
@@ -101,7 +81,7 @@ func main() {
 
 执行后，输出结果如下：
 
-```
+```text
 > 2018-07-21 23:13:31 127.0.0.1:33271 127.0.0.1:8999
 > 2018-07-21 23:13:32 127.0.0.1:45826 127.0.0.1:8999
 > 2018-07-21 23:13:33 127.0.0.1:58027 127.0.0.1:8999
