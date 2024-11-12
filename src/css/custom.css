@@ -151,3 +151,11 @@ html[data-theme='dark'] .header-github-link:before {
 .token.table.class-name{
   display: initial;
 }
+
+.menu__link {
+  font-size: 98%;
+}
+table th, table td {
+  padding: 0.9rem;
+  font-size: 96%;
+}
