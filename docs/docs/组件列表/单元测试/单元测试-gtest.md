@@ -7,6 +7,7 @@ keywords: [GoFrame,单元测试,gtest,测试断言,GoFrame框架,测试框架,�
 description: 'gtest模块在GoFrame框架下的使用，提供简便和轻量级的单元测试方法。gtest基于标准库testing进行功能扩展，增加了多个测试特性，如测试用例隔离和常用断言方法。适用于大部分的单元测试场景，并在需要更复杂测试时，可结合第三方测试框架如testify和goconvey使用。'
 ---
 
+## 基本介绍
 `gtest` 模块提供了简便化的、轻量级的、常用的单元测试方法。是基于标准库 `testing` 的功能扩展封装，主要增加实现了以下特性：
 
 - 单元测试用例多测试项的隔离。
@@ -23,7 +24,7 @@ import "github.com/gogf/gf/v2/test/gtest"
 ```
 
 **接口文档**：
-
+本章节更新可能不及时，更全面的接口介绍请参考接口文档。
 [https://pkg.go.dev/github.com/gogf/gf/v2/test/gtest](https://pkg.go.dev/github.com/gogf/gf/v2/test/gtest)
 
 ```go
@@ -50,7 +51,7 @@ func Fatal(message ...interface{})
 
 用于单元测试的包名既可以使用 `包名_test`，也可直接使用 `包名`（即与测试包同名）。两种使用方式都比较常见，且在 `Go` 官方标准库中也均有涉及。但需要注意的是，当需要测试包的私有方法/私有变量时，必须使用 `包名` 命名形式。且在使用 `包名` 命名方式时，注意仅用于单元测试的相关方法（非 `Test*` 测试方法）一般定义为私有，不要公开。
 
-**使用示例**：
+## 使用示例
 
 例如 `gstr` 模块其中一个单元测试用例：
 
@@ -92,7 +93,7 @@ func Test_Trim(t *testing.T) {
 
 一个单元测试用例可以包含多个 `C`，一个 `C` 也可以执行多个断言。 断言成功时直接PASS，但是如果断言失败，会输出如下类似的错误信息，并终止当前单元测试用例的继续执行（不会终止后续的其他单元测试用例）。
 
-```
+```text
 === RUN   Test_Trim
 [ASSERT] EXPECT 123456#; == 123456
 1. /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf/v2/text/gstr/gstr_z_unit_trim_test.go:20
