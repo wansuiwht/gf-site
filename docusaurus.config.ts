@@ -52,8 +52,8 @@ const config: Config = {
           // 编辑当前页面的配置
           editUrl: 'https://github.com/gogf/gf-site/blob/main/',
           // 显示更新时间和作者
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
+          showLastUpdateTime: false,
+          showLastUpdateAuthor: false,
         },
         // Will be passed to @docusaurus/plugin-content-blog (false to disable)
         blog: {},
