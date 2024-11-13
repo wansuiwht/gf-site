@@ -1,7 +1,8 @@
-const LATEST_VERSION_LABEL = '2.7.x(Latest)';
+const LATEST_VERSION_LABEL = '2.8.x(Latest)';
 
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
+import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
@@ -66,6 +67,17 @@ const config: Config = {
     ],
   ],
   plugins: [
+    [
+      'ideal-image',
+      {
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      } satisfies IdealImageOptions,
+    ],
     require.resolve("docusaurus-plugin-image-zoom")
   ],
   themeConfig: {
@@ -152,6 +164,7 @@ const config: Config = {
           position: 'left',
           label: '支持我们',
         },
+        // {to: 'showcase', label: 'Showcase', position: 'left'},
         {
           type: 'docsVersionDropdown',
           position: 'right',

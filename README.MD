@@ -34,6 +34,15 @@ npm run start -- --locale en
 
 ```
 
+
+## 多版本
+
+创建新版本
+```bash
+npm run docusaurus docs:version v2.7.x
+```
+
+
 ## 评论设置
 
 文档 https://rikublock.dev/docs/tutorials/giscus-integration/
