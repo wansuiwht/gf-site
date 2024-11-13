@@ -2,5 +2,5 @@
 .PHONY: build
 build:
 	rm versions.json
-	mv versions.bak.json versions.json
+	mv versions.build.json versions.json
 	npm run build
