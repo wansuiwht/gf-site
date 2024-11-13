@@ -26,6 +26,7 @@ const (
 使用json格式返回，不需要返回markdown代码块。
 keywords生成10个，description生成160个汉字。
 生成的keywords和description内容中不能出现SEO优化、文档网站、网站优化等SEO相关的词，不能出现特殊符号。
+description直接为主体内容摘要，不要出现"本文介绍了"、"本文档详细介绍"之类的文字。
 `
 )
 

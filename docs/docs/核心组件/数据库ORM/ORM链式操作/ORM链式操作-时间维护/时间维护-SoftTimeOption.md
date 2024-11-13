@@ -3,6 +3,8 @@ slug: '/docs/core/gdb-chaining-soft-time-option'
 title: '时间维护-SoftTimeOption'
 sidebar_position: 3
 hide_title: true
+keywords: [GoFrame,时间维护,SoftTimeOption,数据库操作,时间粒度,毫秒级时间戳,MySQL表结构,ORM操作,时间字段,大整型存储]
+description: '介绍如何在GoFrame框架中使用SoftTimeOption控制时间写入粒度，实现秒级到毫秒级的时间戳转换，并提供相关MySQL表结构和示例代码，帮助开发者灵活配置时间字段，支持多种时间粒度选项以满足不同项目需求，并通过ORM方法插入数据'
 ---
 
 
