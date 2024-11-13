@@ -17,7 +17,7 @@ description: '从v2版本开始，CLI工具结合GoFrame框架最新版本，为
 
 ## 使用方式
 
-```bash
+```text
 $ gf gen -h
 USAGE
     gf gen COMMAND [OPTION]

@@ -15,7 +15,7 @@ description: '在使用GoFrame框架构建项目时，如何通过gf run命令�
 :::
 ## 使用帮助
 
-```bash
+```text
 $ gf run -h
 USAGE
     gf run FILE [OPTION]
@@ -44,7 +44,7 @@ DESCRIPTION
 
 配置文件格式示例：
 
-```
+```yaml
 gfcli:
   run:
     path:  "./bin"
@@ -68,7 +68,7 @@ gfcli:
 
 一般 `gf run main.go` 即可
 
-```bash
+```text
 $ gf run main.go --swagger
 2020-12-31 00:40:16.948 build: main.go
 2020-12-31 00:40:16.994 producing swagger files...

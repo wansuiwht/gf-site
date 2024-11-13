@@ -18,7 +18,7 @@ description: '使用GoFrame命令行工具查看版本信息，包括gf -v和gf 
 
 ### `>= v2.5.7`
 
-```html
+```text
 $ gf version
 v2.7.2
 Welcome to GoFrame!
@@ -40,7 +40,7 @@ Others Detail:
 
 ### `< v2.5.6`
 
-```html
+```text
 $ gf version
 GoFrame CLI Tool v2.0.0, https://goframe.org
 GoFrame Version: v2.0.0-beta.0.20211214160159-19c9f0a48845 in current go.mod

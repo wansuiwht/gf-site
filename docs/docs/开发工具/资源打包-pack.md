@@ -9,7 +9,7 @@ description: '该文档介绍了如何使用GoFrame框架中的gf pack命令将�
 
 ## 使用方式
 
-```bash
+```text
 $ gf pack -h
 USAGE
     gf pack SRC DST
@@ -38,7 +38,7 @@ EXAMPLE
 
 ## 使用示例
 
-```bash
+```text
 $ gf pack public,template packed/data.go
 done!
 $ ll packed

@@ -15,7 +15,7 @@ description: '使用GoFrame框架中的命令行工具来编译proto文件，生
 
 ## 命令使用
 
-```bash
+```text
 $ gf gen pb -h
 USAGE
     gf gen pb [OPTION]

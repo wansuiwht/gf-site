@@ -65,7 +65,7 @@ description: '使用GoFrame生成API接口的控制器和SDK代码，从而帮�
 
 如果是手动执行命令行，直接在项目根目录下执行 `gf gen ctrl` 即可，她将完整扫描 `api` 接口定义目录，并生成对应代码。
 
-```bash
+```text
 $ gf gen ctrl -h
 USAGE
     gf gen ctrl [OPTION]

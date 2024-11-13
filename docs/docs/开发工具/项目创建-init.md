@@ -11,7 +11,7 @@ description: '使用GoFrame框架提供的gf init命令创建项目。自v2版�
 :::
 ## 使用方式
 
-```bash
+```text
 $ gf init -h
 USAGE
     gf init ARGUMENT [OPTION]
@@ -73,7 +73,7 @@ initialization done!
 
 #### 创建一个 `MonoRepoApp` 项目
 
-若需要在 `MonoRepo`（大仓）下的创建一个小仓，通过使用 `-a` 选项即可。
+若需要在 `MonoRepo`（大仓）下的创建一个小仓，在仓库项目根目录下，给定需要生成的项目地址，并使用 `-a` 选项即可。
 
 ```bash
 $ gf init app/user -a

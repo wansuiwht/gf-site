@@ -26,7 +26,7 @@ description: '使用GoFrame框架进行交叉编译。通过gf build命令，可
 
 `build` 支持同时从命令行以及配置文件指定编译参数、选项。 `GoFrame` 框架的所有组件及所有生态项目都是使用的同一个配置管理组件，默认的配置文件以及配置使用请参考章节 [配置管理](../核心组件/配置管理/配置管理.md)。以下是一个简单的配置示例供参考：
 
-```
+```yaml
 gfcli:
   build:
     name:     "gf"
@@ -62,7 +62,7 @@ gfcli:
 :::
 ## 使用示例
 
-```bash
+```text
 $ gf build
 2020-12-31 00:35:25.562 start building...
 2020-12-31 00:35:25.562 go build -o ./bin/darwin_amd64/gf main.go

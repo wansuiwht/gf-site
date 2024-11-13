@@ -56,7 +56,7 @@ description: '在GoFrame框架中对业务逻辑进行封装管理，通过生�
 
 如果是手动执行命令行，直接在项目根目录下执行 `gf gen service` 即可。
 
-```bash
+```text
 $ gf gen service -h
 USAGE
     gf gen service [OPTION]

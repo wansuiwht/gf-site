@@ -11,7 +11,7 @@ description: '使用GoFrame框架的gf docker命令编译和生成Docker镜像�
 :::
 ## 使用方式
 
-```bash
+```text
 $ gf docker -h
 USAGE
     gf docker [MAIN] [OPTION]
@@ -50,7 +50,7 @@ DESCRIPTION
 
 ## 使用示例
 
-```bash
+```text
 $ gf docker main.go -p -tn loads/gf-demos:test
 2020-12-31 00:47:28.207 start building...
 2020-12-31 00:47:28.207 go build -o ./bin/linux_amd64/main main.go

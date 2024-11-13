@@ -34,7 +34,7 @@ description: '使用GoFrame命令行工具来维护和生成枚举值信息，�
 
 ## 命令使用
 
-```bash
+```text
 $ gf gen enums -h
 USAGE
     gf gen enums [OPTION]

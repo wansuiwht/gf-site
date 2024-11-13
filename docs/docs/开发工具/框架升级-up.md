@@ -11,7 +11,7 @@ description: '使用GoFrame框架的gf up命令进行版本升级。gf up命令�
 :::
 ## 使用方式
 
-```bash
+```text
 $ gf up -h
 USAGE
     gf up [OPTION]
@@ -41,7 +41,7 @@ EXAMPLE
 
 ## 使用示例
 
-```bash
+```text
 $ gf up -a
 start upgrading version...
 upgrading "github.com/gogf/gf/contrib/drivers/mysql/v2" from "v2.2.4" to "latest"

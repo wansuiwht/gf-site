@@ -15,7 +15,7 @@ description: '如何使用GoFrame框架的命令行工具gf来根据数据库表
 
 ## 命令使用
 
-```bash
+```text
 $ gf gen pbentity -h
 USAGE
     gf gen pbentity [OPTION]

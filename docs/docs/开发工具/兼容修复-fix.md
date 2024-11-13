@@ -15,7 +15,7 @@ description: 'GoFrame框架提供的兼容修复命令gf fix，帮助在框架�
 
 ## 使用方式
 
-```bash
+```text
 $ gf fix -h
 USAGE
     gf fix
