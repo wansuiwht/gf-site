@@ -1,4 +1,4 @@
-const LATEST_VERSION_LABEL = '2.7.x(Latest)';
+const LATEST_VERSION_LABEL = '2.8.x(Latest)';
 
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
