@@ -18,7 +18,7 @@ description: '使用GoFrame框架中的gdb模块进行ORM链式操作时的时�
   - `created_at` 用于记录创建时更新，仅会写入一次。
   - `updated_at` 用于记录修改时更新，每次记录变更时更新。
   - `deleted_at` 用于记录的软删除特性，只有当记录删除时会写入一次。
-字段名称不区分大小写，也会忽略特殊字符，例如 `CreatedAt`, `UpdatedAt`, `DeletedAt` 也是支持的。此外，时间字段名称可以通过配置文件进行自定义修改，并可使用 `TimeMaintainDisabled` 配置在数据库实例上完整关闭该特性，具体请参考 [ORM使用配置](../ORM使用配置/ORM使用配置.md) 章节。
+字段名称不区分大小写，也会忽略特殊字符，例如 `CreatedAt`, `UpdatedAt`, `DeletedAt` 也是支持的。此外，时间字段名称可以通过配置文件进行自定义修改，并可使用 `TimeMaintainDisabled` 配置在数据库实例上完整关闭该特性，具体请参考 [ORM使用配置](../../ORM使用配置/ORM使用配置.md) 章节。
 
 ## 特性启用
 
