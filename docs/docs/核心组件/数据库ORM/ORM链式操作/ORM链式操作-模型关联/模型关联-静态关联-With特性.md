@@ -14,7 +14,7 @@ description: 'GoFrame框架中的With特性，通过示例展示了如何使用W
 经过一系列的项目实践，我们发现 `ScanList` 虽然从运行时业务逻辑的角度来维护了模型关联关系，但是这种关联关系维护也不如期望的简便。因此，我们继续改进推出了可以通过模型简单维护关联关系的 `With` 模型关联特性，当然，这种特性仍然致力于提升整体框架的易用性和维护性，可以把 `With` 特性看做 `ScanList` 与模型关联关系维护的一种结合和改进。
 
 :::warning
-`With` 特性从 `goframe v1.15.7` 版本开始提供，目前属于实验性特性。
+`With` 特性目前属于实验性特性。
 :::
 ## 二、举个例子
 
@@ -328,6 +328,18 @@ type User struct {
 ```
 
 通过 `orm` 标签中的 `where` 子标签以及 `order` 子标签指定额外关联条件体积排序规则。
+
+### 7、`unscoped`标签
+在`with`结构体标签中，支持使用`unscoped`特性，例如：
+```go
+type User struct {
+    gmeta.Meta `orm:"table:user"`
+    Id         int          `json:"id"`
+    Name       string       `json:"name"`
+    UserDetail *UserDetail  `orm:"with:uid=id, unscoped:true"`
+    UserScores []*UserScore `orm:"with:uid=id, unscoped:true"`
+}
+```
 
 ## 三、详细说明
 

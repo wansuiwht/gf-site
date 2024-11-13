@@ -33,8 +33,10 @@ description: '在使用GoFrame框架进行ORM查询时的高级特性——类�
 | `double` | `float64` |
 | `decimal` | `float64` |
 | `bool` | `bool` |
+| `year` | `time.Time` |
 | `date` | `time.Time` |
 | `datetime` | `time.Time` |
+| `time` | `time.Time` |
 | `timestamp` | `time.Time` |
 | `其他` | `string` |
 

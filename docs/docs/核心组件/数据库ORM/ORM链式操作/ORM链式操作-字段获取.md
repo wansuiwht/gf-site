@@ -16,33 +16,29 @@ description: '使用GoFrame框架中的ORM链式操作来获取数据库表字�
 
 1. 假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`。
 2. 查询字段
-
-```go
-// uid,nickname,passport,password
-g.Model("user").FieldsStr()
-```
+    ```go
+    // uid,nickname,passport,password
+    g.Model("user").FieldsStr()
+    ```
 
 3. 查询字段给指定前缀
-
-```go
-// gf_uid,gf_nickname,gf_passport,gf_password
-g.Model("user").FieldsStr("gf_")
-```
+    ```go
+    // gf_uid,gf_nickname,gf_passport,gf_password
+    g.Model("user").FieldsStr("gf_")
+    ```
 
 
 ### `FieldsExStr` 示例
 
 1. 假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`。
 2. 查询字段排除
-
-```go
-// uid,nickname
-g.Model("user").FieldsExStr("passport, password")
-```
+    ```go
+    // uid,nickname
+    g.Model("user").FieldsExStr("passport, password")
+    ```
 
 3. 查询字段排除并给定前缀
-
-```go
-// gf_uid,gf_nickname
-g.Model("user").FieldsExStr("passport, password", "gf_")
-```
+    ```go
+    // gf_uid,gf_nickname
+    g.Model("user").FieldsExStr("passport, password", "gf_")
+    ```

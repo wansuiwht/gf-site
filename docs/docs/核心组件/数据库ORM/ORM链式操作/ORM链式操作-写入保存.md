@@ -14,24 +14,24 @@ description: 'GoFrame框架中ORM链式操作的写入保存方法，包括Inser
 这几个链式操作方法用于数据的写入，并且支持自动的单条或者批量的数据写入，区别如下：
 
 1. `Insert`
-
-使用 `INSERT INTO` 语句进行数据库写入，如果写入的数据中存在主键或者唯一索引时，返回失败，否则写入一条新数据。
+   
+    使用 `INSERT INTO` 语句进行数据库写入，如果写入的数据中存在主键或者唯一索引时，返回失败，否则写入一条新数据。
 
 2. `Replace`
 
-使用 `REPLACE INTO` 语句进行数据库写入，如果写入的数据中存在主键或者唯一索引时，会删除原有的记录，必定会写入一条新记录。
+    使用 `REPLACE INTO` 语句进行数据库写入，如果写入的数据中存在主键或者唯一索引时，会删除原有的记录，必定会写入一条新记录。
 
 3. `Save`
 
-使用 `INSERT INTO` 语句进行数据库写入，如果写入的数据中存在主键或者唯一索引时，更新原有数据，否则写入一条新数据。对于部分数据库，例如 `PgSQL, SQL server, Oracle` 可以使用 `OnConflict` 方法指定冲突键。
+    使用 `INSERT INTO` 语句进行数据库写入，如果写入的数据中存在主键或者唯一索引时，更新原有数据，否则写入一条新数据。对于部分数据库，例如 `PgSQL, SQL server, Oracle` 可以使用 `OnConflict` 方法指定冲突键。
 
-```go
-db.Model(table).Data(g.Map{
-       "id":          1,
-       "passport":    "p1",
-       "password":    "pw1",
-}).OnConflict("id").Save()
-```
+    ```go
+    db.Model(table).Data(g.Map{
+        "id":          1,
+        "passport":    "p1",
+        "password":    "pw1",
+    }).OnConflict("id").Save()
+    ```
 
 
 > 在部分数据库类型中，并不支持 `Replace/Save` 方法，具体请参考 [链式操作](../ORM链式操作/ORM链式操作.md) 介绍章节。
@@ -99,11 +99,7 @@ g.Model("user").Replace(g.Map{"uid": 10000, "name": "john"})
 g.Model("user").Save(g.Map{"uid": 10001, "name": "john"})
 ```
 
-数据参数也常用 `
-          struct
-        ` 类型，例如当表字段为 `
-          uid/name/site
-        ` 时：
+数据参数也常用 `struct` 类型，例如当表字段为 `uid/name/site` 时：
 
 ```go
 type User struct {

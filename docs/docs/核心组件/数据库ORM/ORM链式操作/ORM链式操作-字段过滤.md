@@ -16,47 +16,49 @@ description: '在使用GoFrame框架进行数据库操作时如何进行字段�
 
 1. 假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`。
 2. 查询字段过滤
-
-```go
-// SELECT `uid`,`nickname` FROM `user` ORDER BY `uid` asc
-g.Model("user").Fields("uid, nickname").Order("uid asc").All()
-```
+    ```go
+    // SELECT `uid`,`nickname` FROM `user` ORDER BY `uid` asc
+    g.Model("user").Fields("uid, nickname").Order("uid asc").All()
+    ```
 
 3. 写入字段过滤
-
-```go
-m := g.Map{
-    "uid"      : 10000,
-    "nickname" : "John Guo",
-    "passport" : "john",
-    "password" : "123456",
-}
-g.Model(table).Fields("nickname,passport,password").Data(m).Insert()
-// INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
-```
-
+    ```go
+    m := g.Map{
+        "uid"      : 10000,
+        "nickname" : "John Guo",
+        "passport" : "john",
+        "password" : "123456",
+    }
+    g.Model(table).Fields("nickname,passport,password").Data(m).Insert()
+    // INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
+    ```
+4. 支持`gdb.Raw`输入
+    ```go
+    // SELECT 1 FROM `user` WHERE `id`=10
+    g.Model("user").Fields(gdb.Raw("1")).Where("id", 10).Value()
+    ```
 
 ### `FieldsEx` 示例
 
 1. 假如 `user` 表有4个字段 `uid`, `nickname`, `passport`, `password`。
 2. 查询字段排除
 
-```go
-// SELECT `uid`,`nickname` FROM `user`
-g.Model("user").FieldsEx("passport, password").All()
-```
+    ```go
+    // SELECT `uid`,`nickname` FROM `user`
+    g.Model("user").FieldsEx("passport, password").All()
+    ```
 
 1. 写入字段排除
-```go
-m := g.Map{
-    "uid"      : 10000,
-    "nickname" : "John Guo",
-    "passport" : "john",
-    "password" : "123456",
-}
-g.Model(table).FieldsEx("uid").Data(m).Insert()
-// INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
-```
+    ```go
+    m := g.Map{
+        "uid"      : 10000,
+        "nickname" : "John Guo",
+        "passport" : "john",
+        "password" : "123456",
+    }
+    g.Model(table).FieldsEx("uid").Data(m).Insert()
+    // INSERT INTO `user`(`nickname`,`passport`,`password`) VALUES('John Guo','john','123456')
+    ```
 
 
 ## `OmitEmpty` 空值过滤
