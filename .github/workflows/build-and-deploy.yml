@@ -1,4 +1,4 @@
-name: 构建和部署文档
+name: Build And Deploy
 
 on:
   push:
@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    name: 构建和部署文档
+    name: Build And Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
