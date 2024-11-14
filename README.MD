@@ -4,13 +4,16 @@
 
 ```shell
 # 安装依赖
-npm ci
+yarn
+
+# 添加依赖（举例）
+yarn add @docusaurus/theme-classic
 
 # 运行
-npm run start
+yarn run start
 
 # 构建
-npm run build
+yarn run build
 ```
 
 ## 多语言
@@ -27,10 +30,10 @@ mkdir -p i18n/en/docusaurus-plugin-content-docs-quick/current
 cp -r quick/** i18n/en/docusaurus-plugin-content-docs-quick/current
 
 # 创建多语言元数据
-npm run write-translations -- --locale en
+yarn run write-translations --locale en
 
 # 指定i18n语言运行
-npm run start -- --locale en
+yarn run start --locale en
 
 ```
 
@@ -39,7 +42,7 @@ npm run start -- --locale en
 
 创建新版本
 ```bash
-npm run docusaurus docs:version v2.7.x
+yarn run docusaurus docs:version v2.7.x
 ```
 
 
@@ -49,5 +52,5 @@ npm run docusaurus docs:version v2.7.x
 
 ```shell
 # 因为插入的位置不同，我们使用 swizzle DocItem/Paginator来修改
-npm run swizzle @docusaurus/theme-classic DocItem/Paginator -- --wrap --typescript
+yarn run swizzle @docusaurus/theme-classic DocItem/Paginator --wrap --typescript
 ```
