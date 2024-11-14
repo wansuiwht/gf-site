@@ -15,13 +15,13 @@ description: '使用GoFrame框架的配置组件来管理数据库配置，包�
 :::
 简化配置通过配置项 `link` 指定，格式如下：
 
-```html
+```text
 type:username:password@protocol(address)[/dbname][?param1=value1&...&paramN=valueN]
 ```
 
 即：
 
-```html
+```text
 类型:账号:密码@协议(地址)/数据库名称?特性配置
 ```
 
@@ -63,60 +63,35 @@ database:
 
 ```yaml
 database:
-  分组名称:
-    host:                  "地址"
-    port:                  "端口"
-    user:                  "账号"
-    pass:                  "密码"
-    name:                  "数据库名称"
-    type:                  "数据库类型(如：mariadb/tidb/mysql/pgsql/mssql/sqlite/oracle/clickhouse/dm)"
-    link:                  "(可选)自定义数据库链接信息，当该字段被设置值时，以上链接字段(Host,Port,User,Pass,Name)将失效，但是type必须有值"
-    extra:                 "(可选)不同数据库的额外特性配置，由底层数据库driver定义"
-    role:                  "(可选)数据库主从角色(master/slave)，不使用应用层的主从机制请均设置为master"
-    debug:                 "(可选)开启调试模式"
-    prefix:                "(可选)表名前缀"
-    dryRun:                "(可选)ORM空跑(只读不写)"
-    charset:               "(可选)数据库编码(如: utf8/gbk/gb2312)，一般设置为utf8"
-    protocol:              "(可选)数据库连接协议，默认为TCP"
-    weight:                "(可选)负载均衡权重，用于负载均衡控制，不使用应用层的负载均衡机制请置空"
-    timezone:              "(可选)时区配置，例如:Local"
-    namespace:             "(可选)用以支持个别数据库服务Catalog&Schema区分的问题，原有的Schema代表数据库名称，而NameSpace代表个别数据库服务的Schema"
-    maxIdle:               "(可选)连接池最大闲置的连接数(默认10)"
-    maxOpen:               "(可选)连接池最大打开的连接数(默认无限制)"
-    maxLifetime:           "(可选)连接对象可重复使用的时间长度(默认30秒)"
-    queryTimeout:          "(可选)查询语句超时时长(默认无限制，注意ctx的超时时间设置)"
-    execTimeout:           "(可选)写入语句超时时长(默认无限制，注意ctx的超时时间设置)"
-    tranTimeout:           "(可选)事务处理超时时长(默认无限制，注意ctx的超时时间设置)"
-    prepareTimeout:        "(可选)预准备SQL语句执行超时时长(默认无限制，注意ctx的超时时间设置)"
-    createdAt:             "(可选)自动创建时间字段名称"
-    updatedAt:             "(可选)自动更新时间字段名称"
-    deletedAt:             "(可选)软删除时间字段名称"
-    timeMaintainDisabled:  "(可选)是否完全关闭时间更新特性，true时CreatedAt/UpdatedAt/DeletedAt都将失效"
-```
-
-完整的数据库配置项示例( `YAML`)：
-
-```yaml
-database:
-  default:
-    host:          "127.0.0.1"
-    port:          "3306"
-    user:          "root"
-    pass:          "12345678"
-    name:          "test"
-    type:          "mysql"
-    extra:         "parseTime=true"
-    role:          "master"
-    debug:         "true"
-    dryrun:        0
-    weight:        "100"
-    prefix:        "gf_"
-    charset:       "utf8"
-    timezone:      "Local"
-    maxIdle:       "10"
-    maxOpen:       "100"
-    maxLifetime:   "30s"
-     protocol
+  default:                                  # 分组名称，可自定义，默认为default
+    host: "127.0.0.1"                       # 地址
+    port: "3306"                            # 端口
+    user: "root"                            # 账号
+    pass: "your_password"                   # 密码
+    name: "your_database"                   # 数据库名称
+    type: "mysql"                           # 数据库类型(如：mariadb/tidb/mysql/pgsql/mssql/sqlite/oracle/clickhouse/dm)
+    link: ""                                # (可选)自定义数据库链接信息，当该字段被设置值时，以上链接字段(Host,Port,User,Pass,Name,Type)将失效
+    extra: ""                               # (可选)不同数据库的额外特性配置，由底层数据库driver定义，具体有哪些配置请查看具体的数据库driver介绍
+    role: "master"                          # (可选)数据库主从角色(master/slave)，默认为master。如果不使用应用主从机制请不配置或留空即可。
+    debug: false                            # (可选)开启调试模式
+    prefix: "gf_"                           # (可选)表名前缀
+    dryRun: false                           # (可选)ORM空跑(只读不写)
+    charset: "utf8"                         # (可选)数据库编码(如: utf8mb4/utf8/gbk/gb2312)，一般设置为utf8mb4。默认为utf8。
+    protocol: "tcp"                         # (可选)数据库连接协议，默认为TCP
+    weight: 100                             # (可选)负载均衡权重，用于负载均衡控制，不使用应用层的负载均衡机制请置空
+    timezone: "Local"                       # (可选)时区配置，例如:Local
+    namespace: ""                           # (可选)用以支持个别数据库服务Catalog&Schema区分的问题，原有的Schema代表数据库名称，而NameSpace代表个别数据库服务的Schema
+    maxIdle: 10                             # (可选)连接池最大闲置的连接数(默认10)
+    maxOpen: 100                            # (可选)连接池最大打开的连接数(默认无限制)
+    maxLifetime: "30s"                      # (可选)连接对象可重复使用的时间长度(默认30秒)
+    queryTimeout: "0"                       # (可选)查询语句超时时长(默认无限制，同时受ctx超时时间影响)。值为time.Parse支持的格式，如30s, 1m。
+    execTimeout: "0"                        # (可选)写入语句超时时长(默认无限制，同时受ctx超时时间影响)。值为time.Parse支持的格式，如30s, 1m。
+    tranTimeout: "0"                        # (可选)事务处理超时时长(默认无限制，同时受ctx超时时间影响)。值为time.Parse支持的格式，如30s, 1m。
+    prepareTimeout: "0"                     # (可选)预准备SQL语句执行超时时长(默认无限制，同时受ctx超时时间影响)。值为time.Parse支持的格式，如30s, 1m。
+    createdAt: "created_at"                 # (可选)自动创建时间字段名称
+    updatedAt: "updated_at"                 # (可选)自动更新时间字段名称
+    deletedAt: "deleted_at"                 # (可选)软删除时间字段名称
+    timeMaintainDisabled: false             # (可选)是否完全关闭时间更新特性，为true时CreatedAt/UpdatedAt/DeletedAt都将失效
 ```
 :::note
 使用该配置方式时， **为保证数据库安全，默认底层不支持多行 `SQL` 语句执行**。为了得到更多配置项控制，请参考推荐的简化配置，同时建议您务必了解清楚简化配置项中每个连接参数的功能作用。
