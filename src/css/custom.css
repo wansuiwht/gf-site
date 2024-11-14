@@ -159,3 +159,7 @@ table th, table td {
   padding: 0.88rem;
   font-size: 96%;
 }
+
+.markdown li > p {
+  margin: 0 0 6px 0;
+}
