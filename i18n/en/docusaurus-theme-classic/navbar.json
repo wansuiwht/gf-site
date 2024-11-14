@@ -27,6 +27,10 @@
     "message": "问题反馈",
     "description": "Navbar item with label 问题反馈"
   },
+  "item.label.返回旧版": {
+    "message": "返回旧版",
+    "description": "Navbar item with label 返回旧版"
+  },
   "item.label.框架设计": {
     "message": "框架设计",
     "description": "Navbar item with label 框架设计"
