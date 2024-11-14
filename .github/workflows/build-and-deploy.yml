@@ -29,6 +29,8 @@ jobs:
           bash .github/workflows/generate-contributors.sh
 
       - name: Build website
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
         run: |
           make build
 
