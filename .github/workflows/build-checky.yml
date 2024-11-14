@@ -1,0 +1,36 @@
+name: Build check
+
+on:
+  push:
+    branches:
+      - '!main'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  deploy:
+    name: Build check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: generate contributors
+        run: |
+          bash .github/workflows/generate-contributors.sh
+
+      - name: Build website
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+        run: |
+          make build
+

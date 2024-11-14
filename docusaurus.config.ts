@@ -34,6 +34,10 @@ const config: Config = {
       },
     },
   },
+  // https://www.docusaurus.cn/blog/releases/3.6#docusaurus-faster
+  future: {
+    experimental_faster: true,
+  },
   presets: [
     [
       'classic',
