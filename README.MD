@@ -4,13 +4,13 @@
 
 ```shell
 # 安装依赖
-npm ci
+yarn
 
 # 运行
-npm run start
+yarn run start
 
 # 构建
-npm run build
+yarn run build
 ```
 
 ## 多语言
