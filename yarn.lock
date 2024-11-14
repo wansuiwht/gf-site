@@ -1592,6 +1592,38 @@
     tslib "^2.6.0"
     utility-types "^3.10.0"
 
+"@docusaurus/theme-classic@^3.6.1":
+  version "3.6.1"
+  resolved "https://mirrors.tencent.com/npm/@docusaurus/theme-classic/-/theme-classic-3.6.1.tgz#dff4c7732b590e231dfb764e1d9a8acb5cf28954"
+  integrity sha512-5lVUmIXk7zp+n9Ki2lYWrmhbd6mssOlKCnnDJvY4QDi3EgjRisIu5g4yKXoWTIbiqE7m7q/dS9cbeShEtfkKng==
+  dependencies:
+    "@docusaurus/core" "3.6.1"
+    "@docusaurus/logger" "3.6.1"
+    "@docusaurus/mdx-loader" "3.6.1"
+    "@docusaurus/module-type-aliases" "3.6.1"
+    "@docusaurus/plugin-content-blog" "3.6.1"
+    "@docusaurus/plugin-content-docs" "3.6.1"
+    "@docusaurus/plugin-content-pages" "3.6.1"
+    "@docusaurus/theme-common" "3.6.1"
+    "@docusaurus/theme-translations" "3.6.1"
+    "@docusaurus/types" "3.6.1"
+    "@docusaurus/utils" "3.6.1"
+    "@docusaurus/utils-common" "3.6.1"
+    "@docusaurus/utils-validation" "3.6.1"
+    "@mdx-js/react" "^3.0.0"
+    clsx "^2.0.0"
+    copy-text-to-clipboard "^3.2.0"
+    infima "0.2.0-alpha.45"
+    lodash "^4.17.21"
+    nprogress "^0.2.0"
+    postcss "^8.4.26"
+    prism-react-renderer "^2.3.0"
+    prismjs "^1.29.0"
+    react-router-dom "^5.3.4"
+    rtlcss "^4.1.0"
+    tslib "^2.6.0"
+    utility-types "^3.10.0"
+
 "@docusaurus/theme-common@3.6.1":
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-common/-/theme-common-3.6.1.tgz#d160516db9482ab19f7921d8a75093885d04d3de"
