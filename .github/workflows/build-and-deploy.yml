@@ -3,7 +3,9 @@ name: Build And Deploy
 on:
   push:
     branches:
-      - 'main'
+      - main
+      - test/ci
+      
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
