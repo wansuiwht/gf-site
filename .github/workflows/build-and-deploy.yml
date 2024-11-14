@@ -19,12 +19,27 @@ jobs:
         with:
           node-version: 20
           cache: npm
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+
       - name: generate contributors
-        run: bash .github/workflows/generate-contributors.sh
+        run: |
+          bash .github/workflows/generate-contributors.sh
+
       - name: Build website
-        run: make build
+        run: |
+          NODE_OPTIONS="--max-old-space-size=4096" make build
+
       # https://github.com/appleboy/scp-action
       - name: Deploy to server
         uses: appleboy/scp-action@v0.1.7
@@ -37,6 +52,7 @@ jobs:
           target: '/home/www/goframe.org'
           strip_components: 1
           rm: true
+          
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
