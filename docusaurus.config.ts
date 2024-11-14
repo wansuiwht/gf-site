@@ -71,17 +71,6 @@ const config: Config = {
     ],
   ],
   plugins: [
-    [
-      'ideal-image',
-      {
-        quality: 70,
-        max: 1030,
-        min: 640,
-        steps: 2,
-        // Use false to debug, but it incurs huge perf costs
-        disableInDev: true,
-      } satisfies IdealImageOptions,
-    ],
     require.resolve("docusaurus-plugin-image-zoom")
   ],
   themeConfig: {
@@ -168,7 +157,6 @@ const config: Config = {
           position: 'left',
           label: '支持我们',
         },
-        // {to: 'showcase', label: 'Showcase', position: 'left'},
         {
           type: 'docsVersionDropdown',
           position: 'right',
