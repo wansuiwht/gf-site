@@ -60,6 +60,23 @@ EXAMPLE
 | `path` | 否 | `internal/boot/boot_enums.go` | 指定生成的枚举值注册Go代码文件路径 |
 | `prefixes` | 否 | - | 只会生成包名称前缀的带有指定关键字的枚举值，支持多个前缀配置 |
 
+:::info
+该命令底层使用了`AST`解析实现，将会递归分析所有依赖包的`enums`定义。如果业务项目依赖较复杂，生成`enums`可能会比较多，但绝大部分时候我们只关心自身项目或者个别依赖包的`enums`定义，那么这个时候可以使用`prefixes`参数来控制只生成特定包名前缀的`enums`。
+:::
+
+工具配置项`yaml`格式示例：
+```yaml title="hack/config.yaml"
+gfcli:
+  gen:
+    enums:
+      src:  "api"
+      path: "internal/boot/boot_enums.go"
+      prefixes: 
+      - github.com/gogf
+      - myexample/project
+```
+
+
 ## 生成文件的使用
 
 执行 `gf gen enums` 命令生成枚举分析文件 `internal/boot/boot_enums.go`，生成文件之后，需要在项目入口文件匿名引入：
@@ -70,10 +87,13 @@ import (
 )
 ```
 
-## 如何规范定义枚举值
+## 扩展阅读
+
+### 如何规范定义枚举值
 
 请参考章节： [Golang枚举值管理](../../框架设计/Golang枚举值管理.md)
 
-## 如何对枚举值进行校验
+### 如何对枚举值进行校验
 
 如果规范化定义了枚举值，并且通过命令生成了枚举值维护文件，那么在参数校验中可以使用 `enums` 规则对枚举值字段进行校验，具体规则介绍请参考章节： [数据校验-校验规则](../../核心组件/数据校验/数据校验-校验规则.md)
+

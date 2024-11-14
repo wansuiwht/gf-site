@@ -99,9 +99,9 @@ CONFIGURATION SUPPORT
 :::
 ## 配置示例
 
-`/hack/config.yaml`
+文件配置示例：
 
-```yaml
+```yaml title="hack/config.yaml"
 gfcli:
   gen:
     dao:
