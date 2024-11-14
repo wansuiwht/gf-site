@@ -2,8 +2,8 @@ name: Build check
 
 on:
   push:
-    # branches:
-    #   - '!main'
+    branches-ignore:
+      - main
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -23,10 +23,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-
-      - name: generate contributors
-        run: |
-          bash .github/workflows/generate-contributors.sh
 
       - name: Build website
         env:
