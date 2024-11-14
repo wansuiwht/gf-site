@@ -17,18 +17,16 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18
           cache: npm
 
       - name: Install dependencies
         run: |
           cat package.json
-          npm cache clean --force
           npm install
+          npm install @docusaurus/faster
 
       - name: Build website
-        env:
-          NODE_OPTIONS: "--max-old-space-size=6144"
         run: |
           make build
 
