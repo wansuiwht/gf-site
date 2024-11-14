@@ -1,5 +1,5 @@
 ---
-slug: '/docs/network/gudp'
+slug: '/docs/components/network-gudp'
 title: 'UDP组件'
 sidebar_position: 1
 hide_title: true

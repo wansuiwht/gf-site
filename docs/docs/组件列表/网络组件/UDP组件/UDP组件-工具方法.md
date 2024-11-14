@@ -1,5 +1,5 @@
 ---
-slug: '/docs/network/gudp-funcs'
+slug: '/docs/components/network-gudp-funcs'
 title: 'UDP组件-工具方法'
 sidebar_position: 1
 hide_title: true

@@ -1,5 +1,5 @@
 ---
-slug: '/docs/network/gtcp-tls'
+slug: '/docs/components/network-gtcp-tls'
 title: 'TCP组件-TLS加密'
 sidebar_position: 2
 hide_title: true

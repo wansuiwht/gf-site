@@ -118,28 +118,32 @@ const config: Config = {
           to: '/docs/design',
           items: [
             {
-              label: '框架设计',
-              to: '/docs/design',
-            },
-            {
               label: '开发工具',
               to: '/docs/cli',
             },
             {
-              label: '组件手册',
-              to: '/docs/core',
+              label: '数据校验',
+              to: '/docs/core/gvalid-rules',
             },
             {
-              label: '微服务开发',
-              to: '/docs/micro-service',
+              label: 'ORM配置管理',
+              to: '/docs/core/gdb-config-file',
             },
             {
-              label: 'WEB服务开发',
-              to: '/docs/web',
+              label: 'ORM链式操作',
+              to: '/docs/core/gdb-chaining',
             },
             {
-              label: '服务可观测性',
-              to: '/docs/obs',
+              label: 'WEB路由管理',
+              to: '/docs/web/router-pattern',
+            },
+            {
+              label: 'WEB参数处理',
+              to: '/docs/web/request',
+            },
+            {
+              label: 'HTTP客户端',
+              to: '/docs/web/http-client',
             },
           ],
         },

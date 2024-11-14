@@ -1,5 +1,5 @@
 ---
-slug: '/docs/network/gtcp-funcs'
+slug: '/docs/components/network-gtcp-funcs'
 title: 'TCP组件-工具方法'
 sidebar_position: 1
 hide_title: true

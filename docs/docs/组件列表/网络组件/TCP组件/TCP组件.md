@@ -1,5 +1,5 @@
 ---
-slug: '/docs/network/gtcp'
+slug: '/docs/components/network-gtcp'
 title: 'TCP组件'
 sidebar_position: 0
 hide_title: true
