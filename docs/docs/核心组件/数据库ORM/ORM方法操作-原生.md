@@ -11,7 +11,9 @@ description: '使用GoFrame框架进行原生SQL的ORM方法操作。详细讲�
 
 方法操作用于原生 `SQL` 执行，相对链式操作更偏底层操作一些，在 `ORM` 链式操作执行不了太过于复杂的 `SQL` 操作时，可以交给方法操作来处理。
 
-**接口文档：** [https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb](https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb)
+**接口文档：** 
+
+[https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb#DB](https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb#DB)
 
 **常用方法：**
 
