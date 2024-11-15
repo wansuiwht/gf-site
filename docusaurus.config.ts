@@ -134,6 +134,10 @@ const config: Config = {
               to: '/docs/core/gdb-chaining',
             },
             {
+              label: 'WEB服务配置',
+              to: '/docs/web/server-config-file-template',
+            },
+            {
               label: 'WEB路由管理',
               to: '/docs/web/router-pattern',
             },
