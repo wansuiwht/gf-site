@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-where'
-title: 'ORM查询-Where/WhereOr/WhereNot'
+title: 'ORM查询-Where查询'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,ORM,查询,Where条件,条件查询,数据库,条件方法,Go语言,数据处理,GoFrame框架]

@@ -1,13 +1,14 @@
 ---
 slug: '/docs/core/gdb-chaining-query-all-one-array-value-count'
-title: 'ORM查询-All/One/Array/Value/Count'
+title: 'ORM查询-记录查询'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,GoFrame框架,ORM,数据查询,All方法,One方法,Array方法,Value方法,Count方法,CountColumn方法]
 description: '使用GoFrame框架中的五个常用数据查询方法：All、One、Array、Value和Count。这些方法允许您轻松地从数据库中获取多条或单条记录，并支持条件参数的直接输入。通过示例代码，您将学习如何在GoFrame中有效地进行数据库操作。'
 ---
 
-## 这5个方法是数据查询比较常用的方法，方法列表：
+## 基本介绍
+数据查询比较常用的几个方法：
 
 ```go
 func (m *Model) All(where ...interface{} (Result, error)
@@ -28,7 +29,7 @@ func (m *Model) CountColumn(column string) (int, error)
 
 此外，也可以看得到这四个方法定义中也支持条件参数的直接输入，参数类型与 `Where` 方法一致。但需要注意，其中 `Array` 和 `Value` 方法的参数中至少应该输入字段参数。
 
-使用示例：
+## 使用示例
 
 ```go
 // SELECT * FROM `user` WHERE `score`>60

@@ -1,17 +1,17 @@
 ---
 slug: '/docs/core/gdb-chaining-query-join'
-title: 'ORM查询-LeftJoin/RightJoin/InnerJoin'
+title: 'ORM查询-Join查询'
 sidebar_position: 5
 hide_title: true
 keywords: [ORM查询,LeftJoin,RightJoin,InnerJoin,GoFrame,关联查询,数据表别名,字段操作符,联表查询,数据聚合]
 description: '在GoFrame框架中如何使用ORM进行LeftJoin、RightJoin和InnerJoin查询，包括使用不同的关联查询方法及其应用场景。文中强调在大数据量和高并发环境中谨慎使用Join操作，推荐使用代码实现数据聚合。此外，还提供了通过自定义数据表别名和字段操作符进行join查询的示例，并结合dao展示具体的使用方法。'
 ---
 
-## `LeftJoin/RightJoin/InnerJoin`
+## `*Join`系列方法
 
-1. `LeftJoin` 左关联查询；
-2. `RightJoin` 右关联查询；
-3. `InnerJoin` 内关联查询；
+1. `LeftJoin` 左关联查询。
+2. `RightJoin` 右关联查询。
+3. `InnerJoin` 内关联查询。
 :::note
 其实我们并不推荐使用 `Join` 进行联表查询，特别是在数据量比较大、并发请求量比较高的场景中，容易产生性能问题，也容易提高维护的复杂度。建议您在确定有此必要的场景下使用。
 此外，您也可以参考 
@@ -46,9 +46,9 @@ g.Model("user", "u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1
 g.Model("user").As("u").LeftJoin("user_detail", "ud", "ud.id=u.id").Where("u.id", 1).One()
 ```
 
-## `LeftJoinOnFields/RightJoinOnFields/InnerJoinOnFields`
+## `*JoinOnFields`系列方法
 
-LeftJoinOnFields/RightJoinOnFields/InnerJoinOnFields 这三个方法可以指定字段和操作符进行 join 查询，使用示例：
+`LeftJoinOnFields/RightJoinOnFields/InnerJoinOnFields`这三个方法可以指定字段和操作符进行`join`查询，使用示例：
 
 ```go
 // 查询符合条件的单条记录(第一条)

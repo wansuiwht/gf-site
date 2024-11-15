@@ -7,6 +7,7 @@ keywords: [GoFrame,GoFrame框架,ORM查询,AllAndCount,分页查询,数据查询
 description: '该文档介绍了GoFrame框架中从v2.5.0版本开始提供的AllAndCount方法，该方法用于在分页查询场景中同时检索数据记录列表及总数量，简化查询逻辑。通过在查询时忽略Limit/Page操作，AllAndCount方法能够提供一种便捷的方式对数据进行检索和计数。'
 ---
 
+## 基本介绍
 该方法从 `v2.5.0` 版本开始提供，用于同时查询数据记录列表及总数量，一般用于分页查询场景中，简化分页查询逻辑。
 
 方法定义：
@@ -34,7 +35,7 @@ func (m *Model) AllAndCount(useFieldForCount bool) (result Result, totalCount in
 
 在方法内部查询总数量时，将会忽略查询中的 `Limit/Page` 操作。
 
-使用示例：
+## 使用示例
 
 ```go
 // SELECT `uid`,`name` FROM `user` WHERE `status`='deleted' LIMIT 0,10
