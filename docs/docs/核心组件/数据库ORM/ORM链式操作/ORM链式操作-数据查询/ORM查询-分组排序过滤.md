@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-group-order-having'
-title: 'ORM查询-Group/Order/Having'
+title: 'ORM查询-分组排序过滤'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame,GoFrame框架,ORM,Group,Order,Having,排序,分组查询,条件过滤,数据库查询]

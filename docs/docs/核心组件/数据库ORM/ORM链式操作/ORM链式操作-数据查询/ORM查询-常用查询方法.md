@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-all-one-array-value-count'
-title: 'ORM查询-记录查询'
+title: 'ORM查询-常用查询方法'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,GoFrame框架,ORM,数据查询,All方法,One方法,Array方法,Value方法,Count方法,CountColumn方法]
