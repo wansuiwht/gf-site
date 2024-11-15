@@ -101,7 +101,7 @@ func genKeywordsAndDescription(
 	if err != nil {
 		return err
 	}
-	if len(resp.Choices) == 0 {
+	if len(resp.Choices) == 0 || len(resp.Choices[0].Message.Content) < 50 {
 		return gerror.New("no response")
 	}
 	content := resp.Choices[0].Message.Content
