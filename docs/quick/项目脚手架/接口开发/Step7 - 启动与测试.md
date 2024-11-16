@@ -3,6 +3,8 @@ slug: '/quick/scaffold-api-run-and-test'
 title: 'Step7 - 启动与测试'
 hide_title: true
 sidebar_position: 6
+keywords: [GoFrame,启动服务,接口文档,接口测试,RESTful API,CURD,接口校验,数据查询,数据修改,数据删除]
+description: '通过命令行启动服务，并使用swagger生成接口文档。支持创建用户、查询用户信息、修改用户数据以及删除用户的RESTful API接口。同时支持使用curl命令进行接口测试，提供详细的校验规则和错误码以确保数据的准确性和可靠性。'
 ---
 
 ## 启动服务

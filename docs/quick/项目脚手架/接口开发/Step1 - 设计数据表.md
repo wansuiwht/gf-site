@@ -3,6 +3,8 @@ slug: '/quick/scaffold-api-sql'
 title: 'Step1 - 设计数据表'
 hide_title: true
 sidebar_position: 0
+keywords: [GoFrame,数据表设计,MySQL数据库,Docker,SQL语句,InnoDB,自动增量,varchar,数据库连接,用户状态]
+description: '设计和应用MySQL数据表。我们通过定义用户信息的数据表结构并结合Docker运行MySQL进行数据表的实践操作，包括创建表结构和应用SQL语句，帮助您快速掌握数据库操作技能。'
 ---
 
 

@@ -3,6 +3,8 @@ slug: '/quick/scaffold-api-gen-dao'
 title: 'Step2 - 生成/dao/do/entity'
 hide_title: true
 sidebar_position: 2
+keywords: [GoFrame,CLI工具,数据访问对象,自动化生成,数据模型,数据库配置,Make命令,数据转换,代码生成,ORM组件]
+description: '使用GoFrame框架中的脚手架工具进行数据访问对象的自动生成，确保CLI工具配置正确，然后通过命令执行代码生成，创建数据库表后生成相应的dao、do和entity文件，以简化数据表的CURD操作。展示了具体的文件结构和使用方式，以及不同类型文件的生成原理。'
 ---
 
 

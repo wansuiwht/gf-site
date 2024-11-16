@@ -3,6 +3,8 @@ slug: '/quick/scaffold-api-config-and-route'
 title: 'Step6 - 配置与路由'
 hide_title: true
 sidebar_position: 6
+keywords: [GoFrame,GoFrame框架,数据库驱动,mysql,路由,配置,API,服务器配置,日志模块,业务模块]
+description: '引入mysql数据库驱动、添加数据库配置和路由注册步骤。详细说明了脚手架项目模板中的配置，包括工具配置和业务配置，以及如何进行配置文件的修改。'
 ---
 
 

@@ -3,6 +3,8 @@ slug: '/quick/scaffold-api-controller'
 title: 'Step4 - 生成controller代码'
 hide_title: true
 sidebar_position: 4
+keywords: [GoFrame,API代码生成,控制器代码,生成控制器,代码自动生成,接口实现,GoFrame框架,路由对象管理,接口路由实现,代码模板]
+description: '根据API定义生成控制器代码，包括API接口文件、路由对象管理及路由实现代码等内容，利用GoFrame框架的命令工具快速生成相关代码模板，确保接口的完整实现，并展示如何通过一个个文件实现具体业务逻辑。'
 ---
 
 

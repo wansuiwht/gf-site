@@ -3,6 +3,8 @@ slug: '/quick/scaffold-api-implements'
 title: 'Step5 - 完成接口逻辑实现'
 hide_title: true
 sidebar_position: 5
+keywords: [GoFrame,CURD逻辑,接口创建,参数校验,更新接口,删除接口,查询接口,数据表操作,脚手架工具,业务逻辑实现]
+description: '使用GoFrame框架完成接口逻辑实现。通过项目脚手架，预先生成了与项目业务逻辑无关的代码，集中在业务逻辑实现。介绍了CURD操作的具体实现过程，包括创建、更新、删除和查询接口的实现方法。详细阐述了数据操作过程中对参数的校验、表单数据的插入与更新、数据的智能映射和校验机制，以及如何高效地利用GoFrame框架的功能进行开发。'
 ---
 
 
