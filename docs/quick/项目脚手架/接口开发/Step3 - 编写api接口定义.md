@@ -59,14 +59,14 @@ type UpdateReq struct {
     Id     int64   `v:"required" dc:"user id"`
     Name   *string `v:"length:3,10" dc:"user name"`
     Age    *uint   `v:"between:18,200" dc:"user age"`
-    Status *Status `v:"enums" dc:"user status"`
+    Status *Status `v:"in:0,1" dc:"user status"`
 }
 type UpdateRes struct{}
 ```
 
 在这里：
 - 我们这里定义了一个用户状态类型`Status`，采用的是`Golang`里面约定俗成的`enums`定义方式。
-- 对`Status`参数的校验使用了`enums`校验规则，该规则将会校验传递的`Status`的值必需是我们定义的常量的两个值`StatusOK/StatusDisabled`，即`0/1`。具体的使用，后续会介绍。
+- 对`Status`参数的校验使用了`in:0,1`校验规则，该规则将会校验传递的`Status`的值必需是我们定义的常量的两个值`StatusOK/StatusDisabled`，即`0/1`。
 - 接口参数我们使用了指针来接收，目的是避免类型默认值对我们修改接口的影响。举个例子，假如`Status`不定义为指针，那么它就会有默认值`0`的影响，那么在处理逻辑中，很难判断到底调用端有没有传递该参数，是否要真正修改数值为`0`。但我们使用指针后，当用户没有传递该参数时，该参数的默认值就是`nil`，处理逻辑便很好做判断。
 
 ## 查询接口（单个）
@@ -89,7 +89,7 @@ type GetOneRes struct {
 type GetListReq struct {
     g.Meta `path:"/user" method:"get" tags:"User" summary:"Get users"`
     Age    *uint   `v:"between:18,200" dc:"user age"`
-    Status *Status `v:"enums" dc:"user age"`
+    Status *Status `v:"in:0,1" dc:"user age"`
 }
 type GetListRes struct {
     List []*entity.User `json:"list" dc:"user list"`

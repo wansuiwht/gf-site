@@ -28,7 +28,7 @@ type:username:password@protocol(address)[/dbname][?param1=value1&...&paramN=valu
 其中：
 
 - **数据库名称** 及 **特性配置** 为非必须参数，其他参数为必须参数。
-- **协议** 可选配置为： `tcp/udp/file`，常见配置为 `tcp`
+- **协议** 可选配置为： `tcp/udp/unix/file`，常见配置为 `tcp`
 - **特性配置** 根据不同的数据库类型，由其底层实现的第三方驱动定义，具体需要参考第三方驱动官网。例如，针对 `mysql` 驱动而言，使用的第三方驱动为： [https://github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql) 支持的特性配置如 `multiStatements` 和 `loc` 等。
 
 示例：
@@ -39,6 +39,8 @@ database:
     link:  "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
   user:
     link:  "sqlite::@file(/var/data/db.sqlite3)"
+  local:
+    link:  "mysql:username:password@unix(/tmp/mysql.sock)/dbname"
 ```
 
 不同数据类型对应的 `link` 示例如下：
@@ -95,7 +97,7 @@ database:
     timeMaintainDisabled: false # (可选)是否完全关闭时间更新特性，为true时CreatedAt/UpdatedAt/DeletedAt都将失效
 ```
 :::note
-使用该配置方式时， **为保证数据库安全，默认底层不支持多行 `SQL` 语句执行**。为了得到更多配置项控制，请参考推荐的简化配置，同时建议您务必了解清楚简化配置项中每个连接参数的功能作用。
+使用该配置方式时， **为保证数据库安全，默认底层不支持多行 `SQL` 语句执行**。为了得到更多配置项控制，请参考推荐的`link`简化配置，并了解清楚简化配置项中每个连接参数的功能作用，以及对应驱动的官方额外配置参数。
 :::
 ## 集群模式
 
@@ -135,7 +137,7 @@ database:
     debug:   true
 ```
 
-其中 `database.logger` 即为 `gdb` 的日志配置，当该配置不存在时，将会使用日志组件的默认配置，
+其中 `database.logger` 即为 `gdb` 的日志配置，这是一项特殊的配置项，当该配置不存在时，将会使用日志组件的默认配置，
 具体请参考 [日志组件-配置管理](../../../../docs/核心组件/日志组件/日志组件-配置管理.md) 章节。
 :::warning
 需要注意哦：由于 `ORM` 底层都是采用安全的预处理执行方式，提交到底层的 `SQL` 与参数其实是分开的，因此日志中记录的完整 `SQL` 仅作参考方便人工阅读，并不是真正提交到底层的 `SQL` 语句。

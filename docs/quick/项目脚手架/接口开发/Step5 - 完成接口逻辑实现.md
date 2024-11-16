@@ -8,29 +8,6 @@ sidebar_position: 5
 
 可以看到，通过项目脚手架工具，很多与项目业务逻辑无关的代码都已经预先生成好，我们只需要关注业务逻辑实现即可。我们接下来看看如何实现`CURD`逻辑吧。
 
-## 驱动加载
-
-在实现数据库操作的`CURD`接口前，我们需要先把数据库驱动引入进来，否则咱们在运行时无法连接数据，会报错的。我们在`main.go`中加上`_ "github.com/gogf/gf/contrib/drivers/mysql/v2"`即可。
-
-```go title="main.go"
-package main
-
-import (
-    _ "demo/internal/packed"
-
-    _ "github.com/gogf/gf/contrib/drivers/mysql/v2"
-
-    "github.com/gogf/gf/v2/os/gctx"
-
-    "demo/internal/cmd"
-)
-
-func main() {
-    cmd.Main.Run(gctx.GetInitCtx())
-}
-```
-
-更多关于数据库驱动的详细介绍，请参考章节 [数据库ORM](../../../docs/核心组件/数据库ORM/数据库ORM.md)。
 
 ## 创建接口
 
