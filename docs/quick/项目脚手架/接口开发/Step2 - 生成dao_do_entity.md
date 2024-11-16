@@ -10,12 +10,14 @@ sidebar_position: 2
 ## 检查工具配置
 在使用脚手架工具之前，请检查本地的`cli`工具配置是否正确。默认的配置如下：
 ```yaml title="hack/config.yaml"
+
 # CLI tool, only in development environment.
 # https://goframe.org/docs/cli
 gfcli:
   gen:
     dao:
     - link: "mysql:root:12345678@tcp(127.0.0.1:3306)/test"
+      descriptionTag: true
 
   docker:
     build: "-a amd64 -s linux -p temp -ew"
