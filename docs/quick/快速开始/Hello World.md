@@ -69,7 +69,7 @@ $ go run main.go
 
 ![img_1.png](img_1.png)
 
-## 学习总结
+## 学习小结
 
 恭喜您！您学会了使用`GoFrame`框架开发第一个`Web Server`程序！
 
