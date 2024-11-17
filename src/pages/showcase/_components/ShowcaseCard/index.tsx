@@ -75,7 +75,7 @@ function ShowcaseCard({user}: {user: User}) {
             </Link>
           </Heading>
           {user.tags.includes('favorite') && (
-            <FavoriteIcon size="medium" style={{marginRight: '0.25rem'}} />
+            <FavoriteIcon size="medium"/>
           )}
           {user.source && (
             <Link

@@ -15,9 +15,9 @@ import ShowcaseSearchBar from '@site/src/pages/showcase/_components/ShowcaseSear
 import ShowcaseCards from './_components/ShowcaseCards';
 import ShowcaseFilters from './_components/ShowcaseFilters';
 
-const TITLE = translate({message: 'Docusaurus Site Showcase'});
+const TITLE = translate({message: 'GoFrame框架使用案例展示'});
 const DESCRIPTION = translate({
-  message: 'List of websites people are building with Docusaurus',
+  message: '使用GoFrame构建的站点和组件列表',
 });
 const SUBMIT_URL = 'https://github.com/facebook/docusaurus/discussions/7826';
 
@@ -28,7 +28,7 @@ function ShowcaseHeader() {
       <p>{DESCRIPTION}</p>
       <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">
-          🙏 Please add your site
+          🙏 添加您的使用案例 🙏
         </Translate>
       </Link>
     </section>

@@ -28,6 +28,8 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-secondary-dark: #d4d5d8;
+  --ifm-button-border-color: #d4d5d8;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-size-base: 16px;
@@ -155,3 +157,22 @@ table th, table td {
 .markdown li > p {
   margin: 0 0 6px 0;
 }
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.showcase-reset {
+  padding: 8px 20px 8px 20px !important;
+  font-size: 14px !important;
+}
+

@@ -6,6 +6,7 @@
  */
 
 import React, {type ReactNode} from 'react';
+import {translate} from '@docusaurus/Translate';
 import {useClearQueryString} from '@docusaurus/theme-common';
 
 export default function ClearAllButton(): ReactNode {
@@ -13,10 +14,13 @@ export default function ClearAllButton(): ReactNode {
   // TODO translate
   return (
     <button
-      className="button button--outline button--primary"
+      className="button showcase-reset button--primary"
       type="button"
       onClick={() => clearQueryString()}>
-      Clear All
+      {translate({
+          message: '重置条件',
+          id: 'showcase.resetbutton',
+        })}
     </button>
   );
 }
