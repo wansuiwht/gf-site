@@ -26,7 +26,7 @@ gfcli:
     tagPrefixes:
     - my.image.pub/my-app
 ```
-- 其中的`dao`部分配置即本次将要执行的命令的配置，其中的`link`为需要连接的数据库配置。
+- 其中的`dao`部分配置即本次将要执行的命令的配置，其中的`link`为需要连接的数据库配置。`descriptionTag`表示为生成的`entity`代码文件增加字段描述到`description`标签中，如果数据表的`entity`对象被用到了接口`api`定义中，该标签则可作为参数描述。
 关于数据库的配置详细请参考章节 [ORM使用配置-配置文件](../../../docs/核心组件/数据库ORM/ORM使用配置/ORM使用配置-配置文件.md)。我们需要将此`link`配置改为我们的数据库连接地址。
 - 其中`docker`配置项是模板默认提供的配置，用于镜像编译。这里不做详解，感兴趣可以参考开发手册中开发工具相关章节。
 
@@ -46,21 +46,25 @@ done!
 `make`命令是在`*nix`系统下默认提供的指令，包括`Linux/MacOS`系统。如果是其他系统，例如`Windows`，默认不支持`make`命令，可以使用`gf gen dao`命令来替换。
 :::
 
-![goframe dao、do、entity](QQ_1731675850748.png)
+![goframe dao、do、entity](QQ_1731806701346.png)
 
-每张表将会生成`4`个`Go`文件：
+每张表将会生成三类`Go`文件：
 - `dao`：通过对象方式访问底层数据源，底层基于`ORM`组件实现。
 - `do`：数据转换模型，用于业务模型到数据模型的转换，由工具维护，用户不能修改。工具每次生成代码文件将会覆盖该目录。
 - `entity`：数据模型，由工具维护，用户不能修改。工具每次生成代码文件将会覆盖该目录。
 
 更详细的介绍请参考章节 [数据规范-gen dao](../../../docs/开发工具/代码生成-gen/数据规范-gen%20dao.md)
 
+:::info
+由脚手架工具生成的代码中，都会带有顶部文件注释。如果文件注释中带有`Code generated and maintained by GoFrame CLI tool. DO NOT EDIT.`的注释描述，那么表示该文件是由脚手架工具维护，每一次代码生成都会覆盖它。
+:::
+
 ### dao
 生成的`dao`文件有两个：
-- `internal/dao/internal/user.go`用于封装对数据表`user`的访问。该文件自动生成了一些数据结构和方法，简化对数据表的`CURD`操作。该文件每次生成都会覆盖，由开发工具自动维护。
-- `internal/dao/user.go`其实对`internal/dao/internal/user.go`的进一步封装，用于供其他模块直接调用访问。该文件开发者可以随意修改，或者扩展`dao`的能力。
+- `internal/dao/internal/user.go`用于封装对数据表`user`的访问。该文件自动生成了一些数据结构和方法，简化对数据表的`CURD`操作。该文件每次生成都会覆盖，由开发工具自动维护，开发者无需关心。
+- `internal/dao/user.go`其实是对`internal/dao/internal/user.go`的进一步封装，用于供其他模块直接调用访问。该文件开发者可以随意修改，或者扩展`dao`的能力。
 
-由于生成的`internal/dao/internal/user.go`文件完全由开发工具维护，那么我们只需看`internal/dao/user.go`这个生成的源码文件，后续如果有需要可以在这个文件上做功能扩展。
+由于生成的`internal/dao/internal/user.go`文件完全由开发工具维护，那么我们只需关心`internal/dao/user.go`这个生成的源码文件，后续如果有需要可以在这个文件上做功能扩展。
 
 ```go title="internal/dao/user.go"
 // =================================================================================
@@ -128,11 +132,19 @@ package entity
 
 // User is the golang structure for table user.
 type User struct {
-    Id     uint   `json:"id"     orm:"id"     ` // user id
-    Name   string `json:"name"   orm:"name"   ` // user name
-    Status int    `json:"status" orm:"status" ` // user status
-    Age    uint   `json:"age"    orm:"age"    ` // user age
+	Id     uint   `json:"id"     orm:"id"     description:"user id"`     // user id
+	Name   string `json:"name"   orm:"name"   description:"user name"`   // user name
+	Status int    `json:"status" orm:"status" description:"user status"` // user status
+	Age    uint   `json:"age"    orm:"age"    description:"user age"`    // user age
 }
 ```
 
 可以看到该`entity`数据结构定义与数据表字段一一对应。
+
+
+## 学习小结
+
+
+可以感受到，使用`GoFrame`框架便捷的脚手架工具，我们从一些重复性的代码劳动中解放了出来，极大地提高了生产效率。针对数据库的操作将会变得非常简单。
+
+在下一步，我们将设计`CURD`接口，一起看看在`GoFrame`框架中是如何快速定义接口的吧。

@@ -42,11 +42,11 @@ g.Model("user").SoftTime(gdb.SoftTimeOption{
 其中`SoftTimeType`控制时间粒度，粒度选项如下：
 ```go
 const (
-	SoftTimeTypeAuto           SoftTimeType = 0 // (Default)Auto detect the field type by table field type.
-	SoftTimeTypeTime           SoftTimeType = 1 // Using datetime as the field value.
-	SoftTimeTypeTimestamp      SoftTimeType = 2 // In unix seconds.
-	SoftTimeTypeTimestampMilli SoftTimeType = 3 // In unix milliseconds.
-	SoftTimeTypeTimestampMicro SoftTimeType = 4 // In unix microseconds.
-	SoftTimeTypeTimestampNano  SoftTimeType = 5 // In unix nanoseconds.
+    SoftTimeTypeAuto           SoftTimeType = 0 // (Default)Auto detect the field type by table field type.
+    SoftTimeTypeTime           SoftTimeType = 1 // Using datetime as the field value.
+    SoftTimeTypeTimestamp      SoftTimeType = 2 // In unix seconds.
+    SoftTimeTypeTimestampMilli SoftTimeType = 3 // In unix milliseconds.
+    SoftTimeTypeTimestampMicro SoftTimeType = 4 // In unix microseconds.
+    SoftTimeTypeTimestampNano  SoftTimeType = 5 // In unix nanoseconds.
 )
 ```
