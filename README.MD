@@ -28,7 +28,10 @@ Step3: 在`sidebars.ts`配置文件中的`courseSidebar`配置项中添加侧边
 Step4: 本地执行`yarn start`查看效果，并调整样式，直到满意后提交`PR`。
 
 
+## 案例展示
 
+- 案例图片大小限制：`640x320`，存放于目录：[src/data/showcase](./src/data/showcase/)
+- 更新数据文件：[src/data/users.tsx](./src/data/users.tsx)
 
 ## 多语言
 

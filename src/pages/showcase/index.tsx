@@ -15,7 +15,7 @@ import ShowcaseSearchBar from '@site/src/pages/showcase/_components/ShowcaseSear
 import ShowcaseCards from './_components/ShowcaseCards';
 import ShowcaseFilters from './_components/ShowcaseFilters';
 
-const TITLE = translate({message: 'GoFrame框架使用案例展示'});
+const TITLE = translate({message: 'GoFrame框架案例展示'});
 const DESCRIPTION = translate({
   message: '使用GoFrame构建的站点和组件列表',
 });

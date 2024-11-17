@@ -183,7 +183,7 @@ const config: Config = {
             },
           ],
         },
-        {to: 'showcase', label: 'Showcase', position: 'left'},
+        {to: 'showcase', label: '案例展示', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'releaseSidebar',
