@@ -19,7 +19,7 @@ const TITLE = translate({message: 'GoFrame框架案例展示'});
 const DESCRIPTION = translate({
   message: '使用GoFrame构建的站点和组件列表',
 });
-const SUBMIT_URL = 'https://github.com/facebook/docusaurus/discussions/7826';
+const SUBMIT_URL = 'https://github.com/gogf/gf-site/discussions/59';
 
 function ShowcaseHeader() {
   return (
@@ -28,7 +28,7 @@ function ShowcaseHeader() {
       <p>{DESCRIPTION}</p>
       <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">
-          🙏 添加您的使用案例 🙏
+          🙏 请添加您的使用案例 🙏
         </Translate>
       </Link>
     </section>
