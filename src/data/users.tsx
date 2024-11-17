@@ -7,9 +7,11 @@ export type TagType =
   | 'opensource'
   | 'product'
   | 'adminui'
-  | 'i18n'
+  | 'frontui'
   | 'micro'
   | 'cloudnative'
+  | 'i18n'
+
 
 const Users: User[] = [
   {
@@ -18,7 +20,7 @@ const Users: User[] = [
     preview: require('./showcase/gfast.png'),
     website: 'https://www.g-fast.cn/',
     source: 'https://github.com/tiger1103/gfast',
-    tags: ['opensource','favorite','adminui'],
+    tags: ['opensource','favorite','adminui','product'],
   },
   {
     title: 'Letga',
@@ -42,7 +44,7 @@ const Users: User[] = [
     preview: require('./showcase/hotgo.png'),
     website: 'https://hotgo.facms.cn/admin',
     source: 'https://github.com/bufanyun/hotgo',
-    tags: ['opensource','favorite','adminui'],
+    tags: ['opensource','favorite','adminui','product'],
   },
   {
     title: 'Bifrost',
@@ -54,11 +56,11 @@ const Users: User[] = [
   },
   {
     title: 'DNSLog-GO',
-    description: 'DNSLog-GO 是一款golang编写的监控 DNS 解析记录的工具，自带WEB界面。',
+    description: 'DNSLog-GO 是一款golang编写的监控 DNS 解析记录的工具，自带Web界面。',
     preview: require('./showcase/dnslog-go.png'),
     website: 'https://github.com/lanyi1998/DNSlog-GO',
     source: 'https://github.com/lanyi1998/DNSlog-GO',
-    tags: ['opensource'],
+    tags: ['opensource','frontui'],
   },
   {
     title: 'Nemo',
@@ -102,11 +104,67 @@ const Users: User[] = [
   },
   {
     title: 'EasyGoAdmin',
-    description: '是一款基于Golang、GoFrame、Vue、ElementUI、MySQL等技术栈开发平台框架，拥有完善的(RBAC)权限架构和基础核心管理模块，为了缩短研发周期，系统框架集成了代码生成器，内置平台自定义研发的模板引擎，可以一键CRUD生成整个模块的全部代码，本框架为一站式系统框架开发平台，可以帮助开发者提升开发效率、降低研发成本，同时便于后期的系统维护升级。',
+    description: '基于Golang、GoFrame、Vue、ElementUI、MySQL等技术栈开发平台框架，拥有完善的(RBAC)权限架构和基础核心管理模块，可以一键CRUD生成整个模块的全部代码，本框架为一站式系统框架开发平台，可以帮助开发者提升开发效率、降低研发成本...',
     preview: require('./showcase/easy-go-admin.png'),
     website: 'https://www.easygoadmin.vip/',
     source: 'https://gitee.com/easygoadmin/EasyGoAdmin_GoFrame_EleVue',
-    tags: ['opensource','favorite','adminui'],
+    tags: ['opensource','favorite','adminui','product'],
+  },
+  {
+    title: 'SagooIOT',
+    description: 'SagooIOT是一个基于Golang开发的开源的企业级物联网基础开发平台。负责设备管理和协议数据管理，支持跨平台的物联网接入及管理方案，平台实现了物联网开发相关的基础功能，基于该功能可以快速的搭建起一整套的IOT相关的业务系统...',
+    preview: require('./showcase/sagooiot.png'),
+    website: 'https://iotdoc.sagoo.cn/',
+    source: 'https://github.com/sagoo-cloud/sagooiot',
+    tags: ['opensource','favorite','adminui','product'],
+  },
+  {
+    title: 'GF2-Demo',
+    description: 'GF2-Demo 是一个基于 GoFrameV2 用来快速开发后端服务的脚手架, 目标使开发者只需关注业务逻辑的编写, 快速且规范地交付项目。',
+    preview: require('./showcase/gf2-demo.png'),
+    website: 'https://github.com/windvalley/gf2-demo',
+    source: 'https://github.com/windvalley/gf2-demo',
+    tags: ['opensource'],
+  },
+  {
+    title: 'Oldme-API',
+    description: 'Oldme-API 是一个基于GoFrame 的前后端分离的个人博客系统，可做为学习 GoFrame 的参考项目。欢迎访问我们博客来一起交流学习。',
+    preview: require('./showcase/oldme-api.png'),
+    website: 'https://github.com/oldme-git/oldme-api',
+    source: 'https://github.com/oldme-git/oldme-api',
+    tags: ['opensource','frontui'],
+  },
+  {
+    title: 'ZzeAdminGo',
+    description: '基于 Golang GoFrame + vue3 的、前后端分离的后台管理系统快捷使用模板，支持按钮级别的 RBAC。',
+    preview: require('./showcase/zze-admin-go.png'),
+    website: 'http://admin.zze.xyz/#/login',
+    source: 'https://github.com/zze326/zze-admin-go',
+    tags: ['opensource','adminui'],
+  },
+  {
+    title: 'GF-CMS',
+    description: '基于GoFrame v2的企业网站内容管理系统。',
+    preview: require('./showcase/gf-cms.jpg'),
+    website: 'https://github.com/demozx/gf_cms',
+    source: 'https://github.com/demozx/gf_cms',
+    tags: ['opensource','adminui','frontui'],
+  },
+  {
+    title: 'UniTranslate',
+    description: '基于 Go 实现的一个 百度 有道 谷歌 Deepl ChatGPTFree Google Translator API 免费的Google翻译 翻译统一管理接入平台 统一API 调用规范 多平台翻译...',
+    preview: require('./showcase/uni-translate.png'),
+    website: 'https://github.com/xgd16/UniTranslate',
+    source: 'https://github.com/xgd16/UniTranslate',
+    tags: ['opensource'],
+  },
+  {
+    title: 'Kkdl-Go',
+    description: '基于 GoFrameV2 的短链生成及管理管理平台。',
+    preview: require('./showcase/kkdl-go.png'),
+    website: 'https://github.com/vaebe/kkdl-go',
+    source: 'https://github.com/vaebe/kkdl-go',
+    tags: ['opensource'],
   },
 ];
 
@@ -139,7 +197,7 @@ export const Tags: {[type in TagType]: Tag} = {
   opensource: {
     label: translate({message: 'OpenSource'}),
     description: translate({
-      message: '开源项目案例，通常是开源站点或组件，可供大家参考的源码案例',
+      message: '开源项目案例，通常是开源站点或组件，可供大家参考的源码案例。',
       id: 'showcase.tag.opensource.description',
     }),
     color: '#39ca30',
@@ -148,17 +206,26 @@ export const Tags: {[type in TagType]: Tag} = {
   product: {
     label: translate({message: 'Product'}),
     description: translate({
-      message: '商业产品案例，该案例可能没有源码参考。',
+      message: '带有商业授权案例，该案例可能同时具有源码和商业授权，也有可能没有源码参考。',
       id: 'showcase.tag.product.description',
     }),
     color: '#dfd545',
+  },
+  frontui: {
+    label: translate({message: 'FrontUI'}),
+    description: translate({
+      message:
+        '带有前台UI的使用案例。',
+      id: 'showcase.tag.frontui.description',
+    }),
+    color: '#14cfc3',
   },
   adminui: {
     label: translate({message: 'AdminUI'}),
     description: translate({
       message:
-        '带有管理后台的使用案例。',
-      id: 'showcase.tag.admin.description',
+        '带有管理后台UI的使用案例。',
+      id: 'showcase.tag.adminui.description',
     }),
     color: '#14cfc3',
   },
