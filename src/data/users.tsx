@@ -8,6 +8,7 @@ export type TagType =
   | 'product'
   | 'adminui'
   | 'frontui'
+  | 'library'
   | 'micro'
   | 'cloudnative'
   | 'i18n'
@@ -36,6 +37,14 @@ const Users: User[] = [
     preview: require('./showcase/dmicro.png'),
     website: 'https://dmicro.vprix.com/#/',
     source: 'https://github.com/osgochina/dmicro',
+    tags: ['opensource','micro'],
+  },
+  {
+    title: 'Jupiter',
+    description: 'Jupiter is a governance-oriented microservice framework, which is being used for years at Douyu.',
+    preview: require('./showcase/jupiter.png'),
+    website: 'https://jupiter.douyu.com/',
+    source: 'https://github.com/douyu/jupiter',
     tags: ['opensource','micro'],
   },
   {
@@ -159,11 +168,107 @@ const Users: User[] = [
     tags: ['opensource'],
   },
   {
-    title: 'Kkdl-Go',
+    title: 'kkdl-go',
     description: '基于 GoFrameV2 的短链生成及管理管理平台。',
     preview: require('./showcase/kkdl-go.png'),
     website: 'https://github.com/vaebe/kkdl-go',
     source: 'https://github.com/vaebe/kkdl-go',
+    tags: ['opensource'],
+  },
+  {
+    title: 'VncProxy',
+    description: 'VncProxy 是使用Golang实现的Vnc远程桌面代理组件，完全解析rfb协议，支持远程桌面代理，rbs文件录屏，rbs文件回放，截图，录制视频。',
+    preview: require('./showcase/vncproxy.png'),
+    website: 'https://github.com/vprix/vncproxy',
+    source: 'https://github.com/vprix/vncproxy',
+    tags: ['opensource'],
+  },
+  {
+    title: 'gdb-adapter',
+    description: 'GoFrame ORM adapter for Casbin.',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/vance-liu/gdb-adapter',
+    source: 'https://github.com/vance-liu/gdb-adapter',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'gf-casbin-adapter',
+    description: 'GoFrame ORM adapter for Casbin.',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/hailaz/gf-casbin-adapter',
+    source: 'https://github.com/hailaz/gf-casbin-adapter',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'csrf',
+    description: 'CSRF middleware for GoFrame web server.',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/gogf/csrf',
+    source: 'https://github.com/gogf/csrf',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'goframe-jsonrpc',
+    description: '基于 goframe 实现的 jsonrpc2.0可以和 hyperf 的 jsonrpc 无缝对接。',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/zhouyaozhouyao/goframe-jsonrpc',
+    source: 'https://github.com/zhouyaozhouyao/goframe-jsonrpc',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'gf-x-tool',
+    description: 'GoFrame 的便利性使用扩展 —— GrayLog —— 快速返回处理 —— 在线翻译支持(百度,有道,google,deepl)。',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/xgd16/gf-x-tool',
+    source: 'https://github.com/xgd16/gf-x-tool',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'gf-x-rabbitMQ',
+    description: '快捷接入 RabbitMQ 解决多任务处理。',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/xgd16/gf-x-rabbitMQ',
+    source: 'https://github.com/xgd16/gf-x-rabbitMQ',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'gf-x-mqtt',
+    description: '快速接入 MQTT。',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/xgd16/gf-x-mqtt',
+    source: 'https://github.com/xgd16/gf-x-mqtt',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'gf-x-elasticSearch',
+    description: '基于 GoFrame 配置方式 快速接入 ES - ES官方扩展浅封装需要 go1.18 及以上版本。',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/xgd16/gf-x-elasticSearch',
+    source: 'https://github.com/xgd16/gf-x-elasticSearch',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'x-object-storage',
+    description: '基于 GoFrame 快速接入 亚马逊 AMS 存储。',
+    preview: require('./showcase/library.png'),
+    website: 'https://github.com/xgd16/x-object-storage',
+    source: 'https://github.com/xgd16/x-object-storage',
+    tags: ['opensource','library'],
+  },
+  {
+    title: 'go-orm-helper',
+    description: '一个为了让你在 Goland 上写 ORM 能自动补全数据库字段、Tag、生成Struct的插件。支持：Gorm、Xorm、Beego、GoFrame...）',
+    preview: require('./showcase/go-orm-helper.png'),
+    website: 'https://github.com/johnmai-dev/go-orm-helper',
+    source: 'https://github.com/johnmai-dev/go-orm-helper',
+    tags: ['opensource'],
+  },
+  {
+    title: 'GoFrame-Helper',
+    description: 'GoFrame Helper 是一款针对 GoFrame 框架 的 Goland/IntelliJ 插件，它提供了代码提示，代码模板，gf 工具自动监听等功能，让您的 GoFrame 之旅更为愉快。',
+    preview: require('./showcase/goframe-helper.png'),
+    website: 'https://github.com/oldme-git/GoFrame-Helper',
+    source: 'https://github.com/oldme-git/GoFrame-Helper',
     tags: ['opensource'],
   },
 ];
@@ -193,7 +298,6 @@ export const Tags: {[type in TagType]: Tag} = {
     }),
     color: '#e9669e',
   },
-
   opensource: {
     label: translate({message: 'OpenSource'}),
     description: translate({
@@ -202,7 +306,6 @@ export const Tags: {[type in TagType]: Tag} = {
     }),
     color: '#39ca30',
   },
-
   product: {
     label: translate({message: 'Product'}),
     description: translate({
@@ -218,7 +321,7 @@ export const Tags: {[type in TagType]: Tag} = {
         '带有前台UI的使用案例。',
       id: 'showcase.tag.frontui.description',
     }),
-    color: '#14cfc3',
+    color: '#0E8A16',
   },
   adminui: {
     label: translate({message: 'AdminUI'}),
@@ -228,6 +331,15 @@ export const Tags: {[type in TagType]: Tag} = {
       id: 'showcase.tag.adminui.description',
     }),
     color: '#14cfc3',
+  },
+  library: {
+    label: translate({message: 'Library'}),
+    description: translate({
+      message:
+        'Go源码组件，供import使用。',
+      id: 'showcase.tag.library.description',
+    }),
+    color: '#1D76DB',
   },
   i18n: {
     label: translate({message: 'I18n'}),
@@ -245,7 +357,7 @@ export const Tags: {[type in TagType]: Tag} = {
         '该案例支持微服务开发架构。',
       id: 'showcase.tag.micro.description',
     }),
-    color: '#006B75',
+    color: '#E99695',
   },
   cloudnative: {
     label: translate({message: 'CloudNative'}),
