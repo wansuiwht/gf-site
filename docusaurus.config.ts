@@ -158,11 +158,13 @@ const config: Config = {
           to: '/course',
           items: [
             {
+              sidebarId: 'courseSidebar',
               label: '视频入门教程',
               to: '/course/bilibili-video',
             },
             {
-              label: '星辰英语本⭐️',
+              sidebarId: 'courseStarBookSidebar',
+              label: '实战教程-星辰英语本',
               to: '/course/starbook',
             },
           ],

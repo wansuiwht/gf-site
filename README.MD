@@ -1,4 +1,5 @@
-# gf-site
+
+`GoFrame`官网源码。
 
 ## 本地运行
 
@@ -10,11 +11,24 @@ yarn
 yarn add @docusaurus/theme-classic
 
 # 运行
-yarn run start
+yarn start
 
 # 构建
-yarn run build
+yarn build
 ```
+
+## 教程贡献
+
+Step1: 教程的markdown文件请提交到`docs/course`目录下，每个教程使用单独的目录管理。
+
+Step2: 在`docusaurus.config.ts`配置文件中添加顶部菜单。
+
+Step3: 在`sidebars.ts`配置文件中的`courseSidebar`配置项中添加侧边栏菜单，参考已有配置。
+
+Step4: 本地执行`yarn start`查看效果，并调整样式，直到满意后提交`PR`。
+
+
+
 
 ## 多语言
 
@@ -23,18 +37,11 @@ yarn run build
 https://docusaurus.io/docs/i18n/introduction#translation-files-location
 https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#i18n
 
-mkdir -p i18n/en/docusaurus-plugin-content-docs/current
-cp -r docs/** i18n/en/docusaurus-plugin-content-docs/current
-
-mkdir -p i18n/en/docusaurus-plugin-content-docs-quick/current
-cp -r quick/** i18n/en/docusaurus-plugin-content-docs-quick/current
-
 # 创建多语言元数据
 yarn run write-translations --locale en
 
 # 指定i18n语言运行
 yarn run start --locale en
-
 ```
 
 

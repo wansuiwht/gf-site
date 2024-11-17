@@ -28,52 +28,52 @@ import "github.com/gogf/gf/v2/net/gudp"
 package main
 
 import (
-	"context"
-	"fmt"
-	"time"
+    "context"
+    "fmt"
+    "time"
 
-	"github.com/gogf/gf/v2/frame/g"
-	"github.com/gogf/gf/v2/net/gudp"
-	"github.com/gogf/gf/v2/os/gtime"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/gudp"
+    "github.com/gogf/gf/v2/os/gtime"
 )
 
 func main() {
-	var (
-		ctx    = context.Background()
-		logger = g.Log()
-	)
-	// Server
-	go gudp.NewServer("127.0.0.1:8999", func(conn *gudp.ServerConn) {
-		defer conn.Close()
-		for {
-			data, addr, err := conn.Recv(-1)
-			if len(data) > 0 {
-				if err = conn.Send(append([]byte("> "), data...), addr); err != nil {
-					logger.Error(ctx, err)
-				}
-			}
-			if err != nil {
-				logger.Error(ctx, err)
-			}
-		}
-	}).Run()
+    var (
+        ctx    = context.Background()
+        logger = g.Log()
+    )
+    // Server
+    go gudp.NewServer("127.0.0.1:8999", func(conn *gudp.ServerConn) {
+        defer conn.Close()
+        for {
+            data, addr, err := conn.Recv(-1)
+            if len(data) > 0 {
+                if err = conn.Send(append([]byte("> "), data...), addr); err != nil {
+                    logger.Error(ctx, err)
+                }
+            }
+            if err != nil {
+                logger.Error(ctx, err)
+            }
+        }
+    }).Run()
 
-	time.Sleep(time.Second)
+    time.Sleep(time.Second)
 
-	// Client
-	for {
-		if conn, err := gudp.NewClientConn("127.0.0.1:8999"); err == nil {
-			if b, err := conn.SendRecv([]byte(gtime.Datetime()), -1); err == nil {
-				fmt.Println(string(b), conn.LocalAddr(), conn.RemoteAddr())
-			} else {
-				logger.Error(ctx, err)
-			}
-			conn.Close()
-		} else {
-			logger.Error(ctx, err)
-		}
-		time.Sleep(time.Second)
-	}
+    // Client
+    for {
+        if conn, err := gudp.NewClientConn("127.0.0.1:8999"); err == nil {
+            if b, err := conn.SendRecv([]byte(gtime.Datetime()), -1); err == nil {
+                fmt.Println(string(b), conn.LocalAddr(), conn.RemoteAddr())
+            } else {
+                logger.Error(ctx, err)
+            }
+            conn.Close()
+        } else {
+            logger.Error(ctx, err)
+        }
+        time.Sleep(time.Second)
+    }
 }
 ```
 
