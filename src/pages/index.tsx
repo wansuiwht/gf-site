@@ -147,7 +147,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">高扩展性</h3>
                             <div className="mb-2">
-                                灵活的组件接口设计，允许开发者轻松添加新功能、模块或集成第三方库以满足不同的业务需求。
+                                灵活的接口设计，允许开发者轻松添加新功能、模块或集成第三方库以满足不同的业务需求。
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">详尽的开发文档</h3>
                             <div className="mb-2">
-                                涵盖框架各个方面，从基础使用到高级特性，为开发者提供全面、细致且易理解的参考资料。
+                                涵盖框架各个方面的开发文档，从基础使用到高级特性，为开发者提供全面、细致且易理解的参考资料。
                             </div>
                         </div>
                     </div>
@@ -211,7 +211,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">OpenTelemetry可观测性</h3>
                             <div className="mb-2">
-                                精准地追踪、监控应用的各项指标和行为，为开发者提供深入的洞察，助力优化应用性能与可靠性。
+                                精准地追踪、监控应用的指标和行为，为开发者提供深入的洞察，助力优化应用性能与可靠性。
                             </div>
                         </div>
                     </div>
