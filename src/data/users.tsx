@@ -16,7 +16,7 @@ const Users: User[] = [
     preview: require('./showcase/agilets.png'),
     website: 'https://agile-ts.org/',
     source: 'https://github.com/agile-ts/documentation',
-    tags: ['opensource'],
+    tags: ['opensource','favorite'],
   },
   {
     title: 'AI-Speaker',
