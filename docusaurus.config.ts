@@ -2,6 +2,7 @@ const LATEST_VERSION_LABEL = '2.8.x(Latest)';
 
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
+import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
@@ -69,7 +70,20 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  plugins: [require.resolve('docusaurus-plugin-image-zoom')],
+  plugins: [
+    require.resolve('docusaurus-plugin-image-zoom'),
+    [
+      'ideal-image',
+      {
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      } satisfies IdealImageOptions,
+    ],
+  ],
   themeConfig: {
     metadata: [
       {
@@ -169,6 +183,7 @@ const config: Config = {
             },
           ],
         },
+        {to: 'showcase', label: 'Showcase', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'releaseSidebar',
