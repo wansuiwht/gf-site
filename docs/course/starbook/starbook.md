@@ -3,6 +3,8 @@ slug: '/course/starbook'
 title: '实战教程-星辰英语本'
 hide_title: true
 sidebar_position: 1
+keywords: [GoFrame,GoFrame框架,星辰英语本,Golang教程,编程技巧,项目开发,程序员入门,技术栈,软件开发,计算机科学]
+description: '本书通过GoFrame框架，以星辰英语本项目实战为例，帮助读者快速掌握GoFrame框架和Golang语言。不涉及前端开发，适合对Golang有基础的读者，包括在校学生和程序员。本书提供编程技巧和经验分享，建议读者结合官方手册进行学习，以更好地理解和实践。'
 ---
 
 ## 本书简介
