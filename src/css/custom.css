@@ -102,15 +102,7 @@ body .button--secondary {
   --ifm-h2-vertical-rhythm-top: 1;
 }
 
-.markdown > p:first-child {
-  margin-top: 20px;
-}
-
-.markdown > div:first-child {
-  margin-top: 20px;
-}
-
-.markdown > section:first-child {
+.markdown > *:first-child {
   margin-top: 20px;
 }
 
