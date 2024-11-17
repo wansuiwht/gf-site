@@ -152,12 +152,27 @@ const config: Config = {
           ],
         },
         {
+          sidebarId: 'courseSidebar',
+          position: 'left',
+          label: '社区教程',
+          to: '/course',
+          items: [
+            {
+              label: '视频入门教程',
+              to: '/course/bilibili-video',
+            },
+            {
+              label: '星辰英语本⭐️',
+              to: '/course/starbook',
+            },
+          ],
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'releaseSidebar',
           position: 'left',
           label: '发布记录',
         },
-
         {
           type: 'docSidebar',
           sidebarId: 'shareSidebar',
