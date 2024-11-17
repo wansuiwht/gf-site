@@ -25,24 +25,24 @@ import "github.com/gogf/gf/v2/net/gudp"
 package main
 
 import (
-	"fmt"
+    "fmt"
 
-	"github.com/gogf/gf/v2/net/gudp"
+    "github.com/gogf/gf/v2/net/gudp"
 )
 
 func main() {
-	handler := func(conn *gudp.ServerConn) {
-		defer conn.Close()
-		for {
-			if data, addr, _ := conn.Recv(-1); len(data) > 0 {
-				fmt.Println(string(data), addr.String())
-			}
-		}
-	}
-	err := gudp.NewServer("127.0.0.1:8999", handler).Run()
-	if err != nil {
-		fmt.Println(err)
-	}
+    handler := func(conn *gudp.ServerConn) {
+        defer conn.Close()
+        for {
+            if data, addr, _ := conn.Recv(-1); len(data) > 0 {
+                fmt.Println(string(data), addr.String())
+            }
+        }
+    }
+    err := gudp.NewServer("127.0.0.1:8999", handler).Run()
+    if err != nil {
+        fmt.Println(err)
+    }
 }
 ```
 
