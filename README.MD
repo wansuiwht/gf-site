@@ -10,6 +10,9 @@ yarn
 # 添加依赖（举例）
 yarn add @docusaurus/theme-classic
 
+# 删除依赖（举例）
+yarn remove @docusaurus/theme-classic
+
 # 运行
 yarn start
 
