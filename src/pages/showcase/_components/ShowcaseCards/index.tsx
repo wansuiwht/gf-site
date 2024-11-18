@@ -27,7 +27,7 @@ const otherUsers = sortedUsers.filter(
 function HeadingNoResult() {
   return (
     <Heading as="h2">
-      <Translate id="showcase.usersList.noResult">No result</Translate>
+      <Translate id="showcase.usersList.noResult">没有符合条件的案例</Translate>
     </Heading>
   );
 }

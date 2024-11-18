@@ -15,9 +15,9 @@ import ShowcaseSearchBar from '@site/src/pages/showcase/_components/ShowcaseSear
 import ShowcaseCards from './_components/ShowcaseCards';
 import ShowcaseFilters from './_components/ShowcaseFilters';
 
-const TITLE = translate({message: 'GoFrame框架案例展示'});
+const TITLE = translate({message: '🌟GoFrame框架案例展示, Time to shine🌟'});
 const DESCRIPTION = translate({
-  message: '基于GoFrame构建的站点以及适用于GoFrame的开源组件列表',
+  message: '🔥基于GoFrame构建的站点, 以及适用于GoFrame的开源组件列表🔥',
 });
 const SUBMIT_URL = 'https://github.com/gogf/gf-site/discussions/59';
 

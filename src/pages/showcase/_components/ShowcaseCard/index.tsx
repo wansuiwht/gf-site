@@ -84,7 +84,7 @@ function ShowcaseCard({user}: {user: User}) {
                 'button button--secondary button--sm',
                 styles.showcaseCardSrcBtn,
               )}>
-              <Translate id="showcase.card.sourceLink">source</Translate>
+              <Translate id="showcase.card.sourceLink">源码</Translate>
             </Link>
           )}
         </div>
