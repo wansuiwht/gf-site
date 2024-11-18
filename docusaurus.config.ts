@@ -71,17 +71,17 @@ const config: Config = {
   ],
   plugins: [
     require.resolve('docusaurus-plugin-image-zoom'),
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            to: '/release/v2.8.0', // 目标页面的路径
-            from: ['/release/v2.8'], // 要重定向的路径列表
-          },
-        ],
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-client-redirects',
+    //   {
+    //     redirects: [
+    //       {
+    //         to: '/release/v2.8.0', // 目标页面的路径
+    //         from: ['/release/v2.8'], // 要重定向的路径列表
+    //       },
+    //     ],
+    //   },
+    // ],
   ],
   themeConfig: {
     metadata: [
