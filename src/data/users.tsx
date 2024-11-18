@@ -17,7 +17,7 @@ export type TagType =
 const Users: User[] = [
   {
     title: 'GFast',
-    description: '基于GoFrame框架的后台管理系统。',
+    description: '基于GoFrame 2.X+Vue3+Element Plus+MySQL、PostgreSQL等技术的管理系统，拥有后台基础管理模块，吸取数千用户建议的代码生成工具，全部自主研发，功能完整可控的插件，自定义表单及符合国人审批习惯的流程设计让您拥有众多零代码能力。',
     preview: require('./showcase/gfast.png'),
     website: 'https://www.g-fast.cn/',
     source: 'https://github.com/tiger1103/gfast',
@@ -224,27 +224,11 @@ const Users: User[] = [
     tags: ['opensource','library'],
   },
   {
-    title: 'gf-x-rabbitMQ',
-    description: '快捷接入 RabbitMQ 解决多任务处理。',
-    preview: require('./showcase/library.png'),
-    website: 'https://github.com/xgd16/gf-x-rabbitMQ',
-    source: 'https://github.com/xgd16/gf-x-rabbitMQ',
-    tags: ['opensource','library'],
-  },
-  {
     title: 'gf-x-mqtt',
     description: '快速接入 MQTT。',
     preview: require('./showcase/library.png'),
     website: 'https://github.com/xgd16/gf-x-mqtt',
     source: 'https://github.com/xgd16/gf-x-mqtt',
-    tags: ['opensource','library'],
-  },
-  {
-    title: 'gf-x-elasticSearch',
-    description: '基于 GoFrame 配置方式 快速接入 ES - ES官方扩展浅封装需要 go1.18 及以上版本。',
-    preview: require('./showcase/library.png'),
-    website: 'https://github.com/xgd16/gf-x-elasticSearch',
-    source: 'https://github.com/xgd16/gf-x-elasticSearch',
     tags: ['opensource','library'],
   },
   {
