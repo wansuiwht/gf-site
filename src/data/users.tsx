@@ -17,7 +17,7 @@ export type TagType =
 const Users: User[] = [
   {
     title: 'GFast',
-    description: '基于GoFrame 2.X+Vue3+Element Plus+MySQL、PostgreSQL等技术的管理系统，拥有后台基础管理模块，吸取数千用户建议的代码生成工具，全部自主研发，功能完整可控的插件，自定义表单及符合国人审批习惯的流程设计让您拥有众多零代码能力。',
+    description: '基于GoFrame 2.x+Vue3+Element Plus+MySQL、PostgreSQL等技术的管理系统，拥有后台基础管理模块，吸取数千用户建议的代码生成工具，全部自主研发，功能完整可控的插件，自定义表单及符合国人审批习惯的流程设计让您拥有众多零代码能力。',
     preview: require('./showcase/gfast.png'),
     website: 'https://www.g-fast.cn/',
     source: 'https://github.com/tiger1103/gfast',
@@ -49,7 +49,7 @@ const Users: User[] = [
   },
   {
     title: 'HotGo',
-    description: 'HotGo是一个基于 vue 和 goframe2.0 开发的全栈前后端分离的开发基础平台和移动应用平台，集成jwt鉴权，动态路由，动态菜单，casbin鉴权，消息队列，定时任务等功能，提供多种常用场景文件，让您把更多时间专注在业务开发上。 ',
+    description: 'HotGo是一个基于 Vue 和 GoFrame 2.0 开发的全栈前后端分离的开发基础平台和移动应用平台，集成jwt鉴权，动态路由，动态菜单，casbin鉴权，消息队列，定时任务等功能，提供多种常用场景文件，让您把更多时间专注在业务开发上。 ',
     preview: require('./showcase/hotgo.png'),
     website: 'https://hotgo.facms.cn/admin',
     source: 'https://github.com/bufanyun/hotgo',
@@ -285,7 +285,7 @@ export const Tags: {[type in TagType]: Tag} = {
   opensource: {
     label: translate({message: 'OpenSource'}),
     description: translate({
-      message: '开源项目案例，通常是开源站点或组件，可供大家参考的源码案例。',
+      message: '开源项目案例，通常是开源站点或组件，带有参考的源码案例。',
       id: 'showcase.tag.opensource.description',
     }),
     color: '#39ca30',
@@ -293,7 +293,7 @@ export const Tags: {[type in TagType]: Tag} = {
   product: {
     label: translate({message: 'Product'}),
     description: translate({
-      message: '带有商业授权案例，该案例可能同时具有源码和商业授权，也有可能没有源码参考。',
+      message: '带有商业授权案例，该案例可能同时具有源码和商业授权。',
       id: 'showcase.tag.product.description',
     }),
     color: '#dfd545',

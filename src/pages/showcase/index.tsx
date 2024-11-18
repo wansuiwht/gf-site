@@ -17,7 +17,7 @@ import ShowcaseFilters from './_components/ShowcaseFilters';
 
 const TITLE = translate({message: 'GoFrame框架案例展示'});
 const DESCRIPTION = translate({
-  message: '使用GoFrame构建的站点和组件列表',
+  message: '基于GoFrame构建的站点以及适用于GoFrame的开源组件列表',
 });
 const SUBMIT_URL = 'https://github.com/gogf/gf-site/discussions/59';
 
@@ -28,7 +28,7 @@ function ShowcaseHeader() {
       <p>{DESCRIPTION}</p>
       <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">
-          🙏 请提交您的使用案例
+        👋 欢迎提交您的使用案例
         </Translate>
       </Link>
     </section>
