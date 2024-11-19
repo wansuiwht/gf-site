@@ -76,7 +76,7 @@ function HeadingText() {
       <Heading as="h2">
         <Translate id="showcase.filters.title">标签过滤</Translate>
       </Heading>
-      <span>{siteCountPlural(filteredUsers.length)}</span>
+      <span className='showcase-result-cases'>{siteCountPlural(filteredUsers.length)}</span>
     </div>
   );
 }

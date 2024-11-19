@@ -11,7 +11,6 @@ export type TagType =
   | 'library'
   | 'micro'
   | 'cloudnative'
-  | 'i18n'
 
 
 const Users: User[] = [
@@ -324,15 +323,6 @@ export const Tags: {[type in TagType]: Tag} = {
       id: 'showcase.tag.library.description',
     }),
     color: '#1D76DB',
-  },
-  i18n: {
-    label: translate({message: 'I18n'}),
-    description: translate({
-      message:
-        '该案例支持不同语言的国际化。',
-      id: 'showcase.tag.i18n.description',
-    }),
-    color: '#5319E7',
   },
   micro: {
     label: translate({message: 'MicroService'}),

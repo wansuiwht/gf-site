@@ -176,3 +176,34 @@ table th, table td {
   font-size: 14px !important;
 }
 
+.showcase-title-mobile, .showcase-description-mobile {
+  display: none;
+}
+
+/* too avoid too many navbar items when in short window size */
+@media only screen and (max-width: 1280px) {
+  .navbar__items {
+    white-space: nowrap;
+  }
+
+  .navbar__items--right a {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 680px) {
+  .showcase-title, .showcase-description {
+    display: none;
+  }
+
+  .showcase-title-mobile, .showcase-description-mobile {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .showcase-result-cases {
+    display: none;
+  }
+}

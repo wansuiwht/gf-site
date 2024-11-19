@@ -16,16 +16,22 @@ import ShowcaseCards from './_components/ShowcaseCards';
 import ShowcaseFilters from './_components/ShowcaseFilters';
 
 const TITLE = translate({message: '🌟GoFrame框架案例展示, Time to shine🌟'});
+const TITLE_MOBILE = translate({message: '🌟框架案例展示🌟'});
 const DESCRIPTION = translate({
   message: '🔥基于GoFrame构建的站点, 以及适用于GoFrame的开源组件列表🔥',
+});
+const DESCRIPTION_MOBILE = translate({
+  message: '🔥基于GoFrame构建的站点及开源组件列表🔥',
 });
 const SUBMIT_URL = 'https://github.com/gogf/gf-site/discussions/59';
 
 function ShowcaseHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
-      <Heading as="h1">{TITLE}</Heading>
-      <p>{DESCRIPTION}</p>
+      <Heading as="h1" className="showcase-title">{TITLE}</Heading>
+      <Heading as="h1" className="showcase-title-mobile">{TITLE_MOBILE}</Heading>
+      <p className="showcase-description">{DESCRIPTION}</p>
+      <p className="showcase-description-mobile">{DESCRIPTION_MOBILE}</p>
       <Link className="button button--primary" to={SUBMIT_URL}>
         <Translate id="showcase.header.button">
         👋 欢迎提交您的使用案例

@@ -191,16 +191,10 @@ const config: Config = {
           label: '发布记录',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'shareSidebar',
+          sidebarId: 'communitySidebar',
           position: 'left',
-          label: '技术交流',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'supportusSidebar',
-          position: 'left',
-          label: '支持我们',
+          label: '开源社区',
+          to: '/share/group',
         },
         {
           type: 'docsVersionDropdown',
@@ -211,16 +205,6 @@ const config: Config = {
         //   type: 'localeDropdown',
         //   position: 'right',
         // },
-        {
-          href: 'https://github.com/gogf/gf/issues',
-          position: 'right',
-          label: '问题反馈',
-        },
-        {
-          href: 'https://wiki.goframe.org/',
-          position: 'right',
-          label: '返回旧版',
-        },
         {
           href: 'https://github.com/gogf/gf',
           position: 'right',
