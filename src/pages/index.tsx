@@ -9,8 +9,7 @@ function HomepageHeader() {
         <header>
             <div className="container logo-container">
                 <div>
-                    <img src={require('/markdown/0ec2082abc02139e3fc1ce9090862d33.png').default}
-                        className='logo' />
+                    <img src='/markdown/0ec2082abc02139e3fc1ce9090862d33.png' className='logo' />
                     <div className="logo-badges">
                         <a href="https://pkg.go.dev/github.com/gogf/gf/v2" target="_blank">
                             <img src="https://godoc.org/github.com/gogf/gf?status.svg" alt="Go Doc" />
