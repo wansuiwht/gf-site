@@ -27,13 +27,13 @@ $ go run main.go
 ----------|--------|------------|-------------------------------------------------------|----------------------------------
   :8000   | GET    | /user      | demo/internal/controller/user.(*ControllerV1).GetList | ghttp.MiddlewareHandlerResponse  
 ----------|--------|------------|-------------------------------------------------------|----------------------------------
-  :8000   | PUT    | /user      | demo/internal/controller/user.(*ControllerV1).Create  | ghttp.MiddlewareHandlerResponse  
+  :8000   | POST   | /user      | demo/internal/controller/user.(*ControllerV1).Create  | ghttp.MiddlewareHandlerResponse  
 ----------|--------|------------|-------------------------------------------------------|----------------------------------
   :8000   | DELETE | /user/{id} | demo/internal/controller/user.(*ControllerV1).Delete  | ghttp.MiddlewareHandlerResponse  
 ----------|--------|------------|-------------------------------------------------------|----------------------------------
   :8000   | GET    | /user/{id} | demo/internal/controller/user.(*ControllerV1).GetOne  | ghttp.MiddlewareHandlerResponse  
 ----------|--------|------------|-------------------------------------------------------|----------------------------------
-  :8000   | POST   | /user/{id} | demo/internal/controller/user.(*ControllerV1).Update  | ghttp.MiddlewareHandlerResponse  
+  :8000   | PUT    | /user/{id} | demo/internal/controller/user.(*ControllerV1).Update  | ghttp.MiddlewareHandlerResponse  
 ----------|--------|------------|-------------------------------------------------------|----------------------------------
 ```
 
@@ -59,13 +59,13 @@ $ go run main.go
 
 ### 创建接口
 
-创建请求需要使用`PUT`方式提交。
+创建请求需要使用`POST`方式提交。
 
 ```bash
-$ curl -X PUT 'http://127.0.0.1:8000/user' -d '{"name":"john","age":20}'
+$ curl -X POST 'http://127.0.0.1:8000/user' -d '{"name":"john","age":20}'
 {"code":0,"message":"","data":{"id":1}}
 
-$ curl -X PUT 'http://127.0.0.1:8000/user' -d '{"name":"alice","age":18}'
+$ curl -X POST 'http://127.0.0.1:8000/user' -d '{"name":"alice","age":18}'
 {"code":0,"message":"","data":{"id":2}}
 ```
 这里返回的`code`为`0`表示执行成功。
@@ -73,10 +73,10 @@ $ curl -X PUT 'http://127.0.0.1:8000/user' -d '{"name":"alice","age":18}'
 我们构造不符合校验规则的请求，看看效果：
 
 ```bash
-$ curl -X PUT 'http://127.0.0.1:8000/user' -d '{"name":"smith","age":16}'
+$ curl -X POST 'http://127.0.0.1:8000/user' -d '{"name":"smith","age":16}'
 {"code":51,"message":"The Age value `16` must be between 18 and 200","data":null}
 
-$ curl -X PUT 'http://127.0.0.1:8000/user' -d '{"name":"sm","age":18}'
+$ curl -X POST 'http://127.0.0.1:8000/user' -d '{"name":"sm","age":18}'
 {"code":51,"message":"The Name value `sm` length must be between 3 and 10","data":null}
 ```
 
@@ -105,10 +105,10 @@ $ curl -X GET 'http://127.0.0.1:8000/user?age=18'
 
 ### 修改接口
 
-创建请求需要使用`POST`方式提交。
+创建请求需要使用`PUT`方式提交。
 
 ```bash
-$ curl -X POST 'http://127.0.0.1:8000/user/1' -d '{"age":26}'
+$ curl -X PUT 'http://127.0.0.1:8000/user/1' -d '{"age":26}'
 {"code":0,"message":"","data":null}
 ```
 

@@ -11,12 +11,12 @@ description: '在项目的api目录下定义CURD接口，采用RESTful风格的�
 - 接口我们使用`RESTful`风格设计，充分使用`GET/PUT/POST/DELETE`的`HTTP Method`，这样规范设计的接口会非常优雅。
 - 同样的，我们默认开始使用`v1`版本。使用版本号做为良好的开发习惯，有利于未来接口的兼容性维护。
 
-![user api definition](QQ_1731746554258.png)
+![user api definition](QQ_1732094808338.png)
 
 ## 创建接口
 ```go title="api/user/v1/user.go"
 type CreateReq struct {
-    g.Meta `path:"/user" method:"put" tags:"User" summary:"Create user"`
+    g.Meta `path:"/user" method:"post" tags:"User" summary:"Create user"`
     Name   string `v:"required|length:3,10" dc:"user name"`
     Age    uint   `v:"required|between:18,200" dc:"user age"`
 }
@@ -62,7 +62,7 @@ const (
 )
 
 type UpdateReq struct {
-    g.Meta `path:"/user/{id}" method:"post" tags:"User" summary:"Update user"`
+    g.Meta `path:"/user/{id}" method:"put" tags:"User" summary:"Update user"`
     Id     int64   `v:"required" dc:"user id"`
     Name   *string `v:"length:3,10" dc:"user name"`
     Age    *uint   `v:"between:18,200" dc:"user age"`
