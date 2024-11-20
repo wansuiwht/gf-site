@@ -254,6 +254,14 @@ const Users: User[] = [
     source: 'https://github.com/oldme-git/GoFrame-Helper',
     tags: ['opensource'],
   },
+  {
+    title: '50CMSgo',
+    description: 'GoFrame+pearadmin构建的后端开发框架，可以快速搭建政府国产化网站，企业网站，微信小程序商城，html代码解耦合，传统html+css+js超级便于维护，可以跨平台部署在winserver，以及各种过国产操作系统。',
+    preview: require('./showcase/50CMSgo.jpg'),
+    website: 'https://gitee.com/dexters/50CMSgo',
+    source: 'https://gitee.com/dexters/50CMSgo',
+    tags: ['opensource','adminui','frontui'],
+  },
 ];
 
 export type User = {
