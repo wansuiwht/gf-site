@@ -153,7 +153,7 @@ gfcli:
 
 ### 参数：`typeMapping`
 
-参数`typeMapping`支持按照数据库字段类型自定义生成Go代码中的数据类型，默认值为：
+参数`typeMapping`支持配置数据库字段类型对应的`Go`数据类型，默认值为：
 ```yaml
 decimal:
   type: float64
@@ -173,7 +173,7 @@ decimal:
 
 ### 参数：`fieldMapping`
 
-参数`fieldMapping`提供更高灵活度的字段类型映射配置，支持按照数据库字段名称自定义生成Go代码中的数据类型。除了配置名称不一样外，配置内容与`typeMapping`一致。配置示例：
+参数`fieldMapping`提供细粒度的字段类型映射配置，支持配置指定数据库字段生成的`Go`数据类型。除了配置名称不一样外，配置内容与`typeMapping`一致。配置示例：
 ```yaml
 paid_orders.amount:
   type:   decimal.Decimal
