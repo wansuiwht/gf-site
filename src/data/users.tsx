@@ -11,7 +11,8 @@ export type TagType =
   | 'library'
   | 'micro'
   | 'cloudnative'
-
+  | 'tool'
+  | 'ai'
 
 const Users: User[] = [
   {
@@ -164,7 +165,7 @@ const Users: User[] = [
     preview: require('./showcase/uni-translate.png'),
     website: 'https://github.com/xgd16/UniTranslate',
     source: 'https://github.com/xgd16/UniTranslate',
-    tags: ['opensource'],
+    tags: ['opensource','tool'],
   },
   {
     title: 'kkdl-go',
@@ -180,7 +181,7 @@ const Users: User[] = [
     preview: require('./showcase/vncproxy.png'),
     website: 'https://github.com/vprix/vncproxy',
     source: 'https://github.com/vprix/vncproxy',
-    tags: ['opensource'],
+    tags: ['opensource','tool'],
   },
   {
     title: 'gdb-adapter',
@@ -244,7 +245,7 @@ const Users: User[] = [
     preview: require('./showcase/go-orm-helper.png'),
     website: 'https://github.com/johnmai-dev/go-orm-helper',
     source: 'https://github.com/johnmai-dev/go-orm-helper',
-    tags: ['opensource'],
+    tags: ['opensource','tool'],
   },
   {
     title: 'GoFrame-Helper',
@@ -252,7 +253,7 @@ const Users: User[] = [
     preview: require('./showcase/goframe-helper.png'),
     website: 'https://github.com/oldme-git/GoFrame-Helper',
     source: 'https://github.com/oldme-git/GoFrame-Helper',
-    tags: ['opensource'],
+    tags: ['opensource','tool'],
   },
   {
     title: '50CMSgo',
@@ -261,6 +262,62 @@ const Users: User[] = [
     website: 'https://gitee.com/dexters/50CMSgo',
     source: 'https://gitee.com/dexters/50CMSgo',
     tags: ['opensource','adminui','frontui'],
+  },
+  {
+    title: 'TEN-Agent',
+    description: 'TEN Agent is the world’s first real-time multimodal agent integrated with the OpenAI Realtime API, RTC, and features weather checks, web search, vision, and RAG capabilities.',
+    preview: require('./showcase/TEN-Agent.jpg'),
+    website: 'https://github.com/TEN-framework/TEN-Agent',
+    source: 'https://github.com/TEN-framework/TEN-Agent',
+    tags: ['opensource','favorite','ai','frontui'],
+  },
+  {
+    title: 'Go-Admin',
+    description: 'A golang framework helps gopher to build a data visualization and admin panel in ten minutes.',
+    preview: require('./showcase/go-admin.png'),
+    website: 'https://www.go-admin.com/',
+    source: 'https://github.com/GoAdminGroup/go-admin',
+    tags: ['opensource','favorite','adminui'],
+  },
+  {
+    title: 'Cool-Go-Admin',
+    description: '一个很酷的后台管理系统开发框架。开源免费、Ai编码、流程编排、扩展插件、模块化。',
+    preview: require('./showcase/cool-go-admin.png'),
+    website: 'https://github.com/cool-team-official/cool-admin-go',
+    source: 'https://github.com/cool-team-official/cool-admin-go',
+    tags: ['opensource','product','adminui'],
+  },
+  {
+    title: 'Jie',
+    description: 'Jie stands out as a comprehensive security assessment and exploitation tool meticulously crafted for web applications. Its robust suite of features encompasses vulnerability scanning...',
+    preview: require('./showcase/jie.png'),
+    website: 'https://jie.fireline.fun/',
+    source: 'https://github.com/yhy0/Jie',
+    tags: ['opensource','tool'],
+  },
+  {
+    title: 'Venom-Crawler',
+    description: '毒液爬行器：专为捡洞而生的爬虫神器。',
+    preview: require('./showcase/Venom-Crawler.png'),
+    website: 'https://github.com/z-bool/Venom-Crawler',
+    source: 'https://github.com/z-bool/Venom-Crawlere',
+    tags: ['opensource','tool'],
+  },
+  {
+    title: 'Gvc',
+    description: 'Geek‘s valuable collection. A cross-platform supertool that brings convinience to coding.',
+    preview: require('./showcase/gvc.png'),
+    website: 'https://github.com/gvcgo/gvc',
+    source: 'https://github.com/gvcgo/gvc',
+    tags: ['opensource','tool'],
+  },
+  {
+    title: 'Veinmind-Tools',
+    description: 'veinmind-tools 是由长亭科技自研，基于 veinmind-sdk 打造的容器安全工具集。',
+    preview: require('./showcase/veinmind-tools.png'),
+    website: 'https://github.com/chaitin/veinmind-tools',
+    source: 'https://github.com/chaitin/veinmind-tools',
+    tags: ['opensource','tool'],
   },
 ];
 
@@ -349,6 +406,24 @@ export const Tags: {[type in TagType]: Tag} = {
       id: 'showcase.tag.cloudnative.description',
     }),
     color: '#C5DEF5',
+  },
+  tool: {
+    label: translate({message: 'Tool'}),
+    description: translate({
+      message:
+        '系统或开发工具类的案例。',
+      id: 'showcase.tag.tool.description',
+    }),
+    color: '#000000',
+  },
+  ai: {
+    label: translate({message: 'AI'}),
+    description: translate({
+      message:
+        '该案例与AI技术相关。',
+      id: 'showcase.tag.ai.description',
+    }),
+    color: '#B60205',
   },
 };
 
