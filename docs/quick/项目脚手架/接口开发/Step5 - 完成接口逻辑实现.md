@@ -158,6 +158,8 @@ func (c *ControllerV1) GetList(ctx context.Context, req *v1.GetListReq) (res *v1
 
 ## 学习小结
 
+本章节的示例源码：https://github.com/gogf/quick-demo/tree/main/internal/controller/user
+
 可以看到，使用`GoFrame`数据库`ORM`组件可以非常快速、高效地完成接口开发工作。整个`CURD`接口开发下来，开发者需要实现的业务逻辑仅需要几行代码😼。
 
 开发效率的提升，除了归功于脚手架工具自动生成的`dao`和`controller`代码之外，强大的数据库`ORM`组件也是功不可没。可以看到，我们在对数据库表进行操作时，代码量非常简洁优雅，但在数据库`ORM`组件的内部设计中，涉及很多精细的设计、严格的代码测试、年复一年的功能迭代的沉淀结果。

@@ -140,6 +140,8 @@ func (c *ControllerV1) Create(ctx context.Context, req *v1.CreateReq) (res *v1.C
 
 ## 学习小结
 
+本章节的示例源码：https://github.com/gogf/quick-demo/tree/main/internal/controller/user
+
 `GoFrame`脚手架工具，帮助我们将一切与业务逻辑无关的代码都生成好了，我们只需要关注业务逻辑实现即可。并且，这些自动生成的代码文件，除了开发者可以扩展的个别代码文件，大部分代码文件都完全由工具自动维护，我们也无需关心其未来的维护。
 
 是的，`GoFrame`脚手架工具的目标，就是让开发者可以将精力聚焦于业务逻辑本身，而业务逻辑以外的工作，都交给开发框架和脚手架工具来完成。
