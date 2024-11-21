@@ -45,7 +45,7 @@ import (
 
 func main() {
     type User struct {
-        gmeta.Meta `orm:"user" db:"mysql"`
+        g.Meta `orm:"user" db:"mysql"`
         Id         int
         Name       string
     }
@@ -53,9 +53,13 @@ func main() {
 }
 ```
 
+:::tip
+大部分时候，在结构体定义中，我们使用的`gmeta.Meta`的别名`g.Meta`。
+:::
+
 执行后，终端输出：
 
-```
+```json
 {
     "db": "mysql",
     "orm": "user"
@@ -76,7 +80,7 @@ import (
 
 func main() {
     type User struct {
-        gmeta.Meta `orm:"user" db:"mysql"`
+        g.Meta `orm:"user" db:"mysql"`
         Id         int
         Name       string
     }
@@ -88,6 +92,7 @@ func main() {
 
 执行后，终端输出：
 
-```user
+```text
+user
 mysql
 ```

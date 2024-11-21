@@ -22,7 +22,7 @@ description: 'GoFrame框架中的With特性，通过示例展示了如何使用W
 
 ### 1、数据结构
 
-```
+```sql
 # 用户表
 CREATE TABLE `user` (
   id int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -59,20 +59,20 @@ CREATE TABLE `user_scores` (
 ```go
 // 用户详情
 type UserDetail struct {
-    gmeta.Meta `orm:"table:user_detail"`
+    g.Meta `orm:"table:user_detail"`
     Uid        int    `json:"uid"`
     Address    string `json:"address"`
 }
 // 用户学分
 type UserScores struct {
-    gmeta.Meta `orm:"table:user_scores"`
+    g.Meta `orm:"table:user_scores"`
     Id         int `json:"id"`
     Uid        int `json:"uid"`
     Score      int `json:"score"`
 }
 // 用户信息
 type User struct {
-    gmeta.Meta `orm:"table:user"`
+    g.Meta `orm:"table:user"`
     Id         int           `json:"id"`
     Name       string        `json:"name"`
     UserDetail *UserDetail   `orm:"with:uid=id"`
@@ -126,7 +126,7 @@ g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
 
 执行成功后，数据库数据如下：
 
-```
+```text
 mysql> show tables;
 +----------------+
 | Tables_in_test |
@@ -202,20 +202,20 @@ mysql> select * from `user_score`;
 // 重新声明一下，防止大家上下来回拉动
 // 用户详情
 type UserDetail struct {
-    gmeta.Meta `orm:"table:user_detail"`
+    g.Meta `orm:"table:user_detail"`
     Uid        int    `json:"uid"`
     Address    string `json:"address"`
 }
 // 用户学分
 type UserScores struct {
-    gmeta.Meta `orm:"table:user_scores"`
+    g.Meta `orm:"table:user_scores"`
     Id         int `json:"id"`
     Uid        int `json:"uid"`
     Score      int `json:"score"`
 }
 // 用户信息
 type User struct {
-    gmeta.Meta `orm:"table:user"`
+    g.Meta `orm:"table:user"`
     Id         int           `json:"id"`
     Name       string        `json:"name"`
     UserDetail *UserDetail   `orm:"with:uid=id"`
@@ -229,7 +229,7 @@ g.Model(tableUser).WithAll().Where("id", 3).Scan(&user)
 
 以上语句您将会查询到用户ID为 `3` 的用户信息、用户详情以及用户学分信息，以上语句将会在数据库中自动执行以下 `SQL` 语句：
 
-```html
+```text
 2021-05-02 22:29:52.634 [DEBU] [  2 ms] [default] SHOW FULL COLUMNS FROM `user`
 2021-05-02 22:29:52.635 [DEBU] [  1 ms] [default] SELECT * FROM `user` WHERE `id`=3 LIMIT 1
 2021-05-02 22:29:52.636 [DEBU] [  1 ms] [default] SHOW FULL COLUMNS FROM `user_detail`
@@ -240,7 +240,7 @@ g.Model(tableUser).WithAll().Where("id", 3).Scan(&user)
 
 执行后，通过 `g.Dump(user)` 打印的用户信息如下：
 
-```
+```js
 {
     Id:         3,
     Name:       "name_3",
@@ -290,7 +290,7 @@ g.Model(users).With(UserDetail{}).Where("id>?", 3).Scan(&users)
 
 执行后，通过 `g.Dump(users)` 打印用户数据如下：
 
-```
+```js
 [
     {
         Id:         4,
@@ -319,7 +319,7 @@ g.Model(users).With(UserDetail{}).Where("id>?", 3).Scan(&users)
 
 ```go
 type User struct {
-    gmeta.Meta `orm:"table:user"`
+    g.Meta `orm:"table:user"`
     Id         int           `json:"id"`
     Name       string        `json:"name"`
     UserDetail *UserDetail   `orm:"with:uid=id, where:uid > 3"`
@@ -333,7 +333,7 @@ type User struct {
 在`with`结构体标签中，支持使用`unscoped`特性，例如：
 ```go
 type User struct {
-    gmeta.Meta `orm:"table:user"`
+    g.Meta `orm:"table:user"`
     Id         int          `json:"id"`
     Name       string       `json:"name"`
     UserDetail *UserDetail  `orm:"with:uid=id, unscoped:true"`
@@ -347,19 +347,19 @@ type User struct {
 
 ### 1、 `gmeta` 包
 
-我们可以看到在上面的结构体数据结构中都使用 `embed` 方式嵌入了一个 `gmeta.Meta` 结构体，例如：
+我们可以看到在上面的结构体数据结构中都使用 `embed` 方式嵌入了一个 `g.Meta` 结构体，例如：
 
 ```go
 type UserDetail struct {
-    gmeta.Meta `orm:"table:user_detail"`
+    g.Meta `orm:"table:user_detail"`
     Uid        int    `json:"uid"`
     Address    string `json:"address"`
 }
 ```
 
-其实在 `GoFrame` 框架中有很多这种小组件包用以实现特定的便捷功能。 `gmeta` 包的作用主要用于嵌入到用户自定义的结构体中，并且通过标签的形式给 `gmeta` 包的结构体（例如这里的 `gmeta.Meta`）打上自定义的标签内容（列如这里的 `` `orm:"table:user_detail"` ``），并在运行时可以特定方法动态获取这些自定义的标签内容。详情请参考章节： [元数据-gmeta](../../../../组件列表/实用工具/元数据-gmeta.md)
+其实在 `GoFrame` 框架中有很多这种小组件包用以实现特定的便捷功能。 `gmeta` 包的作用主要用于嵌入到用户自定义的结构体中，并且通过标签的形式给 `gmeta` 包的结构体（例如这里的 `g.Meta`）打上自定义的标签内容（列如这里的 `` `orm:"table:user_detail"` ``），并在运行时可以特定方法动态获取这些自定义的标签内容。详情请参考章节： [元数据-gmeta](../../../../组件列表/实用工具/元数据-gmeta.md)
 
-因此，这里嵌入 `gmeta.Meta` 的目的是为了标记该结构体关联的数据表名称。
+因此，这里嵌入 `g.Meta` 的目的是为了标记该结构体关联的数据表名称。
 
 ### 2、模型关联指定
 
@@ -367,7 +367,7 @@ type UserDetail struct {
 
 ```go
 type User struct {
-    gmeta.Meta `orm:"table:user"`
+    g.Meta `orm:"table:user"`
     Id         int          `json:"id"`
     Name       string       `json:"name"`
     UserDetail *UserDetail  `orm:"with:uid=id"`
@@ -377,13 +377,13 @@ type User struct {
 
 我们通过给指定的结构体属性绑定 `orm` 标签，并在 `orm` 标签中通过 `with` 语句指定当前结构体（数据表）与目标结构体（数据表）的关联关系， `with` 语句的语法如下：
 
-```
+```text
 with:当前属性对应表关联字段=当前结构体对应数据表关联字段
 ```
 
 并且字段名称 **忽略大小写以及特殊字符匹配**，例如以下形式的关联关系都是能够自动识别的：
 
-```
+```text
 with:UID=ID
 with:Uid=Id
 with:U_ID=id
@@ -391,7 +391,7 @@ with:U_ID=id
 
 如果两个表的关联字段都是同一个名称，那么也可以直接写一个即可，例如：
 
-```
+```text
 with:uid
 ```
 
@@ -438,7 +438,7 @@ g.Model(tableUser).With(User{}.UserDetail).Where("id", 3).Scan(&user)
 
 执行后，通过 `g.Dump(user)` 打印用户数据如下：
 
-```
+```js
 {
         "id": 3,
         "name": "name_3",
@@ -446,7 +446,7 @@ g.Model(tableUser).With(User{}.UserDetail).Where("id", 3).Scan(&user)
                 "uid": 3,
                 "address": "address_3"
         },
-        "UserScores": null
+        "UserScores": []
 }
 ```
 
@@ -468,7 +468,7 @@ g.Model(tableUser).With(User{}.UserScore).Where("id", 3).Scan(&user)
 
 执行后，通过 `g.Dump(user)` 打印用户数据如下：
 
-```
+```js
 {
         "id": 3,
         "name": "name_3",
@@ -514,12 +514,12 @@ g.Model(tableUser).Where("id", 3).Scan(&user)
 
 执行后，通过 `g.Dump(user)` 打印用户数据如下：
 
-```
+```js
 {
         "id": 3,
         "name": "name_3",
         "UserDetail": null,
-        "UserScores": null
+        "UserScores": []
 }
 ```
 
@@ -581,14 +581,14 @@ type ContentListItem struct {
 ```go
 // 用户详情
 type UserDetail struct {
-    gmeta.Meta `orm:"table:user_detail"`
+    g.Meta `orm:"table:user_detail"`
     Uid        int    `json:"uid"`
     Address    string `json:"address"`
 }
 
 // 用户学分 - 必修课
 type UserScoresRequired struct {
-    gmeta.Meta `orm:"table:user_scores"`
+    g.Meta `orm:"table:user_scores"`
     Id         int `json:"id"`
     Uid        int `json:"uid"`
     Score      int `json:"score"`
@@ -596,7 +596,7 @@ type UserScoresRequired struct {
 
 // 用户学分 - 选修课
 type UserScoresOptional struct {
-    gmeta.Meta `orm:"table:user_scores"`
+    g.Meta `orm:"table:user_scores"`
     Id         int `json:"id"`
     Uid        int `json:"uid"`
     Score      int `json:"score"`
@@ -604,7 +604,7 @@ type UserScoresOptional struct {
 
 // 用户学分
 type UserScores struct {
-    gmeta.Meta `orm:"table:user_scores"`
+    g.Meta `orm:"table:user_scores"`
     Id         int                  `json:"id"`
     Uid        int                  `json:"uid"`
     Required   []UserScoresRequired `orm:"with:id, where:type=1"`
@@ -613,7 +613,7 @@ type UserScores struct {
 
 // 用户信息
 type User struct {
-    gmeta.Meta `orm:"table:user"`
+    g.Meta `orm:"table:user"`
     Id         int           `json:"id"`
     Name       string        `json:"name"`
     UserDetail *UserDetail   `orm:"with:uid=id"`
@@ -629,20 +629,20 @@ type User struct {
 
 ```go
 type UserDetail struct {
-    gmeta.Meta `orm:"table:user_detail"`
+    g.Meta `orm:"table:user_detail"`
     Uid        int    `json:"uid"`
     Address    string `json:"address"`
 }
 
 type UserScores struct {
-    gmeta.Meta `orm:"table:user_scores"`
+    g.Meta `orm:"table:user_scores"`
     Id         int `json:"id"`
     Uid        int `json:"uid"`
     Score      int `json:"score"`
 }
 
 type User struct {
-    gmeta.Meta  `orm:"table:user"`
+    g.Meta  `orm:"table:user"`
     *UserDetail `orm:"with:uid=id"`
     Id          int           `json:"id"`
     Name        string        `json:"name"`
@@ -680,13 +680,13 @@ type User struct {
 
 ```go
 type UserDetail struct {
-    gmeta.Meta `orm:"table:user_detail"`
+    g.Meta `orm:"table:user_detail"`
     Uid        int    `json:"uid"`
     Address    string `json:"address"`
 }
 
 type UserScores struct {
-    gmeta.Meta `orm:"table:user_scores"`
+    g.Meta `orm:"table:user_scores"`
     Id         int `json:"id"`
     Uid        int `json:"uid"`
     Score      int `json:"score"`
@@ -698,7 +698,7 @@ type UserEmbedded struct {
 }
 
 type User struct {
-    gmeta.Meta `orm:"table:user"`
+    g.Meta `orm:"table:user"`
     UserEmbedded
     *UserDetail `orm:"with:uid=id"`
     UserScores  []*UserScores `orm:"with:uid=id"`
