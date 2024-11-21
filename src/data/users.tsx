@@ -378,7 +378,7 @@ const Users: User[] = [
   {
     title: 'web-firewall',
     description: '基于Golang+Vue3 开发的Web Linux防火墙，前端使用SoybeanAdmin框架，后端使用GoFrame2，数据库支持 sqlite3(默认)/postgresql ，它可以在Linux系统中基于nfatables用于替代firewalld工具。',
-    preview: require('./showcase/web-firewall.png'),
+    preview: require('./showcase/web-firewall.jpg'),
     website: 'https://github.com/moreKing/web-firewall',
     source: 'https://github.com/moreKing/web-firewall',
     tags: ['opensource','adminui','tool'],
