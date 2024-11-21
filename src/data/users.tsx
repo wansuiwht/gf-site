@@ -4,6 +4,8 @@ import {sortBy} from '@site/src/utils/jsUtils';
 
 export type TagType =
   | 'favorite'
+  | 'v1'
+  | 'v2'
   | 'opensource'
   | 'product'
   | 'adminui'
@@ -14,6 +16,7 @@ export type TagType =
   | 'tool'
   | 'ai'
 
+
 const Users: User[] = [
   {
     title: 'GFast',
@@ -21,7 +24,7 @@ const Users: User[] = [
     preview: require('./showcase/gfast.png'),
     website: 'https://www.g-fast.cn/',
     source: 'https://github.com/tiger1103/gfast',
-    tags: ['opensource','favorite','adminui','product'],
+    tags: ['opensource','favorite','adminui','product','v2'],
   },
   {
     title: 'Letga',
@@ -29,7 +32,7 @@ const Users: User[] = [
     preview: require('./showcase/letga.png'),
     website: 'https://github.com/lgcgo/letga-server',
     source: 'https://github.com/lgcgo/letga-server',
-    tags: ['opensource','adminui'],
+    tags: ['opensource','adminui','v2'],
   },
   {
     title: 'DMicro',
@@ -37,7 +40,7 @@ const Users: User[] = [
     preview: require('./showcase/dmicro.png'),
     website: 'https://dmicro.vprix.com/#/',
     source: 'https://github.com/osgochina/dmicro',
-    tags: ['opensource','micro'],
+    tags: ['opensource','micro','v2'],
   },
   {
     title: 'Jupiter',
@@ -45,7 +48,7 @@ const Users: User[] = [
     preview: require('./showcase/jupiter.png'),
     website: 'https://jupiter.douyu.com/',
     source: 'https://github.com/douyu/jupiter',
-    tags: ['opensource','micro'],
+    tags: ['opensource','micro','v1'],
   },
   {
     title: 'HotGo',
@@ -53,15 +56,7 @@ const Users: User[] = [
     preview: require('./showcase/hotgo.png'),
     website: 'https://hotgo.facms.cn/admin',
     source: 'https://github.com/bufanyun/hotgo',
-    tags: ['opensource','favorite','adminui','product'],
-  },
-  {
-    title: 'Bifrost',
-    description: 'Bifrost ---- 面向生产环境的 MySQL,MariaDB,kafka 同步到Redis,MongoDB,ClickHouse,StarRocks,Doris,Kafka等服务的异构中间件。',
-    preview: require('./showcase/bifrost.png'),
-    website: 'https://www.xbifrost.com/',
-    source: 'https://github.com/brokercap/Bifrost',
-    tags: ['opensource'],
+    tags: ['opensource','favorite','adminui','product','v2'],
   },
   {
     title: 'DNSLog-GO',
@@ -69,7 +64,7 @@ const Users: User[] = [
     preview: require('./showcase/dnslog-go.png'),
     website: 'https://github.com/lanyi1998/DNSlog-GO',
     source: 'https://github.com/lanyi1998/DNSlog-GO',
-    tags: ['opensource','frontui'],
+    tags: ['opensource','frontui','v1'],
   },
   {
     title: 'Nemo',
@@ -77,7 +72,7 @@ const Users: User[] = [
     preview: require('./showcase/nemo.png'),
     website: 'https://github.com/hanc00l/nemo_go',
     source: 'https://github.com/hanc00l/nemo_go',
-    tags: ['opensource','adminui'],
+    tags: ['opensource','adminui','v1'],
   },
   {
     title: 'OpenSCRM',
@@ -85,7 +80,7 @@ const Users: User[] = [
     preview: require('./showcase/openscrm.png'),
     website: 'https://github.com/openscrm/api-server',
     source: 'https://github.com/openscrm/api-server',
-    tags: ['opensource','adminui'],
+    tags: ['opensource','adminui','v1'],
   },
   {
     title: 'Magma',
@@ -93,15 +88,7 @@ const Users: User[] = [
     preview: require('./showcase/magma.png'),
     website: 'https://magmacore.org/',
     source: 'https://github.com/magma/magma',
-    tags: ['opensource','adminui'],
-  },
-  {
-    title: 'EventMesh',
-    description: 'EventMesh is a new generation serverless event middleware for building distributed event-driven applications.',
-    preview: require('./showcase/eventmesh.png'),
-    website: 'https://eventmesh.apache.org/',
-    source: 'https://github.com/apache/eventmesh',
-    tags: ['opensource','cloudnative'],
+    tags: ['opensource','adminui','v1'],
   },
   {
     title: 'Hybridnet',
@@ -109,7 +96,7 @@ const Users: User[] = [
     preview: require('./showcase/hybridnet.png'),
     website: 'https://github.com/alibaba/hybridnet',
     source: 'https://github.com/alibaba/hybridnet',
-    tags: ['opensource','cloudnative'],
+    tags: ['opensource','cloudnative','v1'],
   },
   {
     title: 'EasyGoAdmin',
@@ -117,7 +104,7 @@ const Users: User[] = [
     preview: require('./showcase/easy-go-admin.png'),
     website: 'https://www.easygoadmin.vip/',
     source: 'https://gitee.com/easygoadmin/EasyGoAdmin_GoFrame_EleVue',
-    tags: ['opensource','favorite','adminui','product'],
+    tags: ['opensource','favorite','adminui','product','v1'],
   },
   {
     title: 'SagooIOT',
@@ -125,7 +112,7 @@ const Users: User[] = [
     preview: require('./showcase/sagooiot.png'),
     website: 'https://iotdoc.sagoo.cn/',
     source: 'https://github.com/sagoo-cloud/sagooiot',
-    tags: ['opensource','favorite','adminui','product'],
+    tags: ['opensource','favorite','adminui','product','v2'],
   },
   {
     title: 'GF2-Demo',
@@ -133,7 +120,7 @@ const Users: User[] = [
     preview: require('./showcase/gf2-demo.png'),
     website: 'https://github.com/windvalley/gf2-demo',
     source: 'https://github.com/windvalley/gf2-demo',
-    tags: ['opensource'],
+    tags: ['opensource','v2'],
   },
   {
     title: 'Oldme-API',
@@ -141,7 +128,7 @@ const Users: User[] = [
     preview: require('./showcase/oldme-api.png'),
     website: 'https://github.com/oldme-git/oldme-api',
     source: 'https://github.com/oldme-git/oldme-api',
-    tags: ['opensource','frontui'],
+    tags: ['opensource','frontui','v2'],
   },
   {
     title: 'ZzeAdminGo',
@@ -149,7 +136,7 @@ const Users: User[] = [
     preview: require('./showcase/zze-admin-go.png'),
     website: 'http://admin.zze.xyz/#/login',
     source: 'https://github.com/zze326/zze-admin-go',
-    tags: ['opensource','adminui'],
+    tags: ['opensource','adminui','v2'],
   },
   {
     title: 'GF-CMS',
@@ -157,7 +144,7 @@ const Users: User[] = [
     preview: require('./showcase/gf-cms.jpg'),
     website: 'https://github.com/demozx/gf_cms',
     source: 'https://github.com/demozx/gf_cms',
-    tags: ['opensource','adminui','frontui'],
+    tags: ['opensource','adminui','frontui','v2'],
   },
   {
     title: 'UniTranslate',
@@ -165,7 +152,7 @@ const Users: User[] = [
     preview: require('./showcase/uni-translate.png'),
     website: 'https://github.com/xgd16/UniTranslate',
     source: 'https://github.com/xgd16/UniTranslate',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v2'],
   },
   {
     title: 'kkdl-go',
@@ -173,7 +160,7 @@ const Users: User[] = [
     preview: require('./showcase/kkdl-go.png'),
     website: 'https://github.com/vaebe/kkdl-go',
     source: 'https://github.com/vaebe/kkdl-go',
-    tags: ['opensource'],
+    tags: ['opensource','v2'],
   },
   {
     title: 'VncProxy',
@@ -181,7 +168,7 @@ const Users: User[] = [
     preview: require('./showcase/vncproxy.png'),
     website: 'https://github.com/vprix/vncproxy',
     source: 'https://github.com/vprix/vncproxy',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v2'],
   },
   {
     title: 'gdb-adapter',
@@ -189,7 +176,7 @@ const Users: User[] = [
     preview: require('./showcase/library.png'),
     website: 'https://github.com/vance-liu/gdb-adapter',
     source: 'https://github.com/vance-liu/gdb-adapter',
-    tags: ['opensource','library'],
+    tags: ['opensource','library','v1'],
   },
   {
     title: 'gf-casbin-adapter',
@@ -197,7 +184,7 @@ const Users: User[] = [
     preview: require('./showcase/library.png'),
     website: 'https://github.com/hailaz/gf-casbin-adapter',
     source: 'https://github.com/hailaz/gf-casbin-adapter',
-    tags: ['opensource','library'],
+    tags: ['opensource','library','v2'],
   },
   {
     title: 'csrf',
@@ -205,7 +192,7 @@ const Users: User[] = [
     preview: require('./showcase/library.png'),
     website: 'https://github.com/gogf/csrf',
     source: 'https://github.com/gogf/csrf',
-    tags: ['opensource','library'],
+    tags: ['opensource','library','v2'],
   },
   {
     title: 'goframe-jsonrpc',
@@ -213,7 +200,7 @@ const Users: User[] = [
     preview: require('./showcase/library.png'),
     website: 'https://github.com/zhouyaozhouyao/goframe-jsonrpc',
     source: 'https://github.com/zhouyaozhouyao/goframe-jsonrpc',
-    tags: ['opensource','library'],
+    tags: ['opensource','library','v2'],
   },
   {
     title: 'gf-x-tool',
@@ -221,7 +208,7 @@ const Users: User[] = [
     preview: require('./showcase/library.png'),
     website: 'https://github.com/xgd16/gf-x-tool',
     source: 'https://github.com/xgd16/gf-x-tool',
-    tags: ['opensource','library'],
+    tags: ['opensource','library','v2'],
   },
   {
     title: 'gf-x-mqtt',
@@ -229,15 +216,7 @@ const Users: User[] = [
     preview: require('./showcase/library.png'),
     website: 'https://github.com/xgd16/gf-x-mqtt',
     source: 'https://github.com/xgd16/gf-x-mqtt',
-    tags: ['opensource','library'],
-  },
-  {
-    title: 'x-object-storage',
-    description: '基于 GoFrame 快速接入 亚马逊 AMS 存储。',
-    preview: require('./showcase/library.png'),
-    website: 'https://github.com/xgd16/x-object-storage',
-    source: 'https://github.com/xgd16/x-object-storage',
-    tags: ['opensource','library'],
+    tags: ['opensource','library','v2'],
   },
   {
     title: 'go-orm-helper',
@@ -245,7 +224,7 @@ const Users: User[] = [
     preview: require('./showcase/go-orm-helper.png'),
     website: 'https://github.com/johnmai-dev/go-orm-helper',
     source: 'https://github.com/johnmai-dev/go-orm-helper',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v2'],
   },
   {
     title: 'GoFrame-Helper',
@@ -253,7 +232,7 @@ const Users: User[] = [
     preview: require('./showcase/goframe-helper.png'),
     website: 'https://github.com/oldme-git/GoFrame-Helper',
     source: 'https://github.com/oldme-git/GoFrame-Helper',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v2'],
   },
   {
     title: '50CMSgo',
@@ -261,15 +240,15 @@ const Users: User[] = [
     preview: require('./showcase/50CMSgo.jpg'),
     website: 'https://gitee.com/dexters/50CMSgo',
     source: 'https://gitee.com/dexters/50CMSgo',
-    tags: ['opensource','adminui','frontui'],
+    tags: ['opensource','adminui','frontui','v2'],
   },
   {
     title: 'TEN-Agent',
     description: 'TEN Agent is the world’s first real-time multimodal agent integrated with the OpenAI Realtime API, RTC, and features weather checks, web search, vision, and RAG capabilities.',
-    preview: require('./showcase/TEN-Agent.jpg'),
+    preview: require('./showcase/TEN-Agent.png'),
     website: 'https://github.com/TEN-framework/TEN-Agent',
     source: 'https://github.com/TEN-framework/TEN-Agent',
-    tags: ['opensource','favorite','ai','frontui'],
+    tags: ['opensource','ai','frontui','v1'],
   },
   {
     title: 'Go-Admin',
@@ -277,7 +256,7 @@ const Users: User[] = [
     preview: require('./showcase/go-admin.png'),
     website: 'https://www.go-admin.com/',
     source: 'https://github.com/GoAdminGroup/go-admin',
-    tags: ['opensource','favorite','adminui'],
+    tags: ['opensource','adminui','v2'],
   },
   {
     title: 'Cool-Go-Admin',
@@ -285,7 +264,7 @@ const Users: User[] = [
     preview: require('./showcase/cool-go-admin.png'),
     website: 'https://github.com/cool-team-official/cool-admin-go',
     source: 'https://github.com/cool-team-official/cool-admin-go',
-    tags: ['opensource','product','adminui'],
+    tags: ['opensource','product','adminui','v2'],
   },
   {
     title: 'Jie',
@@ -293,15 +272,15 @@ const Users: User[] = [
     preview: require('./showcase/jie.png'),
     website: 'https://jie.fireline.fun/',
     source: 'https://github.com/yhy0/Jie',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v1'],
   },
   {
     title: 'Venom-Crawler',
     description: '毒液爬行器：专为捡洞而生的爬虫神器。',
     preview: require('./showcase/Venom-Crawler.png'),
     website: 'https://github.com/z-bool/Venom-Crawler',
-    source: 'https://github.com/z-bool/Venom-Crawlere',
-    tags: ['opensource','tool'],
+    source: 'https://github.com/z-bool/Venom-Crawler',
+    tags: ['opensource','tool','v1'],
   },
   {
     title: 'gvc',
@@ -309,7 +288,7 @@ const Users: User[] = [
     preview: require('./showcase/gvc.png'),
     website: 'https://github.com/gvcgo/gvc',
     source: 'https://github.com/gvcgo/gvc',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v2'],
   },
   {
     title: 'veinmind-tools',
@@ -317,7 +296,7 @@ const Users: User[] = [
     preview: require('./showcase/veinmind-tools.png'),
     website: 'https://github.com/chaitin/veinmind-tools',
     source: 'https://github.com/chaitin/veinmind-tools',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v1'],
   },
   {
     title: 'gogs',
@@ -325,7 +304,7 @@ const Users: User[] = [
     preview: require('./showcase/gogs.png'),
     website: 'https://github.com/metagogs/gogs',
     source: 'https://github.com/metagogs/gogs',
-    tags: ['opensource'],
+    tags: ['opensource','v1'],
   },
   {
     title: 'wscan',
@@ -333,7 +312,7 @@ const Users: User[] = [
     preview: require('./showcase/wscan.png'),
     website: 'https://github.com/chushuai/wscan',
     source: 'https://github.com/chushuai/wscan',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v1'],
   },
   {
     title: 'scan4all',
@@ -341,7 +320,7 @@ const Users: User[] = [
     preview: require('./showcase/scan4all.png'),
     website: 'https://github.com/GhostTroops/scan4all',
     source: 'https://github.com/GhostTroops/scan4all',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v1'],
   },
   {
     title: 'crawlergo',
@@ -349,15 +328,7 @@ const Users: User[] = [
     preview: require('./showcase/crawlergo.png'),
     website: 'https://github.com/Qianlitp/crawlergo',
     source: 'https://github.com/Qianlitp/crawlergo',
-    tags: ['opensource','tool'],
-  },
-  {
-    title: '百灵快传(B0Pass)',
-    description: '基于Go语言的高性能 "手机电脑超大文件传输神器"、"局域网共享文件服务器"。LAN large file transfer tool。',
-    preview: require('./showcase/b0pass.png'),
-    website: 'https://4bit.cn/p/b0pass',
-    source: 'https://github.com/bitepeng/b0pass',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v1'],
   },
   {
     title: '智元 Fast API SDK',
@@ -365,7 +336,7 @@ const Users: User[] = [
     preview: require('./showcase/fastapi-sdk.png'),
     website: 'https://github.com/iimeta/fastapi-sdk',
     source: 'https://github.com/iimeta/fastapi-sdk',
-    tags: ['opensource','adminui'],
+    tags: ['opensource','adminui','v2'],
   },
   {
     title: 'skywalking-go',
@@ -373,7 +344,7 @@ const Users: User[] = [
     preview: require('./showcase/library.png'),
     website: 'https://github.com/apache/skywalking-go',
     source: 'https://github.com/apache/skywalking-go',
-    tags: ['opensource','library'],
+    tags: ['opensource','library','v2'],
   },
   {
     title: 'web-firewall',
@@ -381,7 +352,7 @@ const Users: User[] = [
     preview: require('./showcase/web-firewall.jpg'),
     website: 'https://github.com/moreKing/web-firewall',
     source: 'https://github.com/moreKing/web-firewall',
-    tags: ['opensource','adminui','tool'],
+    tags: ['opensource','adminui','tool','v2'],
   },
   {
     title: '蜂鸟(HummingBird)',
@@ -389,7 +360,7 @@ const Users: User[] = [
     preview: require('./showcase/hummingbird.png'),
     website: 'https://doc.hummingbird.winc-link.com/',
     source: 'https://github.com/winc-link/hummingbird',
-    tags: ['opensource','adminui'],
+    tags: ['opensource','adminui','v2'],
   },
   {
     title: 'Shopsuite Go商城系统',
@@ -397,7 +368,7 @@ const Users: User[] = [
     preview: require('./showcase/golershop.png'),
     website: 'https://www.shopsuite.cn/',
     source: 'https://github.com/shsuishang/golershop',
-    tags: ['opensource','adminui','frontui'],
+    tags: ['opensource','adminui','frontui','v2'],
   },
   {
     title: 'asciinema',
@@ -405,7 +376,7 @@ const Users: User[] = [
     preview: require('./showcase/asciinema.png'),
     website: 'https://asciinema.org/',
     source: 'https://github.com/gvcgo/asciinema',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v2'],
   },
   {
     title: 'version-manager',
@@ -413,7 +384,7 @@ const Users: User[] = [
     preview: require('./showcase/version-manager.png'),
     website: 'https://vdocs.vmr.us.kg/',
     source: 'https://github.com/gvcgo/version-manager',
-    tags: ['opensource','tool'],
+    tags: ['opensource','tool','v2'],
   },
   {
     title: '土拨鼠开源充电系统',
@@ -421,7 +392,7 @@ const Users: User[] = [
     preview: require('./showcase/HarmonyOS-groundhog-charging-system.png'),
     website: 'https://github.com/cheinlu/HarmonyOS-groundhog-charging-system',
     source: 'https://github.com/cheinlu/HarmonyOS-groundhog-charging-system',
-    tags: ['opensource','adminui','frontui'],
+    tags: ['opensource','adminui','frontui','v2'],
   },
   {
     title: '智元 IIM',
@@ -429,15 +400,7 @@ const Users: User[] = [
     preview: require('./showcase/iim-client.png'),
     website: 'https://github.com/iimeta/iim-client',
     source: 'https://github.com/iimeta/iim-client',
-    tags: ['opensource','adminui','frontui'],
-  },
-  {
-    title: 'GoEasyDesigner',
-    description: 'This is a powerful window visualization design project designed to meet the needs of multiple platforms, including Windows, macOS, and Linux.',
-    preview: require('./showcase/GoEasyDesigner.png'),
-    website: 'https://github.com/duolabmeng6/GoEasyDesigner',
-    source: 'https://github.com/duolabmeng6/GoEasyDesigner',
-    tags: ['opensource','tool','frontui'],
+    tags: ['opensource','adminui','frontui','v2'],
   },
   {
     title: 'Chatcat',
@@ -445,15 +408,7 @@ const Users: User[] = [
     preview: require('./showcase/chatcat.png'),
     website: 'https://chat.yippai.com/',
     source: 'https://github.com/MQEnergy/chatcat',
-    tags: ['opensource','tool','ai'],
-  },
-  {
-    title: '联犀',
-    description: '一款基于 Go 语言开发的商业级 SaaS 云原生微服务物联网平台，致力于帮助企业快速构建自己的物联网应用，实现快速业务落地。',
-    preview: require('./showcase/things.png'),
-    website: 'https://doc.unitedrhino.com/',
-    source: 'https://github.com/unitedrhino/things',
-    tags: ['opensource','adminui','micro'],
+    tags: ['opensource','tool','ai','v2'],
   },
   {
     title: 'KubeCube',
@@ -461,7 +416,7 @@ const Users: User[] = [
     preview: require('./showcase/kubecube.png'),
     website: 'https://www.kubecube.io/',
     source: 'https://github.com/kubecube-io/KubeCube',
-    tags: ['opensource','adminui','cloudnative'],
+    tags: ['opensource','adminui','cloudnative','v2'],
   },
 ];
 
@@ -489,6 +444,24 @@ export const Tags: {[type in TagType]: Tag} = {
       id: 'showcase.tag.favorite.description',
     }),
     color: '#e9669e',
+  },
+  v1: {
+    label: translate({message: 'V1'}),
+    description: translate({
+      message:
+        '该案例使用GoFrame V1版本。',
+      id: 'showcase.tag.v1.description',
+    }),
+    color: '#BFDADC',
+  },
+  v2: {
+    label: translate({message: 'V2'}),
+    description: translate({
+      message:
+        '该案例使用GoFrame V2版本。',
+      id: 'showcase.tag.v2.description',
+    }),
+    color: '#D4C5F9',
   },
   opensource: {
     label: translate({message: 'OpenSource'}),
