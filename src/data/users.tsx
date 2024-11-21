@@ -418,6 +418,14 @@ const Users: User[] = [
     source: 'https://github.com/kubecube-io/KubeCube',
     tags: ['opensource','adminui','cloudnative','v2'],
   },
+  {
+    title: 'GoFrame-Vue-Element-Admin',
+    description: '基于GoFrame2和vue-element-admin搭建的后台框架。',
+    preview: require('./showcase/goframe-vue-element-admin.png'),
+    website: 'https://gitee.com/lixianpei727/goframe-vue-element-admin',
+    source: 'https://gitee.com/lixianpei727/goframe-vue-element-admin',
+    tags: ['opensource','adminui','v2'],
+  },
 ];
 
 export type User = {
