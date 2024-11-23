@@ -21,7 +21,7 @@ description: '在使用GoFrame框架进行ORM查询时简化分页查询场景�
 // GetList 获取实例的用户列表.
 func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (items []entity.UserInfo, total int, err error) {
     items = make([]entity.UserInfo, 0)
-    orm := dao.UserInfo.Ctx(ctx).OmitEmpty().Where(do.UserInfo{
+    orm := dao.UserInfo.Ctx(ctx).Where(do.UserInfo{
         ResourceId: in.ResourceId,
         Status:     in.Statuses,
     })
@@ -40,14 +40,13 @@ func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (
 // GetList 获取实例的用户列表.
 func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (items []entity.UserInfo, total int, err error) {
     items = make([]entity.UserInfo, 0)
-    err = dao.UserInfo.Ctx(ctx).OmitEmpty().
-        Where(do.UserInfo{
+    err = dao.UserInfo.Ctx(ctx).Where(do.UserInfo{
             ResourceId: in.ResourceId,
             Status:     in.Statuses,
         }).
         Order(in.OrderBy, in.OrderDirection).
         Limit(in.Offset, in.Limit).
-        ScanAndCount(&items, &total, true)
+        ScanAndCount(&items, &total, false)
     return
 }
 ```
@@ -55,4 +54,4 @@ func (s sUserInfo) GetList(ctx context.Context, in model.UserInfoGetListInput) (
 ## 注意事项
 
 - 仅用于需要同时查询数据和总数量的场景，一般为分页场景。
-- `ScanAndCount` 的第 `3` 个参数 `useFieldForCount` 表示是否在执行 `Count` 操作的时候将 `Fields` 作为 `Count` 参数，一般为 `true` 即可。传递 `false` 表示执行 `COUNT(1)` 查询总数量。
+- `ScanAndCount` 的第 `3` 个参数 `useFieldForCount` 表示是否在执行 `Count` 操作的时候将 `Fields` 作为 `Count` 参数，一般为 `false` 即可，表示执行 `COUNT(1)` 查询总数量。传递 `true` 表示执行使用查询的字段作为 `COUNT` 方法的参数。

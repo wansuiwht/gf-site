@@ -6,6 +6,8 @@ CHANGELOG_FILE="docs/docs/changelog.md"
 echo "---" > $CHANGELOG_FILE
 echo "slug: '/docs/changelog'" >> $CHANGELOG_FILE
 echo "title: '文档更新记录'" >> $CHANGELOG_FILE
+echo "hide_title: true" >> $CHANGELOG_FILE
+echo "sidebar_position: 9999" >> $CHANGELOG_FILE
 echo "---" >> $CHANGELOG_FILE
 echo "" >> $CHANGELOG_FILE
 # 获取最近提交记录，只包含 .md 文件的修改

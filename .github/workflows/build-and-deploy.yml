@@ -24,11 +24,11 @@ jobs:
         run: |
           yarn
 
-      - name: generate contributors
+      - name: Generate contributors
         run: |
           bash .github/workflows/generate-contributors.sh
 
-      - name: generate changelog
+      - name: Generate docs changelog
         run: |
           bash .github/workflows/generate-changelog.sh
 
@@ -37,7 +37,7 @@ jobs:
           make build
 
       # https://github.com/appleboy/scp-action
-      - name: Deploy to server
+      - name: Deploy to - goframe.org
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -49,7 +49,19 @@ jobs:
           strip_components: 1
           rm: true
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to - goframe.org.cn
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST_CN }}
+          username: ${{ secrets.SSH_USERNAME_CN }}
+          password: ${{ secrets.SSH_PASSWORD_CN }}
+          port: ${{ secrets.SSH_PORT_CN }}
+          source: './build/*'
+          target: '/home/www/goframe.org.cn'
+          strip_components: 1
+          rm: true
+
+      - name: Deploy to - pages.goframe.org
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
