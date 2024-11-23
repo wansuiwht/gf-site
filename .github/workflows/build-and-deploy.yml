@@ -49,18 +49,6 @@ jobs:
           strip_components: 1
           rm: true
 
-      - name: Deploy to mirror domain server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST_CN }}
-          username: ${{ secrets.SSH_USERNAME_CN }}
-          password: ${{ secrets.SSH_PASSWORD_CN }}
-          port: ${{ secrets.SSH_PORT_CN }}
-          source: './build/*'
-          target: '/home/www/goframe.org.cn'
-          strip_components: 1
-          rm: true
-
       - name: Deploy to github pages
         uses: peaceiris/actions-gh-pages@v4
         with:
