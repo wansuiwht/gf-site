@@ -63,7 +63,8 @@ func main() {
 
 执行后，访问 [http://127.0.0.1:8199/](http://127.0.0.1:8199/) ，页面输出内容为：
 
-```HBm876TFCde435Tgf
+```text
+HBm876TFCde435Tgf
 ```
 
 ### 示例2， `SetCtx`
@@ -106,5 +107,6 @@ func main() {
 
 执行后，访问 [http://127.0.0.1:8199/](http://127.0.0.1:8199/) ，页面输出内容为：
 
-```HBm876TFCde435Tgf
+```text
+HBm876TFCde435Tgf
 ```
