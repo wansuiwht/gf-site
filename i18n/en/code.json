@@ -1,4 +1,115 @@
 {
+  "Favorite": {
+    "message": "Favorite"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "我们喜欢并推荐给大家的案例，感兴趣可以瞧瞧。"
+  },
+  "V1": {
+    "message": "V1"
+  },
+  "showcase.tag.v1.description": {
+    "message": "该案例使用GoFrame V1版本。"
+  },
+  "V2": {
+    "message": "V2"
+  },
+  "showcase.tag.v2.description": {
+    "message": "该案例使用GoFrame V2版本。"
+  },
+  "OpenSource": {
+    "message": "OpenSource"
+  },
+  "showcase.tag.opensource.description": {
+    "message": "开源项目案例，通常是开源站点或组件，带有参考的源码案例。"
+  },
+  "Product": {
+    "message": "Product"
+  },
+  "showcase.tag.product.description": {
+    "message": "带有商业授权案例，该案例可能同时具有源码和商业授权。"
+  },
+  "FrontUI": {
+    "message": "FrontUI"
+  },
+  "showcase.tag.frontui.description": {
+    "message": "带有前台UI的使用案例。"
+  },
+  "AdminUI": {
+    "message": "AdminUI"
+  },
+  "showcase.tag.adminui.description": {
+    "message": "带有管理后台UI的使用案例。"
+  },
+  "Library": {
+    "message": "Library"
+  },
+  "showcase.tag.library.description": {
+    "message": "Go源码组件，供import使用。"
+  },
+  "MicroService": {
+    "message": "MicroService"
+  },
+  "showcase.tag.micro.description": {
+    "message": "该案例支持微服务开发架构。"
+  },
+  "CloudNative": {
+    "message": "CloudNative"
+  },
+  "showcase.tag.cloudnative.description": {
+    "message": "该案例支持云原生开发架构。"
+  },
+  "Tool": {
+    "message": "Tool"
+  },
+  "showcase.tag.tool.description": {
+    "message": "系统或开发工具类的案例。"
+  },
+  "AI": {
+    "message": "AI"
+  },
+  "showcase.tag.ai.description": {
+    "message": "该案例与AI技术相关。"
+  },
+  "showcase.filters.resultCount": {
+    "message": "{sitesCount} 项案例"
+  },
+  "🌟GoFrame框架案例展示, Time to shine🌟": {
+    "message": "🌟GoFrame框架案例展示, Time to shine🌟"
+  },
+  "🌟框架案例展示🌟": {
+    "message": "🌟框架案例展示🌟"
+  },
+  "🔥基于GoFrame构建的站点, 以及适用于GoFrame的开源组件列表🔥": {
+    "message": "🔥基于GoFrame构建的站点, 以及适用于GoFrame的开源组件列表🔥"
+  },
+  "🔥基于GoFrame构建的站点及开源组件列表🔥": {
+    "message": "🔥基于GoFrame构建的站点及开源组件列表🔥"
+  },
+  "showcase.header.button": {
+    "message": "👋 欢迎提交您的使用案例"
+  },
+  "showcase.resetbutton": {
+    "message": "重置条件"
+  },
+  "showcase.card.sourceLink": {
+    "message": "源码"
+  },
+  "showcase.usersList.noResult": {
+    "message": "没有符合条件的案例"
+  },
+  "showcase.favoritesList.title": {
+    "message": "推荐案例"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "所有案例"
+  },
+  "showcase.searchBar.placeholder": {
+    "message": "搜索名称..."
+  },
+  "showcase.filters.title": {
+    "message": "标签过滤"
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -6,14 +117,6 @@
   "theme.BackToTopButton.buttonAriaLabel": {
     "message": "Scroll back to top",
     "description": "The ARIA label for the back to top button"
-  },
-  "theme.blog.archive.title": {
-    "message": "Archive",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "Archive",
-    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
     "message": "Blog list page navigation",
@@ -26,6 +129,14 @@
   "theme.blog.paginator.olderEntries": {
     "message": "Older entries",
     "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.post.paginator.navAriaLabel": {
     "message": "Blog post page navigation",
@@ -55,13 +166,13 @@
     "message": "light mode",
     "description": "The name for the light color mode"
   },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
-    "description": "The ARIA label for the breadcrumbs"
-  },
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "1 item|{count} items",
     "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Docs pages",
@@ -122,21 +233,17 @@
     "message": "Last updated{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
-    "description": "The label for the navbar versions dropdown on mobile view"
-  },
   "theme.NotFound.title": {
     "message": "Page Not Found",
     "description": "The title of the 404 page"
   },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
   "theme.tags.tagsListLabel": {
     "message": "Tags:",
     "description": "The label alongside a tag list"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Close",
-    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.admonition.caution": {
     "message": "caution",
@@ -162,13 +269,13 @@
     "message": "warning",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Blog recent posts navigation",
     "description": "The ARIA label for recent posts in the blog sidebar"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.CodeBlock.copied": {
     "message": "Copied",
@@ -182,6 +289,10 @@
     "message": "Copy",
     "description": "The copy button label on code blocks"
   },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
     "message": "Expand sidebar category '{label}'",
     "description": "The ARIA label to expand the sidebar category"
@@ -189,14 +300,6 @@
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
     "message": "Collapse sidebar category '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
-    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.NotFound.p1": {
     "message": "We could not find what you were looking for.",
@@ -206,9 +309,17 @@
     "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
     "description": "The 2nd paragraph of the 404 page"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "On this page",
     "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.blog.post.readMore": {
     "message": "Read more",
@@ -218,14 +329,6 @@
     "message": "Read more about {title}",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "Collapse sidebar",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -234,17 +337,25 @@
     "message": "Collapse sidebar",
     "description": "The title attribute for collapse button of doc sidebar"
   },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.docs.sidebar.navAriaLabel": {
     "message": "Docs sidebar",
     "description": "The ARIA label for the sidebar navigation"
   },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
-    "description": "The ARIA label for close button of mobile sidebar"
-  },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
     "message": "← Back to main menu",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "Toggle navigation bar",
@@ -388,6 +499,26 @@
   "theme.SearchModal.placeholder": {
     "message": "Search docs",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.IdealImageMessage.loading": {
+    "message": "Loading...",
+    "description": "When the full-scale image is loading"
+  },
+  "theme.IdealImageMessage.load": {
+    "message": "Click to load{sizeMessage}",
+    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
+  },
+  "theme.IdealImageMessage.offline": {
+    "message": "Your browser is offline. Image not loaded",
+    "description": "When the user is viewing an offline document"
+  },
+  "theme.IdealImageMessage.404error": {
+    "message": "404. Image not found",
+    "description": "When the image is not found"
+  },
+  "theme.IdealImageMessage.error": {
+    "message": "Error. Click to reload",
+    "description": "When the image fails to load for unknown error"
   },
   "theme.blog.post.plurals": {
     "message": "One post|{count} posts",

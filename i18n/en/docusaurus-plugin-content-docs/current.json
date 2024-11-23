@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "2.7.x(Latest)",
+    "message": "2.8.x(Latest)",
     "description": "The label for version current"
   },
   "sidebar.mainSidebar.category.框架设计": {
@@ -115,6 +115,10 @@
     "message": "ORM链式操作-模型关联",
     "description": "The label for category ORM链式操作-模型关联 in sidebar mainSidebar"
   },
+  "sidebar.mainSidebar.category.ORM链式操作-时间维护": {
+    "message": "ORM链式操作-时间维护",
+    "description": "The label for category ORM链式操作-时间维护 in sidebar mainSidebar"
+  },
   "sidebar.mainSidebar.category.ORM事务处理": {
     "message": "ORM事务处理",
     "description": "The label for category ORM事务处理 in sidebar mainSidebar"
@@ -211,6 +215,10 @@
     "message": "进程管理-gproc",
     "description": "The label for category 进程管理-gproc in sidebar mainSidebar"
   },
+  "sidebar.mainSidebar.category.文件监听-gfsnotify": {
+    "message": "文件监听-gfsnotify",
+    "description": "The label for category 文件监听-gfsnotify in sidebar mainSidebar"
+  },
   "sidebar.mainSidebar.category.文本处理": {
     "message": "文本处理",
     "description": "The label for category 文本处理 in sidebar mainSidebar"
@@ -230,6 +238,22 @@
   "sidebar.mainSidebar.category.数据管理": {
     "message": "数据管理",
     "description": "The label for category 数据管理 in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.网络组件": {
+    "message": "网络组件",
+    "description": "The label for category 网络组件 in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.TCP组件": {
+    "message": "TCP组件",
+    "description": "The label for category TCP组件 in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.TCP组件-连接对象": {
+    "message": "TCP组件-连接对象",
+    "description": "The label for category TCP组件-连接对象 in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.UDP组件": {
+    "message": "UDP组件",
+    "description": "The label for category UDP组件 in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.加密解密": {
     "message": "加密解密",
@@ -315,22 +339,6 @@
     "message": "高级特性",
     "description": "The label for category 高级特性 in sidebar mainSidebar"
   },
-  "sidebar.mainSidebar.category.网络服务开发": {
-    "message": "网络服务开发",
-    "description": "The label for category 网络服务开发 in sidebar mainSidebar"
-  },
-  "sidebar.mainSidebar.category.TCP组件": {
-    "message": "TCP组件",
-    "description": "The label for category TCP组件 in sidebar mainSidebar"
-  },
-  "sidebar.mainSidebar.category.TCP组件-连接对象": {
-    "message": "TCP组件-连接对象",
-    "description": "The label for category TCP组件-连接对象 in sidebar mainSidebar"
-  },
-  "sidebar.mainSidebar.category.UDP组件": {
-    "message": "UDP组件",
-    "description": "The label for category UDP组件 in sidebar mainSidebar"
-  },
   "sidebar.mainSidebar.category.服务可观测性": {
     "message": "服务可观测性",
     "description": "The label for category 服务可观测性 in sidebar mainSidebar"
@@ -367,20 +375,52 @@
     "message": "快速开始",
     "description": "The label for category 快速开始 in sidebar quickSidebar"
   },
-  "sidebar.quickSidebar.category.项目脚手架": {
-    "message": "项目脚手架",
-    "description": "The label for category 项目脚手架 in sidebar quickSidebar"
+  "sidebar.quickSidebar.category.项目脚手架🌟": {
+    "message": "项目脚手架🌟",
+    "description": "The label for category 项目脚手架🌟 in sidebar quickSidebar"
   },
-  "sidebar.releaseSidebar.category.历史版本记录 v0.x": {
-    "message": "历史版本记录 v0.x",
-    "description": "The label for category 历史版本记录 v0.x in sidebar releaseSidebar"
+  "sidebar.quickSidebar.category.接口开发🌟": {
+    "message": "接口开发🌟",
+    "description": "The label for category 接口开发🌟 in sidebar quickSidebar"
+  },
+  "sidebar.courseStarBookSidebar.category.第一章-基础信息": {
+    "message": "第一章-基础信息",
+    "description": "The label for category 第一章-基础信息 in sidebar courseStarBookSidebar"
+  },
+  "sidebar.courseStarBookSidebar.category.第二章-用户注册": {
+    "message": "第二章-用户注册",
+    "description": "The label for category 第二章-用户注册 in sidebar courseStarBookSidebar"
+  },
+  "sidebar.courseStarBookSidebar.category.第三章-会话管理": {
+    "message": "第三章-会话管理",
+    "description": "The label for category 第三章-会话管理 in sidebar courseStarBookSidebar"
+  },
+  "sidebar.courseStarBookSidebar.category.第四章-单词管理": {
+    "message": "第四章-单词管理",
+    "description": "The label for category 第四章-单词管理 in sidebar courseStarBookSidebar"
+  },
+  "sidebar.courseStarBookSidebar.category.第五章-学习单词": {
+    "message": "第五章-学习单词",
+    "description": "The label for category 第五章-学习单词 in sidebar courseStarBookSidebar"
   },
   "sidebar.releaseSidebar.category.历史版本记录 v1.x": {
     "message": "历史版本记录 v1.x",
     "description": "The label for category 历史版本记录 v1.x in sidebar releaseSidebar"
   },
-  "sidebar.shareSidebar.category.技术分享交流": {
+  "sidebar.releaseSidebar.category.历史版本记录 v0.x": {
+    "message": "历史版本记录 v0.x",
+    "description": "The label for category 历史版本记录 v0.x in sidebar releaseSidebar"
+  },
+  "sidebar.communitySidebar.category.社区交流": {
+    "message": "社区交流",
+    "description": "The label for category 社区交流 in sidebar communitySidebar"
+  },
+  "sidebar.communitySidebar.category.技术分享交流": {
     "message": "技术分享交流",
-    "description": "The label for category 技术分享交流 in sidebar shareSidebar"
+    "description": "The label for category 技术分享交流 in sidebar communitySidebar"
+  },
+  "sidebar.communitySidebar.category.支持我们": {
+    "message": "支持我们",
+    "description": "The label for category 支持我们 in sidebar communitySidebar"
   }
 }

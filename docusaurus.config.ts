@@ -201,10 +201,10 @@ const config: Config = {
           position: 'right',
           dropdownActiveClassDisabled: true,
         },
-        // {
-        //   type: 'localeDropdown',
-        //   position: 'right',
-        // },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           href: 'https://github.com/gogf/gf',
           position: 'right',

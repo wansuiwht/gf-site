@@ -44,10 +44,10 @@ https://docusaurus.io/docs/i18n/introduction#translation-files-location
 https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#i18n
 
 # 创建多语言元数据
-yarn run write-translations --locale en
+yarn write-translations --locale en
 
 # 指定i18n语言运行
-yarn run start --locale en
+yarn start --locale en
 ```
 
 
