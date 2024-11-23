@@ -23,7 +23,7 @@ go.work.sum
 node_modules
 .docusaurus
 output
-
+docs/docs/changelog.md
 
 # Dependencies
 /node_modules
