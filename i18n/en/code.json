@@ -3,97 +3,97 @@
     "message": "Favorite"
   },
   "showcase.tag.favorite.description": {
-    "message": "我们喜欢并推荐给大家的案例，感兴趣可以瞧瞧。"
+    "message": "Out favorite cases."
   },
   "V1": {
     "message": "V1"
   },
   "showcase.tag.v1.description": {
-    "message": "该案例使用GoFrame V1版本。"
+    "message": "Cases using GoFrame V1."
   },
   "V2": {
     "message": "V2"
   },
   "showcase.tag.v2.description": {
-    "message": "该案例使用GoFrame V2版本。"
+    "message": "Cases using GoFrame V2."
   },
   "OpenSource": {
     "message": "OpenSource"
   },
   "showcase.tag.opensource.description": {
-    "message": "开源项目案例，通常是开源站点或组件，带有参考的源码案例。"
+    "message": "OpenSource cases."
   },
   "Product": {
     "message": "Product"
   },
   "showcase.tag.product.description": {
-    "message": "带有商业授权案例，该案例可能同时具有源码和商业授权。"
+    "message": "Cases associated with business product."
   },
   "FrontUI": {
     "message": "FrontUI"
   },
   "showcase.tag.frontui.description": {
-    "message": "带有前台UI的使用案例。"
+    "message": "Cases associated with front UI."
   },
   "AdminUI": {
     "message": "AdminUI"
   },
   "showcase.tag.adminui.description": {
-    "message": "带有管理后台UI的使用案例。"
+    "message": "Cases associated with amin UI."
   },
   "Library": {
     "message": "Library"
   },
   "showcase.tag.library.description": {
-    "message": "Go源码组件，供import使用。"
+    "message": "Go source package, for import usage."
   },
   "MicroService": {
     "message": "MicroService"
   },
   "showcase.tag.micro.description": {
-    "message": "该案例支持微服务开发架构。"
+    "message": "Cases associated with micro service architecture."
   },
   "CloudNative": {
     "message": "CloudNative"
   },
   "showcase.tag.cloudnative.description": {
-    "message": "该案例支持云原生开发架构。"
+    "message": "Cases associated with cloud native architecture."
   },
   "Tool": {
     "message": "Tool"
   },
   "showcase.tag.tool.description": {
-    "message": "系统或开发工具类的案例。"
+    "message": "Cases are some useful tools."
   },
   "AI": {
     "message": "AI"
   },
   "showcase.tag.ai.description": {
-    "message": "该案例与AI技术相关。"
+    "message": "Cases associated with AI technology."
   },
   "showcase.filters.resultCount": {
-    "message": "{sitesCount} 项案例"
+    "message": "{sitesCount} cases"
   },
   "🌟GoFrame框架案例展示, Time to shine🌟": {
-    "message": "🌟GoFrame框架案例展示, Time to shine🌟"
+    "message": "🌟GoFrame User Cases, Time to shine🌟"
   },
   "🌟框架案例展示🌟": {
-    "message": "🌟框架案例展示🌟"
+    "message": "🌟GoFrame User Cases🌟"
   },
   "🔥基于GoFrame构建的站点, 以及适用于GoFrame的开源组件列表🔥": {
-    "message": "🔥基于GoFrame构建的站点, 以及适用于GoFrame的开源组件列表🔥"
+    "message": "🔥Sites built with GoFrame and open-source components suitable for GoFrame.🔥"
   },
   "🔥基于GoFrame构建的站点及开源组件列表🔥": {
-    "message": "🔥基于GoFrame构建的站点及开源组件列表🔥"
+    "message": "🔥Cases Built With GoFrame🔥"
   },
   "showcase.header.button": {
-    "message": "👋 欢迎提交您的使用案例"
+    "message": "👋 welcome to submit your use cases"
   },
   "showcase.resetbutton": {
-    "message": "重置条件"
+    "message": "RESET"
   },
   "showcase.card.sourceLink": {
-    "message": "源码"
+    "message": "source"
   },
   "showcase.usersList.noResult": {
     "message": "没有符合条件的案例"
