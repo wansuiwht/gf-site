@@ -3,8 +3,8 @@ slug: '/docs/web/http-client-file-uploading'
 title: 'HTTPClient-File Uploading'
 sidebar_position: 1
 hide_title: true
-keywords: [GoFrame,HTTP Client,File Uploading,Server Interface,Form File,GoFrame Framework,Single File Upload,Multiple File Upload,File Path,Upload Parameters]
-description: "Using the GoFrame framework for HTTP client file uploading, a convenient file upload feature is implemented, and three major interfaces are provided to support single and multiple file uploads. Detailed explanations of both server and client implementation code are provided, along with methods for custom file naming and standardized routing to receive uploaded files, suitable for scenarios requiring integration of file upload functionality."
+keywords: [GoFrame,HTTP Client,File Uploading,Server API,Form File,GoFrame Framework,Single File Upload,Multiple File Upload,File Path,Upload Parameters]
+description: "Using the GoFrame framework for HTTP client file uploading, a convenient file upload feature is implemented, and three major APIs are provided to support single and multiple file uploads. Detailed explanations of both server and client implementation code are provided, along with methods for custom file naming and standardized routing to receive uploaded files, suitable for scenarios requiring integration of file upload functionality."
 ---
 
 `GoFrame` supports very convenient form file uploading functionality, and the HTTP client has encapsulated the upload functionality to simplify the calling of the upload feature significantly.
@@ -80,11 +80,11 @@ func main() {
 }
 ```
 
-The server provides three interfaces:
+The server provides three APIs:
 
 1. [http://127.0.0.1:8199/upload/show](http://127.0.0.1:8199/upload/show) for displaying a single file upload H5 page;
 2. [http://127.0.0.1:8199/upload/batch](http://127.0.0.1:8199/upload/batch) for displaying a multiple files upload H5 page;
-3. [http://127.0.0.1:8199/upload](http://127.0.0.1:8199/upload) interface for real form file uploading, supporting both single and multiple file uploads.
+3. [http://127.0.0.1:8199/upload](http://127.0.0.1:8199/upload) API for real form file uploading, supporting both single and multiple file uploads.
 
 Visit [http://127.0.0.1:8199/upload/show](http://127.0.0.1:8199/upload/show) to choose a single file to upload. After submitting, you can see that the file has been successfully uploaded to the server.
 

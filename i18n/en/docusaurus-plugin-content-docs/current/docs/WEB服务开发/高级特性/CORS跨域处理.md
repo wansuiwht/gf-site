@@ -7,7 +7,7 @@ keywords: [CORS, Cross-Domain Requests, GoFrame, Middleware, AJAX, Origin, CORSO
 description: "Handling CORS cross-domain requests using the GoFrame framework, setting cross-domain rules with routing management and middleware, allowing WebSocket cross-domain access. Provides CORS object and its configuration parameters, including default and restricted Origin settings. Additionally, it demonstrates basic usage methods, authorizing cross-domain Origin, and custom detection methods to achieve more flexible cross-domain request management."
 ---
 
-Allowing cross-domain access to interfaces often requires using it in conjunction with [Routing Management - Middleware/Interceptors](../%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86/%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D.md) to uniformly set which interface under certain routing rules can be accessed cross-domain. This method is also used to allow cross-domain access for `WebSocket` requests.
+Allowing cross-domain access to APIs often requires using it in conjunction with [Routing Management - Middleware/Interceptors](../%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86/%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D.md) to uniformly set which API under certain routing rules can be accessed cross-domain. This method is also used to allow cross-domain access for `WebSocket` requests.
 
 Related methods: [https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response](https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response)
 
@@ -42,7 +42,7 @@ For specific parameter introductions, please refer to the W3 organization [offic
 
 #### Default `CORSOptions`
 
-For ease of cross-domain settings, the `ghttp` module also provides default cross-domain request options, available through the `DefaultCORSOptions` method. In most cases, we can directly use `CORSDefault()` to allow cross-domain access for interfaces that need to allow cross-domain requests (generally using middleware).
+For ease of cross-domain settings, the `ghttp` module also provides default cross-domain request options, available through the `DefaultCORSOptions` method. In most cases, we can directly use `CORSDefault()` to allow cross-domain access for APIs that need to allow cross-domain requests (generally using middleware).
 
 #### Restricting `Origin` Sources
 
@@ -64,7 +64,7 @@ Some clients and certain browsers will send an `OPTIONS` preflight request befor
 
 ### Example 1, Basic Usage
 
-Let's look at a simple interface example:
+Let's look at a simple API example:
 
 ```go
 package main
@@ -88,7 +88,7 @@ func main() {
 }
 ```
 
-The interface address is [http://localhost/api.v1/order](http://localhost/api.v1/order), and of course, this interface does not allow cross-domain access. We open a different domain, for example, the Baidu homepage (which uses `jQuery`, convenient for debugging), then press `F12` to open the developer panel and execute the following `AJAX` request under `console`:
+The API address is [http://localhost/api.v1/order](http://localhost/api.v1/order), and of course, this API does not allow cross-domain access. We open a different domain, for example, the Baidu homepage (which uses `jQuery`, convenient for debugging), then press `F12` to open the developer panel and execute the following `AJAX` request under `console`:
 
 ```
 $.get("http://localhost:8199/api.v1/order", function(result){
@@ -100,7 +100,7 @@ The result is as follows:
 
 ![](/markdown/06b316cb2a487071cf4be67a3481dac3.png)
 
-It returned an error indicating that cross-domain requests are not allowed. Next, we modify the server-side interface test code as follows:
+It returned an error indicating that cross-domain requests are not allowed. Next, we modify the server-side API test code as follows:
 
 ```go
 package main
@@ -130,7 +130,7 @@ func main() {
 }
 ```
 
-We added the pre-middleware `MiddlewareCORS` for the route `/api.v1`, which will be called before all services are executed. By calling the `CORSDefault` method, we use the default cross-domain settings to allow cross-domain requests. The bound event routing rule uses a fuzzy matching rule, indicating that all interface addresses starting with `/api.v1` allow cross-domain requests.
+We added the pre-middleware `MiddlewareCORS` for the route `/api.v1`, which will be called before all services are executed. By calling the `CORSDefault` method, we use the default cross-domain settings to allow cross-domain requests. The bound event routing rule uses a fuzzy matching rule, indicating that all API addresses starting with `/api.v1` allow cross-domain requests.
 
 Returning to the Baidu homepage, executing the `AJAX` request again, this time it succeeds:
 
@@ -174,7 +174,7 @@ func main() {
 
 ### Example 3, Custom Detection and Authorization
 
-I wonder if you noticed a detail in the above examples: even if the current interface does not allow cross-domain access, once the interface is called, the complete logic of the interface will still be executed, and a full request process will have occurred on the server. To address this issue, we can customize the authorization `Origin` and use the `CORSAllowedOrigin` method in middleware to determine whether the current request `Origin` is allowed by the server to execute. Only then will the subsequent process be executed; otherwise, execution will be terminated.
+I wonder if you noticed a detail in the above examples: even if the current API does not allow cross-domain access, once the API is called, the complete logic of the API will still be executed, and a full request process will have occurred on the server. To address this issue, we can customize the authorization `Origin` and use the `CORSAllowedOrigin` method in middleware to determine whether the current request `Origin` is allowed by the server to execute. Only then will the subsequent process be executed; otherwise, execution will be terminated.
 
 In the following example, only cross-domain requests from the `goframe.org` domain are allowed, while requests from other domains will fail and return `403`:
 

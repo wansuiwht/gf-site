@@ -3,8 +3,8 @@ slug: '/docs/cli/gen-service'
 title: 'Module Generating - gen service'
 sidebar_position: 2
 hide_title: true
-keywords: [GoFrame,Golang,Business Logic,Module Management,Interface Definition,Code Generation,Circular Dependencies,Service Registration,Compiler,Microservices]
-description: "Encapsulate and manage business logic in the GoFrame framework by generating module interface definitions and registration code to simplify the implementation process of separating business logic from interfaces. Improve module transparency through structured coding of logic and interfaces while avoiding circular dependencies. Provides both manual and automated implementation modes suitable for different development environments."
+keywords: [GoFrame,Golang,Business Logic,Module Management,API Definition,Code Generation,Circular Dependencies,Service Registration,Compiler,Microservices]
+description: "Encapsulate and manage business logic in the GoFrame framework by generating module API definitions and registration code to simplify the implementation process of separating business logic from interfaces. Improve module transparency through structured coding of logic and interfaces while avoiding circular dependencies. Provides both manual and automated implementation modes suitable for different development environments."
 ---
 :::warning
 This feature is an **experimental feature**. It is recommended for developers to focus on module division under `logic`, streamline inter-module relationship, avoid circular dependencies, and fully utilize the circular dependency detection feature of the `Golang` compiler to write higher quality project code.
@@ -19,18 +19,18 @@ This feature is available from version `v2.1`.
 
 In business project practices, business logic encapsulation is often the most complex part. Meanwhile, dependencies between business modules are very complex and boundaries are vague, making it difficult to use the `Golang` package management form. Effectively managing the encapsulation part of business logic in a project is a challenge that every project developed with `Golang` is bound to encounter.
 
-In a standard software design process, dependencies between modules first clarify interface definitions, and then the implementation is done through code during the software development process. However, in most high-paced internet engineering, there isn't a rigorous software design process, and the quality level of developers varies. Most developers first focus on how to implement the functional logic corresponding to the requirements scenario to maximize development efficiency.
+In a standard software design process, dependencies between modules first clarify API definitions, and then the implementation is done through code during the software development process. However, in most high-paced internet engineering, there isn't a rigorous software design process, and the quality level of developers varies. Most developers first focus on how to implement the functional logic corresponding to the requirements scenario to maximize development efficiency.
 
 ### Design Objectives
 
-1. Provide a code management method that can directly generate module interface definitions and module registration code through specific module implementation.
-2. Simplify the implementation of separating business logic and interfaces, reduce the repetitive operation of module methods and interface definitions, and enhance module transparency and ease of invocation between modules.
+1. Provide a code management method that can directly generate module API definitions and module registration code through specific module implementation.
+2. Simplify the implementation of separating business logic and interfaces, reduce the repetitive operation of module methods and API definitions, and enhance module transparency and ease of invocation between modules.
 
 ### Design Implementation
 
 1. Add a `logic` category directory, migrate all business logic code to the `logic` category directory, and manage business modules in the form of package management.
 2. Dependencies between business modules are decoupled through interfaces, and the original `service` category is adjusted to an interface directory. Each business module will maintain its own, being more flexible.
-3. Based on certain coding specifications, `service` interface definition code can be generated from the `logic` business logic code. It also allows for manual maintenance of this part of the `service` interface.
+3. Based on certain coding specifications, `service` API definition code can be generated from the `logic` business logic code. It also allows for manual maintenance of this part of the `service` interface.
 
 ## Things to Note
 :::warning
@@ -96,7 +96,7 @@ Parameter Description:
 | `srcFolder` | Yes | `internal/logic` | Points to the logic code directory address |
 | `dstFolder` | Yes | `internal/service` | Points to the directory where the generated interface files are stored |
 | `dstFileNameCase` | No | `Snake` | The format of the generated filename |
-| `stPattern` | No | `s([A-A]\w+)` | Use regular expression to specify the business module struct definition format for easy parsing of business interface definition names. Under the default regex, all structs starting with lowercase `s` followed by uppercase letters will be treated as business module interface names. For example:
+| `stPattern` | No | `s([A-A]\w+)` | Use regular expression to specify the business module struct definition format for easy parsing of business API definition names. Under the default regex, all structs starting with lowercase `s` followed by uppercase letters will be treated as business module interface names. For example:
 
 | Logic Struct Name | Service Interface Name |
 | --- | --- |
@@ -144,7 +144,7 @@ We recommend using the configuration file: [watchers.xml](gen-service-watchers.x
 
 ### Step3: Generate Interface and Service Registration Files
 
-If you have done the configuration in `Step1`, you can ignore this step. Because when you write code, `service` will generate the interface definition file at the same time.
+If you have done the configuration in `Step1`, you can ignore this step. Because when you write code, `service` will generate the API definition file at the same time.
 
 Otherwise, every time you finish developing/updating the `logic` business module, you need to manually execute the `gf gen service` command.
 
@@ -174,13 +174,13 @@ Simply start `main.go`.
 
 ### When a structure in `logic` has nested types, methods for the nested types cannot be automatically generated
 
-In such cases, it is recommended to manually maintain the `service` interface definitions and not use the automatic generation tool. The manually maintained interface definition files will not be overwritten by the tool, and both manual and automatic methods can be used together.
+In such cases, it is recommended to manually maintain the `service` API definitions and not use the automatic generation tool. The manually maintained API definition files will not be overwritten by the tool, and both manual and automatic methods can be used together.
 
 ### Quickly Locate Specific Implementations of Interfaces
 
 **After adopting interface-based decoupling for project business modules, the experience is fantastic! But if I want to quickly find the specific implementations of specified interfaces during development and debugging, it's a bit challenging. Any guiding thoughts?**
 
-\> Here, I recommend using `Goland IDE`, which has an excellent interface implementation locating feature, as shown in the figure. After finding the interface definition, click the small icon on the left to quickly locate the specific implementations. If Goland doesn't show the small icon, try upgrading to the latest version of `Goland`.
+\> Here, I recommend using `Goland IDE`, which has an excellent interface implementation locating feature, as shown in the figure. After finding the API definition, click the small icon on the left to quickly locate the specific implementations. If Goland doesn't show the small icon, try upgrading to the latest version of `Goland`.
 
 ![](/markdown/bbcc72eb46954b60c49be42a8ecebe35.png)
 

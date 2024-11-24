@@ -25,8 +25,8 @@ type CreateRes struct {
 }
 ```
 Brief Introduction:
-- In API definitions, `g.Meta` is used to manage interface metadata information, which are defined as tags on the `g.Meta` property. These metadata include `path` (route address), `method` (request method), `tags` (interface group for generating interface documentation), and `summary` (interface description). These metadata are part of `OpenAPIv3`, which we won't go into detail here. For those interested, refer to the chapter: [Interface Documentation - OpenAPIv3](../../../docs/WEB服务开发/接口文档/接口文档-OpenAPIv3.md).
-- The `Name` and `Age` attributes here are the parameter definitions for our interface. The `dc` tag is a shorthand for `description`, indicating the meaning of the parameter; the `v` tag is a shorthand for `valid`, indicating the validation rules for the parameter. We use three built-in validation rules here:
+- In API definitions, `g.Meta` is used to manage API metadata information, which are defined as tags on the `g.Meta` property. These metadata include `path` (route address), `method` (request method), `tags` (API group for generating API documentation), and `summary` (API description). These metadata are part of `OpenAPIv3`, which we won't go into detail here. For those interested, refer to the chapter: [API Documentation - OpenAPIv3](../../../docs/WEB服务开发/接口文档/接口文档-OpenAPIv3.md).
+- The `Name` and `Age` attributes here are the parameter definitions for our API. The `dc` tag is a shorthand for `description`, indicating the meaning of the parameter; the `v` tag is a shorthand for `valid`, indicating the validation rules for the parameter. We use three built-in validation rules here:
   - `required`: The parameter is mandatory.
   - `length`: Validates the parameter's length.
   - `between`: Validates the parameter's range.
@@ -35,7 +35,7 @@ Brief Introduction:
 - Only the return parameter structures have `json` tags because the returned data usually needs to be converted to `json` format for use by the frontend, and parameter naming in `snake` style is more in line with frontend naming conventions.
 
 :::tip
-In a `RESTful` style interface design, we typically use `POST` from the `HTTP Method` to denote write operations and `PUT` to denote update operations.
+In a `RESTful` style API design, we typically use `POST` from the `HTTP Method` to denote write operations and `PUT` to denote update operations.
 :::
 
 ## `Delete`
@@ -76,7 +76,7 @@ type UpdateRes struct{}
 Here:
 - We define a user status type `Status`, using the conventional `enums` definition style in `Golang`. Just for understanding here.
 - The validation for the `Status` parameter uses the `in:0,1` rule, which checks that the passed `Status` value must be one of the two constants we defined, `StatusOK/StatusDisabled`, i.e., `0/1`.
-- The interface parameters use pointers to avoid default type values affecting our update interface. For example, if `Status` is not defined as a pointer, it will be affected by the default value `0`. During processing logic, it's hard to determine whether the caller has passed the parameter and whether to actually change the value to `0`. By using pointers, when users don't pass the parameter, its default value is `nil`, making it easy to judge in processing logic.
+- The API parameters use pointers to avoid default type values affecting our update API. For example, if `Status` is not defined as a pointer, it will be affected by the default value `0`. During processing logic, it's hard to determine whether the caller has passed the parameter and whether to actually change the value to `0`. By using pointers, when users don't pass the parameter, its default value is `nil`, making it easy to judge in processing logic.
 
 ## `GetOne` 
 
@@ -104,12 +104,12 @@ type GetListRes struct {
     List []*entity.User `json:"list" dc:"user list"`
 }
 ```
-This interface can query by `Age` and `Status`, returning multiple records `List []*entity.User`.
+This API can query by `Age` and `Status`, returning multiple records `List []*entity.User`.
 
 ## Learning Summary
 
 Sample code for this chapter: https://github.com/gogf/quick-demo/blob/main/api/user/v1/user.go
 
-As shown, defining `api` interfaces in the `GoFrame` framework's scaffolding project is quite elegant, with support for automatic data validation, metadata injection, flexible route configuration, and other practical features. This method of interface definition allows for the automatic generation of interface documentation, where the code serves as documentation, ensuring consistency between code and documentation.
+As shown, defining `api` APIs in the `GoFrame` framework's scaffolding project is quite elegant, with support for automatic data validation, metadata injection, flexible route configuration, and other practical features. This method of API definition allows for the automatic generation of API documentation, where the code serves as documentation, ensuring consistency between code and documentation.
 
 Moreover, this is not the full charm of `GoFrame`, just a single petal on the rose. Next, we will use scaffold tools to automatically generate the corresponding `controller` control code for us.

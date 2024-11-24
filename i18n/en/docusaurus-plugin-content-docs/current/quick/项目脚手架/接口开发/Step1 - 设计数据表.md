@@ -37,7 +37,7 @@ docker run -d --name mysql \
 After starting, connect to the database and apply the table creation `sql` statements:
 ```text
 $ mysql -h127.0.0.1 -p3306 -uroot -p
-mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line API can be insecure.
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 57

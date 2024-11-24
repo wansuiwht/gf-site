@@ -115,8 +115,8 @@ Note that the server connection address here is: `ws://127.0.0.1:8199/ws`.
 The client's functionality is quite simple, mainly implementing these features:
 
 - Maintaining the connection status with the server's `websocket` and information display;
-- Inputting content in the interface and sending information to the `websocket` server;
-- Echoing the returned information from the `websocket` on the interface;
+- Inputting content in the API and sending information to the `websocket` server;
+- Echoing the returned information from the `websocket` on the API;
 
 ## WebSocket Server
 
@@ -162,11 +162,11 @@ As you can see, the server code is quite simple. Here are a few points worth not
 
 1. **WebSocket Method**
 
-The route registration method for a `websocket` server is the same as that for a regular `http` callback function. However, in handling the interface, we need to convert the request into a `websocket` operation using the `ghttp.Request.WebSocket` method (using the pointer object `r.WebSocket()`) and return a `WebSocket object`, which is used for subsequent `websocket` communication operations. Of course, if the client's request is not a `websocket` operation, the conversion will fail. The method will return an error message, so please note to check the `error` return value when using this method.
+The route registration method for a `websocket` server is the same as that for a regular `http` callback function. However, in handling the API, we need to convert the request into a `websocket` operation using the `ghttp.Request.WebSocket` method (using the pointer object `r.WebSocket()`) and return a `WebSocket object`, which is used for subsequent `websocket` communication operations. Of course, if the client's request is not a `websocket` operation, the conversion will fail. The method will return an error message, so please note to check the `error` return value when using this method.
 
 1. **ReadMessage & WriteMessage**
 
-Reading and writing messages correspond to the data reading and writing operations of `websocket` (`ReadMessage & WriteMessage`). It's important to note that both of these methods have a `msgType` variable that indicates the type of data to be read and written. The two common data types are: string data or binary data. During usage, since both sides of the interface will agree on a unified data format, the `msgType` for reading and writing is almost always the same. Therefore, in this example, when returning a message, the data type parameter directly uses the read `msgType`.
+Reading and writing messages correspond to the data reading and writing operations of `websocket` (`ReadMessage & WriteMessage`). It's important to note that both of these methods have a `msgType` variable that indicates the type of data to be read and written. The two common data types are: string data or binary data. During usage, since both sides of the API will agree on a unified data format, the `msgType` for reading and writing is almost always the same. Therefore, in this example, when returning a message, the data type parameter directly uses the read `msgType`.
 
 ## HTTPS WebSocket
 

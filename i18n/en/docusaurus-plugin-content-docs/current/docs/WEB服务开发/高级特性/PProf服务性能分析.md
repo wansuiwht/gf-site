@@ -140,7 +140,7 @@ curl http://127.0.0.1:8199/debug/pprof/profile > pprof.profile
 go tool pprof -http :8080 pprof.profile
 ```
 
-After approximately `30` seconds of interface data collection by the `pprof` tool (during which time the `WebServer` should have incoming traffic), a performance analysis report is generated. You can then view the report results using `top10`/`web` and other `pprof` commands. For more commands, use `go tool pprof`. For detailed usage of `pprof`, please refer to Golang's official documentation: [blog.golang.org/profiling-go-programs](https://blog.golang.org/profiling-go-programs)
+After approximately `30` seconds of API data collection by the `pprof` tool (during which time the `WebServer` should have incoming traffic), a performance analysis report is generated. You can then view the report results using `top10`/`web` and other `pprof` commands. For more commands, use `go tool pprof`. For detailed usage of `pprof`, please refer to Golang's official documentation: [blog.golang.org/profiling-go-programs](https://blog.golang.org/profiling-go-programs)
 
 ### CPU Performance Analysis
 
@@ -153,7 +153,7 @@ Serving web UI on http://localhost:8080
 :::tip
 To display `pprof` graphically, the `Graphviz` graphical tool needs to be installed. For my current system, `Ubuntu`, install by executing `sudo apt-get install graphviz` (for `MacOS`, use `brew install Graphviz`).
 :::
-After running, it will open the following graphical interface using the default browser, displaying the CPU cost path captured during this period:
+After running, it will open the following graphical API using the default browser, displaying the CPU cost path captured during this period:
 
 ![](/markdown/56387af30ed4e111df652c5918f36313.png)
 

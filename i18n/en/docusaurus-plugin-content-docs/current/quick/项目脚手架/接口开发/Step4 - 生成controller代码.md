@@ -3,8 +3,8 @@ slug: '/quick/scaffold-api-controller'
 title: 'Step4 - Generate Controller'
 hide_title: true
 sidebar_position: 4
-keywords: [GoFrame, API Code Generation, Controller Code, Generate Controller, Code Auto Generation, Interface Implementation, GoFrame Framework, Route Object Management, Interface Route Implementation, Code Template]
-description: "Generate controller code based on API definition, including API interface files, route object management, and route implementation code, using GoFrame framework's command tool to quickly generate relevant code templates, ensuring complete implementation of the interface, and demonstrating how to implement specific business logic through files."
+keywords: [GoFrame, API Code Generation, Controller Code, Generate Controller, Code Auto Generation, API Implementation, GoFrame Framework, Route Object Management, API Route Implementation, Code Template]
+description: "Generate controller code based on API definition, including API API files, route object management, and route implementation code, using GoFrame framework's command tool to quickly generate relevant code templates, ensuring complete implementation of the API, and demonstrating how to implement specific business logic through files."
 ---
 
 ## Generate Codes From API Definition
@@ -24,13 +24,13 @@ generated: /Users/john/Temp/demo/internal/controller/user/user_v1_get_list.go
 done!
 ```
 
-![goframe api interface controller](QQ_1731678085194.png)
+![goframe api API controller](QQ_1731678085194.png)
 
 The generated codes mainly include `3` types of files.
 
-## Abstraction Interface For API
+## Abstraction API For API
 
-Defines the `api interface` to ensure the completeness of the controller's interface implementation, avoiding issues of missing interface implementations in `controller`. Since `GoFrame` is a rigorous development framework, it controls such details well. Whether or not this feature is used by developers can be decided based on specific scenarios and needs.
+Defines the `api API` to ensure the completeness of the controller's API implementation, avoiding issues of missing API implementations in `controller`. Since `GoFrame` is a rigorous development framework, it controls such details well. Whether or not this feature is used by developers can be decided based on specific scenarios and needs.
 
 ```text
 /Users/john/Temp/demo/api/user/user.go
@@ -101,12 +101,12 @@ func NewV1() user.IUserV1 {
 Both of these files will only be generated once, after which developers can freely modify and extend them.
 
 :::tip
-If later we need to define a `v2` interface, the `make ctrl` command will similarly generate a `type ControllerV2 struct{}` structure definition and a `func NewV2() user.IUserV2` initialization method.
+If later we need to define a `v2` API, the `make ctrl` command will similarly generate a `type ControllerV2 struct{}` structure definition and a `func NewV2() user.IUserV2` initialization method.
 :::
 
 ## Controller Router Implementation
 
-Used for the implementation code files of specific `api` interfaces. By default, codes are generated in the form of one source file per `api` interface. Of course, it is also possible to control the aggregation of interfaces defined in `api` files into a corresponding single source file. For specific command introductions and configurations, please refer to the chapter [Interface Specification-gen ctrl](../../../docs/开发工具/代码生成-gen/接口规范-gen%20ctrl.md).
+Used for the implementation code files of specific `api` APIs. By default, codes are generated in the form of one source file per `api` API. Of course, it is also possible to control the aggregation of APIs defined in `api` files into a corresponding single source file. For specific command introductions and configurations, please refer to the chapter [API Specification-gen ctrl](../../../docs/开发工具/代码生成-gen/接口规范-gen%20ctrl.md).
 
 ```text
 generated: /Users/john/Temp/demo/internal/controller/user/user_v1_create.go
@@ -134,7 +134,7 @@ func (c *ControllerV1) Create(ctx context.Context, req *v1.CreateReq) (res *v1.C
     return nil, gerror.NewCode(gcode.CodeNotImplemented)
 }
 ```
-As we can see, this is just the implementation template for the create interface we defined. We just need to complete the specific business logic of this route function.
+As we can see, this is just the implementation template for the create API we defined. We just need to complete the specific business logic of this route function.
 
 ## Learning Summary
 
@@ -146,4 +146,4 @@ Yes, the goal of the `GoFrame` scaffolding tool is to allow developers to focus 
 
 Such a development method is extremely convenient, not too comfortable! Do you think that’s all? Of course not, in the Quick Start chapter we only introduce some beginner-level features. When you delve deeper into her, you will discover more of her goodness and her understanding nature.
 
-Next, we will complete the business logic implementation of the interface and feel the charm of the `GoFrame` database `ORM` component.
+Next, we will complete the business logic implementation of the API and feel the charm of the `GoFrame` database `ORM` component.

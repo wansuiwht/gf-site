@@ -53,7 +53,7 @@ c.Use(func(c *gclient.Client, r *http.Request) (resp *gclient.Response, err erro
 
 ## Usage Example
 
-Let's use a code example to better illustrate usage. This example adds an interceptor to the client, injecting custom additional parameters into the submitted JSON data. These additional parameters implement signature generation for the submitted parameters, essentially achieving a simple interface parameter security validation.
+Let's use a code example to better illustrate usage. This example adds an interceptor to the client, injecting custom additional parameters into the submitted JSON data. These additional parameters implement signature generation for the submitted parameters, essentially achieving a simple API parameter security validation.
 
 ### Server
 
@@ -111,7 +111,7 @@ const (
     appSecret = "456"
 )
 
-// Inject unified interface signature parameters
+// Inject unified API signature parameters
 func injectSignature(jsonContent []byte) []byte {
     var m map[string]interface{}
     _ = json.Unmarshal(jsonContent, &m)

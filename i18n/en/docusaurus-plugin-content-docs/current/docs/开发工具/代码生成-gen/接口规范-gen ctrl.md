@@ -34,7 +34,7 @@ When developing a project, it often starts with designing the `API` interface ba
 
 One of the purposes of this command is to standardize `api` code writing, which requires some important norms to be understood (otherwise the code cannot be generated):
 
-- `api` layer's interface definition file path needs to satisfy `/api/module/version/definition_file.go`, for example: `/api/user/v1/user.go`, `/api/user/v1/user_delete.go`, etc.
+- `api` layer's API definition file path needs to satisfy `/api/module/version/definition_file.go`, for example: `/api/user/v1/user.go`, `/api/user/v1/user_delete.go`, etc.
   - **Module** refers to the division of `API` modules, which can be split according to different **business attributes** for easier aggregation and maintenance. Modules can also be considered as specific business resources.
   - **Version** is usually defined as `v1`/`v2`, etc., for compatibility version control of `API`. Different versions are marked by different version numbers when compatibility updates occur. The first version is managed with `v1` by default.
   - **Definition file** refers to the `API` input and output definition files, where each `API` is usually maintained independently in a separate `go` file. Of course, it also supports putting multiple `APIs` in one `go` file for unified maintenance.
@@ -47,7 +47,7 @@ Below is a `Hello` interface example in the project template:
 
 ### Suggested Naming
 
-We provide some suggested naming conventions for common interface definitions for your reference:
+We provide some suggested naming conventions for common API definitions for your reference:
 
 | Operation Name | Suggested Naming | Notes |
 | --- | --- | --- |
@@ -59,11 +59,11 @@ We provide some suggested naming conventions for common interface definitions fo
 
 ## Command Usage
 
-This command analyzes the code within the specified `api` interface definition directory and automatically generates the corresponding controller/`SDK Go` code files.
+This command analyzes the code within the specified `api` API definition directory and automatically generates the corresponding controller/`SDK Go` code files.
 
 ### Manual Mode
 
-To manually execute the command line, run `gf gen ctrl` in the project's root directory. It will completely scan the `api` interface definition directory and generate corresponding code.
+To manually execute the command line, run `gf gen ctrl` in the project's root directory. It will completely scan the `api` API definition directory and generate corresponding code.
 
 ```text
 $ gf gen ctrl -h
@@ -92,7 +92,7 @@ Parameter explanation:
 
 | Name | Required | Default Value | Meaning |
 | --- | --- | --- | --- |
-| `srcFolder` | No | `api` | Points to the directory address of `api` interface definition files |
+| `srcFolder` | No | `api` | Points to the directory address of `api` API definition files |
 | `dstFolder` | No | `internal/controller` | Points to the directory where the generated controller files are stored |
 | `watchFile` | No |  | Used in IDE file monitoring, for automatic generation when files change |
 | `sdkPath` | No |  | If `HTTP SDK` needs to be generated, this parameter specifies the directory path for storing generated SDK code |
@@ -109,7 +109,7 @@ If using `GolandIDE`, the provided configuration file, [watchers.xml](gen-ctrl-w
 
 ## Usage Example
 
-### Automatically generated interface definition files
+### Automatically generated API definition files
 
 ![](/markdown/636aedc34da9bad1f84545dcfbeb38e6.png)
 
@@ -138,13 +138,13 @@ For small or personal simple projects, or projects with only a few interfaces in
 - Finally, the `controller` layer code has its own responsibilities:
   - Validate input parameters: Client-submitted parameters are not trusted and usually require data validation in most scenarios.
   - Implement the interface logic: Either directly implement the interface logic in the `controller` or call one or more `service` interfaces or third-party service interfaces to implement the logic. Avoid implementing `api` interface logic in `service` layers as `api` interfaces are tied to specific business scenarios and are not reusable. 💀 **A common mistake is directly passing the request through the `controller` to the `service` interface, making the `controller` seemingly redundant and the `service` layer's implementation more cumbersome and non-reusable.** 💀
-  - Generate return data: Organize internal result data and generate the returning data interface definition.
+  - Generate return data: Organize internal result data and generate the returning data API definition.
 
 - These responsibilities imply that `controller` code is also relatively complex. Maintaining them separately can alleviate developer mental burden and facilitate clear maintenance of `api` interface logic.
 
 **Some Suggestions**:
 
-If there are too many interface files in an `api` module, consider further splitting complex `api` modules into sub-modules. This can decouple complex `api` modules, and maintaining `api` interface definitions and `controller` interface implementation files through multiple directories will make the structure clearer and facilitate better collaboration and version management.
+If there are too many interface files in an `api` module, consider further splitting complex `api` modules into sub-modules. This can decouple complex `api` modules, and maintaining `api` API definitions and `controller` interface implementation files through multiple directories will make the structure clearer and facilitate better collaboration and version management.
 
 After reviewing the design, if you still prefer managing all interfaces using a single source file, consider the `merge` parameter. 
 

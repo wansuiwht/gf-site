@@ -20,7 +20,7 @@ This command is used to analyze the source code in the specified code directory 
 - The issue of not displaying the optional items of enum values in the `API` documentation.
 - The difficulty in maintaining enum values in the `API` documentation, and the issue of code and documentation being maintained separately. This reduces the collaboration efficiency with the caller, especially between frontend and backend.
 
-> For example, in the following interface definition, tasks have multiple states which are enum values. It's costly for the backend to maintain and easy to miss states maintenance, causing incomplete state enum values.
+> For example, in the following API definition, tasks have multiple states which are enum values. It's costly for the backend to maintain and easy to miss states maintenance, causing incomplete state enum values.
 
 ![](/markdown/3e2d58612c094dcf26ed2f17371ae482.png)
 
@@ -28,7 +28,7 @@ This command is used to analyze the source code in the specified code directory 
 
 The tool parses source code and generates enum values into the startup package `Go` file, automatically loading enum values when the service runs, reducing manual maintenance costs and avoiding omitted enum value maintenance.
 
-> For example, in the following interface definition, using the tool to maintain enum values improves development efficiency.
+> For example, in the following API definition, using the tool to maintain enum values improves development efficiency.
 
 ![](/markdown/4f5b0d82a3fa65b8c83fcd3f93a8c02a.png)
 

@@ -3,13 +3,13 @@ slug: '/docs/web/request-context'
 title: 'Request Input-Context'
 sidebar_position: 6
 hide_title: true
-keywords: [GoFrame, GoFrame framework, request context, Context object, context variable, middleware, routing service, module method, context.Context interface, Golang]
+keywords: [GoFrame, GoFrame framework, request context, Context object, context variable, middleware, routing service, module method, context.Context API, Golang]
 description: "Using the Context object in the GoFrame framework to handle context variable sharing in the request process. By providing necessary methods, developers can set custom variables at the beginning of a request and access them during subsequent processing. Additionally, this article includes example code and detailed steps on integrating third-party components to enhance functionality."
 ---
 
 ## Basic Introduction
 
-In request processes, some custom set variables are often shared in the context, such as setting some variables through middleware before the request starts, which can then be accessed in the routing service method for corresponding processing. This requirement is very common. In the `GoFrame` framework, we recommend using the `Context` context object to handle context variables shared in the process, even passing this object further into various dependent module methods. The `Context` object type implements the standard library's `context.Context` interface, which is often used as the first parameter of module inter-call methods, and this interface parameter is also the recommended way by `Golang` official to pass context variables between modules.
+In request processes, some custom set variables are often shared in the context, such as setting some variables through middleware before the request starts, which can then be accessed in the routing service method for corresponding processing. This requirement is very common. In the `GoFrame` framework, we recommend using the `Context` context object to handle context variables shared in the process, even passing this object further into various dependent module methods. The `Context` object type implements the standard library's `context.Context` API, which is often used as the first parameter of module inter-call methods, and this API parameter is also the recommended way by `Golang` official to pass context variables between modules.
 
 **Method List:**
 

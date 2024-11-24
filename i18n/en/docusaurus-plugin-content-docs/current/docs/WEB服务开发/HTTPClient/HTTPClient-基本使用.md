@@ -128,7 +128,7 @@ content := g.Client().PostContent(
 
 ## `*Var` Method
 
-Request methods ending with the `Var` suffix directly request and obtain `HTTP` interface results as the generic type `g.Var`, **making it easy to execute type conversions, especially converting request results into struct objects**. It is generally used when the server returns data in `JSON/XML` format. By leveraging the returned `g.Var` generic object, you can perform automatic parsing based on your needs. Moreover, if the request fails or the request result is empty, an empty `g.Var` generic object will be returned, ensuring it doesn't affect the conversion method invocation.
+Request methods ending with the `Var` suffix directly request and obtain `HTTP` API results as the generic type `g.Var`, **making it easy to execute type conversions, especially converting request results into struct objects**. It is generally used when the server returns data in `JSON/XML` format. By leveraging the returned `g.Var` generic object, you can perform automatic parsing based on your needs. Moreover, if the request fails or the request result is empty, an empty `g.Var` generic object will be returned, ensuring it doesn't affect the conversion method invocation.
 
 Example usage:
 

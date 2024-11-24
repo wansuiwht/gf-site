@@ -9,7 +9,7 @@ description: "Introduce MySQL database driver, with steps for adding database co
 
 ## Import Database Driver
 
-The `GoFrame` database component uses an interface-based design, separating interface and implementation to provide better abstraction and extensibility. Here, we use the `MySQL` database, so we need to import the specific `MySQL` driver implementation. We can add `_ "github.com/gogf/gf/contrib/drivers/mysql/v2"` in `main.go`.
+The `GoFrame` database component uses an API-based design, separating API and implementation to provide better abstraction and extensibility. Here, we use the `MySQL` database, so we need to import the specific `MySQL` driver implementation. We can add `_ "github.com/gogf/gf/contrib/drivers/mysql/v2"` in `main.go`.
 
 Sample source code: https://github.com/gogf/quick-demo/blob/main/main.go
 
@@ -90,7 +90,7 @@ In the `group.Bind` method of the grouped routes, you can add our route object t
 
 Sample source code: https://github.com/gogf/quick-demo/blob/main/internal/cmd/cmd.go
 
-At this point, our interface development is complete. The next step is to start the service and perform some interface testing to see the effect.
+At this point, our API development is complete. The next step is to start the service and perform some API testing to see the effect.
 
 ## Learning Summary
 
@@ -98,10 +98,10 @@ When we use database functionality, we need to introduce the specific database d
 
 Route registration is very simple; just add a `controller` object to the group route registration through `group.Bind`.
 
-So far, we have completed the development of the `CRUD` interface. 👏👏 We mainly focused on the following tasks:
+So far, we have completed the development of the `CRUD` API. 👏👏 We mainly focused on the following tasks:
 - Database table design
-- `API` interface definition
-- Implementation of interface business logic
+- `API` API definition
+- Implementation of API business logic
 - Simple configuration and route registration
 
 Next, let's start the program to see the effect.

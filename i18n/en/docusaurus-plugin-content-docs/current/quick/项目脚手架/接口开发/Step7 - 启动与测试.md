@@ -4,7 +4,7 @@ title: 'Step7 - Run and Test'
 hide_title: true
 sidebar_position: 6
 keywords: [GoFrame, start service, API documentation, API testing, RESTful API, CRUD, API validation, data query, data modification, data deletion]
-description: "Start the service through the command line and generate API documentation using Swagger. Supports RESTful API interfaces for creating users, querying user information, modifying user data, and deleting users. Also supports API testing using the curl command, providing detailed validation rules and error codes to ensure data accuracy and reliability."
+description: "Start the service through the command line and generate API documentation using Swagger. Supports RESTful API APIs for creating users, querying user information, modifying user data, and deleting users. Also supports API testing using the curl command, providing detailed validation rules and error codes to ensure data accuracy and reliability."
 ---
 
 ## Start the Service
@@ -37,7 +37,7 @@ $ go run main.go
 ----------|--------|------------|-------------------------------------------------------|----------------------------------
 ```
 
-As we can see, the `CRUD` interfaces we developed have been successfully registered on the `Web Server` and displayed correctly on the terminal. Meanwhile, we have enabled the API documentation feature, so let's look at the auto-generated API documentation.
+As we can see, the `CRUD` APIs we developed have been successfully registered on the `Web Server` and displayed correctly on the terminal. Meanwhile, we have enabled the API documentation feature, so let's look at the auto-generated API documentation.
 
 ## API Documentation
 
@@ -140,4 +140,4 @@ As we can see, the data has been successfully deleted.
 
 As we can see, using the scaffold tool of the `GoFrame` framework, we can efficiently and quickly complete API development work with the project template generated, and it can automatically generate API documentation for convenient frontend-backend collaboration.
 
-With this, a `CRUD` interface project using the `GoFrame` framework has been quickly completed. However, the excellence of the `GoFrame` framework is far more than this; more features await your further exploration.
+With this, a `CRUD` API project using the `GoFrame` framework has been quickly completed. However, the excellence of the `GoFrame` framework is far more than this; more features await your further exploration.

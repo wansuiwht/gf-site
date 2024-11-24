@@ -13,7 +13,7 @@ description: "Explains how to protect web application security through CSRF defe
 
 Here, we choose to validate requests using `token` through middleware, with the `CSRF` cross-site defense plugin provided by the community package.
 
-Developers can add middleware to the interface to include `token` verification functionality.
+Developers can add middleware to the API to include `token` verification functionality.
 
 Interested parties can read the plugin source code at [https://github.com/gogf/csrf](https://github.com/gogf/csrf).
 
@@ -25,7 +25,7 @@ Interested parties can read the plugin source code at [https://github.com/gogf/c
 import "github.com/gogf/csrf"
 ```
 
-### Configure Interface Middleware
+### Configure API Middleware
 
 The `csrf` plugin supports custom `csrf.Config` configuration. In `Config`, `Cookie.Name` is the name of the `token` set by the middleware in the returned `Cookie`, `ExpireTime` is the timeout for the `token`, `TokenLength` is the `token` length, and `TokenRequestKey` is the name of the parameter required to be included in subsequent requests.
 

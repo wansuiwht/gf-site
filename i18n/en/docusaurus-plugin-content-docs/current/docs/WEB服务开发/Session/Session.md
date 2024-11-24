@@ -21,11 +21,11 @@ In addition, the `SessionId` in `ghttp.Server` is generated using the client's `
 
 ## `gsession` Module
 
-The management functionality of `Session` is implemented by the independent `gsession` module and is perfectly integrated into `ghttp.Server`. Since this module is decoupled and independent, it can be applied to more different scenarios, such as `TCP` communication, `gRPC` interface services, etc. The `gsession` module has three important objects/interfaces:
+The management functionality of `Session` is implemented by the independent `gsession` module and is perfectly integrated into `ghttp.Server`. Since this module is decoupled and independent, it can be applied to more different scenarios, such as `TCP` communication, `gRPC` API services, etc. The `gsession` module has three important objects/APIs:
 
 1. `gsession.Manager`: Manages `Session` objects, `Storage` persistence storage objects, and expiration time control.
 2. `gsession.Session`: A single `Session` management object, used for CRUD operations on `Session` parameters and other data management operations.
-3. `gsession.Storage`: This is an interface definition used for the persistent storage of `Session` objects, data writing/reading, and survival updates. Developers can implement customized persistent storage features based on this interface. For the interface definition, see: [https://github.com/gogf/gf/blob/master/os/gsession/gsession_storage.go](https://github.com/gogf/gf/blob/master/os/gsession/gsession_storage.go)
+3. `gsession.Storage`: This is an API definition used for the persistent storage of `Session` objects, data writing/reading, and survival updates. Developers can implement customized persistent storage features based on this API. For the API definition, see: [https://github.com/gogf/gf/blob/master/os/gsession/gsession_storage.go](https://github.com/gogf/gf/blob/master/os/gsession/gsession_storage.go)
 
 ## Storage Implementations
 

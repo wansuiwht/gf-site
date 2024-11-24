@@ -104,7 +104,7 @@ func (c *ControllerV1) Update(ctx context.Context, req *v1.UpdateReq) (res *v1.U
     return
 }
 ```
-The update interface is also straightforward. Besides the already introduced `WherePri` method, it also requires using the `Data` method to pass the data to be updated when updating the data.
+The update API is also straightforward. Besides the already introduced `WherePri` method, it also requires using the `Data` method to pass the data to be updated when updating the data.
 
 ## `GetOne`
 
@@ -124,7 +124,7 @@ func (c *ControllerV1) GetOne(ctx context.Context, req *v1.GetOneReq) (res *v1.G
     return
 }
 ```
-In the data retrieval interface, we use a `Scan` method, which can intelligently map the retrieved single data table record to a structure object. It should be noted that the `User` attribute object in `&res.User` is actually not initialized and its value is `nil`. If data is retrieved, the `Scan` method will initialize and assign it. If no data is retrieved, the `Scan` method will do nothing, and its value will remain `nil`.
+In the data retrieval API, we use a `Scan` method, which can intelligently map the retrieved single data table record to a structure object. It should be noted that the `User` attribute object in `&res.User` is actually not initialized and its value is `nil`. If data is retrieved, the `Scan` method will initialize and assign it. If no data is retrieved, the `Scan` method will do nothing, and its value will remain `nil`.
 
 ## `GetList`
 

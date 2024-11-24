@@ -4,7 +4,7 @@ title: 'HOOK Event Callback'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HOOK Event, Event Callback, ghttp.Server, Middleware, Routing Priority, Permission Control, Cross-Origin Requests, API Authentication]
-description: "The HOOK event callback function provided by the ghttp.Server in the GoFrame framework, similar to middleware, allows custom event listening and handling. Event callbacks can be registered in a specific order to determine the callback invocation priority. This document provides a detailed explanation of the usage, application in interface authentication control, cross-origin request handling, and showcases with example code the execution method and priority mechanism of event callbacks."
+description: "The HOOK event callback function provided by the ghttp.Server in the GoFrame framework, similar to middleware, allows custom event listening and handling. Event callbacks can be registered in a specific order to determine the callback invocation priority. This document provides a detailed explanation of the usage, application in API authentication control, cross-origin request handling, and showcases with example code the execution method and priority mechanism of event callbacks."
 ---
 
 ![](/markdown/25a101c86afb67b0c4f69162657c7853.png)
@@ -67,11 +67,11 @@ Although registering multiple identical `HOOK` callback functions can also fulfi
 
 When the route matches multiple `HOOK` methods, by default, `HOOK` methods are executed according to the priority of route matching. When calling the `Request.ExitHook` method within a `HOOK` method, subsequent `HOOK` methods will not be executed, which acts similar to `HOOK` function overriding.
 
-## Interface Authentication Control
+## API Authentication Control
 
-A common application of event callback registration is to control authentication/permissions for the called interface. This requires binding the `ghttp.HookBeforeServe` event, where all matched interface requests are processed before service execution (e.g., binding `/*` event callback route). If authentication fails, call `r.ExitAll()` to exit subsequent service execution (including subsequent event callback execution).
+A common application of event callback registration is to control authentication/permissions for the called API. This requires binding the `ghttp.HookBeforeServe` event, where all matched API requests are processed before service execution (e.g., binding `/*` event callback route). If authentication fails, call `r.ExitAll()` to exit subsequent service execution (including subsequent event callback execution).
 
-Furthermore, executing `r.Redirect*` in the event callback function for permission verification without calling `r.ExitAll()` to exit the business execution often results in `http multiple response writeheader calls` error messages. This is because the `r.Redirect*` method writes the `Location` header in the header, and subsequent business service interfaces often write the `Content-Type`/`Content-Length` headers, causing a conflict.
+Furthermore, executing `r.Redirect*` in the event callback function for permission verification without calling `r.ExitAll()` to exit the business execution often results in `http multiple response writeheader calls` error messages. This is because the `r.Redirect*` method writes the `Location` header in the header, and subsequent business service APIs often write the `Content-Type`/`Content-Length` headers, causing a conflict.
 
 ## Middleware vs. Event Callback
 
@@ -85,11 +85,11 @@ Middleware (`Middleware`) and Event Callback (`HOOK`) are two major process cont
 
 `Request.Router` is the matched route object containing route registration information, which is typically not used by developers. `Request.URL` is the underlying URL object from the standard library `http.Request`, containing the request URL address information, especially `Request.URL.Path` representing the requested URI address.
 
-Therefore, if used in a service callback function, `Request.Router` has a value because it will call the service callback method only when the route is matched. However, in an event callback function, this object may be `nil` (indicating no matched service callback function route). Especially when using event callback for request interface authentication, use the `Request.URL` object to obtain the request URL information instead of `Request.Router`.
+Therefore, if used in a service callback function, `Request.Router` has a value because it will call the service callback method only when the route is matched. However, in an event callback function, this object may be `nil` (indicating no matched service callback function route). Especially when using event callback for request API authentication, use the `Request.URL` object to obtain the request URL information instead of `Request.Router`.
 
 ## Static File Events
 :::tip
-If you are only providing API interface services (including front static file service proxies like `nginx`), which do not involve static file services, you can ignore this section.
+If you are only providing API API services (including front static file service proxies like `nginx`), which do not involve static file services, you can ignore this section.
 :::
 Note that event callbacks can also match static file accesses that meet routing rules ([Static Files](静态文件服务.md) feature is disabled by default in the `gf` framework, and we can manually enable it using `WebServer` related configuration. See [Service Configuration](../服务配置/服务配置.md) for details).
 
@@ -287,7 +287,7 @@ priority service
 
 In the chapters [Route Management - Middleware/Interceptor](../%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86/%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D.md) and [CORS Cross-Origin Handling](CORS跨域处理.md), examples of cross-origin handling have also been introduced. In most cases, we use middleware to achieve cross-origin request handling.
 
-Both `HOOK` and middleware can implement cross-origin request handling. Here, we'll use HOOK to achieve simple cross-origin processing. First, let's look at a simple interface example:
+Both `HOOK` and middleware can implement cross-origin request handling. Here, we'll use HOOK to achieve simple cross-origin processing. First, let's look at a simple API example:
 
 ```go
 package main
@@ -311,7 +311,7 @@ func main() {
 }
 ```
 
-The interface address is [http://localhost:8199/api.v1/order](http://localhost:8199/api.v1/order), and this interface is not allowed for cross-origin. Open a different domain name, such as the Baidu homepage (conveniently using `jQuery` for debugging), and press `F12` to open the developer panel, and execute the following `AJAX` request in `console`:
+The API address is [http://localhost:8199/api.v1/order](http://localhost:8199/api.v1/order), and this API is not allowed for cross-origin. Open a different domain name, such as the Baidu homepage (conveniently using `jQuery` for debugging), and press `F12` to open the developer panel, and execute the following `AJAX` request in `console`:
 
 ```
 $.get("http://localhost:8199/api.v1/order", function(result){
@@ -350,7 +350,7 @@ func main() {
 }
 ```
 
-We added a bound event `ghttp.HookBeforeServe` for the route `/api.v1/*any`. This event will be called before all service executions. In this event's callback method, we allow cross-origin requests by calling the `CORSDefault` method with default cross-origin settings. The bound event route rule uses a vague match rule, indicating that all interface addresses starting with `/api.v1` allow cross-origin requests.
+We added a bound event `ghttp.HookBeforeServe` for the route `/api.v1/*any`. This event will be called before all service executions. In this event's callback method, we allow cross-origin requests by calling the `CORSDefault` method with default cross-origin settings. The bound event route rule uses a vague match rule, indicating that all API addresses starting with `/api.v1` allow cross-origin requests.
 
 Return to the Baidu homepage and execute the `AJAX` request again; this time, it is successful:
 
