@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/request-json-xml-parameter'
-title: 'Request Input-JSON/XML'
+title: 'Request - JSON/XML'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame,GoFrame framework,request input,JSON,XML,data format,GoFrame documentation,data validation,API development,web framework]

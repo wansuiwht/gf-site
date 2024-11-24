@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/contrib-nosql-redis-interface'
-title: 'Redis-Interface Design'
+title: 'Redis - Interface'
 sidebar_position: 4
 hide_title: true
 keywords: [Redis, Interface Design, GoFrame, GoFrame Framework, gredis, Custom Redis Adapter, Extend Redis Methods, Redis Community Component, SetAdapter Method, GetAdapter Method]

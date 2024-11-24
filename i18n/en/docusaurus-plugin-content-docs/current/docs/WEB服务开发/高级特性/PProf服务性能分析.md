@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/senior-pprof'
-title: 'PProf Service Performance Analysis'
+title: 'PProf Performance Analysis'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame,PProf,Performance Analysis,Web Server,pprof tool,EnablePProf,PProf Server,GoFrame framework,Performance Optimization,Go tool]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/response-stream'
-title: 'Data Return - Stream Return'
+title: 'Response - Streaming'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HTTP Streaming Data Return, Streaming Data, v2.4, SSE, Data Return, Stream Processing, Event Stream, Go Language]

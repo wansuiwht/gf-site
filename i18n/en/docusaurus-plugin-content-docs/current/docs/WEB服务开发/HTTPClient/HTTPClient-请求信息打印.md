@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-raw-request-response'
-title: 'HTTPClient-Request Information Printing'
+title: 'HTTPClient - Raw'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HTTP Client, Request Information Printing, Raw Request, Debugging, Response Information, HTTP Request, Go Language, Web Development]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-transport'
-title: 'HTTPClient-Custom Transport'
+title: 'HTTPClient - Transport'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, GoFrame framework, HTTPClient, Transport, Unix Socket, Custom Transport, http.Client, gclient.Client, Client Connection Pool, MaxIdleConnsPerHost]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/util-gmeta'
-title: 'Metadata-gmeta'
+title: 'Metadata'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gmeta, metadata, tag, dynamic retrieval, struct, API documentation, data method, retrieve method]

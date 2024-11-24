@@ -37,7 +37,7 @@ Two points to note:
 
 The object lifecycle in `sync.Pool` does not support customizable expiration time because `sync.Pool` is not a `Cache`; the original intention of `sync.Pool` is to alleviate GC `pressure`, and the objects in `sync.Pool` are all cleared before `GC` starts; furthermore, `sync.Pool` does not support object creation and destruction methods.
 
-## Related Documentation
+## Documents
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

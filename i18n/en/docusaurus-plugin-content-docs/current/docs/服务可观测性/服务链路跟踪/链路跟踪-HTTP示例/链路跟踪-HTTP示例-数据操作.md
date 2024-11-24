@@ -1,6 +1,6 @@
 ---
 slug: '/docs/obs/tracing-http-example-with-database'
-title: 'Tracing-HTTP Example-Data Operations'
+title: 'Tracing HTTP - Data Ops'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, Tracing, HTTP Example, Database Operations, Cache Management, ORM, Redis, OTLP, Trace, Jaeger]

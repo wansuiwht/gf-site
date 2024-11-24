@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/run'
-title: 'Auto Compiling - run'
+title: 'Auto Compiling'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, auto compile, hot compile feature, go file auto monitor, command line arguments, compile run, binary files, file path monitoring, GoFrame framework, gf run command]

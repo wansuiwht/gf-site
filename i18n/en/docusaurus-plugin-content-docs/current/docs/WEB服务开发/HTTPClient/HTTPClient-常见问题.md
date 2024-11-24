@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-faq'
-title: 'HTTPClient-FAQ'
+title: 'HTTPClient - FAQ'
 sidebar_position: 9
 hide_title: true
 keywords: [HTTPClient,GoFrame,GoFrame Framework,gclient.Client,connection pool,efficient,resource usage,short connection request,form request,ContentType]

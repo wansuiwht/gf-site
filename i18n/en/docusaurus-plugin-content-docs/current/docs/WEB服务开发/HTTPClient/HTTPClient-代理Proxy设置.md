@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-proxy'
-title: 'HTTPClient - Proxy Settings'
+title: 'HTTPClient - Proxy'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HTTP Client, Proxy Settings, SetProxy, Proxy Method, HTTP Proxy, SOCKS5 Proxy, Chained Call, HTTP Request]

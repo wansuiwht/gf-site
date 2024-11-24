@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/response-json-xml'
-title: 'Data Return-JSON/XML'
+title: 'Response - JSON/XML'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, JSON, XML, Data Return, JSONP, Response, WriteJson, WriteXml, HTTP Server]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/error-gcode'
-title: 'Error Code Interface-gcode'
+title: 'Error Code'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,Error Code Interface,Error Handling,Core Components,Interface Reference,gcode,Component Development,Architectural Design,System Stability]

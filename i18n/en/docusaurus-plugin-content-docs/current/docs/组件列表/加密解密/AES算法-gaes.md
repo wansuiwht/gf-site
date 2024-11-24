@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/crypto-gaes'
-title: 'AES Algorithm-gaes'
+title: 'AES'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, AES Algorithm, Encryption and Decryption, gaes, Go Language, Data Encoding, base64, Encryption and Decryption Guide, GoFrame Tutorial]

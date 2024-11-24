@@ -25,7 +25,7 @@ CREATE TABLE `user` (
 ```
 
 :::tip
-If you try to test and view the `SQL` statements executed by `ORM` operations, it is recommended to enable `debug` mode (Related Documentation: [Debug Mode](../../ORM高级特性/ORM高级特性-调试模式.md)), and the `SQL` statements will automatically be printed in the log output.
+If you try to test and view the `SQL` statements executed by `ORM` operations, it is recommended to enable `debug` mode (Documents: [Debug Mode](../../ORM高级特性/ORM高级特性-调试模式.md)), and the `SQL` statements will automatically be printed in the log output.
 :::
 
 ## `created_at` Write Time

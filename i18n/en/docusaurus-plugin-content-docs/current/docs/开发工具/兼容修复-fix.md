@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/fix'
-title: 'Compatibility Fix - fix'
+title: 'Compatibility Fix'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame, GoFrame framework, compatibility fix, CLI usage, code update, version upgrade, backward compatibility, gf fix, command line tool, automatic correction]

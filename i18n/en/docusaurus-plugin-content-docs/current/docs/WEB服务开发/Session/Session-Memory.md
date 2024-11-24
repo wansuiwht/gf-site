@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/session-memory'
-title: 'Session-Memory'
+title: 'Session - Memory'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,Session Storage,Memory Storage,Session Data,StorageMemory,gsession,GoFrame Framework,Session Example,Session Setting,Session Persistence]

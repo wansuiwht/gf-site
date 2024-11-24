@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-header'
-title: 'HTTPClient-Custom Header'
+title: 'HTTPClient - Header'
 sidebar_position: 3
 hide_title: true
 keywords: [HTTPClient, Custom Header, GoFrame, GoFrame Framework, SetHeader, Header Method, Span-Id, Trace-Id, HTTP Request, Client]

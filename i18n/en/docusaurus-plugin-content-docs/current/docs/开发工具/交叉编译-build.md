@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/build'
-title: 'Cross-Compiling - build'
+title: 'Cross-Compiling'
 sidebar_position: 4
 hide_title: true
 keywords: [Cross-Compile, GoFrame, Compile Variables, Compilation Configuration, Built-in Variables, Build Information, gf build, Compilation Options, Built-in Compilation, Project Ecosystem]

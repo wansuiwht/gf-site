@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/gen-ctrl'
-title: 'Controller Generating - gen ctrl'
+title: 'Controller Generating'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,API interface,HTTP development,GRPC,controller generation,SDK automation,code specification,collaborative development,code generation,project management]

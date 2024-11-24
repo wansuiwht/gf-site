@@ -23,7 +23,7 @@ import "github.com/gogf/gf/v2/os/gtime"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/os/gtime](https://pkg.go.dev/github.com/gogf/gf/v2/os/gtime)
 
-## Related Documentation
+## Documents
 
 import DocCardList from '@theme/DocCardList';
 

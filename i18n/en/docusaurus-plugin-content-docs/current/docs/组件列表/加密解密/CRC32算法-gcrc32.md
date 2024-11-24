@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/crypto-gcrc32'
-title: 'CRC32 Algorithm-gcrc32'
+title: 'CRC32'
 sidebar_position: 4
 hide_title: true
 keywords: [CRC32,gcrc32,GoFrame,GoFrame framework,cryptography,goframe crypto,Golang,Checksum,data verification,encoding]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/contrib-nosql-redis-conn'
-title: 'Redis-Conn Object'
+title: 'Redis - Conn'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Redis, Conn Object, Publish/Subscribe, Connection Pool, Long Connection, Connection Timeout, Subscription Mode, Publish Mode]

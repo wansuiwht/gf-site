@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-cookie'
-title: 'HTTPClient-Custom Cookie'
+title: 'HTTPClient - Cookie'
 sidebar_position: 2
 hide_title: true
 keywords: [HTTPClient, Custom Cookie, GoFrame, GoFrame Framework, SetCookie, SetCookieMap, HTTP Client, ghttp, Cookie, Server]

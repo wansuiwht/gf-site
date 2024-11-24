@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/up'
-title: 'Version Upgrade - up'
+title: 'Version Upgrade'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, CLI Tools, Version Update, Auto Fix, Incompatible Changes, Main Framework, Community Components, Command Line Options, Code Upgrade]

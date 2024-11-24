@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/docker'
-title: 'Image Building - docker'
+title: 'Image Building'
 sidebar_position: 8
 hide_title: true
 keywords: [GoFrame Framework, Docker Image Compilation, gf docker, Makefile Build, Binary Build, gf build, gf gen enums, Command Combination, Automatic Push, Configuration File Management]

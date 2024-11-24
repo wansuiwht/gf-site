@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-middleware'
-title: 'HTTPClient-Interceptor/Middleware'
+title: 'HTTPClient - Middleware'
 sidebar_position: 8
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HTTPClient, Interceptor, Middleware, Client Request, Parameter Validation, Signature Generation, API Security, Request Interception]

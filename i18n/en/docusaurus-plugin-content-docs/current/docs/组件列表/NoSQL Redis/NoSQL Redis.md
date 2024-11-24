@@ -56,7 +56,7 @@ The `gredis.Redis` client object provides a `Close` method, which is used to clo
 - Supports singleton objects and dynamic object creation
 - Interface design with high flexibility and extensibility
 
-## Related Documentation
+## Documents
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

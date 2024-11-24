@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/paging-ajax'
-title: 'Pagination Management-Ajax Pagination'
+title: 'Pagination - Ajax Paging'
 sidebar_position: 2
 hide_title: true
 keywords: [Ajax Pagination, Pagination Management, Javascript Pagination, GoFrame, GoFrame Framework, Golang, Page Rendering, Front-end Development, Dynamic Pagination, Web Development]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/util-gutil'
-title: 'Utility Methods-gutil'
+title: 'Utility Functions'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gutil, utility methods, Go language, development components, data formatting, API documentation, Dump function, DumpWithType]

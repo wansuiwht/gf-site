@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-metrics'
-title: 'HTTPClient-Monitoring Metrics'
+title: 'HTTPClient - Metrics'
 sidebar_position: 10
 hide_title: true
 keywords: [HTTP Client, Monitoring Metrics, Performance Optimization, Request Time, GoFrame, Connection Time, Total Requests, Request Size, GoFrame Framework, Response Size]

@@ -80,7 +80,7 @@ It should be noted that `Response` requires a manual call to the `Close` method 
 1. The `ghttp` client defaults to disabling the `KeepAlive` feature and the verification function for the server's `TLS` certificate. If you need to enable it, you can customize the client's `Transport` attribute.
 2. These advanced functions such as **Connection Pool Parameter Setting** and **Connection Proxy Settings** can also be achieved by customizing the client's `Transport` attribute. This data inherits from the standard library's `http.Transport` object.
 
-## Related Documentation
+## Documents
 
 import DocCardList from '@theme/DocCardList';
 

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/contrib-nosql-redis-do-and-serialization'
-title: 'Redis Command Interaction'
+title: 'Redis - Do'
 sidebar_position: 2
 hide_title: true
 keywords: [Redis Command Interaction, Do Method, Automatic Serialization and Deserialization, GoFrame Framework, Struct Access, Map Access, gredis Library, JSON Serialization, Redis API, Go Language]

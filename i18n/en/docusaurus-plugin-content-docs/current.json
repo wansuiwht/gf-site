@@ -211,9 +211,9 @@
     "message": "进程管理-gproc",
     "description": "The label for category 进程管理-gproc in sidebar mainSidebar"
   },
-  "sidebar.mainSidebar.category.文件监听-gfsnotify": {
-    "message": "文件监听-gfsnotify",
-    "description": "The label for category 文件监听-gfsnotify in sidebar mainSidebar"
+  "sidebar.mainSidebar.category.文件监控-gfsnotify": {
+    "message": "文件监控-gfsnotify",
+    "description": "The label for category 文件监控-gfsnotify in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.文本处理": {
     "message": "文本处理",
@@ -348,7 +348,7 @@
     "description": "The label for category 链路跟踪-HTTP示例 in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.链路跟踪-最佳实践": {
-    "message": "链路跟踪-最佳实践",
+    "message": "Tracing - Best Practices",
     "description": "The label for category 链路跟踪-最佳实践 in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.服务监控告警": {

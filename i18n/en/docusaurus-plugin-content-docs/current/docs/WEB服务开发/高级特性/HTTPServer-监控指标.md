@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/senior-server-metrics'
-title: 'HTTPServer-Monitoring Metrics'
+title: 'HTTPServer - Metrics'
 sidebar_position: 11
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HTTP Server, Monitoring Metrics, Performance Optimization, Request Execution Time, Total Requests, Active Requests, Byte Size, Server Port]

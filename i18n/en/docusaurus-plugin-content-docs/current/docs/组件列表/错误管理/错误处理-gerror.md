@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/error-gerror'
-title: 'Error Handling-gerror'
+title: 'Error Handling'
 sidebar_position: 0
 hide_title: true
 description: "The gerror module in the GoFrame framework is used for error handling. As a core component of GoFrame, the gerror module provides a unified error handling mechanism that improves code readability and maintainability, suitable for software development in the Go language."

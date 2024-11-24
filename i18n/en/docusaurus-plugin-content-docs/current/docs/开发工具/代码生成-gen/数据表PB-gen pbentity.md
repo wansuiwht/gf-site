@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/gen-pbentity'
-title: 'DB Table To PB - gen pbentity'
+title: 'DB Table To Protobuf'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, Golang entity object, proto data structure, GRPC services, database configuration, GF command line tools, data table generation, entity file generation, pbentity, naming format]

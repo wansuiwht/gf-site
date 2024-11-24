@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/response-exit-exitall-exithook'
-title: 'Data Return - Exit Control'
+title: 'Response - Exit'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame framework, Exit, ExitAll, ExitHook, service function, HOOK event, flow control, data return, permission control]

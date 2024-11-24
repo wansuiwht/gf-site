@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/request-context'
-title: 'Request Input-Context'
+title: 'Request - Context'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame framework, request context, Context object, context variable, middleware, routing service, module method, context.Context API, Golang]

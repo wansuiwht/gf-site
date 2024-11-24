@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/contrib-nosql-redis-config'
-title: 'Redis-Configuration Management'
+title: 'Redis - Configuration'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gredis, Redis configuration, configuration management, configuration file, singleton object, cluster configuration, modularization, configuration method]

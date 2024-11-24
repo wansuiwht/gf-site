@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/pack'
-title: 'Files Packing - pack'
+title: 'Resource Packing'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame, GoFrame framework, resource packaging, CLI tools, gf pack, resource files, go code files, file packaging, command line tools, source code management]

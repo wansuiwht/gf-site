@@ -1,6 +1,6 @@
 ---
 slug: '/docs/obs/tracing-http-example'
-title: 'Tracing-HTTP Example'
+title: 'Tracing - HTTP Example'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Tracing, HTTP Example, Baggage, Context Data Transfer, HTTP+DB+Redis+Logging, Service Link, Demo, Component Tracing]

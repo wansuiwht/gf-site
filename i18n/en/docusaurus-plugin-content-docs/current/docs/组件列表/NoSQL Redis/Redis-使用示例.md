@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/contrib-nosql-redis-example'
-title: 'Redis-Usage Example'
+title: 'Redis - Examples'
 sidebar_position: 1
 hide_title: true
 keywords: [Redis example, GoFrame framework, NoSQL database, Set operation, Get operation, SetEx operation, HSet operation, HMSet operation, HGetAll operation, HMGet operation]

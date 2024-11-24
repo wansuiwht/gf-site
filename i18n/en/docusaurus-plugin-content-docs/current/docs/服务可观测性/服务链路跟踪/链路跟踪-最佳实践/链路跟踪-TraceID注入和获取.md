@@ -1,6 +1,6 @@
 ---
 slug: '/docs/obs/tracing-practice-inject-traceid'
-title: 'Tracing - TraceID Injection and Retrieval'
+title: 'TraceID Injection and Retrieval'
 sidebar_position: 0
 hide_title: true
 keywords: [Tracing, TraceID, GoFrame, OpenTelemetry, Context, Client, Server, Log, Request, Response Header]

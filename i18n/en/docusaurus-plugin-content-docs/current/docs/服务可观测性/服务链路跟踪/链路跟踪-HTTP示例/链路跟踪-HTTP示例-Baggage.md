@@ -1,6 +1,6 @@
 ---
 slug: '/docs/obs/tracing-http-example-baggage'
-title: 'Tracing-HTTP Example-Baggage'
+title: 'Tracing HTTP - Baggage'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,GoFrame framework,tracing,HTTP example,Baggage,client,server,Jaeger,OTLP,TraceId]

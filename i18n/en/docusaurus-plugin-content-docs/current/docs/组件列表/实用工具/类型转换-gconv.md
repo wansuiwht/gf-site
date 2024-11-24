@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/util-gconv'
-title: 'Type Conversion-gconv'
+title: 'Type Conversion'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gconv Module, Type Conversion, GoFrame Type Conversion, gconv Type Conversion, GoFrame gconv, GoFrame Documentation, GoFrame Components, Core Features]

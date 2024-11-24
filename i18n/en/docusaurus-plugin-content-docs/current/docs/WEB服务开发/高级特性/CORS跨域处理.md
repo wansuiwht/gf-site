@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/senior-cors'
-title: 'CORS Cross-Domain Handling'
+title: 'CORS'
 sidebar_position: 4
 hide_title: true
 keywords: [CORS, Cross-Domain Requests, GoFrame, Middleware, AJAX, Origin, CORSOptions, Cross-Domain Access, GoFrame Framework, WebSocket]

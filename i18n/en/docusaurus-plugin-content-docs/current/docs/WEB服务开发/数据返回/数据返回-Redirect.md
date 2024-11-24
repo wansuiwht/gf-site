@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/response-redirect'
-title: 'Data Return-Redirect'
+title: 'Response - Redirect'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Data Return, Page Redirect, RedirectTo, RedirectBack, Location Header, Web Redirection, HTTP Address, Referer Header]

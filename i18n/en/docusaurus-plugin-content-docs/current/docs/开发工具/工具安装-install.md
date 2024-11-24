@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/install'
-title: 'Installation - install'
+title: 'Installation'
 sidebar_position: 0
 hide_title: true
 keywords: [Tool Installation,GoFrame,GoFrame Framework,gf Tool,Command Line Tool,Precompiled Binary,System Environment Variable,MacOS,Windows Installation,go install]

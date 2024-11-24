@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/paging-template'
-title: 'Pagination Management - URL Template'
+title: 'Pagination - URL Template'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gpage, pagination management, URL template, custom URL, built-in variables, page rendering, code examples, template replacement]

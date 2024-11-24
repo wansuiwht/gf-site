@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/senior-csrf'
-title: 'CSRF Defense Settings'
+title: 'CSRF'
 sidebar_position: 5
 hide_title: true
 keywords: [CSRF Defense, GoFrame Framework, Cross-Site Request Forgery, CSRF Attack, XSRF, Token Verification, Middleware, Plugin Batch Processing, Network Security, Web Application Security]

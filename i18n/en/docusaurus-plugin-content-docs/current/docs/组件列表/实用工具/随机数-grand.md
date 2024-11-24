@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/util-grand'
-title: 'Random Number-grand'
+title: 'Random'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Random Number, grand Module, Random Generation, Performance Optimization, API Documentation, Character List, Probability Calculation, Random String]
@@ -35,13 +35,13 @@ func Perm(n int) []int
 func Symbols(n int) string
 ```
 
-### Character List
+### Characters
 
-```
-Character Type    Character List
-Numeric Characters  0123456789
-English Characters  abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-Special Characters  !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```text
+Type    Characters
+Numeric 0123456789
+English abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+Special !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
 ### Random Integers

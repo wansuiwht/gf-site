@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/debug-gdebug'
-title: 'Debugging Functionality-gdebug'
+title: 'Debugging'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame framework, debugging functionality, gdebug, GoFrame debugging, gdebug component, stack analysis, call chain information, performance optimization, API documentation]

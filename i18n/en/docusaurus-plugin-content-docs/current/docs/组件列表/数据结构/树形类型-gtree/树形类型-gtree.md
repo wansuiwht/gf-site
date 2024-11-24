@@ -56,7 +56,7 @@ func ComparatorUint64(a, b interface{}) int
 func ComparatorUint8(a, b interface{}) int
 ```
 
-## Related Documentation
+## Documents
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

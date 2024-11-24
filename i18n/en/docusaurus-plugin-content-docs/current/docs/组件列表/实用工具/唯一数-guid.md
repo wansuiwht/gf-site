@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/util-guid'
-title: 'Unique Number-guid'
+title: 'Unique Number'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, GUID, Unique Identification, High Performance, Easy to Use, Global Unique Number, Unique Number Generation, Go Language, Development Tool]
@@ -14,12 +14,12 @@ description: "Generate high-performance and easy-to-use global unique numbers wi
 
 > The purpose of designing the `guid` module is to provide a more convenient, higher performance unique number generation that can meet the requirements of most business scenarios. The design of `guid` is relatively simple, and details can be found in the implementation source code.
 
-**Character List**:
+**Characters**:
 
-```
-Character Type  Character List
-Numerical Characters  0123456789
-English Characters  abcdefghijklmnopqrstuvwxyz
+```text
+Type       Characters
+Numerical  0123456789
+English    abcdefghijklmnopqrstuvwxyz
 ```
 
 **Usage**:

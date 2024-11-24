@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/gen-service'
-title: 'Module Generating - gen service'
+title: 'Service Generating'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame,Golang,Business Logic,Module Management,API Definition,Code Generation,Circular Dependencies,Service Registration,Compiler,Microservices]

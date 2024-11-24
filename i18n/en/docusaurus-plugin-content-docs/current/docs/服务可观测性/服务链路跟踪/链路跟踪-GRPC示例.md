@@ -1,6 +1,6 @@
 ---
 slug: '/docs/obs/tracing-grpc-example'
-title: 'Tracing-GRPC Example'
+title: 'Tracing - GRPC Example'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame,GRPC,Tracing,Microservices,Client,Server,Cache Adapter,Database,Jaeger,protobuf]

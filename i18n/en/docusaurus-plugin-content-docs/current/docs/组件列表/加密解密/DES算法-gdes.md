@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/crypto-gdes'
-title: 'DES Algorithm-gdes'
+title: 'DES'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame framework, DES algorithm, gdes, crypto, encryption, PKCS5PADDING, NOPADDING, Triple DES, key]

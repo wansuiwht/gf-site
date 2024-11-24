@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/crypto-gsha1'
-title: 'SHA1 Algorithm-gsha1'
+title: 'SHA1'
 sidebar_position: 3
 hide_title: true
 keywords: [SHA1,gsha1,GoFrame,GoFrame framework,crypto,algorithm,Go language,encryption,data security,gogf]

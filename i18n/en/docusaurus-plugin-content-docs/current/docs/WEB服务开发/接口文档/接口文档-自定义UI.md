@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/api-document-swagger-ui'
-title: 'API Documentation - Custom UI'
+title: 'API Document - Custom UI'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,SwaggerUI,API Documentation,OpenAPI,UI Template,Custom API,gogf,API Docs,Redoc]

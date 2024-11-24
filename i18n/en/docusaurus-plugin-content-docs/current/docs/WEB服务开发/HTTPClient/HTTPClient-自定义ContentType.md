@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-content-type'
-title: 'HTTPClient-Custom ContentType'
+title: 'HTTPClient - ContentType'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HTTPClient, ContentType, Json Request, Xml Request, Custom ContentType, PostContent, url encode, web request]

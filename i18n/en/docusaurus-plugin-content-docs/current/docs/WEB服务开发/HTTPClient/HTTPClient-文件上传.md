@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/http-client-file-uploading'
-title: 'HTTPClient-File Uploading'
+title: 'HTTPClient - File Uploading'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,HTTP Client,File Uploading,Server API,Form File,GoFrame Framework,Single File Upload,Multiple File Upload,File Path,Upload Parameters]

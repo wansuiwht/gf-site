@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/senior-websocket'
-title: 'WebSocket Service'
+title: 'WebSocket'
 sidebar_position: 7
 hide_title: true
 keywords: [WebSocket,GoFrame,WebSocket Service,GoFrame Framework,WebSocket Development,WebSocket Client,HTTPS Support,WebSocket Security,WebSocket Connection,GoFrame Example]

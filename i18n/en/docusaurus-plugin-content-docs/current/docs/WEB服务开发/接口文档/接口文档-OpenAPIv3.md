@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/api-document-openapiv3'
-title: 'API Documentation - OpenAPIv3'
+title: 'API Document - OpenAPIv3'
 sidebar_position: 0
 hide_title: true
 keywords: [OpenAPIv3, GoFrame, API Documentation, Standard Routing, g.Meta, swagger, API, Framework, Metadata, Protocol]

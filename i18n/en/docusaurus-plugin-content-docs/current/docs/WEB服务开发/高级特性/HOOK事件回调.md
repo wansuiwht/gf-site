@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/senior-hook'
-title: 'HOOK Event Callback'
+title: 'HOOK Callbacks'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HOOK Event, Event Callback, ghttp.Server, Middleware, Routing Priority, Permission Control, Cross-Origin Requests, API Authentication]

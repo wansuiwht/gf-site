@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/senior-same-site'
-title: 'SameSite Settings'
+title: 'SameSite'
 sidebar_position: 10
 hide_title: true
 keywords: [SameSite Settings, GoFrame, cookie, chrome89, protocol, cross-site request, http, secure, GoFrame framework, server configuration]

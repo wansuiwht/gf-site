@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/gen-pb'
-title: 'Protobuf Compilation - gen pb'
+title: 'Protobuf Compilation'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Protocol Compilation, protobuf, GoFrame gen pb, Protocol File, Controller File, Command Line Tool, Generate Go File, CLI Tool]

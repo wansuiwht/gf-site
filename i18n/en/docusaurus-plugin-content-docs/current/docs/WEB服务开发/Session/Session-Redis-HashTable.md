@@ -1,6 +1,6 @@
 ---
 slug: '/docs/web/session-redis-hash-table'
-title: 'Session-Redis-HashTable'
+title: 'Session - Redis-HashTable'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,RedisHashTableStorage,Session,Redis Storage,Session Management,Go Development,Web Development,Session Expiration,Session Example]
