@@ -69,6 +69,6 @@ mysql>
 
 ## Learning Summary
 
-It is a good development practice to design database tables before interface development. Here we are using the `mysql` database, which requires setting up/running the database service first.
+It is a good development practice to design database tables before API development. Here we are using the `mysql` database, which requires setting up/running the database service first.
 
 After designing the database table, we can use a scaffold tool to automatically generate corresponding database operation-related files in the next step.

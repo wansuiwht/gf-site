@@ -15,10 +15,6 @@
     "message": "DAO封装设计",
     "description": "The label for category DAO封装设计 in sidebar mainSidebar"
   },
-  "sidebar.mainSidebar.category.Context相关设计": {
-    "message": "Context相关设计",
-    "description": "The label for category Context相关设计 in sidebar mainSidebar"
-  },
   "sidebar.mainSidebar.category.微服务相关设计": {
     "message": "微服务相关设计",
     "description": "The label for category 微服务相关设计 in sidebar mainSidebar"

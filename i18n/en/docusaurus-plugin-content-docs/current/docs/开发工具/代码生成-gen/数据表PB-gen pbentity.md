@@ -1,11 +1,12 @@
 ---
 slug: '/docs/cli/gen-pbentity'
-title: 'Data Table PB-gen pbentity'
+title: 'DB Table To PB - gen pbentity'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, Golang entity object, proto data structure, GRPC services, database configuration, GF command line tools, data table generation, entity file generation, pbentity, naming format]
 description: "Use the GoFrame framework's command line tool gf to generate proto data structure files pbentity based on database tables. Includes details on command usage, option configuration, and explanations, as well as the differences from the entity files generated in the gen dao module. Applicable for generating data entity structures for HTTP and GRPC services, supporting configuration of generation rules for multiple databases."
 ---
+
 :::tip
 This feature is available starting from version `v2.4`.
 :::

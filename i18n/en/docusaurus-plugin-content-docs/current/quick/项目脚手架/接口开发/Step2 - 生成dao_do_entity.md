@@ -27,7 +27,7 @@ gfcli:
     - my.image.pub/my-app
 ```
 
-- The `dao` section configuration is the configuration for the command to be executed this time, where `link` is the database configuration required for connection. `descriptionTag` indicates adding field descriptions to the `description` tag in the generated `entity` code file. If the `entity` object of the data table is used in the interface `api` definition, this tag can serve as a parameter description. We need to change this `link` configuration to our database connection address. For a detailed introduction to the `link` configuration item, please refer to the section [ORM Configurations - Configuration File](../../../docs/核心组件/数据库ORM/ORM使用配置/ORM使用配置-配置文件.md).
+- The `dao` section configuration is the configuration for the command to be executed this time, where `link` is the database configuration required for connection. `descriptionTag` indicates adding field descriptions to the `description` tag in the generated `entity` code file. If the `entity` object of the data table is used in the API `api` definition, this tag can serve as a parameter description. We need to change this `link` configuration to our database connection address. For a detailed introduction to the `link` configuration item, please refer to the section [ORM Configurations - Configuration File](../../../docs/核心组件/数据库ORM/ORM使用配置/ORM使用配置-配置文件.md).
 - The `docker` configuration item is a configuration template provided by default, used for image compilation. It is not explained in detail here, but those interested can refer to the development manual's relevant sections on development tools.
 
 ## Execute Code Generation
@@ -153,4 +153,4 @@ We can see that this `entity` data structure definition corresponds directly to 
 
 It can be felt that using the convenient scaffolding tools of the `GoFrame` framework, we are liberated from some repetitive coding labor, greatly improving production efficiency. Operations on the database will become very simple.
 
-In the next step, we will design the `CRUD` interface, to see how to quickly define an interface in the `GoFrame` framework.
+In the next step, we will design the `CRUD` API, to see how to quickly define an API in the `GoFrame` framework.

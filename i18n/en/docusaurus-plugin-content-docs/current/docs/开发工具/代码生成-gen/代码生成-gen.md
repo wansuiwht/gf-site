@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/gen'
-title: 'Code Generation-gen (🔥Key Point🔥)'
+title: 'Code Generating - gen 🔥'
 sidebar_position: 5
 hide_title: true
 keywords: [Code Generation, GoFrame, CLI Tool, Project Development, Enterprise-Level Project, Code Standards, Team Collaboration, Development Efficiency, ORM Models, Protobuf Files]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/version'
-title: 'Version Check - Version'
+title: 'Version Check - version'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gf command line, version check, gf version, CLI tool, Golang version, technical documentation, code compilation, environment configuration]

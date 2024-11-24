@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/gen-dao'
-title: 'Data Specification-gen dao'
+title: 'Dao/Entity Generating - gen dao'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,gen dao,data access object,data transformation model,Go code generation,configuration file management,command line tool,database connection,ORM configuration,project engineering specification]

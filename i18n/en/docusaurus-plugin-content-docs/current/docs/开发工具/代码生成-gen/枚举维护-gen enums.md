@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/gen-enums'
-title: 'Enum Maintenance - gen enums'
+title: 'Enums Maintenance - gen enums'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame framework, Enum maintenance, OpenAPIv3, API documentation, Enum values, Source code analysis, Command line tool, Development efficiency, Data validation]

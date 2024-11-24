@@ -3,13 +3,13 @@ slug: '/quick/scaffold-api-definition'
 title: 'Step3 - Write API Definition'
 hide_title: true
 sidebar_position: 3
-keywords: [GoFrame, Interface Definition, RESTful, HTTP Method, Versioning, Parameter Validation, User Management, Metadata Management, Data Return, Golang]
-description: "Define CRUD interfaces in the project's api directory, adopting a RESTful style of interface design, using HTTP Method to standardize interface requests. Interface definitions use g.Meta to manage metadata information, including route address, request method, and interface description. The request parameters and return data structures define detailed parameter validation rules. Starting with version v1 for interface version control to maintain future compatibility. Interfaces flexibly receive parameters to meet the diverse needs of interface requests."
+keywords: [GoFrame, API Definition, RESTful, HTTP Method, Versioning, Parameter Validation, User Management, Metadata Management, Data Return, Golang]
+description: "Define CRUD APIs in the project's api directory, adopting a RESTful style of API design, using HTTP Method to standardize API requests. API definitions use g.Meta to manage metadata information, including route address, request method, and API description. The request parameters and return data structures define detailed parameter validation rules. Starting with version v1 for API version control to maintain future compatibility. APIs flexibly receive parameters to meet the diverse needs of API requests."
 ---
 
-In the `api` directory of the project, we begin defining our `CRUD` interfaces.
-- We use the `RESTful` style for interface design, fully utilizing the `GET/POST/PUT/DELETE` HTTP Methods. This standardized design results in very elegant interfaces.
-- Similarly, we start with version `v1`. Using version numbers is a good development habit, which helps in maintaining compatibility in future interfaces.
+In the `api` directory of the project, we begin defining our `CRUD` APIs.
+- We use the `RESTful` style for API design, fully utilizing the `GET/POST/PUT/DELETE` HTTP Methods. This standardized design results in very elegant APIs.
+- Similarly, we start with version `v1`. Using version numbers is a good development habit, which helps in maintaining compatibility in future APIs.
 
 ![user api definition](QQ_1732094808338.png)
 
@@ -25,7 +25,7 @@ type CreateRes struct {
 }
 ```
 Brief Introduction:
-- In interface definitions, `g.Meta` is used to manage interface metadata information, which are defined as tags on the `g.Meta` property. These metadata include `path` (route address), `method` (request method), `tags` (interface group for generating interface documentation), and `summary` (interface description). These metadata are part of `OpenAPIv3`, which we won't go into detail here. For those interested, refer to the chapter: [Interface Documentation - OpenAPIv3](../../../docs/WEB服务开发/接口文档/接口文档-OpenAPIv3.md).
+- In API definitions, `g.Meta` is used to manage interface metadata information, which are defined as tags on the `g.Meta` property. These metadata include `path` (route address), `method` (request method), `tags` (interface group for generating interface documentation), and `summary` (interface description). These metadata are part of `OpenAPIv3`, which we won't go into detail here. For those interested, refer to the chapter: [Interface Documentation - OpenAPIv3](../../../docs/WEB服务开发/接口文档/接口文档-OpenAPIv3.md).
 - The `Name` and `Age` attributes here are the parameter definitions for our interface. The `dc` tag is a shorthand for `description`, indicating the meaning of the parameter; the `v` tag is a shorthand for `valid`, indicating the validation rules for the parameter. We use three built-in validation rules here:
   - `required`: The parameter is mandatory.
   - `length`: Validates the parameter's length.

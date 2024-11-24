@@ -129,41 +129,7 @@ const config: Config = {
           position: 'left',
           label: '开发手册',
           sidebarId: 'mainSidebar',
-          to: '/docs/design',
-          items: [
-            {
-              label: '开发工具',
-              to: '/docs/cli',
-            },
-            {
-              label: '数据校验',
-              to: '/docs/core/gvalid-rules',
-            },
-            {
-              label: 'ORM配置管理',
-              to: '/docs/core/gdb-config-file',
-            },
-            {
-              label: 'ORM链式操作',
-              to: '/docs/core/gdb-chaining',
-            },
-            {
-              label: 'WEB服务配置',
-              to: '/docs/web/server-config-file-template',
-            },
-            {
-              label: 'WEB路由管理',
-              to: '/docs/web/router-pattern',
-            },
-            {
-              label: 'WEB参数处理',
-              to: '/docs/web/request',
-            },
-            {
-              label: 'HTTP客户端',
-              to: '/docs/web/http-client',
-            },
-          ],
+          to: '/docs/cli',
         },
         {
           sidebarId: 'courseSidebar',

@@ -1,7 +1,7 @@
 ---
 slug: '/docs/design/context-variable'
-title: 'Context: 业务流程共享变量'
-sidebar_position: 0
+title: 'Context共享变量'
+sidebar_position: 10
 hide_title: true
 keywords: [GoFrame,GoFrame框架,Context,上下文变量,共享变量,异步IO,HTTP请求,Session管理,用户信息,中间件]
 description: '通过使用GoFrame框架中的Context传递和管理上下文流程中的共享变量。在Go网络应用中，尤其是HTTP/RPC服务中，Context是传递异步IO控制和上下文变量的关键工具。通过结构化对象的共享，本文展示了如何在请求过程中实现变量传递，确保请求链路中变量的一致性和灵活性。'

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/design/enums'
-title: 'Golang Enum Value Management'
+title: 'Golang Enums'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame framework, Go language, enum implementation, Kubernetes enum, Go constants, cross-service enum, OpenAPI enum, enumeration in Go, API development, SDK generation]
