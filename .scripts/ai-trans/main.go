@@ -16,9 +16,11 @@ const (
     zhDocPath = `/Users/john/Workspace/github/gogf/gf-site/docs`
     enDocPath = `/Users/john/Workspace/github/gogf/gf-site/i18n/en/docusaurus-plugin-content-docs/current`
     initAIMsg = `
-我在给docusaurus的站点文档做翻译，我给你markdown中文内容，你翻译为英文。
-不要在外层给我包装markdown标签，不要改变内容中的任何标签，只将中文翻译为英文。
+我在给docusaurus的站点文档做翻译，我给你markdown文件内容，你翻译为英文。
+不要使用markdown标签包括返回内容，不要改变内容中的任何标签，只将中文翻译为英文。
 如果文件顶部的front matter中的description内容中含有单引号，那么将description的值由单引号改为双引号包裹。
+不要对顶部的front matter内容使用代码标签包括。
+不能删除markdown内容中的图片展示标签内容。
 `
 )
 
@@ -65,6 +67,18 @@ func main() {
         }
         if newContent == "" {
             g.Log().Warningf(ctx, "doAITrans empty content")
+            continue
+        }
+        // 内容检测，图片及连接数量是否相等
+        var (
+            resourceLinkCount    = gstr.Count(content, `](`)
+            resourceLinkCountNew = gstr.Count(newContent, `](`)
+        )
+        if resourceLinkCount != resourceLinkCountNew {
+            g.Log().Warningf(
+                ctx,
+                "resource link count not equal: %d != %d", resourceLinkCount, resourceLinkCountNew,
+            )
             continue
         }
         _ = gfile.PutContents(enFilePath, newContent)
