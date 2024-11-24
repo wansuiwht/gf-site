@@ -5,6 +5,7 @@ sidebar_position: 11
 hide_title: true
 keywords: [ORM FAQ, GoFrame, GoFrame framework, database connection pool, MaxLifeTime, SQL query, database driver, debug log, empty array condition, character set settings]
 description: "Common issues that may be encountered while performing ORM operations with the GoFrame framework and their solutions, including connection errors caused by expired database connection pools, ineffective update and insert operations, inability to find database drivers, problems with query conditions having WHERE 0=1, and encoding issues with storing emojis in MySQL tables. Some configuration recommendations are also provided to optimize the experience."
+---
 
 ## `driver: bad connection`
 

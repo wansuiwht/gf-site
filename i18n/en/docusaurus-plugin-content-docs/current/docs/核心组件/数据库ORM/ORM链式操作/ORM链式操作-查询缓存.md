@@ -5,6 +5,7 @@ sidebar_position: 10
 hide_title: true
 keywords: [GoFrame, ORM, query cache, chained operations, cache management, Redis, database, cache clearing, cache adaptation, table structure]
 description: "Performing query cache operations using the ORM in the GoFrame framework. It supports caching to optimize query results, suitable for scenarios with more reads and fewer writes. The article provides a detailed introduction to cache management and adaptation, especially how to implement distributed caching using Redis. It also provides sample code showing table structures and their caching effects, demonstrating query cache implementation and cache clearing functions."
+---
 
 ## Query Cache
 

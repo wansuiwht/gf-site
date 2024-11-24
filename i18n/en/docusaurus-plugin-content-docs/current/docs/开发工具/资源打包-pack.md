@@ -5,6 +5,7 @@ sidebar_position: 7
 hide_title: true
 keywords: [GoFrame, GoFrame framework, resource packaging, CLI tools, gf pack, resource files, go code files, file packaging, command line tools, source code management]
 description: "This document introduces how to use the gf pack command in the GoFrame framework to package any file into a resource file or Go code file. Through this tool, users can achieve resource packaging and distribute it along with the executable file. Additionally, the gf pack command can be combined with the build command to achieve packaging and compiling in one step. The document provides a detailed list of usage methods and option explanations to help users better understand and use this feature."
+--- 
 
 ## Usage
 

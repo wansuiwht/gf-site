@@ -5,6 +5,7 @@ sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,GoFrame framework,link tracking,HTTP example,Baggage,client,server,Jaeger,OTLP,TraceId]
 description: "Using the GoFrame framework for link tracking, focusing on demonstrating the method of transmitting Baggage data between services through an HTTP example. It provides a detailed explanation of client and server code implementation, including how to set and get Baggage, and offers a way to view link information through Jaeger, providing a practical guide for developers to achieve efficient link tracking in distributed systems."
+---
 
 ## `baggage` Link Data Transmission
 

@@ -5,6 +5,7 @@ sidebar_position: 1
 hide_title: true
 keywords: [Map Validation,Validation Order,GoFrame,Parameter Validation,golang,map Type,Rule Order,Validation Error Information,gogf,Data Validation]
 description: "Implementing the order of Map validation in the GoFrame framework. By modifying the rule parameter type to []string, the order of the returned error messages can be consistent with the set rules, solving the issue of non-fixed validation results caused by the unordered nature of map types in golang. This tutorial provides detailed example code and execution results to help users understand how to perform order validation using GoFrame."
+---
 
 ## Basic Introduction
 

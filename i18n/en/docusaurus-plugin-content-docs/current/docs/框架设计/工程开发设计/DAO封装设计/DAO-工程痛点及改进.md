@@ -5,6 +5,7 @@ sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, DAO Improvement, Database Operation, Data Model, Business Model, ORM Abstraction, Engineering Design, Data Permission, Automated Code Generation]
 description: "The DAO engineering pain points and corresponding improvement strategies in project development using the GoFrame framework. Enhance data operation management efficiency through automated data model management, separation of data and business models, automated DAO code management, and introduction of DO data conversion models. Emphasize the importance of data operation permission consolidation to reduce maintenance costs and risks associated with data operations."
+---
 
 ## 1. Basic Introduction
 

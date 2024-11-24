@@ -5,6 +5,9 @@ sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Result Processing, Empty Check, Data Set, Data Record, Data Field Value, Struct Object, Struct Array]
 description: "Using the GoFrame framework for empty checks in ORM result processing. This includes handling data sets, multiple data records, data field values, as well as result processing methods for Struct objects and Struct arrays. By using methods like IsEmpty and IsNil, you can easily determine if the query result is empty."
+---
+
+
 Using `GoFrame ORM` for checking if the returned result is empty is very simple. In most scenarios, you can directly check if the returned data is `nil` or has a length of `0`, or use the `IsEmpty/IsNil` methods.
 
 ## I. Data Sets (Multiple)

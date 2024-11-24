@@ -5,6 +5,7 @@ sidebar_position: 0
 hide_title: true
 keywords: [transaction operations, Begin, Commit, Rollback, GoFrame, database operations, Transaction, closure method, gdb.Tx, chain operations]
 description: "Basic operations for ORM transaction handling in the GoFrame framework, including how to use the Begin, Commit, and Rollback methods to start, commit, and rollback transactions. It is particularly important to close transactions promptly after use to avoid resource leaks, and it is recommended to use the Transaction closure method for safe transaction operations."
+---
 
 The usual transaction operation methods are `Begin/Commit/Rollback`, with each method specifying a specific transaction operation. A transaction operation can be initiated by executing the `db.Begin` method, which returns an interface for transaction operations, with the type `gdb.Tx`. You can perform subsequent database operations through this object, and you can submit changes with `tx.Commit` or rollback changes with `tx.Rollback`.
 :::warning
