@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-ghash'
-title: 'Classic Hash Functions-ghash'
+title: 'Classic Hash Functions'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Hash Functions, Go Language, ghash, Encoding, Benchmark, Repeated Tests, uint32, uint64]

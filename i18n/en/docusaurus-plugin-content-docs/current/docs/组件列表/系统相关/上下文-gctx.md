@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gctx'
-title: 'Context - gctx'
+title: 'Context'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gctx, context management, trace tracing, process initialization, context object, component API, New method, GetInitCtx]

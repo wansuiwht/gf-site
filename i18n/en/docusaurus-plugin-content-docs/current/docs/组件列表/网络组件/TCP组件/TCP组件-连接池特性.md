@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gtcp-connection-pool'
-title: 'TCP Component - Connection Pool Feature'
+title: 'TCP - Connection Pool'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, TCP Connection Pool, gtcp Module, Connection Pool Feature, Short Connection Operations, High Concurrency, Reconnect, Data Transmission, Example Program]

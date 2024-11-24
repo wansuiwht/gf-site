@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gini'
-title: 'INI Encoding-Decoding - gini'
+title: 'INI'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,INI,Data Format,Encoding,Decoding,gini,API Documentation,Usage,pkg.go.dev]

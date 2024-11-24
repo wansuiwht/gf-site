@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gjson-faq'
-title: 'Universal Encoding-FAQ'
+title: 'General Codec - FAQ'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, JSON, Encoding, Decoding, Large Number Precision, gjson, Go Language, FAQ, Problem Solving]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/database-gdb'
-title: 'Database ORM-gdb'
+title: 'Database ORM'
 sidebar_position: 0
 hide_title: true
 description: "The gdb module in the GoFrame framework is the core component for implementing database ORM functionality, responsible for efficient data operations and management. In the GoFrame framework, gdb plays a crucial role in simplifying database interaction and management."

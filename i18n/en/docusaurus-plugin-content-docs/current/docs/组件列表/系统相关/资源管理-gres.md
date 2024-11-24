@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gres'
-title: 'Resource Management-gres'
+title: 'Resource'
 sidebar_position: 10
 hide_title: true
 description: "Resource management techniques in the GoFrame framework, discussing the usage of the gres module in detail. By referring to related core component documentation, users can optimize site resource management and improve overall website performance and presentation."

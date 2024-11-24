@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gfile'
-title: 'File Management-gfile'
+title: 'File'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame, gfile, file management, caching mechanism, file operations, directory scanning, file copying, permission settings, path operations, content replacement]

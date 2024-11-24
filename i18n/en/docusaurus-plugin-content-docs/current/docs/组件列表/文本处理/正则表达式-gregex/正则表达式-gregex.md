@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/text-gregex'
-title: 'Regular Expression-gregex'
+title: 'Regular Expression'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,gregex,regular expression,regex library,regex parsing,parsing cache,execution efficiency,project documentation,golang]

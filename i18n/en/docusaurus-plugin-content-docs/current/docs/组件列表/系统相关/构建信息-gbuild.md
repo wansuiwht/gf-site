@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gbuild'
-title: 'Build Information-gbuild'
+title: 'Build Information'
 sidebar_position: 17
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gf build, build information, gbuild, program build, Go language, API documentation, software development, code import]

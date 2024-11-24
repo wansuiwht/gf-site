@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gtcp-funcs'
-title: 'TCP Component - Utility Methods'
+title: 'TCP - Methods'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, TCP Component, gtcp Module, Go Language, Network Programming, TLS Encryption, Data Communication, Short Connections, Utility Methods]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gstructs'
-title: 'Object Information-gstructs'
+title: 'Object Information'
 sidebar_position: 18
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gstructs, Structure Information, Field Retrieval, TagMapName, Fields Method, GoFrame Framework, Middleware Writing, Underlying Components]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-gtype'
-title: 'Safe Type - gtype'
+title: 'Safe Type'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, safe type, concurrent programming, concurrency safety, gtype, basic type, atomic operations, performance optimization, data type, lock mechanism]

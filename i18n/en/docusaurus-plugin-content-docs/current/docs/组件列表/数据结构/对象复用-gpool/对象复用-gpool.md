@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-gpool'
-title: 'Object Reuse - gpool'
+title: 'Pool'
 sidebar_position: 8
 hide_title: true
 keywords: [object reuse, GoFrame framework, gpool, expiration time, creation method, destruction method, concurrency safety, sync.Pool, GC pressure, cache reuse]

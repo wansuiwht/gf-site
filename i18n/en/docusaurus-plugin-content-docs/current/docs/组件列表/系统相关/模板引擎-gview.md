@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gview'
-title: 'Template Engine-gview'
+title: 'Template Engine'
 sidebar_position: 15
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Template Engine, gview, gview Module, Core Component, Template Engine Implementation, Module Implementation, gview Usage, gview Functionality]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gtoml'
-title: 'TOML Encoding and Decoding-gtoml'
+title: 'TOML'
 sidebar_position: 9
 hide_title: true
 keywords: [TOML, Encoding and Decoding, gtoml, GoFrame, Data Format, GoFrame Framework, API Documentation, Decode, gogf, Import]

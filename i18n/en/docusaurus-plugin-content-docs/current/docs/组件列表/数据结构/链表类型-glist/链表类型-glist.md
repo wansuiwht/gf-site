@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-glist'
-title: 'Linked List Type - glist'
+title: 'List'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Linked List, Doubly Linked List, Concurrent Safe, glist, Component, Go Language, Programming, Data Structure]

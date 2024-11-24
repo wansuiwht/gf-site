@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gcmd'
-title: 'Command Management - gcmd'
+title: 'Command'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Command Management, gcmd, Core Component, Command Line Tool, Development Framework, Command Execution, Code Management, Software Development]

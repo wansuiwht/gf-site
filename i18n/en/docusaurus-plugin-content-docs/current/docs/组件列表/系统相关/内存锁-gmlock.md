@@ -1,7 +1,7 @@
 ---
 slug: '/docs/components/os-gmlock'
-title: 'Memory Lock-gmlock'
-sidebar_position: 1
+title: 'Memory Lock'
+sidebar_position: 2
 hide_title: true
 keywords: [memory lock, dynamic mutex lock, GoFrame, gmlock, concurrency safety, TryLock, Remove method, dynamic creation of mutex locks, GoFrame framework, lock management]
 description: "The memory lock module provides dynamic mutex lock functionality based on the GoFrame framework, supporting concurrent safety and the TryLock feature by dynamically generating locks for given key names. Methods provided by GoFrame can be conveniently applied in scenarios requiring dynamic creation of a large number of mutex locks, such as effectively managing locks in multi-goroutine concurrent processing to ensure safe access to resources."

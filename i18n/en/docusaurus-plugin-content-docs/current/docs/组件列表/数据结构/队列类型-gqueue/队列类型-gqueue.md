@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-gqueue'
-title: 'Queue Type-gqueue'
+title: 'Queue'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gqueue, queue, concurrency safe, dynamic queue, fixed queue, goroutine, data communication, Go language]

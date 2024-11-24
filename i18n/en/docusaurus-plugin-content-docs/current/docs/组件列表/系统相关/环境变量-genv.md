@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-genv'
-title: 'Environment Variables-genv'
+title: 'Environment'
 sidebar_position: 12
 hide_title: true
 keywords: [GoFrame,Environment Variable Management,genv,SetMap,GetWithCmd,GoFrame Framework,Environment Variable Setting,Command Line Options,Delete Environment Variables,Batch Setting of Environment Variables]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gjson-struct-converting'
-title: 'General Encoding - Struct Conversion'
+title: 'General Codec - Struct'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame Framework, Struct Conversion, JSON Parsing, Data Format Conversion, Object Conversion, gjson Library, Encoding, Go Language, Data Scanning, User Struct]

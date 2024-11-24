@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gtcp-conn'
-title: 'TCP Component - Connection Object'
+title: 'TCP - Object'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gtcp, TCP communication, connection object, timeout handling, data writing, data reading, network programming, error retry]

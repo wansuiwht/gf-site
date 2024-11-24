@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gjson'
-title: 'Generic Encoding-gjson'
+title: 'General Codec'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame framework, gjson, data encoding, data parsing, data format conversion, JSON, XML, dynamic creation, data hierarchy retrieval]

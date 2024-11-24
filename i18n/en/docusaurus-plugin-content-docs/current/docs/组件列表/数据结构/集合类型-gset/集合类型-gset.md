@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-gset'
-title: 'Collection Type-gset'
+title: 'Set'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gset, Collection Type, Concurrent Safety, Element Collection, Go Language, Collection Operation, GoFrame Framework, Collection Interface]

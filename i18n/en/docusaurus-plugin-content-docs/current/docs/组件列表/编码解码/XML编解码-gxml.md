@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gxml'
-title: 'XML Encoding and Decoding - gxml'
+title: 'XML'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame framework, XML, XML encoding and decoding, data format, gxml, encoding parsing, Go language, programming, interface documentation]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gmutex'
-title: 'Mutex-gmutex'
+title: 'Mutex'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame Framework, gmutex mutex, mutex tutorial, concurrent read/write control, lock mechanism optimization, TryLock method, Func method example, benchmark, concurrency safety, Go programming]

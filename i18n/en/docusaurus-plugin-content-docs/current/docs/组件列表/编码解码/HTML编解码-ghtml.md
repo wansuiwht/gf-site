@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-ghtml'
-title: 'HTML Encoding - ghtml'
+title: 'HTML'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, HTML Encoding, ghtml, Go Language, Encoding and Decoding, API Documentation, Web Development, Software Development, Programming]

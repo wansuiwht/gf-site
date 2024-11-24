@@ -1,13 +1,12 @@
 ---
 slug: '/docs/components/container-gvar'
-title: 'Generic Type-gvar'
+title: 'Generic'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gvar, Generic Type, Runtime Generics, Concurrent Safe, Data Type Conversion, g.Var, Development Efficiency]
 description: "The gvar type in the GoFrame framework is a runtime generic implementation designed to enhance development convenience and efficiency. gvar supports built-in data type conversion and can serve as an alternative to interface{}, with its concurrency-safe feature making it excellent in scenarios requiring frequent data conversion. Additionally, it introduces the usage of gvar types and related interface documentation."
 ---
 
-![](/markdown/cd9ed75865d6b5efe704f58156a42fa4.png)
 
 ## Introduction
 

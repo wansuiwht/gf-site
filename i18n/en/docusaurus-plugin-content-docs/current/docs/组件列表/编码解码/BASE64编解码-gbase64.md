@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gbase64'
-title: 'BASE64 Encoding and Decoding-gbase64'
+title: 'BASE64'
 sidebar_position: 2
 hide_title: true
 keywords: [BASE64,GoFrame,Encoding,Decoding,gbase64,GoFrame Framework,API Documentation,Encoding Parsing,Go Language,Software Development]

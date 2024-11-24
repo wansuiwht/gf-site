@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gudp'
-title: 'UDP Component'
+title: 'UDP'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, UDP Component, UDP Protocol, Connectionless Protocol, gudp.Server, gudp.Conn, API Documentation, gudp Usage, NewServer, SetAddress]

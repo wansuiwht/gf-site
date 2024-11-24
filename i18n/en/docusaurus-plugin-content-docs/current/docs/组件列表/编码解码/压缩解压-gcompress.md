@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gcompress'
-title: 'Compression/Decompression-gcompress'
+title: 'Compression'
 sidebar_position: 11
 hide_title: true
 keywords: [GoFrame,GoFrame framework,gcompress,compression,decompression,binary data,Zlib,GZip,API documentation,GoFrame encoding]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gproc'
-title: 'Process Management-gproc'
+title: 'Process'
 sidebar_position: 14
 hide_title: true
 keywords: [process management, inter-process communication, local socket, gproc module, GoFrame, shell commands, asynchronous execution, subprocess management, gogf, process resources]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gudp-funcs'
-title: 'UDP Component - Utility Methods'
+title: 'UDP - Methods'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,UDP Component,gudp Module,Utility Methods,UDP Communication,Data Transmission,Network Programming,Go Language,Network Protocol]

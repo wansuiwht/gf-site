@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-gtree'
-title: 'Tree Type-gtree'
+title: 'Tree'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame, tree container, gtree, concurrency-safe, Red-black tree, AVL tree, BTree, sorting, big data processing, data structure]

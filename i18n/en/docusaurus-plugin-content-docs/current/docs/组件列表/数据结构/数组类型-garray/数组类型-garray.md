@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-garray'
-title: 'Array Type - garray'
+title: 'Array'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, garray, array container, concurrent safe, sorted array, interface documentation, data type, toolkit, data item uniqueness]

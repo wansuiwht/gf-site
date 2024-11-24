@@ -1,7 +1,7 @@
 ---
 slug: '/docs/components/os-gtimer'
-title: 'Timer-gtimer'
-sidebar_position: 0
+title: 'Timer'
+sidebar_position: 1
 hide_title: true
 keywords: [Timer, Concurrent Safe, High Performance, GoFrame, Task Scheduling, Delayed Tasks, Timeout Control, Frequency Control, Task Management, Singleton Mode]
 description: "gtimer is a concurrent safe and high-performance timer suitable for scenarios with a large number of scheduled tasks and delayed tasks. It supports timeout control and frequency control. gtimer provides various task management methods, including adding singleton and run-once tasks, and allows customization of timer parameters."

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gudp-conn'
-title: 'UDP Component-Connection Object'
+title: 'UDP - Object'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gudp.Conn, UDP Component, UDP Connection, gudp Module, Network Programming, Go Language, Data Communication, Programming Example]

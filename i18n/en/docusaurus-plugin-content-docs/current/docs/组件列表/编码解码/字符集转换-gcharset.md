@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gcharset'
-title: 'Character Set Conversion-gcharset'
+title: 'Charset Conversion'
 sidebar_position: 10
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Character Encoding Conversion, gcharset, GBK, UTF-8, Character Set Conversion, Encoding Conversion Module, Chinese Character Set, Program Example]

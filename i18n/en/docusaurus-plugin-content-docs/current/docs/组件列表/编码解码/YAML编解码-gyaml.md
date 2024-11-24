@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gyaml'
-title: 'YAML Encoding and Decoding - gyaml'
+title: 'YAML'
 sidebar_position: 8
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, YAML, Encoding, Decoding, gyaml, Data Format, Go Language, API Documentation, Encoding Parsing]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/test-gtest'
-title: 'Unit Testing - gtest'
+title: 'Unit Testing'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, unit testing, gtest, test assertions, GoFrame framework, test framework, test cases, Assert, goconvey, testify]

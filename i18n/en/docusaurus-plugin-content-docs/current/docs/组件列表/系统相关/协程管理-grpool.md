@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-grpool'
-title: 'Coroutine Management-grpool'
+title: 'Goroutine'
 sidebar_position: 16
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, goroutine, coroutine pool, high concurrency, grpool, task queue, resource management, asynchronous execution, memory optimization]

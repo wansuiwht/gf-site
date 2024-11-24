@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gcfg'
-title: 'Configuration Management - gcfg'
+title: 'Configuration'
 sidebar_position: 11
 hide_title: true
 keywords: [Configuration Management, GoFrame, gcfg module, core components, application configuration, GoFrame framework, flexible configuration, development framework, system configuration, configuration files]

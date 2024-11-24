@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gurl'
-title: 'URL Encoding and Decoding - gurl'
+title: 'URL'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,URL Encoding and Decoding,gurl,URL Parameter Construction,URL Parameter Encoding,URL Parameter Decoding,URL Parsing,Encoding and Decoding,Go Language]

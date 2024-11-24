@@ -1,11 +1,11 @@
-```
+---
 slug: '/docs/components/text-gstr'
-title: 'String Processing-gstr'
+title: 'String Processing'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,String processing,Text processing component,String judgment,Case conversion,String comparison,Split and join,Naming conversion,GoFrame framework,String conversion]
 description: "gstr provides powerful and convenient text processing components, including string judgment, case conversion, string comparison, splitting and joining, naming conversion, and more, offering more comprehensive and rich features than the Golang standard library."
-```
+---
 
 `gstr` provides powerful and convenient text processing components, with a large number of commonly used string processing methods built in, making it more comprehensive and rich compared to the `Golang` standard library, suitable for dealing with most business scenarios.
 

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/container-gmap'
-title: 'Dictionary Type-gmap'
+title: 'Map'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,gmap,map container,HashMap,TreeMap,ListMap,concurrent safety,data structure,associative array]

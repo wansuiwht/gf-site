@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gcron-differ-with-gtimer'
-title: 'Scheduled Task-gcron vs gtimer'
+title: 'Cron Job'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,Scheduled Task,gcron,gtimer,Performance Module,crontab,Time Interval,TCP Communication,Game Development]

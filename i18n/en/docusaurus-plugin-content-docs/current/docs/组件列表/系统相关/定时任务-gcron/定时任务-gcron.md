@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gcron'
-title: 'Scheduled Task - gcron'
+title: 'Cron Job'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,gcron,Scheduled Task,crontab,CRON Syntax,Task Management,Programming Interface,Framework Tutorial,Go Language]

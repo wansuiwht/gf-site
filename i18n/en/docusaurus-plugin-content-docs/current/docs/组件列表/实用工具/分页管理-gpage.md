@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/util-gpage'
-title: 'Pagination Management - gpage'
+title: 'Pagination Management'
 sidebar_position: 5
 hide_title: true
 description: "This document explains how to use the gpage module of the GoFrame framework to achieve efficient pagination management. By reading this document, developers can learn the specific steps and optimization techniques for utilizing the gpage module in WEB service development."

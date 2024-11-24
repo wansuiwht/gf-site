@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/os-gcache'
-title: 'Cache Management - gcache'
+title: 'Caching'
 sidebar_position: 8
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gcache, Cache Management, Web Development, Backend Framework, Open Source, High Performance, Go Language, Component]

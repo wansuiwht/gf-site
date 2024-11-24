@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gtcp-tls'
-title: 'TCP Component - TLS Encryption'
+title: 'TCP - TLS'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gtcp, TLS Encryption, Network Communication, Go Language, Server, Client, Secure Communication, Network Security]

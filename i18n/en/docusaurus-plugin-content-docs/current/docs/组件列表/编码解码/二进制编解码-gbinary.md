@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/encoding-gbinary'
-title: 'Binary Encoding/Decoding - gbinary'
+title: 'Binary'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gbinary, binary encoding/decoding, data conversion, network communication, data encoding, decoding, integer processing, bit manipulation]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/components/network-gtcp'
-title: 'TCP Component'
+title: 'TCP'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,gtcp,TCPServer,Server,Programming,Network Connection,Lightweight,Concurrency,Example]
