@@ -1,6 +1,6 @@
 ---
 slug: '/docs/design/project-dao-improvement'
-title: 'DAO-Project Pain Points and Improvements'
+title: 'Pain Points and Improvements In Business Project'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, DAO Improvement, Database Operation, Data Model, Business Model, ORM Abstraction, Engineering Design, Data Permission, Automated Code Generation]

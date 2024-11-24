@@ -1,6 +1,6 @@
 ---
 slug: '/docs/design/project-dao'
-title: 'DAO Encapsulation Design'
+title: 'DAO Encapsulation'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, DAO Design, Data Access Object, Design Patterns, Software Architecture, Code Encapsulation, Database Operations, Best Development Practices, System Design]

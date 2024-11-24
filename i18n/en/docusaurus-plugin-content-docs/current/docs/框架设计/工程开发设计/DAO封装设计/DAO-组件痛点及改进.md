@@ -1,6 +1,6 @@
 ---
 slug: '/docs/design/project-dao-pain'
-title: 'DAO-Component Pain Points and Improvements'
+title: 'Pain Points and Improvements In ORM Component'
 sidebar_position: 0
 hide_title: true
 keywords: [DAO,GoFrame,Data Access Object,ORM,GRPC,Database Optimization,Code Encapsulation,Automatic Mapping,SQL Logs,Code Generation]
