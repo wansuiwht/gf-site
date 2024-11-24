@@ -19,7 +19,7 @@ export default function Comments(): JSX.Element {
         emitMetadata="0"
         inputPosition="top"
         theme={colorMode === "dark" ? "dark_tritanopia" : "light_tritanopia"}
-        lang="zh-CN"
+        lang="en"
         loading="lazy"
       />
     </div>

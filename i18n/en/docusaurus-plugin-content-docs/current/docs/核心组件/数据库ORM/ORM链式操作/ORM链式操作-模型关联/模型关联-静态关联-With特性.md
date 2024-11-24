@@ -4,14 +4,14 @@ title: 'Model Association - Static Association - With Feature'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, With Feature, ORM, Model Association, Data Query, Transaction Operation, Data Structure, Go Language, Database, SQL]
-description: "The With feature in the GoFrame framework provides examples of how to use the With feature to achieve model association and data query, introducing aspects such as data structure definition, transaction operation, and data writing and querying, helping developers better understand and use the GoFrame framework for efficient development."
+description: "The With feature in the GoFrame framework demonstrates how to achieve model association and data queries through examples. It introduces data structure definition, transaction operations, data writing and querying, helping developers better understand and use the GoFrame framework for efficient development."
 ---
 
 ## 1. Design Background
 
-We all know that usability and maintainability have been key focuses for `goframe`, setting it apart from other frameworks and components. Unlike other ORMs that use common model association designs like `BelongsTo`, `HasOne`, `HasMany`, and `ManyToMany`, `goframe` avoids these due to their complex maintenance, such as foreign key constraints and additional tag notes, which can burden developers. Thus, the framework prefers not to inject overly complex tag content, association attributes, or methods into model structs, continuously simplifying the design. The goal is to make model association queries as easy to understand and use as possible. Previously, we introduced the `ScanList` solution, and it is recommended to understand it before diving into the `With` feature [Dynamic Association - ScanList](Dynamic Association - ScanList.md).
+Everyone knows that usability and maintainability have always been the focus of `goframe`, and it's also a significant difference between `goframe` and other frameworks and components. `goframe` does not adopt other common `ORM` model association designs like `BelongsTo`, `HasOne`, `HasMany`, `ManyToMany`, which are cumbersome to maintain due to foreign key constraints, additional tag annotations, etc., imposing a certain cognitive load on developers. Therefore, the framework is inclined not to inject overly complex tag content, associated attributes, or methods into model structures and consistently tries to simplify the design with the goal of making model association queries as understandable and easy to use as possible. Before learning more about the `With` feature, it is recommended to first understand [Model Association - Dynamic Association - ScanList](模型关联-动态关联-ScanList.md).
 
-After various project practices, we found that although `ScanList` maintained model association from a runtime business logic perspective, it still didn't meet our simplicity expectations. Therefore, we further improved and launched the `With` model association feature, which facilitates simple maintenance of association relationships through models. This feature remains dedicated to enhancing the framework's overall usability and maintainability. You can view `With` as a combination and improvement over `ScanList` and model association maintenance.
+Through a series of project practices, we found that although `ScanList` maintains model associations from a runtime business logic perspective, this association maintenance is not as straightforward as expected. Therefore, we continue to improve and introduce the `With` model association feature, which can easily maintain the association relationships through models. Of course, this feature is still dedicated to enhancing the usability and maintainability of the overall framework, and it can be seen as a combination and improvement of `ScanList` and model association maintenance.
 
 :::warning
 The `With` feature is currently experimental.
@@ -19,7 +19,7 @@ The `With` feature is currently experimental.
 
 ## 2. An Example
 
-Let's start with a simple example to help everyone understand the `With` feature better. This example is a refined version from the previous `ScanList` section.
+Let's start with a simple example to help better understand the `With` feature, which is an improved version of the same example from the previous `ScanList` section.
 
 ### 1. Data Structure
 
@@ -49,13 +49,13 @@ CREATE TABLE `user_scores` (
 
 ### 2. Data Structure
 
-From the table definitions, we know:
+Based on the table definitions, we can tell:
 
-1. User table and user detail have a `1:1` relationship.
-2. User table and user scores have a `1:N` relationship.
-3. The `N:N` relationship is not demonstrated here because compared to the `1:N` query, it merely adds one more association or query, and the final handling is similar to `1:N`.
+1. The user table and user details have a `1:1` relationship.
+2. The user table and user scores have a `1:N` relationship.
+3. We did not demonstrate a `N:N` relationship here because, compared to a `1:N` query, it's just an additional association or one more query, and the final processing method is similar to `1:N`.
 
-The Golang model can be defined as follows:
+The `Golang` model can be defined as follows:
 
 ```go
 // User Detail
@@ -83,11 +83,11 @@ type User struct {
 
 ### 3. Data Insertion
 
-To simplify the example, we'll create 5 user records and use a transaction operation for insertion:
+To simplify the example, we create `5` user records, using transactional operations:
 
-- User information, with `id` from `1-5`, and `name` from `name_1` to `name_5`.
-- Simultaneously create 5 user detail records, with `address` data ranging from `address_1` to `address_5`.
-- For each user, create 5 score records, ranging from `1-5`.
+- User information, `id` ranges from `1-5`, `name` ranges from `name_1` to `name_5`.
+- Simultaneously create `5` user detail records, where `address` data ranges from `address_1` to `address_5`.
+- Each user has `5` score entries, scoring `1-5`.
 
 ```go
 g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
@@ -125,7 +125,7 @@ g.DB().Transaction(ctx, func(ctx context.Context, tx gdb.TX) error {
 })
 ```
 
-Upon successful execution, the database data is as follows:
+After execution, the database data is as follows:
 
 ```text
 mysql> show tables;
@@ -197,10 +197,10 @@ mysql> select * from `user_score`;
 
 ### 4. Data Query
 
-Under the new `With` feature, data querying is quite convenient. For example, to query one record:
+With the new `With` feature, data querying is quite straightforward. For example, to query one record:
 
 ```go
-// Declaration again for clarity
+// Redefine it to avoid scrolling
 // User Detail
 type UserDetail struct {
     g.Meta `orm:"table:user_detail"`
@@ -224,11 +224,11 @@ type User struct {
 }
 
 var user *User
-// WithAll will query fields with with tag, in this example, it will query tables corresponding to UserDetail and UserScores structures
+// WithAll will query fields with with tags, in this example, it will query tables corresponding to the UserDetail and UserScores structures
 g.Model(tableUser).WithAll().Where("id", 3).Scan(&user)
 ```
 
-The above statement queries information, details, and scores of the user with ID `3`. Internally, the following `SQL` statements will be executed in the database:
+The above statement will query information for a user with ID `3`, including user information, user details, and user score information. The above statement will automatically execute the following `SQL` statements in the database:
 
 ```text
 2021-05-02 22:29:52.634 [DEBU] [  2 ms] [default] SHOW FULL COLUMNS FROM `user`
@@ -239,7 +239,7 @@ The above statement queries information, details, and scores of the user with ID
 2021-05-02 22:29:52.644 [DEBU] [  0 ms] [default] SELECT `id`,`uid`,`score` FROM `user_score` WHERE `uid`=3
 ```
 
-Upon execution, the user information printed with `g.Dump(user)` looks like this:
+After execution, the information printed by `g.Dump(user)` is as follows:
 
 ```js
 {
@@ -281,15 +281,15 @@ Upon execution, the user information printed with `g.Dump(user)` looks like this
 
 ### 5. List Query
 
-Here is an example of list querying through the `With` feature:
+Let's see an example of querying a list through the `With` feature:
 
 ```go
 var users []*User
-// With(UserDetail{}) only queries the table corresponding to UserDetail in the User struct
+// With(UserDetail{}) only queries the table corresponding to UserDetail in the User structure
 g.Model(users).With(UserDetail{}).Where("id>?", 3).Scan(&users)
 ```
 
-Upon execution, the user data printed with `g.Dump(users)` looks like this:
+After execution, the data printed by `g.Dump(users)` is as follows:
 
 ```js
 [
@@ -316,7 +316,7 @@ Upon execution, the user data printed with `g.Dump(users)` looks like this:
 
 ### 6. Conditions and Sorting
 
-When associating with the `With` feature, you can specify additional conditions for the association and specify sorting rules for multiple data results. For example:
+When associating with the `With` feature, additional association conditions can be specified, as well as sorting rules for multiple data results. For example:
 
 ```go
 type User struct {
@@ -328,10 +328,12 @@ type User struct {
 }
 ```
 
-You can specify additional association conditions and sorting rules through the `where` and `order` sub-tags in the `orm` tag.
+Use the `where` sub-tag and `order` sub-tag in the `orm` tag to specify additional association conditions and sorting rules.
 
 ### 7. `unscoped` Tag
-In the `with` struct tag, the `unscoped` feature is supported, for example:
+
+The `with` struct tag supports the `unscoped` feature, for example:
+
 ```go
 type User struct {
     g.Meta `orm:"table:user"`
@@ -344,11 +346,11 @@ type User struct {
 
 ## 3. Detailed Explanation
 
-You might be curious about certain usages above, like the `gmeta` package, the `WithAll` method, the `with` statement in the `orm` tag, the `Model` method with struct parameter for table name recognition, etc. Well, let's dive into these details.
+You might be curious about some of the usages above, such as the `gmeta` package, the `WithAll` method, the `with` statement in the `orm` tag, and the `Model` method's struct parameter recognizing table names, etc. That's right, let's talk about them in detail.
 
-### 1. The `gmeta` Package
+### 1. `gmeta` Package
 
-You can see the use of the `embed` method embedding a `g.Meta` struct in the above structure models, like:
+In the above data structures, you can see a `g.Meta` struct is embedded in an `embed` way, like:
 
 ```go
 type UserDetail struct {
@@ -358,13 +360,13 @@ type UserDetail struct {
 }
 ```
 
-In the `GoFrame` framework, there are many such component packages designed to implement specific convenient functions. The role of the `gmeta` package is mainly to embed into user-defined structs and label the `gmeta` package struct (here, `g.Meta`) through tags, retrieving these custom tag contents dynamically at runtime. For details, please refer to the chapter: [Metadata-gmeta](../../../../component_list/utilities/metadata-gmeta.md)
+Within the `GoFrame` framework, there are many such small component packages for implementing specific functions. The `gmeta` package is mainly used to embed into user-defined structures, and using tags to mark the struct (like `g.Meta`) in the `gmeta` package with custom tag content (such as `` `orm:"table:user_detail"` ``), and can dynamically obtain these custom tag contents with specific methods at runtime. For more details, refer to the chapter: [Metadata - gmeta](../../../../组件列表/实用工具/元数据-gmeta.md).
 
-So, the purpose of embedding `g.Meta` here is to indicate the data table name associated with the struct.
+Therefore, embedding `g.Meta` here is to label the data table name associated with the struct.
 
 ### 2. Model Association Specification
 
-In the following struct:
+In the following structure:
 
 ```go
 type User struct {
@@ -376,13 +378,13 @@ type User struct {
 }
 ```
 
-We associate specific struct attributes with `orm` tags and specify the relationship between the current struct (data table) and target struct (data table) through the `with` statement in the `orm` tag. The syntax of the `with` statement is as follows:
+We bind the `orm` tag to the specified struct property, and specify the association relationship between the current struct (table) and the target struct (table) through the `with` statement in the `orm` tag. The syntax of the `with` statement is as follows:
 
 ```text
-with:current_attribute_table_association_field=current_struct_table_association_field
+with:target_table_association_field=current_structure_association_field
 ```
 
-The field names are **case-insensitive and support special character matching**. Various forms of association relationships can be automatically recognized, such as:
+The field names are **case-insensitive and ignore special characters**. For example, the following forms of associations can all be automatically recognized:
 
 ```text
 with:UID=ID
@@ -390,40 +392,40 @@ with:Uid=Id
 with:U_ID=id
 ```
 
-If both tables have the same association field name, one can simply be written, such as:
+If the association fields of both tables have the same name, you can just write one, such as:
 
 ```text
 with:uid
 ```
 
-In this example, the data table corresponding to the `UserDetail` attribute is `user_detail`, and the one for `UserScores` is `user_score`. Both are associated with the current `User` struct table `user` using the `uid`, and the corresponding field in the target associated `user` table is `id`.
+In this example, the table corresponding to the `UserDetail` property is `user_detail`, and the table corresponding to the `UserScores` property is `user_score`. Both are associated with the `user` table of the current `User` struct using `uid`, and the associated field of the target `user` table is `id`.
 
 ### 3. `With/WithAll`
 
 #### 1) Basic Introduction
 
-By default, even if the struct attributes have `orm` tags with `with` statements, the `ORM` component does not enable `With` feature association queries unless triggered with `With/WithAll` methods.
+By default, even if the properties in our struct have `orm` tags with `with` statements, the `ORM` component will not enable the `With` feature for association queries by default. It needs to be enabled by the `With/WithAll` method.
 
-- `With`: Specifies which associated tables to enable for queries, specified with attribute objects.
-- `WithAll`: Enables all associated model object attribute tables with `with` statements.
+- `With`: Specify the association query tables by specifying the property objects.
+- `WithAll`: Enable association queries for all property structures with `with` statements in the operating object.
 
-In our example, we used the `WithAll` method, which automatically enables model association queries for all attributes in the `User` table. As long as the attribute struct associates with a data table and the `orm` tag has a `with` statement, data will be automatically queried and bound based on model struct associations. If only partial associations need to be enabled, instead of all attribute model association queries, then `With` method can be used for precise control. The `With` method allows specifying multiple associated model automatic queries. In this example, `WithAll` is equivalent to:
+In our example, the `WithAll` method is used, so all property model association queries in the `User` table are automatically enabled. As long as the property struct is associated with a table and the `orm` tag contains a `with` statement, it will automatically query data and bind data according to the model structure association relationship. If we only enable association queries for some properties rather than all property models, we can use the `With` method to specify. And the `With` method can specify multiple associated model automatic queries. The `WithAll` in this example is equivalent to:
 
 ```go
 var user *User
 g.Model(tableUser).With(UserDetail{}, UserScore{}).Where("id", 3).Scan(&user)
 ```
 
-Or it can be like this:
+Or like this:
 
 ```go
 var user *User
 g.Model(tableUser).With(User{}.UserDetail, User{}.UserScore).Where("id", 3).Scan(&user)
 ```
 
-#### 2) Associate Only `UserDetail` Model
+#### 2) Only Associate User Detail Model
 
-If you only need to query user details and not user scores, you can use the `With` method to enable the query for the data table associated with specific objects, like:
+If we only need to query user details and not user scores, we can use the `With` method to enable association queries for the specified object corresponding tables, such as:
 
 ```go
 var user *User
@@ -437,7 +439,7 @@ var user *User
 g.Model(tableUser).With(User{}.UserDetail).Where("id", 3).Scan(&user)
 ```
 
-After execution, the user data printed with `g.Dump(user)` looks like this:
+After execution, the data printed by `g.Dump(user)` is:
 
 ```js
 {
@@ -451,9 +453,9 @@ After execution, the user data printed with `g.Dump(user)` looks like this:
 }
 ```
 
-#### 3) Associate Only `UserScores` Model
+#### 3) Only Associate User Score Model
 
-You can also only associate query the user score information, like:
+We can also associate and query only user score information, such as:
 
 ```go
 var user *User
@@ -467,7 +469,7 @@ var user *User
 g.Model(tableUser).With(User{}.UserScore).Where("id", 3).Scan(&user)
 ```
 
-After execution, the user data printed with `g.Dump(user)` looks like this:
+After execution, the data printed by `g.Dump(user)` is:
 
 ```js
 {
@@ -504,16 +506,16 @@ After execution, the user data printed with `g.Dump(user)` looks like this:
 }
 ```
 
-#### 4) No Associated Model Query
+#### 4) Do Not Associate Any Model Query
 
-If no associated query is needed, it's simpler. For instance:
+If we do not need any association query, it's simpler, for example:
 
 ```go
 var user *User
 g.Model(tableUser).Where("id", 3).Scan(&user)
 ```
 
-After execution, the user data printed with `g.Dump(user)` looks like this:
+After execution, the data printed by `g.Dump(user)` is:
 
 ```js
 {
@@ -528,27 +530,27 @@ After execution, the user data printed with `g.Dump(user)` looks like this:
 
 ### 1. Field Query and Filtering
 
-In our examples above, no specific query fields are set. Still, in the `SQL` logs, you can see that the query statement is not simple `SELECT *`, but specific field queries are executed. Under the `With` feature, queries automatically proceed based on the properties of associated model objects. The attribute names will automatically map to the data table fields, and fields that can't be automatically mapped will be filtered out of the query.
+As seen in our example above, we have not specified the fields to query, but in the `SQL` logs printed, the query statement is not a simple `SELECT *` but executed concrete field queries. Under the `With` feature, automatic field query mapping according to the associated model object properties will happen, and it will automatically filter out fields that cannot be mapped.
 
-Therefore, under the `With` feature, you cannot only query and assign specific fields to properties. If you need to query and assign only specific fields, it's recommended to tailor your `model` data structure according to business scenarios, creating specific data structures that fit certain business requirements, rather than using a single data structure to satisfy different scenarios.
+Therefore, under the `With` feature, we cannot query only some corresponding properties’ fields. To query and assign only specific fields, it is recommended to trim the `model` data structure according to business scenarios and create data structures that meet specific business scenarios, rather than using one data structure to fit multiple different scenarios.
 
-Let's better illustrate this with an example. Suppose we have an entity object data structure `Content`, a typical `CMS` system content model as follows. The model fields correspond one-to-one with the data table:
+Let's use an example for better illustration. Suppose we have an entity object data structure `Content`, a common content model in a `CMS` system as follows, which corresponds to the fields of the data table:
 
 ```go
 type Content struct {
-    Id             uint        `orm:"id,primary"       json:"id"`               // Incrementing ID
-    Key            string      `orm:"key"              json:"key"`              // Unique key, used for hardcoding, typically not frequently used
-    Type           string      `orm:"type"             json:"type"`             // Content model: topic, ask, article, etc., defined specifically by the program
+    Id             uint        `orm:"id,primary"       json:"id"`               // Auto-increment ID
+    Key            string      `orm:"key"              json:"key"`              // Unique key name, generally not commonly used
+    Type           string      `orm:"type"             json:"type"`             // Content model: topic, ask, article, etc., defined by the program
     CategoryId     uint        `orm:"category_id"      json:"category_id"`      // Category ID
     UserId         uint        `orm:"user_id"          json:"user_id"`          // User ID
     Title          string      `orm:"title"            json:"title"`            // Title
     Content        string      `orm:"content"          json:"content"`          // Content
-    Sort           uint        `orm:"sort"             json:"sort"`             // Sort order, lower numbers are prioritized, default is the timestamp when added, can be used for pinning
+    Sort           uint        `orm:"sort"             json:"sort"`             // Sort order, lower value means higher priority, default is the timestamp when added, can be used to pin
     Brief          string      `orm:"brief"            json:"brief"`            // Summary
     Thumb          string      `orm:"thumb"            json:"thumb"`            // Thumbnail
     Tags           string      `orm:"tags"             json:"tags"`             // Tag names list, stored in JSON
-    Referer        string      `orm:"referer"          json:"referer"`          // Content source, like github/gitee
-    Status         uint        `orm:"status"           json:"status"`           // Status 0: normal, 1: disabled
+    Referer        string      `orm:"referer"          json:"referer"`          // Content Source, e.g., GitHub/Gitee
+    Status         uint        `orm:"status"           json:"status"`           // Status 0: Normal, 1: Disabled
     ReplyCount     uint        `orm:"reply_count"      json:"reply_count"`      // Reply count
     ViewCount      uint        `orm:"view_count"       json:"view_count"`       // View count
     ZanCount       uint        `orm:"zan_count"        json:"zan_count"`        // Likes
@@ -558,11 +560,11 @@ type Content struct {
 }
 ```
 
-The content list page doesn't need such detailed content, especially the `Content` field, which is very large. The list page only requires a few fields. Thus, you can define a separate structure for list returns (field trimming), instead of directly using the entity object data structure for the data table. For instance:
+The content list page does not need to display such detailed content, especially the `Content` field, which is very large. We only need to query a few fields for the list page. Therefore, we can define a separate data structure for list returns (field trimming) instead of directly using the data table entity object data structure. For example:
 
 ```go
 type ContentListItem struct {
-    Id         uint        `json:"id"`          // Incrementing ID
+    Id         uint        `json:"id"`          // Auto-increment ID
     CategoryId uint        `json:"category_id"` // Category ID
     UserId     uint        `json:"user_id"`     // User ID
     Title      string      `json:"title"`       // Title
@@ -571,13 +573,13 @@ type ContentListItem struct {
 }
 ```
 
-### 2. Associated Fields as Attributes
+### 2. Must Exist Association Field Property
 
-Since the `With` feature is achieved through recognizing data structure associations and handling multiple automatic SQL queries, the associated fields must also exist as attributes of the object to allow the automatic acquisition of these association field values. Simply put, the field in the `with` tag must exist in the associated object as an attribute.
+The `With` feature is achieved by recognizing data structure associations and automatically executing multiple SQL queries, so associated fields must exist as object properties for automatic retrieval of association field values. Simply put, the fields in the `with` tag must be present in the attributes of the associated object.
 
 ## 5. Recursive Association
 
-If the associated model attribute also contains the `with` tag, recursive association queries will execute. The `With` feature supports infinite levels of recursive association. Here's a reference example:
+If the associated model properties also have `with` tags, recursive association querying will occur. The `With` feature supports unlimited levels of recursive association. The following example is for reference only:
 
 ```go
 // User Detail
@@ -587,7 +589,7 @@ type UserDetail struct {
     Address    string `json:"address"`
 }
 
-// User Scores - Core Courses
+// User Scores - Required Courses
 type UserScoresRequired struct {
     g.Meta `orm:"table:user_scores"`
     Id         int `json:"id"`
@@ -622,9 +624,9 @@ type User struct {
 }
 ```
 
-## 6. Model Example
+## 6. Model Examples
 
-Given the current data tables, here are more model writing examples for your reference.
+Based on the current data tables, more model writing examples are provided for reference.
 
 ### 1. Nested Associated Models
 
@@ -651,7 +653,7 @@ type User struct {
 }
 ```
 
-Nested models with struct embeddings support automatic data assignment as well. For example:
+Nested models also support nesting to allow automatic data assignment for embedded structures, such as:
 
 ```go
 type UserDetail struct {
@@ -677,7 +679,7 @@ type User struct {
 }
 ```
 
-### 2. Embedded Base Model
+### 2. Basic Model Nesting
 
 ```go
 type UserDetail struct {
@@ -706,9 +708,9 @@ type User struct {
 }
 ```
 
-### 3. Model without `meta` Information
+### 3. Models Without `meta` Information
 
-The critical part of the `meta` structure in models is specifying the data table name. When there's no `meta` information, the query will automatically use the `CaseSnake` name of the struct. For instance, `UserDetail` will automatically use the data table name `user_detail`, and `UserScores` will use `user_scores`.
+The `meta` structure in the model is crucial for specifying the table name. When there is no `meta` information, the table name for query will automatically use the `CaseSnake` name of the struct. For example, `UserDetail` will automatically use the `user_detail` table name, and `UserScores` will automatically use the `user_scores` table name.
 
 ```go
 type UserDetail struct {
@@ -732,4 +734,4 @@ type User struct {
 
 ## 7. Future Improvements
 
-- Currently, the `With` feature has only been implemented for query operations and does not support write or update operations.
+- Currently, the `With` feature is only implemented for query operations and does not support write or update operations.

@@ -62,7 +62,7 @@ It should be noted that the shorter the default detection interval of the timer,
 
 ## Difference Between Timer and `gcron`
 
-Please refer to the section [Scheduled Task-gcron and gtimer](../scheduled-task-gcron/scheduled-task-gcron-and-gtimer.md)
+Please refer to the section [Scheduled Task-gcron and gtimer](../定时任务-gcron/定时任务-gcron与gtimer.md)
 
 ## Related Documents
 

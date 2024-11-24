@@ -21,12 +21,15 @@ const (
 如果文件顶部的front matter中的description内容中含有单引号，那么将description的值由单引号改为双引号包裹。
 不要对顶部的front matter内容使用代码标签包括。
 不能删除markdown内容中的图片展示标签内容。
+不能翻译链接中的文件路径中的中文名称。
 `
 )
 
 var (
     ignoreFileNames = []string{
         "来杯咖啡",
+        "微服务与框架职责边界",
+        "Context 业务流程共享变量",
     }
 )
 

@@ -4,59 +4,59 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.快速开始": {
-    "message": "快速开始",
+    "message": "QuickStart",
     "description": "Navbar item with label 快速开始"
   },
   "item.label.开发手册": {
-    "message": "开发手册",
+    "message": "Document",
     "description": "Navbar item with label 开发手册"
   },
   "item.label.社区教程": {
-    "message": "社区教程",
+    "message": "Courses",
     "description": "Navbar item with label 社区教程"
   },
   "item.label.案例展示": {
-    "message": "案例展示",
+    "message": "ShowCase",
     "description": "Navbar item with label 案例展示"
   },
   "item.label.发布记录": {
-    "message": "发布记录",
+    "message": "Release",
     "description": "Navbar item with label 发布记录"
   },
   "item.label.开源社区": {
-    "message": "开源社区",
+    "message": "Community",
     "description": "Navbar item with label 开源社区"
   },
   "item.label.开发工具": {
-    "message": "开发工具",
+    "message": "CLI Tool",
     "description": "Navbar item with label 开发工具"
   },
   "item.label.数据校验": {
-    "message": "数据校验",
+    "message": "Data Validation",
     "description": "Navbar item with label 数据校验"
   },
   "item.label.ORM配置管理": {
-    "message": "ORM配置管理",
+    "message": "ORM Configuration",
     "description": "Navbar item with label ORM配置管理"
   },
   "item.label.ORM链式操作": {
-    "message": "ORM链式操作",
+    "message": "ORM Chaining Operation",
     "description": "Navbar item with label ORM链式操作"
   },
   "item.label.WEB服务配置": {
-    "message": "WEB服务配置",
+    "message": "WEB Server Configuration",
     "description": "Navbar item with label WEB服务配置"
   },
   "item.label.WEB路由管理": {
-    "message": "WEB路由管理",
+    "message": "WEB Server Router",
     "description": "Navbar item with label WEB路由管理"
   },
   "item.label.WEB参数处理": {
-    "message": "WEB参数处理",
+    "message": "WEB Parameter Handling",
     "description": "Navbar item with label WEB参数处理"
   },
   "item.label.HTTP客户端": {
-    "message": "HTTP客户端",
+    "message": "HTTP Client",
     "description": "Navbar item with label HTTP客户端"
   },
   "item.label.视频入门教程": {

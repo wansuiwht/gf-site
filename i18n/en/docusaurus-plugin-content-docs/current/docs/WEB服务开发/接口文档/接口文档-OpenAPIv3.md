@@ -7,7 +7,7 @@ keywords: [OpenAPIv3, GoFrame, API Documentation, Standard Routing, g.Meta, swag
 description: "Use the OpenAPIv3 protocol in the GoFrame framework to standardize the generation of API documentation. By embedding the g.Meta metadata structure, you can automatically generate interface information with protocol tags. Additionally, the article shows how to customize extension tags and manually improve the API documentation."
 ---
 :::tip
-The `OpenAPIv3` protocol is mainly used in standardized routing. Before reading the introduction to the API documentation protocol, please familiarize yourself with the standardized routing: [Routing Registration - Standard Routing](../routing-management/routing-registration/standard-routing/standard-routing.md)
+The `OpenAPIv3` protocol is mainly used in standardized routing. Before reading the introduction to the API documentation protocol, please familiarize yourself with the standardized routing: [Routing Registration - Standard Routing](../路由管理/路由管理-路由注册/路由注册-规范路由/路由注册-规范路由.md)
 :::
 ## I. `OpenAPIv3`
 
@@ -17,7 +17,7 @@ For a detailed introduction to the `OpenAPIv3` protocol, please refer to: [https
 
 Interface metadata information can be implemented by embedding the `g.Meta` structure in the input struct and using its attribute tags.
 
-For an introduction to the metadata component, please refer to the section: [Metadata-gmeta](../../component-list/utilities/metadata-gmeta.md)
+For an introduction to the metadata component, please refer to the section: [Metadata-gmeta](../../组件列表/实用工具/元数据-gmeta.md)
 
 ## III. Common Protocol Tags
 
