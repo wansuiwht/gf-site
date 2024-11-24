@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-transaction-closure'
-title: 'ORM Transaction Handling - Closure Operation'
+title: 'ORM Transaction - Closure'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame framework, ORM transaction handling, closure operation, transaction management, code simplification, nested transactions, automatic commit, automatic rollback, context parameters]

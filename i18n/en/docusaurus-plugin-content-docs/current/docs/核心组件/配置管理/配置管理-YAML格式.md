@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gcfg-yaml'
-title: 'Configuration Management - YAML Format'
+title: 'Configuration - YAML'
 sidebar_position: 4
 hide_title: true
 keywords: [Configuration Management, YAML Format, GoFrame, Data Serialization, Mapping, Array, Scalar, Object, Composite Structure, JavaScript Conversion]

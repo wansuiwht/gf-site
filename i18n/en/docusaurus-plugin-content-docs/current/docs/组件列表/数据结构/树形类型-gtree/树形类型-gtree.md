@@ -7,7 +7,7 @@ keywords: [GoFrame, tree container, gtree, concurrency-safe, Red-black tree, AVL
 description: "This document introduces the tree container components provided by the GoFrame framework, including data structures such as RedBlackTree, AVLTree, and BTree. Tree containers support concurrency safety and ordered traversal, making them suitable for large data storage needs. With the GoFrame framework, developers can efficiently implement scenarios such as associative arrays, sorted key-value pairs, and large data volume memory CURD."
 ---
 
-## Basic Introduction
+## Introduction
 
 Concurrent-safe feature support for tree containers, with the characteristics of tree data structures supporting ordered traversal, low memory consumption, stable complexity, and suitability for large data storage. This module includes tree containers for multiple data structures: `RedBlackTree`, `AVLTree`, and `BTree`.
 

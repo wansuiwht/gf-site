@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-insert-save'
-title: 'ORM Chained Operations - Insert Save'
+title: 'ORM Model - Insert/Save'
 sidebar_position: 1
 hide_title: true
 keywords: [ORM Chained Operations, Data Insertion, GoFrame, Insert, Replace, Save, Database, Batch Operations, SQL, RawSQL]

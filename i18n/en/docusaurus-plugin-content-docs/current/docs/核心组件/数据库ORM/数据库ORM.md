@@ -1,7 +1,7 @@
 ---
 slug: '/docs/core/gdb'
 title: 'Database ORM🔥'
-sidebar_position: 10
+sidebar_position: 8
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Database ORM, gdb Module, Database Driver, Connection Pool, Preprocessing, Automation, Observability, DAO Design]
 description: "In the GoFrame framework, the gdb module is used to implement ORM functionality for databases, emphasizing the design of connection pools, preprocessing SQL parameters, and automatic recognition of Map/Struct. The GoFrame ORM component supports nested transactions, interface-based design, is compatible with mainstream database drivers, and has strong configuration management and debugging features."
@@ -13,7 +13,7 @@ To decouple the database drivers from the main framework library, starting from 
 
 For database driver installation and introduction, please refer to: [https://github.com/gogf/gf/tree/master/contrib/drivers](https://github.com/gogf/gf/tree/master/contrib/drivers)
 
-## Basic Introduction
+## Introduction
 
 The `ORM` functionality of the `GoFrame` framework is implemented by the `gdb` module, used for `ORM` operations of common relational databases.
 :::tip
@@ -36,7 +36,7 @@ The `GoFrame ORM` component has the following notable features:
 4. Powerful configuration management using the framework's unified configuration component.
 5. Supports singleton mode to obtain database objects of the same configuration group.
 6. Supports two operation methods: native SQL method operations and ORM chain operations.
-7. Supports `OpenTelemetry` observability: trace tracking, logging, and metric reporting.
+7. Supports `OpenTelemetry` observability: trace tracing, logging, and metric reporting.
 8. Automatically recognizes `Map/Struct` to receive query results through the `Scan` method, automating query result initialization and struct type conversion.
 9. Recognizes empty results by returning `nil`, without the need for `sql.ErrNoRows` to identify empty query results.
 10. Fully automated struct property-field mapping, without needing to explicitly define struct tags to maintain property-field mapping relationships.

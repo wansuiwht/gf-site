@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-faq'
-title: 'ORM FAQ'
+title: 'ORM - FAQ'
 sidebar_position: 11
 hide_title: true
 keywords: [ORM FAQ, GoFrame, GoFrame framework, database connection pool, MaxLifeTime, SQL query, database driver, debug log, empty array condition, character set settings]

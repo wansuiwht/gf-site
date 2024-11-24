@@ -1,10 +1,10 @@
 ---
 slug: '/docs/obs/tracing-http-example-baggage'
-title: 'Link Tracking-HTTP Example-Baggage'
+title: 'Tracing-HTTP Example-Baggage'
 sidebar_position: 0
 hide_title: true
-keywords: [GoFrame,GoFrame framework,link tracking,HTTP example,Baggage,client,server,Jaeger,OTLP,TraceId]
-description: "Using the GoFrame framework for link tracking, focusing on demonstrating the method of transmitting Baggage data between services through an HTTP example. It provides a detailed explanation of client and server code implementation, including how to set and get Baggage, and offers a way to view link information through Jaeger, providing a practical guide for developers to achieve efficient link tracking in distributed systems."
+keywords: [GoFrame,GoFrame framework,tracing,HTTP example,Baggage,client,server,Jaeger,OTLP,TraceId]
+description: "Using the GoFrame framework for tracing, focusing on demonstrating the method of transmitting Baggage data between services through an HTTP example. It provides a detailed explanation of client and server code implementation, including how to set and get Baggage, and offers a way to view link information through Jaeger, providing a practical guide for developers to achieve efficient tracing in distributed systems."
 ---
 
 ## `baggage` Link Data Transmission
@@ -57,7 +57,7 @@ Brief explanation of client code:
 
 1. First, the client also needs to initialize `Jaeger` through the `jaeger.Init` method.
 2. Then, using `gtrace.SetBaggageValue(ctx, "name", "john")`, a `baggage` is set, which will be transmitted in all links of the request. However, in this example, there are only two nodes, so the `baggage` data will only be transmitted to the server. This method will return a new `context.Context` variable, which we will need to pass in the subsequent call chain.
-3. Here, an HTTP client request object is created using `g.Client()`, which automatically enables link tracking features without requiring developers to explicitly call any methods or settings.
+3. Here, an HTTP client request object is created using `g.Client()`, which automatically enables tracing features without requiring developers to explicitly call any methods or settings.
 4. Finally, `g.Log().Print(ctx, content)` is used to print the server's return content, where `ctx` is used to pass link information to the logging component. If the `ctx` context object contains link information, the logging component will automatically include the `TraceId` in the log content.
 
 ## Server
@@ -107,7 +107,7 @@ func HelloHandler(r *ghttp.Request) {
 Brief explanation of server code:
 
 1. Of course, the server also needs to initialize `Jaeger` through the `jaeger.Init` method.
-2. The server starts with link tracking enabled, and developers do not need to call any methods or configure any settings explicitly.
+2. The server starts with tracing enabled, and developers do not need to call any methods or configure any settings explicitly.
 3. The server uses `gtrace.GetBaggageVar(ctx, "name").String()` to obtain the `baggage` information submitted by the client and converts it to a string for return.
 
 ## View the Effects

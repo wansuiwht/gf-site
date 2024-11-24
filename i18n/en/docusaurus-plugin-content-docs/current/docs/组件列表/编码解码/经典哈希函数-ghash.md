@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, Hash Functions, Go Language, ghash, Encod
 description: "Implementation of classic hash functions in Go language, providing ways to use hash functions for uint32 and uint64 types. Through the GoFrame framework, users can implement hash functions more efficiently. The document includes detailed API documentation and benchmark results to help users optimize and understand encoding performance. Additionally, simple repeatability tests demonstrate the characteristics and performance of different hash functions."
 ---
 
-## Basic Introduction
+## Introduction
 
 Common classic hash functions implemented in Go language are provided, offering hash functions for `uint32` and `uint64` types.
 

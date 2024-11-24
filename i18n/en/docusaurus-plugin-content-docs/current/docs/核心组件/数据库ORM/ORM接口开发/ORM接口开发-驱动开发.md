@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-interface-driver'
-title: 'ORM Interface Development - Driver Development'
+title: 'ORM Interface - Driver'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame framework, database driver, custom driver, interface development, driver development, database component, gdb module, Driver interface, ORM]

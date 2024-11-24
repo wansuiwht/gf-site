@@ -7,7 +7,7 @@ keywords: [process management, inter-process communication, local socket, gproc 
 description: "Methods for implementing process management and inter-process communication using the gproc module of the GoFrame framework. gproc uses local socket mechanisms for communication and provides various interfaces such as Shell, ShellExec, ShellRun to execute shell commands in different ways. With the help of goroutines, asynchronous execution can be achieved. In this document, you will learn how to use the Manager object for multi-subprocess management, as well as how to obtain and control specific process resources."
 ---
 
-## Basic Introduction
+## Introduction
 Process management and inter-process communication are implemented through the `gproc` module, where inter-process communication uses a local socket communication mechanism.
 
 **Usage**:

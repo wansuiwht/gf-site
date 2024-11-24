@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-model'
-title: 'ORM Chaining Operations - Model Creation'
+title: 'ORM Model - Model'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Chaining Operations, Model Creation, Model Object, g.Model, Raw Method, Chaining Safety, Clone Method, Safe Method]

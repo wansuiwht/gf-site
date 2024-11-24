@@ -4,7 +4,7 @@ title: 'HTTPClient-Custom Header'
 sidebar_position: 3
 hide_title: true
 keywords: [HTTPClient, Custom Header, GoFrame, GoFrame Framework, SetHeader, Header Method, Span-Id, Trace-Id, HTTP Request, Client]
-description: "With the HTTPClient feature of the GoFrame framework, users can customize the Header information of HTTP requests. This article introduces how to set and send Headers using methods like SetHeader, SetHeaderMap, and SetHeaderRaw, thus implementing custom link tracking information such as Span-Id and Trace-Id. Simple code examples demonstrate how the client interacts with the server and returns results."
+description: "With the HTTPClient feature of the GoFrame framework, users can customize the Header information of HTTP requests. This article introduces how to set and send Headers using methods like SetHeader, SetHeaderMap, and SetHeaderRaw, thus implementing custom tracing information such as Span-Id and Trace-Id. Simple code examples demonstrate how the client interacts with the server and returns results."
 ---
 
 When the HTTP client sends a request, it can customize the `Header` content sent to the server, a feature implemented using the `SetHeader*` related methods.
@@ -17,7 +17,7 @@ func (c *Client) SetHeaderMap(m map[string]string) *Client
 func (c *Client) SetHeaderRaw(headers string) *Client
 ```
 
-Let's take a look at an example where the client customizes the sending of custom link tracking information `Span-Id` and `Trace-Id` message headers using `Header`.
+Let's take a look at an example where the client customizes the sending of custom tracing information `Span-Id` and `Trace-Id` message headers using `Header`.
 
 ### Server
 

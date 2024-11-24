@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gvalid-parameter-type-struct-example'
-title: 'Struct Validation - Basic Usage'
+title: 'Struct Validation - Example'
 sidebar_position: 0
 hide_title: true
 keywords: [Struct Validation, GoFrame Framework, gvalid, Parameter Validation, Field Alias, Validation Rules, Chain Operation, Nested Validation, Recursive Validation, Go]

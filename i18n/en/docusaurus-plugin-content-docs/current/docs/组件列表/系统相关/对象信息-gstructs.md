@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, gstructs, Structure Information, Field Re
 description: "The gstructs component is a low-level utility in the GoFrame framework used for obtaining structure information. It is mainly used in framework, basic library, and middleware writing, supporting the Fields method to get structure field information and the TagMapName method to retrieve fields through tags. It is suitable for developers to use this component for field operations and retrieval when building Go applications."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `gstructs` component is used to conveniently obtain information about structures.
 

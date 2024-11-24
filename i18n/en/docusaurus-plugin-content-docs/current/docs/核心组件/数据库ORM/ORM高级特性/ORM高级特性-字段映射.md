@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gdb-senior-fields-mapping'
-title: 'ORM Advanced Features - Field Mapping'
+title: 'ORM Senior - Field Mapping'
 sidebar_position: 4
 hide_title: true
 keywords: [ORM Advanced Features, Field Mapping, Automatic Table Recognition, GoFrame Framework, Interface Design, Field Cache Management, Protobuf Interface, User Information Query, Field Matching Rules, SQL Query Optimization]
 description: "Through the advanced ORM features of the GoFrame framework, automatic field mapping and recognition can be achieved. When parameters of Map or Struct types are used, table field names are automatically matched, significantly reducing the workload for developers in manually matching data fields and business attributes. In addition, by designing interfaces and caching field information in memory, data operation efficiency is improved. This article also demonstrates how to effectively query user and doctor information through practical examples."
 ---
 
-## Basic Introduction
+## Introduction
 
 When writing or updating data using methods like `Fields/Data/Scan`, if the given parameter is of `map/struct` type, the key names/property names of the parameter will automatically be case-insensitively and character-independently mapped to the fields of the data table.
 :::tip

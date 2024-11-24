@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-config-file'
-title: 'ORM Usage Configuration - Configuration File'
+title: 'ORM Configuration - File'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Database Configuration, Configuration File, ORM, Database Management, yaml Configuration, Data Format, Cluster Mode, Log Configuration]

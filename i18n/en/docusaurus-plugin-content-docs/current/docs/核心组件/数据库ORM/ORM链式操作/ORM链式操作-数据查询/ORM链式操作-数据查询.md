@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query'
-title: 'ORM Chained Operations - Data Query'
+title: 'ORM Model - Query'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Chained Operations, Data Query, gdb, Database, Query Methods, Relational Mapping, Developer Guide]

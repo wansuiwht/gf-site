@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/help'
-title: 'Tool Help Info - help'
+title: 'Help Info - help'
 sidebar_position: 11
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,CLI Tool,gf Command,Help Document,Command Line Tool,Software Help,Tool Usage,Sidebar Position]

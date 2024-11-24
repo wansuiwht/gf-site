@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/glog-context'
-title: 'Log Component-Context'
+title: 'Logging - Context'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame,GoFrame framework,glog,log component,Context,CtxKeys,log output,OpenTelemetry,trace,Handler]

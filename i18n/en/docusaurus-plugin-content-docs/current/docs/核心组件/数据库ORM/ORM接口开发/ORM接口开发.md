@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-interface'
-title: 'ORM Interface Development'
+title: 'ORM - Interface'
 sidebar_position: 8
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Interface, gdb Module, Database Operations, Interface Design, Open Method, Driver Interface, Custom Implementation, SQL Submission]

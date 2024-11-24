@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-raw-sql'
-title: 'Advanced ORM Features - RawSQL'
+title: 'ORM Senior - RawSQL'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, ORM, RawSQL, SQL injection, gdb.Raw, data insertion, data updating, data querying, prepared mode, SQL statement]

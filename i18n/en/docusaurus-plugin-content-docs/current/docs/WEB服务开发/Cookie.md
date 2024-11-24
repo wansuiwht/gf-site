@@ -7,7 +7,7 @@ keywords: [Cookie, GoFrame, GoFrame Framework, ghttp, SessionId, API Documentati
 description: "Use Cookie for session management in the GoFrame framework. Developers can easily get, set, and delete cookies through the ghttp.Request object. It also discusses obtaining and setting SessionId, handling cookie expiration, and simple methods to inherit and use session objects in controllers. These features provide powerful tools for web developers to manage user sessions, ensuring the flexibility and adaptability of web applications."
 ---
 
-## Basic Introduction
+## Introduction
 
 API Documentation: [https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Cookie](https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Cookie)
 

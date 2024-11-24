@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-nested-struct-support'
-title: 'ORM Advanced Features - Embedded Struct Support'
+title: 'ORM Senior - Embedded Struct'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame,GoFrame framework,ORM,embedded struct,parameter passing,result processing,struct,nested struct,advanced features,database support]

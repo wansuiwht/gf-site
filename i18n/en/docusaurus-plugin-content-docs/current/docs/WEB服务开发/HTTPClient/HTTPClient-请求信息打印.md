@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, HTTP Client, Request Information Printing
 description: "Use the HTTP client feature in the GoFrame framework to obtain and print raw input and output information of HTTP requests. The main methods include Raw, RawDump, RawRequest, and RawResponse, which are useful for debugging HTTP requests. The example demonstrates the method of sending POST requests using the GoFrame framework and printing the request and response."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `http` client supports obtaining and printing the raw input and output information of HTTP requests, which is convenient for debugging. The related methods are as follows:
 

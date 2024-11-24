@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior'
-title: 'Advanced Features of ORM'
+title: 'ORM - Senior Features'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Advanced Features, Database Management, gdb, Go Development, Data Manipulation, Modeling, Query Optimization]

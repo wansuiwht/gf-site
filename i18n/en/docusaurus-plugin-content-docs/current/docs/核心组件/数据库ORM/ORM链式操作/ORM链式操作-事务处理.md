@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-transaction'
-title: 'Chaining Operations in ORM - Transaction Handling'
+title: 'ORM Model - Transaction'
 sidebar_position: 8
 hide_title: true
 keywords: [GoFrame, Transaction Handling, ORM Chaining, GoFrame Framework, Transaction, TX Interface, Database Object, Transaction Object, Chaining Operations, Commit/Rollback]

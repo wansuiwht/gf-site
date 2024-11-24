@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame framework, gfsnotify, file monitoring, Go framework,
 description: "Use the gfsnotify module in the GoFrame framework to implement the monitoring of files and directories. gfsnotify can detect changes such as addition, deletion, modification, and renaming of files, and provides convenient interface functions like Add and Remove for monitoring and unmonitoring operations. Applicable to the inotify mechanism of *nix systems, and usage may be limited by system kernel parameters. Through example code, it demonstrates how to set, remove monitoring, and perform file operation monitoring."
 ---
 
-## Basic Introduction
+## Introduction
 
 `gfsnotify` can monitor changes in specified files/directories, such as additions, deletions, modifications, and renaming of files.
 

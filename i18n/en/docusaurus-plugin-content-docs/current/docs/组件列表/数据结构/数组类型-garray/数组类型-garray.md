@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, garray, array container, concurrent safe,
 description: "Array type garray in the GoFrame framework and its basic functions. Through the garray module, users can use concurrency-safe array containers, supporting regular arrays and sorted arrays, providing data item uniqueness correction, int/string/interface{} data type support, and detailed interface documentation."
 ---
 
-## Basic Introduction
+## Introduction
 
 Array container that provides regular arrays and sorted arrays, supporting data item uniqueness correction and concurrency-safe toggle control.
 

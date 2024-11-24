@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/glog-json'
-title: 'Logging Component - JSON Format'
+title: 'Logging - JSON Format'
 sidebar_position: 7
 hide_title: true
 keywords: [Logging Component, JSON Format, GoFrame, GoFrame Framework, glog, Log Analysis, Struct Log, Log Output, map Parameters, gjson]

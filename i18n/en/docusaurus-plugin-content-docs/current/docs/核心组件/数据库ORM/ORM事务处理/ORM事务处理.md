@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-transaction'
-title: 'ORM Transaction Handling'
+title: 'ORM - Transaction'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame framework, ORM transaction, transaction handling, closure operation, transaction safety, nested transaction, database, transaction interface, Go development]

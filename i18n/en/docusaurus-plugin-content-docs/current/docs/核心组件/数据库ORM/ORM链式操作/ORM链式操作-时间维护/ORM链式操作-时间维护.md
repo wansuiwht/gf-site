@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gdb-chaining-soft-time'
-title: 'ORM Chaining Operations - Time Maintenance'
+title: 'ORM Model - Time Fields'
 sidebar_position: 11
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Chaining Operations, Time Maintenance, gdb, Auto-Fill, Soft Delete, Presentation Layer, Data Operation]
 description: "The time maintenance feature when using ORM chaining operations in the gdb module of the GoFrame framework. By automatically filling in creation, update, and deletion times, development efficiency is significantly improved. The article elaborates on how to enable these features and implement them during database operations such as insertions, updates, and deletions. Additionally, it provides solutions for scenarios like soft deletion and ignoring time maintenance."
 ---
 
-## Basic Introduction
+## Introduction
 :::warning
 Note that this feature is only effective for chaining operations.
 :::

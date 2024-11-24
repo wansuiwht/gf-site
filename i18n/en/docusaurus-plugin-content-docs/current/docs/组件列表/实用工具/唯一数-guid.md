@@ -32,7 +32,7 @@ import "github.com/gogf/gf/v2/util/guid"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/util/guid](https://pkg.go.dev/github.com/gogf/gf/v2/util/guid)
 
-### Basic Introduction
+### Introduction
 
 `guid` generates a `32` byte unique number through the `S` method, which is defined as follows:
 

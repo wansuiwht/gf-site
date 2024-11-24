@@ -17,7 +17,7 @@ import "github.com/gogf/gf/v2/net/gudp"
 
 **API Documentation:** [https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp](https://pkg.go.dev/github.com/gogf/gf/v2/net/gudp)
 
-## Basic Introduction
+## Introduction
 
 Most of the operations of `gudp.Conn` are similar to the operation mode of `gtcp` (most of the method names are the same), but since `UDP` is a connectionless protocol, `gudp.Conn` (underlying communication port) can only complete up to one data write and read at a time. The client will need to create a new `Conn` object for communication the next time it communicates with the target server.
 

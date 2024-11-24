@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-logging'
-title: 'ORM Advanced Features - Log Output'
+title: 'ORM Senior - Logging'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Logging, SQL Debugging, Log Configuration, Transaction ID, Database Driver, SQL Statement, Log Output, Debugging Tool]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-catch-sql'
-title: 'Advanced ORM Feature - SQL Capture'
+title: 'ORM Senior - SQL Capture'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame,CatchSQL,ToSQL,SQL Capture,SQL Translation,ORM Feature,Go Language,Database Operation,SQL Debugging,Context Object]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-relation-with'
-title: 'Model Association - Static Association - With Feature'
+title: 'Model Association - With'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, With Feature, ORM, Model Association, Data Query, Transaction Operation, Data Structure, Go Language, Database, SQL]
@@ -402,7 +402,7 @@ In this example, the table corresponding to the `UserDetail` property is `user_d
 
 ### 3. `With/WithAll`
 
-#### 1) Basic Introduction
+#### 1) Introduction
 
 By default, even if the properties in our struct have `orm` tags with `with` statements, the `ORM` component will not enable the `With` feature for association queries by default. It needs to be enabled by the `With/WithAll` method.
 

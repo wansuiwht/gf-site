@@ -1,6 +1,6 @@
 ---
 slug: '/docs/cli/init'
-title: 'Project Creation - init'
+title: 'Project Scaffold - init'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Project Creation, gf init, MonoRepo, GoFrame Empty Framework, Code Layer Design, go module, Resource Management, Microservice Monorepo Management Mode]

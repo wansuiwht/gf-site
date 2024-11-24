@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-union'
-title: 'ORM Query-Union/UnionAll'
+title: 'Model Query - Union/UnionAll'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,ORM,Union,UnionAll,Chaining Operations,Method Operations,Query Optimization,MySQL,SQL]

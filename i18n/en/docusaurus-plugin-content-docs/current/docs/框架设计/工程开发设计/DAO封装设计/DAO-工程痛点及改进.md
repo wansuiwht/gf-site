@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, DAO Improvement, Database Operation, Data
 description: "The DAO engineering pain points and corresponding improvement strategies in project development using the GoFrame framework. Enhance data operation management efficiency through automated data model management, separation of data and business models, automated DAO code management, and introduction of DO data conversion models. Emphasize the importance of data operation permission consolidation to reduce maintenance costs and risks associated with data operations."
 ---
 
-## 1. Basic Introduction
+## 1. Introduction
 
 We all know that developing business projects is inextricably linked to using database operation components, and the database is the core of most business projects, which is the origin of the nickname "CRUD engineer." When performing database operations in business projects, a rather low approach is to directly "Open/New" and then engage in various SQL string operations. Slightly more standard projects might consider selecting or encapsulating an ORM abstraction layer to improve CRUD efficiency and reduce the risk of data operations. More rigorous projects might further consider engineering management by introducing design patterns and concepts such as DAO/DTO/VO.
 

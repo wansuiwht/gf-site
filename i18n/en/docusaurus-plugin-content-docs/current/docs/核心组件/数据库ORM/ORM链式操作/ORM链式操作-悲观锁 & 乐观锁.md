@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-locks'
-title: 'ORM Chaining Operations - Pessimistic Lock & Optimistic Lock'
+title: 'ORM Model - Lock'
 sidebar_position: 15
 hide_title: true
 keywords: [Pessimistic Lock, Optimistic Lock, GoFrame, GoFrame Framework, Chaining Operations, SQL, Shared Lock, FOR UPDATE, LOCK IN SHARE MODE, Transaction]

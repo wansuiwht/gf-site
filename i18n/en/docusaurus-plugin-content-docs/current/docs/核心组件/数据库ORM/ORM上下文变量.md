@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-context'
-title: 'ORM Context Variables'
+title: 'ORM - Context'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Context Variables, Asynchronous IO Control, Trace, Context Variables, Request Timeout, Nested Transactions, Model Context Operations, ORM Transaction Handling]

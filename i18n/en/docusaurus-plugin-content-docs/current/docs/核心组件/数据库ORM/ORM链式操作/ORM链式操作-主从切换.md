@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-master-slave'
-title: 'ORM Chaining Operations - Master-Slave Switching'
+title: 'ORM Model - Master/Slave'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, gdb, Master-Slave Switching, Read-Write Separation, Database Configuration, ORM Chaining Operations, SQL Requests, Node Switching, Database Load Balancing]

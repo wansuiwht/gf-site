@@ -7,7 +7,7 @@ keywords: [object reuse, GoFrame framework, gpool, expiration time, creation met
 description: "The basic functions and use cases of the object reuse pool gpool in the GoFrame framework, including providing object cache reuse, expiration time, and the definition of creation and destruction methods. The difference between gpool design and sync.Pool lies in the support of expiration time and the different functions of alleviating GC pressure, it is concurrency safe."
 ---
 
-## Basic Introduction
+## Introduction
 
 Object reuse pool (concurrency safe). Provides cached reuse of objects with support for defining `expiration time`, `creation method`, and `destruction method`.
 

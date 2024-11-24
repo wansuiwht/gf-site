@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame framework, gmeta, metadata, tag, dynamic retrieval, 
 description: "Use the gmeta package in the GoFrame framework to add metadata tags to user-defined structs and dynamically retrieve these tags at runtime using specific methods, including how to use the Data method and Get method to obtain metadata tag information of a specified object."
 ---
 
-## Basic Introduction
+## Introduction
 
 Mainly used for embedding into user-defined structs, and through the form of tags to attach custom tag content (metadata) to the struct of the `gmeta` package, and dynamically retrieve these custom tag contents at runtime through specific methods.
 

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gcfg-interface-adapter-file'
-title: 'Configuration Management-AdapterFile'
+title: 'Configuration - AdapterFile'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame framework, configuration management, AdapterFile, g.Cfg object, file-based configuration, gcfg.NewWithAdapter, configuration component, configuration loading, Golang]

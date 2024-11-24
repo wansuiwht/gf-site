@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame framework, gqueue, queue, concurrency safe, dynamic 
 description: "The dynamic size concurrency-safe queue gqueue in the GoFrame framework supports both fixed and dynamic size queue features, achieving efficiency comparable to the standard library channel. gqueue is particularly suitable for data communication between multiple goroutines and provides developers with simple yet powerful concurrency handling capabilities."
 ---
 
-## Basic Introduction
+## Introduction
 
 A dynamic size concurrency-safe queue. At the same time, `gqueue` also supports fixed queue size, achieving efficiency comparable to the standard library's `channel` when using a fixed queue size.
 

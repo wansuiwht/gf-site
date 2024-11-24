@@ -10,7 +10,7 @@ description: "Use the GoFrame framework's command line tool gf to generate proto
 :::tip
 This feature is available starting from version `v2.4`.
 :::
-## Basic Introduction
+## Introduction
 
 This command is used to read the configured database and generate the corresponding `proto` data structure files based on the data tables.
 

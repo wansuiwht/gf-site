@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-join'
-title: 'ORM Query-Join Query'
+title: 'Model Query - Join'
 sidebar_position: 5
 hide_title: true
 keywords: [ORM Query, LeftJoin, RightJoin, InnerJoin, GoFrame, Associated Query, Table Alias, Field Operator, Join Query, Data Aggregation]

@@ -7,7 +7,7 @@ keywords: [GoFrame,GoFrame Framework,HTTP Client,gclient,HTTP Request,Chain Oper
 description: "The powerful HTTP client component gclient provided by the GoFrame framework supports convenient chain operations for HTTP requests. The client supports custom request settings and return object operations, with detailed instructions on setting parameters such as timeout, Cookie, Header, etc."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `GoFrame` framework offers a powerful and easy-to-use `HTTP` client, implemented by the `gclient` component. Object creation can be done through the package method `gclient.New()` or by calling the `g.Client()` method. It is recommended to use `g.Client()` to conveniently create an `HTTP` client object. Since `gclient.Client` is internally extended from the standard library's `http.Client` object, any features present in `http.Client` are also supported by `gclient.Client`.
 

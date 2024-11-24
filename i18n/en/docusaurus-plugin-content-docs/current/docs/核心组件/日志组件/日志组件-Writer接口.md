@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/glog-writer'
-title: 'Log Component - Writer Interface'
+title: 'Logging - Writer Interface'
 sidebar_position: 11
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Log Component, Writer Interface, Custom Log Output, Custom Writer, glog Module, Log HOOK, Graylog, Centralized Log Management]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-fields-retrieving'
-title: 'ORM Chaining Operations - Field Retrieval'
+title: 'ORM Model - Fields Retrieval'
 sidebar_position: 7
 hide_title: true
 keywords: [ORM, chaining operations, field retrieval, FieldsStr, FieldsExStr, GoFrame, GoFrame framework, database fields, field prefix, field exclusion]

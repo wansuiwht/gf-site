@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-custom-type-converting'
-title: 'Advanced ORM Features - Custom Type Conversion'
+title: 'ORM Senior - UnmarshalValue'
 sidebar_position: 10
 hide_title: true
 description: "Utilize the custom type conversion features of ORM in the GoFrame framework to transform query results into desired types through specific interfaces, whether as direct types or struct attributes. This enhances the flexibility of the GoFrame framework, offering efficient solutions to assist developers in achieving advanced database interactions."

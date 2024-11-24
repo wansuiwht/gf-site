@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-example'
-title: 'ORM Query - Common Operation Examples'
+title: 'Model Query - Operators'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame, ORM Query, Database Operations, Chaining Queries, Common Conditions, Statistical Methods, Field Uniqueness, Query Examples, GoFrame Framework, Parameter Filtering]

@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, gbinary, binary encoding/decoding, data c
 description: "The gbinary package in the GoFrame framework provides encoding and decoding functionality for converting between binary data and various data types. It is widely used in network communication and data file operations. It supports precise bit processing for integer data and offers a range of encoding and decoding interfaces to ensure efficient data conversion across different types and platforms."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `GoFrame` framework provides an independent binary data operation package `gbinary`, which is mainly used for mutual conversion between various data types and `[]byte` binary types; it also provides precise bit processing functions for integer data. It is commonly used for data encoding/decoding during network communication and data file operations.
 

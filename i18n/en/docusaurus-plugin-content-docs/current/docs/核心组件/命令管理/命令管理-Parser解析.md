@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gcmd-parser'
-title: 'Command Management - Parser Parsing'
+title: 'Command - Args Parsing'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Command Line Parsing, gcmd, Parser Parsing, Go Development, Code Example, Option Management, Command Line Options, Development Documentation]
 description: "The command line parsing feature of the GoFrame framework, focusing on the Parser parsing method of the gcmd component. By customizing option names and value parsing, it can efficiently manage and parse command line options. Includes code examples and detailed API documentation to help developers understand and apply it in actual projects."
 ---
 
-## Basic Introduction
+## Introduction
 
 The main aspect of command line parsing is option parsing. The `gcmd` component provides a `Parse` method for customizing option parsing, including specifying which option names exist and whether each option has values. With this configuration, all parameters and options can be parsed and categorized.
 :::tip

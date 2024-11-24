@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-scan'
-title: 'ORM Query-Scan'
+title: 'Model Query - Scan'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame framework, ORM query, Scan method, struct conversion, struct array, gdb, query result, struct object, Go framework]

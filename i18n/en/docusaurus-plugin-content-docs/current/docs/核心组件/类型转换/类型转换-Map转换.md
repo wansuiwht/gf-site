@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gconv-map'
-title: 'Type Conversion - Map Conversion'
+title: 'Type Conversion - Map'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, Type Conversion, Map Conversion, GoFrame Framework, Property Tags, Recursive Conversion, Custom Tags, MapDeep, struct Conversion, gconv]

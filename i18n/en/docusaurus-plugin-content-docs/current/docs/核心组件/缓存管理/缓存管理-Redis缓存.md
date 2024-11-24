@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gcache-redis'
-title: 'Cache Management - Redis Cache'
+title: 'Caching - Redis'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Cache Management, Redis Cache, gcache, Redis Adapter, Session Sharing, Database Query Cache, Redis DB, Cache Object]
 description: "The cache management module in the GoFrame framework focuses on the implementation and usage of the Redis cache adapter. It provides examples on ensuring data consistency in multi-node environments. Detailed steps on setting up Redis clients and using Redis cache adapters are given, and the operation notes for Clear and Size methods in multi-object connections are discussed. It is also recommended to configure independent Redis DBs for different business scenarios."
 ---
 
-## Basic Introduction
+## Introduction
 
 The cache component provides a `Redis` cache adapter implementation for `gcache`. `Redis` cache is very useful in ensuring data consistency in multi-node environments, especially in scenarios such as `Session` sharing and database query caching.
 

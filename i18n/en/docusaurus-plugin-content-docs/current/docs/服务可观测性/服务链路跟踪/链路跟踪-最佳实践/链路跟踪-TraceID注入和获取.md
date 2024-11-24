@@ -7,7 +7,7 @@ keywords: [Tracing, TraceID, GoFrame, OpenTelemetry, Context, Client, Server, Lo
 description: "How to inject and retrieve TraceID using the GoFrame framework in tracing. TraceID is an important identifier for associating requests between services, passed through the Context parameter, and can be automatically generated, inherited, or customized on both the client and server sides. The glog logging component automatically records TraceID, and GoFrame's Client and Server offer convenient TraceID management methods. Practice examples, including custom TraceID and integration methods for handling third-party RequestID, are provided."
 ---
 
-## 1. Basic Introduction
+## 1. Introduction
 
 In tracing, `TraceID` serves as a unique identifier passed between various services, used to associate requests between services, making it a crucial piece of data. `TraceID` is passed through the `Context` parameter, and if you use the framework's `glog` logging component, the `TraceID` will automatically be read and recorded in the log content. Therefore, it is recommended to use the framework's `glog` logging component for logging to perfectly support the tracing feature.
 

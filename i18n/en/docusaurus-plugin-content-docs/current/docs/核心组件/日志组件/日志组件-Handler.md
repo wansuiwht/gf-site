@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/glog-handler'
-title: 'Log Component-Handler'
+title: 'Logging - Handler'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, log component, Handler feature, log processing, custom output, Json format, Graylog service, log collection, glog, middleware design]

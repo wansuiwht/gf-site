@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gconv-scan'
-title: 'Type Conversion-Scan Conversion'
+title: 'Type Conversion - Scan'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame, GoFrame framework, type conversion, Scan method, struct conversion, map conversion, Go language, auto recognition, parameter conversion, programming example]

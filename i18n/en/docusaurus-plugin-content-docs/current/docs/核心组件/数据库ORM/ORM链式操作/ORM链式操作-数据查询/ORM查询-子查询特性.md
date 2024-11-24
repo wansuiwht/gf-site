@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-sub-query'
-title: 'ORM Query - Subquery Features'
+title: 'Model Query - Subquery'
 sidebar_position: 8
 hide_title: true
 keywords: [ORM, Subquery, Where Subquery, Having Subquery, From Subquery, GoFrame, GoFrame Framework, Database Query, Data Model, Subquery Statement]

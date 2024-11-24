@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-model-generating'
-title: 'ORM Model Generation'
+title: 'ORM - Model Generation'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame,GoFrame framework,ORM,model generation,data table,gf toolchain,gen dao,development tools,auto generation,database]

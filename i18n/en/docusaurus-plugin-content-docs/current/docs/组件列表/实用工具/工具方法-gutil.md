@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, gutil, utility methods, Go language, deve
 description: "The gutil component is a module in the GoFrame framework used to encapsulate commonly used development utility methods. It provides a series of convenient functions to support friendly output of data structures, such as Dump and DumpWithType. Developers can introduce the gutil component through the GitHub repository to improve Go language project development efficiency."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `gutil` component encapsulates some commonly used utility methods in development.
 

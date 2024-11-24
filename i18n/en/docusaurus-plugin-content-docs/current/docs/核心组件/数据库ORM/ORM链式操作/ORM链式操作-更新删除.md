@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-update-delete'
-title: 'ORM Chaining Operations - Update and Delete'
+title: 'ORM Model - Update/Delete'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame framework, ORM chaining operations, data update, data delete, Counter feature, increment operation, decrement operation, RawSQL, soft delete]

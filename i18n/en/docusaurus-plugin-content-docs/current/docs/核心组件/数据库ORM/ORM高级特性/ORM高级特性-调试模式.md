@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-debugging'
-title: 'ORM Advanced Features - Debugging Mode'
+title: 'ORM Senior - Debug Mode'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Debug Mode, SQL, Log, Database, Configuration Example, SetDebug, Debug Configuration]

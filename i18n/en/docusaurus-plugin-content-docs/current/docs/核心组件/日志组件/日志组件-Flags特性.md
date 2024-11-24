@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/glog-flags'
-title: 'Log Component-Flags Feature'
+title: 'Logging - Flags'
 sidebar_position: 12
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, glog, Log Component, Flags Feature, Asynchronous Log Output, Line Number Information, Time Format, Date and Time, Milliseconds]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gconv-struct'
-title: 'Type Conversion - Struct Conversion'
+title: 'Type Conversion - Struct'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame,gconv,struct conversion,data mapping,struct conversion,automatic object creation,recursive conversion,mapping rules,struct,Go framework]

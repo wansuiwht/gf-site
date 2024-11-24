@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-result-types'
-title: 'ORM Result Handling - Result Types'
+title: 'ORM Result - Types'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, Data Structure, ORM, Result Types, Record, Result, gdb, Database, Go Language, Data Handling]

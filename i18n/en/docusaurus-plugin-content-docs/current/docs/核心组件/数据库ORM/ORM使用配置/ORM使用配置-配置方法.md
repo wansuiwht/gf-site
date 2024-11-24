@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-config-funcs'
-title: 'ORM Usage Configuration - Configuration Method'
+title: 'ORM Configuration - Methods'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, ORM Usage Configuration, Database Node Management, Connection Property Configuration, Database Cluster, Relational Database, Read-Write Separation, Load Balancing, Configuration Management Features, GoFrame Framework]

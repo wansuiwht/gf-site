@@ -9,7 +9,7 @@ description: "The gvar type in the GoFrame framework is a runtime generic implem
 
 ![](/markdown/cd9ed75865d6b5efe704f58156a42fa4.png)
 
-## Basic Introduction
+## Introduction
 
 `gvar` is a **runtime generic** implementation that enhances development convenience and efficiency with minimal runtime overhead. It supports various built-in data type conversions and can be used as an alternative to the `interface{}` type. This type supports concurrency safety toggles.
 :::tip

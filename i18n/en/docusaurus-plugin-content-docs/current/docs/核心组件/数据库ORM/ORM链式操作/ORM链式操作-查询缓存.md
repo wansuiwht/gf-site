@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-cache'
-title: 'ORM Chained Operations - Query Cache'
+title: 'ORM Model - Query Cache'
 sidebar_position: 10
 hide_title: true
 keywords: [GoFrame, ORM, query cache, chained operations, cache management, Redis, database, cache clearing, cache adaptation, table structure]

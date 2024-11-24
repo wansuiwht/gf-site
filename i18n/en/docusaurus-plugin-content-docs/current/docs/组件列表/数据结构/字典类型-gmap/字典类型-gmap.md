@@ -7,7 +7,7 @@ keywords: [GoFrame,GoFrame Framework,gmap,map container,HashMap,TreeMap,ListMap,
 description: "Basic methods and considerations for using the gmap dictionary type in the GoFrame framework. The gmap module provides various concurrent-safe map data structure options, including HashMap, TreeMap, and ListMap. Suitable for any scenario involving concurrent access and hash table operations in Go applications, and details the performance and characteristics of each type."
 ---
 
-## Basic Introduction
+## Introduction
 
 A `map` container with a concurrent safety switch option, the most commonly used data structure. This module includes `map` containers with multiple data structures: `HashMap`, `TreeMap`, and `ListMap`.
 

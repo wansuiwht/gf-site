@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, goroutine, coroutine pool, high concurren
 description: "A lightweight coroutine management tool in Go, grpool, discussing its performance advantages and resource reuse under high concurrency. Through pooling technology, it manages a large number of goroutines to reduce memory usage and optimize global scheduling, suitable for scenarios requiring asynchronous tasks and high memory usage."
 ---
 
-## Basic Introduction
+## Introduction
 
 While `goroutine` in Go is relatively lightweight compared to system threads (with an initial stack size of only `2KB` and supports dynamic expansion), threads started using languages such as `Java` or `C++` are generally kernel-mode threads occupying about `4MB` of memory. Assuming our server CPU has `4GB` of memory, it's clear that the total number of concurrent kernel-mode threads is limited to about `1024`. In contrast, the number of goroutines in Go can reach `4*1024*1024/2=2 million`. This illustrates why Go naturally supports high concurrency.
 

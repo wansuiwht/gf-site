@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gcfg-interface-adapter-content'
-title: 'Configuration Management - AdapterContent'
+title: 'Configuration - AdapterContent'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Configuration Management, AdapterContent, Configuration Content, Configuration Format, g.Cfg Singleton, gcfg, Configuration Example, Golang Framework]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-schema'
-title: 'ORM Chaining Operations - Database Switching'
+title: 'ORM Model - Schema'
 sidebar_position: 12
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Chaining Operations, Database Switching, DB Object, Model Object, Configuration Group, Schema Method, Cross-Domain Operations]

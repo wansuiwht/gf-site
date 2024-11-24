@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame framework, request context, Context object, context 
 description: "Using the Context object in the GoFrame framework to handle context variable sharing in the request process. By providing necessary methods, developers can set custom variables at the beginning of a request and access them during subsequent processing. Additionally, this article includes example code and detailed steps on integrating third-party components to enhance functionality."
 ---
 
-## Basic Introduction
+## Introduction
 
 In request processes, some custom set variables are often shared in the context, such as setting some variables through middleware before the request starts, which can then be accessed in the routing service method for corresponding processing. This requirement is very common. In the `GoFrame` framework, we recommend using the `Context` context object to handle context variables shared in the process, even passing this object further into various dependent module methods. The `Context` object type implements the standard library's `context.Context` API, which is often used as the first parameter of module inter-call methods, and this API parameter is also the recommended way by `Golang` official to pass context variables between modules.
 
@@ -69,7 +69,7 @@ HBm876TFCde435Tgf
 
 ### Example 2, `SetCtx`
 
-The `SetCtx` method is often used in middleware to integrate some third-party components, such as third-party link tracking components.
+The `SetCtx` method is often used in middleware to integrate some third-party components, such as third-party tracing components.
 
 To simplify the example, let's modify the above example using the `SetCtx` method for demonstration.
 

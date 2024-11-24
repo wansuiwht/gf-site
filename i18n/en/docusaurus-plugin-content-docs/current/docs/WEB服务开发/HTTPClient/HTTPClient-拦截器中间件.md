@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, HTTPClient, Interceptor, Middleware, Clie
 description: "The HTTPClient interceptor/middleware feature in the GoFrame framework can be used for global request interception and parameter validation. Through middleware, developers can insert custom logic in the pre and post phases of requests, modify submitted parameters or returned parameters, implement signature parameter injection, and more, ensuring the security of API parameters."
 ---
 
-## Basic Introduction
+## Introduction
 
 `HTTPClient` supports a powerful interceptor/middleware feature, which makes global request interception and injection for the client possible, such as modifying/injecting submitted parameters, modifying/injecting returned parameters, client-based parameter validation, etc. Middleware injection is implemented through the following method:
 

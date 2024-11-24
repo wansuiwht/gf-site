@@ -9,7 +9,7 @@ description: "Use the command line tool in the GoFrame framework to compile prot
 :::tip
 This feature is available starting from version `v2.4`.
 :::
-## Basic Introduction
+## Introduction
 
 This command is used to compile `proto` files, generating the corresponding `protobuf go` files and corresponding controller files.
 

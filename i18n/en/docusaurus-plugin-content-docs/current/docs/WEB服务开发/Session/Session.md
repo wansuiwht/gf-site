@@ -9,7 +9,7 @@ description: "The Session management features in the GoFrame framework, includin
 
 The `GoFrame` framework provides comprehensive `Session` management capabilities, implemented by the `gsession` component. Since the `Session` mechanism is most commonly used in `HTTP` services, the subsequent chapters will focus on the use of `Session` in the context of `HTTP` services.
 
-## Basic Introduction
+## Introduction
 
 API Documentation: [https://pkg.go.dev/github.com/gogf/gf/v2/os/gsession](https://pkg.go.dev/github.com/gogf/gf/v2/os/gsession)
 

@@ -4,10 +4,10 @@ title: 'Concurrent Safe Ring - gring'
 sidebar_position: 9
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Concurrent Safety, Ring Structure, Ring, Circular Doubly Linked List, Buffer Control, Concurrent Lock, gring, Chained Operation]
-description: "The usage of concurrent safe ring structure gring in the GoFrame framework. This data structure is suitable for scenarios requiring a fixed size, such as concurrent lock control and buffer control. The article provides a basic introduction to Gring, its scenarios and usage, along with related interface documentation and links."
+description: "The usage of concurrent safe ring structure gring in the GoFrame framework. This data structure is suitable for scenarios requiring a fixed size, such as concurrent lock control and buffer control. The article provides a Introduction to Gring, its scenarios and usage, along with related interface documentation and links."
 ---
 
-## Basic Introduction
+## Introduction
 
 A ring structure supporting concurrent safety switch, circular doubly linked list.
 

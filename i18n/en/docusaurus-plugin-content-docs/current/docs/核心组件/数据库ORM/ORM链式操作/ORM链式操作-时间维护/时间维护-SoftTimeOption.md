@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-soft-time-option'
-title: 'Time Maintenance - SoftTimeOption'
+title: 'Time Fields - SoftTimeOption'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, Time Maintenance, SoftTimeOption, Database Operation, Time Granularity, Millisecond Timestamp, MySQL Table Structure, ORM Operation, Time Field, Big Integer Storage]

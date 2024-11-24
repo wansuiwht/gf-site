@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-fields-filtering'
-title: 'ORM Chaining Operations - Field Filtering'
+title: 'ORM Model - Fields Filtering'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Field Filtering, Fields, FieldsEx, OmitEmpty, OmitNil, GoFrame DAO, Table]

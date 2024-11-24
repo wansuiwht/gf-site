@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-type-recognization'
-title: 'ORM Advanced Feature - Type Recognition'
+title: 'ORM Senior - Type Recognition'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Type Recognition, Go Language, Database Mapping, Automatic Recognition, MySQL, Data Types, Query]

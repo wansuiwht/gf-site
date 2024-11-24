@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-connection-pool'
-title: 'Advanced ORM Features - Connection Pool Status'
+title: 'ORM Senior - Connection Pool'
 sidebar_position: 8
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Connection Pool, DB Stats, Database Connection, gdb, mysql, GoFrame database, GoFrame gdb]

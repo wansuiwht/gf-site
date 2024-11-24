@@ -7,7 +7,7 @@ keywords: [GoFrame,GoFrame Framework,gregex,regular expression,regex library,reg
 description: "Basic functions and usage of the gregex library in the GoFrame framework. gregex is a wrapper around the standard library regexp, providing a simplified way to use regular expressions and optimizing execution efficiency through parsing cache design, making regex operations more efficient and convenient."
 ---
 
-## Basic Introduction
+## Introduction
 
 `gregex` provides support for regular expressions, encapsulating the standard library `regexp` at the core, greatly simplifying regex usage, and employs a parsing cache design to improve execution efficiency.
 

@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gdb-timezone'
-title: 'ORM Timezone Handling'
+title: 'ORM - Timezone'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame framework, ORM timezone handling, MySQL timezone, time.Time, database driver, timezone conversion, loc parameter, timezone settings, configuration file, time.Parse]
 description: "Handles timezone issues in ORM operations within the GoFrame framework, especially for timezone conversion when using the MySQL database. We explain how to control the timezone processing of time.Time objects submitted to the database by setting the loc parameter, providing relevant code examples and configuration advice to help developers better manage timezone during database operations."
 ---
 
-## Basic Introduction
+## Introduction
 
 Since this issue is frequently asked, we have created a separate chapter to detail how timezone handling works in `ORM`. Here, we use the `MySQL` database as an example to explain the timezone conversion, with our local timezone set to `+8` and the database timezone also `+8`.
 

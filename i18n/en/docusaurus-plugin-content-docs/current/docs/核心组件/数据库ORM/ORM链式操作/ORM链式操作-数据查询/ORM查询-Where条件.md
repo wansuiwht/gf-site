@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-where'
-title: 'ORM Queries - Where Conditions'
+title: 'Model Query - Where'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, ORM, query, Where conditions, condition queries, database, conditional methods, Go language, data processing, GoFrame framework]
@@ -47,7 +47,7 @@ Below, we provide a brief introduction to several commonly used methods; other c
 
 ## `Where/WhereOr` Query Conditions
 
-### Basic Introduction
+### Introduction
 
 These two methods are used to pass query condition parameters, and the supported parameters can be any `string/map/slice/struct/*struct` type.
 

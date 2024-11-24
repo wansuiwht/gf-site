@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gvalid-parameter-type-map-example'
-title: 'Map Validation - Basic Usage'
+title: 'Map Validation - Example'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Parameter Validation, Map Validation, Custom Error Messages, Default Error Messages, Framework Usage, Validation Rules, Code Example, Data Validation]

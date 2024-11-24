@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-transaction-basic'
-title: 'ORM Transaction Handling - Basic Operations'
+title: 'ORM Transaction - Methods'
 sidebar_position: 0
 hide_title: true
 keywords: [transaction operations, Begin, Commit, Rollback, GoFrame, database operations, Transaction, closure method, gdb.Tx, chain operations]

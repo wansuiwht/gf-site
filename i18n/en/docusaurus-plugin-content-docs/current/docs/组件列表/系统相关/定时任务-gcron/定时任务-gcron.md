@@ -7,7 +7,7 @@ keywords: [GoFrame,GoFrame Framework,gcron,Scheduled Task,crontab,CRON Syntax,Ta
 description: "Usage of the gcron module in the GoFrame framework, providing crontab-like scheduled task management features, supporting second-level management. It introduces how to create, add, manage, and delete scheduled tasks, and emphasizes the impact of global timezone on task execution, suitable for developers needing to write scheduled tasks."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `gcron` module provides the implementation of scheduled tasks, supporting a configuration management style similar to `crontab`, and manages scheduled tasks with a minimum granularity of `seconds`.
 

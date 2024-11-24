@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gdb-chaining-query-scan-and-count'
-title: 'ORM Query-ScanAndCount'
+title: 'Model Query - ScanAndCount'
 sidebar_position: 4
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Query, ScanAndCount, Pagination Query, Limit, Page, Data Query, Total Count Query, Chaining Query]
 description: "When using the GoFrame framework for ORM queries, simplify pagination query scenarios. With the ScanAndCount method, data queries and total count queries can be completed in a single operation, effectively reducing code redundancy and improving development efficiency. Suitable for situations where both data and its total count need to be obtained, such as pagination queries."
 ---
 
-## Basic Introduction
+## Introduction
 
 In pagination query scenarios, we often need to first call the `Scan` method combined with the `Limit/Page` chaining operation method to query the list, and then remove the `Limit/Page` chaining operation method to query the total count. This process is quite cumbersome, so from version `v2.5.0`, the framework provides the `ScanAndCount` method to simplify pagination query scenarios.
 

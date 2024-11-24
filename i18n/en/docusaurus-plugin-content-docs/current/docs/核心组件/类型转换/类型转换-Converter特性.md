@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gconv-converter'
-title: 'Type Conversion-Converter Feature'
+title: 'Type Conversion - Converter'
 sidebar_position: 5
 hide_title: true
 keywords: [type conversion, Converter feature, GoFrame, custom conversion, struct conversion, attribute conversion, alias type, gconv.Scan, gconv.ConvertWithRefer, data structure]

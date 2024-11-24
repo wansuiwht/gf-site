@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, Time Management, gtime, Date Formatting, 
 description: "The gtime module is a general time management module of the GoFrame framework, which extends the functionality of Golang's standard library time. It provides custom date formatting syntax and has good compatibility with PHP's date function format, making it more convenient for PHP developers to implement time management in Go."
 ---
 
-## Basic Introduction
+## Introduction
 
 The general time management module encapsulates commonly used time/date-related methods and serves as a functional extension to the standard library `time`, providing more features. It supports custom date formatting syntax, which is inspired by the `PHP` `date` function syntax ( [http://php.net/manual/zh/function.date.php](http://php.net/manual/zh/function.date.php) ).
 :::tip

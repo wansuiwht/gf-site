@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-transaction-nested'
-title: 'ORM Transaction Handling - Nested Transactions'
+title: 'ORM Transaction - Nested'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Nested Transactions, Transaction Handling, Database, SQL, Transaction Save Point, Rollback, Closure]

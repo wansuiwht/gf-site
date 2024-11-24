@@ -4,12 +4,12 @@ title: 'GoFrame Community Tutorials'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame Framework, Golang Learning, Web Development, Framework Tutorials, Programming Toolchain, Regular Expressions, Tutorial Videos, Development Tools, Error Handling, Data Structures]
-description: "Detailed tutorials on the GoFrame framework, including a basic introduction to the framework, installation and deployment, and a quick start guide for web projects. It also covers basic Golang syntax, data structures, coroutines, and channels. Additionally, it provides comprehensive GoFrame tutorial video links and code repository links to help developers learn efficiently."
+description: "Detailed tutorials on the GoFrame framework, including a Introduction to the framework, installation and deployment, and a quick start guide for web projects. It also covers basic Golang syntax, data structures, coroutines, and channels. Additionally, it provides comprehensive GoFrame tutorial video links and code repository links to help developers learn efficiently."
 ---
 
 ## 1. Golang Learning
 
-Basic introduction, installation and deployment, running the first program and basic introduction, development tool introduction, `go module`, basic syntax, commonly used data structures, function introduction, pointers, structures, interfaces, error handling, coroutines, channels, channel selectors, and commonly used functions.
+Introduction, installation and deployment, running the first program and Introduction, development tool introduction, `go module`, basic syntax, commonly used data structures, function introduction, pointers, structures, interfaces, error handling, coroutines, channels, channel selectors, and commonly used functions.
 
 Tutorial introduction: [https://studygolang.com/articles/27492](https://studygolang.com/articles/27492)
 
@@ -37,7 +37,7 @@ Source code address:
 
 #### Basic Tutorial - Quick Start
 
-Basic introduction to GoFrame, installation and deployment, `WEB` projects, route registration, `HTTP` client, configuration files, log printing, `MySQL` database connection, `Redis` connection, commonly used tools such as `gstr`, `gmap`, `gjson`, `md5`, `gconv`.
+Introduction to GoFrame, installation and deployment, `WEB` projects, route registration, `HTTP` client, configuration files, log printing, `MySQL` database connection, `Redis` connection, commonly used tools such as `gstr`, `gmap`, `gjson`, `md5`, `gconv`.
 
 - Tutorial introduction: [https://studygolang.com/articles/27491](https://studygolang.com/articles/27491)
 - bilibili video tutorial address: [https://www.bilibili.com/video/bv157411Z7Le](https://www.bilibili.com/video/bv157411Z7Le)

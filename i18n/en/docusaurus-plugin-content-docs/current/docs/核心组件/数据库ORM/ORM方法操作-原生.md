@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-funcs'
-title: 'ORM Method Operations (Native)'
+title: 'ORM - Method Ops (Native)'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, SQL Operations, Database Query, Data Insertion, Data Update, Data Deletion, Batch Operations, Chain Operations]

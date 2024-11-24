@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gview-xss'
-title: 'Template Engine-XSS Handling'
+title: 'Template Engine - XSS'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Template Engine, XSS Handling, HTML Encoding, AutoEncode, SetAutoEncode, Variable Output, Security, Framework Configuration]

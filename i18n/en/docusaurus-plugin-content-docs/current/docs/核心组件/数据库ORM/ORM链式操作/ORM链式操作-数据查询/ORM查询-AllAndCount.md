@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gdb-chaining-query-all-and-count'
-title: 'ORM Query-AllAndCount'
+title: 'Model Query - AllAndCount'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame,GoFrame Framework,ORM Query,AllAndCount,Paging Query,Data Query,Total Count Query,v2.5.0,Record List,Simplify Query Logic]
 description: "This document introduces the AllAndCount method provided in the GoFrame framework from version v2.5.0, which is used to simultaneously retrieve data record lists and total counts in paging query scenarios, simplifying query logic. By ignoring Limit/Page operations during queries, the AllAndCount method provides a convenient way to retrieve and count data."
 ---
 
-## Basic Introduction
+## Introduction
 This method has been provided since version `v2.5.0` and is used for querying both the data record list and the total count, generally used in paging query scenarios to simplify paging query logic.
 
 Method definition:

@@ -7,7 +7,7 @@ keywords: [GoFrame, unit testing, gtest, test assertions, GoFrame framework, tes
 description: "The usage of the gtest module under the GoFrame framework, providing convenient and lightweight unit testing methods. gtest extends the functionality of the standard library testing, adding multiple testing features such as test case isolation and common assertion methods. It is suitable for most unit testing scenarios and can be combined with third-party testing frameworks like testify and goconvey for more complex testing."
 ---
 
-## Basic Introduction
+## Introduction
 The `gtest` module offers simplified, lightweight, and commonly used unit testing methods. It is an extension encapsulated on the standard library `testing`, mainly adding the following features:
 
 - Isolation of multiple test items within unit test cases.

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-relation-scan-list'
-title: 'Model Association - Dynamic Association - ScanList'
+title: 'Model Association - ScanList'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, Dynamic Association, ScanList, Data Insertion, Data Query, Data Model, Transaction Handling, Binding Data, Association, Data Structure]

@@ -7,7 +7,7 @@ keywords: [GoFrame, safe type, concurrent programming, concurrency safety, gtype
 description: "The safe type gtype in the GoFrame framework is suitable for any scenario requiring concurrency safety. By providing concurrency safety support for the most commonly used basic data types, gtype has higher performance than mutex locks, simplifies concurrency control using atomic operations, and facilitates developers in efficient concurrent programming in complex scenarios."
 ---
 
-## Basic Introduction
+## Introduction
 
 Concurrency-safe basic types.
 

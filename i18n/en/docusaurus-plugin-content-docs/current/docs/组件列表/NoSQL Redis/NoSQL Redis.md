@@ -7,7 +7,7 @@ keywords: [GoFrame framework, gredis component, Redis client, connection pool de
 description: "Implementation of NoSQL Redis client in the GoFrame framework, mainly through the gredis component for Redis operations, using connection pool design and command channel method, ensuring the component's universality and scalability. This article provides installation and reference guidelines, emphasizing gredis's notable features and linking to the relevant interface documentation. Developers can implement over 100 common methods through community components and support various advanced features, including cluster operations."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `Redis` client is implemented by the `gredis` component, which adopts a connection pool design at the bottom layer. 
 :::tip

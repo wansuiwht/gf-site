@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-handler'
-title: 'ORM Chaining Operation - Handler Feature'
+title: 'ORM Model - Handler'
 sidebar_position: 14
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Chaining Operation, Handler Feature, Query Example, Pagination Example, Code Reuse, Database Operations, Go Language, gdb Library]

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-dry-run'
-title: 'Advanced ORM Features - Dry Run Feature'
+title: 'ORM Senior - Dry Run'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Dry Run Feature, DryRun, SQL, Debug Mode, Log Output, Database, Configuration Example]

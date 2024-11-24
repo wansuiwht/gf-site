@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gvalid-parameter-type-map-sequence'
-title: 'Map Validation - Validation Order'
+title: 'Map Validation - Sequence'
 sidebar_position: 1
 hide_title: true
 keywords: [Map Validation,Validation Order,GoFrame,Parameter Validation,golang,map Type,Rule Order,Validation Error Information,gogf,Data Validation]
 description: "Implementing the order of Map validation in the GoFrame framework. By modifying the rule parameter type to []string, the order of the returned error messages can be consistent with the set rules, solving the issue of non-fixed validation results caused by the unordered nature of map types in golang. This tutorial provides detailed example code and execution results to help users understand how to perform order validation using GoFrame."
 ---
 
-## Basic Introduction
+## Introduction
 
 If you execute the previous example code several times, you will find that the returned results are unordered, and the order of the fields and rules is completely random. Even if we use other methods like `FirstItem`, `FirstString()` to obtain validation results, they are the same, and the returned validation results are not fixed. This is because the rules we pass are of the `map` type, and the `map` type in `golang` does not have order, so the validation results are random, and the same validation method may return different result values each time it is executed.
 

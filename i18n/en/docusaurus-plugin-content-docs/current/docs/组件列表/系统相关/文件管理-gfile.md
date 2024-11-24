@@ -7,7 +7,7 @@ keywords: [GoFrame, gfile, file management, caching mechanism, file operations, 
 description: "The gfile component provides rich file and directory operations for the GoFrame framework, including file content reading, caching mechanism, file copying and moving, directory scanning, and file permission settings. It supports flexible path operations and content replacement, optimizing file management and processing efficiency, making it an ideal library for developers performing file operations."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `gfile` file management component provides more comprehensive file/directory operation capabilities.
 

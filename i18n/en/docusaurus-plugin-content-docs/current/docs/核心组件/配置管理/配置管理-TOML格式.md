@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gcfg-toml'
-title: 'Configuration Management-TOML Format'
+title: 'Configuration - TOML'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, TOML Configuration, Configuration Management, TOML Syntax, Key-Value Pairs, Table Arrays, Data Serialization, YAML Comparison, JSON Parsing, Open Source Framework]
 description: "The use of TOML format in the GoFrame framework, including its comparison with other file formats, basic syntax, numeric and BOOL value processing, date and time, arrays, tables, table arrays, etc., to help users better understand and apply TOML configuration management."
 ---
 
-## Basic Introduction
+## Introduction
 
 `Toml` is a small, easy-to-read language created by the former CEO of `GitHub`, `Tom`. `Tom's Obvious, Minimal Language`.
 

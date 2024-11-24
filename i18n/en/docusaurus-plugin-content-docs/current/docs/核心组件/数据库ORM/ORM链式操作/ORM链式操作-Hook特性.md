@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-hook'
-title: 'ORM Chaining Operation - Hook Feature'
+title: 'ORM Model - Hook'
 sidebar_position: 13
 hide_title: true
 keywords: [GoFrame framework, ORM chaining operation, Hook feature, CRUD hooks, Model, database query, gdb, Go language, programming examples, code optimization]

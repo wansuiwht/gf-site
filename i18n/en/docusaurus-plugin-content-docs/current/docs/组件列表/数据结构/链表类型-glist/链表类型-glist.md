@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, Linked List, Doubly Linked List, Concurre
 description: "The glist component in the GoFrame framework supports concurrent safe doubly linked lists. glist provides data structures and concurrent control for linked lists, suitable for scenarios requiring doubly linked lists, thereby improving the development efficiency and runtime performance of Go language programs."
 ---
 
-## Basic Introduction
+## Introduction
 
 A doubly linked list with a concurrent safety switch.
 

@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-practice'
-title: 'ORM Best Practices'
+title: 'ORM - Best Practices'
 sidebar_position: 10
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, Database Operations, ORM Best Practices, Database Components, GoFrame Database, Business Projects, Flexible Operations, Best Practice Examples, Reference Learning]

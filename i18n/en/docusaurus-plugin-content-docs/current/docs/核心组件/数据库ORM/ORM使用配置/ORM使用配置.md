@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-config'
-title: 'ORM Usage Configuration'
+title: 'ORM - Configuration'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Configuration, Database Configuration, gdb, Configuration Guide, ORM Usage, GoFrame Database, GoFrame ORM, Data Storage]

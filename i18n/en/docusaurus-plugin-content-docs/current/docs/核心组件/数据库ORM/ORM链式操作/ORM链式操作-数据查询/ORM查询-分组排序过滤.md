@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-group-order-having'
-title: 'ORM Query - Group Order Filter'
+title: 'Model Query - Group/Order'
 sidebar_position: 6
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Group, Order, Having, Sorting, Group Query, Condition Filter, Database Query]

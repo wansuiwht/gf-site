@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-query-exist'
-title: 'ORM Query-Exist'
+title: 'Model Query - Exist'
 sidebar_position: 3
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Query, Exist Method, Data Retrieval, MySQL Table Structure, Model Query, Where Condition, Go Language, Query Efficiency]

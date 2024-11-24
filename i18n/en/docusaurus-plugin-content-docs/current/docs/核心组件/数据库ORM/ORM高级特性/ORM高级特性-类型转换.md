@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-senior-type-converting'
-title: 'Advanced ORM Features - Type Conversion'
+title: 'ORM Senior - Type Conversion'
 sidebar_position: 7
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Type Conversion, gdb, gvar.Var, Database Operations, Data Structures, Product Table, Data Type Conversion]

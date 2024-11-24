@@ -7,7 +7,7 @@ keywords: [GoFrame,GoFrame Framework,SwaggerUI,API Documentation,OpenAPI,UI Temp
 description: "Use SwaggerUI in the GoFrame framework to customize the API documentation UI, replacing the default Redoc component UI. Demonstrate how to quickly implement API documentation replacement with example code, connect internal enterprise resources, and avoid external dependencies. Detailed demonstration of integrating API documentation with third-party platforms, using GoFrame Server for UI template switching, enhancing the flexibility and customizability of document display."
 ---
 
-## Basic Introduction
+## Introduction
 
 The `OpenAPI` API documentation UI provided by default in `GoFrame`'s `Server` is the open-source `redoc` component, which does not support the `Try It Out` feature on the page. Many developers ask if it's possible to use the `SwaggerUI` page to display the `OpenAPI` API documentation. Some enterprises do not support connecting to certain external resources, so can the internal API documentation UI be replaced with resources accessible internally?
 

@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gdb-chaining-query-all-one-array-value-count'
-title: 'ORM Query - Common Query Methods'
+title: 'Model Query - Methods'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Data Query, All Method, One Method, Array Method, Value Method, Count Method, CountColumn Method]
 description: "Five common data query methods in the GoFrame framework: All, One, Array, Value, and Count. These methods allow you to easily retrieve multiple or single records from the database and support direct input of conditional parameters. Through example code, you'll learn how to efficiently perform database operations in GoFrame."
 ---
 
-## Basic Introduction
+## Introduction
 Commonly used data query methods:
 
 ```go

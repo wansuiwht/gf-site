@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-result-empty-array'
-title: 'ORM Result Handling - Returning Empty Array Structure'
+title: 'ORM Result - Empty Array'
 sidebar_position: 2
 hide_title: true
 keywords: [GoFrame, ORM, Go Language, Database Operations, JSON Encoding, Frontend Development, Data Processing, Backend Development, Empty Array, GoFrame Framework]

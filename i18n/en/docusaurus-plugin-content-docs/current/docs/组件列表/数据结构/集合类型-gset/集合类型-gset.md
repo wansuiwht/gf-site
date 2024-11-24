@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, gset, Collection Type, Concurrent Safety,
 description: "The gset collection type in the GoFrame framework is characterized by a set of non-repeating elements, supporting elements of any type. gset provides a concurrent safety option, making it an efficient tool for collection operations, suitable for application in the Go language. Detailed usage instructions and interface documentation links are provided for developers to consult."
 ---
 
-## Basic Introduction
+## Introduction
 
 A collection is a set of non-repeating elements, where the elements can be of any type.
 

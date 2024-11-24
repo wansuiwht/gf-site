@@ -9,7 +9,7 @@ description: "Use GoFrame command line tool to maintain and generate enum value 
 :::tip
 This feature is an **experimental feature**, available from version `v2.4`.
 :::
-## Basic Introduction
+## Introduction
 
 This command is used to analyze the source code in the specified code directory and generate enum values and `Go` code files according to specifications, **mainly to improve the maintenance of enum values in `OpenAPIv3` documents**.
 

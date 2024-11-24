@@ -7,7 +7,7 @@ keywords: [GoFrame,GoFrame Framework,gtcp,TCPServer,Server,Programming,Network C
 description: "The gtcp module in the GoFrame framework implements an easy-to-use, lightweight TCPServer. By using gtcp, users can easily create and manage TCP services, supporting high concurrency connections. The documentation provides simple code examples to demonstrate how to create a basic echo server using the gtcp module."
 ---
 
-## Basic Introduction
+## Introduction
 The `gtcp` module implements an easy-to-use, lightweight `TCPServer`.
 
 **Usage**:

@@ -9,7 +9,7 @@ description: "Generate API interface controllers and SDK code using GoFrame to h
 :::tip
 This feature is available from version `v2.5`. Currently, this command only supports `HTTP` interface development; for `GRPC` parts, please refer to the `gen pb` command. In the future, `HTTP` and `GRPC` may be unified to use this command to generate controller and `SDK` source code.
 :::
-## Basic Introduction
+## Introduction
 
 ### Pain Points Solved
 

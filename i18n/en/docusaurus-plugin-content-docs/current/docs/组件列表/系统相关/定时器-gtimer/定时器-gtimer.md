@@ -7,7 +7,7 @@ keywords: [Timer, Concurrent Safe, High Performance, GoFrame, Task Scheduling, D
 description: "gtimer is a concurrent safe and high-performance timer suitable for scenarios with a large number of scheduled tasks and delayed tasks. It supports timeout control and frequency control. gtimer provides various task management methods, including adding singleton and run-once tasks, and allows customization of timer parameters."
 ---
 
-## Basic Introduction
+## Introduction
 
 `gtimer` is a concurrent safe and high-performance timer, similar to `Java`'s `Timer`. `gtimer` uses a **Priority Queue** to implement its core functionality.
 

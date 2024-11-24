@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/glog-rotate'
-title: 'Log Component - Rotate Feature'
+title: 'Logging - Rotatation'
 sidebar_position: 13
 hide_title: true
 keywords: [GoFrame,GoFrame framework,glog,log component,log rotation,log rolling,log compression,log configuration,file format,log backup]

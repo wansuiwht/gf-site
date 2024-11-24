@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-result-empty-check'
-title: 'ORM Result Processing - Empty Check'
+title: 'ORM Result - Empty Check'
 sidebar_position: 1
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM, Result Processing, Empty Check, Data Set, Data Record, Data Field Value, Struct Object, Struct Array]

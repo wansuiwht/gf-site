@@ -1,13 +1,13 @@
 ---
 slug: '/docs/core/gdb-interface-callback'
-title: 'ORM Interface Development - Callback Handling'
+title: 'ORM Interface - Callback'
 sidebar_position: 0
 hide_title: true
 keywords: [GoFrame,ORM Interface,SQL Statements,Custom Callback,Logging,Authentication Operations,Database Driver,MySQL Driver,gdb Interface,Framework Override]
 description: "When developing ORM interfaces using the GoFrame framework, custom callback handling is used to log or authenticate SQL statements. By implementing and overriding interface methods like DoQuery, DoExec, etc., developers can inject custom logic into the default implementation. The example demonstrates how to customize a MySQL driver to log executed SQL statements and configure gdb to use that driver."
 ---
 
-## Basic Introduction
+## Introduction
 
 Custom callback handling is the most common implementation in interface development, where it involves **replacing and modifying** some methods in the interface to inject custom logic into the default implementation of the driver. By referring to the interface relationship diagram ([ORM Interface Development](ORM接口开发.md)), we understand that all `SQL` statement executions will pass through the `DoQuery`, `DoExec`, or `DoFilter` interfaces. Depending on the requirements, you can **implement and override** the relevant interface methods in the custom driver to achieve the desired functionality.
 

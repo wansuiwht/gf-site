@@ -1,6 +1,6 @@
 ---
 slug: '/docs/core/gdb-chaining-object-parameter'
-title: 'ORM Chaining Operations - Object Input'
+title: 'ORM Model - Object Input'
 sidebar_position: 5
 hide_title: true
 keywords: [GoFrame, GoFrame Framework, ORM Chaining Operations, Object Input, gdb, Struct Mapping, Database ORM, Mapping Relationships, Go Language, Type Conversion]
