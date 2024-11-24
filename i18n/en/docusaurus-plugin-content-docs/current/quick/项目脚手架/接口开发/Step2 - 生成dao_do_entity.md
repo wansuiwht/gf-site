@@ -1,13 +1,13 @@
 ---
 slug: '/quick/scaffold-api-gen-dao'
-title: 'Step2 - Generate/dao/do/entity'
+title: 'Step2 - Generate dao/do/entity'
 hide_title: true
 sidebar_position: 2
 keywords: [GoFrame,CLI Tool,Data Access Object,Automated Generation,Data Model,Database Configuration,Make Command,Data Transformation,Code Generation,ORM Component]
 description: "Use the scaffolding tool in the GoFrame framework for automated data access object generation, ensure the CLI tool is configured correctly, then execute the code generation through commands, and generate corresponding dao, do, and entity files after creating the database tables to simplify CRUD operations. It demonstrates the specific file structure and usage, as well as the principles of generating different types of files."
 ---
 
-## Check Tool Configuration
+## CLI Tool Configuration
 
 Before using the scaffolding tool, please check whether the local `cli` tool configuration is correct. The default configuration is as follows:
 
@@ -149,7 +149,7 @@ type User struct {
 
 We can see that this `entity` data structure definition corresponds directly to the data table fields.
 
-## Summary of Learning
+## Learning Summary
 
 It can be felt that using the convenient scaffolding tools of the `GoFrame` framework, we are liberated from some repetitive coding labor, greatly improving production efficiency. Operations on the database will become very simple.
 

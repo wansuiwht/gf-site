@@ -1,13 +1,13 @@
 ---
 slug: '/quick/scaffold-api-controller'
-title: 'Step4 - Generate Controller Code'
+title: 'Step4 - Generate Controller'
 hide_title: true
 sidebar_position: 4
 keywords: [GoFrame, API Code Generation, Controller Code, Generate Controller, Code Auto Generation, Interface Implementation, GoFrame Framework, Route Object Management, Interface Route Implementation, Code Template]
 description: "Generate controller code based on API definition, including API interface files, route object management, and route implementation code, using GoFrame framework's command tool to quickly generate relevant code templates, ensuring complete implementation of the interface, and demonstrating how to implement specific business logic through files."
 ---
 
-## Generate Code from `api`
+## Generate Codes From API Definition
 
 Once the `api` definition is completed, we generate the controller code through the `make ctrl` command (or `gf gen ctrl`).
 
@@ -28,7 +28,7 @@ done!
 
 The generated codes mainly include `3` types of files.
 
-## `api` Interface Abstraction File
+## Abstraction Interface For API
 
 Defines the `api interface` to ensure the completeness of the controller's interface implementation, avoiding issues of missing interface implementations in `controller`. Since `GoFrame` is a rigorous development framework, it controls such details well. Whether or not this feature is used by developers can be decided based on specific scenarios and needs.
 
@@ -61,7 +61,7 @@ type IUserV1 interface {
 }
 ```
 
-## `controller` Route Object Management
+## Controller Router Object
 
 Used to manage the initialization of the controller, as well as data structures and constant definitions used internally by the control.
 
@@ -104,7 +104,7 @@ Both of these files will only be generated once, after which developers can free
 If later we need to define a `v2` interface, the `make ctrl` command will similarly generate a `type ControllerV2 struct{}` structure definition and a `func NewV2() user.IUserV2` initialization method.
 :::
 
-## `controller` Route Implementation Code
+## Controller Router Implementation
 
 Used for the implementation code files of specific `api` interfaces. By default, codes are generated in the form of one source file per `api` interface. Of course, it is also possible to control the aggregation of interfaces defined in `api` files into a corresponding single source file. For specific command introductions and configurations, please refer to the chapter [Interface Specification-gen ctrl](../../../docs/开发工具/代码生成-gen/接口规范-gen%20ctrl.md).
 
@@ -136,7 +136,7 @@ func (c *ControllerV1) Create(ctx context.Context, req *v1.CreateReq) (res *v1.C
 ```
 As we can see, this is just the implementation template for the create interface we defined. We just need to complete the specific business logic of this route function.
 
-## Summary of Learning
+## Learning Summary
 
 Example source code for this chapter: https://github.com/gogf/quick-demo/tree/main/internal/controller/user
 

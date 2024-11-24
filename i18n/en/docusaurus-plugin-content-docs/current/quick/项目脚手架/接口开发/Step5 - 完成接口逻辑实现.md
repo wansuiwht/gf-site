@@ -1,6 +1,6 @@
 ---
 slug: '/quick/scaffold-api-implements'
-title: 'Step5 - Complete API Logic Implementation'
+title: 'Step5 - Implement API Logic'
 hide_title: true
 sidebar_position: 5
 keywords: [GoFrame, CURD Logic, API Creation, Parameter Validation, Update API, Delete API, Retrieve API, Database Operations, Scaffold Tool, Business Logic Implementation]
@@ -9,7 +9,7 @@ description: "Use GoFrame framework to complete API logic implementation. By usi
 
 As you can see, with the project scaffold tool, a lot of code unrelated to the project's business logic has already been pre-generated, so we only need to focus on the business logic implementation. Let's take a look at how to implement the specific `CURD` logic.
 
-## Create API
+## `Create`
 
 ### Implementation of Creation Logic
 ```go title="internal/controller/user/user_v1_create.go"
@@ -63,7 +63,7 @@ developers only need to focus on the business logic implementation in this route
 :::info
 Of course, if there are some additional, customized business logic validations, they need to be implemented in the route function by yourself.
 :::
-## Delete API
+## `Delete`
 
 ```go title="internal/controller/user/user_v1_delete.go"
 package user
@@ -82,7 +82,7 @@ func (c *ControllerV1) Delete(ctx context.Context, req *v1.DeleteReq) (res *v1.D
 ```
 The deletion logic is relatively straightforward. Here, we use a `WherePri` method, which takes the given parameter `req.Id` as the primary key for `Where` condition restriction.
 
-## Update API
+## `Update`
 
 ```go title="internal/controller/user/user_v1_update.go"
 package user
@@ -106,7 +106,7 @@ func (c *ControllerV1) Update(ctx context.Context, req *v1.UpdateReq) (res *v1.U
 ```
 The update interface is also straightforward. Besides the already introduced `WherePri` method, it also requires using the `Data` method to pass the data to be updated when updating the data.
 
-## Retrieve API (Single)
+## `GetOne`
 
 ```go title="internal/controller/user/user_v1_get_one.go"
 package user
@@ -126,7 +126,7 @@ func (c *ControllerV1) GetOne(ctx context.Context, req *v1.GetOneReq) (res *v1.G
 ```
 In the data retrieval interface, we use a `Scan` method, which can intelligently map the retrieved single data table record to a structure object. It should be noted that the `User` attribute object in `&res.User` is actually not initialized and its value is `nil`. If data is retrieved, the `Scan` method will initialize and assign it. If no data is retrieved, the `Scan` method will do nothing, and its value will remain `nil`.
 
-## Retrieve API (List)
+## `GetList`
 
 ```go title="internal/controller/user/user_v1_get_list.go"
 package user
@@ -150,7 +150,7 @@ func (c *ControllerV1) GetList(ctx context.Context, req *v1.GetListReq) (res *v1
 ```
 When retrieving list data, we also use the `Scan` method, which is very powerful. Like retrieving single data's logic, it only initializes `&res.List` when data is retrieved.
 
-## Study Summary
+## Learning Summary
 
 Example source code for this chapter: https://github.com/gogf/quick-demo/tree/main/internal/controller/user
 

@@ -7,7 +7,7 @@ keywords: [GoFrame,GoFrame Framework,Web Server,Development Manual,Modular Desig
 description: "Quickly understand the development process and features of the Web Server interface by viewing the development manual sections to resolve any doubts. GoFrame is a low-coupling, modular design framework with independent module designs, and independently written documentation. The community provides introductory video tutorials, and later a complete business project will be developed using the GoFrame framework project scaffold."
 ---
 
-## Study Summary
+## Learning Summary
 Through the quick sections, you should have understood the complete development process of the `Web Server` interface and mastered some practical features. In these sections, we only touched on them briefly; for more detailed explanations and introductions to functional features, please refer to the corresponding development manual sections. When you feel confused about the use of a particular module, it is recommended to carefully read the corresponding development manual sections, which provide detailed explanations of the important functional features, usage methods, and common issues of each component.
 
 :::info

@@ -1,6 +1,6 @@
 ---
 slug: '/quick/scaffold-api-run-and-test'
-title: 'Step7 - Start and Test'
+title: 'Step7 - Run and Test'
 hide_title: true
 sidebar_position: 6
 keywords: [GoFrame, start service, API documentation, API testing, RESTful API, CRUD, API validation, data query, data modification, data deletion]
@@ -57,7 +57,7 @@ To simplify testing operations, we use the `curl` command for testing and submit
 The `$` symbol at the front of the execution commands below represents the terminal command line tool's prompt and is not a part of the command we enter. Different terminal command lines have different prompt symbols.
 :::
 
-### Create Interface
+### `Create`
 
 A creation request needs to be submitted using the `POST` method.
 
@@ -82,9 +82,8 @@ $ curl -X POST 'http://127.0.0.1:8000/user' -d '{"name":"sm","age":18}'
 
 As we can see, the validation rules have taken effect and returned specific validation error messages. The error code `51` is a built-in error code in the framework, indicating a validation error. Developers can also customize error codes. For more information on error codes, please refer to the relevant sections of the developer's manual.
 
-### Query Interface
 
-#### Query a single piece of data
+### `GetOne`
 ```bash
 $ curl -X GET 'http://127.0.0.1:8000/user/1'
 {"code":0,"message":"","data":{"id":1,"name":"john","status":0,"age":20}}
@@ -93,7 +92,7 @@ $ curl -X GET 'http://127.0.0.1:8000/user/2'
 {"code":0,"message":"","data":{"id":2,"name":"alice","status":0,"age":18}}
 ```
 
-#### Query data list
+### `GetList`
 
 ```bash
 $ curl -X GET 'http://127.0.0.1:8000/user'
@@ -103,7 +102,7 @@ $ curl -X GET 'http://127.0.0.1:8000/user?age=18'
 {"code":0,"message":"","data":{"list":[{"id":2,"name":"alice","status":0,"age":18}]}}
 ```
 
-### Update Interface
+### `Update`
 
 An update request needs to be submitted using the `PUT` method.
 
@@ -119,7 +118,7 @@ $ curl -X GET 'http://127.0.0.1:8000/user/1'
 {"code":0,"message":"","data":{"id":1,"name":"john","status":0,"age":26}}
 ```
 
-### Delete Interface
+### `Delete`
 
 A deletion request needs to be submitted using the `DELETE` method.
 

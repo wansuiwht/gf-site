@@ -1,6 +1,6 @@
 ---
 slug: '/quick/scaffold-api-sql'
-title: 'Step1 - Design Data Table'
+title: 'Step1 - Design Data Structure'
 hide_title: true
 sidebar_position: 0
 keywords: [GoFrame, Data Table Design, MySQL Database, Docker, SQL Statements, InnoDB, Auto Increment, varchar, Database Connection, User Status]
@@ -8,7 +8,7 @@ description: "Design and apply MySQL data tables. We define the structure of dat
 ---
 
 
-## Design Data Table
+## Design Data Structure SQL
 
 First, we define a data table. The following is the `SQL` file of the data table to be used in this chapter's example:
 
@@ -22,7 +22,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-## Apply Data Table
+## Apply Data Structure SQL
 
 We need to apply this data table to the `mysql` database for subsequent use. If you don't have a `mysql` database service locally, you can use `docker` to run one:
 
@@ -67,7 +67,7 @@ mysql>
 
 
 
-## Study Summary
+## Learning Summary
 
 It is a good development practice to design database tables before interface development. Here we are using the `mysql` database, which requires setting up/running the database service first.
 

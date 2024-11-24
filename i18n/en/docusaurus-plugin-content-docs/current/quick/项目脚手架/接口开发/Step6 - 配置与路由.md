@@ -1,15 +1,15 @@
 ---
 slug: '/quick/scaffold-api-config-and-route'
-title: 'Step6 - Configuration and Routing'
+title: 'Step6 - Configuration'
 hide_title: true
 sidebar_position: 6
 keywords: [GoFrame, GoFrame Framework, Database Driver, MySQL, Routing, Configuration, API, Server Configuration, Log Module, Business Module]
 description: "Introduce MySQL database driver, with steps for adding database configuration and route registration. Detailed explanation of configurations in the scaffold project template, including tool configuration and business configuration, and how to modify configuration files."
 ---
 
-## Introduce Database Driver
+## Import Database Driver
 
-The `GoFrame` database component uses an interface-based design, separating interface and implementation to provide better abstraction and extensibility. Here, we use the `MySQL` database, so we need to introduce the specific `MySQL` driver implementation. We can add `_ "github.com/gogf/gf/contrib/drivers/mysql/v2"` in `main.go`.
+The `GoFrame` database component uses an interface-based design, separating interface and implementation to provide better abstraction and extensibility. Here, we use the `MySQL` database, so we need to import the specific `MySQL` driver implementation. We can add `_ "github.com/gogf/gf/contrib/drivers/mysql/v2"` in `main.go`.
 
 Sample source code: https://github.com/gogf/quick-demo/blob/main/main.go
 
@@ -42,11 +42,11 @@ cannot find database driver for specified database type "mysql", did you misspel
 In the scaffold project template `main.go`, the `import` statement contains `_ "demo/internal/packed"`, indicating the resource management of the `GoFrame` framework, which is an advanced feature. This feature allows any resource to be packaged into the binary file, so when publishing, only one binary file needs to be released. We do not use this feature here, so just understand it for now, and if you're interested, you can check out the relevant section in the development manual later.
 :::
 
-## Add Database Configuration
+## Database Configuration
 
 There are mainly two configuration files in the scaffold project template.
 
-### Tool Configuration `hack/config.yaml`
+### CLI Tool Configuration `hack/config.yaml`
 Introduced in previous sections, this configuration file is mainly used for local development. When the `cli` scaffold tool executes, it will automatically read the configuration content in it.
 
 Sample source code: https://github.com/gogf/quick-demo/blob/main/hack/config.yaml

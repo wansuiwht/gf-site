@@ -3,60 +3,60 @@ slug: /quick/scaffold-next
 title: "What's Next"
 hide_title: true
 sidebar_position: 3
-keywords: [GoFrame框架,Web项目,微服务开发,核心组件,业务项目,API项目,服务组件,配置组件,数据库组件,框架学习]
-description: "总结了使用GoFrame框架进行业务项目搭建、项目启动、配置组件使用、数据库组件使用的基础知识，并提供了Web项目和微服务开发的学习路径。建议通过丰富的示例项目，提高对GoFrame框架的掌握，特别是其核心组件的使用。"
+keywords: [GoFrame framework, Web project, microservice development, core components, business project, API project, service components, configuration components, database components, framework learning]
+description: "Summarizes the basic knowledge of using the GoFrame framework for building business projects, starting projects, using configuration components, using database components, and provides a learning path for Web projects and microservice development. It is recommended to improve your mastery of the GoFrame framework, especially its core components, through rich example projects."
 ---
 
-## 简单总结
+## Simple Summary
 
-好的，当您已经学习完前面的基础章节后，你应该学习到以下的内容：
+Alright, after you have studied the basic chapters, you should have learned the following content:
 
 1. Business project setup
 2. Project startup logic
-3. Understand the overall design concept of the framework
-4. Write a simple `api` project
+3. Understanding the overall framework design approach
+4. Writing a simple `api` project
 
-## 接下来的学习
+## Upcoming Study
 
-那么接下来，我们应该怎么进一步学习框架内容呢？
+What's the next step in further learning about the framework?
 
-### 社区教程
+### Community Tutorials
 
-The teachers in the `GoFrame` community have shared some great learning materials for everyone. Interested students can further explore 🚀：[社区教程](../../course/社区教程.md)
+Teachers from the `GoFrame` community have shared some great learning materials. Interested students can explore more 🚀: [Community Tutorials](../../course/社区教程.md)
 
-### 服务组件的进一步学习
+### Further Study of Service Components
 
-Most students learn the framework to better develop their own business projects, which are based on two types: Web projects or microservices.
+Most students learn the framework to better develop their business projects, which are mainly based on two types: Web projects or microservices.
 
-#### Web项目学习
+#### Web Project Study
 
-If it is an `HTTP WEB` project, please enter this section to learn: [WEB服务开发](../../docs/WEB服务开发/WEB服务开发.md)
+If it's an `HTTP WEB` project, please proceed to this chapter for study: [WEB Service Development](../../docs/WEB服务开发/WEB服务开发.md)
 
-Starting from this section, it will introduce the development of WEB services and the use of related components step by step.
+This chapter will progressively introduce the development of WEB services and the use of related components.
 
-#### 微服务学习
+#### Microservice Study
 
-If it is a microservice project, please enter this section to learn: [微服务开发](../../docs/微服务开发/微服务开发.md)
+If it's a microservice project, please proceed to this chapter for study: [Microservice Development](../../docs/微服务开发/微服务开发.md)
 
-This section mainly introduces how to use the framework for microservice development.
+This chapter primarily introduces how to use the framework to develop microservices.
 
-### 框架组件的进一步学习
+### Further Study of Framework Components
 
-If you encounter a component that is not quite usable during development and learning, you can first read the source code or check the corresponding component introduction section on the official website. In addition, some students use the framework as a basic component library, and they can also view the description and usage section of the corresponding components individually.
+If you encounter a component you're not familiar with during development and study, you can first read the source code or check the corresponding component introduction chapter on the official website. Additionally, some students may use the framework as a basic component library, so you can also individually check the introduction chapter for each component.
 
-#### 核心组件
+#### Core Components
 
-Core components are an indispensable part of the framework, which are basically used in business projects and are a focus of framework learning. Section address: [核心组件(🔥重点🔥)](../../docs/核心组件/核心组件.md)
+Core components are an indispensable part of the framework; most business projects will use them. They are a key focus for learning the framework. Chapter link: [Core Components (🔥Important🔥)](../../docs/核心组件/核心组件.md)
 
-#### 组件列表
+#### Component List
 
-The component list summarizes all the components of the framework in one section. Section address: [组件列表](../../docs/组件列表/组件列表.md)
+The component list presents a summary chapter of all the components of the framework. Chapter link: [Component List](../../docs/组件列表/组件列表.md)
 
-## 重要的Tips
+## Important Tips
 
-Learning the framework through examples is much more effective, and the framework provides a wealth of example projects:
+Learning the framework through examples is much more effective. The framework provides a wealth of example projects:
 
-- `Web API` development: [https://github.com/gogf/gf-demo-user](https://github.com/gogf/gf-demo-user)
-- `Web MVC` development: [https://github.com/gogf/gf-demo-chat](https://github.com/gogf/gf-demo-chat)
-- Microservice development: [https://github.com/gogf/gf-demo-grpc](https://github.com/gogf/gf-demo-grpc)
-- More example projects: [https://github.com/gogf/awesome-gf](https://github.com/gogf/awesome-gf)
+- `Web API` Development: [https://github.com/gogf/gf-demo-user](https://github.com/gogf/gf-demo-user)
+- `Web MVC` Development: [https://github.com/gogf/gf-demo-chat](https://github.com/gogf/gf-demo-chat)
+- Microservice Development: [https://github.com/gogf/gf-demo-grpc](https://github.com/gogf/gf-demo-grpc)
+- More Example Projects: [https://github.com/gogf/awesome-gf](https://github.com/gogf/awesome-gf)
