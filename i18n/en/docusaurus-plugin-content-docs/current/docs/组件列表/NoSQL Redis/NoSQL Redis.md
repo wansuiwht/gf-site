@@ -43,7 +43,7 @@ import (
 The `gredis.Redis` client object provides a `Close` method, which is used to close the `Redis` client (and also the client's connection pool), not the connection object. Developers generally will not use it; non-advanced users should not use it.
 :::
 
-## Component Features
+## Features
 
 `gredis` has the following notable features:
 

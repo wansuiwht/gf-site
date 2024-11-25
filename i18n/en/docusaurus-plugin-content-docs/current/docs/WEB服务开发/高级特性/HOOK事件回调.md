@@ -169,8 +169,8 @@ func main() {
 
 After execution, the terminal outputs routing table information as follows:
 
-```
-SERVER  | ADDRESS | DOMAIN  | METHOD | P | ROUTE |        HANDLER        |    MIDDLEWARE
+```text
+SERVER | ADDRESS | DOMAIN  | METHOD | P | ROUTE |        HANDLER        |    MIDDLEWARE
 |---------|---------|---------|--------|---|-------|-----------------------|-------------------|
   default |  :8199  | default | ALL    | 1 | /     | main.main.func1       |
 |---------|---------|---------|--------|---|-------|-----------------------|-------------------|

@@ -168,8 +168,8 @@ func main() {
 
 执行后，终端输出的路由表信息如下：
 
-```
-SERVER  | ADDRESS | DOMAIN  | METHOD | P | ROUTE |        HANDLER        |    MIDDLEWARE
+```text
+SERVER | ADDRESS | DOMAIN  | METHOD | P | ROUTE |        HANDLER        |    MIDDLEWARE
 |---------|---------|---------|--------|---|-------|-----------------------|-------------------|
   default |  :8199  | default | ALL    | 1 | /     | main.main.func1       |
 |---------|---------|---------|--------|---|-------|-----------------------|-------------------|

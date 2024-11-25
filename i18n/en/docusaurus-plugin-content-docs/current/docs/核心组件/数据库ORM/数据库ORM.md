@@ -26,7 +26,7 @@ Note: To improve the security of database operations, it is not recommended to d
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb](https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb)
 
-## Component Features
+## Features
 
 The `GoFrame ORM` component has the following notable features:
 
