@@ -87,28 +87,28 @@
     "message": "🔥Cases Built With GoFrame🔥"
   },
   "showcase.header.button": {
-    "message": "👋 welcome to submit your use cases"
+    "message": "👋 Please submit your cases"
   },
   "showcase.resetbutton": {
     "message": "RESET"
   },
   "showcase.card.sourceLink": {
-    "message": "source"
+    "message": "Source"
   },
   "showcase.usersList.noResult": {
-    "message": "没有符合条件的案例"
+    "message": "No matched cases"
   },
   "showcase.favoritesList.title": {
-    "message": "推荐案例"
+    "message": "Favorites"
   },
   "showcase.usersList.allUsers": {
-    "message": "所有案例"
+    "message": "All Cases"
   },
   "showcase.searchBar.placeholder": {
-    "message": "搜索名称..."
+    "message": "Search by name..."
   },
   "showcase.filters.title": {
-    "message": "标签过滤"
+    "message": "Filtering"
   },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
