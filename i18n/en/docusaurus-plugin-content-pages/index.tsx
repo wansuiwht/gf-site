@@ -53,23 +53,18 @@ function HomepageHeader() {
 
                 <div className="container mt-5 text-left">
                     <p>
-                        <code>GoFrame</code> is a modular, high-performance, enterprise-grade <code>Go</code> development framework.
-                        <code>GoFrame</code> is a general-purpose development framework that provides a wealth of foundational components,
-                        which can be used for developing complete engineering projects or as a standalone utility library.
-                    </p>
-                    <p>
-                        If you want to use <code>Golang</code> to develop a business-oriented project, whether it’s a small-scale or medium-to-large-scale project,
-                        <code>GoFrame</code> is your best choice. If you aim to develop a <code>Golang</code> component library,
-                        <code>GoFrame</code> offers out-of-the-box, powerful foundational component libraries to help you achieve twice the result with half the effort.
-                        If you are a team <code>Leader</code>, the rich documentation, detailed code comments, and active community of <code>GoFrame</code>
-                        will significantly reduce your guidance costs, enabling your team to quickly adopt it, transition languages, and enhance skills.
+                        GoFrame is a modular, high-performance, enterprise-grade Go framework,
+                        offering rich components for full projects or standalone use.
+                        Whether building a small or large project, or developing a Golang library, 
+                        GoFrame boosts efficiency with powerful, ready-to-use tools. Its rich documentation, 
+                        detailed comments, and active community make it easy for teams to adopt and grow quickly.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2 mt-6">
                     <div className="flex justify-center md:justify-end">
                         <Link className="button button--primary button--md"
                             to="/quick/install" style={{ width: '200px' }}>
-                            快速开始 →
+                            Quick Start →
                         </Link>
                     </div>
 
@@ -96,129 +91,130 @@ function Features() {
         <section>
             <div className="container mt-20">
                 <h1 className="text-center largest font-bold">
-                    框架特点
+                    Features
                 </h1>
                 <div className="text-center mb-10">
-                    强大的开发框架助您的项目快速成型、易于维护、事半功倍。
+                A powerful framework for faster, easier, and more efficient project development.
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">工程完备</h3>
+                            <h3 className="mb-2">Comprehensive Engineering</h3>
                             <div className="mb-2">
-                                多年工程实践经验沉淀，涵盖从项目构建到代码组织等全流程工具规范，保障团队少走弯路、稳定交付。
+                                Built on years of engineering experience, covering the entire process from project setup to code organization, ensuring fewer detours and stable delivery for teams.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">开箱即用</h3>
+                            <h3 className="mb-2">Out Of Box</h3>
                             <div className="mb-2">
-                                提供数据库、网络服务、缓存管理、数据校验、日志记录等丰富组件，为企业级应用开发提供全面支持。
+                                Offers rich components like database, network services, cache management, data validation, and logging, providing comprehensive support for enterprise application development.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">性能卓越</h3>
+                            <h3 className="mb-2">Outstanding Performance</h3>
                             <div className="mb-2">
-                                轻松处理大量并发请求，经过优化的内部算法和数据结构，使得框架在执行各种操作时速度更快。
+                                Handles high-concurrency requests with ease, featuring optimized algorithms and data structures for faster execution of various operations.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">跨平台性</h3>
+                            <h3 className="mb-2">Cross-Platform</h3>
                             <div className="mb-2">
-                                出色的跨平台性，能够在不同操作系统（如 Windows、Linux、Mac OS 等）上无缝运行。
+                            Offers excellent cross-platform compatibility, seamlessly running on a variety of operating systems, including Windows, Linux, and Mac OS, ensuring broad adaptability.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">松耦合性</h3>
+                            <h3 className="mb-2">Loose Coupling</h3>
                             <div className="mb-2">
-                                组件模块独立，通过清晰接口交互，方便修改替换，增强开发灵活性与系统稳定性。
+                                Independent components and modules interact through clear interfaces, making it easy to modify or replace them, enhancing development flexibility and system stability.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">高扩展性</h3>
+                            <h3 className="mb-2">High Scalability</h3>
                             <div className="mb-2">
-                                灵活的接口设计，允许开发者轻松添加新功能、模块或集成第三方库以满足不同的业务需求。
+                                Flexible interface design allows developers to easily add new features, modules, or integrate third-party libraries to meet various business needs.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">详尽的开发文档</h3>
+                            <h3 className="mb-2">Comprehensive Documentation</h3>
                             <div className="mb-2">
-                                涵盖框架各个方面的开发文档，从基础使用到高级特性，为开发者提供全面、细致且易理解的参考资料。
+                                Detailed documentation covering all aspects of the framework, from basic usage to advanced features, providing developers with thorough and easy-to-understand references.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">活跃的社区支持</h3>
+                            <h3 className="mb-2">Active Community Support</h3>
                             <div className="mb-2">
-                                拥有活跃的社区，成员们积极交流、分享经验、协作互助，为开发者提供丰富的资源和及时的支持。
+                                A vibrant community where members actively exchange ideas, share experiences, and collaborate, providing developers with abundant resources and timely support.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">优秀的错误处理</h3>
+                            <h3 className="mb-2">Convenient Configuration</h3>
                             <div className="mb-2">
-                                清晰准确地捕获、分类和提示错误，帮助开发者快速定位问题，有效提升程序的稳定性和可维护性。
+                            Flexible and efficient configuration management supports multiple formats, environments, and dynamic loading, enhancing development and management ease.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div className="card p-8 box-border">
+                            <h3 className="mb-2">Robust Error Handling</h3>
+                            <div className="mb-2">
+                                Clearly and accurately captures, categorizes, and reports errors, helping developers quickly locate issues and significantly improve program stability and maintainability.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">输入验证与过滤</h3>
+                            <h3 className="mb-2">Input Validation and Filtering</h3>
                             <div className="mb-2">
-                                内置了强大的输入验证和过滤机制，能够有效防止各种恶意输入，如 SQL 注入、跨站脚本攻击(XSS)等。
+                                Built-in powerful input validation and filtering mechanisms to effectively prevent malicious inputs, such as SQL injection and cross-site scripting (XSS) attacks.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">代码生成工具链</h3>
+                            <h3 className="mb-2">Code Generation Toolchain</h3>
                             <div className="mb-2">
-                                高效便捷的代码生成工具链，极大提高开发效率，减少重复性工作，同时保证代码的规范性和一致性。
+                                Efficient and convenient code generation toolchain that significantly boosts development efficiency, reduces repetitive tasks, and ensures code standardization and consistency.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">自动化接口文档</h3>
+                            <h3 className="mb-2">Automated API Documentation</h3>
                             <div className="mb-2">
-                                根据代码结构自动生成清晰、规范的接口文档，节省人工编写时间，提高文档与代码的同步性和准确性。
+                            Automatically generates clear and standardized API documentation from code structure, reducing manual work and ensuring synchronization and accuracy.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">HTTP Web&微服务开发</h3>
+                            <h3 className="mb-2">Web & Microservice Development</h3>
                             <div className="mb-2">
-                                具备强大的功能和工具集，可高效构建稳定、高性能且易于扩展的 Web 应用和微服务体系。
+                                Equipped with powerful features and toolsets to efficiently build stable, high-performance, and scalable web applications and microservice architectures.
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="card p-8 box-border">
-                            <h3 className="mb-2">OpenTelemetry可观测性</h3>
+                            <h3 className="mb-2">OpenTelemetry Observability</h3>
                             <div className="mb-2">
-                                精准地追踪、监控应用的指标和行为，为开发者提供深入的洞察，助力优化应用性能与可靠性。
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="card p-8 box-border">
-                            <h3 className="mb-2">更好的中文化支持</h3>
-                            <div className="mb-2">
-                                提供丰富的本地中文化文档资料、社区资源支持，针对大中国区的团队和企业用户更加友好。
+                                Accurately tracks and monitors application metrics and behaviors, providing developers with deep insights to optimize application performance and reliability.
                             </div>
                         </div>
                     </div>
@@ -227,8 +223,8 @@ function Features() {
             <div className="container mt-5 text-center">
                 <Link
                     className="button button--secondary button--md hover:bg-gray-200"
-                    to="/docs/design" style={{ width: '200px' }}>
-                    了解更多 →
+                    to="/docs/cli" style={{ width: '200px' }}>
+                    Learn More →
                 </Link>
             </div>
         </section>
@@ -240,20 +236,20 @@ function Users() {
         <section>
             <div className="container mt-20">
                 <h1 className="text-center largest font-bold">
-                    用户列表
+                    Users
                 </h1>
                 <div className="text-center mb-10">
-                    在这里列举了部分知名用户，如果您的企业或者产品正在使用<code>GoFrame</code>，欢迎联系我们。
+                Here are part of our users. If your company or product is using GoFrame, feel free to contact us.
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.tencent.com/" target="_blank">腾讯科技</a>
+                        <a href="https://www.tencent.com/" target="_blank">Tencent</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.antfin.com/" target="_blank">蚂蚁金服</a>
+                        <a href="https://www.antfin.com/" target="_blank">Ant Finacial</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.zte.com.cn/china/" target="_blank">中兴科技</a>
+                        <a href="https://www.zte.com.cn/china/" target="_blank">ZTE</a>
                     </div>
                     <div className="card p-5 box-border text-center">
                         <a href="https://www.vivo.com/" target="_blank">VIVO</a>
@@ -262,19 +258,19 @@ function Users() {
                         <a href="https://igg.com/" target="_blank">IGG</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.ximalaya.com/" target="_blank">喜马拉雅</a>
+                        <a href="https://www.ximalaya.com/" target="_blank">XiMaLaYa</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.37.com/" target="_blank">三七互娱</a>
+                        <a href="https://www.37.com/" target="_blank">37 Games</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.medlinker.com/" target="_blank">医联科技</a>
+                        <a href="https://www.medlinker.com/" target="_blank">Medlinker</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.zybang.com/" target="_blank">作业帮</a>
+                        <a href="https://www.zybang.com/" target="_blank">ZYBang</a>
                     </div>
                     <div className="card p-5 box-border text-center">
-                        <a href="https://www.leyoujia.com/" target="_blank">乐有家</a>
+                        <a href="https://www.leyoujia.com/" target="_blank">LeYouJia</a>
                     </div>
                 </div>
             </div>
@@ -287,10 +283,10 @@ function Contributors() {
         <section>
             <div className="container mt-20">
                 <h1 className="text-center largest font-bold">
-                    贡献者列表
+                    Contributors
                 </h1>
                 <div className="text-center mb-5">
-                    💖感谢所有参与<code>GoFrame</code>开源建设的贡献者💖
+                    💖Thanks to all the contributors who made GoFrame possible💖
                 </div>
                 <div className="contributors text-center">
                     {
