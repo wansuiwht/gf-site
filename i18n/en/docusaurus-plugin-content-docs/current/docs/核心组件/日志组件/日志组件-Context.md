@@ -73,10 +73,10 @@ Stack:
 
 ## Delivery to `Handler`
 
-If a developer customizes a `Handler` for the log object, each `ctx` context variable passed during log printing will be delivered to the `Handler`. For an introduction to log `Handler`, please refer to the section: [Log Component-Handler](日志组件-Handler.md)
+If a developer customizes a `Handler` for the log object, each `ctx` context variable passed during log printing will be delivered to the `Handler`. For an introduction to log `Handler`, please refer to the section: [Logging - Handler](日志组件-Handler.md)
 
 ## Trace Support
 
-The `glog` component supports the OpenTelemetry standard trace feature, which is built-in and requires no setup from the developer. For more information, please refer to the section: [Service Trace](../../服务可观测性/服务链路跟踪/服务链路跟踪.md)
+The `glog` component supports the OpenTelemetry standard trace feature, which is built-in and requires no setup from the developer. For more information, please refer to the section: [Service Tracing](../../服务可观测性/服务链路跟踪/服务链路跟踪.md)
 
 ![](/markdown/a6ade54c58ba067b6be203a6e17b15e5.png)

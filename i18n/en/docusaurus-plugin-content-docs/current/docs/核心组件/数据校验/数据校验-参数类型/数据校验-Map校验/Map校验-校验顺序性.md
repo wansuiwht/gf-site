@@ -55,4 +55,4 @@ passport map[length:账号长度应当在6到16之间 required:账号不能为�
 账号不能为空
 ```
 
-As you can see, if we want the validation results to maintain order, we just need to change the type of the `rules` parameter to `[]string` and set them according to a certain rule. Furthermore, the `msgs` parameter can be defined directly in the `rules` parameter or passed separately (using a third parameter). For detailed rules on writing validation rules in `rules`, please refer to the chapter [Struct Validation - Basic Usage](../数据校验-Struct校验/Struct校验-基本使用.md).
+As you can see, if we want the validation results to maintain order, we just need to change the type of the `rules` parameter to `[]string` and set them according to a certain rule. Furthermore, the `msgs` parameter can be defined directly in the `rules` parameter or passed separately (using a third parameter). For detailed rules on writing validation rules in `rules`, please refer to the chapter [Struct Validation - Example](../数据校验-Struct校验/Struct校验-基本使用.md).

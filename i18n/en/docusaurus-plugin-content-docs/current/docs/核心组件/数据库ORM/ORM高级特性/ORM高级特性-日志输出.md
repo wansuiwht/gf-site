@@ -9,7 +9,7 @@ description: "The log output functionality of the ORM component in the GoFrame f
 :::danger
 The output of `ORM` logs is formatted and displayed for reading and debugging before submitting to the underlying database `driver`. It formats and prints the chain operations or templates and execution parameters composed of `SQL`. Since the underlying `driver` may perform a secondary conversion of the submitted parameters, the log output here is for reference only and does not fully represent the actual SQL statements executed by the underlying layer.
 :::
-Log output often prints some debugging or `SQL` statements. The log object can be set via the `SetLogger/GetLogger` methods or configured in a configuration file. Please refer to the [ORM Configuration Usage](../ORM使用配置/ORM使用配置.md) section for log configuration. Below is a configuration example with log output enabled:
+Log output often prints some debugging or `SQL` statements. The log object can be set via the `SetLogger/GetLogger` methods or configured in a configuration file. Please refer to the [ORM - Configuration](../ORM使用配置/ORM使用配置.md) section for log configuration. Below is a configuration example with log output enabled:
 
 ```yaml
 database:
@@ -41,6 +41,6 @@ As you can see, the log contains the following parts of information:
 1. Date and time, accurate to the millisecond.
 2. Log level. Since `SQL` logs are mainly used for function debugging/problem troubleshooting, it is often necessary to turn them off in a production environment. Therefore, the log level is fixed to the `DEBUG` level.
 3. The execution time of the current `SQL`, from when the client makes a request to when the data is received, in milliseconds. If the execution time is less than `1` millisecond, it is displayed as `0` milliseconds.
-4. The database configuration group where the current `SQL` is located, default is `default`. For an introduction to configuration groups, please refer to the section: [ORM Configuration Usage](../ORM使用配置/ORM使用配置.md).
-5. The **Transaction ID** to which the current `SQL` belongs. If the current `SQL` does not belong to a transaction operation, this field is not present. For an introduction to Transaction IDs, please refer to the section: [ORM Transaction Processing](../ORM事务处理/ORM事务处理.md).
+4. The database configuration group where the current `SQL` is located, default is `default`. For an introduction to configuration groups, please refer to the section: [ORM - Configuration](../ORM使用配置/ORM使用配置.md).
+5. The **Transaction ID** to which the current `SQL` belongs. If the current `SQL` does not belong to a transaction operation, this field is not present. For an introduction to Transaction IDs, please refer to the section: [ORM - Transaction](../ORM事务处理/ORM事务处理.md).
 6. The specific `SQL` statement executed. It should be noted that since `SQL` pre-processing is used at the bottom, the `SQL` statement here is the result of automatic splicing by the component and is for reference only.

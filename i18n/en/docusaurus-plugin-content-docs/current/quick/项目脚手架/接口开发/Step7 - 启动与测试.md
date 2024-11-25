@@ -46,7 +46,7 @@ According to the address printed in the terminal, we visit: http://127.0.0.1:800
 ![goframe api swagger](QQ_1731747246720.png)
 
 :::tip
-Automated API documentation generation is one of the very powerful features provided by the `GoFrame` framework. We won't go into detail here, but those interested can refer to the section: [API Documentation](../../../docs/WEB服务开发/接口文档/接口文档.md)
+Automated API documentation generation is one of the very powerful features provided by the `GoFrame` framework. We won't go into detail here, but those interested can refer to the section: [API Document](../../../docs/WEB服务开发/接口文档/接口文档.md)
 :::
 
 ## API Testing

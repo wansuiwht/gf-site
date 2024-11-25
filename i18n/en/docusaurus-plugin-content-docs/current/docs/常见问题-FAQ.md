@@ -19,7 +19,7 @@ Message:
 Using the `GoFrame` framework is rigorous and safe. If a program throws an exception, it will be captured by the framework by default. If it is not automatically captured, it may be due to the program logic opening new `goroutine`s independently, causing an exception in the new `goroutine`. So there are two options for you to choose from:
 
 - It is not recommended to open `goroutine` in a request to handle the request, as this may cause `goroutine` to expand rapidly. When there are too many `goroutine`s, it will also affect the overall scheduling of the program at the `Go` engine level.
-- If it is really necessary to start a new `goroutine`, consider using `grpool.AddWithRecover` to create a new `goroutine`, which captures exceptions automatically. For more detailed information, please refer to: [Coroutine Management - grpool](组件列表/系统相关/协程管理-grpool.md).
+- If it is really necessary to start a new `goroutine`, consider using `grpool.AddWithRecover` to create a new `goroutine`, which captures exceptions automatically. For more detailed information, please refer to: [Goroutine](组件列表/系统相关/协程管理-grpool.md).
 
 ### 2. Shield some fields in `json` output
 
@@ -72,7 +72,7 @@ Solution, upgrade `gf` dependency to `v1.16.9` then `go mod tidy`
 
 ## III. Database Issues
 
-Please refer to the section: [Common ORM Questions](核心组件/数据库ORM/ORM常见问题.md)
+Please refer to the section: [ORM - FAQ](核心组件/数据库ORM/ORM常见问题.md)
 
 ## IV. Usage Issues
 
@@ -81,14 +81,14 @@ Please refer to the section: [Common ORM Questions](核心组件/数据库ORM/OR
 Different environments refer to: Development environment / Testing environment / Pre-production environment / Production environment, etc.
 
 - First of all, in some internet projects, especially under distributed or microservice architecture, a configuration management center is often used, corresponding to different environments, so such a problem will not arise.
-- Secondly, if it is under the traditional project management method, the configuration files may be managed together in the code repository, which is not recommended. If you still want to do this, you can let the program automatically select the configuration file or specify the configuration directory through system environment variables or command-line startup parameters, reference [Configuration Management](核心组件/配置管理/配置管理.md) section. For example: `./app --gf.gcfg.file config-prod.toml ` then the default configuration file is modified to `config-prod.toml` file by command-line startup parameters.
+- Secondly, if it is under the traditional project management method, the configuration files may be managed together in the code repository, which is not recommended. If you still want to do this, you can let the program automatically select the configuration file or specify the configuration directory through system environment variables or command-line startup parameters, reference [Configuration](核心组件/配置管理/配置管理.md) section. For example: `./app --gf.gcfg.file config-prod.toml ` then the default configuration file is modified to `config-prod.toml` file by command-line startup parameters.
 
 We do not recommend distinguishing and reading different environment configuration files through code logic in the program.
 
 
 ### 2. `glog with "ERROR: logging before flag.Parse"`
 
-There is a simple logging library package from `Golang` also called `glog`, check the package name at the top of your file `import`, change `github.com/golang/glog` to the framework's logging component, please refer to: [Logging Component](核心组件/日志组件/日志组件.md)
+There is a simple logging library package from `Golang` also called `glog`, check the package name at the top of your file `import`, change `github.com/golang/glog` to the framework's logging component, please refer to: [Logging](核心组件/日志组件/日志组件.md)
 
 ### 3. How to use `gcron` and `http` at the same time?
 
@@ -116,19 +116,19 @@ Note, `gcron` must be before `g.Server().Run`.
 
 Parameter requests, data validation, `OpenAPIv3`, command management, database ORM.
 
-| Tag (Abbreviation) | Full Name | Description | Related Documents |
+| Tag (Abbreviation) | Full Name | Description | Documents |
 | --- | --- | --- | --- |
-| `v` | `valid` | Data validation tag. | [Struct Validation - Basic Usage](核心组件/数据校验/数据校验-参数类型/数据校验-Struct校验/Struct校验-基本使用.md) |
-| `p` | `param` | Custom request parameter matching. | [Request Input - Object Handling](WEB服务开发/请求输入/请求输入-对象处理.md) |
-| `d` | `default` | Default value binding for request parameters. | [Request Input - Default Value Binding](WEB服务开发/请求输入/请求输入-默认值绑定.md) |
-| `orm` | `orm` | ORM tag, used to specify table name, association relationships. | [Data Specification - gen dao](开发工具/代码生成-gen/数据规范-gen%20dao.md)<br />[Model Associations - Static Associations - With Feature](核心组件/数据库ORM/ORM链式操作/ORM链式操作-模型关联/模型关联-静态关联-With特性.md) |
+| `v` | `valid` | Data validation tag. | [Struct Validation - Example](核心组件/数据校验/数据校验-参数类型/数据校验-Struct校验/Struct校验-基本使用.md) |
+| `p` | `param` | Custom request parameter matching. | [Request - Object Conversion](WEB服务开发/请求输入/请求输入-对象处理.md) |
+| `d` | `default` | Default value binding for request parameters. | [Request - Default Value](WEB服务开发/请求输入/请求输入-默认值绑定.md) |
+| `orm` | `orm` | ORM tag, used to specify table name, association relationships. | [Dao/Do/Entity Generating](开发工具/代码生成-gen/数据规范-gen%20dao.md)<br />[Model Association - With](核心组件/数据库ORM/ORM链式操作/ORM链式操作-模型关联/模型关联-静态关联-With特性.md) |
 | `dc` | `description` | Generic struct property description, used by both ORM and interfaces. Belongs to the framework's default property description tag. |  |
 
 Others:
 
-- Command-line structured management parameters: [Command Management - Structured Parameters](核心组件/命令管理/命令管理-结构化参数.md)
+- Command-line structured management parameters: [Command - Structure](核心组件/命令管理/命令管理-结构化参数.md)
 - Framework commonly used tag labels are centrally managed under the `gtag` component: [https://github.com/gogf/gf/blob/master/util/gtag/gtag.go](https://github.com/gogf/gf/blob/master/util/gtag/gtag.go)
-- In the interface documentation section, as the label form is used to generate the `OpenAPI` documentation, there are many tags, please refer to the section: [API Documentation](WEB服务开发/接口文档/接口文档.md)
+- In the interface documentation section, as the label form is used to generate the `OpenAPI` documentation, there are many tags, please refer to the section: [API Document](WEB服务开发/接口文档/接口文档.md)
 
 ### 5. `HTTP Server` throws `context cancel` error
 
@@ -188,4 +188,4 @@ Build Time: 2021-03-30 15:43:22
 
 ### 3. `gf` command not found on `Win10`
 
-Solution: Install `gf.exe` Refer to: [Development Tools](开发工具/开发工具.md)
+Solution: Install `gf.exe` Refer to: [CLI Tool](开发工具/开发工具.md)

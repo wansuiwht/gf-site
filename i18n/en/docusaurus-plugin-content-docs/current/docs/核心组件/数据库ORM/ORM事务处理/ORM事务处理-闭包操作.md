@@ -57,4 +57,4 @@ g.DB().Transaction(context.TODO(), func(ctx context.Context, tx gdb.TX) error {
 })
 ```
 
-The closure operation method allows for easy implementation of nested transactions, and it is essentially transparent to upper-level business developers. For more details, you can continue reading the chapter: [ORM Transaction Handling - Nested Transactions](ORM事务处理-嵌套事务.md)
+The closure operation method allows for easy implementation of nested transactions, and it is essentially transparent to upper-level business developers. For more details, you can continue reading the chapter: [ORM Transaction - Nested](ORM事务处理-嵌套事务.md)

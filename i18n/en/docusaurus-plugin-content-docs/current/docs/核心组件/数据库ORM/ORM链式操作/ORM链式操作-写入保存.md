@@ -33,7 +33,7 @@ These chained operation methods are used for data insertion and support automati
     }).OnConflict("id").Save()
     ```
 
-> Some database types do not support `Replace/Save` methods. Refer to the [Chained Operations](../ORM链式操作/ORM链式操作.md) section for details.
+> Some database types do not support `Replace/Save` methods. Refer to the [ORM - Model 🔥](../ORM链式操作/ORM链式操作.md) section for details.
 
 These methods need to be used in conjunction with the `Data` method, which is used to pass data parameters for data insertion/updating and other write operations.
 
@@ -158,7 +158,7 @@ g.Model("user").Data(g.List{
 
 ## `RawSQL` Statement Embedding
 
-`gdb.Raw` is a string type whose parameters will be directly embedded as `SQL` fragments into the final `SQL` statement submitted to the underlying database, not automatically converted to string parameter types, nor treated as preprocessed parameters. For more details, refer to the section: [Advanced ORM Features-RawSQL](../ORM高级特性/ORM高级特性-RawSQL.md). For example:
+`gdb.Raw` is a string type whose parameters will be directly embedded as `SQL` fragments into the final `SQL` statement submitted to the underlying database, not automatically converted to string parameter types, nor treated as preprocessed parameters. For more details, refer to the section: [ORM Senior - RawSQL](../ORM高级特性/ORM高级特性-RawSQL.md). For example:
 
 ```go
 // INSERT INTO `user`(`id`,`passport`,`password`,`nickname`,`create_time`) VALUES('id+2','john','123456','now()')

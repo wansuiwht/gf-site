@@ -55,7 +55,7 @@ redisCache := gcache.NewAdapterRedis(g.Redis())
 g.DB().GetCache().SetAdapter(redisCache)
 ```
 
-For more information, refer to: [Cache Management - Redis Cache](../../缓存管理/缓存管理-Redis缓存.md)
+For more information, refer to: [Caching - Redis](../../缓存管理/缓存管理-Redis缓存.md)
 
 ### Management Methods
 

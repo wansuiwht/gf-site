@@ -116,7 +116,7 @@ NickName      Nick_Name            match
 Nick-Name     Nick_Name            match
 ```
 :::tip
-The conversion from a database result set to `struct` relies on the `gconv.Struct` method. Therefore, if you want to achieve **custom attribute conversion**, and for more detailed mapping rules, please refer to the section on [Type Conversion - Struct Conversion](../../类型转换/类型转换-Struct转换.md).
+The conversion from a database result set to `struct` relies on the `gconv.Struct` method. Therefore, if you want to achieve **custom attribute conversion**, and for more detailed mapping rules, please refer to the section on [Type Conversion - Struct](../../类型转换/类型转换-Struct转换.md).
 :::
 ## 3. `Result` Data Collection
 
@@ -124,7 +124,7 @@ The `Result/Record` data types, based on the requirement to manipulate the resul
 
 API documentation: [https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb](https://pkg.go.dev/github.com/gogf/gf/v2/database/gdb)
 
-Due to the simplicity of the methods, there are no examples here. However, pay attention to two frequently used methods: `Record.Map` and `Result.List`, which are used to convert the `ORM` query result information into data types suitable for display. Since the field values of the result set are natively of `[]byte` type, although a new `Value` type has been encapsulated and provides dozens of common type conversion methods (for more, please read the section on [Generic Type - gvar](../../../组件列表/数据结构/泛型类型-gvar/泛型类型-gvar.md)), most often we need to directly return the result `Result` or `Record` as `json` or `xml` data structures, requiring conversion.
+Due to the simplicity of the methods, there are no examples here. However, pay attention to two frequently used methods: `Record.Map` and `Result.List`, which are used to convert the `ORM` query result information into data types suitable for display. Since the field values of the result set are natively of `[]byte` type, although a new `Value` type has been encapsulated and provides dozens of common type conversion methods (for more, please read the section on [Generic](../../../组件列表/数据结构/泛型类型-gvar/泛型类型-gvar.md)), most often we need to directly return the result `Result` or `Record` as `json` or `xml` data structures, requiring conversion.
 
 Usage example:
 

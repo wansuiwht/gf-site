@@ -34,7 +34,7 @@ EXAMPLE
     gf pack /var/www/public packed/data.go -n=packed
 ```
 
-This command is used to package any file into a resource file or a `Go` code file, allowing any file to be packaged and distributed along with the executable file. Additionally, the `build` command supports packaging and compiling in one step; please refer to the `build` command help for details. For an introduction to resource management, please refer to the [Resource Management](../核心组件/资源管理/资源管理.md) section.
+This command is used to package any file into a resource file or a `Go` code file, allowing any file to be packaged and distributed along with the executable file. Additionally, the `build` command supports packaging and compiling in one step; please refer to the `build` command help for details. For an introduction to resource management, please refer to the [Resource](../核心组件/资源管理/资源管理.md) section.
 
 ## Examples
 
@@ -48,4 +48,4 @@ total 184
 
 ## Further Reading
 
-- [Resource Management - Best Practices](../核心组件/资源管理/资源管理-最佳实践.md)
+- [Resource - Best Practices](../核心组件/资源管理/资源管理-最佳实践.md)

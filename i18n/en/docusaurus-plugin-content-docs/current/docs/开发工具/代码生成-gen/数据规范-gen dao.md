@@ -9,7 +9,7 @@ description: "Usage and parameter configuration of the gen dao command in the Go
 
 The `gen dao` command is the most frequently used command in the `CLI` and is crucial for the accurate implementation of the framework’s engineering specifications. This command is used to generate `dao` data access objects, `do` data transformation models, and `entity` instance data model `Go` code files. Due to the numerous parameters and options for this command, it is recommended to manage generation rules using configuration files.
 :::tip
-For an introduction to the framework's project engineering specifications, please see the section [Code Layered Design](../../框架设计/工程开发设计/代码分层设计.md).
+For an introduction to the framework's project engineering specifications, please see the section [Code Layering](../../框架设计/工程开发设计/代码分层设计.md).
 :::
 ## Usage
 
@@ -123,7 +123,7 @@ gfcli:
 | Name | Default Value | Meaning | Example |
 | --- | --- | --- | --- |
 | `gfcli.gen.dao` |  | `dao` code generation configuration items, can have multiple configuration items to form an array, supporting multiple database generation. Different databases can set different generation rules, for example, they can be generated to different locations or files. | - |
-| `link`|  | **Required Parameter**. It consists of two parts, the first part represents your connected database type `mysql`, `postgresql`, etc., while the second part is the `dsn` information for the connection. For specific details, please refer to the section [ORM Usage Configuration](../../核心组件/数据库ORM/ORM使用配置/ORM使用配置.md). | - |
+| `link`|  | **Required Parameter**. It consists of two parts, the first part represents your connected database type `mysql`, `postgresql`, etc., while the second part is the `dsn` information for the connection. For specific details, please refer to the section [ORM - Configuration](../../核心组件/数据库ORM/ORM使用配置/ORM使用配置.md). | - |
 | `path` | `internal` | The storage **directory** address for generated `dao` and `model` files. | `./app` |
 | `group` | `default` | Database group name in the database configuration. Only one name can be configured. The group name in the database configuration file is often not modified once determined. | `default`<br />`order`<br />`user` |
 | `prefix` |  | Prefixes for the generated database objects and files to distinguish between different databases or the same table names in different databases, to prevent data table name overwriting. | `order_`<br />`user_` |
@@ -192,7 +192,7 @@ Repository address: [https://github.com/gogf/focus-single](https://github.com/go
 | Path | Description | Detailed Introduction |
 | --- | --- | --- |
 | `/internal/dao` | Data Access Object | Accesses the underlying data source through the object-oriented way, based on the `ORM` component. Often used in combination with `entity` and `do`. Files in this directory can be extended and modified by developers. |
-| `/internal/model/do` | Data Transformation Model | The data transformation model is used for converting business models to data models, maintained by tools, and should not be modified by users. The tool will overwrite this directory each time code files are generated. For an introduction to `do` files, please refer to:<br />- [Data and Business Models](../../框架设计/工程开发设计/数据模型与业务模型.md)<br />- [DAO-Project Pain Points and Improvement](../../框架设计/工程开发设计/DAO封装设计/DAO-工程痛点及改进.md)<br />- [Achieving Flexible Modification Interface Using Pointer Attributes and do](../../核心组件/数据库ORM/ORM最佳实践/利用指针属性和do对象实现灵活的修改接口.md) |
+| `/internal/model/do` | Data Transformation Model | The data transformation model is used for converting business models to data models, maintained by tools, and should not be modified by users. The tool will overwrite this directory each time code files are generated. For an introduction to `do` files, please refer to:<br />- [Data and Business Models](../../框架设计/工程开发设计/数据模型与业务模型.md)<br />- [Pain Points and Improvements In Business Project](../../框架设计/工程开发设计/DAO封装设计/DAO-工程痛点及改进.md)<br />- [Utilizing Pointer Properties and Do Objects for Flexible Modification Interfaces](../../核心组件/数据库ORM/ORM最佳实践/利用指针属性和do对象实现灵活的修改接口.md) |
 | `/internal/model/entity` | Data Model | The data model is maintained by tools and should not be modified by users. The tool will overwrite this directory each time code files are generated. |
 
 2. Models in the `model` directory are divided into two categories: **Data Models** and **Business Models**.

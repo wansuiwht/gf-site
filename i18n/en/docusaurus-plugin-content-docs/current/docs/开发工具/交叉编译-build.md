@@ -24,7 +24,7 @@ The `build` command automatically embeds compilation variables, which users can 
 
 ## Compilation Configuration File
 
-The `build` supports specifying compilation parameters and options from both the command line and configuration file. All components and ecosystem projects of the `GoFrame` framework use the same configuration management component. For the default configuration file and usage, refer to the chapter [Configuration Management](../核心组件/配置管理/配置管理.md). Below is a simple configuration example for reference:
+The `build` supports specifying compilation parameters and options from both the command line and configuration file. All components and ecosystem projects of the `GoFrame` framework use the same configuration management component. For the default configuration file and usage, refer to the chapter [Configuration](../核心组件/配置管理/配置管理.md). Below is a simple configuration example for reference:
 
 ```yaml
 gfcli:
@@ -58,7 +58,7 @@ The definitions of configuration options are the same as the command line option
 | `exitWhenError` | `false` | Immediately stop and exit the compilation process (using `os.Exit(1)`) on errors during compilation |  |
 | `dumpEnv` | `false` | Prints the environment variable information of the current compilation environment in the terminal before each compilation |  |
 :::tip
-The built-in variables during compilation can be obtained at runtime through the `gbuild` package [Build Information-gbuild](../组件列表/系统相关/构建信息-gbuild.md).
+The built-in variables during compilation can be obtained at runtime through the `gbuild` package [Build Information](../组件列表/系统相关/构建信息-gbuild.md).
 :::
 ## Usage Example
 

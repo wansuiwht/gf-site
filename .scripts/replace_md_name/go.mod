@@ -1,4 +1,4 @@
-module replace
+module replace_md_name
 
 go 1.23.1
 

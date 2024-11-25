@@ -7,7 +7,7 @@ keywords: [CORS, Cross-Domain Requests, GoFrame, Middleware, AJAX, Origin, CORSO
 description: "Handling CORS cross-domain requests using the GoFrame framework, setting cross-domain rules with routing management and middleware, allowing WebSocket cross-domain access. Provides CORS object and its configuration parameters, including default and restricted Origin settings. Additionally, it demonstrates basic usage methods, authorizing cross-domain Origin, and custom detection methods to achieve more flexible cross-domain request management."
 ---
 
-Allowing cross-domain access to APIs often requires using it in conjunction with [Routing Management - Middleware/Interceptors](../%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86/%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D.md) to uniformly set which API under certain routing rules can be accessed cross-domain. This method is also used to allow cross-domain access for `WebSocket` requests.
+Allowing cross-domain access to APIs often requires using it in conjunction with [Middleware - Intro](../路由管理/路由管理-中间件拦截器/中间件拦截器-基本介绍.md) to uniformly set which API under certain routing rules can be accessed cross-domain. This method is also used to allow cross-domain access for `WebSocket` requests.
 
 Related methods: [https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response](https://pkg.go.dev/github.com/gogf/gf/v2/net/ghttp#Response)
 

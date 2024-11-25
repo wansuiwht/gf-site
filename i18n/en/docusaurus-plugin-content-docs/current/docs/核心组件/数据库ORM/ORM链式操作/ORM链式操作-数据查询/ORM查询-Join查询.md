@@ -15,7 +15,7 @@ description: "How to use ORM for LeftJoin, RightJoin, and InnerJoin queries in t
 :::note
 Actually, we do not recommend using `Join` for join queries, especially in scenarios with large data volumes and high concurrent request volumes, as it can easily cause performance issues and increase maintenance complexity. It is recommended to use it when necessary.
 Additionally, you can refer to 
-[ORM Chaining Operations-Model Association](../ORM%E9%93%BE%E5%BC%8F%E6%93%8D%E4%BD%9C-%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94-%E5%8A%A8%E6%80%81%E5%85%B3%E8%81%94-ScanList.md) 
+[Model Association - ScanList](../ORM链式操作-模型关联/模型关联-动态关联-ScanList.md) 
 section where the database is responsible only for storing data and performing simple single-table operations, with data aggregation being implemented at the code level using the functionalities provided by `ORM`.
 :::
 Example usage:

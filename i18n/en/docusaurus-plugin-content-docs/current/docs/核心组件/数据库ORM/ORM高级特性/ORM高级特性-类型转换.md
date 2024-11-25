@@ -9,7 +9,7 @@ description: "Using the gdb module in the GoFrame framework to achieve advanced 
 
 The data record result (`Value`) of `gdb` supports very flexible type conversion and has built-in support for dozens of common data types.
 
-> The `Value` type is an alias for the `*gvar.Var` type, so you can use all the conversion methods of the `gvar.Var` data type. For details, please refer to the [Generic Type-gvar](../../../组件列表/数据结构/泛型类型-gvar/泛型类型-gvar.md) section.
+> The `Value` type is an alias for the `*gvar.Var` type, so you can use all the conversion methods of the `gvar.Var` data type. For details, please refer to the [Generic](../../../组件列表/数据结构/泛型类型-gvar/泛型类型-gvar.md) section.
 
 Example usage:
 

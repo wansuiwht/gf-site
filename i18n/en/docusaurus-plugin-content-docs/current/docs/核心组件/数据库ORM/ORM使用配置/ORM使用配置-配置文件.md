@@ -138,7 +138,7 @@ database:
 ```
 
 Where `database.logger` is the log configuration for `gdb`, which is a special configuration item. When this configuration does not exist, the default configuration of the logging component will be used.
-For more details, refer to the [Log Component - Configuration Management](../../../../docs/核心组件/日志组件/日志组件-配置管理.md) section.
+For more details, refer to the [Logging - Configuration](../../../../docs/核心组件/日志组件/日志组件-配置管理.md) section.
 :::warning
 Please note: since the `ORM` uses a secure preprocessing execution method at the lower layer, the submitted `SQL` and parameters are actually separate. Therefore, the complete `SQL` recorded in logs is for reference and convenient manual reading only and is not the actual `SQL` submitted to the lower layer.
 :::

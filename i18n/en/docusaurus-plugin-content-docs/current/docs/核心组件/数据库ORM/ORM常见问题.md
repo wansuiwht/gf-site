@@ -11,7 +11,7 @@ description: "Common issues that may be encountered while performing ORM operati
 
 ![](/markdown/7b384b6f57115b11938d9c0a30dde732.png)
 
-If this error occurs during database execution, it may be due to the local database connection pool connections having expired. You can check if the `MaxLifeTime` configuration set on the client exceeds the maximum timeout set by the database server. For more client configurations, please refer to the section: [ORM Usage Configuration](./ORM使用配置/ORM使用配置.md)
+If this error occurs during database execution, it may be due to the local database connection pool connections having expired. You can check if the `MaxLifeTime` configuration set on the client exceeds the maximum timeout set by the database server. For more client configurations, please refer to the section: [ORM - Configuration](./ORM使用配置/ORM使用配置.md)
 
 ## `update/insert` operations ineffective
 

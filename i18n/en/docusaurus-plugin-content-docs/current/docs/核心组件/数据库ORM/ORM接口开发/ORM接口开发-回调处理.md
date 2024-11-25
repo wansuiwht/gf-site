@@ -9,7 +9,7 @@ description: "When developing ORM interfaces using the GoFrame framework, custom
 
 ## Introduction
 
-Custom callback handling is the most common implementation in interface development, where it involves **replacing and modifying** some methods in the interface to inject custom logic into the default implementation of the driver. By referring to the interface relationship diagram ([ORM Interface Development](ORM接口开发.md)), we understand that all `SQL` statement executions will pass through the `DoQuery`, `DoExec`, or `DoFilter` interfaces. Depending on the requirements, you can **implement and override** the relevant interface methods in the custom driver to achieve the desired functionality.
+Custom callback handling is the most common implementation in interface development, where it involves **replacing and modifying** some methods in the interface to inject custom logic into the default implementation of the driver. By referring to the interface relationship diagram ([ORM - Interface](ORM接口开发.md)), we understand that all `SQL` statement executions will pass through the `DoQuery`, `DoExec`, or `DoFilter` interfaces. Depending on the requirements, you can **implement and override** the relevant interface methods in the custom driver to achieve the desired functionality.
 
 A common use case is to perform **log recording or unified security checks** on `SQL` at the `ORM` lower layer.
 

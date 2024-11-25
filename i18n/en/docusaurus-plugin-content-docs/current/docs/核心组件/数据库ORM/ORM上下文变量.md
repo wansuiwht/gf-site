@@ -34,7 +34,7 @@ context deadline exceeded, SELECT SLEEP(10)
 
 ## Trace Information
 
-Context variables can also pass trace information, and when combined with the logging component, can print trace information to logs (only when `ORM` logging is enabled). Please refer to the trace topic chapter: [Service Trace](../../服务可观测性/服务链路跟踪/服务链路跟踪.md).
+Context variables can also pass trace information, and when combined with the logging component, can print trace information to logs (only when `ORM` logging is enabled). Please refer to the trace topic chapter: [Service Tracing](../../服务可观测性/服务链路跟踪/服务链路跟踪.md).
 
 ## Model Context Operations
 
@@ -67,4 +67,4 @@ The `SHOW FULL COLUMNS FROM `user`` query is used by the `ORM` component to fetc
 :::
 ## Nested Transaction Support
 
-Support for nested transactions relies on hierarchical passing of `Context` variables. For details, please refer to the chapter: [ORM Transaction Handling](ORM事务处理/ORM事务处理.md).
+Support for nested transactions relies on hierarchical passing of `Context` variables. For details, please refer to the chapter: [ORM - Transaction](ORM事务处理/ORM事务处理.md).

@@ -9,7 +9,7 @@ description: "Type conversion methods in the GoFrame framework, focusing on usin
 
 ## Introduction
 
-As previously mentioned, the `Struct` method can be used for the conversion of `struct` objects; similarly, the conversion of `struct` arrays is achieved using the `Structs` method. The `Structs` method is built upon the `Struct` method, and all conversion rules are the same as `Struct`, with additional support for `struct` array types. Before understanding the `Structs` method, it is recommended to first understand the introduction to the `Struct` method: [Type Conversion - Struct Conversion](类型转换-Struct转换.md)
+As previously mentioned, the `Struct` method can be used for the conversion of `struct` objects; similarly, the conversion of `struct` arrays is achieved using the `Structs` method. The `Structs` method is built upon the `Struct` method, and all conversion rules are the same as `Struct`, with additional support for `struct` array types. Before understanding the `Structs` method, it is recommended to first understand the introduction to the `Struct` method: [Type Conversion - Struct](类型转换-Struct转换.md)
 
 ## Method Definition
 

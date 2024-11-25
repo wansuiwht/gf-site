@@ -104,7 +104,7 @@ g.Model("article").Where("id", 1).Decrement("views", 10000)
 
 ## `RawSQL` Statement Embedding
 
-`gdb.Raw` is a string type, and the parameter of this type will be directly embedded as an `SQL` fragment into the SQL statement submitted to the underlying layer. It will not be automatically converted to a string parameter type, nor treated as a pre-processing parameter. For more detailed introduction, please refer to the chapter: [Advanced ORM Features - RawSQL](../ORM高级特性/ORM高级特性-RawSQL.md). For example:
+`gdb.Raw` is a string type, and the parameter of this type will be directly embedded as an `SQL` fragment into the SQL statement submitted to the underlying layer. It will not be automatically converted to a string parameter type, nor treated as a pre-processing parameter. For more detailed introduction, please refer to the chapter: [ORM Senior - RawSQL](../ORM高级特性/ORM高级特性-RawSQL.md). For example:
 
 ```go
 // UPDATE `user` SET login_count='login_count+1',update_time='now()' WHERE id=1
@@ -149,4 +149,4 @@ g.Model("user").Delete("score < ", 60)
 
 ## Soft Delete Feature
 
-For soft delete feature details, please refer to the chapter: [ORM Chaining Operations - Time Maintenance](ORM链式操作-时间维护/ORM链式操作-时间维护.md)
+For soft delete feature details, please refer to the chapter: [ORM Model - Time Fields](ORM链式操作-时间维护/ORM链式操作-时间维护.md)

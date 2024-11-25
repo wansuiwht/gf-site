@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, Log Component, Writer Interface, Custom L
 description: "Use the Writer interface of the glog module in the GoFrame framework to customize log output. By implementing a custom Writer object, logs can be flexibly output to different targets such as files, standard output, and Graylog. Additionally, sample code is provided to demonstrate how to implement log HOOK functionality to promptly notify monitoring services of serious errors."
 ---
 :::tip
-The `Writer` interface is the lowest-level `IO` writing interface. If your business needs to customize the log content printing, it is recommended to use the `Handler` feature. Refer to the section: [Log Component - Handler](日志组件-Handler.md)
+The `Writer` interface is the lowest-level `IO` writing interface. If your business needs to customize the log content printing, it is recommended to use the `Handler` feature. Refer to the section: [Logging - Handler](日志组件-Handler.md)
 :::
 ## Custom `Writer` Interface
 

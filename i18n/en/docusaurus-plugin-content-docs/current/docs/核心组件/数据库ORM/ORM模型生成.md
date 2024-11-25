@@ -9,4 +9,4 @@ description: "GoFrame framework provides a simple ORM data table model auto gene
 
 ## Model Auto Generation
 
-The `GoFrame` framework supports highly convenient data table model generation features, implemented through the `gf gen dao/model` toolchain command. Please refer to the [Development Tools](../../开发工具/开发工具.md) section for details.
+The `GoFrame` framework supports highly convenient data table model generation features, implemented through the `gf gen dao/model` toolchain command. Please refer to the [CLI Tool](../../开发工具/开发工具.md) section for details.

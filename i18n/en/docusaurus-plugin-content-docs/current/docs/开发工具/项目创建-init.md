@@ -7,7 +7,7 @@ keywords: [GoFrame, GoFrame Framework, Project Creation, gf init, MonoRepo, GoFr
 description: "Use the gf init command provided by the GoFrame framework to create a project. Starting from version v2, project creation is faster and no longer relies on remote sources; templates are built into the binary files. You can choose to initialize a single repository or monorepo project mode and flexibly adjust the generated directory structure to suit actual business needs."
 ---
 :::tip
-Starting from version `v2`, project creation no longer relies on remote retrieval. The repository templates are embedded into the tool's binary files via [resource management](../核心组件/资源管理/资源管理.md), making project creation very fast.
+Starting from version `v2`, project creation no longer relies on remote retrieval. The repository templates are embedded into the tool's binary files via [Resource](../核心组件/资源管理/资源管理.md), making project creation very fast.
 :::
 ## Usage
 
@@ -31,7 +31,7 @@ EXAMPLE
     gf init my-mono-repo -m
 ```
 
-We can use the `init` command to generate a sample `GoFrame` empty framework project in the current directory and provide a project name parameter. The generated project directory structure is for reference only and can be adjusted according to the specific situation of the business project. For the generated directory structure, please refer to the [code layer design](../框架设计/工程开发设计/代码分层设计.md) section.
+We can use the `init` command to generate a sample `GoFrame` empty framework project in the current directory and provide a project name parameter. The generated project directory structure is for reference only and can be adjusted according to the specific situation of the business project. For the generated directory structure, please refer to the [Code Layering](../框架设计/工程开发设计/代码分层设计.md) section.
 :::note
 The `GoFrame` framework development recommends the unified use of the official `go module` feature for dependency package management, so there is also a `go.mod` file in the root directory of the empty project.
 :::
@@ -69,7 +69,7 @@ initializing...
 initialization done!
 ```
 
-For an introduction to monorepos, please refer to the section: [Microservice Monorepo Management Mode](../框架设计/工程开发设计/微服务大仓管理模式.md)
+For an introduction to monorepos, please refer to the section: [Mono-Repo Management](../框架设计/工程开发设计/微服务大仓管理模式.md)
 
 #### Create a `MonoRepoApp` project
 

@@ -148,5 +148,5 @@ if err == sql.ErrNoRows {
 ```
 :::warning
 Due to `Golang` reflection features employed in `struct` conversion, there is a certain performance overhead. If you are dealing with conversions of large numbers of query result data into `struct` array objects and need to improve conversion performance, please refer to the custom implementation of the corresponding `struct` `UnmarshalValue` method:
-[Type Conversion-UnmarshalValue](../../类型转换/类型转换-UnmarshalValue.md)
+[Type Conversion - Interface](../../类型转换/类型转换-UnmarshalValue.md)
 :::

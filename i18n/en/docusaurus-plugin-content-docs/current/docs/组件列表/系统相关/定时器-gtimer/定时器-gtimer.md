@@ -62,9 +62,9 @@ It should be noted that the shorter the default detection interval of the timer,
 
 ## Difference Between Timer and `gcron`
 
-Please refer to the section [Scheduled Task-gcron and gtimer](../定时任务-gcron/定时任务-gcron与gtimer.md)
+Please refer to the section [Cron Job](../定时任务-gcron/定时任务-gcron与gtimer.md)
 
-## Related Documents
+## Documents
 
 import DocCardList from '@theme/DocCardList';
 

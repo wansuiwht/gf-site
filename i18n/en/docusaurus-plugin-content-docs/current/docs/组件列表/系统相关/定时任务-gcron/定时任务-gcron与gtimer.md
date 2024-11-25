@@ -9,7 +9,7 @@ description: "The difference between the scheduled task module gcron and the tim
 
 ## Difference between `gcron` and `gtimer`
 
-Differences between [Scheduled Task-gcron](定时任务-gcron.md) and [Timer-gtimer](../定时器-gtimer/定时器-gtimer.md):
+Differences between [Cron Job](定时任务-gcron.md) and [Timer](../定时器-gtimer/定时器-gtimer.md):
 
 - `gtimer` is a high-performance module, a core framework module, serving as the foundation for building any scheduled task, with method operation times measured in `nanoseconds`.
 - `gtimer` is applicable in any scheduled task scenario, such as TCP communication, game development, etc.
@@ -18,5 +18,5 @@ Differences between [Scheduled Task-gcron](定时任务-gcron.md) and [Timer-gti
 
 | Similar Module | Description | Performance | Linux-like Crontab Pattern | Underlying Implementation |
 | --- | --- | --- | --- | --- |
-| [Scheduled Task-gcron](定时任务-gcron.md) | Scheduled task.<br />Higher-level encapsulation, time scale in natural seconds. | General | Supported | Based on `gtimer` |
-| [Timer-gtimer](../定时器-gtimer/定时器-gtimer.md) | Timer.<br />Low-level component, time scale in terms of time slots (customizable). | Efficient | Not supported | Custom implementation based on `PriorityQueue` data structure |
+| [Cron Job](定时任务-gcron.md) | Scheduled task.<br />Higher-level encapsulation, time scale in natural seconds. | General | Supported | Based on `gtimer` |
+| [Timer](../定时器-gtimer/定时器-gtimer.md) | Timer.<br />Low-level component, time scale in terms of time slots (customizable). | Efficient | Not supported | Custom implementation based on `PriorityQueue` data structure |

@@ -83,7 +83,7 @@ Parameter Description:
 | `gfcli.gen.pbentity` |  | Code generation configuration items, which can contain multiple configuration items as an array, supporting multiple databases. Different databases can set different generation rules, such as generating to different locations or files. | - |
 | `path` | `manifest/protobuf/pbentity` | The directory address for storing the generated `proto` files. | `protobuf/pbentity` |
 | `package` | Automatically recognize `go.mod` | The `go_package` path in the generated `proto` file, and automatically recognizes the `package` name | - |
-| `link` |  | Consists of two parts, the first indicating the type of database you are connecting to such as `mysql`, `postgresql`, etc., and the second being the `dsn` information for connecting to the database. Refer to the chapter [ORM Usage Configuration](../../核心组件/数据库ORM/ORM使用配置/ORM使用配置.md) for details. | - |
+| `link` |  | Consists of two parts, the first indicating the type of database you are connecting to such as `mysql`, `postgresql`, etc., and the second being the `dsn` information for connecting to the database. Refer to the chapter [ORM - Configuration](../../核心组件/数据库ORM/ORM使用配置/ORM使用配置.md) for details. | - |
 | `prefix` |  | The prefix for generating database objects and files, to distinguish between different databases or identical table names in different databases, preventing table name conflicts. | `order_`<br />`user_` |
 | `removePrefix` |  | Removes the specified prefix from the table names. Multiple prefixes are separated by commas. | `gf_` |
 | `removeFieldPrefix` |  | Removes the specified prefix from field names. Multiple prefixes are separated by commas. | `f_` |

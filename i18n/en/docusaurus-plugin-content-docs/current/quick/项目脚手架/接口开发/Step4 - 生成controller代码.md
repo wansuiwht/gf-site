@@ -106,7 +106,7 @@ If later we need to define a `v2` API, the `make ctrl` command will similarly ge
 
 ## Controller Router Implementation
 
-Used for the implementation code files of specific `api` APIs. By default, codes are generated in the form of one source file per `api` API. Of course, it is also possible to control the aggregation of APIs defined in `api` files into a corresponding single source file. For specific command introductions and configurations, please refer to the chapter [API Specification-gen ctrl](../../../docs/开发工具/代码生成-gen/接口规范-gen%20ctrl.md).
+Used for the implementation code files of specific `api` APIs. By default, codes are generated in the form of one source file per `api` API. Of course, it is also possible to control the aggregation of APIs defined in `api` files into a corresponding single source file. For specific command introductions and configurations, please refer to the chapter [Controller Generating](../../../docs/开发工具/代码生成-gen/接口规范-gen%20ctrl.md).
 
 ```text
 generated: /Users/john/Temp/demo/internal/controller/user/user_v1_create.go

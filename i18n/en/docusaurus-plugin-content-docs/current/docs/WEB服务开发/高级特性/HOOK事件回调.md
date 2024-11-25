@@ -47,7 +47,7 @@ Please refer to the example for specific invocation timing.
 
 ## Callback Priority
 
-Since event binding is also based on routing rules, its priority is the same as described in the [Route Management - Routing Rules](../路由管理/路由管理-路由规则.md) chapter.
+Since event binding is also based on routing rules, its priority is the same as described in the [Router - Route Patterns](../路由管理/路由管理-路由规则.md) chapter.
 
 However, the mechanism for event invocation differs from that of route registration invocation. **It allows multiple event callback methods under the same routing rule**, and events under this route will be `invoked in order of priority`. If the routing rules have the same priority, they will be invoked in the order of event registration.
 
@@ -91,7 +91,7 @@ Therefore, if used in a service callback function, `Request.Router` has a value 
 :::tip
 If you are only providing API API services (including front static file service proxies like `nginx`), which do not involve static file services, you can ignore this section.
 :::
-Note that event callbacks can also match static file accesses that meet routing rules ([Static Files](静态文件服务.md) feature is disabled by default in the `gf` framework, and we can manually enable it using `WebServer` related configuration. See [Service Configuration](../服务配置/服务配置.md) for details).
+Note that event callbacks can also match static file accesses that meet routing rules ([Static File Service](静态文件服务.md) feature is disabled by default in the `gf` framework, and we can manually enable it using `WebServer` related configuration. See [Configuration](../服务配置/服务配置.md) for details).
 
 For example, if we register a `/*` global match event callback route, static file accesses like `/static/js/index.js` or `/upload/images/thumb.jpg` will also be matched and processed in the registered event callback function.
 
@@ -285,7 +285,7 @@ priority service
 
 ### Example 5: Allowing Cross-Origin Requests
 
-In the chapters [Route Management - Middleware/Interceptor](../%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86/%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86-%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%8B%A6%E6%88%AA%E5%99%A8-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D.md) and [CORS Cross-Origin Handling](CORS跨域处理.md), examples of cross-origin handling have also been introduced. In most cases, we use middleware to achieve cross-origin request handling.
+In the chapters [Middleware - Intro](../路由管理/路由管理-中间件拦截器/中间件拦截器-基本介绍.md) and [CORS](CORS跨域处理.md), examples of cross-origin handling have also been introduced. In most cases, we use middleware to achieve cross-origin request handling.
 
 Both `HOOK` and middleware can implement cross-origin request handling. Here, we'll use HOOK to achieve simple cross-origin processing. First, let's look at a simple API example:
 

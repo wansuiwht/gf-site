@@ -46,4 +46,4 @@ func (s *sTask) GetOne(ctx context.Context, id uint64) (out *entity.ResourceTask
 :::warning
 Note the use of `&out` in the code.
 :::
-For more information, please refer to: [Handling ORM Results - Judgment for Empty Results](../ORM结果处理/ORM结果处理-为空判断.md)
+For more information, please refer to: [ORM Result - Empty Check](../ORM结果处理/ORM结果处理-为空判断.md)

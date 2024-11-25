@@ -46,11 +46,11 @@ If you encounter a component you're not familiar with during development and stu
 
 #### Core Components
 
-Core components are an indispensable part of the framework; most business projects will use them. They are a key focus for learning the framework. Chapter link: [Core Components (🔥Important🔥)](../../docs/核心组件/核心组件.md)
+Core components are an indispensable part of the framework; most business projects will use them. They are a key focus for learning the framework. Chapter link: [Core Components 🔥](../../docs/核心组件/核心组件.md)
 
 #### Component List
 
-The component list presents a summary chapter of all the components of the framework. Chapter link: [Component List](../../docs/组件列表/组件列表.md)
+The component list presents a summary chapter of all the components of the framework. Chapter link: [Components Category](../../docs/组件列表/组件列表.md)
 
 ## Important Tips
 

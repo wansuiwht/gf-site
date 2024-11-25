@@ -69,4 +69,4 @@ The timing of each method's invocation is explained in detail within the comment
 ## Considerations
 
 - In the `Storage` interface, not all interface methods need to be implemented. Developers only need to implement some interfaces according to the specific invocation timing required by their business needs.
-- To enhance the execution performance of `Session`, the interface uses the `gmap.StrAnyMap` container type. During development, you can refer to this section: [Dictionary Type - gmap](../../组件列表/数据结构/字典类型-gmap/字典类型-gmap.md)
+- To enhance the execution performance of `Session`, the interface uses the `gmap.StrAnyMap` container type. During development, you can refer to this section: [Map](../../组件列表/数据结构/字典类型-gmap/字典类型-gmap.md)

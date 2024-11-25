@@ -25,12 +25,12 @@ type CreateRes struct {
 }
 ```
 Brief Introduction:
-- In API definitions, `g.Meta` is used to manage API metadata information, which are defined as tags on the `g.Meta` property. These metadata include `path` (route address), `method` (request method), `tags` (API group for generating API documentation), and `summary` (API description). These metadata are part of `OpenAPIv3`, which we won't go into detail here. For those interested, refer to the chapter: [API Documentation - OpenAPIv3](../../../docs/WEB服务开发/接口文档/接口文档-OpenAPIv3.md).
+- In API definitions, `g.Meta` is used to manage API metadata information, which are defined as tags on the `g.Meta` property. These metadata include `path` (route address), `method` (request method), `tags` (API group for generating API documentation), and `summary` (API description). These metadata are part of `OpenAPIv3`, which we won't go into detail here. For those interested, refer to the chapter: [API Document - OpenAPIv3](../../../docs/WEB服务开发/接口文档/接口文档-OpenAPIv3.md).
 - The `Name` and `Age` attributes here are the parameter definitions for our API. The `dc` tag is a shorthand for `description`, indicating the meaning of the parameter; the `v` tag is a shorthand for `valid`, indicating the validation rules for the parameter. We use three built-in validation rules here:
   - `required`: The parameter is mandatory.
   - `length`: Validates the parameter's length.
   - `between`: Validates the parameter's range.
-  Learn about these here, and refer to the section [Data Validation - Validation Rules](../../../docs/核心组件/数据校验/数据校验-校验规则.md) for more validation rules.
+  Learn about these here, and refer to the section [Data Validation - Rules](../../../docs/核心组件/数据校验/数据校验-校验规则.md) for more validation rules.
 - The request parameter structure `CreateReq` does not specify parameter reception methods because the `GoFrame` framework supports very flexible parameter reception methods, automatically recognizing `Query String/Form/Json/Xml` submission methods and mapping the submitted parameters to the request parameter receiving objects.
 - Only the return parameter structures have `json` tags because the returned data usually needs to be converted to `json` format for use by the frontend, and parameter naming in `snake` style is more in line with frontend naming conventions.
 

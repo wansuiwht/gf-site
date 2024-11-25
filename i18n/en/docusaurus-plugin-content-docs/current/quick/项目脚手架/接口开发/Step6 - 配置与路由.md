@@ -31,7 +31,7 @@ func main() {
 }
 ```
 
-You only need to introduce the database driver once in the project; no further adjustments are needed later. For more support and detailed introduction on database drivers, please refer to the section [Database ORM](../../../docs/核心组件/数据库ORM/数据库ORM.md).
+You only need to introduce the database driver once in the project; no further adjustments are needed later. For more support and detailed introduction on database drivers, please refer to the section [Database ORM🔥](../../../docs/核心组件/数据库ORM/数据库ORM.md).
 
 If you execute database operations without introducing the database driver, the Database ORM component will report the following error message:
 ```text
@@ -76,7 +76,7 @@ The default provides `3` component configurations:
 - `logger`: Configuration for the default log component. The log level is set to output all logs, and all logs will be printed to standard output.
 - `database`: Configuration for the database component. This is just a template; we need to modify the connection address based on the actual situation.
 
-Each component configuration has a reference link to the official documentation for configuration. Here, we need to modify the connection information in the database configuration to match the actual usable connection information. For detailed introduction on database configuration, please refer to the section: [ORM Configuration - Configuration File](../../../docs/核心组件/数据库ORM/ORM使用配置/ORM使用配置-配置文件.md)
+Each component configuration has a reference link to the official documentation for configuration. Here, we need to modify the connection information in the database configuration to match the actual usable connection information. For detailed introduction on database configuration, please refer to the section: [ORM Configuration - File](../../../docs/核心组件/数据库ORM/ORM使用配置/ORM使用配置-配置文件.md)
 
 Sample source code: https://github.com/gogf/quick-demo/blob/main/manifest/config/config.yaml
 

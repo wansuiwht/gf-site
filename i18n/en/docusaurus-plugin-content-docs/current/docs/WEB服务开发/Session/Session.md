@@ -33,10 +33,10 @@ The management functionality of `Session` is implemented by the independent `gse
 
 | Storage | Distributed Support | Persistence Support | Memory Usage | Execution Efficiency | Brief Introduction |
 | --- | --- | --- | --- | --- | --- |
-| `StorageFile` | No | Yes | Medium | Medium | Based on file storage (default). A more efficient persistent storage method under single-node deployment: [Session-File](Session-File.md) |
-| `StorageMemory` | No | No | High | High | Based on pure memory storage. Single-node deployment, highest performance, but cannot be persisted, and is lost on restart: [Session-Memory](Session-Memory.md) |
-| `StorageRedis` | Yes | Yes | Medium | Medium | Based on `Redis` storage (`Key-Value`). Remote `Redis` node stores `Session` data, supporting multi-node deployment: [Session-Redis-KeyValue](Session-Redis-KeyValue.md) |
-| `StorageRedisHashTable` | Yes | Yes | Low | Low | Based on `Redis` storage (`HashTable`). Remote `Redis` node stores `Session` data, supporting multi-node deployment: [Session-Redis-HashTable](Session-Redis-HashTable.md) |
+| `StorageFile` | No | Yes | Medium | Medium | Based on file storage (default). A more efficient persistent storage method under single-node deployment: [Session - File](Session-File.md) |
+| `StorageMemory` | No | No | High | High | Based on pure memory storage. Single-node deployment, highest performance, but cannot be persisted, and is lost on restart: [Session - Memory](Session-Memory.md) |
+| `StorageRedis` | Yes | Yes | Medium | Medium | Based on `Redis` storage (`Key-Value`). Remote `Redis` node stores `Session` data, supporting multi-node deployment: [Session - Redis-KeyValue](Session-Redis-KeyValue.md) |
+| `StorageRedisHashTable` | Yes | Yes | Low | Low | Based on `Redis` storage (`HashTable`). Remote `Redis` node stores `Session` data, supporting multi-node deployment: [Session - Redis-HashTable](Session-Redis-HashTable.md) |
 
 Each method has its advantages and disadvantages. For detailed introductions, please refer to the corresponding sections.
 

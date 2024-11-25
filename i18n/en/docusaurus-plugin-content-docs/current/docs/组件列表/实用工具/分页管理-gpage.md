@@ -7,4 +7,4 @@ description: "This document explains how to use the gpage module of the GoFrame 
 keywords: [GoFrame, GoFrame framework, gpage module, pagination management, WEB service development, gpage functionality, programming guide, module usage, developer tools, code optimization]
 ---
 
-Pagination management is implemented by the `gpage` module. For more details, please refer to the [Pagination Management](../../WEB服务开发/分页管理/分页管理.md) section.
+Pagination management is implemented by the `gpage` module. For more details, please refer to the [Pagination](../../WEB服务开发/分页管理/分页管理.md) section.

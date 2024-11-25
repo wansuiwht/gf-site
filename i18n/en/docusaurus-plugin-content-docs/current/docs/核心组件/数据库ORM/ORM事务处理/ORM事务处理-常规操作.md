@@ -9,7 +9,7 @@ description: "Basic operations for ORM transaction handling in the GoFrame frame
 
 The usual transaction operation methods are `Begin/Commit/Rollback`, with each method specifying a specific transaction operation. A transaction operation can be initiated by executing the `db.Begin` method, which returns an interface for transaction operations, with the type `gdb.Tx`. You can perform subsequent database operations through this object, and you can submit changes with `tx.Commit` or rollback changes with `tx.Rollback`.
 :::warning
-Common Issues to Note: After initiating a transaction operation, be sure to close the transaction when no longer needed using `Commit`/`Rollback` operations. It is advisable to make good use of the `defer` method. If the transaction is not closed after use, it can lead to uncontrolled growth in goroutines on the application side and saturation of transaction threads on the database side, causing subsequent transaction requests to timeout. Furthermore, it is recommended to use the `Transaction` closure method introduced later for safely implementing transaction operations: [ORM Transaction Handling - Closure Operations](ORM事务处理-闭包操作.md)
+Common Issues to Note: After initiating a transaction operation, be sure to close the transaction when no longer needed using `Commit`/`Rollback` operations. It is advisable to make good use of the `defer` method. If the transaction is not closed after use, it can lead to uncontrolled growth in goroutines on the application side and saturation of transaction threads on the database side, causing subsequent transaction requests to timeout. Furthermore, it is recommended to use the `Transaction` closure method introduced later for safely implementing transaction operations: [ORM Transaction - Closure](ORM事务处理-闭包操作.md)
 :::
 ## 1. Initiating a Transaction
 
@@ -67,4 +67,4 @@ if tx, err := db.Begin(); err == nil {
 }
 ```
 
-For other chain operations, please refer to the [ORM Chain Operations (🔥Key Points🔥)](../ORM链式操作/ORM链式操作.md) section.
+For other chain operations, please refer to the [ORM - Model 🔥](../ORM链式操作/ORM链式操作.md) section.

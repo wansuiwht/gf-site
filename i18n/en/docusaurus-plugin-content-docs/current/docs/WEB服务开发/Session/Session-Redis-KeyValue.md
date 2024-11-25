@@ -13,7 +13,7 @@ The file storage method works well in single-node scenarios, but when it comes t
 
 The `gsession` Redis storage uses the `StorageRedis` object, similar to file storage. To improve execution efficiency, it adopts a `memory + Redis` approach. The only difference from file storage is that if `Session` operations are needed during each request, the latest `Session` data will be pulled from `Redis` (file storage only reads a file once when the `Session` does not exist). At the end of each request, the entire `Session` data is serialized using `JSON` and updated to the `Redis` service using the `KeyValue` method.
 :::tip
-For business scenarios where the `Session` data of each user is not large (taking the user dimension as an example), this storage method is recommended. If the `Session` data for a single user is large (e.g., `>10MB`), you can refer to the `HashTable` storage method: [Session-Redis-HashTable](Session-Redis-HashTable.md)
+For business scenarios where the `Session` data of each user is not large (taking the user dimension as an example), this storage method is recommended. If the `Session` data for a single user is large (e.g., `>10MB`), you can refer to the `HashTable` storage method: [Session - Redis-HashTable](Session-Redis-HashTable.md)
 :::
 ## Usage Example
 

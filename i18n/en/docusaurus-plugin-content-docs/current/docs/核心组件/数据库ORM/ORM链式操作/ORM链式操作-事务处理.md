@@ -9,7 +9,7 @@ description: "Using transaction handling in the GoFrame framework for ORM chaini
 
 `Model` objects can also be created through the `TX` transaction interface. The functionality of a `Model` object created through a transaction object is the same as that of one created through a `DB` database object, except that the former's operations are based on transactions. Once the transaction is committed or rolled back, the corresponding `Model` object cannot be used further; otherwise, an error will be returned. Because the `TX` interface cannot be reused, a transaction object corresponds to a single transaction process and ends after `Commit`/`Rollback`.
 
-This chapter provides a simple introduction to transaction handling methods involved in chaining operations. For more detailed information, please refer to the [ORM Transaction Handling](../ORM事务处理/ORM事务处理.md) chapter.
+This chapter provides a simple introduction to transaction handling methods involved in chaining operations. For more detailed information, please refer to the [ORM - Transaction](../ORM事务处理/ORM事务处理.md) chapter.
 
 ## Example 1: Using `Transaction`
 

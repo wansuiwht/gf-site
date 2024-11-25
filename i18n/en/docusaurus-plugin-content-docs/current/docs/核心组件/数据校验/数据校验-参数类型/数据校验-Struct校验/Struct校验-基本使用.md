@@ -222,4 +222,4 @@ Once executed, the terminal output is:
 }
 ```
 
-For more introductions on recursive validation, please refer to the section: [Data Validation - Recursive Validation](../../数据校验-递归校验.md)
+For more introductions on recursive validation, please refer to the section: [Data Validation - Recursive](../../数据校验-递归校验.md)

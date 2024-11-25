@@ -7,7 +7,7 @@ keywords: [GoFrame, Time Maintenance, SoftTimeOption, Database Operation, Time G
 description: "Introduction on how to use SoftTimeOption in the GoFrame framework to control time writing granularity, converting from second-level to millisecond-level timestamps, and providing relevant MySQL table structures and example code to help developers flexibly configure time fields, supporting multiple time granularity options to meet different project needs, and inserting data through ORM methods"
 ---
 
-In the previous [Integer Field](./时间维护-整型字段.md) example, the time fields are written with second-level timestamps. But what if we want to control the granularity of time writing and write millisecond-level timestamps? We can use `SoftTimeOption` to control the granularity of the written time values.
+In the previous [Time Fields - Integer Fields](./时间维护-整型字段.md) example, the time fields are written with second-level timestamps. But what if we want to control the granularity of time writing and write millisecond-level timestamps? We can use `SoftTimeOption` to control the granularity of the written time values.
 
 ## Example SQL
 Here's the `MySQL` table structure used in the following example code. Since we need to write values with a granularity finer than seconds, the field type uses `big int` for storage.
@@ -25,7 +25,7 @@ CREATE TABLE `user` (
 ```
 
 :::tip
-If you try to test and view the `SQL` statements executed by `ORM` operations, it is recommended to enable `debug` mode (Documents: [Debug Mode](../../ORM高级特性/ORM高级特性-调试模式.md)), and the `SQL` statements will automatically be printed in the log output.
+If you try to test and view the `SQL` statements executed by `ORM` operations, it is recommended to enable `debug` mode (Documents: [ORM Senior - Debug Mode](../../ORM高级特性/ORM高级特性-调试模式.md)), and the `SQL` statements will automatically be printed in the log output.
 :::
 
 ## `created_at` Write Time

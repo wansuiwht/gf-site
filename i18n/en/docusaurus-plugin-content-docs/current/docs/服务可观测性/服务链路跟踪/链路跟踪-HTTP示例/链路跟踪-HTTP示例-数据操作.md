@@ -218,14 +218,14 @@ Brief explanation of the server code:
 
 1. First, the client also needs to initialize `Jaeger` via the `jaeger.Init` method.
 2. In this example, we use database and database cache features to demonstrate tracing for both `ORM` and `Redis`.
-3. At program startup, we set the adapter of the current database cache management to `redis` using the following method. For those interested in cache adapter introductions, please refer to the [Cache Management-Interface Design](../../../核心组件/缓存管理/缓存管理-接口设计.md) section.
+3. At program startup, we set the adapter of the current database cache management to `redis` using the following method. For those interested in cache adapter introductions, please refer to the [Caching - Interface](../../../核心组件/缓存管理/缓存管理-接口设计.md) section.
 
 ```go
 g.DB().GetCache().SetAdapter(gcache.NewAdapterRedis(g.Redis()))
 ```
 
 4. In `ORM` operations, the `Ctx` method needs to be used to pass the context variable to the component. The `orm` component automatically recognizes if the current context contains tracing information and enables tracing features if it does.
-5. In `ORM` operations, the `Cache` method is used here to cache query results to `redis`, and in delete operations, the `Cache` method is also used to clear the cache results in `redis`. For introductions to `ORM` cache management, please refer to [ORM Chain Operation-Query Cache](../../../核心组件/数据库ORM/ORM链式操作/ORM链式操作-查询缓存.md) section.
+5. In `ORM` operations, the `Cache` method is used here to cache query results to `redis`, and in delete operations, the `Cache` method is also used to clear the cache results in `redis`. For introductions to `ORM` cache management, please refer to [ORM Model - Query Cache](../../../核心组件/数据库ORM/ORM链式操作/ORM链式操作-查询缓存.md) section.
 
 ## View Results
 

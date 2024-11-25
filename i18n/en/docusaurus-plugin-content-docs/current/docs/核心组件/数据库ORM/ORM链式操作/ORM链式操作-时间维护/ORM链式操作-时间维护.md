@@ -39,7 +39,7 @@ database:
 Especially for historical projects, where different time field names already exist, the time field names can be flexibly configured using configuration items.
 :::
 
-For a complete database configuration, please refer to the [ORM Usage Configuration](../../ORM使用配置/ORM使用配置.md) section.
+For a complete database configuration, please refer to the [ORM - Configuration](../../ORM使用配置/ORM使用配置.md) section.
 
 ## Feature Activation
 

@@ -7,4 +7,4 @@ description: "Resource management techniques in the GoFrame framework, discussin
 keywords: [resource management, GoFrame, gres module, component documentation, website performance, site resources, core components, module implementation, framework technology, performance optimization]
 ---
 
-Resource management is implemented by the `gres` module. Please refer to the [Resource Management](../../核心组件/资源管理/资源管理.md) section for details.
+Resource management is implemented by the `gres` module. Please refer to the [Resource](../../核心组件/资源管理/资源管理.md) section for details.
