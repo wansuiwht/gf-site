@@ -7,15 +7,15 @@ keywords: [GoFrame,GoFrame Framework,Web Server,Documents,Modular Design,Low Cou
 description: "Quickly understand the development process and features of the Web Server API by viewing the Documents sections to resolve any doubts. GoFrame is a low-coupling, modular design framework with independent module designs, and independently written documentation. The community provides introductory video tutorials, and later a complete business project will be developed using the GoFrame framework project scaffold."
 ---
 
-## Learning Summary
-Through the quick sections, you should have understood the complete development process of the `Web Server` API and mastered some practical features. In these sections, we only touched on them briefly; for more detailed explanations and introductions to functional features, please refer to the corresponding Documents sections. When you feel confused about the use of a particular module, it is recommended to carefully read the corresponding Documents sections, which provide detailed explanations of the important functional features, usage methods, and common issues of each component.
+## What You've Learned
+By now, you should have a solid understanding of building Web APIs with `GoFrame` and have hands-on experience with its key features. While we've covered the basics in these quick-start guides, there's much more to explore. For in-depth explanations and advanced features, check out the relevant sections in our main documentation. If you ever find yourself stuck with a particular module, the documentation provides detailed insights into each component's functionality, usage patterns, and common pitfalls.
 
 :::info
-If you start browsing the Documents, it should be noted that since `GoFrame` is a low-coupling, modular design, each module is relatively independent. Therefore, the documentation in the Documents is also written based on modularity, with each chapter introducing only the usage of the corresponding component itself.
+As you dive into the documentation, keep in mind that `GoFrame` follows a modular, loosely coupled design philosophy. Each module is designed to work independently, and our documentation reflects this approach - each chapter focuses specifically on its respective component.
 :::
 
-What should we do next?
+So, what comes next?
 
-## Project Scaffold
+## Building Real Applications
 
-In the upcoming sections, we will attempt to use the project scaffold provided by the `GoFrame` framework to develop a simple and relatively complete business project.
+In the upcoming sections, we'll walk through building a complete business application using the `GoFrame` project scaffold. This hands-on tutorial will show you how to put everything together in a real-world context.
