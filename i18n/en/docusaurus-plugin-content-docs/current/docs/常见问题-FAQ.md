@@ -119,7 +119,7 @@ Parameter requests, data validation, `OpenAPIv3`, command management, database O
 | Tag (Abbreviation) | Full Name | Description | Documents |
 | --- | --- | --- | --- |
 | `v` | `valid` | Data validation tag. | [Struct Validation - Example](核心组件/数据校验/数据校验-参数类型/数据校验-Struct校验/Struct校验-基本使用.md) |
-| `p` | `param` | Custom request parameter matching. | [Request - Object Conversion](WEB服务开发/请求输入/请求输入-对象处理.md) |
+| `p` | `param` | Custom request parameter matching. | [Request - Parameter Binding](WEB服务开发/请求输入/请求输入-对象处理.md) |
 | `d` | `default` | Default value binding for request parameters. | [Request - Default Value](WEB服务开发/请求输入/请求输入-默认值绑定.md) |
 | `orm` | `orm` | ORM tag, used to specify table name, association relationships. | [Dao/Do/Entity Generating](开发工具/代码生成-gen/数据规范-gen%20dao.md)<br />[Model Association - With](核心组件/数据库ORM/ORM链式操作/ORM链式操作-模型关联/模型关联-静态关联-With特性.md) |
 | `dc` | `description` | Generic struct property description, used by both ORM and interfaces. Belongs to the framework's default property description tag. |  |
