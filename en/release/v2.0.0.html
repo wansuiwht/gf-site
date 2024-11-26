@@ -1,381 +1,381 @@
-<!doctype html><html lang=en-US dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-release/v2.0 2022-03-09" data-has-hydrated=false><meta charset=UTF-8><meta name=generator content="Docusaurus v3.6.3"><title data-rh=true>v2.0 2022-03-09 | GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架</title><meta data-rh=true name=viewport content="width=device-width,initial-scale=1.0"><meta data-rh=true name=twitter:card content=summary_large_image><meta data-rh=true property=og:url content=https://goframe.org/en/release/v2.0.0><meta data-rh=true property=og:locale content=en_US><meta data-rh=true property=og:locale:alternate content=zh_Hans><meta data-rh=true name=docusaurus_locale content=en><meta data-rh=true name=docsearch:language content=en><meta data-rh=true name=docusaurus_version content=current><meta data-rh=true name=docusaurus_tag content=docs-default-current><meta data-rh=true name=docsearch:version content=current><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current><meta data-rh=true property=og:title content="v2.0 2022-03-09 | GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架"><meta data-rh=true name=description content="GoFrame v2.0版本发布，增强了工程设计和全链路跟踪功能，提供了严格规范的命名和参数传递方式。新增特性包括全面的错误码支持和组件接口化设计，提升了扩展性和开发效率。同时，ORM和日志组件功能得到重大改进，框架更加易用。"><meta data-rh=true property=og:description content="GoFrame v2.0版本发布，增强了工程设计和全链路跟踪功能，提供了严格规范的命名和参数传递方式。新增特性包括全面的错误码支持和组件接口化设计，提升了扩展性和开发效率。同时，ORM和日志组件功能得到重大改进，框架更加易用。"><meta data-rh=true name=keywords content=GoFrame,GoFrame框架,v2.0发布,全链路跟踪,ORM改进,组件接口化,全新功能,开发效率,错误堆栈,接口化设计><link data-rh=true rel=icon href=/en/img/favicon.ico><link data-rh=true rel=canonical href=https://goframe.org/en/release/v2.0.0><link data-rh=true rel=alternate href=https://goframe.org/release/v2.0.0 hreflang=zh-Hans><link data-rh=true rel=alternate href=https://goframe.org/en/release/v2.0.0 hreflang=en-US><link data-rh=true rel=alternate href=https://goframe.org/release/v2.0.0 hreflang=x-default><link data-rh=true rel=preconnect href=https://ZQUL8VI47R-dsn.algolia.net crossorigin><link rel=search type=application/opensearchdescription+xml title="GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架" href=/en/opensearch.xml><script src=https://hm.baidu.com/hm.js?38f38a0626fd7805722db06243cd0fa7 async></script><link rel=stylesheet href=/en/assets/css/styles.a15f4503.css><script src=/en/assets/js/main.db2b18b2.js defer></script><script src=/en/assets/js/runtime~main.5df166d6.js defer></script><body class=navigation-with-keyboard><script>!function(){var t,e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t=null!==e?e:"light",document.documentElement.setAttribute("data-theme",t)}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="navbar navbar--fixed-top"><div class=navbar__inner><div class=navbar__items><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/en/><div class=navbar__logo><img src=/en/img/logo2.png alt="GoFrame Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src=/en/img/logo2.png alt="GoFrame Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" sidebarid=quickSidebar href=/en/quick/install>快速开始</a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button sidebarid=mainSidebar href=/en/docs/design>开发手册</a><ul class=dropdown__menu><li><a class=dropdown__link href=/en/docs/cli>开发工具</a><li><a class=dropdown__link href=/en/docs/core/gvalid-rules>数据校验</a><li><a class=dropdown__link href=/en/docs/core/gdb-config-file>ORM配置管理</a><li><a class=dropdown__link href=/en/docs/core/gdb-chaining>ORM链式操作</a><li><a class=dropdown__link href=/en/docs/web/server-config-file-template>WEB服务配置</a><li><a class=dropdown__link href=/en/docs/web/router-pattern>WEB路由管理</a><li><a class=dropdown__link href=/en/docs/web/request>WEB参数处理</a><li><a class=dropdown__link href=/en/docs/web/http-client>HTTP客户端</a></ul></div><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button sidebarid=courseSidebar href=/en/course>社区教程</a><ul class=dropdown__menu><li><a class=dropdown__link sidebarid=courseSidebar href=/en/course/bilibili-video>视频入门教程</a><li><a class=dropdown__link sidebarid=courseStarBookSidebar href=/en/course/starbook>实战教程-星辰英语本</a></ul></div><a class="navbar__item navbar__link" href=/en/showcase>案例展示</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/en/release/note>发布记录</a><a class="navbar__item navbar__link" sidebarid=communitySidebar href=/en/share/group>开源社区</a></div><div class="navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/en/release/v2.0.0>2.7.x(Latest)</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/en/release/v2.0.0>2.7.x(Latest)</a><li><a class=dropdown__link href=/en/2.7.x/release/v2.0.0>2.7.x</a><li><a class=dropdown__link href=/en/2.6.x/项目开发>2.6.x</a><li><a class=dropdown__link href=/en/2.5.x/项目开发>2.5.x</a><li><a class=dropdown__link href=/en/2.4.x/开发工具>2.4.x</a><li><a class=dropdown__link href=/en/2.3.x/开发工具>2.3.x</a><li><a class=dropdown__link href=/en/2.2.x/开发工具>2.2.x</a><li><a class=dropdown__link href=/en/2.1.x/开发工具>2.1.x</a><li><a class=dropdown__link href=/en/2.0.x/开发工具>2.0.x</a><li><a class=dropdown__link href=/en/1.16.x/开发工具>1.16.x</a></ul></div><a href=https://github.com/gogf/gf target=_blank rel="noopener noreferrer" class="navbar__item navbar__link header-github-link"></a><div class=navbarSearchContainer_Bca1><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Command+K)"><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 20 20" aria-hidden=true><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke=currentColor fill=none fill-rule=evenodd stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class=sidebarViewport_aRkj><div class=sidebar_njMd><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/note>版本发布说明</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.8>v2.8 2024-11-18</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.7.0>v2.7 2024-04-09</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.6.0>v2.6 2023-12-19</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.5.0>v2.5 2023-07-17</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.4.0>v2.4 2023-04-24</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.3.0>v2.3 2023-01-18</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.2.0>v2.2 2022-10-11</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.1.0>v2.1 2022-06-22</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current=page href=/en/release/v2.0.0>v2.0 2022-03-09</a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="menu__link menu__link--sublist" href=/en/release/v1.x>历史版本记录 v1.x</a><button aria-label="Expand sidebar category '历史版本记录 v1.x'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="menu__link menu__link--sublist" href=/en/release/v0.x>历史版本记录 v0.x</a><button aria-label="Expand sidebar category '历史版本记录 v0.x'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div></ul></nav></div></div></aside><main class=docMainContainer_TBSr><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label=Breadcrumbs><ul class=breadcrumbs itemscope itemtype=https://schema.org/BreadcrumbList><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/en/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_YNFT><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li itemscope itemprop=itemListElement itemtype=https://schema.org/ListItem class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link itemprop=name>v2.0 2022-03-09</span><meta itemprop=position content=1></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 2.7.x(Latest)</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><p>大家好啊！万众瞩目的 <code>GoFrame v2</code> 版本终于发布了正式版本！本次版本包含了大量改进以及新特性，同时新增了一些开创性的功能特性。</p>
-<p>去年夏天到今年春天，一路以来的努力，希望大家满意。</p>
-<p>感谢所有社区小伙伴的贡献，感谢社区朋友们的支持！</p>
-<p>新的一年，我们继续，脚踏实地，不忘初心！</p>
-<p>升级指导： <a href=/en/docs/other/happy-upgrading-from-v1-to-v2>如何从v1愉快升级到v2</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id=一重要特性>一、重要特性<a href=#一重要特性 class=hash-link aria-label="Direct link to 一、重要特性" title="Direct link to 一、重要特性">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=1新版工程设计>1、新版工程设计<a href=#1新版工程设计 class=hash-link aria-label="Direct link to 1、新版工程设计" title="Direct link to 1、新版工程设计">​</a></h3>
+<!doctype html><html lang=en-US dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-release/v2.0 2022-03-09" data-has-hydrated=false><meta charset=UTF-8><meta name=generator content="Docusaurus v3.6.3"><title data-rh=true>v2.0 2022-03-09 | GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架</title><meta data-rh=true name=viewport content="width=device-width,initial-scale=1.0"><meta data-rh=true name=twitter:card content=summary_large_image><meta data-rh=true property=og:url content=https://goframe.org/en/release/v2.0.0><meta data-rh=true property=og:locale content=en_US><meta data-rh=true property=og:locale:alternate content=zh_Hans><meta data-rh=true name=docusaurus_locale content=en><meta data-rh=true name=docsearch:language content=en><meta data-rh=true name=docusaurus_version content=current><meta data-rh=true name=docusaurus_tag content=docs-default-current><meta data-rh=true name=docsearch:version content=current><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current><meta data-rh=true property=og:title content="v2.0 2022-03-09 | GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架"><meta data-rh=true name=description content="The GoFrame v2.0 version is released, enhancing engineering design and full link tracing capabilities, and providing strictly regulated naming and parameter passing methods. New features include comprehensive error code support and component interfacing design, improving scalability and development efficiency. Meanwhile, significant improvements have been made to the ORM and logging components, making the framework more user-friendly."><meta data-rh=true property=og:description content="The GoFrame v2.0 version is released, enhancing engineering design and full link tracing capabilities, and providing strictly regulated naming and parameter passing methods. New features include comprehensive error code support and component interfacing design, improving scalability and development efficiency. Meanwhile, significant improvements have been made to the ORM and logging components, making the framework more user-friendly."><meta data-rh=true name=keywords content="GoFrame,GoFrame Framework,v2.0 Release,Full Link Tracing,ORM Improvements,Component Interfacing,New Features,Development Efficiency,Error Stack,Interface Design"><link data-rh=true rel=icon href=/en/img/favicon.ico><link data-rh=true rel=canonical href=https://goframe.org/en/release/v2.0.0><link data-rh=true rel=alternate href=https://goframe.org/release/v2.0.0 hreflang=zh-Hans><link data-rh=true rel=alternate href=https://goframe.org/en/release/v2.0.0 hreflang=en-US><link data-rh=true rel=alternate href=https://goframe.org/release/v2.0.0 hreflang=x-default><link data-rh=true rel=preconnect href=https://ZQUL8VI47R-dsn.algolia.net crossorigin><link rel=search type=application/opensearchdescription+xml title="GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架" href=/en/opensearch.xml><script src=https://hm.baidu.com/hm.js?38f38a0626fd7805722db06243cd0fa7 async></script><link rel=stylesheet href=/en/assets/css/styles.1ebb6c33.css><script src=/en/assets/js/main.3eb9db35.js defer></script><script src=/en/assets/js/runtime~main.6e7c3d70.js defer></script><body class=navigation-with-keyboard><script>!function(){var t,e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t=null!==e?e:"light",document.documentElement.setAttribute("data-theme",t)}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="navbar navbar--fixed-top"><div class=navbar__inner><div class=navbar__items><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/en/><div class=navbar__logo><img src=/en/img/logo2.png alt="GoFrame Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src=/en/img/logo2.png alt="GoFrame Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" sidebarid=quickSidebar href=/en/quick/install>QuickStart</a><a class="navbar__item navbar__link" sidebarid=mainSidebar href=/en/docs/cli>Documents</a><div class="navbar__item dropdown dropdown--hoverable"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button sidebarid=courseSidebar href=/en/course>Courses</a><ul class=dropdown__menu><li><a class=dropdown__link sidebarid=courseSidebar href=/en/course/bilibili-video>Video Tutorial(Chinese)</a><li><a class=dropdown__link sidebarid=courseStarBookSidebar href=/en/course/starbook>Practical Tutorial - Star English Book</a></ul></div><a class="navbar__item navbar__link" href=/en/showcase>ShowCase</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/en/release/note>Release</a><a class="navbar__item navbar__link" sidebarid=communitySidebar href=/en/share/group>Community</a></div><div class="navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a class=navbar__link aria-haspopup=true aria-expanded=false role=button href=/en/release/v2.0.0>2.8.x(Latest)</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/en/release/v2.0.0>2.8.x(Latest)</a><li><a class=dropdown__link href=/en/2.7.x/release/v2.0.0>2.7.x</a><li><a class=dropdown__link href=/en/2.6.x/项目开发>2.6.x</a><li><a class=dropdown__link href=/en/2.5.x/项目开发>2.5.x</a><li><a class=dropdown__link href=/en/2.4.x/开发工具>2.4.x</a><li><a class=dropdown__link href=/en/2.3.x/开发工具>2.3.x</a><li><a class=dropdown__link href=/en/2.2.x/开发工具>2.2.x</a><li><a class=dropdown__link href=/en/2.1.x/开发工具>2.1.x</a><li><a class=dropdown__link href=/en/2.0.x/开发工具>2.0.x</a><li><a class=dropdown__link href=/en/1.16.x/开发工具>1.16.x</a></ul></div><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href=# aria-haspopup=true aria-expanded=false role=button class=navbar__link><svg viewBox="0 0 24 24" width=20 height=20 aria-hidden=true class=iconLanguage_nlXk><path fill=currentColor d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>English</a><ul class=dropdown__menu><li><a href=/release/v2.0.0 rel="noopener noreferrer" class=dropdown__link lang=zh-Hans>简体中文</a><li><a href=/en/release/v2.0.0 rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang=en-US>English</a></ul></div><a href=https://github.com/gogf/gf target=_blank rel="noopener noreferrer" class="navbar__item navbar__link header-github-link"></a><div class=navbarSearchContainer_Bca1><button type=button class="DocSearch DocSearch-Button" aria-label="Search (Command+K)"><span class=DocSearch-Button-Container><svg width=20 height=20 class=DocSearch-Search-Icon viewBox="0 0 20 20" aria-hidden=true><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke=currentColor fill=none fill-rule=evenodd stroke-linecap=round stroke-linejoin=round /></svg><span class=DocSearch-Button-Placeholder>Search</span></span><span class=DocSearch-Button-Keys></span></button></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class=sidebarViewport_aRkj><div class=sidebar_njMd><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/note>Version Release Notes</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.8>v2.8 2024-11-18</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.7.0>v2.7 2024-04-09</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.6.0>v2.6 2023-12-19</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.5.0>v2.5 2023-07-17</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.4.0>v2.4 2023-04-24</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.3.0>v2.3 2023-01-18</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.2.0>v2.2 2022-10-11</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/en/release/v2.1.0>v2.1 2022-06-22</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current=page href=/en/release/v2.0.0>v2.0 2022-03-09</a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="menu__link menu__link--sublist" href=/en/release/v1.x>Historical Version v1.x</a><button aria-label="Expand sidebar category 'Historical Version v1.x'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="menu__link menu__link--sublist" href=/en/release/v0.x>Historical Version v0.x</a><button aria-label="Expand sidebar category 'Historical Version v0.x'" aria-expanded=false type=button class="clean-btn menu__caret"></button></div></ul></nav></div></div></aside><main class=docMainContainer_TBSr><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label=Breadcrumbs><ul class=breadcrumbs itemscope itemtype=https://schema.org/BreadcrumbList><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/en/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_YNFT><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li itemscope itemprop=itemListElement itemtype=https://schema.org/ListItem class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link itemprop=name>v2.0 2022-03-09</span><meta itemprop=position content=1></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Version: 2.8.x(Latest)</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><p>Hello everyone! The much-anticipated <code>GoFrame v2</code> version has finally been released! This version includes a large number of improvements and new features, as well as some groundbreaking functionalities.</p>
+<p>From last summer to this spring, we have worked hard all the way, and we hope everyone is satisfied.</p>
+<p>Thanks to all community partners for their contributions and support from community friends!</p>
+<p>In the new year, we continue to stay grounded, never forgetting our original intention!</p>
+<p>Upgrade Guide: <a href=/en/docs/other/happy-upgrading-from-v1-to-v2>Happily Upgrade from v1 to v2</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id=1-important-features>1. Important Features<a href=#1-important-features class=hash-link aria-label="Direct link to 1. Important Features" title="Direct link to 1. Important Features">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=1-new-engineering-design>1. New Engineering Design<a href=#1-new-engineering-design class=hash-link aria-label="Direct link to 1. New Engineering Design" title="Direct link to 1. New Engineering Design">​</a></h3>
 <ul>
-<li>更加严谨规范</li>
-<li>命名风格的规范</li>
-<li>指针与值传递参数的规范</li>
-<li>进一步简便、提高开发效率</li>
-<li>新版开发工具支持工程规范准确落地</li>
-<li><code>Entity/DAO/DO</code> 特性</li>
-<li>面向接口化设计</li>
-<li>更多详细介绍： <a href=/en/docs/design/project>工程开发设计(🔥重点🔥)</a></li>
+<li>More rigorous and standardized</li>
+<li>Standardization of naming style</li>
+<li>Standardization of pointers and value passing parameters</li>
+<li>Further simplified, improving development efficiency</li>
+<li>New version development tools support the accurate implementation of engineering specifications</li>
+<li><code>Entity/DAO/DO</code> features</li>
+<li>Interface-oriented design</li>
+<li>More detailed introduction: <a href=/en/docs/design/project>Engineering Design 🔥</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=2全链路跟踪特性>2、全链路跟踪特性<a href=#2全链路跟踪特性 class=hash-link aria-label="Direct link to 2、全链路跟踪特性" title="Direct link to 2、全链路跟踪特性">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=2-full-link-tracing-features>2. Full Link Tracing Features<a href=#2-full-link-tracing-features class=hash-link aria-label="Direct link to 2. Full Link Tracing Features" title="Direct link to 2. Full Link Tracing Features">​</a></h3>
 <ul>
-<li>可观测性更进一步：大胆的前瞻以及决心</li>
-<li>框架默认启用 <code>OpenTelemetry</code> 特性</li>
-<li>框架默认创建 <code>TraceID</code>，按照 <code>OpenTelemetry</code> 生成标准</li>
-<li>框架核心组件均支持链路跟踪信息传递</li>
-<li>日志组件支持链路信息打印</li>
-<li>更多详细介绍： <a href=/en/docs/design/tracing>全链路跟踪设计</a></li>
+<li>Observability further: bold foresight and determination</li>
+<li>The framework enables <code>OpenTelemetry</code> features by default</li>
+<li>The framework creates <code>TraceID</code> by default, according to <code>OpenTelemetry</code> generation standards</li>
+<li>All core components of the framework support link tracing information transmission</li>
+<li>The logging component supports printing link information</li>
+<li>More detailed introduction: <a href=/en/docs/design/tracing>OpenTelemetry Tracing</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=3规范路由注册特性>3、规范路由注册特性<a href=#3规范路由注册特性 class=hash-link aria-label="Direct link to 3、规范路由注册特性" title="Direct link to 3、规范路由注册特性">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=3-standardized-route-registration-features>3. Standardized Route Registration Features<a href=#3-standardized-route-registration-features class=hash-link aria-label="Direct link to 3. Standardized Route Registration Features" title="Direct link to 3. Standardized Route Registration Features">​</a></h3>
 <ul>
-<li>规范化API按照结构化编程设计</li>
-<li>规范化API接口方法参数风格定义</li>
-<li>更加简化的路由注册与维护</li>
-<li>统一接口返回数据格式设计</li>
-<li>自动的API参数对象化接收与校验</li>
-<li>自动生成基于标准 <code>OpenAPIv3</code> 协议的接口文档</li>
-<li>自动生成 <code>SwaggerUI</code> 页面</li>
-<li>更多详细介绍： <a href=/en/docs/web/router-registering-strict-router>路由注册-规范路由</a></li>
+<li>Standardized API structured programming design</li>
+<li>Standardized API interface method parameter style definition</li>
+<li>Simplified route registration and maintenance</li>
+<li>Unified interface return data format design</li>
+<li>Automatic API parameter object reception and validation</li>
+<li>Automatically generates interface documentation based on the standard <code>OpenAPIv3</code> protocol</li>
+<li>Automatically generates <code>SwaggerUI</code> page</li>
+<li>More detailed introduction: <a href=/en/docs/web/router-registering-strict-router>Standard Router</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=4全错误堆栈特性>4、全错误堆栈特性<a href=#4全错误堆栈特性 class=hash-link aria-label="Direct link to 4、全错误堆栈特性" title="Direct link to 4、全错误堆栈特性">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=4-full-error-stack-feature>4. Full Error Stack Feature<a href=#4-full-error-stack-feature class=hash-link aria-label="Direct link to 4. Full Error Stack Feature" title="Direct link to 4. Full Error Stack Feature">​</a></h3>
 <ul>
-<li>框架层面所做的重大决定</li>
-<li>框架 <strong>所有</strong> 组件错误均支持错误堆栈</li>
-<li>详细介绍： <a href=/en/docs/design/error-stack>全错误堆栈设计</a></li>
+<li>A major decision made at the framework level</li>
+<li><strong>All</strong> framework component errors support error stacks</li>
+<li>Detailed introduction: <a href=/en/docs/design/error-stack>Error Stack</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=5全新错误码特性>5、全新错误码特性<a href=#5全新错误码特性 class=hash-link aria-label="Direct link to 5、全新错误码特性" title="Direct link to 5、全新错误码特性">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=5-new-error-code-feature>5. New Error Code Feature<a href=#5-new-error-code-feature class=hash-link aria-label="Direct link to 5. New Error Code Feature" title="Direct link to 5. New Error Code Feature">​</a></h3>
 <ul>
-<li>采用接口化设计，扩展性高</li>
-<li>提供可供选择的常见错误码</li>
-<li>框架核心组价底层已增加错误码支持，例如根据 <code>error</code> 中的错误码可以识别是否 <code>DB</code> 执行错误</li>
-<li>更多详细介绍： <a href=/en/docs/core/gerror-code>错误处理-错误码特性</a></li>
+<li>Uses interface design, highly extensible</li>
+<li>Provides selectable common error codes</li>
+<li>Core component base layer of the framework has enhanced error code support, e.g., identifying if <code>DB</code> execution error through error code in <code>error</code></li>
+<li>More detailed introduction: <a href=/en/docs/core/gerror-code>Error Handling - Error Code</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=6组件接口化设计>6、组件接口化设计<a href=#6组件接口化设计 class=hash-link aria-label="Direct link to 6、组件接口化设计" title="Direct link to 6、组件接口化设计">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=6-component-interface-design>6. Component Interface Design<a href=#6-component-interface-design class=hash-link aria-label="Direct link to 6. Component Interface Design" title="Direct link to 6. Component Interface Design">​</a></h3>
 <ul>
-<li>自顶向下统一化的接口化设计</li>
-<li>核心组件均采用接口化设计</li>
-<li>更高的扩展性、可定制性</li>
-<li>更多详细介绍： <a href=/en/docs/design/interface-generic>接口化与泛型设计</a></li>
+<li>Top-down unified interface design</li>
+<li>Core components all use interface design</li>
+<li>Higher extensibility and customizability</li>
+<li>More detailed introduction: <a href=/en/docs/design/interface-generic>Interface and Generic</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=7框架泛型的支持>7、框架泛型的支持<a href=#7框架泛型的支持 class=hash-link aria-label="Direct link to 7、框架泛型的支持" title="Direct link to 7、框架泛型的支持">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=7-support-for-generic-framework>7. Support for Generic Framework<a href=#7-support-for-generic-framework class=hash-link aria-label="Direct link to 7. Support for Generic Framework" title="Direct link to 7. Support for Generic Framework">​</a></h3>
 <ul>
-<li>什么是框架 <code>gvar</code> 泛型？</li>
-<li>框架 <code>gvar</code> 泛型在框架核心组件中的大量使用</li>
-<li>框架 <code>gvar</code> 泛型的重要价值</li>
-<li>为什么不建议在顶层业务中使用泛型</li>
-<li>更多详细介绍： <a href=/en/docs/design/interface-generic>接口化与泛型设计</a></li>
+<li>What is the framework <code>gvar</code> generic?</li>
+<li>Extensive use of <code>gvar</code> generic in core components of the framework</li>
+<li>The significant value of <code>gvar</code> generic in the framework</li>
+<li>Why it is not recommended to use generics in top-level business</li>
+<li>More detailed introduction: <a href=/en/docs/design/interface-generic>Interface and Generic</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=8orm的大量改进>8、ORM的大量改进<a href=#8orm的大量改进 class=hash-link aria-label="Direct link to 8、ORM的大量改进" title="Direct link to 8、ORM的大量改进">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=8-plenty-of-orm-improvements>8. Plenty of ORM Improvements<a href=#8-plenty-of-orm-improvements class=hash-link aria-label="Direct link to 8. Plenty of ORM Improvements" title="Direct link to 8. Plenty of ORM Improvements">​</a></h3>
 <ul>
-<li>详细介绍： <a href=/en/docs/core/gdb>数据库ORM🔥</a></li>
+<li>Detailed introduction: <a href=/en/docs/core/gdb>Database ORM🔥</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=9其他重要改进>9、其他重要改进<a href=#9其他重要改进 class=hash-link aria-label="Direct link to 9、其他重要改进" title="Direct link to 9、其他重要改进">​</a></h3>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id=1日志组件-handler-特性>1）日志组件 <code>Handler</code> 特性<a href=#1日志组件-handler-特性 class=hash-link aria-label="Direct link to 1日志组件-handler-特性" title="Direct link to 1日志组件-handler-特性">​</a></h4>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=9-other-important-improvements>9. Other Important Improvements<a href=#9-other-important-improvements class=hash-link aria-label="Direct link to 9. Other Important Improvements" title="Direct link to 9. Other Important Improvements">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id=1-logging-component-handler-feature>1) Logging Component <code>Handler</code> Feature<a href=#1-logging-component-handler-feature class=hash-link aria-label="Direct link to 1-logging-component-handler-feature" title="Direct link to 1-logging-component-handler-feature">​</a></h4>
 <ul>
-<li>采用中间件设计</li>
-<li>支持多个 <code>Handler</code> 处理</li>
-<li>为开发者自定义日志处理提供了更灵活强大的支持</li>
-<li>更多详细介绍： <a href=/en/docs/core/glog-handler>日志组件-Handler</a></li>
+<li>Middleware design</li>
+<li>Supports multiple <code>Handler</code> processing</li>
+<li>Provides more flexible and powerful support for developer-defined log processing</li>
+<li>More detailed introduction: <a href=/en/docs/core/glog-handler>Logging - Handler</a></li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id=2日志组件颜色打印>2）日志组件颜色打印<a href=#2日志组件颜色打印 class=hash-link aria-label="Direct link to 2）日志组件颜色打印" title="Direct link to 2）日志组件颜色打印">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id=2-logging-component-color-printing>2) Logging Component Color Printing<a href=#2-logging-component-color-printing class=hash-link aria-label="Direct link to 2) Logging Component Color Printing" title="Direct link to 2) Logging Component Color Printing">​</a></h4>
 <ul>
-<li>在终端中默认输出颜色打印</li>
-<li>默认不同级别不同的颜色，可配置</li>
-<li>输出到文件/自定义 <code>Writer</code> 默认关闭，可通过相关配置开启</li>
-<li>更多详细介绍： <a href=/en/docs/core/glog-color>日志组件-颜色打印</a></li>
+<li>Default color printing output in terminal</li>
+<li>Different colors for different levels by default, configurable</li>
+<li>Output to file/custom <code>Writer</code> default off, can be turned on via configuration</li>
+<li>More detailed introduction: <a href=/en/docs/core/glog-color>Logging - Color Printing</a></li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id=4调试模式介绍完善>4）调试模式介绍完善<a href=#4调试模式介绍完善 class=hash-link aria-label="Direct link to 4）调试模式介绍完善" title="Direct link to 4）调试模式介绍完善">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id=4-improved-debug-mode-introduction>4) Improved Debug Mode Introduction<a href=#4-improved-debug-mode-introduction class=hash-link aria-label="Direct link to 4) Improved Debug Mode Introduction" title="Direct link to 4) Improved Debug Mode Introduction">​</a></h4>
 <ul>
-<li>更多详细介绍： <a href=/en/docs/core/debugging>调试模式</a></li>
+<li>More detailed introduction: <a href=/en/docs/core/debugging>Debug Mode</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id=二功能改进>二、功能改进<a href=#二功能改进 class=hash-link aria-label="Direct link to 二、功能改进" title="Direct link to 二、功能改进">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=1数据组件>1、数据组件<a href=#1数据组件 class=hash-link aria-label="Direct link to 1、数据组件" title="Direct link to 1、数据组件">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id=2-function-improvements>2. Function Improvements<a href=#2-function-improvements class=hash-link aria-label="Direct link to 2. Function Improvements" title="Direct link to 2. Function Improvements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=1-data-components>1. Data Components<a href=#1-data-components class=hash-link aria-label="Direct link to 1. Data Components" title="Direct link to 1. Data Components">​</a></h3>
 <ol>
 <li>
 <p><code>/database/gdb</code></p>
 </li>
 <li>
-<p>废弃 <code>Table</code> 方法，统一使用 <code>Model</code> 方法创建 <code>Model</code> 对象。</p>
+<p>Deprecated <code>Table</code> method, unified use of <code>Model</code> method to create <code>Model</code> object.</p>
 </li>
 <li>
-<p>废弃 <code>Model</code> 中的 <code>Struct/Structs</code> 方法，统一使用 <code>Scan</code> 方法执行查询结果到 <code>Struct</code> 对象/对象数组映射转换： <a href=/en/docs/core/gdb-chaining-query-scan>ORM查询-Scan</a></p>
+<p>Deprecated <code>Struct/Structs</code> methods in <code>Model</code>, unified use of <code>Scan</code> method to execute query results conversion to <code>Struct</code> object/objects array: <a href=/en/docs/core/gdb-chaining-query-scan>Model Query - Scan</a></p>
 </li>
 <li>
-<p>废弃 <code>BatchInsert/BatchReplace/BatchSave</code> 方法，统一使用 <code>Insert/Replace/Save</code> 方法实现，内部自动实现参数类型识别采用单条写入还是批量写入： <a href=/en/docs/core/gdb-chaining-insert-save>ORM链式操作-写入保存</a></p>
+<p>Deprecated <code>BatchInsert/BatchReplace/BatchSave</code> methods, unified use of <code>Insert/Replace/Save</code> methods for implementation, internally auto-recognizing parameter type to decide single or batch write: <a href=/en/docs/core/gdb-chaining-insert-save>ORM Model - Insert/Save</a></p>
 </li>
 <li>
-<p>增加 <code>DoFilter</code> 接口方法，用于 <code>ORM</code> 提交执行 <code>SQL&Args</code> 到底层 <code>driver</code> 之前的 <code>SQL&Args</code> 自定义过滤： <a href=/en/docs/core/gdb-interface-callback>ORM接口开发-回调处理</a></p>
+<p>Added <code>DoFilter</code> interface method for custom filtering of <code>SQL&Args</code> before <code>ORM</code> submits to underlying <code>driver</code>: <a href=/en/docs/core/gdb-interface-callback>ORM Interface - Callback</a></p>
 </li>
 <li>
-<p>增加 <code>DoCommit</code> 接口方法，用于 <code>ORM</code> 提交执行 <code>SQL&Args</code> 到底层 <code>driver</code> 之前的自定义处理</p>
+<p>Added <code>DoCommit</code> interface method for custom processing before <code>ORM</code> submits <code>SQL&Args</code> to underlying <code>driver</code></p>
 </li>
 <li>
-<p>增加 <code>ConvertDataForRecord</code> 接口方法，用于自定义的数据转换处理。 <a href=/en/docs/core/gdb-interface-callback>ORM接口开发-回调处理</a></p>
+<p>Added <code>ConvertDataForRecord</code> interface method for customized data conversion handling. <a href=/en/docs/core/gdb-interface-callback>ORM Interface - Callback</a></p>
 </li>
 <li>
-<p>增加 <code>Raw</code> 方法，用于通过原始 <code>SQL</code> 语句构建 <code>Model</code> 对象，随后可以使用 <code>Model</code> 的链式操作以及各种特性： <a href=/en/docs/core/gdb-chaining-model>ORM链式操作-模型创建</a></p>
+<p>Added <code>Raw</code> method to build <code>Model</code> object through raw <code>SQL</code> statement, followed by using <code>Model</code> chaining operations and features: <a href=/en/docs/core/gdb-chaining-model>ORM Model - Model</a></p>
 </li>
 <li>
-<p>增加 <code>Handler</code> 特性，用于自定义的 <code>Model</code> 对象修改，并返回新的 <code>Model</code> 对象，可轻松地复用常见的逻辑： <a href=/en/docs/core/gdb-chaining-handler>ORM链式操作-Handler特性</a></p>
+<p>Added <code>Handler</code> feature for customized <code>Model</code> object modification and returning new <code>Model</code> object, allowing easy reuse of common logic: <a href=/en/docs/core/gdb-chaining-handler>ORM Model - Handler</a></p>
 </li>
 <li>
-<p>增加 <code>Union/UnionAll</code> 特性，用于多条 <code>SQL/Model</code> 的查询结果合并： <a href=/en/docs/core/gdb-chaining-query-union>ORM查询-Union/UnionAll</a></p>
+<p>Added <code>Union/UnionAll</code> feature for merging results of multiple <code>SQL/Model</code> queries: <a href=/en/docs/core/gdb-chaining-query-union>Model Query - Union/UnionAll</a></p>
 </li>
 <li>
-<p>增加 <code>With</code> 特性对条件查询以及排序语句的配置支持： <a href=/en/docs/core/gdb-chaining-relation-with>模型关联-静态关联-With特性</a></p>
+<p>Added <code>With</code> feature for condition query and sort statement configuration support: <a href=/en/docs/core/gdb-chaining-relation-with>Model Association - With</a></p>
 </li>
 <li>
-<p>增加 <code>OnDuplicate/OnDuplicateEx</code> 方法，用于指定 <code>Save</code> 方法的更新/不更新字段： <a href=/en/docs/core/gdb-chaining-insert-save>ORM链式操作-写入保存</a></p>
+<p>Added <code>OnDuplicate/OnDuplicateEx</code> methods for specifying update/do-not-update field of <code>Save</code> methods: <a href=/en/docs/core/gdb-chaining-insert-save>ORM Model - Insert/Save</a></p>
 </li>
 <li>
-<p>增加 <code>Wheref/WhereOrf</code> 方法，用于带有格式化字符串语句的条件传递： <a href=/en/docs/core/gdb-chaining-query-where>ORM查询-Where条件</a></p>
+<p>Added <code>Wheref/WhereOrf</code> methods for condition passing with formatted string statement: <a href=/en/docs/core/gdb-chaining-query-where>Model Query - Where</a></p>
 </li>
 <li>
-<p>增加 <code>WhereLT/WhereLTE/WhereGT/WhereGTE</code> 以及 <code>WhereOrLT/WhereOrLTE/WhereOrGT/WhereOrGTE</code> 方法，用以为ORM添加常见的比较条件：https://</p>
+<p>Added <code>WhereLT/WhereLTE/WhereGT/WhereGTE</code> and <code>WhereOrLT/WhereOrLTE/WhereOrGT/WhereOrGTE</code> methods for adding common comparison conditions to ORM.</p>
 </li>
 <li>
-<p>增加 <code>WherePrefix/WhereOrPrefix</code> 方法，用以在为条件字段加上表前缀，常用于关联查询中</p>
+<p>Added <code>WherePrefix/WhereOrPrefix</code> methods for adding table prefixes to condition fields, commonly used in association queries</p>
 </li>
 <li>
-<p>增加 <code>FieldsPrefix/FieldsExPrefix</code> 方法，用于为查询的字段增加自定义的表前缀，常用于关联查询中</p>
+<p>Added <code>FieldsPrefix/FieldsExPrefix</code> methods for adding custom table prefix to query fields, commonly used in association queries</p>
 </li>
 <li>
-<p>增加 <code>FieldsCount/FieldsSum/FieldsMin/FieldsMax/FieldsAvg</code> 方法，用于增加常见的统一查询条件</p>
+<p>Added <code>FieldsCount/FieldsSum/FieldsMin/FieldsMax/FieldsAvg</code> methods for adding common unified query conditions</p>
 </li>
 <li>
-<p>增加 <code>LeftJoinOnField/RightJoinOnField/InnerJoinOnField</code> 方法，用于便捷关联带有相同字段名称的表</p>
+<p>Added <code>LeftJoinOnField/RightJoinOnField/InnerJoinOnField</code> methods for convenient association with tables having the same field name</p>
 </li>
 <li>
-<p>增加 <code>OmitEmptyWhere/OmitEmptyData</code> 方法，用于特定过滤 <code>Where</code> 条件和 <code>Data</code> 数据中的空值数据： <a href=/en/docs/core/gdb-chaining-fields-filtering>ORM链式操作-字段过滤</a></p>
+<p>Added <code>OmitEmptyWhere/OmitEmptyData</code> methods for specifically filtering empty value data in <code>Where</code> conditions and <code>Data</code>: <a href=/en/docs/core/gdb-chaining-fields-filtering>ORM Model - Fields Filtering</a></p>
 </li>
 <li>
-<p>增加 <code>OmitNil/OmitNilWhere/OmitNilData</code> 方法，用于特定过滤 <code>Where</code> 条件和 <code>Data</code> 数据中的 <code>nil</code> 数据： <a href=/en/docs/core/gdb-chaining-fields-filtering>ORM链式操作-字段过滤</a></p>
+<p>Added <code>OmitNil/OmitNilWhere/OmitNilData</code> methods for specifically filtering <code>nil</code> data in <code>Where</code> conditions and <code>Data</code>: <a href=/en/docs/core/gdb-chaining-fields-filtering>ORM Model - Fields Filtering</a></p>
 </li>
 <li>
-<p>增加 <code>TimeZone</code> 配置项，用于数据库查询的自定义时区转换（目前支持 <code>mysql/pgsql</code>）： <a href=/en/docs/core/gdb-config>ORM使用配置</a></p>
+<p>Added <code>TimeZone</code> configuration item for custom time zone conversion in database queries (currently supports <code>mysql/pgsql</code>): <a href=/en/docs/core/gdb-config>ORM - Configuration</a></p>
 </li>
 <li>
-<p>改进 <code>Cache</code> 缓存特性，支持增加准确的缓存参数控制</p>
+<p>Improved <code>Cache</code> feature, supports accurate cache parameter control</p>
 </li>
 <li>
-<p>增加 <code>Close</code> 方法，用于手动关闭数据库连接</p>
+<p>Added <code>Close</code> method for manually closing database connection</p>
 </li>
 <li>
-<p>去掉 <code>ORM</code> 在使用没有自定义配置时默认 <code>100</code> 连接数的配置限制。</p>
+<p>Removed <code>ORM</code> configuration limit of default <code>100</code> connections when custom configuration not used.</p>
 </li>
 <li>
-<p>改进时间维护特性，不再自动过滤开发者提交的 <code>CreatedAt/UpdatedAt/DeletedAt</code> 相关参数，意味着开发者可以在 <code>ORM</code> 操作中自定义相关时间字段的更新。</p>
+<p>Improved time maintenance feature, no longer automatically filtering <code>CreatedAt/UpdatedAt/DeletedAt</code> related parameters submitted by developers, allowing custom updates to related time fields in <code>ORM</code> operations.</p>
 </li>
 <li>
-<p>改进数据库执行的SQL日志记录，增加影响行数记录</p>
+<p>Improved database execution SQL log recording, added affected row count recording</p>
 </li>
 <li>
-<p>接口方法 <code>HandleSqlBeforeCommit</code> 名称修改为了 <code>DoCommit</code>。</p>
+<p>Interface method <code>HandleSqlBeforeCommit</code> renamed to <code>DoCommit</code>.</p>
 </li>
 <li>
-<p>数据库方法操作统一增加 <code>context.Context</code> 作为第一必须参数。</p>
+<p>Database method operations uniformly added <code>context.Context</code> as the first required parameter.</p>
 </li>
 <li>
-<p>修复 <code>gdb</code> 组件的 <code>With</code> 特性多层级查询失效问题。</p>
+<p>Fixed <code>gdb</code> component <code>With</code> feature multi-level query invalid issue.</p>
 </li>
 <li>
-<p>删除查询结果类型 <code>Record/Result</code> 的所有已废弃的方法。</p>
+<p>Removed all deprecated methods of query result types <code>Record/Result</code>.</p>
 </li>
 <li>
-<p>单元测试完善。</p>
+<p>Completed unit tests.</p>
 </li>
 <li>
 <p><code>/database/gredis</code></p>
 </li>
 <li>
-<p>采用适配器模式，以接口化设计重构该组件，以提高扩展性： <a href=/en/docs/components/contrib-nosql-redis-interface>Redis-接口化设计</a></p>
+<p>Adopted adapter pattern, refactored the component with interface design to improve extensibility: <a href=/en/docs/components/contrib-nosql-redis-interface>Redis - Interface</a></p>
 </li>
 <li>
-<p>默认提供基于第三方 <code>goredis</code> 包的适配器实现，增加了对 <code>Redis</code> 集群的支持： <a href=/en/docs/components/contrib-nosql-redis-config>Redis-配置管理</a></p>
+<p>Provided default adapter implementation based on third-party <code>goredis</code> package, added support for <code>Redis</code> cluster: <a href=/en/docs/components/contrib-nosql-redis-config>Redis - Configuration</a></p>
 </li>
 <li>
-<p>由于集群特性的支持，配置文件格式发生改变： <a href=/en/docs/components/contrib-nosql-redis-config>Redis-配置管理</a></p>
+<p>Due to support for cluster features, configuration file format changed: <a href=/en/docs/components/contrib-nosql-redis-config>Redis - Configuration</a></p>
 </li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=2网络组件>2、网络组件<a href=#2网络组件 class=hash-link aria-label="Direct link to 2、网络组件" title="Direct link to 2、网络组件">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=2-network-components>2. Network Components<a href=#2-network-components class=hash-link aria-label="Direct link to 2. Network Components" title="Direct link to 2. Network Components">​</a></h3>
 <ol>
 <li><code>/net/ghttp</code></li>
-<li>新增路由注册方式： <a href=/en/docs/web/router-registering-strict-router>路由注册-规范路由</a></li>
-<li>默认将 <code>Request</code> 对象注入到 <code>ctx</code> 上下文对象中，并增加 <code>RequestFromCtx/g.RequestFromCtx</code> 方法获取 <code>ctx</code> 中的 <code>Request</code> 对象。</li>
-<li>将 <code>Client</code> 功能特性进行抽离，封装为 <code>gclient</code> 组件： <a href=/en/docs/web/http-client>HTTPClient</a></li>
-<li><code>Server</code> 日志增加对 <code>ctx</code> 上下文链路信息打印的支持，并改进日志格式： <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=7298186" target=_blank rel="noopener noreferrer">链路跟踪</a></li>
-<li>参数获取返回统一使用 <code>*gvar.Var</code> 泛型对象。</li>
-<li>废弃 <code>ghttp</code> 中相关的 <code>HTTP Client</code> 直接操作方法，必须通过创建 <code>Client</code> 对象来实现客户端访问操作。</li>
-<li>废弃 <code>Controller</code> 路由注册方式，并删除相关实现逻辑代码。</li>
+<li>New route registration method: <a href=/en/docs/web/router-registering-strict-router>Standard Router</a></li>
+<li>Default <code>Request</code> object injection into <code>ctx</code> context object, with added <code>RequestFromCtx/g.RequestFromCtx</code> methods to obtain <code>Request</code> object in <code>ctx</code>.</li>
+<li>Abstracted and encapsulated <code>Client</code> features into <code>gclient</code> component: <a href=/en/docs/web/http-client>HTTPClient</a></li>
+<li><code>Server</code> logs added support for printing <code>ctx</code> context link information and improved log format: <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=7298186" target=_blank rel="noopener noreferrer">Link Tracing</a></li>
+<li>Parameter acquisition returns unified use of <code>*gvar.Var</code> generic object.</li>
+<li>Deprecated direct operation methods of <code>HTTP Client</code> in <code>ghttp</code>, must create <code>Client</code> object for client access operations.</li>
+<li>Deprecated <code>Controller</code> route registration method, removed related implementation code.</li>
 <li><code>/net/gtrace</code></li>
-<li>升级 <code>go.opentelemetry.io/otel</code> 到最新的正式版。</li>
-<li>完善全新的链路跟踪使用文档： <a href=/en/docs/obs/tracing>服务链路跟踪</a></li>
+<li>Upgraded <code>go.opentelemetry.io/otel</code> to the latest official version.</li>
+<li>Improved new link tracing usage documentation: <a href=/en/docs/obs/tracing>Service Tracing</a></li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=3系统组件>3、系统组件<a href=#3系统组件 class=hash-link aria-label="Direct link to 3、系统组件" title="Direct link to 3、系统组件">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=3-system-components>3. System Components<a href=#3-system-components class=hash-link aria-label="Direct link to 3. System Components" title="Direct link to 3. System Components">​</a></h3>
 <ol>
 <li><code>/os/glog</code>
 <ol>
-<li>为推进可观测性特性，落实链路跟踪规范，所有日志打印方法均增加 <code>context.Context</code> 参数。</li>
-<li>日志组件增加了 <code>Handler</code> 特性，采用中间件设计、支持多个 <code>Handler</code> 处理，为开发者自定义日志处理提供了更灵活强大的支持： <a href=/en/docs/core/glog-handler>日志组件-Handler</a></li>
-<li>日志组件增加了对内容的颜色打印特性支持，在终端中默认输出颜色打印，输出到文件/自定义 <code>Writer</code> 默认关闭、可通过相关配置开启： <a href=/en/docs/core/glog-color>日志组件-颜色打印</a></li>
-<li>废弃 <code>Println</code> 方法。</li>
-<li>文档更新： <a href=/en/docs/core/glog>日志组件</a></li>
+<li>To promote observability features and implement link tracing specifications, all log printing methods added <code>context.Context</code> parameter.</li>
+<li>Logging component added <code>Handler</code> feature, using middleware design and supporting multiple <code>Handler</code> processing, providing more flexible and powerful support for developer-defined log processing: <a href=/en/docs/core/glog-handler>Logging - Handler</a></li>
+<li>Logging component added support for color printing of content, default color printing output in terminal, output to file/custom <code>Writer</code> default off, can be enabled via related configuration: <a href=/en/docs/core/glog-color>Logging - Color Printing</a></li>
+<li>Deprecated <code>Println</code> method.</li>
+<li>Documentation update: <a href=/en/docs/core/glog>Logging</a></li>
 </ol>
 </li>
 <li><code>/os/gres</code>
 <ol>
-<li>新增 <code>Export</code> 方法用于将资源组件中的文件导出到本地磁盘： <a href=/en/docs/core/gres-funcs>资源管理-方法介绍</a></li>
+<li>Added <code>Export</code> method for exporting files from resource component to local disk: <a href=/en/docs/core/gres-funcs>Resource - Methods</a></li>
 </ol>
 </li>
 <li><code>/os/gfile</code>
 <ol>
-<li>新增 <code>SizeFormat</code> 方法用于获取指定文件格式化后的大小字符串。</li>
-<li>文档更新： <a href=/en/docs/components/os-gfile>文件管理-gfile</a></li>
+<li>Added <code>SizeFormat</code> method for getting formatted size string of specified file.</li>
+<li>Documentation update: <a href=/en/docs/components/os-gfile>File</a></li>
 </ol>
 </li>
 <li><code>/os/gcache</code>
 <ol>
-<li>采用适配器模式，以接口化设计重构该组件，以提高扩展性： <a href=/en/docs/core/gcache-interface>缓存管理-接口设计</a></li>
-<li>默认提供了基于进程内存的缓存实现： <a href=/en/docs/core/gcache-memory>缓存管理-内存缓存</a></li>
-<li>所有操作方法增加了 <code>context.Context</code> 上下文参数。</li>
-<li>参数获取返回统一使用 <code>*gvar.Var</code> 泛型对象。</li>
-<li>增加 <code>Must*</code> 方法，用以直接获取参数并在产生错误时直接 <code>panic</code>。</li>
+<li>Adopted adapter pattern, refactored the component with interface design to improve extensibility: <a href=/en/docs/core/gcache-interface>Caching - Interface</a></li>
+<li>Provided default cache implementation based on process memory: <a href=/en/docs/core/gcache-memory>Caching - In-Memory</a></li>
+<li>All operation methods added <code>context.Context</code> context parameter.</li>
+<li>Parameter acquisition returns unified use of <code>*gvar.Var</code> generic object.</li>
+<li>Added <code>Must*</code> methods for directly obtaining parameters and triggering <code>panic</code> on errors.</li>
 </ol>
 </li>
 <li><code>/os/gcfg</code>
 <ol>
-<li>采用适配器模式，以接口化设计重构该组件，以提高扩展性： <a href=/en/docs/core/gcfg-interface>配置管理-接口化设计</a></li>
-<li>默认提供了基于文件系统的配置管理实现： <a href=/en/docs/core/gcfg>配置管理</a></li>
-<li>参数获取返回统一使用 <code>*gvar.Var</code> 泛型对象。</li>
-<li>所有操作方法增加了 <code>context.Context</code> 上下文参数。</li>
-<li>增加 <code>GetWithEnv</code> 方法，当配置适配器中无法查找到对应的参数时，将会自动读取环境变量中的相应参数： <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=1114668#id-%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86-%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96" target=_blank rel="noopener noreferrer">配置管理-配置读取</a></li>
-<li>增加 <code>GetWithCmd</code> 方法，当配置适配器中无法查找到对应的参数时，将会自动读取命令行参数中的相应参数： <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=1114668#id-%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86-%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96" target=_blank rel="noopener noreferrer">配置管理-配置读取</a></li>
-<li>增加 <code>Must*</code> 方法，用以直接获取参数并在产生错误时直接 <code>panic</code>。</li>
-<li>配置组件易用性改进，通过单例对象访问配置组件将会按照 <code>toml/yaml/yml/json/ini/xml</code> 文件后缀自动检索配置文件： <a href=/en/docs/core/gcfg>配置管理</a></li>
+<li>Adopted adapter pattern, refactored the component with interface design to improve extensibility: <a href=/en/docs/core/gcfg-interface>Configuration - Interface</a></li>
+<li>Provided default configuration management based on file system: <a href=/en/docs/core/gcfg>Configuration</a></li>
+<li>Parameter acquisition returns unified use of <code>*gvar.Var</code> generic object.</li>
+<li>All operation methods added <code>context.Context</code> context parameter.</li>
+<li>Added <code>GetWithEnv</code> method, automatically reading corresponding parameters from environment variables when they cannot be found in configuration adapter: <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=1114668#id-%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86-%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96" target=_blank rel="noopener noreferrer">Configuration Management - Configuration Reading</a></li>
+<li>Added <code>GetWithCmd</code> method, automatically reading corresponding parameters from command line parameters when they cannot be found in configuration adapter: <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=1114668#id-%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86-%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96" target=_blank rel="noopener noreferrer">Configuration Management - Configuration Reading</a></li>
+<li>Added <code>Must*</code> methods for directly obtaining parameters and triggering <code>panic</code> on errors.</li>
+<li>Configuration component usability improvement, accessing configuration component via singleton object will automatically search configuration files according to <code>toml/yaml/yml/json/ini/xml</code> file suffix: <a href=/en/docs/core/gcfg>Configuration</a></li>
 </ol>
 </li>
 <li><code>/os/gcmd</code>
 <ol>
-<li>参数获取返回统一使用 <code>*gvar.Var</code> 泛型对象。</li>
-<li>全新的多层级命令行管理方式，支持自动生成命令行使用提示： <a href=/en/docs/core/gcmd-command>命令管理-命令行对象</a></li>
-<li>增加基于对象的命令行管理方式，更适合大量的终端命令场景： <a href=/en/docs/core/gcmd-struct>命令管理-结构化参数</a></li>
+<li>Parameter acquisition returns unified use of <code>*gvar.Var</code> generic object.</li>
+<li>Brand new multi-level command line management method, supports automatic generation of command line usage tips: <a href=/en/docs/core/gcmd-command>Command - Object</a></li>
+<li>Added object-based command line management method, more suitable for large terminal command scenes: <a href=/en/docs/core/gcmd-struct>Command - Structure</a></li>
 </ol>
 </li>
 <li><code>/os/genv</code>
 <ol>
-<li>参数获取返回统一使用 <code>*gvar.Var</code> 泛型对象。</li>
+<li>Parameter acquisition returns unified use of <code>*gvar.Var</code> generic object.</li>
 </ol>
 </li>
 <li><code>/os/gcron</code>
 <ol>
-<li>定时任务方法定义增加 <code>context.Context</code> 参数。</li>
-<li>所有创建定时任务方法增加 <code>context.Context</code> 参数。</li>
-<li>文档更新： <a href=/en/docs/components/os-gcron>定时任务-gcron</a></li>
+<li>Added <code>context.Context</code> parameter to defined scheduled task methods.</li>
+<li>Added <code>context.Context</code> parameter to all create scheduled task methods.</li>
+<li>Documentation update: <a href=/en/docs/components/os-gcron>Cron Job</a></li>
 </ol>
 </li>
 <li><code>/os/gtime</code>
 <ol>
-<li>废弃 <code>Second/Millisecond/Microsecond/Nanosecond</code> 包方法，使用 <code>Timestamp/TimestampMilli/TimestampMicro/TimestampNano</code> 方法替代。</li>
-<li>文档更新： <a href=/en/docs/components/os-gtime>时间管理-gtime</a></li>
+<li>Deprecated <code>Second/Millisecond/Microsecond/Nanosecond</code> package methods, replaced with <code>Timestamp/TimestampMilli/TimestampMicro/TimestampNano</code> methods.</li>
+<li>Documentation update: <a href=/en/docs/components/os-gtime>Time</a></li>
 </ol>
 </li>
 <li><code>/os/gtimer</code>
 <ol>
-<li>定时器方法定义增加 <code>context.Context</code> 参数。</li>
-<li>所有创建定时器方法增加 <code>context.Context</code> 参数。</li>
-<li>改进基于优先级队列数据结构存储的定时任务执行检测机制，提高执行性能。</li>
-<li>文档更新： <a href=/en/docs/components/os-gtimer>定时器-gtimer</a></li>
+<li>Added <code>context.Context</code> parameter to defined timer methods.</li>
+<li>Added <code>context.Context</code> parameter to all create timer methods.</li>
+<li>Improved the timer task execution detection mechanism based on priority queue data structure storage, enhancing execution performance.</li>
+<li>Documentation update: <a href=/en/docs/components/os-gtimer>Timer</a></li>
 </ol>
 </li>
 <li><code>/os/grpool</code>
 <ol>
-<li>回调方法定义增加 <code>context.Context</code> 参数。</li>
-<li><code>goroutine</code> 池任务添加方法增加 <code>context.Context</code> 参数。</li>
-<li>文档更新： <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=1114246" target=_blank rel="noopener noreferrer">协程管理-grpool</a></li>
+<li>Added <code>context.Context</code> parameter to callback method definitions.</li>
+<li>Added <code>context.Context</code> parameter to <code>goroutine</code> pool task addition methods.</li>
+<li>Documentation update: <a href="https://wiki.goframe.org/pages/viewpage.action?pageId=1114246" target=_blank rel="noopener noreferrer">Coroutine Management - grpool</a></li>
 </ol>
 </li>
 <li><code>/os/gsession</code>
 <ol>
-<li><code>gsession.Storage</code> 接口增加 <code>ctx</code> 上下文参数输输入，用于承接上下文信息、实现完整的链路跟踪。并未保证严谨性增加 <code>error</code> 返回参数： <a href=/en/docs/web/session>Session</a></li>
-<li>参数获取返回统一使用 <code>*gvar.Var</code> 泛型对象。</li>
+<li>Added <code>ctx</code> context parameter input to <code>gsession.Storage</code> interface for receiving context information and implementing complete link tracing. For rigor, added <code>error</code> return parameter: <a href=/en/docs/web/session>Session</a></li>
+<li>Parameter acquisition returns unified use of <code>*gvar.Var</code> generic object.</li>
 </ol>
 </li>
 <li><code>/os/gview</code>
 <ol>
-<li>模板解析方法统一增加 <code>context.Context</code> 参数。</li>
-<li>增加 <code>plus/minus/times/divide</code> 四则运算内置模板方法。</li>
-<li>文档更新： <a href=/en/docs/core/gview>模板引擎</a></li>
+<li>Added <code>context.Context</code> parameter to template parsing methods.</li>
+<li>Added <code>plus/minus/times/divide</code> arithmetic template methods.</li>
+<li>Documentation update: <a href=/en/docs/core/gview>Template Engine</a></li>
 </ol>
 </li>
 <li><code>/os/gstructs</code>
 <ol>
-<li>将框架 <code>internal</code> 中的 <code>structs</code> 包开放，命名为 <code>gstructs</code>，用于 <code>struct</code> 反射操作的高级使用包： <a href=/en/docs/components/os-gstructs>对象信息-gstructs</a></li>
+<li>Opened <code>structs</code> package from <code>internal</code> of framework, named as <code>gstructs</code>, used for advanced usage of <code>struct</code> reflection operations: <a href=/en/docs/components/os-gstructs>Object Information</a></li>
 </ol>
 </li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=4错误处理>4、错误处理<a href=#4错误处理 class=hash-link aria-label="Direct link to 4、错误处理" title="Direct link to 4、错误处理">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=4-error-handling>4. Error Handling<a href=#4-error-handling class=hash-link aria-label="Direct link to 4. Error Handling" title="Direct link to 4. Error Handling">​</a></h3>
 <ol>
 <li>
 <p><code>/errors/gerror</code></p>
 </li>
 <li>
-<p>增加 <code>Message</code> 方法，用于获取指定错误码的错误信息。</p>
+<p>Added <code>Message</code> method for obtaining error message of specified error code.</p>
 </li>
 <li>
-<p>增加 <code>CodeMessage</code> 方法，用于获取指定错误的错误码信息。</p>
+<p>Added <code>CodeMessage</code> method for obtaining error code information of specified error.</p>
 </li>
 <li>
-<p>增加 <code>NewOption</code> 方法，用于自定义配置的错误对象创建，献给框架高级玩家。</p>
+<p>Added <code>NewOption</code> method for custom-configured error object creation, dedicated to advanced players of the framework.</p>
 </li>
 <li>
-<p>增加 <code>HasStack</code> 方法，用于判断给定的error接口对象是否实现（包含）了堆栈信息。</p>
+<p>Added <code>HasStack</code> method to determine whether given error interface object has implemented (contains) stack information.</p>
 </li>
 <li>
-<p>错误码从整型改为接口对象，以实现可定制性并提高可扩展性，详情参考 <code>gcode</code> 组件介绍： <a href=/en/docs/core/gerror-code-example>错误处理-错误码特性</a></p>
+<p>Changed error code from integer to interface object to achieve customizability and improve extensibility, refer to <code>gcode</code> component introduction for details: <a href=/en/docs/core/gerror-code-example>Error Code - Example</a></p>
 </li>
 <li>
-<p>提高易用性，改进 <code>NewCode/NewCodeSkip/WrapCode/WrapCodeSkip</code> 方法，调增 <code>text</code> 输入参数为非必须，默认使用对应错误码的 <code>Message</code> 信息。</p>
+<p>Improved usability, revised <code>NewCode/NewCodeSkip/WrapCode/WrapCodeSkip</code> methods, optional <code>text</code> input parameter, default using <code>Message</code> info of corresponding error code.</p>
 </li>
 <li>
 <p><code>/errors/gcode</code></p>
 </li>
 <li>
-<p>增加 <code>gcode</code> 错误码组件，提供可定制型和扩展性极强的错误码管理，结合 <code>gerror</code> 组件实现强大的错误处理： <a href=/en/docs/core/gerror-code-example>错误处理-错误码使用</a></p>
+<p>Added <code>gcode</code> error code component, providing highly customizable and extensible error code management, combined with <code>gerror</code> component for powerful error handling: <a href=/en/docs/core/gerror-code-example>Error Code - Example</a></p>
 </li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id=5其他组件>5、其他组件<a href=#5其他组件 class=hash-link aria-label="Direct link to 5、其他组件" title="Direct link to 5、其他组件">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id=5-other-components>5. Other Components<a href=#5-other-components class=hash-link aria-label="Direct link to 5. Other Components" title="Direct link to 5. Other Components">​</a></h3>
 <ol>
 <li><code>/container/garray</code></li>
-<li>各数组类型统一增加 <code>At</code> 方法，用于直接获取返回索引位置的数据。</li>
-<li>文档更新： <a href=/en/docs/components/container-garray-funcs>数组类型-方法介绍</a></li>
+<li>Added <code>At</code> method to each array type for directly obtaining returned data at specific index position.</li>
+<li>Documentation update: <a href=/en/docs/components/container-garray-funcs>Array - Methods</a></li>
 <li><code>/debug/gdebug</code></li>
-<li>增加 <code>TestDataContent</code> 方法，用于直接获取测试包下 <code>testdata</code> 目录下指定路径文件内容。</li>
-<li>文档更新： <a href=/en/docs/components/debug-gdebug>调试功能-gdebug</a></li>
+<li>Added <code>TestDataContent</code> method for directly obtaining file content of specified path under <code>testdata</code> directory in testing package.</li>
+<li>Documentation update: <a href=/en/docs/components/debug-gdebug>Debugging</a></li>
 <li><code>/encoding/gjson</code></li>
-<li>废弃大部分的 <code>Get*</code> 方法，统一使用 <code>Get</code> 方法获取指定 <code>pattern</code> 的内容，并统一返回 <code>*gvar.Var</code> 泛型对象，开发者根据业务场景自行通过对应方法便捷转换为特定类型变量。</li>
-<li>增加若干 <code>Must*</code> 方法。</li>
-<li>使用文档全面更新</li>
+<li>Deprecated most <code>Get*</code> methods, unified use of <code>Get</code> method to obtain the content of specified <code>pattern</code>, uniformly returns <code>*gvar.Var</code> generic object, developers can use corresponding methods to easily convert to specific type variables according to business scenario.</li>
+<li>Added several <code>Must*</code> methods.</li>
+<li>Comprehensive update on usage documentation</li>
 <li><code>/frame/g</code></li>
-<li>增加 <code>ModelRaw</code> 方法，用于便捷创建基于原生 <code>SQL</code> 的数据库 <code>Model</code> 对象。</li>
-<li>为通过 <code>/frame/g</code> 模块创建的 <code>ORM</code> 对象增加 <code>logger</code> 配置，通过自动读取配置文件，自动初始化： <a href=/en/docs/core/gdb-config>ORM使用配置</a></li>
-<li>为通过 <code>/frame/g</code> 模块创建的 <code>Server</code> 对象增加 <code>logger</code> 配置，通过自动读取配置文件，自动初始化： <a href=/en/docs/web/server-config>服务配置</a></li>
+<li>Added <code>ModelRaw</code> method for conveniently creating native <code>SQL</code> based database <code>Model</code> object.</li>
+<li>Added <code>logger</code> configuration to <code>ORM</code> objects created via <code>/frame/g</code> module, auto-initialized by automatically reading configuration files: <a href=/en/docs/core/gdb-config>ORM - Configuration</a></li>
+<li>Added <code>logger</code> configuration to <code>Server</code> objects created via <code>/frame/g</code> module, auto-initialized by automatically reading configuration files: <a href=/en/docs/web/server-config>Configuration</a></li>
 <li><code>/frame/gmvc</code></li>
-<li>标记废除 <code>gmvc</code> 耦合模块，未来不再进一步支持。</li>
+<li>Deprecated <code>gmvc</code> coupled module, no further support in the future.</li>
 <li><code>/util/gutil</code></li>
-<li>改进实现 <code>Dump</code> 方法，不再使用 <code>json</code> 包实现类型打印，而是自实现了对任意类型的打印特性，并且支持打印详细的数据类型： <a href=/en/docs/components/util-gutil>工具方法-gutil</a></li>
-<li>增加 <code>SliceToMapWithColumnAsKey</code> 方法，用以将 <code>Slice</code> 按照一定规则转换为 <code>Map</code>。</li>
+<li>Improved implementation of <code>Dump</code> method, no longer using <code>json</code> package to implement type printing, instead self-implemented feature for printing any type, supporting detailed data type printing: <a href=/en/docs/components/util-gutil>Utility Functions</a></li>
+<li>Added <code>SliceToMapWithColumnAsKey</code> method for converting <code>Slice</code> to <code>Map</code> according to certain rules.</li>
 <li><code>/utils/gvalid</code></li>
-<li>增加 <code>bail</code> 校验规则，以及 <code>Bail</code> 链式操作方法，用以在数据校验不通过时直接退出校验，不再执行后续校验规则。</li>
-<li>增加 <code>datetime</code> 校验规则，用以校验常用日期时间类型，其中日期之间支持的连接符号只支持 <code>-</code>，格式如： <code>2006-01-02 12:00:00</code>。</li>
-<li>去掉包校验方法，统一使用链式操作实现数据校验。</li>
-<li>所以校验方法增加 <code>context.Context</code> 参数。</li>
-<li>全新、超完善的数据校验组件使用文档： <a href=/en/docs/core/gvalid>数据校验</a></li>
+<li>Added <code>bail</code> validation rule, and <code>Bail</code> chaining method for immediately exiting validation when data validation fails and not executing subsequent validation rules.</li>
+<li>Added <code>datetime</code> validation rule for validating common date and time types, with date separator supporting only <code>-</code>, format like: <code>2006-01-02 12:00:00</code>.</li>
+<li>Removed package validation methods, unified implementation of data validation using chaining operations.</li>
+<li>All validation methods added <code>context.Context</code> parameter.</li>
+<li>Brand new, highly complete usage documentation of the data validation component: <a href=/en/docs/core/gvalid>Data Validation</a></li>
 </ol>
-<p>其他大量的改进细节，这里不再赘述，感兴趣的小伙伴可参阅官网 <a href=https://wiki.goframe.org target=_blank rel="noopener noreferrer">goframe.org</a></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id=三cli工具链>三、CLI工具链<a href=#三cli工具链 class=hash-link aria-label="Direct link to 三、CLI工具链" title="Direct link to 三、CLI工具链">​</a></h2>
+<p>For other numerous improvement details, we won't elaborate here. Interested friends can refer to the official website <a href=https://wiki.goframe.org target=_blank rel="noopener noreferrer">goframe.org</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id=3-cli-toolchain>3. CLI Toolchain<a href=#3-cli-toolchain class=hash-link aria-label="Direct link to 3. CLI Toolchain" title="Direct link to 3. CLI Toolchain">​</a></h2>
 <ol>
-<li>采用全新 <code>gcmd</code> 命令行对象封装重构实现。</li>
-<li>改进 <code>init</code> 命令，支持 <code>SingleRepo/MonoRepo</code> 两种仓库初始化。并且项目初始化不再依赖远端仓库。</li>
-<li>改进 <code>gen dao</code> 命令，采用全新的 <code>V2</code> 工程化设计，自动生成 <code>entity/dao/do</code> 代码文件。</li>
-<li>去掉 <code>update</code> 命令，工具的更新统一走 <a href=https://github.com/gogf/gf/tree/master/cmd/gf target=_blank rel="noopener noreferrer">https://github.com/gogf/gf/tree/master/cmd/gf</a></li>
-<li>去掉 <code>get</code> 命令。</li>
-<li>全新文档： <a href=/en/docs/cli>开发工具</a></li>
-</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class=col><a href="https://github.com/gogf/gf-site/blob/main/docs/release/v2.0 2022-03-09.md" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class=theme-last-updated>Last updated<!-- --> on <b><time datetime=2024-11-18T03:59:26.000Z itemprop=dateModified>Nov 18, 2024</time></b> by <b>hailaz</b></span></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/en/release/v2.1.0><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>v2.1 2022-06-22</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/en/release/v1.x><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>历史版本记录 v1.x</div></a></nav><div class=docusaurus-mt-lg></div></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#一重要特性 class="table-of-contents__link toc-highlight">一、重要特性</a><ul><li><a href=#1新版工程设计 class="table-of-contents__link toc-highlight">1、新版工程设计</a><li><a href=#2全链路跟踪特性 class="table-of-contents__link toc-highlight">2、全链路跟踪特性</a><li><a href=#3规范路由注册特性 class="table-of-contents__link toc-highlight">3、规范路由注册特性</a><li><a href=#4全错误堆栈特性 class="table-of-contents__link toc-highlight">4、全错误堆栈特性</a><li><a href=#5全新错误码特性 class="table-of-contents__link toc-highlight">5、全新错误码特性</a><li><a href=#6组件接口化设计 class="table-of-contents__link toc-highlight">6、组件接口化设计</a><li><a href=#7框架泛型的支持 class="table-of-contents__link toc-highlight">7、框架泛型的支持</a><li><a href=#8orm的大量改进 class="table-of-contents__link toc-highlight">8、ORM的大量改进</a><li><a href=#9其他重要改进 class="table-of-contents__link toc-highlight">9、其他重要改进</a><ul><li><a href=#1日志组件-handler-特性 class="table-of-contents__link toc-highlight">1）日志组件 <code>Handler</code> 特性</a><li><a href=#2日志组件颜色打印 class="table-of-contents__link toc-highlight">2）日志组件颜色打印</a><li><a href=#4调试模式介绍完善 class="table-of-contents__link toc-highlight">4）调试模式介绍完善</a></ul></ul><li><a href=#二功能改进 class="table-of-contents__link toc-highlight">二、功能改进</a><ul><li><a href=#1数据组件 class="table-of-contents__link toc-highlight">1、数据组件</a><li><a href=#2网络组件 class="table-of-contents__link toc-highlight">2、网络组件</a><li><a href=#3系统组件 class="table-of-contents__link toc-highlight">3、系统组件</a><li><a href=#4错误处理 class="table-of-contents__link toc-highlight">4、错误处理</a><li><a href=#5其他组件 class="table-of-contents__link toc-highlight">5、其他组件</a></ul><li><a href=#三cli工具链 class="table-of-contents__link toc-highlight">三、CLI工具链</a></ul></div></div></div></div></main></div></div></div><footer class=footer><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>Copyright ©2024 GoFrame OpenSource Team</div></div></div></footer></div>
+<li>Refactoring implemented with the encapsulation of the brand new <code>gcmd</code> command line object.</li>
+<li>Improved <code>init</code> command, supports <code>SingleRepo/MonoRepo</code> two repository initialization. Project initialization no longer depends on remote repository.</li>
+<li>Improved <code>gen dao</code> command, adopting the brand new <code>V2</code> engineering design, automatically generating <code>entity/dao/do</code> code files.</li>
+<li>Removed <code>update</code> command, tool updates unified through <a href=https://github.com/gogf/gf/tree/master/cmd/gf target=_blank rel="noopener noreferrer">https://github.com/gogf/gf/tree/master/cmd/gf</a></li>
+<li>Removed <code>get</code> command.</li>
+<li>All-new documentation: <a href=/en/docs/cli>CLI Tool</a></li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class=col><a href="https://github.com/gogf/gf-site/blob/main/docs/release/v2.0 2022-03-09.md" target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class=theme-last-updated>Last updated<!-- --> on <b><time datetime=2024-11-25T13:33:36.000Z itemprop=dateModified>Nov 25, 2024</time></b> by <b>John</b></span></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/en/release/v2.1.0><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>v2.1 2022-06-22</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/en/release/v1.x><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>Historical Version v1.x</div></a></nav><div class=docusaurus-mt-lg></div></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#1-important-features class="table-of-contents__link toc-highlight">1. Important Features</a><ul><li><a href=#1-new-engineering-design class="table-of-contents__link toc-highlight">1. New Engineering Design</a><li><a href=#2-full-link-tracing-features class="table-of-contents__link toc-highlight">2. Full Link Tracing Features</a><li><a href=#3-standardized-route-registration-features class="table-of-contents__link toc-highlight">3. Standardized Route Registration Features</a><li><a href=#4-full-error-stack-feature class="table-of-contents__link toc-highlight">4. Full Error Stack Feature</a><li><a href=#5-new-error-code-feature class="table-of-contents__link toc-highlight">5. New Error Code Feature</a><li><a href=#6-component-interface-design class="table-of-contents__link toc-highlight">6. Component Interface Design</a><li><a href=#7-support-for-generic-framework class="table-of-contents__link toc-highlight">7. Support for Generic Framework</a><li><a href=#8-plenty-of-orm-improvements class="table-of-contents__link toc-highlight">8. Plenty of ORM Improvements</a><li><a href=#9-other-important-improvements class="table-of-contents__link toc-highlight">9. Other Important Improvements</a><ul><li><a href=#1-logging-component-handler-feature class="table-of-contents__link toc-highlight">1) Logging Component <code>Handler</code> Feature</a><li><a href=#2-logging-component-color-printing class="table-of-contents__link toc-highlight">2) Logging Component Color Printing</a><li><a href=#4-improved-debug-mode-introduction class="table-of-contents__link toc-highlight">4) Improved Debug Mode Introduction</a></ul></ul><li><a href=#2-function-improvements class="table-of-contents__link toc-highlight">2. Function Improvements</a><ul><li><a href=#1-data-components class="table-of-contents__link toc-highlight">1. Data Components</a><li><a href=#2-network-components class="table-of-contents__link toc-highlight">2. Network Components</a><li><a href=#3-system-components class="table-of-contents__link toc-highlight">3. System Components</a><li><a href=#4-error-handling class="table-of-contents__link toc-highlight">4. Error Handling</a><li><a href=#5-other-components class="table-of-contents__link toc-highlight">5. Other Components</a></ul><li><a href=#3-cli-toolchain class="table-of-contents__link toc-highlight">3. CLI Toolchain</a></ul></div></div></div></div></main></div></div></div><footer class=footer><div class="container container-fluid"><div class="footer__bottom text--center"><div class=footer__copyright>Copyright ©2024 GoFrame OpenSource Team</div></div></div></footer></div>
