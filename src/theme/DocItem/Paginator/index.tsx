@@ -3,7 +3,6 @@ import type { WrapperProps } from '@docusaurus/types';
 import Comments from "@site/src/components/Comments";
 import Paginator from '@theme-original/DocItem/Paginator';
 import type PaginatorType from '@theme/DocItem/Paginator';
-import React from 'react';
 
 
 type Props = WrapperProps<typeof PaginatorType>;
