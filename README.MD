@@ -18,12 +18,23 @@ yarn start
 # 构建
 yarn build
 
-# 更换源
+```
+
+```shell
+# 更换源 
+# .npmrc 文件中指定优先级最高
+# 其次是 npm config get registry
+# 最后是 yarn config get registry
+# 优先级：.npmrc > npm config > yarn config
+npm config get registry
+npm config set registry https://registry.npmjs.org
+
 yarn config get registry
 yarn config set registry https://registry.npmjs.org
+
 rm yarn.lock
 yarn install --force
-# 上面的命令还是更换不了，先手动替换
+# 实在不行可以手动替换
 sed -i 's|https://mirrors.tencent.com/npm/|https://registry.npmjs.org/|g' yarn.lock
 ```
 
