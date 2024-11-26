@@ -101,7 +101,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Comprehensive Engineering</h3>
                             <div className="mb-2">
-                                Built on years of engineering experience, covering the entire process from project setup to code organization, ensuring fewer detours and stable delivery for teams.
+                            Built on years of experience, covering project setup to code organization, ensuring efficient and stable delivery.
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Out Of Box</h3>
                             <div className="mb-2">
-                                Offers rich components like database, network services, cache management, data validation, and logging, providing comprehensive support for enterprise application development.
+                            Offers components like database, cache, validation, and logging, supporting enterprise application development.
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Outstanding Performance</h3>
                             <div className="mb-2">
-                                Handles high-concurrency requests with ease, featuring optimized algorithms and data structures for faster execution of various operations.
+                            Efficiently handles high-concurrency requests with optimized algorithms and data structures, ensuring faster operations.
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Cross-Platform</h3>
                             <div className="mb-2">
-                            Offers excellent cross-platform compatibility, seamlessly running on a variety of operating systems, including Windows, Linux, and Mac OS, ensuring broad adaptability.
+                            Provides excellent cross-platform compatibility, running seamlessly on Windows, Linux, and Mac OS, ensuring versatility.
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Loose Coupling</h3>
                             <div className="mb-2">
-                                Independent components and modules interact through clear interfaces, making it easy to modify or replace them, enhancing development flexibility and system stability.
+                            Independent modules with clear interfaces enable easy modification, enhancing flexibility and stability.
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">High Scalability</h3>
                             <div className="mb-2">
-                                Flexible interface design allows developers to easily add new features, modules, or integrate third-party libraries to meet various business needs.
+                            Flexible interface design enables developers to easily add features, integrate modules, and use third-party libraries to meet business needs.
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Comprehensive Documentation</h3>
                             <div className="mb-2">
-                                Detailed documentation covering all aspects of the framework, from basic usage to advanced features, providing developers with thorough and easy-to-understand references.
+                            Provides detailed documentation covering from basic usage to advanced features, offering clear and thorough references for developers.
                             </div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Active Community Support</h3>
                             <div className="mb-2">
-                                A vibrant community where members actively exchange ideas, share experiences, and collaborate, providing developers with abundant resources and timely support.
+                            A vibrant community where members collaborate, share resources, and provide timely support to developers.
                             </div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Convenient Configuration</h3>
                             <div className="mb-2">
-                            Flexible and efficient configuration management supports multiple formats, environments, and dynamic loading, enhancing development and management ease.
+                            Flexible configuration management supports formats, environments, and dynamic loading, improving development ease.
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Robust Error Handling</h3>
                             <div className="mb-2">
-                                Clearly and accurately captures, categorizes, and reports errors, helping developers quickly locate issues and significantly improve program stability and maintainability.
+                            Clearly captures, categorizes, and reports errors, helping developers locate issues and improve program stability.
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Input Validation and Filtering</h3>
                             <div className="mb-2">
-                                Built-in powerful input validation and filtering mechanisms to effectively prevent malicious inputs, such as SQL injection and cross-site scripting (XSS) attacks.
+                            Built-in validation and filtering prevent malicious inputs like SQL injection and XSS attacks effectively.
                             </div>
                         </div>
                     </div>
@@ -190,7 +190,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Code Generation Toolchain</h3>
                             <div className="mb-2">
-                                Efficient and convenient code generation toolchain that significantly boosts development efficiency, reduces repetitive tasks, and ensures code standardization and consistency.
+                            Efficient code generation toolchain boosts development, reduces repetitive tasks, and ensures code consistency.
                             </div>
                         </div>
                     </div>
@@ -198,7 +198,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Automated API Documentation</h3>
                             <div className="mb-2">
-                            Automatically generates clear and standardized API documentation from code structure, reducing manual work and ensuring synchronization and accuracy.
+                            Generates clear API documentation from code, reducing manual work and ensuring accuracy and synchronization.
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">Web & Microservice Development</h3>
                             <div className="mb-2">
-                                Equipped with powerful features and toolsets to efficiently build stable, high-performance, and scalable web applications and microservice architectures.
+                            Provides powerful tools to efficiently build stable, high-performance, and scalable web applications and microservices.
                             </div>
                         </div>
                     </div>
@@ -214,7 +214,7 @@ function Features() {
                         <div className="card p-8 box-border">
                             <h3 className="mb-2">OpenTelemetry Observability</h3>
                             <div className="mb-2">
-                                Accurately tracks and monitors application metrics and behaviors, providing developers with deep insights to optimize application performance and reliability.
+                            Tracks application metrics and behaviors, offering insights to optimize performance and reliability for developers.
                             </div>
                         </div>
                     </div>
