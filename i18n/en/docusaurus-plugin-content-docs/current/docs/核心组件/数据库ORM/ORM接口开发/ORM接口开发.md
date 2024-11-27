@@ -42,7 +42,7 @@ type Driver interface {
 
 The `New` method is used to create a database operation object corresponding to the driver based on the `Core` database base object and the `ConfigNode` configuration object. It should be noted that the returned database object needs to implement the `DB` interface. The database base object `Core` has already implemented the `DB` interface, so developers only need to "inherit" the `Core` object and then override the corresponding interface implementation methods as needed.
 
-## Documents
+## Documentation
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

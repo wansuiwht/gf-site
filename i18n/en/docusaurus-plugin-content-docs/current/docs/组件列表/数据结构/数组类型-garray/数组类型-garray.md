@@ -34,7 +34,7 @@ Brief Description:
    - `SortedArray`, `SortedIntArray`, `SortedStrArray`
    - Among them, the sorted array `SortedArray` requires a given sorting comparison method, and many `Comparator*` comparison methods are also defined in the toolkit `gutil`.
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

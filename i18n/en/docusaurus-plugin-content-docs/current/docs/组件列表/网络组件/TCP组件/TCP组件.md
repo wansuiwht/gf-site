@@ -79,7 +79,7 @@ hi there
 
 For each TCP connection initiated by a client, TCPServer creates a `goroutine` to handle it until the TCP connection is disconnected. Due to the lightweight nature of goroutines, very high levels of concurrency can be supported.
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

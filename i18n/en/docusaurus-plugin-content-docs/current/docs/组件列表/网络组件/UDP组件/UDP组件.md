@@ -54,7 +54,7 @@ On `Linux`, you can use the following command to send `UDP` data to the server f
 echo "hello" > /dev/udp/127.0.0.1/8999
 ```
 
-## Documents
+## Documentation
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

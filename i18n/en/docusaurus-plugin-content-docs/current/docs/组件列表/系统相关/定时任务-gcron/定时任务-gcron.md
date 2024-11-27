@@ -42,7 +42,7 @@ import "github.com/gogf/gf/v2/os/gcron"
 
 - Influence of Global Timezone: Scheduled tasks strictly depend on time calculation, so the global timezone of the process greatly affects scheduled task execution. When adding scheduled tasks, pay attention to the global timezone settings of the current process. If no global timezone is set, the system timezone is used by default. For more information on timezone settings, please refer to: [Time - Time Zone](../时间管理-gtime/时间管理-时区设置.md)
 
-## Documents
+## Documentation
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

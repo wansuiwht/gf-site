@@ -29,7 +29,7 @@ import "github.com/gogf/gf/v2/container/gtype"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/gtype](https://pkg.go.dev/github.com/gogf/gf/v2/container/gtype)
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

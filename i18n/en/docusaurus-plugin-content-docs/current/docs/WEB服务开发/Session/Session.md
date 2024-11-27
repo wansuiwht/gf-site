@@ -48,7 +48,7 @@ Taking a common HTTP request as an example, the `Session` object in `ghttp.Reque
 
 When a user's `Session` is no longer needed, for instance, when a user logs out, the session needs to be hard-deleted from storage. This can be done by calling the `RemoveAll` method.
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

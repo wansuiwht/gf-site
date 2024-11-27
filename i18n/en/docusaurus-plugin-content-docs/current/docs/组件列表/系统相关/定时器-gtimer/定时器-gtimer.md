@@ -64,7 +64,7 @@ It should be noted that the shorter the default detection interval of the timer,
 
 Please refer to the section [Cron Job](../定时任务-gcron/定时任务-gcron与gtimer.md)
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

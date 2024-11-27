@@ -28,7 +28,7 @@ import "github.com/gogf/gf/v2/container/gvar"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/gvar](https://pkg.go.dev/github.com/gogf/gf/v2/container/gvar)
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

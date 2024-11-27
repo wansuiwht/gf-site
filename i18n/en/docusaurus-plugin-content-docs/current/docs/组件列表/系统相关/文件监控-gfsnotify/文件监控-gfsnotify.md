@@ -25,7 +25,7 @@ It is recommended to use the `Add` and `Remove` module methods provided by the `
 
 Additionally, you can also create a watching management object using the `New` method and then perform watching management. When adding watching, you need to provide a callback function that triggers during watching, with the parameter type being a `*gfsnotify.Event` object pointer.
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

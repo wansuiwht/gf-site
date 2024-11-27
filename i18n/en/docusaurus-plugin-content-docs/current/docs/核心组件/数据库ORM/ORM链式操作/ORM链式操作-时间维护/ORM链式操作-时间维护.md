@@ -45,7 +45,7 @@ For a complete database configuration, please refer to the [ORM - Configuration]
 
 When a data table contains any or multiple fields such as `created_at`, `updated_at`, `deleted_at`, or contains corresponding configuration fields in the configuration file, this feature is automatically enabled.
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

@@ -21,7 +21,7 @@ import "github.com/gogf/gf/v2/text/gregex"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/text/gregex](https://pkg.go.dev/github.com/gogf/gf/v2/text/gregex)
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

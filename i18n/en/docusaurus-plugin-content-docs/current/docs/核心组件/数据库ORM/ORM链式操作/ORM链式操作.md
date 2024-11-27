@@ -27,7 +27,7 @@ Below is the support status of the latest version
 | `dm` | Unsupported | Supported | Supported | Supported | Supported | Supported | Supported |
 | `clickhouse` | Unsupported | Unsupported | Unsupported | Unsupported | Supported | Unsupported | Unsupported |
 
-## Documents
+## Documentation
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

@@ -33,7 +33,7 @@ import "github.com/gogf/gf/v2/container/gmap"
 
 [https://pkg.go.dev/github.com/gogf/gf/v2/container/gmap](https://pkg.go.dev/github.com/gogf/gf/v2/container/gmap)
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

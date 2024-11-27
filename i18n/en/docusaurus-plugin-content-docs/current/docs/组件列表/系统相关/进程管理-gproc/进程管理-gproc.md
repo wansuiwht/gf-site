@@ -30,7 +30,7 @@ import "github.com/gogf/gf/v2/os/gproc"
    - `ShellRun` will directly output the return content to standard output after executing the command;
    - We can use `goroutine` to achieve asynchronous execution, such as: `go ShellRun(...)`, etc.
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 

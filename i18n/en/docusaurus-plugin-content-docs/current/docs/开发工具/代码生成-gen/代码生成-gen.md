@@ -36,7 +36,7 @@ DESCRIPTION
     Please use "gf gen dao -h" for specified type help.
 ```
 
-## Documents
+## Documentation
 
 import DocCardList from '@theme/DocCardList';
 
