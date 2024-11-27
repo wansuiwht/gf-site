@@ -3,7 +3,7 @@
 git config --global core.quotepath false
 
 # 记录个数
-RECORD_COUNT=2
+RECORD_COUNT=20
 
 # 定义文件路径变量
 CHANGELOG_FILE="docs/docs/changelog.md"
@@ -12,16 +12,15 @@ CHANGELOG_FILE="docs/docs/changelog.md"
 MARKDOWN_REGEX="docs/*.md"
 
 # 定义支持的语言列表
-LANGUAGES=("zh" "en")
+LANGUAGES=("zh-Hans" "en")
 
 # 循环生成每种语言的 changelog
 for lang in "${LANGUAGES[@]}"; do
+    echo "Generating changelog for $lang..."
     # 不同语言切换不同的文件路径，例如默认中文，英文路径i18n/en/docusaurus-plugin-content-docs/current/docs/changelog.md
     if [ "$lang" == "en" ]; then
         CHANGELOG_FILE="i18n/en/docusaurus-plugin-content-docs/current/docs/changelog.md"
         MARKDOWN_REGEX="i18n/en/docusaurus-plugin-content-docs/current/*.md"
-    else
-        CHANGELOG_FILE="docs/docs/changelog.md"
     fi
 
     echo "---" >$CHANGELOG_FILE
@@ -37,13 +36,16 @@ for lang in "${LANGUAGES[@]}"; do
     echo "" >>$CHANGELOG_FILE
 
     # 获取最近提交记录，只包含 .md 文件的修改
-    git log -n $RECORD_COUNT --pretty=format:"- [%ad](https://github.com/gogf/gf-site/commit/%H) - [%an] - %s" --abbrev-commit --no-merges --date=format:'%m-%d %H:%M' -- $MARKDOWN_REGEX | while read -r line; do
+    echo "RECORD_COUNT: $RECORD_COUNT"
+    echo "MARKDOWN_REGEX: $MARKDOWN_REGEX"
+    git log -n $((RECORD_COUNT + 1)) --pretty=format:"- [%ad](https://github.com/gogf/gf-site/commit/%H) - [%an] - %s" --abbrev-commit --no-merges --date=format:'%m-%d %H:%M' -- "$MARKDOWN_REGEX" | while read -r line; do
         echo "$line" >>$CHANGELOG_FILE
+        echo "$line"
         # 从输出中提取提交哈希
         commit_hash=$(echo "$line" | grep -oP '(?<=commit/)[a-f0-9]+')
         # 显示修改的文件
         if [ -n "$commit_hash" ]; then
-            git diff-tree --no-commit-id --name-only -r "$commit_hash" -- '*.md' | while read -r changefile; do
+            git diff-tree --no-commit-id --name-only -r "$commit_hash" -- "$MARKDOWN_REGEX" | while read -r changefile; do
                 echo "  - $changefile"
                 filename=$(basename "$changefile")
                 filename="${filename%.*}"
