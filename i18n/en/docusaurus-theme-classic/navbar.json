@@ -4,11 +4,11 @@
     "description": "The alt text of navbar logo"
   },
   "item.label.快速开始": {
-    "message": "QuickStart",
+    "message": "Quick Start",
     "description": "Navbar item with label 快速开始"
   },
   "item.label.开发手册": {
-    "message": "Documents",
+    "message": "Documentation",
     "description": "Navbar item with label 开发手册"
   },
   "item.label.社区教程": {
@@ -16,7 +16,7 @@
     "description": "Navbar item with label 社区教程"
   },
   "item.label.案例展示": {
-    "message": "ShowCase",
+    "message": "Show Case",
     "description": "Navbar item with label 案例展示"
   },
   "item.label.发布记录": {
