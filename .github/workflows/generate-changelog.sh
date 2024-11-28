@@ -26,7 +26,7 @@ for lang in "${LANGUAGES[@]}"; do
     echo "---" >$CHANGELOG_FILE
     echo "slug: '/docs/changelog'" >>$CHANGELOG_FILE
     if [ "$lang" == "en" ]; then
-        echo "title: 'Changelog'" >>$CHANGELOG_FILE
+        echo "title: 'Docs Changelog'" >>$CHANGELOG_FILE
     else
         echo "title: '文档更新记录'" >>$CHANGELOG_FILE
     fi
