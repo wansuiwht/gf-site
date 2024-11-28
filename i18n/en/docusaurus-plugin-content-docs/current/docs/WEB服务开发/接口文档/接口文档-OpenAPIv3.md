@@ -6,6 +6,9 @@ hide_title: true
 keywords: [OpenAPIv3, GoFrame, API Documentation, Standard Routing, g.Meta, swagger, API, Framework, Metadata, Protocol]
 description: "Use the OpenAPIv3 protocol in the GoFrame framework to standardize the generation of API documentation. By embedding the g.Meta metadata structure, you can automatically generate API information with protocol tags. Additionally, the article shows how to customize extension tags and manually improve the API documentation."
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 :::tip
 The `OpenAPIv3` protocol is mainly used in standardized routing. Before reading the introduction to the API documentation protocol, please familiarize yourself with the standardized routing: [Standard Router](../路由管理/路由管理-路由注册/路由注册-规范路由/路由注册-规范路由.md)
 :::
@@ -44,6 +47,52 @@ Commonly used basic tags include:
 :::tip
 For more tags, please refer to the standard `OpenAPIv3` protocol: [https://swagger.io/specification/](https://swagger.io/specification/)
 :::
+
+In addition to the above tags, the `g.Meta` of the response structure also supports additional tags to set more detailed documentation information:
+
+| Tag | Description | Remarks |
+| --- | --- | --- |
+| `status` | Set the default return status code of the response | Used for `g.Meta` to mark API metadata, default value is `200` |
+| `responseExample` | Set the `json` file path of the default return example of the response | Used for `g.Meta` to mark API metadata, abbreviation `resEg` |
+
+The `json` file formats supported by `responseExample` are as follows:
+
+<Tabs>
+<TabItem value="array" label="Array">
+```json
+[
+    {
+        "code": 0,
+        "message": "Success",
+        "data": null
+    },
+    {
+        "code": 1,
+        "message": "Internal Server Error",
+        "data": null
+    }
+]
+```
+</TabItem>
+<TabItem value="object" label="Object">
+```json
+{
+    "success": {
+        "code": 0,
+        "message": "Success",
+        "data": null
+    },
+    "error": {
+        "code": 1,
+        "message": "Internal Server Error",
+        "data": null
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+
 ### 2. Extension Tags
 
 In the `OpenAPI` specification, all tags prefixed with `x-` are customizable extension tags by developers. Extension tags can be defined in any API or attribute using `Golang struct tag` format, and during the generation of API documentation, they will be returned as independent fields. For example:
@@ -183,7 +232,239 @@ After execution, visit the address [http://127.0.0.1:8199/swagger](http://127.0.
 
 As you can see, the extension tags have been included in the API documentation.
 
-## IV. Expanding `OpenAPIv3` Information
+## IV. Expanding Response Structure Information
+
+For requests that require multiple response status codes, the framework provides the `IEnhanceResponseStatus` interface in the `goai` component, and developers can extend the information of the response structure by implementing this interface. The related definitions are as follows:
+
+``` go
+type EnhancedStatusCode = int
+
+type EnhancedStatusType struct {
+    Response any
+    Examples any
+}
+
+type IEnhanceResponseStatus interface {
+    EnhanceResponseStatus() map[EnhancedStatusCode]EnhancedStatusType
+}
+```
+
+`Response` is a response structure similar to a normal response structure, you can also add a `g.Meta` tag to add documentation information, and after setting the `mime` tag, the structure will also override the content of the general response structure. `Examples` is a response example, you can use the error code list to automatically generate example content and display it in the document, so as to ensure the synchronization of document content and actual business content. For example:
+
+``` go
+package main
+
+import (
+    "context"
+
+    "github.com/gogf/gf/v2/errors/gcode"
+    "github.com/gogf/gf/v2/errors/gerror"
+    "github.com/gogf/gf/v2/frame/g"
+    "github.com/gogf/gf/v2/net/ghttp"
+    "github.com/gogf/gf/v2/net/goai"
+)
+
+type StoreMessageReq struct {
+    g.Meta  `path:"/messages" method:"post" summary:"Store a message"`
+    Content string `json:"content"`
+}
+type StoreMessageRes struct {
+    g.Meta `status:"201"`
+    Id     string `json:"id"`
+}
+type EmptyRes struct {
+    g.Meta `mime:"application/json"`
+}
+
+type CommonRes struct {
+    Code    int         `json:"code"`
+    Message string      `json:"message"`
+    Data    interface{} `json:"data"`
+}
+
+var StoreMessageErr = map[int]gcode.Code{
+    500: gcode.New(1, "Server Dead", nil),
+}
+
+func (r StoreMessageRes) EnhanceResponseStatus() (resList map[int]goai.EnhancedStatusType) {
+    examples := []interface{}{}
+    example500 := CommonRes{
+        Code:    StoreMessageErr[500].Code(),
+        Message: StoreMessageErr[500].Message(),
+        Data:    nil,
+    }
+    examples = append(examples, example500)
+    return map[int]goai.EnhancedStatusType{
+        403: {
+            Response: EmptyRes{},
+        },
+        500: {
+            Response: struct{}{},
+            Examples: examples,
+        },
+    }
+}
+
+type Controller struct{}
+
+func (c *Controller) StoreMessage(ctx context.Context, req *StoreMessageReq) (res *StoreMessageRes, err error) {
+    return nil, gerror.NewCode(gcode.CodeNotImplemented)
+}
+
+func main() {
+    s := g.Server()
+    s.Group("/", func(group *ghttp.RouterGroup) {
+        group.Bind(new(Controller))
+    })
+    oai := s.GetOpenApi()
+    oai.Config.CommonResponse = CommonRes{}
+    oai.Config.CommonResponseDataField = `Data`
+    s.SetOpenApiPath("/api.json")
+    s.SetSwaggerPath("/swagger")
+    s.SetPort(8199)
+    s.Run()
+}
+```
+
+After execution, visit the address [http://127.0.0.1:8199/swagger](http://127.0.0.1:8199/swagger) to view the `swagger ui`, and visit [http://127.0.0.1:8199/api.json](http://127.0.0.1:8199/api.json) to view the corresponding `OpenAPIv3` documentation. The generated `OpenAPIv3` documentation is as follows:
+
+``` json
+{
+    "openapi": "3.0.0",
+    "components": {
+        "schemas": {
+            "main.StoreMessageReq": {
+                "properties": {
+                    "content": {
+                        "format": "string",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "main.StoreMessageRes": {
+                "properties": {
+                    "id": {
+                        "format": "string",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "interface": {
+                "properties": {},
+                "type": "object"
+            },
+            "main.EmptyRes": {
+                "properties": {},
+                "type": "object"
+            },
+            "struct": {
+                "properties": {},
+                "type": "object"
+            }
+        }
+    },
+    "info": {
+        "title": "",
+        "version": ""
+    },
+    "paths": {
+        "/messages": {
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/main.StoreMessageReq"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "code": {
+                                            "format": "int",
+                                            "type": "integer"
+                                        },
+                                        "message": {
+                                            "format": "string",
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "format": "string",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/main.EmptyRes"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "500": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "code": {
+                                            "format": "int",
+                                            "type": "integer"
+                                        },
+                                        "message": {
+                                            "format": "string",
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "properties": {},
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "examples": {
+                                    "example 1": {
+                                        "value": {
+                                            "code": 1,
+                                            "message": "Server Dead",
+                                            "data": null
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                },
+                "summary": "Store a message"
+            }
+        }
+    }
+}
+```
+
+As you can see, the default response status code has been changed to `201`, and the response example has also been automatically generated.
+
+## V. Expanding `OpenAPIv3` Information
 
 The core API information has already been automatically generated. If developers want to further complete the API information, they can obtain the `OpenAPIv3` struct object via `s.GetOpenApi()` and manually fill in the corresponding attribute content. Let's look at an example where we design a common data structure around each API:
 
