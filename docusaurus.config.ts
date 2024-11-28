@@ -1,14 +1,21 @@
 const LATEST_VERSION_LABEL = '2.8.x(Latest)';
 
+import type { Options as IdealImageOptions } from '@docusaurus/plugin-ideal-image';
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
-import type {Options as IdealImageOptions} from '@docusaurus/plugin-ideal-image';
 import { themes as prismThemes } from 'prism-react-renderer';
+
+function geti18nTitle() {
+  switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
+    case "en": return "GoFrame Official Website - A Go Enterprise-Level Development Framework Similar to PHP-Laravel and Java-SpringBoot";
+    default: return "GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架";
+  }
+}
 
 // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter
 // https://docusaurus.io/zh-CN/docs/api/docusaurus-config
 const config: Config = {
-  title: 'GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架',
+  title: geti18nTitle(),
   tagline:
     'GoFrame is a modular, powerful, high-performance and enterprise-class application development framework of Golang.',
   favicon: '/img/favicon.ico',
