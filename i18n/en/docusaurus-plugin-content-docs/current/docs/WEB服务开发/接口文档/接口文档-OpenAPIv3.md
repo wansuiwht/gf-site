@@ -232,7 +232,7 @@ After execution, visit the address [http://127.0.0.1:8199/swagger](http://127.0.
 
 As you can see, the extension tags have been included in the API documentation.
 
-## IV. Expanding Response Structure Information
+## IV. Extending Response Structure Information
 
 For requests that require multiple response status codes, the framework provides the `IEnhanceResponseStatus` interface in the `goai` component, and developers can extend the information of the response structure by implementing this interface. The related definitions are as follows:
 
