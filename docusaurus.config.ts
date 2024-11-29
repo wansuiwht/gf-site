@@ -7,7 +7,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 function geti18nTitle() {
   switch(process.env.DOCUSAURUS_CURRENT_LOCALE) {
-    case "en": return "GoFrame Official Website - A Go Enterprise-Level Development Framework Similar to PHP-Laravel and Java-SpringBoot";
+    case "en": return "GoFrame - A powerful framework for faster, easier, and more efficient project development";
     default: return "GoFrame官网 - 类似PHP-Laravel,Java-SpringBoot的Go企业级开发框架";
   }
 }
