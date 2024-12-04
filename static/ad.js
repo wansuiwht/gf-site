@@ -10,12 +10,7 @@ function addCustomContent() {
         return;
     }
 
-    // 如果已经存在自定义内容，直接返回
-    if (document.querySelector('.ad-content')) {
-        return;
-    }
-
-    let tocElement = document.querySelector('div.theme-doc-toc-desktop');
+    let tocElement = document.querySelector('.theme-doc-toc-desktop');
     const mainContainer = document.querySelector('main .container .row');
 
     // 如果不存在 toc 元素且存在主容器，则创建新的右侧栏
@@ -32,10 +27,10 @@ function addCustomContent() {
     }
 
     // 如果找到或创建了 tocElement，且还没有添加自定义内容
-    if (tocElement && !tocElement.querySelector('.ad-content')) {
+    if (tocElement && !tocElement.querySelector('.ad-content-right')) {
         // 创建新的自定义 div
         const customDiv = document.createElement('div');
-        customDiv.className = 'ad-content';
+        customDiv.className = 'ad-content-right';
         customDiv.innerHTML = `
             <button class="ad-close" title="关闭">×</button>
             <a href="https://www.marscode.cn/?utm_source=advertising&utm_medium=prompt.cn_ug_cpa&utm_term=hw_marscode_cocotoolset&utm_content=home" target="_blank">
@@ -57,6 +52,11 @@ function addCustomContent() {
                 customDiv.remove();
             });
         }
+    }
+
+    // 如果新建div和toc的广告div同时存在，删除新建div
+    if (document.querySelector('.theme-doc-toc-desktop') && mainContainer.querySelector('.custom-right-sidebar')) {
+        mainContainer.querySelector('.custom-right-sidebar').remove();
     }
 }
 
@@ -80,7 +80,7 @@ const debouncedAddContent = debounce(addCustomContent, 100);
 const observer = new MutationObserver((mutations) => {
     // 检查是否是我们自己的变更
     if (mutations.some(mutation => 
-        mutation.target.classList.contains('ad-content') ||
+        mutation.target.classList.contains('ad-content-right') ||
         mutation.target.classList.contains('custom-right-sidebar'))) {
         return;
     }
