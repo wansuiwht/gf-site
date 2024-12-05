@@ -8,10 +8,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  # Files that don't need translation check (space-separated)
-  IGNORE_FILES: "index.md download.md"
-
 jobs:
   deploy:
     name: Build check
