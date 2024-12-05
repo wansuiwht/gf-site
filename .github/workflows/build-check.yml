@@ -24,9 +24,9 @@ jobs:
 
       - name: Install image optimization tools
         run: |
-          apt-get update
-          apt-get install -y jpegoptim optipng gifsicle webp
-          npm install -g svgo
+          sudo apt-get update
+          sudo apt-get install -y jpegoptim optipng gifsicle webp
+          sudo npm install -g svgo
 
       - name: Setup Node
         uses: actions/setup-node@v4
