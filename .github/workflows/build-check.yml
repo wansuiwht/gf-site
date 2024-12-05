@@ -22,6 +22,12 @@ jobs:
         run: |
           bash .github/workflows/consistency-check.sh
 
+      - name: Install image optimization tools
+        run: |
+          apt-get update
+          apt-get install -y jpegoptim optipng gifsicle webp
+          npm install -g svgo
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -35,3 +41,12 @@ jobs:
       - name: Build website
         run: |
           make build
+
+      - name: Optimize images
+        working-directory: build
+        run: |
+          find . \( -name "*.jpg" -o -name "*.jpeg" \) -exec jpegoptim --max=80 {} \;
+          find . -type f -name "*.png" -exec optipng -o2 {} \;
+          find . -type f -name "*.gif" -exec gifsicle -O3 --batch {} \;
+          find . -type f -name "*.webp" -exec cwebp -q 80 {} -o {}.webp \; -exec mv {}.webp {} \;
+          find . -type f -name "*.svg" -exec svgo {} \;

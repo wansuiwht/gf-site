@@ -1,9 +1,9 @@
-name: Build And Deploy
+name: Build and Deploy
 
 on:
   push:
     branches:
-      - 'main'
+      - main
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -20,6 +20,12 @@ jobs:
       - name: Check documentation consistency
         run: |
           bash .github/workflows/consistency-check.sh
+
+      - name: Install image optimization tools
+        run: |
+          apt-get update
+          apt-get install -y jpegoptim optipng gifsicle webp
+          npm install -g svgo
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -55,6 +61,15 @@ jobs:
       #     target: '/home/www/goframe.org'
       #     strip_components: 1
       #     rm: true
+
+      - name: Optimize images
+        working-directory: build
+        run: |
+          find . \( -name "*.jpg" -o -name "*.jpeg" \) -exec jpegoptim --max=80 {} \;
+          find . -type f -name "*.png" -exec optipng -o2 {} \;
+          find . -type f -name "*.gif" -exec gifsicle -O3 --batch {} \;
+          find . -type f -name "*.webp" -exec cwebp -q 80 {} -o {}.webp \; -exec mv {}.webp {} \;
+          find . -type f -name "*.svg" -exec svgo {} \;
 
       - name: Deploy to github pages
         uses: peaceiris/actions-gh-pages@v4
