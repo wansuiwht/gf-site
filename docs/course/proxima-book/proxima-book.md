@@ -1,3 +1,12 @@
+---
+slug: '/course/proxima-book'
+title: '微服务实战教程-比邻英语本'
+hide_title: true
+sidebar_position: 1
+keywords: [GoFrame,GoFrame框架,比邻英语本,微服务,gRPC,etcd,服务注册,GoFrame微服务,Golang微服务,Golang教程,编程技巧,项目开发,程序员入门,技术栈,软件开发,计算机科学]
+description: '本书通过GoFrame框架，以比邻英语本项目实战为例，帮助读者快速掌握GoFrame微服务开发。适合已经对`GoFrame`小有所成，希望进一步掌握微服务开发的朋友。'
+---
+
 ## 本书简介
 ---
 **比邻英语本**是 GoFrame 中级实战教程。与初级教程[星辰英语本](https://goframe.org/course/starbook)不同，**微服务**开发是本书的主旋律。
@@ -24,3 +33,5 @@
 ## 遇到问题
 ---
 在开发中，遇到各种问题都是正常的。如何解决问题才是关键，在遇到问题时，请先尝试自行解决。查阅`GoFrame`文档，使用搜索引擎都是不错的解决问题的方式。如果实在无法解决，可以联系我，我会尽力帮助您解决问题。
+
+import DocCardList from '@theme/DocCardList';
